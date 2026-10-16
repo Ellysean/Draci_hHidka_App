@@ -257,3 +257,13 @@ describe('dovednosti s více atributy – volba podle situace', () => {
     expect(d.skills.find((s) => s.id === 'postreh')!.options).toEqual([]);
   });
 });
+
+describe('První pomoc podle tabulek H05 a H14 (✔ U 16. 10. 2026)', () => {
+  it('má volbu OBR / INT, výchozí OBR', () => {
+    const c = newCharacter();
+    c.skills = [{ id: 'prvni_pomoc', customName: null, attribute: 'obr', rank: 3, source: 'class-basic' }];
+    const s = derive(c).skills[0];
+    expect(s.options.map((o) => o.attribute)).toEqual(['obr', 'int']);
+    expect(s.attribute).toBe('obr');
+  });
+});

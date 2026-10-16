@@ -163,7 +163,7 @@ export const HELP: HelpSection[] = [
       {
         list: [
           'U každé dovednosti: **atribut**, stupeň, oprava, bonusy schopností a **celkový bonus**; štítek odkud je (povolání / profesní / schopnost / koupená / vlastní).',
-          'Dovednosti se **dvěma atributy** (Mechanika, Etiketa, Umění, Řemesla, Zvládnutí zvířat…) mají celkový bonus i **hod pro každý atribut** – hoď na ten, který odpovídá tomu, co postava právě dělá (Mechanika: rozebírat zámek OBR, vymyslet konstrukci INT; rozhodne PJ). U vlastní dovednosti se atribut vybírá jednou.',
+          'Dovednosti se **dvěma atributy** (Mechanika, Etiketa, První pomoc, Umění, Řemesla, Zvládnutí zvířat…) mají celkový bonus i **hod pro každý atribut** – hoď na ten, který odpovídá tomu, co postava právě dělá (Mechanika: rozebírat zámek OBR, vymyslet konstrukci INT; rozhodne PJ). U vlastní dovednosti se atribut vybírá jednou.',
           '**Dovednostní body** – získáno / utraceno / zbývá, rozpis po úrovních a historie.',
           '**Zlepšit** o stupeň stojí body; limit **+1 stupeň na dovednost za úroveň** (Expertiza výjimkou). Zlepšení z aktuální úrovně jde **vrátit** (↶, body zpět).',
           '**Nová dovednost** za 1 bod – ze seznamu obecných, nebo **vlastní** (název + atribut; štítek VLASTNÍ = schvaluje PJ). Koupenou nebo vlastní jde odebrat a body se vrátí.',

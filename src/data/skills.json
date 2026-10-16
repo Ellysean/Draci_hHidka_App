@@ -58,9 +58,7 @@
  {
   "id": "prvni_pomoc",
   "name": "První pomoc",
-  "attributes": [
-   "obr"
-  ],
+  "attributes": ["obr", "int"],
   "defaultAttribute": "obr",
   "kind": "basic"
  },

@@ -47,7 +47,7 @@ export function Dovednosti() {
           <div className="ics">{ATTR_KEYS.map((k) => <i key={k}>{ATTR_LABELS[k].short}</i>)}</div>
           <ul>
             <li>Ověření = 1k10 + oprava atributu + stupeň (+ bonusy schopností).</li>
-            <li>Dovednosti se dvěma atributy (Mechanika, Etiketa, Umění, Řemesla, Zvládnutí zvířat…) mají <b>hod pro každý atribut</b> – hoď na ten, který odpovídá tomu, co postava právě dělá (rozhoduje PJ).</li>
+            <li>Dovednosti se dvěma atributy (Mechanika, Etiketa, První pomoc, Umění, Řemesla, Zvládnutí zvířat…) mají <b>hod pro každý atribut</b> – hoď na ten, který odpovídá tomu, co postava právě dělá (rozhoduje PJ).</li>
             <li>Zlepšení na stupeň N stojí N bodů, nová dovednost 1 bod (stupeň 1). Nevyužité body zůstávají.</li>
             <li>Každá dovednost nejvýš <b>+1 stupeň za úroveň</b>{exp ? ' – Expertiza: na sudé úrovni jedna dovednost až +2, nejvýš na úroveň + 2' : ''}. Zlepšení tady se počítá k aktuální ({level}.) úrovni, stejně jako v průvodci přestupem.</li>
             <li>Profesní dovednosti nejdou koupit – dává je schopnost povolání (na 3. stupni).</li>

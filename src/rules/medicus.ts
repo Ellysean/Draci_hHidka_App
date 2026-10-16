@@ -14,7 +14,7 @@ const up = (n: number) => Math.ceil(n);
 
 export function skillCheck(c: Character, d: Derived, id: string, label: string, attr: 'obr' | 'int', withWorkshop = false): CheckBonus {
   const sk = d.skills.find((s) => s.id === id);
-  const parts = [sk ? `${label} ${sgn(sk.total)} (${attr.toUpperCase()} ${sgn(sk.mod)}, st. ${sk.rank})` : `${attr.toUpperCase()} ${sgn(d.mods[attr])} (bez dovednosti ${label})`];
+  const parts = [sk ? `${label} ${sgn(sk.total)} (${sk.attribute.toUpperCase()} ${sgn(sk.mod)}, st. ${sk.rank})` : `${attr.toUpperCase()} ${sgn(d.mods[attr])} (bez dovednosti ${label})`];
   let total = sk ? sk.total : d.mods[attr];
   if (withWorkshop) {
     const s = alch(c);
