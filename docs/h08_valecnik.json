@@ -1,0 +1,406 @@
+{
+ "_zdroj": "H08 Válečník 1.2.5 (vytěženo z PDF v projektu, 27. 9. 2026)",
+ "triky": [
+  {
+   "id": "bojova_pripravenost",
+   "nazev": "Bojová připravenost",
+   "strana": 4,
+   "parametry": {
+    "adrenalin": "0",
+    "pouziti": "Soustředění (Útok nebo Obrana)",
+    "vyzaduje": "-",
+    "overeni": "-"
+   },
+   "popis": "Pokud se schyluje k boji, dokáže válečník rozpoznat nebezpečí a reagovat na něj dříve než ostatní.\nDíky tomuto triku získá válečník bonus +2 k první bojové akci (útok / obrana), kterou v daném kole provede. Tento trik lze uplatnit pouze na začátku boje. Nedá se navíc použít v případě, kdy válečník útok nečekal (přepadení ze zálohy a podobně).",
+   "skupiny": [
+    "Základní"
+   ]
+  },
+  {
+   "id": "odrazeni_projektilu",
+   "nazev": "Odražení projektilu",
+   "strana": 4,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Trik (Obrana)",
+    "vyzaduje": "jakákoliv zbraň pro boj tváří v tvář",
+    "overeni": "-"
+   },
+   "popis": "Válečník dokáže přetavit svůj adrenalin do bleskového krytu, kterým dokáže vykrýt letící projektil.\nPři použití tohoto bojového triku získává válečník možnost chránit se před letícím projektilem. Do své akce Obrana si tak navíc započítá obranu zbraně a Výhodu (bonus +5). Efekt se vztahuje na jeden konkrétní projektil, který na něj letí (dýka, šíp, hvězdice a podobně).",
+   "skupiny": [
+    "Základní"
+   ]
+  },
+  {
+   "id": "rychly_presun",
+   "nazev": "Rychlý přesun",
+   "strana": 4,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Pohyb",
+    "vyzaduje": "-",
+    "overeni": "-"
+   },
+   "popis": "Některé situace vyžadují rychlý přesun a adrenalin je právě to, co k němu válečníka nabudí. Má pak šanci napadnout prchajícího protivníka, vykrýt ránu vedenou na dalšího člena družiny nebo jen zaujmout lepší bojové postavení.\nDíky tomuto triku se vzdálenost, kterou můžeš v daném kole překonat Krátkým pohybem, zdvojnásobí.",
+   "skupiny": [
+    "Základní"
+   ]
+  },
+  {
+   "id": "rychly_uder",
+   "nazev": "Rychlý úder",
+   "strana": 4,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Soustředění",
+    "vyzaduje": "-",
+    "overeni": "-"
+   },
+   "popis": "Bojové vzrušení dokáže vybičovat instinkty válečníka na maximum. Díky tomu dokáže reagovat i na nepatrné náznaky akcí protivníků a překvapit je svou reakcí.\nS tímto bojovým trikem získává tvá postava pro následující kolo Výhodu (bonus +5) k Iniciativě.",
+   "skupiny": [
+    "Základní"
+   ]
+  },
+  {
+   "id": "zurivy_utok",
+   "nazev": "Zuřivý útok",
+   "strana": 5,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Soustředění (Útok)",
+    "vyzaduje": "-",
+    "overeni": "-"
+   },
+   "popis": "Válečník dokáže přetavit své bojové vzrušení do zuřivého útoku. V něm je pak rychlejší, silnější a nebezpečnější.\nTímto trikem získává válečník bonus +3 do jednoho Útoku v daném kole.",
+   "skupiny": [
+    "Základní"
+   ]
+  },
+  {
+   "id": "nordicky_klic",
+   "nazev": "Nordický klíč",
+   "strana": 9,
+   "parametry": {
+    "adrenalin": "3",
+    "pouziti": "Zápas (Obrana)",
+    "vyzaduje": "Škola boje drtičů kostí, volná ruka",
+    "overeni": "Atletika (SIL) vs. Hbitost (OBR)"
+   },
+   "popis": "Nordickým klíčem se lze pokusit zachytit ruku protivníka, zkroutit ji, zatlačit na ni pákou a tím ji pochroumat.\nPokud v triku uspěješ, tedy překonáš svým hodem na Atletiku (SIL) protivníkův hod na Hbitost (OBR), ubráníš se jeho útoku a zároveň mu pohmoždíš ruku. To mu způsobí Nevýhodu (postih −5) ke všem bojovým akcím a činnostem vyžadujícím ruce. Pochroumání trvá tak dlouho, dokud není řádně ošetřeno.\nJestliže se ti trik nepovede, budeš v daném kole chráněn jen svou Základní obranou.\nTrik funguje jako jednorázová akce (neslouží k držení ruky protivníka).",
+   "skupiny": [
+    "Škola boje drtičů kostí"
+   ]
+  },
+  {
+   "id": "strzeni_na_zem",
+   "nazev": "Stržení na zem",
+   "strana": 10,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Zápas (Útok)",
+    "vyzaduje": "Škola boje drtičů kostí",
+    "overeni": "Atletika (SIL) vs. Hbitost (OBR)"
+   },
+   "popis": "Stržení na zem je klasická bojová technika, při které se válečník přiblíží k protivníkovi, nakročí za jeho nohy a silnou ranou do jeho hrudi nebo hlavy ho strhne na zem, kde ho pak drží.\nVálečník používá tento trik místo svého běžného útoku. Pokud v triku uspěješ, tedy překonáš svým hodem na Atletiku (SIL) protivníkův hod na Hbitost (OBR), povalíš ho na zem a znehybníš. Cíl pak zůstává znehybněn tak dlouho, dokud neuspěje v opakovaném ověření. Ověřování lze provést v každém kole.\nDokud sevření trvá, není útočník ani obránce schopen jiných bojových akcí.",
+   "skupiny": [
+    "Škola boje drtičů kostí"
+   ]
+  },
+  {
+   "id": "trpaslici_polibek",
+   "nazev": "Trpasličí polibek",
+   "strana": 10,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Trik (Útok)",
+    "vyzaduje": "Škola boje drtičů kostí",
+    "overeni": "Atletika (SIL) vs. Hbitost (OBR)"
+   },
+   "popis": "Tato technika přišla ke svému názvu díky tradici trpasličích trolobijců. Je zjevné, že nepůjde o žádnou romantiku, ale o drsný útok čelem (obvykle do obličeje nebo břicha protivníka).\nVálečník používá tento trik jako dodatečnou akci ke svému běžnému útoku. Pokud v triku uspěješ, tedy překonáš svým hodem na Atletiku (SIL) protivníkův hod na Hbitost (OBR), způsobíš mu navíc zranění odpovídající tvé Opravě za Sílu (vždy však aspoň 1).",
+   "skupiny": [
+    "Škola boje drtičů kostí"
+   ]
+  },
+  {
+   "id": "obranne_manevrovani",
+   "nazev": "Obranné manévrování",
+   "strana": 10,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Soustředění (Obrana)",
+    "vyzaduje": "Škola boje s bodnou zbraní",
+    "overeni": "-"
+   },
+   "popis": "Válečník dokáže provádět mistrnou choreografii úskoků a klamavých pohybů, které ztěžují protivníkovi šanci ho zasáhnout.\nDíky tomuto triku získává válečník ke všem hodům na obranu bonus +2 proti všem útokům, které jsou na něj v daném kole vedeny.",
+   "skupiny": [
+    "Škola boje s bodnou zbraní"
+   ]
+  },
+  {
+   "id": "utok_z_obrany",
+   "nazev": "Útok z obrany",
+   "strana": 10,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Technika (Obrana)",
+    "vyzaduje": "Škola boje s bodnou zbraní, bodná zbraň",
+    "overeni": "-"
+   },
+   "popis": "Válečník dokáže tímto trikem využít sílu útočníka a proměnit ji ve svůj prospěch. Odkloní zbraň protivníka, ukročí a nechá sklouznout ostří své čepele do jeho těla.\nPři tomto triku provedeš klasický hod na obranu před útokem protivníka. Jestliže jsi byl zasažen, pak se ti trik nepodařil. Pokud se však ubráníš, zraníš protivníka za tolik životů, jaký je rozdíl mezi vašimi výsledky. Ke zranění se ještě přičte Zranění tvé zbraně.\nPŘÍKLAD: Nepřítel má Útok (7). Tvůj válečník Obranu (10) a Zranění zbraně 2. Při útoku z obrany tak zraníš protivníka za 5 životů (10 − 7 + 2).",
+   "skupiny": [
+    "Škola boje s bodnou zbraní"
+   ]
+  },
+  {
+   "id": "vypad",
+   "nazev": "Výpad",
+   "strana": 11,
+   "parametry": {
+    "adrenalin": "3",
+    "pouziti": "Trik (Útok)",
+    "vyzaduje": "Škola boje s bodnou zbraní, bodná zbraň",
+    "overeni": "-"
+   },
+   "popis": "Výpad patří ke klasickým bojovým fintám. Jde o velmi přesný útok s dokonalým načasováním. Válečník se při něm pokusí protivníka probodnout a způsobit mu tak vážné zranění.\nPokud válečník svým výpadem projde protivníkovou obranou, způsobí mu automaticky krvácivé zranění (viz „Krvácení“). Každé kolo (včetně aktuálního) si pak raněný hází 1k6 na počet životů, které ztratí v důsledku krvácení.",
+   "skupiny": [
+    "Škola boje s bodnou zbraní"
+   ]
+  },
+  {
+   "id": "tvrdy_kryt",
+   "nazev": "Tvrdý kryt",
+   "strana": 11,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Trik (Obrana)",
+    "vyzaduje": "Škola boje s jednoruční zbraní, jednoruční zbraň",
+    "overeni": "-"
+   },
+   "popis": "Válečník dokáže využít svou volnou ruku a posílit úchop své zbraně k získání lepší obrany.\nZa použití tohoto triku získává válečník bonus +2 ke svému hodu na Obranu. Tento trik lze použít i tehdy, jestliže drží v druhé ruce štít.",
+   "skupiny": [
+    "Škola boje s jednoruční zbraní"
+   ]
+  },
+  {
+   "id": "uder_hlavici",
+   "nazev": "Úder hlavicí",
+   "strana": 11,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Trik (Útok)",
+    "vyzaduje": "Škola boje s jednoruční zbraní, jednoruční zbraň",
+    "overeni": "-"
+   },
+   "popis": "U tohoto triku využije válečník bezprostřední blízkost protivníka a po svém běžném útoku mu ještě uštědří dodatečnou ránu hlavicí své zbraně.\nPokud se válečník rozhodne tento trik použít a uspěje ve svém běžném útoku, způsobí protivníkovi dodatečné zranění za 1k6+3 životů.",
+   "skupiny": [
+    "Škola boje s jednoruční zbraní"
+   ]
+  },
+  {
+   "id": "uhyb_a_sek",
+   "nazev": "Úhyb a sek",
+   "strana": 11,
+   "parametry": {
+    "adrenalin": "3",
+    "pouziti": "Technika (Obrana), Dodatečný útok",
+    "vyzaduje": "Škola boje s jednoruční zbraní",
+    "overeni": "-"
+   },
+   "popis": "Falešné odkrytí zdánlivě nekrytého místa je ideální možnost, jak vyprovokovat protivníka k útoku. Poté se stačí jen bleskovým úkrokem stáhnout zpět a po soupeřově promáchnutí do prázdna navázat vlastním zdrcujícím útokem.\nVálečník si při tomto triku hází na klasickou obranu před útokem. Pokud neuspěje, je zraněn běžným způsobem. V opačném případě však získá možnost ihned napadnout nepřítele protiútokem do ZO (jedná se poté o klasický hod na útok, při kterém si však protivník nehází na obranu – započítává si jen Základní obranu. Útok je navíc zaplacen adrenalinem, válečník využívající trik „dodatečný útok“ nemusí mít k dispozici žádné útočné akce pro toto kolo, aby akci mohl provést).",
+   "skupiny": [
+    "Škola boje s jednoruční zbraní"
+   ]
+  },
+  {
+   "id": "bezhlavy_utok",
+   "nazev": "Bezhlavý útok",
+   "strana": 12,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Trik (Útok)",
+    "vyzaduje": "Škola boje s obouruční zbraní",
+    "overeni": "-"
+   },
+   "popis": "Adrenalin dokáže u válečníka probudit rudé šílenství. Se svou obouruční zbraní se pak mění ve vraždící stroj. V tu chvíli dává vše do ničivého útoku a zcela zapomíná na svou obranu.\nPomocí tohoto triku získáváš k jednomu konkrétnímu útoku jednorázovou Výhodu (bonus +5). V průběhu celého kola však ztrácíš možnost obrany (její hodnota pak odpovídá tvé Základní obraně).",
+   "skupiny": [
+    "Škola boje s obouruční zbraní"
+   ]
+  },
+  {
+   "id": "drtivy_utok",
+   "nazev": "Drtivý útok",
+   "strana": 12,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Trik (Útok)",
+    "vyzaduje": "Škola boje s obouruční zbraní, obouruční zbraň",
+    "overeni": "-"
+   },
+   "popis": "Adrenalin dokáže válečníkovi poskytnout drtivou sílu, kterou dokáže zranit protivníka mnohem víc, než je obvyklé.\nPokud se válečník rozhodne tento trik použít (a uspěje v běžném útoku), způsobí protivníkovi dodatečné zranění za dalších 5 životů.",
+   "skupiny": [
+    "Škola boje s obouruční zbraní"
+   ]
+  },
+  {
+   "id": "kruzny_sek",
+   "nazev": "Kružný sek",
+   "strana": 12,
+   "parametry": {
+    "adrenalin": "3",
+    "pouziti": "Trik (Útok)",
+    "vyzaduje": "Škola boje s obouruční zbraní, obouruční zbraň",
+    "overeni": "-"
+   },
+   "popis": "Válečník umí použít svou obouruční zbraň jako nástroj zkázy. Díky adrenalinu má rána takovou razanci, že ohrozí i několik protivníků najednou.\nKružným sekem dokáže válečník zasáhnout všechny tvory v kruhu kolem sebe (podle délky zbraně). Před jeho použitím je proto vhodné zvážit, zda jím nezasáhne i své spolubojovníky. První oběť útoku je zasažena plnou silou. U každé další se pak intenzita snižuje o dva body.\nPŘÍKLAD: Válečník použije Kružný sek. Jeho útok je 10. První cíl bude čelit síle útoku 10, druhý 8, třetí 6 a tak dále.",
+   "skupiny": [
+    "Škola boje s obouruční zbraní"
+   ]
+  },
+  {
+   "id": "dvojita_obrana",
+   "nazev": "Dvojitá obrana",
+   "strana": 12,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Soustředění, Dodatečná obrana",
+    "vyzaduje": "Škola boje se dvěma zbraněmi, dvě zbraně",
+    "overeni": "-"
+   },
+   "popis": "Válečník se s patřičnou dávkou bojového vzrušení dokáže bránit efektivněji a rychleji.\nTímto trikem získáš v daném kole k dispozici jednu aktivní obranu navíc. Můžeš se tak chránit před útoky více protivníků, či se krýt více útokům jednoho z nich.",
+   "skupiny": [
+    "Škola boje se dvěma zbraněmi"
+   ]
+  },
+  {
+   "id": "utok_a_vrh",
+   "nazev": "Útok a vrh",
+   "strana": 13,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Trik (Útok), Dodatečný útok",
+    "vyzaduje": "Škola boje se dvěma zbraněmi, dvě zbraně",
+    "overeni": "-"
+   },
+   "popis": "Zkušení válečníci dokáží při boji se dvěma zbraněmi překvapit svého protivníka. Umí totiž v rámci svého běžného útoku ještě vrhnout svou sekundární zbraň (nůž nebo dýku).\nPokud se válečník rozhodne tento trik použít, vybere si cíl ve svém zorném poli. Proti němu pak může použít útok svou vrhací zbraní. Tento útok dokáže provést v rámci stejného kola, kdy už útočil klasicky dvěma zbraněmi. Tento útok lze použít i na jiného protivníka, než byl cíl primárního útoku tváří v tvář.",
+   "skupiny": [
+    "Škola boje se dvěma zbraněmi"
+   ]
+  },
+  {
+   "id": "virivy_utok",
+   "nazev": "Vířivý útok",
+   "strana": 13,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Finta (Útok)",
+    "vyzaduje": "Škola boje se dvěma zbraněmi",
+    "overeni": "-"
+   },
+   "popis": "Vířivý útok je bojový trik, při kterém válečník sérií klamných výpadů rozptyluje pozornost protivníka. Když pak konečně udeří, bývá jeho útok překvapivý a vražedný.\nPři použití tohoto triku získává válečník Výhodu (bonus +5) k jednomu konkrétnímu útoku.",
+   "skupiny": [
+    "Škola boje se dvěma zbraněmi"
+   ]
+  },
+  {
+   "id": "srazeni_stitem",
+   "nazev": "Sražení štítem",
+   "strana": 13,
+   "parametry": {
+    "adrenalin": "2",
+    "pouziti": "Trik (Útok)",
+    "vyzaduje": "Škola boje se štítem, štít",
+    "overeni": "Atletika (SIL) vs. Hbitost (OBR)"
+   },
+   "popis": "Válečník dokáže použít svůj štít jako účinné beranidlo. Místo běžného útoku tak naběhne celou silou do protivníka a pokusí se ho srazit k zemi.\nPokud v triku uspěješ, tedy překonáš svým hodem na Atletiku (SIL) protivníkův hod na Hbitost (OBR), povalíš ho štítem k zemi a drtivě ho zraníš za 1k6 životů. Povalený není schopen žádné akce a musí nejprve vstát, což mu zabere 1 kolo.",
+   "skupiny": [
+    "Škola boje se štítem"
+   ]
+  },
+  {
+   "id": "utok_zpoza_stitu",
+   "nazev": "Útok zpoza štítu",
+   "strana": 13,
+   "parametry": {
+    "adrenalin": "1",
+    "pouziti": "Technika (Útok)",
+    "vyzaduje": "Škola boje se štítem",
+    "overeni": "-"
+   },
+   "popis": "Válečník dokáže při boji odstrčit protivníkovu zbraň do nevýhodné pozice. Ten se pak hůře brání a je tak mnohem snazší jej zasáhnout.\nÚtok zpoza štítu dává válečníkovi jednorázový bonus do útoku +2.",
+   "skupiny": [
+    "Škola boje se štítem"
+   ]
+  },
+  {
+   "id": "zamek",
+   "nazev": "Zámek",
+   "strana": 13,
+   "parametry": {
+    "adrenalin": "3",
+    "pouziti": "Zápas (Obrana)",
+    "vyzaduje": "Škola boje se štítem, štít",
+    "overeni": "Atletika (SIL) vs. Hbitost (OBR)"
+   },
+   "popis": "Tímto trikem dokáže válečník ve své obraně obratným manévrem „zamknout“ protivníkovu zbraň mezi své tělo a štít.\nPokud v triku uspěješ (Atletika (SIL) vs. protivníkův hod na Hbitost (OBR)), je jeho zbraň „uzamčena“ a nemůže s ní nijak manipulovat. Ztrácí tak možnost útoku i obrany s ní (nemá-li ovšem sekundární zbraň). Zámek trvá tak dlouho, dokud cíl zbraň nepustí nebo neuspěje v hodu proti pasti Atletika (SIL) vs. Hbitost (OBR). Ověřovací hod lze provádět v každém kole.\nVálečníkova druhá ruka je po celou dobu trvání triku volná. Může tak dále pokračovat v útocích na protivníka. Jestliže je válečník napaden někým dalším, nemůže si do obrany započítat štít.",
+   "skupiny": [
+    "Škola boje se štítem"
+   ]
+  }
+ ],
+ "skoly": [
+  {
+   "id": "skola_drticu_kosti",
+   "nazev": "Škola boje drtičů kostí",
+   "efekt": "Při boji beze zbraně +3 k ÚČ a OČ.",
+   "podminena": true
+  },
+  {
+   "id": "skola_boje_s_bodnou_zbrani",
+   "nazev": "Škola boje s bodnou zbraní",
+   "efekt": "Při boji +2 k Iniciativě (platí vždy, s jakoukoli zbraní).",
+   "podminena": false
+  },
+  {
+   "id": "skola_boje_s_jednorucni_zbrani",
+   "nazev": "Škola boje s jednoruční zbraní",
+   "efekt": "Při boji +1 k OČ (platí vždy, s jakoukoli zbraní).",
+   "podminena": false
+  },
+  {
+   "id": "skola_boje_s_obourucni_zbrani",
+   "nazev": "Škola boje s obouruční zbraní",
+   "efekt": "Při boji +2 ke Zranění (platí vždy, s jakoukoli zbraní).",
+   "podminena": false
+  },
+  {
+   "id": "skola_boje_se_dvema_zbranemi",
+   "nazev": "Škola boje se dvěma zbraněmi",
+   "efekt": "Boj dvěma jednoručními zbraněmi (jedna z nich lehká krátká – nůž, dýka): Útočnost, Zranění i Obrana obou zbraní se sčítají.",
+   "podminena": true
+  },
+  {
+   "id": "skola_boje_se_stitem",
+   "nazev": "Škola boje se štítem",
+   "efekt": "Do obrany se započítá Obrana štítu i Obrana zbraně najednou.",
+   "podminena": true
+  }
+ ],
+ "schopnosti": {
+  "mistrovstvi_ve_zbrani": "Bonus +2 k ÚČ a OČ s vybraným typem zbraní – celou skupinou (drtivé, bodné, sečné, vrhací, střelné, boj beze zbraně). Skupinu volí válečník při získání schopnosti. Lze volit opakovaně pro další skupinu – bonus neroste, jen se rozšíří. K útoku či obraně se vždy počítá jen jeden bonus za Mistrovství ve zbrani.",
+  "rozvaznost": "Ofenzivní styl boje: +3 ÚČ a −1 OČ; defenzivní styl: +3 OČ a −1 ÚČ. Styl lze zvolit před bojem a měnit na začátku každého kola; lze bojovat i běžně bez Rozvážnosti.",
+  "skvela_kondice": "+3 životy za každou dosaženou úroveň (Pravidlo zpětné opravy).",
+  "urputnost": "Hranice smrti se posune o hodnotu úrovně do záporu. Válečník překoná Mez vyřazení – při 0 a méně životech neupadá do bezvědomí a bojuje dál; po boji má 1 směnu na doléčení nad Mez vyřazení, jinak upadne do bezvědomí.",
+  "veleni": "Útočný rozkaz dá všem, kdo ho poslechnou, +1 k ÚČ, obranný +1 k OČ. Platí od vyřknutí do odvolání (v daném kole pro ty, kdo ještě nejednali), končí s bojem; rozkazy lze měnit každé kolo. Od 6. úrovně bonus +2.",
+  "vicenasobny_utok": "Jen v boji tváří v tvář: tři útoky za dvě kola (1. kolo dvakrát, 2. kolo jednou…), každý se hází zvlášť; stejně tak obrany. Od 6. úrovně útočí i brání se dvakrát v každém kole."
+ },
+ "obecne": {
+  "adrenalin": "Mimo boj žádný. V boji (i při přípravě – finální zteč, chystání přepadu) +1 bod na konci každého tahu. Mimo přímý boj ho válečník udrží nejvýš tolik, kolik je oprava za ODO (min. 1); v boji limit není. Po boji vyprchává 1 bod za kolo. Zapisuje se do pole Mana.",
+  "lecba_vlastnich_zraneni": "Po boji: 1 bod zbytkového adrenalinu = 2 životy, jen na čerstvé rány z posledního boje. Funguje i na Kritická zranění – za kolo lze odstranit jen jedno.",
+  "triky_za_uroven": "Na 1. úrovni 2 ze základních triků; při každém přestupu 1 další trik – obecný nebo ze zvládnuté školy (z jedné školy nejvýš 1 za úroveň, od okamžiku zvládnutí školy). Od 6. úrovně 2 triky za úroveň (Tovaryš Cechu, PPP01)."
+ },
+ "specializace": {
+  "berserkr": "Válečník, který se v boji odevzdává zuřivosti a šílenství; obvykle bez štítu a zbroje, s obouruční zbraní.",
+  "rytir": "Elitní válečník a velitel, mistr štítu a zbrojí, drží se rytířského kodexu.",
+  "sermir": "Válečník, který přetavil boj v umění – rychlé, přesné útoky, nejčastěji bodnými zbraněmi."
+ }
+}

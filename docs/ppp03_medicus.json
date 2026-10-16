@@ -1,0 +1,1967 @@
+{
+ "_zdroj": "Draci_hlidka_PPP_03_Alchymista.pdf s. 17–32 (kniha s. 127–142), specializace Medicus, přepsáno 27. 9. 2026",
+ "_poznamka": "Inkoust protekce mrazu má v knize základ „pero fénixe“ a Inkoust protekce ohně „voda ledovce“ – nejspíš prohozené, přepsáno doslova (k potvrzení).",
+ "recipes": [
+  {
+   "id": "paralyzujici_tinktura",
+   "name": "Paralyzující tinktura",
+   "latinName": "tincturam torpentum",
+   "tier": "specialization",
+   "source": "PPP03",
+   "kind": "lektvar",
+   "mana": {
+    "base": 15
+   },
+   "materials": 25,
+   "bases": [
+    {
+     "text": "alkohol",
+     "match": [
+      [
+       "alkohol"
+      ],
+      [
+       "palen"
+      ],
+      [
+       "lih"
+      ],
+      [
+       "vodk"
+      ],
+      [
+       "rum"
+      ],
+      [
+       "koral"
+      ]
+     ]
+    },
+    {
+     "text": "kůže jedovaté žáby",
+     "match": [
+      [
+       "zab",
+       "kuz"
+      ],
+      [
+       "zab",
+       "jed"
+      ],
+      [
+       "zaby"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "5 minut",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "6 hodin",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "požití / potření",
+   "check": "past ODO vs. 15",
+   "requires": {
+    "specialization": "medicus"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Chirurgie",
+    "Tinktura"
+   ],
+   "description": "světle hnědá, hořká",
+   "rules": "Ochromí tělo, že není schopné nejmenšího pohybu, ani mluvit či mrkat; mysl zůstává při vědomí a cítí bolest. Projeví se 10 kol po pozření: hod proti pasti ODO vs. 15. Při neúspěchu paralýza po celou dobu působení, jinak závrať (−2 ke všem hodům na fyzickou aktivitu) a hod se opakuje každou směnu. Po odeznění je dotyčný ještě hodinu ztuhlý (−2 k fyzické aktivitě).",
+   "pages": "128"
+  },
+  {
+   "id": "tinktura_proti_bolesti",
+   "name": "Tinktura proti bolesti",
+   "latinName": "tincturam lenimenta",
+   "tier": "specialization",
+   "source": "PPP03",
+   "kind": "lektvar",
+   "mana": {
+    "base": 5
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "alkohol",
+     "match": [
+      [
+       "alkohol"
+      ],
+      [
+       "palen"
+      ],
+      [
+       "lih"
+      ],
+      [
+       "vodk"
+      ],
+      [
+       "rum"
+      ],
+      [
+       "koral"
+      ]
+     ]
+    },
+    {
+     "text": "mák",
+     "match": [
+      [
+       "mak"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "5 minut",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "6 hodin",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "požití / potření",
+   "check": null,
+   "requires": {
+    "specialization": "medicus"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Chirurgie",
+    "Tinktura"
+   ],
+   "description": "černá, hořká tekutina",
+   "rules": "Zbaví cíl zcela bolesti, nikoliv zranění. S každým dalším požitím se efekt o směnu zkracuje (tělo si buduje rezistenci). K potírání menších ran vystačí jeden flakón na pět dávek.",
+   "pages": "128"
+  },
+  {
+   "id": "uspavaci_tinktura",
+   "name": "Uspávací tinktura",
+   "latinName": "tincturam somno",
+   "tier": "specialization",
+   "source": "PPP03",
+   "kind": "lektvar",
+   "mana": {
+    "base": 15
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "alkohol",
+     "match": [
+      [
+       "alkohol"
+      ],
+      [
+       "palen"
+      ],
+      [
+       "lih"
+      ],
+      [
+       "vodk"
+      ],
+      [
+       "rum"
+      ],
+      [
+       "koral"
+      ]
+     ]
+    },
+    {
+     "text": "byliny",
+     "match": [
+      [
+       "bylin"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "5 minut",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "6 hodin",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "požití",
+   "check": "past ODO vs. 10 (+5 za každý další hod)",
+   "requires": {
+    "specialization": "medicus"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Chirurgie",
+    "Tinktura"
+   ],
+   "description": "čirá, sladce vonící tekutina",
+   "rules": "Uspí tvora před operací. Projeví se 10 kol po pozření: hod proti pasti ODO vs. 10 (při každém dalším hodu +5). Při neúspěchu hluboké bezvědomí, jinak ospalost a dezorientace – Nevýhoda (−5) ke všem hodům – a hod se opakuje každou směnu, dokud oběť neusne. Po dobu působení ji nejde probrat; 4 hodiny po zákroku je otupělá (stejné postihy) a bez bolestí.",
+   "pages": "129"
+  },
+  {
+   "id": "konzervacni_lak",
+   "name": "Konzervační lák",
+   "latinName": "conservatio impregnans",
+   "tier": "specialization",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 10
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "sůl",
+     "match": [
+      [
+       "sul"
+      ],
+      [
+       "soli"
+      ]
+     ]
+    },
+    {
+     "text": "líh",
+     "match": [
+      [
+       "lih"
+      ],
+      [
+       "alkohol"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 10
+   },
+   "durationText": null,
+   "lifespanText": "vzorek vydrží až 2 roky",
+   "frequencyText": null,
+   "useText": "konzervace",
+   "check": null,
+   "requires": {
+    "specialization": "medicus"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Chirurgie"
+   ],
+   "description": "slabě zelená tekutina",
+   "rules": "Zabraňuje rozkladu tkání – organický vzorek v nálevu „žije“ dál až dva roky. Jedna dávka zakonzervuje jednu končetinu tvora velikosti A–C. Nalévá se do pevně zavřených nádob (skleněné a hliněné dózy, soudky). Obličej naložený na 24 hodin se stane odolnou „maskou“ (Plastická chirurgie).",
+   "pages": "129"
+  },
+  {
+   "id": "druhy_mozek",
+   "name": "Druhý mozek",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 300
+   },
+   "materials": 40,
+   "bases": [
+    {
+     "text": "mozek a lebka humanoida",
+     "match": [
+      [
+       "mozek"
+      ],
+      [
+       "mozk"
+      ],
+      [
+       "lebk"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 týden / laboratoř",
+    "workshopRequired": true,
+    "workshopKind": "laborator"
+   },
+   "difficulty": {
+    "value": 16
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "biologicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Biologická augmentace"
+   ],
+   "description": "menší část mozku",
+   "rules": "Fragment další lebky „přichycený“ na temeni pojme menší část dalšího mozku. Bdělý spánek – stačí 3 hodiny denně a postava přitom vnímá okolí. Trvalý bonus +5 k Inteligenci. Zákrok snižuje základ Charismatu o 10 (nikdy pod 1 (−5)). Implantace: Chirurgie (OBR) vs. 15 (končetina / výtvor) · 20 (vnitřní orgán) · 25 (životně důležitý orgán), operace 6+ hodin v laboratoři; o 5 a víc pod obtížnost = smrt pacienta.",
+   "pages": "131"
+  },
+  {
+   "id": "druhe_srdce",
+   "name": "Druhé srdce",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 200
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "srdce humanoida",
+     "match": [
+      [
+       "srdc"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 týden / laboratoř",
+    "workshopRequired": true,
+    "workshopKind": "laborator"
+   },
+   "difficulty": {
+    "value": 16
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "biologicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Biologická augmentace"
+   ],
+   "description": "dodatečné srdce",
+   "rules": "Výdrž se zdvojnásobí a maximum životů vzroste o třetinu. Je-li jedno srdce fatálně zraněno, tělo funguje dál a schopnosti se vrátí na předchozí úroveň. Je-li rána po operaci viditelná, základ Charismatu −1. Implantace: Chirurgie (OBR) vs. 15 (končetina / výtvor) · 20 (vnitřní orgán) · 25 (životně důležitý orgán), operace 6+ hodin v laboratoři; o 5 a víc pod obtížnost = smrt pacienta.",
+   "pages": "131"
+  },
+  {
+   "id": "vili_kridla",
+   "name": "Vílí křídla",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 350
+   },
+   "materials": 150,
+   "bases": [
+    {
+     "text": "křídla víly",
+     "match": [
+      [
+       "kridl",
+       "vil"
+      ],
+      [
+       "kridl"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 týden / laboratoř",
+    "workshopRequired": true,
+    "workshopKind": "laborator"
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "biologicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Biologická augmentace"
+   ],
+   "description": "vílí křídla vyrůstající z lopatek",
+   "rules": "Po našití a rekonvalescenci (1 měsíc) může postava létat. Víly bývají velikosti A–B, na tvory velikosti C nemá smysl se o to pokoušet. Zákrok snižuje základ Charismatu o 5 (nikdy pod 1 (−5)). Implantace: Chirurgie (OBR) vs. 15 (končetina / výtvor) · 20 (vnitřní orgán) · 25 (životně důležitý orgán), operace 6+ hodin v laboratoři; o 5 a víc pod obtížnost = smrt pacienta.",
+   "pages": "132"
+  },
+  {
+   "id": "zabra",
+   "name": "Žábra",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 100
+   },
+   "materials": 100,
+   "bases": [
+    {
+     "text": "žábry humanoida (obvykle hastrmana)",
+     "match": [
+      [
+       "zabr"
+      ],
+      [
+       "hastrman"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "2 dny / laboratoř",
+    "workshopRequired": true,
+    "workshopKind": "laborator"
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "biologicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Biologická augmentace"
+   ],
+   "description": "žábry na úrovni krku",
+   "rules": "Jedna plíce se upraví, aby fungovala se žábrami. Po týdenní rekonvalescenci dýchání pod vodou. Aspoň jednou denně se musí na směnu ponořit do vody, jinak se žábry zanítí a trvale přestanou fungovat. Zákrok snižuje základ Charismatu o 5 (nikdy pod 1 (−5)). Implantace: Chirurgie (OBR) vs. 15 (končetina / výtvor) · 20 (vnitřní orgán) · 25 (životně důležitý orgán), operace 6+ hodin v laboratoři; o 5 a víc pod obtížnost = smrt pacienta.",
+   "pages": "132"
+  },
+  {
+   "id": "elixir_lasky",
+   "name": "Elixír lásky",
+   "latinName": "ius amoris",
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "elixir",
+   "mana": {
+    "base": 80
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "voda",
+     "match": [
+      [
+       "vod"
+      ]
+     ],
+     "free": true
+    },
+    {
+     "text": "žlutý lotos",
+     "match": [
+      [
+       "lotos",
+       "zlut"
+      ],
+      [
+       "lotus",
+       "zlut"
+      ]
+     ]
+    },
+    {
+     "text": "med",
+     "match": [
+      [
+       "med"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": "1 den",
+   "lifespanText": null,
+   "frequencyText": "1 ročně",
+   "useText": "požití",
+   "check": "Vůle (INT) vs. Nebezpečnost",
+   "requires": {
+    "ability": "infuze_a_inhalace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Lektvary a elixíry",
+    "Elixír"
+   ],
+   "description": "hnědá, po medu vonící tekutina",
+   "rules": "Kdo neuspěje v hodu Vůle (INT) vs. Nebezpečnost, bezvýhradně se zamiluje do první bytosti, kterou spatří, a udělá pro ni prakticky cokoliv kromě akcí přímo ohrožujících život. Účinek vyprchá po dni; je-li láska opětována, až po týdnu. (Tabulka receptu uvádí Nebezpečnost 18.)",
+   "pages": "133"
+  },
+  {
+   "id": "lektvar_berserkr",
+   "name": "Lektvar Berserkr",
+   "latinName": "potio berserker",
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "lektvar",
+   "mana": {
+    "base": 30
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "alkohol",
+     "match": [
+      [
+       "alkohol"
+      ],
+      [
+       "palen"
+      ],
+      [
+       "lih"
+      ],
+      [
+       "vodk"
+      ],
+      [
+       "rum"
+      ],
+      [
+       "koral"
+      ]
+     ]
+    },
+    {
+     "text": "jedovaté houby",
+     "match": [
+      [
+       "houb"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "5 minut",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": "5 minut",
+   "lifespanText": null,
+   "frequencyText": "1 týdně",
+   "useText": "požití",
+   "check": null,
+   "requires": {
+    "ability": "infuze_a_inhalace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Lektvary a elixíry",
+    "Lektvar"
+   ],
+   "description": "zlatavá, skořicově vonící tekutina",
+   "rules": "Masivní vyplavení adrenalinu: postavu v bezvědomí do kola probere a po dobu účinku má 1 život (pak se životy upraví zpět). Válečníkovi dá jednorázově 15 bodů adrenalinu. Vypitý dřív, než dovolí četnost, obvykle zabije (selhání srdce u tvorů A–C).",
+   "pages": "133"
+  },
+  {
+   "id": "lektvar_purpurovych_rek",
+   "name": "Lektvar Purpurových řek",
+   "latinName": "potio purpura flumina",
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "lektvar",
+   "mana": {
+    "base": 20
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "krev",
+     "match": [
+      [
+       "krev"
+      ],
+      [
+       "krv"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "10 kol",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "1 směna",
+   "lifespanText": null,
+   "frequencyText": "1 týdně",
+   "useText": "požití",
+   "check": null,
+   "requires": {
+    "ability": "infuze_a_inhalace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Lektvary a elixíry",
+    "Lektvar"
+   ],
+   "description": "rudá, zlatě světélkující tekutina",
+   "rules": "Rozzáří cévy a energetické dráhy pod kůží živé bytosti (u neznalých může vyvolat paniku). V boji proti ní lze způsobit Krvácivé zranění už po hodu jedné šestky.",
+   "pages": "134"
+  },
+  {
+   "id": "lektvar_zmeny_osobnosti",
+   "name": "Lektvar Změny osobnosti",
+   "latinName": "potio persona mutatio",
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "lektvar",
+   "mana": {
+    "base": 30
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "alkohol",
+     "match": [
+      [
+       "alkohol"
+      ],
+      [
+       "palen"
+      ],
+      [
+       "lih"
+      ],
+      [
+       "vodk"
+      ],
+      [
+       "rum"
+      ],
+      [
+       "koral"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16
+   },
+   "durationText": "12 hodin",
+   "lifespanText": null,
+   "frequencyText": "1 týdně",
+   "useText": "požití",
+   "check": "Vůle (INT) vs. 15",
+   "requires": {
+    "ability": "infuze_a_inhalace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Lektvary a elixíry",
+    "Lektvar"
+   ],
+   "description": "čirá kyselá tekutina",
+   "rules": "Změní jeden charakterový rys, který Medicus určí při výrobě, v naprostý protiklad (statečnost – zbabělost, laskavost – sobectví…), pokud pijící neuspěje v hodu Vůle (INT) vs. 15. Postava si změnu neuvědomuje. (Tabulka receptu uvádí Nebezpečnost 15.)",
+   "pages": "134"
+  },
+  {
+   "id": "serum_pravdy",
+   "name": "Sérum pravdy",
+   "latinName": "serum veritas",
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "lektvar",
+   "mana": {
+    "base": 40
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "alkohol",
+     "match": [
+      [
+       "alkohol"
+      ],
+      [
+       "palen"
+      ],
+      [
+       "lih"
+      ],
+      [
+       "vodk"
+      ],
+      [
+       "rum"
+      ],
+      [
+       "koral"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "2 směny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "10 kol",
+   "lifespanText": null,
+   "frequencyText": "1 týdně",
+   "useText": "požití",
+   "check": "Vůle (INT) vs. 15",
+   "requires": {
+    "ability": "infuze_a_inhalace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Lektvary a elixíry",
+    "Lektvar"
+   ],
+   "description": "čirá, pálivě chutnající tekutina",
+   "rules": "Kdo neuspěje v hodu Vůle (INT) vs. 15, nedokáže lhát a musí mluvit čistou pravdu. (Tabulka receptu uvádí Nebezpečnost 15.)",
+   "pages": "134"
+  },
+  {
+   "id": "umela_krev",
+   "name": "Umělá krev",
+   "latinName": "sanguinem artificialis",
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 1
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "krev (2 dl)",
+     "match": [
+      [
+       "krev"
+      ],
+      [
+       "krv"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "3 dny",
+   "lifespanText": "3 dny (v chladu až 2 roky)",
+   "frequencyText": null,
+   "useText": "infuze",
+   "check": null,
+   "requires": {
+    "ability": "infuze_a_inhalace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Lektvary a elixíry"
+   ],
+   "description": "rudá tekutina",
+   "rules": "Ze dvou decilitrů krve udělá dávku pro transfuzi (podání trvá 1 směnu). U Krvácivého zranění odstraní veškerou ztrátu životů krvácením a vyléčí navíc 1k10 životů. Není omezena četností, ale na jedno zranění jen jednou. Mimo chlad vydrží 3 dny, v chladu až 2 roky.",
+   "pages": "134–135"
+  },
+  {
+   "id": "bio_rozhrani",
+   "name": "Bio-rozhraní",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 50
+   },
+   "materials": 40,
+   "bases": [
+    {
+     "text": "tkáň, případně chrupavka",
+     "match": [
+      [
+       "tkan"
+      ],
+      [
+       "chrupav"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "4 směny (1 hodina) v laboratoři",
+    "workshopRequired": true,
+    "workshopKind": "laborator"
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "mechanicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Mechanická augmentace"
+   ],
+   "description": "růžová prokrvená tkáň",
+   "rules": "Štěp z humanoidní tkáně – „brána“ mezi tělem a augmentací: brání infekci a imunitní reakci, podporuje hojení a napojí předmět na mozek. Ke každé augmentaci je obvykle potřeba jedno bio-rozhraní (neurčí-li PJ jinak).",
+   "pages": "135"
+  },
+  {
+   "id": "exoskelet",
+   "name": "Exoskelet",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 100
+   },
+   "materials": 600,
+   "bases": [
+    {
+     "text": "silné kovové dráty",
+     "match": [
+      [
+       "drat"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 týden",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16,
+    "text": "16 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "mechanicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Mechanická augmentace"
+   ],
+   "description": "obrys kovové zbroje",
+   "rules": "Dráty z páteře kopírují ruce a nohy a z lopatek vyrůstají dva ovladatelné úchyty. Základní obrana (ZO) +3 a v každém kole útok navíc. Úchyty fungují jako Pyromantův Univerzální nosič (Hmoždíř, Chrlič energie…). Zákrok snižuje základ Charismatu o 10 (nikdy pod 1 (−5)). Implantace: potřebuje Bio-rozhraní; Chirurgie (OBR) vs. 15 (vnější) · 20 (uvnitř těla) · 25 (u životně důležitých orgánů), 6 hodin za vylepšení.",
+   "pages": "136",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "mechanicke_oko",
+   "name": "Mechanické oko",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 80
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "broušené čočky",
+     "match": [
+      [
+       "cock"
+      ]
+     ]
+    },
+    {
+     "text": "kovová kolečka",
+     "match": [
+      [
+       "kolec"
+      ],
+      [
+       "kolic"
+      ],
+      [
+       "ozuben"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "2 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 14,
+    "text": "14 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "mechanicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Mechanická augmentace"
+   ],
+   "description": "skleněná bulva v kovovém mechanismu",
+   "rules": "Vidění v noci jako ve dne, rozezná tepelnou stopu (i v naprosté tmě), dohled a výhody jako elfí zrak. Při pohybu jemně bzučí. Zákrok snižuje základ Charismatu o 5 (nikdy pod 1 (−5)). Implantace: potřebuje Bio-rozhraní; Chirurgie (OBR) vs. 15 (vnější) · 20 (uvnitř těla) · 25 (u životně důležitých orgánů), 6 hodin za vylepšení.",
+   "pages": "136",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "umela_noha",
+   "name": "Umělá noha",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 300
+   },
+   "materials": 300,
+   "bases": [
+    {
+     "text": "kovové dráty",
+     "match": [
+      [
+       "drat"
+      ]
+     ]
+    },
+    {
+     "text": "pružiny",
+     "match": [
+      [
+       "pruzin"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 týden",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "mechanicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Mechanická augmentace"
+   ],
+   "description": "umělá noha z pružných kovových plátů",
+   "rules": "Pohyblivost 2× vyšší a skok 2× výš – platí už s jednou nohou, druhá nic nepřidá. Zákrok snižuje základ Charismatu o 2 (nikdy pod 1 (−5)). Implantace: potřebuje Bio-rozhraní; Chirurgie (OBR) vs. 15 (vnější) · 20 (uvnitř těla) · 25 (u životně důležitých orgánů), 6 hodin za vylepšení.",
+   "pages": "136",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "umela_paze",
+   "name": "Umělá paže",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 300
+   },
+   "materials": 300,
+   "bases": [
+    {
+     "text": "kovové dráty",
+     "match": [
+      [
+       "drat"
+      ]
+     ]
+    },
+    {
+     "text": "kovové pláty",
+     "match": [
+      [
+       "plat"
+      ],
+      [
+       "plech"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 týden",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 14,
+    "text": "14 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "implantace",
+   "check": null,
+   "requires": {
+    "ability": "mechanicka_augmentace"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Alchymistická anatomie",
+    "Mechanická augmentace"
+   ],
+   "description": "umělá paže z pružných kovových plátů",
+   "rules": "Síla 26 (+8) a útok navíc v každém kole. Nevýhoda (−5) k jemné mechanice a střelbě. Zákrok snižuje základ Charismatu o 7 (nikdy pod 1 (−5)). Implantace: potřebuje Bio-rozhraní; Chirurgie (OBR) vs. 15 (vnější) · 20 (uvnitř těla) · 25 (u životně důležitých orgánů), 6 hodin za vylepšení.",
+   "pages": "136–137",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "kontrolni_krystal",
+   "name": "Kontrolní krystal",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 50
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "křišťál či drahokam",
+     "match": [
+      [
+       "kristal"
+      ],
+      [
+       "krystal"
+      ],
+      [
+       "drahokam"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "4 směny (1 hodina) v laboratoři",
+    "workshopRequired": true,
+    "workshopKind": "laborator"
+   },
+   "difficulty": {
+    "value": 19
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "sesivanci"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Sešívanci"
+   ],
+   "description": "obvykle průhledný drahokam",
+   "rules": "Krystaly se vyrábějí propojené: primární nosí Medicus (musí se dotýkat jeho těla), sekundární se vkládají do sešívanců (kus musí trčet nad kůži). Rozkaz myšlenkou = krátká akce, i více sešívancům najednou. Zničený či vzdálený primární krystal nebo zničení kteréhokoliv sekundárního = ztráta kontroly (sešívanci plní poslední příkaz, strnou, vzácně zešílí).",
+   "pages": "139–140"
+  },
+  {
+   "id": "inkoust_doplnovani_many",
+   "name": "Inkoust doplňování many",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 50
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "modrý lotos",
+     "match": [
+      [
+       "lotos",
+       "modr"
+      ],
+      [
+       "lotus",
+       "modr"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 20
+   },
+   "durationText": "10 kol",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "potření / injekce",
+   "check": null,
+   "requires": {
+    "ability": "tetovani"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Tetování",
+    "Inkoust"
+   ],
+   "description": "modrý inkoust",
+   "rules": "Kouzelníkovi dává každé kolo 3 body many (nikdy nad maximum). Aktivace potřením po 3 kolech, vpichem ihned; působí vždy jen jeden inkoust a nezpůsobuje otravu při překročení četnosti.",
+   "pages": "141–142"
+  },
+  {
+   "id": "inkoust_prubezne_lecby",
+   "name": "Inkoust průběžné léčby",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 50
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "rudý lotos",
+     "match": [
+      [
+       "lotos",
+       "rud"
+      ],
+      [
+       "lotus",
+       "rud"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 20
+   },
+   "durationText": "10 kol",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "potření / injekce",
+   "check": null,
+   "requires": {
+    "ability": "tetovani"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Tetování",
+    "Inkoust"
+   ],
+   "description": "rudý inkoust",
+   "rules": "Léčí tetovanému každé kolo 4 životy (nejvýš do maxima). Aktivace potřením po 3 kolech, vpichem ihned; působí vždy jen jeden inkoust a nezpůsobuje otravu při překročení četnosti.",
+   "pages": "141–142"
+  },
+  {
+   "id": "inkoust_protekce_dracimu_dechu",
+   "name": "Inkoust protekce dračímu dechu",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 50
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "dračí zub",
+     "match": [
+      [
+       "drac",
+       "zub"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 20
+   },
+   "durationText": "1 směna",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "potření / injekce",
+   "check": null,
+   "requires": {
+    "ability": "tetovani"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Tetování",
+    "Inkoust"
+   ],
+   "description": "šedý inkoust",
+   "rules": "Imunita proti efektům všech druhů dračího dechu. Aktivace potřením po 3 kolech, vpichem ihned; působí vždy jen jeden inkoust a nezpůsobuje otravu při překročení četnosti.",
+   "pages": "141–142"
+  },
+  {
+   "id": "inkoust_protekce_fyzickych_zraneni",
+   "name": "Inkoust protekce fyzických zranění",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 80
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "játra baziliška",
+     "match": [
+      [
+       "bazilis"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 20
+   },
+   "durationText": "10 kol",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "potření / injekce",
+   "check": null,
+   "requires": {
+    "ability": "tetovani"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Tetování",
+    "Inkoust"
+   ],
+   "description": "šedý inkoust",
+   "rules": "Promění strukturu tkání a kůže – imunita vůči fyzickému zranění. Aktivace potřením po 3 kolech, vpichem ihned; působí vždy jen jeden inkoust a nezpůsobuje otravu při překročení četnosti.",
+   "pages": "141–142"
+  },
+  {
+   "id": "inkoust_protekce_mrazu",
+   "name": "Inkoust protekce mrazu",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 20
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "pero fénixe",
+     "match": [
+      [
+       "fenix"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16
+   },
+   "durationText": "1 směna",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "potření / injekce",
+   "check": null,
+   "requires": {
+    "ability": "tetovani"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Tetování",
+    "Inkoust"
+   ],
+   "description": "šedý inkoust",
+   "rules": "Rezistence vůči zraněním chladem a mrazem i jejich účinkům (zmražení). Aktivace potřením po 3 kolech, vpichem ihned; působí vždy jen jeden inkoust a nezpůsobuje otravu při překročení četnosti.",
+   "pages": "141–142"
+  },
+  {
+   "id": "inkoust_protekce_ohne",
+   "name": "Inkoust protekce ohně",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 20
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "voda ledovce",
+     "match": [
+      [
+       "ledov"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16
+   },
+   "durationText": "1 směna",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "potření / injekce",
+   "check": null,
+   "requires": {
+    "ability": "tetovani"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Tetování",
+    "Inkoust"
+   ],
+   "description": "šedý inkoust",
+   "rules": "Rezistence vůči zraněním ohněm a žárem; vybavení na postavě může oheň dál zničit. Aktivace potřením po 3 kolech, vpichem ihned; působí vždy jen jeden inkoust a nezpůsobuje otravu při překročení četnosti.",
+   "pages": "141–142"
+  }
+ ],
+ "abilities": [
+  {
+   "id": "biologicka_augmentace",
+   "rules": "Náhrada či přidání orgánů a končetin (jen v rámci druhu nebo příbuzných druhů; orgány v chladu, v konzervačním láku nebo max. hodinu mimo krevní oběh). Chirurgie (OBR) vs. 15 končetina / výtvor Alchymistické anatomie, 20 vnitřní orgán, 25 životně důležitý orgán; operace 6+ hodin ve sterilním prostředí, plná funkce po týdnu. Ruce dají sílu dárce, nohy obratnost, záložní orgán +⅓ max. životů. Neúspěch o 5 a víc = obvykle smrt. Bez Plastické chirurgie zůstanou jizvy. Recepty: Druhý mozek, Druhé srdce, Vílí křídla, Žábra."
+  },
+  {
+   "id": "bojova_anatomie",
+   "rules": "Ohledání mrtvého: Postřeh (INT) vs. X (běžné 10, maskované 15+, netypické 20+) určí příčinu a čas smrti s přesností na hodinu. V boji: po zásahu, který zraní aspoň za 1 život, cíl hází ODO vs. OBR Medika – při neúspěchu postih −3 ke všem akcím na 1k10 kol. Může také jen působit bolest (všechna Zranění se sníží na 1). Jen na tvory se známou anatomií, kteří vnímají bolest."
+  },
+  {
+   "id": "infuze_a_inhalace",
+   "rules": "Injekce: lektvar, jed či elixír jde rozdělit na dvě dávky se stejným účinkem, pokud se vpraví přímo do žíly. Aerosol: po rozbití flakónu se rozšíří na 2 sáhy kolem dopadu, rozprašovačem zasáhne cíl do 5 sáhů – účinek je poloviční. Recepty: Elixír lásky, Lektvar Berserkr, Purpurových řek, Změny osobnosti, Sérum pravdy, Umělá krev."
+  },
+  {
+   "id": "mechanicka_augmentace",
+   "rules": "Mechanická vylepšení (i výtvory Pyromanta či kováře) přes Bio-rozhraní ve sterilním prostředí: Chirurgie (OBR) vs. 15 vnější, 20 uvnitř těla, 25 u životně důležitých orgánů; 6 hodin za vylepšení, funguje hned. Neúspěch = zánět, vylepšení se musí vyjmout (jde použít znovu). Bez Plastické chirurgie jizvy, postihy za více augmentací určí PJ. Recepty: Bio-rozhraní, Exoskelet, Mechanické oko, Umělá noha, Umělá paže (výroba se ověřuje Mechanikou)."
+  },
+  {
+   "id": "plasticka_chirurgie",
+   "rules": "Šití bez jizev, odstranění jizev a stop po augmentacích (1–6 směn podle PJ). Sběr kůže a obličejů: v konzervačním láku se za 24 h stane odolnou maskou, kterou jde „nahrubo nasadit“ nebo přišít. Přišití: 6 hodin ve sterilním prostředí, Chirurgie (OBR) vs. 15, každá další operace téhož pacienta +5. Odhalit masku jde hodem Postřeh (INT) vs. Chirurgie (OBR) Medika. Hlas, gesta ani vzpomínky se nepřenášejí."
+  },
+  {
+   "id": "resuscitace",
+   "rules": "Tvor mrtvý nejvýš 5 minut (ne stářím ani devastujícím zraněním): 6 kol, První pomoc (OBR) vs. 15 + 3 za každou minutu od smrti. Úspěch = životy těsně nad hranici smrti, v bezvědomí. Jinak jde do 24 hodin po smrti z orgánů destilovat manu (plnou hodnotu určí PJ): destilační aparatura a 1 směna na orgán."
+  },
+  {
+   "id": "sesivanci",
+   "rules": "Sešívá těla různých druhů (primární subjekt musí být živý, ostatní živé nebo v hlubokém chladu); mozky upraví a vloží sekundární kontrolní krystal. Mana 300 + 100 a suroviny 100 + 100 za každou novou část, 4 hodiny za část. Chirurgie (OBR) vs. součet obtížností částí (při vylepšení + obtížnost základu); neúspěch = tvor umírá a části jsou ztracené. Sešívanec jí, pije a spí podle primárního subjektu (jinak hibernuje), složité příkazy nechápe (asi jako INT 6), budí hrůzu."
+  },
+  {
+   "id": "tetovani",
+   "rules": "Tetování velikosti dlaně (1 hodina), na každém tvoru nejvýš jedno. Aktivuje se inkoustem: potřením po 3 kolech, vpichem ihned; působí vždy jen jeden inkoust a nezpůsobuje otravu při překročení četnosti. Recepty 6 inkoustů."
+  }
+ ],
+ "stitch": {
+  "sizes": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "E",
+   "F"
+  ],
+  "limbs": {
+   "Drápy": {
+    "A": [
+     3,
+     1
+    ],
+    "B": [
+     4,
+     1
+    ],
+    "C": [
+     4,
+     2
+    ],
+    "D": [
+     5,
+     3
+    ],
+    "E": [
+     6,
+     4
+    ],
+    "F": [
+     8,
+     6
+    ]
+   },
+   "Chapadla": {
+    "A": [
+     3,
+     0
+    ],
+    "B": [
+     4,
+     0
+    ],
+    "C": [
+     4,
+     1
+    ],
+    "D": [
+     5,
+     2
+    ],
+    "E": [
+     6,
+     3
+    ],
+    "F": [
+     8,
+     5
+    ]
+   },
+   "Klepeta": {
+    "A": [
+     2,
+     4
+    ],
+    "B": [
+     3,
+     4
+    ],
+    "C": [
+     3,
+     5
+    ],
+    "D": [
+     4,
+     6
+    ],
+    "E": [
+     5,
+     7
+    ],
+    "F": [
+     7,
+     9
+    ]
+   },
+   "Kopyta": {
+    "A": [
+     3,
+     1
+    ],
+    "B": [
+     4,
+     1
+    ],
+    "C": [
+     4,
+     2
+    ],
+    "D": [
+     5,
+     3
+    ],
+    "E": [
+     6,
+     4
+    ],
+    "F": [
+     8,
+     6
+    ]
+   },
+   "Pařáty": {
+    "A": [
+     4,
+     2
+    ],
+    "B": [
+     5,
+     2
+    ],
+    "C": [
+     5,
+     3
+    ],
+    "D": [
+     6,
+     4
+    ],
+    "E": [
+     7,
+     5
+    ],
+    "F": [
+     9,
+     7
+    ]
+   },
+   "Pěsti": {
+    "A": [
+     4,
+     2
+    ],
+    "B": [
+     5,
+     2
+    ],
+    "C": [
+     5,
+     3
+    ],
+    "D": [
+     6,
+     4
+    ],
+    "E": [
+     7,
+     5
+    ],
+    "F": [
+     9,
+     7
+    ]
+   },
+   "Spáry": {
+    "A": [
+     3,
+     3
+    ],
+    "B": [
+     4,
+     3
+    ],
+    "C": [
+     4,
+     4
+    ],
+    "D": [
+     5,
+     5
+    ],
+    "E": [
+     6,
+     6
+    ],
+    "F": [
+     8,
+     8
+    ]
+   },
+   "Bodec": {
+    "A": [
+     4,
+     1
+    ],
+    "B": [
+     5,
+     1
+    ],
+    "C": [
+     5,
+     2
+    ],
+    "D": [
+     6,
+     3
+    ],
+    "E": [
+     7,
+     4
+    ],
+    "F": [
+     9,
+     6
+    ]
+   },
+   "Ocas": {
+    "A": [
+     4,
+     0
+    ],
+    "B": [
+     5,
+     0
+    ],
+    "C": [
+     5,
+     1
+    ],
+    "D": [
+     6,
+     2
+    ],
+    "E": [
+     7,
+     3
+    ],
+    "F": [
+     9,
+     5
+    ]
+   }
+  },
+  "heads": {
+   "Kly": {
+    "A": [
+     2,
+     3
+    ],
+    "B": [
+     3,
+     4
+    ],
+    "C": [
+     3,
+     5
+    ],
+    "D": [
+     4,
+     6
+    ],
+    "E": [
+     5,
+     7
+    ],
+    "F": [
+     6,
+     8
+    ]
+   },
+   "Kusadla": {
+    "A": [
+     3,
+     2
+    ],
+    "B": [
+     4,
+     2
+    ],
+    "C": [
+     4,
+     3
+    ],
+    "D": [
+     5,
+     4
+    ],
+    "E": [
+     6,
+     5
+    ],
+    "F": [
+     8,
+     7
+    ]
+   },
+   "Parohy": {
+    "A": [
+     4,
+     0
+    ],
+    "B": [
+     5,
+     0
+    ],
+    "C": [
+     5,
+     1
+    ],
+    "D": [
+     6,
+     2
+    ],
+    "E": [
+     7,
+     3
+    ],
+    "F": [
+     9,
+     5
+    ]
+   },
+   "Rohy": {
+    "A": [
+     3,
+     1
+    ],
+    "B": [
+     4,
+     1
+    ],
+    "C": [
+     4,
+     2
+    ],
+    "D": [
+     5,
+     3
+    ],
+    "E": [
+     6,
+     4
+    ],
+    "F": [
+     8,
+     6
+    ]
+   },
+   "Zobák": {
+    "A": [
+     3,
+     0
+    ],
+    "B": [
+     4,
+     0
+    ],
+    "C": [
+     4,
+     1
+    ],
+    "D": [
+     5,
+     2
+    ],
+    "E": [
+     6,
+     3
+    ],
+    "F": [
+     8,
+     5
+    ]
+   },
+   "Zuby": {
+    "A": [
+     4,
+     1
+    ],
+    "B": [
+     5,
+     1
+    ],
+    "C": [
+     5,
+     2
+    ],
+    "D": [
+     6,
+     3
+    ],
+    "E": [
+     7,
+     4
+    ],
+    "F": [
+     9,
+     6
+    ]
+   }
+  },
+  "skins": {
+   "Krunýř": {
+    "A": 6,
+    "B": 7,
+    "C": 8,
+    "D": 10,
+    "E": 12,
+    "F": 14
+   },
+   "Kůže": {
+    "A": 1,
+    "B": 1,
+    "C": 1,
+    "D": 3,
+    "E": 5,
+    "F": 7
+   },
+   "Peří": {
+    "A": 1,
+    "B": 1,
+    "C": 2,
+    "D": 4,
+    "E": 6,
+    "F": 8
+   },
+   "Skelet": {
+    "A": 5,
+    "B": 6,
+    "C": 7,
+    "D": 9,
+    "E": 11,
+    "F": 13
+   },
+   "Srst": {
+    "A": 1,
+    "B": 2,
+    "C": 3,
+    "D": 5,
+    "E": 7,
+    "F": 9
+   },
+   "Šupiny": {
+    "A": 4,
+    "B": 5,
+    "C": 6,
+    "D": 8,
+    "E": 10,
+    "F": 12
+   },
+   "Tvrdá kůže": {
+    "A": 3,
+    "B": 4,
+    "C": 5,
+    "D": 7,
+    "E": 9,
+    "F": 11
+   }
+  },
+  "mana": {
+   "base": 300,
+   "perPart": 100
+  },
+  "materials": {
+   "base": 100,
+   "perPart": 100
+  },
+  "hoursPerPart": 4,
+  "difficulty": {
+   "limb": 2,
+   "head": 5,
+   "special": 3,
+   "skin": 0
+  },
+  "pages": "137–141"
+ },
+ "surgery": {
+  "bio": [
+   {
+    "label": "končetina / výtvor Alchymistické anatomie",
+    "dc": 15
+   },
+   {
+    "label": "vnitřní orgán (náhrada či přidání)",
+    "dc": 20
+   },
+   {
+    "label": "životně důležitý orgán",
+    "dc": 25
+   }
+  ],
+  "mech": [
+   {
+    "label": "vnější augmentace",
+    "dc": 15
+   },
+   {
+    "label": "uvnitř těla",
+    "dc": 20
+   },
+   {
+    "label": "poblíž životně důležitých orgánů",
+    "dc": 25
+   }
+  ]
+ }
+}

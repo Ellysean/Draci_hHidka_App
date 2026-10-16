@@ -1,0 +1,2289 @@
+{
+ "_zdroj": "Draci_hlidka_PPP_03_Alchymista.pdf s. 33–52 (kniha s. 143–162), specializace Pyromant, přepsáno 27. 9. 2026",
+ "_poznamka": "U Plášť proměn je v knize Použití „replikace předmětů“ (zřejmě překlep). Tabulka paliva: u many velikosti A chybí číslo obtížnosti (appka +5). Tabulka vylepšení: Schopnost plavat velikost C „+45 many“ (A 10, B 15) – přepsáno doslova.",
+ "recipes": [
+  {
+   "id": "kapsulacni_gem",
+   "name": "Kapsulační gem",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 30,
+    "extraMax": 100,
+    "text": "30 + X (přídavná mana, max 100 – podle drahokamu)"
+   },
+   "materials": null,
+   "bases": [
+    {
+     "text": "drahokam",
+     "match": [
+      [
+       "drahokam"
+      ],
+      [
+       "krystal"
+      ],
+      [
+       "rubin"
+      ],
+      [
+       "safir"
+      ],
+      [
+       "smaragd"
+      ],
+      [
+       "diamant"
+      ],
+      [
+       "ametyst"
+      ],
+      [
+       "opal"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (baterie) + obtížnost kouzla (Výroba svitků)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "baterie / sesílání kouzel",
+   "check": null,
+   "requires": {
+    "ability": "kapsulacni_gemy"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Kapsulační gemy",
+    "Magický předmět"
+   ],
+   "description": "dle druhu drahokamu",
+   "rules": "Runami uzamčená mana v drahokamu – „baterie“ pro konstrukty a výrobky, nebo kouzlo aktivovatelné opakovaně, dokud je v gemu mana (dotykem nebo přes sapérské vybavení). Ověření Výroba svitků (OBR) vs. 15 (baterie), s kouzlem + obtížnost kouzla a pomoc kouzelníka. Kapacita podle drahokamu (běžně 100 bodů u kamene velikosti oka). Přelití many trvá 1 kolo za 10 bodů. Pyromant gem dobíjí manou.",
+   "pages": "144–145",
+   "materialsText": "-",
+   "craftSkill": "vyroba_svitku"
+  },
+  {
+   "id": "univerzalni_nosic",
+   "name": "Univerzální nosič",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 5
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "kovové pruty",
+     "match": [
+      [
+       "prut"
+      ],
+      [
+       "tyc"
+      ],
+      [
+       "zelez"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "podvěšení speciálních zbraní",
+   "check": null,
+   "requires": {
+    "ability": "konstrukty"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Konstrukty"
+   ],
+   "description": "kovový nástavec",
+   "rules": "Úchyt pro jeden předmět přizpůsobený nosiči (Hmoždíř, Chrlič, Hákovnice, Polní dělo…) na konstruktu, určitém místě nebo na končetině či zádech člena družiny (po dohodě s PJ). Montáž na konstrukt je vylepšení „Univerzální nosič“.",
+   "pages": "149"
+  },
+  {
+   "id": "chrlic",
+   "name": "Chrlič",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 70
+   },
+   "materials": 130,
+   "bases": [
+    {
+     "text": "kovová trubice",
+     "match": [
+      [
+       "trubic"
+      ],
+      [
+       "trubk"
+      ]
+     ]
+    },
+    {
+     "text": "skleněná nádoba",
+     "match": [
+      [
+       "sklen"
+      ],
+      [
+       "lahev"
+      ],
+      [
+       "flakon"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16,
+    "text": "16 (Pyromancie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "chrlení nebezpečných materiálů",
+   "check": null,
+   "requires": {
+    "ability": "mistr_nestabilnich_substanci"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Nestabilní substance",
+    "Mistr nestabilních substancí"
+   ],
+   "description": "kovová trubice s hadicí a zásobníkem",
+   "rules": "Plamenomet / mrazomet: náplň (olej nebo plyn či tekutina Nestabilních substancí) se naředí gelem do zásobníku na zádech. Stisk spouště odčerpá 1/10 zásobníku; kdo neuspěje v hodu Reflex (OBR) vs. 18, je zasažen. Dosah 15 sáhů, dobře se míří. Olej: plameny, 1k10 životů, po 3 kolech v plamenech cíl hoří; plnění 10 litrů oleje + 5 many. Plyn: kužel do 10 sáhů, rozptýlí se za polovinu doby. Zásah Pyromanta za víc než 15 životů = exploze 1k10 × zbylé salvy. Výměna zásobníku 6 kol. Jde na Univerzální nosič.",
+   "pages": "150–151",
+   "craftSkill": "pyromancie"
+  },
+  {
+   "id": "dusivy_plyn",
+   "name": "Dusivý plyn",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 20
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "uhlí",
+     "match": [
+      [
+       "uhl"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "5 kol",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpařování",
+   "check": null,
+   "requires": {
+    "ability": "mistr_nestabilnich_substanci"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Nestabilní substance",
+    "Mistr nestabilních substancí"
+   ],
+   "description": "černá ampule",
+   "rules": "Každý, kdo se nadechne, se od dalšího kola dusí (mechanika Utonutí a udušení, H). Stačí vypít vodu či jinou tekutinu – oběti to většinou nevědí a během minut upadnou do bezvědomí a zemřou. Nádobka se rozbije a plyn uniká 5 kol (v uzavřeném prostoru až dvojnásobek, ve větru jen 2 kola), účinek v okruhu 10 sáhů.",
+   "pages": "151"
+  },
+  {
+   "id": "leptavy_plyn",
+   "name": "Leptavý plyn",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 40
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "ocet",
+     "match": [
+      [
+       "ocet"
+      ],
+      [
+       "octa"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpařování",
+   "check": null,
+   "requires": {
+    "ability": "mistr_nestabilnich_substanci"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Nestabilní substance",
+    "Mistr nestabilních substancí"
+   ],
+   "description": "hnědá ampule",
+   "rules": "Každé kolo 1k10 životů a trvale −1 k základu Charismatu (poleptání a zohavení kůže). Nádobka se rozbije a plyn uniká 5 kol (v uzavřeném prostoru až dvojnásobek, ve větru jen 2 kola), účinek v okruhu 10 sáhů.",
+   "pages": "151"
+  },
+  {
+   "id": "mrazivy_plyn",
+   "name": "Mrazivý plyn",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 40
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "led",
+     "match": [
+      [
+       "led"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpařování",
+   "check": null,
+   "requires": {
+    "ability": "mistr_nestabilnich_substanci"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Nestabilní substance",
+    "Mistr nestabilních substancí"
+   ],
+   "description": "modrá ampule",
+   "rules": "Srazí teplotu na −100 stupňů: každé kolo 1k10 životů; kdo je zasažen déle než 3 kola, zmrzne (pod Mez vyřazení, bez akcí) a není-li do 10 kol vysvobozen, umírá. Krusta vydrží až směnu. Materiály zkřehnou a praskají. Nádobka se rozbije a plyn uniká 5 kol (v uzavřeném prostoru až dvojnásobek, ve větru jen 2 kola), účinek v okruhu 10 sáhů.",
+   "pages": "151"
+  },
+  {
+   "id": "slzny_plyn",
+   "name": "Slzný plyn",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 0,
+    "text": "-"
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "moč",
+     "match": [
+      [
+       "moc"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 12
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "mistr_nestabilnich_substanci"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Nestabilní substance",
+    "Mistr nestabilních substancí"
+   ],
+   "description": "oranžová ampule",
+   "rules": "Od dalšího kola zasažený nevidí a nesoustředí se: Nevýhoda (−5) k Sesílání kouzel a všemu, co chce přesnost. Působí 1k6 směn, neutralizace 5 kol proplachování očí a nosu vodou. Nádobka se rozbije a plyn uniká 5 kol (v uzavřeném prostoru až dvojnásobek, ve větru jen 2 kola), účinek v okruhu 10 sáhů.",
+   "pages": "151"
+  },
+  {
+   "id": "kule",
+   "name": "Kule",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 0,
+    "text": "-"
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "kovové slitky",
+     "match": [
+      [
+       "slitk"
+      ],
+      [
+       "olov"
+      ],
+      [
+       "zelez"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna / 10 kulí",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 12
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně",
+    "Munice"
+   ],
+   "description": "železná kulička",
+   "rules": "Munice – každá zbraň má jinou ráži (kule do pistole nejdou do hákovnice a naopak). Zapiš ráži do poznámky. Výroba dá 10 kulí (2 suroviny za kus), 10 kulí váží 0,3 lb.",
+   "pages": "152",
+   "materialsText": "2 za každou (20 / 10 kulí)",
+   "yieldQty": 10,
+   "weightLb": 0.03
+  },
+  {
+   "id": "naboj",
+   "name": "Náboj",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 0,
+    "text": "-"
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "kovové slitky",
+     "match": [
+      [
+       "slitk"
+      ],
+      [
+       "olov"
+      ],
+      [
+       "zelez"
+      ]
+     ]
+    },
+    {
+     "text": "černý prach (na 100 nábojů)",
+     "match": [
+      [
+       "cerny prach"
+      ],
+      [
+       "strelny prach"
+      ]
+     ],
+     "optional": true
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna / 5 nábojů",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 14
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně",
+    "Munice"
+   ],
+   "description": "nábojnice",
+   "rules": "Kovové „válečky“ s prachem i kulkou – rychlejší nabíjení, munice do turétu. Výroba dá 5 nábojů (2 suroviny za kus); jedna dávka černého prachu vystačí na 100 nábojů. 10 nábojů váží 0,5 lb.",
+   "pages": "152",
+   "materialsText": "2 za každý (10 / 5 nábojů)",
+   "yieldQty": 5,
+   "weightLb": 0.05
+  },
+  {
+   "id": "cerny_prach",
+   "name": "Černý prach",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "ostatni",
+   "mana": {
+    "base": 0,
+    "text": "-"
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "uhlí",
+     "match": [
+      [
+       "uhl"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 hodina (4 směny)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně",
+    "Nestabilní substance"
+   ],
+   "description": "flakon či váček černého prachu",
+   "rules": "Čistší obdoba vznětlivého prachu, určený pro palné zbraně: běžná zbraň spotřebuje 1/10 dávky na výstřel, polní dělo celou dávku. Extrémně hořlavý, při natlakování exploduje.",
+   "pages": "152"
+  },
+  {
+   "id": "pistole",
+   "name": "Pistole",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 40
+   },
+   "materials": 100,
+   "bases": [
+    {
+     "text": "železo",
+     "match": [
+      [
+       "zelez"
+      ],
+      [
+       "kov"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně",
+    "Zbraň"
+   ],
+   "description": "menší jednoranná pistole",
+   "rules": "Nejzákladnější jednoranná palná zbraň, dá se nosit skrytě. Všechny palné zbraně potřebují manu; síla na použití nemá vliv.",
+   "pages": "153",
+   "craftSkill": "mechanika",
+   "weapon": {
+    "range": "25 / 50",
+    "attack": 10,
+    "damage": 10,
+    "defense": 1,
+    "rate": "jednoranná",
+    "ammo": "kule do pistole",
+    "reload": "3 kola",
+    "hands": 1
+   },
+   "weightLb": 1
+  },
+  {
+   "id": "rucnice",
+   "name": "Ručnice",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 60
+   },
+   "materials": 130,
+   "bases": [
+    {
+     "text": "železo",
+     "match": [
+      [
+       "zelez"
+      ],
+      [
+       "kov"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18,
+    "text": "18 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně",
+    "Zbraň"
+   ],
+   "description": "menší puška zapřená pod loktem",
+   "rules": "Na střední vzdálenost; nasekané olovo či střepiny se rozletí ve výseči asi 20° a zasáhnou vše v cestě.",
+   "pages": "153",
+   "craftSkill": "mechanika",
+   "weapon": {
+    "range": "50 / 80",
+    "attack": 14,
+    "damage": 15,
+    "defense": 3,
+    "rate": "jednoranná",
+    "ammo": "kule do ručnice (nasekané olovo)",
+    "reload": "6 kol",
+    "hands": 2
+   },
+   "weightLb": 3
+  },
+  {
+   "id": "hakovnice",
+   "name": "Hákovnice",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 80
+   },
+   "materials": 150,
+   "bases": [
+    {
+     "text": "železo",
+     "match": [
+      [
+       "zelez"
+      ],
+      [
+       "kov"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 20,
+    "text": "20 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně",
+    "Zbraň"
+   ],
+   "description": "dlouhá puška s hákem pod hlavní",
+   "rules": "Velmi přesná puška s ničivou silou a silným zpětným rázem – při střelbě musí být zapřená / zaháknutá o pevnou překážku. Jde na Univerzální nosič.",
+   "pages": "153",
+   "craftSkill": "mechanika",
+   "weapon": {
+    "range": "150 / 250",
+    "attack": 19,
+    "damage": 20,
+    "defense": 1,
+    "rate": "jednoranná",
+    "ammo": "kule do hákovnice",
+    "reload": "8 kol",
+    "hands": 2
+   },
+   "weightLb": 7
+  },
+  {
+   "id": "polni_delo",
+   "name": "Polní dělo",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 150
+   },
+   "materials": 250,
+   "bases": [
+    {
+     "text": "železo",
+     "match": [
+      [
+       "zelez"
+      ],
+      [
+       "kov"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "týden",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 22,
+    "text": "22 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně",
+    "Zbraň"
+   ],
+   "description": "menší dělo tlačené na dvou kolech",
+   "rules": "K ničení pevných překážek (stěny, stromy); na jednotlivce se nestřílí – zásah by byl náhoda. Spotřebuje celou dávku černého prachu. Jde na Univerzální nosič.",
+   "pages": "154",
+   "craftSkill": "mechanika",
+   "weapon": {
+    "range": "300 / 400",
+    "attack": 50,
+    "damage": 45,
+    "defense": 0,
+    "rate": "jednoranná",
+    "ammo": "kule do polního děla",
+    "reload": "30 kol",
+    "hands": 2
+   },
+   "weightLb": 100
+  },
+  {
+   "id": "turet",
+   "name": "Turét",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 200
+   },
+   "materials": 400,
+   "bases": [
+    {
+     "text": "ozubená kola a řetěz",
+     "match": [
+      [
+       "ozuben"
+      ],
+      [
+       "retez"
+      ],
+      [
+       "kolec"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 20,
+    "text": "20 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "automatická střelba",
+   "check": null,
+   "requires": {
+    "ability": "palne_zbrane"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Palné zbraně"
+   ],
+   "description": "trojnožka s hlavní",
+   "rules": "Automatická otočná věž: na pohyb do 300 sáhů vystřelí dávku 10 střel na až 10 cílů. Cíl se vyhne hodem Reflex (OBR) vs. 18 (−5 za každých 100 sáhů), jinak 1k6 životů mínus ½ kvality zbroje. Pojme 500 nábojů (50 kol), přebití 2 kola, rozložení i složení 5 kol.",
+   "pages": "154",
+   "craftSkill": "mechanika",
+   "weightLb": 20
+  },
+  {
+   "id": "hraci_skrinka",
+   "name": "Hrací skříňka",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 30,
+    "extraMax": 100,
+    "text": "30 + X (přídavná mana, max 100)"
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "kovová destička a klika",
+     "match": [
+      [
+       "desti"
+      ],
+      [
+       "klik"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "1 rok",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "otevírání zámků",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_energii"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s energií",
+    "Magický předmět"
+   ],
+   "description": "hrací skříňka s klikou",
+   "rules": "Melodie odemyká i zamyká běžné nemagické zámky – 5 kol točit klikou. Každé použití odčerpá 5 bodů přídavné many; bez ní ztrácí moc.",
+   "pages": "154"
+  },
+  {
+   "id": "kostka_stesti",
+   "name": "Kostka štěstí",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 40,
+    "extraMax": 50,
+    "text": "40 + X (přídavná mana, max 50)"
+   },
+   "materials": 5,
+   "bases": [
+    {
+     "text": "dřevěná kostka",
+     "match": [
+      [
+       "kostk"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "1 rok",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "přehození vlastností",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_energii"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s energií",
+    "Magický předmět"
+   ],
+   "description": "malá dřevěná herní kostka k6",
+   "rules": "Kdo hodí, náhodně si přehází všechny vlastnosti (i vzhled). Odčerpá 1 bod přídavné many za 5 kol; efekt skončí vyčerpáním many, stiskem dvou protilehlých stěn nebo vzdálením na víc než 20 sáhů.",
+   "pages": "154–155"
+  },
+  {
+   "id": "paralyzer",
+   "name": "Paralyzér",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 50,
+    "extraMax": 50,
+    "text": "50 + X (přídavná mana, max 50)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "kovový drát",
+     "match": [
+      [
+       "drat"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "omráčení a paralýza",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_energii"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s energií",
+    "Magický předmět"
+   ],
+   "description": "obušek s kovovým hrotem",
+   "rules": "Útočnost 3, zásah sám nezraňuje. Zasažený hází Výdrž (ODO) vs. 10 – při neúspěchu je 1k6 kol ochromen a utrpí 1k6 životů. Každé použití odčerpá 5 bodů přídavné many.",
+   "pages": "155"
+  },
+  {
+   "id": "plast_promen",
+   "name": "Plášť proměn",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 50,
+    "extraMax": 200,
+    "text": "50 + X (přídavná mana, max 200)"
+   },
+   "materials": 100,
+   "bases": [
+    {
+     "text": "spona",
+     "match": [
+      [
+       "spon"
+      ]
+     ]
+    },
+    {
+     "text": "plátno dle velikosti nositele",
+     "match": [
+      [
+       "platn"
+      ],
+      [
+       "latk"
+      ],
+      [
+       "plast"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "změna vzhledu oděvu",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_energii"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s energií",
+    "Magický předmět"
+   ],
+   "description": "plátno měnící tvar",
+   "rules": "Mění barvu, tvar, střih i vzhled materiálu (ne materiál) podle přání nositele. Za každou směnu použití odčerpá 5 bodů přídavné many. (V knize je u Použití omylem „replikace předmětů“.)",
+   "pages": "156"
+  },
+  {
+   "id": "replikator",
+   "name": "Replikátor",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 100,
+    "extraMax": 400,
+    "text": "100 + X (přídavná mana, max 400)"
+   },
+   "materials": 200,
+   "bases": [
+    {
+     "text": "živí pavouci",
+     "match": [
+      [
+       "pavouk"
+      ],
+      [
+       "pavouc"
+      ]
+     ]
+    },
+    {
+     "text": "čočka",
+     "match": [
+      [
+       "cock"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "replikace předmětů",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_energii"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s energií",
+    "Magický předmět"
+   ],
+   "description": "kovová krabička",
+   "rules": "Věrná, ale velmi lehká kopie viditelné podoby předmětu (povrch jako břidlice): do 30 coulů za směnu (20 bodů přídavné many), do sáhu za hodinu (50 bodů), největší velikost B (200 bodů). Vnitřek (stránky knihy…) se nekopíruje.",
+   "pages": "155"
+  },
+  {
+   "id": "odpalovaci_krystal",
+   "name": "Odpalovací krystal (bomba s krystalem)",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 20
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "2 krystaly",
+     "match": [
+      [
+       "krystal"
+      ],
+      [
+       "kristal"
+      ]
+     ],
+     "qty": 2
+    },
+    {
+     "text": "bomba",
+     "match": [
+      [
+       "bomb"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "1 rok",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "exploze",
+   "check": null,
+   "requires": {
+    "ability": "sapersky_vycvik"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Sapérský výcvik",
+    "Nestabilní substance"
+   ],
+   "description": "bomba s krystalem",
+   "rules": "Krystal vložený do bomby se odpálí rozbitím druhého krystalu, který má Pyromant u sebe; exploduje i při přerušení spojení (dosah 200 sáhů, přeruší ho i silná kamenná či kovová stěna). Bombu z vlastní výroby vyber ručně nebo označ jako zajištěnou.",
+   "pages": "156"
+  },
+  {
+   "id": "detektor_pohybu",
+   "name": "Detektor pohybu",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 20
+   },
+   "materials": 40,
+   "bases": [
+    {
+     "text": "2× skleněná čočka",
+     "match": [
+      [
+       "cock"
+      ]
+     ],
+     "qty": 2
+    },
+    {
+     "text": "krystaly",
+     "match": [
+      [
+       "krystal"
+      ],
+      [
+       "kristal"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "2 směny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "detekce pohybu",
+   "check": null,
+   "requires": {
+    "ability": "sapersky_vycvik"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Sapérský výcvik"
+   ],
+   "description": "dvě malé skleněné „oči“",
+   "rules": "Dvě „oči“ proti sobě: přerušení přímé viditelnosti spustí impulz (výbušnina, světlice, bzučák po měděném drátku). Dohled 100 sáhů, vidí v mlze, vánici i v noci; jedno oko samo hlídá jakýkoliv pohyb v zorném poli.",
+   "pages": "157",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "detektor_vybusnin",
+   "name": "Detektor výbušnin",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 30,
+    "extraMax": 100,
+    "text": "30 + X (přídavná mana, max 100)"
+   },
+   "materials": 80,
+   "bases": [
+    {
+     "text": "kovová obruč",
+     "match": [
+      [
+       "obruc"
+      ]
+     ]
+    },
+    {
+     "text": "krystal",
+     "match": [
+      [
+       "krystal"
+      ],
+      [
+       "kristal"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "detekce výbušnin",
+   "check": null,
+   "requires": {
+    "ability": "sapersky_vycvik"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Sapérský výcvik"
+   ],
+   "description": "tyč s kovovou obručí na konci",
+   "rules": "Po aktivaci odčerpá 1 bod přídavné many za kolo a spolehlivě najde třaskaviny do 20 sáhů (chrčení se zrychluje s blízkostí a velikostí nálože).",
+   "pages": "156–157",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "detonator",
+   "name": "Detonátor",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 10
+   },
+   "materials": 20,
+   "bases": [
+    {
+     "text": "dlouhý drát",
+     "match": [
+      [
+       "drat"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "exploze",
+   "check": null,
+   "requires": {
+    "ability": "sapersky_vycvik"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Sapérský výcvik"
+   ],
+   "description": "krabička s namotaným drátem",
+   "rules": "Skříňka s kličkou odpálí na dálku jakoukoliv trhavinu i výrobky Pyromanta. Drát 100 sáhů; lze používat opakovaně, další klubko drátu stojí 10 surovin a 1 směnu.",
+   "pages": "157–158",
+   "materialsText": "20 (+ 10 za další klubko drátu)",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "naslapna_past",
+   "name": "Nášlapná past",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 20
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "železné střepy",
+     "match": [
+      [
+       "strep"
+      ],
+      [
+       "zelez"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 hodina",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 13,
+    "text": "13 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "past",
+   "check": null,
+   "requires": {
+    "ability": "sapersky_vycvik"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Sapérský výcvik"
+   ],
+   "description": "kovová placka",
+   "rules": "Aktivuje se sešlápnutím nebo uvolněním tlaku: exploze silou bomby, 3k6 životů. Zranění nad 12 je navíc Krvácivé, při 18 obvykle amputace končetiny. Najít ji jde Postřehem (INT) vs. výsledek tvého hodu Mechaniky při nastražení.",
+   "pages": "158",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "hmozdir",
+   "name": "Hmoždíř",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "text": "-"
+   },
+   "materials": 45,
+   "bases": [
+    {
+     "text": "kovová trubice",
+     "match": [
+      [
+       "trubic"
+      ],
+      [
+       "trubk"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 10,
+    "text": "10 (Mechanika)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "strely_a_rachejtle"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Střely a rachejtle"
+   ],
+   "description": "kovová trubice",
+   "rules": "Odolná trubka s výsuvnými nožkami pro úhel střelby rachejtlí, světlic a ohňostrojů. Příprava k palbě 3 kola. Jde na Univerzální nosič.",
+   "pages": "158–159",
+   "craftSkill": "mechanika"
+  },
+  {
+   "id": "lehka_rachejtle",
+   "name": "Lehká rachejtle",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 25
+   },
+   "materials": 60,
+   "bases": [
+    {
+     "text": "hořlavá látka / černý prach",
+     "match": [
+      [
+       "cerny prach"
+      ],
+      [
+       "horlav"
+      ],
+      [
+       "olej"
+      ],
+      [
+       "strelny prach"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 hodina (4 směny)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 13,
+    "text": "13 (Pyromancie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "strely_a_rachejtle"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Střely a rachejtle"
+   ],
+   "description": "asi 30 coulů dlouhá trubička se špičatou hlavicí",
+   "rules": "Na pozemní cíle do 500 sáhů z ukotveného hmoždíře, nástavce či palné zbraně. Hlavice zápalná nebo výbušná (volba při výrobě).",
+   "pages": "159",
+   "craftSkill": "pyromancie",
+   "launch": {
+    "dc": 13,
+    "time": "odpálení 2 kola, let 100 sáhů za kolo",
+    "range": "do 500 sáhů",
+    "fire": "kruh o poloměru 5 sáhů: 2k6 životů / sáh, stejné zranění dalších 5 kol, zapálí hořlavé věci",
+    "blast": "epicentrum 6k6 životů, −1k6 za každý sáh od epicentra, kráter asi 1 sáh"
+   }
+  },
+  {
+   "id": "tezka_rachejtle",
+   "name": "Těžká rachejtle",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 100
+   },
+   "materials": 200,
+   "bases": [
+    {
+     "text": "hořlavá látka / černý prach",
+     "match": [
+      [
+       "cerny prach"
+      ],
+      [
+       "horlav"
+      ],
+      [
+       "olej"
+      ],
+      [
+       "strelny prach"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "2 hodiny (8 směn)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16,
+    "text": "16 (Pyromancie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "strely_a_rachejtle"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Střely a rachejtle"
+   ],
+   "description": "půl sáhu dlouhá trubice se špičatou hlavicí",
+   "rules": "K naprosté destrukci cíle (opevnění, ležení) do 1000 sáhů, jen z pečlivě ukotveného hmoždíře. Hlavice zápalná nebo výbušná.",
+   "pages": "161",
+   "craftSkill": "pyromancie",
+   "launch": {
+    "dc": 15,
+    "time": "odpálení 4 kola, let 100 sáhů za kolo",
+    "range": "do 1000 sáhů",
+    "fire": "kruh o poloměru 10 sáhů: 4k6 životů / sáh, stejné zranění dalších 10 kol, zapálí hořlavé věci",
+    "blast": "epicentrum 10k6 životů, −1k6 za každý sáh, kráter o poloměru 3 sáhy"
+   }
+  },
+  {
+   "id": "rizena_strela",
+   "name": "Řízená střela",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 200
+   },
+   "materials": 200,
+   "bases": [
+    {
+     "text": "zrcadlo",
+     "match": [
+      [
+       "zrcad"
+      ]
+     ]
+    },
+    {
+     "text": "2× krystal",
+     "match": [
+      [
+       "krystal"
+      ],
+      [
+       "kristal"
+      ]
+     ],
+     "qty": 2
+    }
+   ],
+   "craftTime": {
+    "text": "3 hodiny (12 směn)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18,
+    "text": "18 (Pyromancie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "strely_a_rachejtle"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Střely a rachejtle"
+   ],
+   "description": "asi půlmetrová trubice s křidélky",
+   "rules": "Pyromant v zrcadle s řídícím krystalem vidí, kam míří hrot, a naklápěním ho řídí. Odpaluje se ze země opřená o improvizovanou rampu, zápalnou šňůrou.",
+   "pages": "159–160",
+   "craftSkill": "pyromancie",
+   "launch": {
+    "dc": 15,
+    "dcMoving": 18,
+    "time": "let 200 sáhů za kolo, nejvýš 7 kol",
+    "fire": "kruh o poloměru 10 sáhů: 5k6 životů / sáh, stejné zranění dalších 10 kol, zapálí hořlavé věci",
+    "blast": "epicentrum 10k6 životů, −1k6 za každý sáh, kráter dva sáhy široký"
+   }
+  },
+  {
+   "id": "strela_navadena",
+   "name": "Střela naváděná na terč",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 120
+   },
+   "materials": 200,
+   "bases": [
+    {
+     "text": "3× optická čočka",
+     "match": [
+      [
+       "cock"
+      ]
+     ],
+     "qty": 3
+    },
+    {
+     "text": "zrcátko",
+     "match": [
+      [
+       "zrcad"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "2 hodiny (8 směn)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17,
+    "text": "17 (Pyromancie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "strely_a_rachejtle"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Střely a rachejtle"
+   ],
+   "description": "asi půlmetrová trubice s křidélky",
+   "rules": "Letí po paprsku ze zaměřovacího dalekohledu se třemi čočkami – potřebuje sluneční či jiné silné světlo. Ztratí-li paprsek, letí dál po trajektorii (po pádu exploduje).",
+   "pages": "160",
+   "craftSkill": "pyromancie",
+   "launch": {
+    "dc": 12,
+    "dcMoving": 17,
+    "time": "let 200 sáhů za kolo, nejvýš 5 kol",
+    "fire": "kruh o poloměru 10 sáhů: 4k6 životů / sáh, stejné zranění dalších 10 kol, zapálí hořlavé věci",
+    "blast": "epicentrum 10k6 životů, −1k6 za každý sáh, kráter dva sáhy široký"
+   }
+  },
+  {
+   "id": "ohnostroj",
+   "name": "Ohňostroj",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 5,
+    "text": "5 za každý"
+   },
+   "materials": 15,
+   "bases": [
+    {
+     "text": "hořlavá látka",
+     "match": [
+      [
+       "horlav"
+      ],
+      [
+       "olej"
+      ],
+      [
+       "cerny prach"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 11,
+    "text": "11 (Pyromancie)"
+   },
+   "durationText": "1 kolo",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "strely_a_rachejtle"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Střely a rachejtle"
+   ],
+   "description": "drobná trubička",
+   "rules": "Květiny, déšť jisker… barvu a efekty určí Pyromant. Odpaluje se z trubiček na zemi, zápalnou šňůrou lze řetězit.",
+   "pages": "159",
+   "craftSkill": "pyromancie"
+  },
+  {
+   "id": "svetlice",
+   "name": "Světlice",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 5
+   },
+   "materials": 30,
+   "bases": [
+    {
+     "text": "hořlavá látka",
+     "match": [
+      [
+       "horlav"
+      ],
+      [
+       "olej"
+      ],
+      [
+       "cerny prach"
+      ]
+     ]
+    },
+    {
+     "text": "plátno",
+     "match": [
+      [
+       "platn"
+      ],
+      [
+       "latk"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 směna",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 11,
+    "text": "11 (Pyromancie)"
+   },
+   "durationText": "10 kol",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "odpalování",
+   "check": null,
+   "requires": {
+    "ability": "strely_a_rachejtle"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Střely a rachejtle"
+   ],
+   "description": "drobná trubička",
+   "rules": "Z hmoždíře, nástavce či palné zbraně vyletí asi 150 sáhů vysoko a ozáří 300 sáhů jako za dne (vidět na desítky mil), svítí asi 10 kol. Barvu světla zvolí Pyromant.",
+   "pages": "160",
+   "craftSkill": "pyromancie"
+  }
+ ],
+ "abilities": [
+  {
+   "id": "kapsulacni_gemy",
+   "rules": "Runami uzamkne manu v drahokamu (běžně do 100 bodů u kamene velikosti oka) – baterie pro konstrukty a výrobky, nebo místo svitku kouzlo aktivovatelné opakovaně, dokud je v gemu mana (Výroba svitků, s pomocí kouzelníka). Přelití many 1 kolo za 10 bodů; gem jde dobíjet. Recept Kapsulační gem."
+  },
+  {
+   "id": "konstrukty",
+   "rules": "Mechaničtí pomocníci z těla (materiál a velikost), srdce (palivo) a mozku (typ ovládání) plus vylepšení; výroba v dílně s výhní, hod Mechanika (OBR) vs. součet obtížností. Neúspěch = šrot, polovina many a surovin jde znovu použít na další konstrukt. Vylepšení později: zaplatí novou součást a hod Mechaniky vs. celková obtížnost. Nosnost podle ODO, jednu běžnou zbraň, na Univerzální nosič hmoždíř, chrlič, palné zbraně."
+  },
+  {
+   "id": "mistr_nestabilnich_substanci",
+   "rules": "Charisma natrvalo −5 (jizvy, popáleniny). Rezistence proti Zraněním ohněm, mrazem a kyselinou – taková Zranění jsou jen poloviční. Recepty Chrlič, Dusivý, Leptavý, Mrazivý a Slzný plyn."
+  },
+  {
+   "id": "palne_zbrane",
+   "rules": "Výroba palných zbraní, kulí, nábojů a černého prachu. Všechny palné zbraně potřebují manu; síla na použití vliv nemá, hmotnost se počítá do naložení. Vyrobenou zbraň jde přidat mezi zbraně postavy (Výrobky → Do zbraní)."
+  },
+  {
+   "id": "prace_s_energii",
+   "rules": "Při výrobě předmětu s přídavnou manou smí vložit až dvojnásobek přídavné many. Umí dobíjet přídavnou manu magických předmětů. Recepty Hrací skříňka, Kostka štěstí, Paralyzér, Plášť proměn, Replikátor."
+  },
+  {
+   "id": "sapersky_vycvik",
+   "rules": "Výhoda +5 ke všem hodům na nalezení, zneškodnění a nastražení pasti. Vyrobit, zamaskovat nebo deaktivovat past: Mechanika (OBR) vs. X (PJ podle složitosti); najít ji jde Postřehem (INT) vs. výsledek hodu Pyromanta. Recepty Odpalovací krystal, Detektor pohybu, Detektor výbušnin, Detonátor, Nášlapná past."
+  },
+  {
+   "id": "strely_a_rachejtle",
+   "rules": "Rachejtle se odpalují z ukotveného hmoždíře po balistické křivce, střely jsou naváděné. Zásah = hod Pyromancie (OBR) vs. obtížnost rachejtle / střely, jinak mine. Hlavice zápalná nebo výbušná (jiné – mrazivé, jedové… – po dohodě s PJ). Recepty Hmoždíř, Lehká a Těžká rachejtle, Řízená střela, Střela naváděná na terč, Ohňostroj, Světlice."
+  },
+  {
+   "id": "transmutace_kovu",
+   "rules": "Proměna kovu asi za deset minut: množství na velký prsten či amulet (3 stříbrné hroty šípů); ostří dýky je asi 5× náročnější. Ušlechtilejší kov se na méně ušlechtilý mění snáz. Stejně vznikají speciální slitiny nasycením povrchu (Měsíční, Západní, Půlnoční, Stříbrná)."
+  }
+ ],
+ "constructs": {
+  "sizes": [
+   "A",
+   "B",
+   "C"
+  ],
+  "body": {
+   "Kámen": {
+    "A": {
+     "dc": 9,
+     "h": 8,
+     "m": 120,
+     "s": 20,
+     "uc": 5,
+     "oc": 10,
+     "hp": 50
+    },
+    "B": {
+     "dc": 9,
+     "h": 10,
+     "m": 230,
+     "s": 30,
+     "uc": 6,
+     "oc": 11,
+     "hp": 55
+    },
+    "C": {
+     "dc": 9,
+     "h": 12,
+     "m": 340,
+     "s": 40,
+     "uc": 7,
+     "oc": 11,
+     "hp": 60
+    }
+   },
+   "Keramika": {
+    "A": {
+     "dc": 8,
+     "h": 6,
+     "m": 130,
+     "s": 20,
+     "uc": 6,
+     "oc": 6,
+     "hp": 20
+    },
+    "B": {
+     "dc": 8,
+     "h": 8,
+     "m": 240,
+     "s": 30,
+     "uc": 7,
+     "oc": 7,
+     "hp": 25
+    },
+    "C": {
+     "dc": 8,
+     "h": 10,
+     "m": 350,
+     "s": 40,
+     "uc": 8,
+     "oc": 8,
+     "hp": 30
+    }
+   },
+   "Kov": {
+    "A": {
+     "dc": 11,
+     "h": 10,
+     "m": 140,
+     "s": 30,
+     "uc": 8,
+     "oc": 7,
+     "hp": 30
+    },
+    "B": {
+     "dc": 11,
+     "h": 12,
+     "m": 250,
+     "s": 40,
+     "uc": 9,
+     "oc": 8,
+     "hp": 35
+    },
+    "C": {
+     "dc": 11,
+     "h": 14,
+     "m": 360,
+     "s": 50,
+     "uc": 10,
+     "oc": 9,
+     "hp": 40
+    }
+   },
+   "Kombinace": {
+    "A": {
+     "dc": 12,
+     "h": 16,
+     "m": 150,
+     "s": 50,
+     "uc": 8,
+     "oc": 12,
+     "hp": 45
+    },
+    "B": {
+     "dc": 12,
+     "h": 18,
+     "m": 265,
+     "s": 65,
+     "uc": 9,
+     "oc": 13,
+     "hp": 50
+    },
+    "C": {
+     "dc": 12,
+     "h": 20,
+     "m": 380,
+     "s": 80,
+     "uc": 10,
+     "oc": 14,
+     "hp": 55
+    }
+   }
+  },
+  "upgrades": [
+   {
+    "id": "letat",
+    "name": "Schopnost létat",
+    "by": {
+     "A": {
+      "dc": 3,
+      "h": 3,
+      "m": 30,
+      "s": 0
+     },
+     "B": {
+      "dc": 3,
+      "h": 4,
+      "m": 35,
+      "s": 0
+     },
+     "C": {
+      "dc": 3,
+      "h": 5,
+      "m": 40,
+      "s": 0
+     }
+    }
+   },
+   {
+    "id": "plavat",
+    "name": "Schopnost plavat",
+    "by": {
+     "A": {
+      "dc": 1,
+      "h": 1,
+      "m": 10,
+      "s": 0
+     },
+     "B": {
+      "dc": 1,
+      "h": 2,
+      "m": 15,
+      "s": 0
+     },
+     "C": {
+      "dc": 1,
+      "h": 3,
+      "m": 45,
+      "s": 0
+     }
+    }
+   },
+   {
+    "id": "zesilena",
+    "name": "Zesílená konstrukce",
+    "note": "OČ +5, životy +½",
+    "by": {
+     "A": {
+      "dc": 5,
+      "h": 2,
+      "m": 30,
+      "s": 100
+     },
+     "B": {
+      "dc": 5,
+      "h": 4,
+      "m": 35,
+      "s": 130
+     },
+     "C": {
+      "dc": 5,
+      "h": 5,
+      "m": 40,
+      "s": 150
+     }
+    }
+   },
+   {
+    "id": "nosic",
+    "name": "Univerzální nosič",
+    "note": "jen uchycení – nosič se vyrábí zvlášť (spotřebuje se 1 vyrobený)",
+    "by": {
+     "A": {
+      "dc": 2,
+      "h": 1,
+      "m": 0,
+      "s": 20
+     },
+     "B": {
+      "dc": 2,
+      "h": 1,
+      "m": 0,
+      "s": 40
+     },
+     "C": {
+      "dc": 2,
+      "h": 1,
+      "m": 0,
+      "s": 60
+     }
+    }
+   },
+   {
+    "id": "chrlit",
+    "name": "Schopnost chrlit energii",
+    "note": "chrlí palivo ze srdce; chrlení odčerpá 1/20 základní nádrže",
+    "by": {
+     "A": {
+      "dc": 5,
+      "h": 5,
+      "m": 100,
+      "s": 0
+     },
+     "B": {
+      "dc": 5,
+      "h": 6,
+      "m": 120,
+      "s": 0
+     },
+     "C": {
+      "dc": 5,
+      "h": 7,
+      "m": 140,
+      "s": 0
+     }
+    }
+   },
+   {
+    "id": "rychlost",
+    "name": "Dvojnásobná rychlost",
+    "by": {
+     "A": {
+      "dc": 3,
+      "h": 1,
+      "m": 30,
+      "s": 0
+     },
+     "B": {
+      "dc": 3,
+      "h": 2,
+      "m": 40,
+      "s": 0
+     },
+     "C": {
+      "dc": 3,
+      "h": 3,
+      "m": 50,
+      "s": 0
+     }
+    }
+   }
+  ],
+  "fuel": [
+   {
+    "id": "olej",
+    "name": "Olej",
+    "unit": "l",
+    "by": {
+     "A": {
+      "s": 200,
+      "dc": 3,
+      "cap": 5
+     },
+     "B": {
+      "s": 240,
+      "dc": 3,
+      "cap": 8
+     },
+     "C": {
+      "s": 270,
+      "dc": 3,
+      "cap": 11
+     }
+    },
+    "tank": {
+     "dc": 5,
+     "s": 100
+    }
+   },
+   {
+    "id": "mana",
+    "name": "Mana",
+    "unit": "many",
+    "by": {
+     "A": {
+      "s": 150,
+      "dc": 5,
+      "cap": 40
+     },
+     "B": {
+      "s": 180,
+      "dc": 5,
+      "cap": 60
+     },
+     "C": {
+      "s": 210,
+      "dc": 5,
+      "cap": 80
+     }
+    },
+    "tank": {
+     "dc": 5,
+     "s": 80
+    },
+    "note": "u velikosti A chybí v knize číslo obtížnosti – appka počítá +5 jako u B a C"
+   },
+   {
+    "id": "gem",
+    "name": "Kapsulační gem",
+    "unit": "many",
+    "by": {
+     "A": {
+      "s": 100,
+      "dc": 5,
+      "cap": 40
+     },
+     "B": {
+      "s": 100,
+      "dc": 5,
+      "cap": 60
+     },
+     "C": {
+      "s": 100,
+      "dc": 5,
+      "cap": 80
+     }
+    },
+    "tank": {
+     "dc": 5,
+     "s": 50
+    }
+   }
+  ],
+  "brains": [
+   {
+    "type": 1,
+    "name": "Mob",
+    "dc": 2,
+    "m": 10,
+    "s": 5,
+    "text": "pevně naprogramovaný – drží se jednoduché instrukce, ovládat nejde"
+   },
+   {
+    "type": 2,
+    "name": "Servant",
+    "dc": 4,
+    "m": 30,
+    "s": 5,
+    "text": "poslouchá hlas či vzhled tvůrce nebo držitele určitého předmětu; chápe asi jako tříleté dítě"
+   },
+   {
+    "type": 3,
+    "name": "Remotron",
+    "dc": 6,
+    "m": 70,
+    "s": 5,
+    "text": "propojený krystaly – tvůrce ho vidí jeho „očima“, slyší „ušima“ a řídí na dálku"
+   },
+   {
+    "type": 4,
+    "name": "Artific",
+    "dc": 8,
+    "m": 80,
+    "s": 5,
+    "text": "sám se učí a kreativně plní úkoly, stále oddaný tvůrci"
+   }
+  ],
+  "maxTanks": 2,
+  "daysPerTank": 10,
+  "pages": "146–149"
+ },
+ "transmutation": {
+  "metals": [
+   "Měď",
+   "Bronz",
+   "Železo",
+   "Stříbro",
+   "Zlato"
+  ],
+  "table": {
+   "Měď": [
+    null,
+    50,
+    80,
+    200,
+    400
+   ],
+   "Bronz": [
+    35,
+    null,
+    60,
+    150,
+    300
+   ],
+   "Železo": [
+    20,
+    30,
+    null,
+    100,
+    200
+   ],
+   "Stříbro": [
+    10,
+    20,
+    25,
+    null,
+    100
+   ],
+   "Zlato": [
+    5,
+    10,
+    15,
+    20,
+    null
+   ]
+  },
+  "alloys": [
+   {
+    "id": "mesicni",
+    "name": "Měsíční (chrom)",
+    "mana": 80,
+    "text": "lesklý stříbřitý povrch odolný korozi i kyselinám; zbraň je o polovinu lehčí"
+   },
+   {
+    "id": "zapadni",
+    "name": "Západní (uhlík)",
+    "mana": 100,
+    "text": "narudlý lesk; nástroje a zbraně kvalitnější – Zranění +2"
+   },
+   {
+    "id": "pulnocni",
+    "name": "Půlnoční (dusík)",
+    "mana": 90,
+    "text": "temně modrý, odolný živlům (nezkřehne, odolá žáru); proti poslům živlů +2 k ÚČ i OČ"
+   },
+   {
+    "id": "stribrny",
+    "name": "Stříbrný (stříbro)",
+    "mana": 90,
+    "text": "stříbro účinkuje na citlivé tvory; citliví nepřátelé do 10 sáhů mají −2 ke všem akcím"
+   }
+  ],
+  "pages": "162"
+ }
+}

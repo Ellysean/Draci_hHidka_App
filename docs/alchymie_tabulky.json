@@ -1,0 +1,182 @@
+{
+ "source": "H10 (xlsx 18. 9. 2026, OCR; nádoby a start ověřeny v revizi xlsx 19. 9. 2026; tabulka alchymistického umění a Sibériovy elixíry z xlsx 25. 9. 2026)",
+ "startByAttr": {
+  "note": "shoduje se se vzorcem mana = 12×INT − 24, suroviny = 20×OBR + 120 (ověřeno 19. 9. 2026)",
+  "mana": {
+   "8": 72,
+   "9": 84,
+   "10": 96,
+   "11": 108,
+   "12": 120,
+   "13": 132,
+   "14": 144,
+   "15": 156,
+   "16": 168,
+   "17": 180
+  },
+  "materials": {
+   "8": 280,
+   "9": 300,
+   "10": 320,
+   "11": 340,
+   "12": 360,
+   "13": 380,
+   "14": 400,
+   "15": 420,
+   "16": 440,
+   "17": 460
+  }
+ },
+ "containers": [
+  {
+   "n": "Běžný flakón",
+   "mana": 40,
+   "materials": null,
+   "price": "1 st",
+   "w": 0.2
+  },
+  {
+   "n": "Křišťálový flakón",
+   "mana": 100,
+   "materials": null,
+   "price": "1 zl",
+   "w": 0.2
+  },
+  {
+   "n": "Váček many",
+   "mana": 150,
+   "materials": null,
+   "price": "5 zl",
+   "w": 0.2
+  },
+  {
+   "n": "Základní truhla (30×20×20)",
+   "mana": 200,
+   "materials": 800,
+   "price": "10 zl",
+   "w": 3
+  },
+  {
+   "n": "Větší truhla (30×35×35)",
+   "mana": 400,
+   "materials": 1600,
+   "price": "30 zl",
+   "w": 6
+  },
+  {
+   "n": "Cestovní truhla (40×60×60)",
+   "mana": 600,
+   "materials": 4000,
+   "price": "50 zl",
+   "w": 12
+  }
+ ],
+ "containersNote": "Tabulka ověřena uživatelem 19. 9. 2026 (doplněny ceny a hmotnosti flakónu, váčku a truhel).",
+ "weight": "100 many nebo surovin = 1 lb",
+ "prices": {
+  "rawSource": "1 mana = 2 st, 1 surovina = 2 md",
+  "pure": "1 mana = 3 st, 1 surovina = 3 md"
+ },
+ "art": {
+  "note": "Tabulka alchymistického umění (H10 s. 6) – kompletní z xlsx 25. 9. 2026. První dva řádky 1–4 a 5–9 potvrzeny. Originál má 3. řádek 10–24, který se překrývá se 4. řádkem 20–39; appka používá 10–19 (navazující rozsahy) – K POTVRZENÍ U.",
+  "rows": [
+   {
+    "range": "1–4",
+    "min": 1,
+    "amount": "nepatrné (jednotky)",
+    "perceive": 25,
+    "process": 5
+   },
+   {
+    "range": "5–9",
+    "min": 5,
+    "amount": "nepatrné (jednotky)",
+    "perceive": 23,
+    "process": 7
+   },
+   {
+    "range": "10–19 (originál 10–24)",
+    "min": 10,
+    "amount": "malé (jednotky)",
+    "perceive": 21,
+    "process": 9
+   },
+   {
+    "range": "20–39",
+    "min": 20,
+    "amount": "malé (jednotky)",
+    "perceive": 19,
+    "process": 11
+   },
+   {
+    "range": "40–79",
+    "min": 40,
+    "amount": "malé (jednotky)",
+    "perceive": 17,
+    "process": 13
+   },
+   {
+    "range": "80–149",
+    "min": 80,
+    "amount": "střední (desítky)",
+    "perceive": 15,
+    "process": 15
+   },
+   {
+    "range": "150–299",
+    "min": 150,
+    "amount": "střední (desítky)",
+    "perceive": 13,
+    "process": 17
+   },
+   {
+    "range": "300–599",
+    "min": 300,
+    "amount": "velké (desítky)",
+    "perceive": 11,
+    "process": 19
+   },
+   {
+    "range": "600–1199",
+    "min": 600,
+    "amount": "velké (desítky)",
+    "perceive": 9,
+    "process": 21
+   },
+   {
+    "range": "1200–1999",
+    "min": 1200,
+    "amount": "obrovské (stovky)",
+    "perceive": 7,
+    "process": 23
+   },
+   {
+    "range": "2000–2999",
+    "min": 2000,
+    "amount": "obrovské (stovky)",
+    "perceive": 5,
+    "process": 25
+   },
+   {
+    "range": "3000–3999",
+    "min": 3000,
+    "amount": "obrovské (stovky)",
+    "perceive": 3,
+    "process": 27
+   },
+   {
+    "range": "4000+",
+    "min": 4000,
+    "amount": "nezměrné (tisíce)",
+    "perceive": 1,
+    "process": 29
+   }
+  ],
+  "columns": {
+   "perceive": "obtížnost Vnímání many",
+   "process": "obtížnost Destilace a Transformace",
+   "min": "dolní mez rozsahu – řádek se vybírá podle největší min ≤ množství"
+  }
+ },
+ "siberio": "viz alchymie_recepty.json → siberio (H10 s. 37)"
+}

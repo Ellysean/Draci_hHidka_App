@@ -28,8 +28,12 @@ src/
   state/                 reducer (jediný zdroj pravdy) + React kontext s auto-ukládáním
   storage/               localStorage adaptér, schemaVersion, migrace
   data/                  pravidlová data (JSON) – rasy, povolání, dovednosti, výzbroj, tabulky
-tools/                   skripty, kterými se data převzala z prototypu v9.1
+tools/                   skripty pro převod pravidel do dat (h*/ppp*_src.py → build-*.py → src/data/*.json)
+docs/                    plán (PLAN.md), architektura, návrhy, výtahy z pravidel (JSON) a zálohy
 ```
+
+Originální PDF pravidel a pracovní složky (`Context/`, `dh-layout/`, `Claude outputs/`) zůstávají
+jen lokálně – repozitář je veřejný (viz `.gitignore`).
 
 Zásady (viz `docs/ARCHITEKTURA.md`): ukládá se jen to, co hráč zadal;
 vše odvozené počítá `derive()`; každou odvozenou hodnotu jde ručně

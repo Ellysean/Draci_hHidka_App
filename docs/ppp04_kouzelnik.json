@@ -1,0 +1,1811 @@
+{
+ "_zdroj": "Draci_hlidka_PPP_04_Kouzelnik.pdf s. 191–238 – strojově z docs/pravidla/PPP04_Kouzelnik_AI.json (přepis od uživatele 1. 10. 2026)",
+ "_generator": "tools/ppp04_kouzelnik_src.py",
+ "_poznamka": "Schopnosti, specializace a tabulky viz claude/data/ppp04_kouzelnik.json v projektu (ruční výtah 27. 9. 2026).",
+ "polozky": [
+  {
+   "id": "antimagicka_bublina",
+   "nazev": "Antimagická bublina",
+   "strana": 214,
+   "latinsky": "Mana Sphaera",
+   "parametry": {
+    "mana": "10",
+    "dosah": "dotek",
+    "rozsah": "1 kouzlo",
+    "trvani": "ihned",
+    "overeni": "Sesílání kouzel (INT) vs. Sesílání kouzel (INT) Sesílání kouzel (INT) vs. Reflex (OBR) nestvůry",
+    "vyvolani": "půl kola",
+    "obtiznost": "16",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Kouzelník kolem sebe vyčaruje magický štít, kterým se pokusí chránit před cizím kouzlem. Ve chvíli, kdy je cílem nepřátelského kouzla, provede ověřovací hod na Sesílání kouzel (INT) vs. Sesílání kouzel (INT) nepřátelského Kouzelníka a pokud uspěje, kouzlu se ubrání a to na něj nebude mít žádný vliv.\nKouzelník může toto kouzlo seslat i na ochranu proti různým efektům magického původu, které mohou být součástí schopností monster (například dračí dech, plameny elementála, atd.). V takovém případě musí uspět v ověřovacím hodu na Sesílání kouzel (INT) vs. Reflex (OBR) nestvůry.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "barbogovo_zrcadlo_minulosti",
+   "nazev": "Barbogovo zrcadlo minulosti",
+   "strana": 214,
+   "latinsky": "Speculo olim",
+   "parametry": {
+    "mana": "70",
+    "dosah": "dle many",
+    "rozsah": "1 místo",
+    "trvani": "viz popis",
+    "vyvolani": "1 směna",
+    "obtiznost": "22",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Barbogovo zrcadlo minulosti je jedním z vrcholných kouzel Vysoké magie. Umožňuje nahlédnout do časoprostoru a uvidět obraz (ne zvuk) minulých událostí na místě, kde Kouzelník stojí. Z pohledu ostatních se mu zamlží zrak a je duchem mimo. Kouzelník vidí to, co se na daném místě dělo v době, kterou si přeje. Může se otáčet kolem dokola, ale nemůže nikam jít.\nSetrvání v časoprostoru je značně vysilující. Za každou minutu, kterou v něm stráví, získá jeden bod únavy. Kolik času v něm stráví, je jen na Kouzelníkovi.\nKdyž Kouzelník přesně ví, kam chce nahlédnout (datum a čas), je situace jednoduchá a může se rovnou dívat. Horší to je, pokud hledá nějakou konkrétní událost a neví přesný čas. Potom musí hledat a doufat, že si jí všimne hodem na Postřeh (INT) vs. 14. Rozdíl mezi hodem na seslání kouzla a obtížností udává počet let, do kterých může Čaroděj zpětně nahlédnout.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "bleskovy_sip",
+   "nazev": "Bleskový šíp",
+   "strana": 214,
+   "latinsky": "Fulgora segitta",
+   "parametry": {
+    "mana": "5",
+    "dosah": "dotek",
+    "rozsah": "10 projektilů",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzelník očaruje až 10 projektilů (obvykle šípů nebo kamenů), které pak směřují na cíl podobně přesně, jako blesky. Získávají tak bonus +2 k Útoku (ÚČ). Mimo to udělí při zásahu cíli dodatečné magické Zranění za 1 život. Takto očarované projektily navíc dolétnou (dostřelí) o 10 sáhů dál, než je obvyklé.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "cizi_smysl",
+   "nazev": "Cizí smysl",
+   "strana": 215,
+   "latinsky": "Alenius sen",
+   "parametry": {
+    "mana": "5 za smysl",
+    "dosah": "30 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "1 hodina",
+    "vyvolani": "2 kola",
+    "overeni": "Vůle Kouzelníka (CHAR) vs. Vůle (CHAR) cíle",
+    "obtiznost": "9 (+2 za každý smysl navíc)",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Kouzelník může pomocí magie vnímat smyslem jiného tvora, jehož vidí a který je v dosahu tohoto kouzla. Jestliže by cíl podvědomě souhlasil, kouzlo se rovnou aktivuje. V opačném případě je nutné provést ověřovací hod na Vůle Kouzelníka (CHAR) vs. Vůle (CHAR) cíle. Pokud Kouzelník neuspěje, dotyčný si uvědomí, že je něco v nepořádku a jeho mysl se před kouzlem automaticky uzavře. V opačném případě si není vědom toho, že došlo k propojení.\nKouzlo umožňuje vnímat pomocí více smyslů najednou, tedy např. slyšet a zároveň i vidět to, co vidí cíl. Na vnímání se musí Kouzelník soustředit, avšak stále vnímá i svými smysly.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "cteni_vzpominek",
+   "nazev": "Čtení vzpomínek",
+   "strana": 215,
+   "latinsky": "Ars memorum",
+   "parametry": {
+    "mana": "10",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "10 kol",
+    "vyvolani": "3 kola",
+    "obtiznost": "19 (+1 za každý den od smrti)",
+    "vyzaduje": "Vitální magie"
+   },
+   "popis": "Kouzlo umožňuje přečíst myšlenky mrtvého tvora. Podmínkou je, že musí mít stále zachovaný mozek. Za každý den od okamžiku, kdy cíl zemřel, se zvyšuje náročnost seslání kouzla.\nJestliže se kouzlo podaří, může Kouzelník v každém kole prozkoumat jednu vzpomínku cíle. K tomu vždy upřesní přibližný čas a téma (např. vzpomínka na nebezpečí při včerejším západu slunce). Ta se mu následně přehraje v mysli jako scéna, které se zúčastnil z pohledu cíle kouzla. Vnímá tedy vše, co dotyčný viděl, slyšel atd, avšak nezná přesné myšlenky, které se mu v danou chvíli hnaly hlavou. V závislosti na době rozkladu těla nebo poškození hlavy mohou být některé vzpomínky nedostupné nebo „zašuměné“. Podobně je tomu v případě, kdy kouzelník neupřesní čas a téma vzpomínky.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie"
+  },
+  {
+   "id": "dusevni_transfer",
+   "nazev": "Duševní transfer",
+   "strana": 215,
+   "latinsky": "Transpiren",
+   "parametry": {
+    "mana": "10 × úroveň cíle",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "stále",
+    "vyvolani": "4 směny",
+    "obtiznost": "26",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Toto prazvláštní kouzlo umožňuje Nekromantovi přenést svou duši do těla jiného tvora. Podmínkou je, aby s rituálem Transferu začal Nekromant do minuty od úmrtí dané bytosti.\nJakmile rituál započne, propojí se energie Nekromanta s ostatky cíle. Nekromant předá polovinu svých životů do těla, které se tímto okamžitě oživí\n(jeho životní funkce se obnoví a nedochází ani k odumírání buněk). Toto spojení a Transfer následně trvá 4 směny (1 hodinu). Po jeho dokončení tělo Nekromanta padá mrtvé k zemí a jeho mysl je zcela přenesena do nového. Nekromant tak získá fyzické atributy a přirozené schopnosti nově získaného těla a přijde o své původní. Jeho původní znalosti a schopnosti povolání mu samozřejmě zůstávají.\nJakmile k Transferu dojde, ztrácí Nekromant část své osobnosti, což se projeví ztrátou 1 úrovně (a tomu odpovídajícímu množství zkušeností).",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "etericke_ostri",
+   "nazev": "Éterické ostří",
+   "strana": 216,
+   "latinsky": "Ferrum aethera",
+   "parametry": {
+    "mana": "10",
+    "dosah": "dotek",
+    "rozsah": "1 sečná či bodná zbraň",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "obtiznost": "14",
+    "vyzaduje": "Divoká magie - Bojový mág"
+   },
+   "popis": "Působení všech živlů učiní ostří zbraně neuvěřitelně pevným a ostrým, navíc se rozzáří nepřirozeným bílým svitem. Díky tomu bez problémů proniká jakoukoli pevnou fyzickou překážkou, v níž nekoluje životní energie (zbroje a štíty, ale také šupiny či kůže), kromě případných magických předmětů a bariér. Éterické působení zahrnuje pouze ostří, ne celou čepel, pro hluboký průnik do hmoty je proto nutné použít běžnou fyzickou sílu.\nPři útoku éterickým ostřím si cíl do obrany nepočítá kvalitu nemagické zbroje, zbraň ani štít. Éterické ostří navíc způsobí při zásahu Krvácivé zranění za 1k6 životů za kolo.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "gravitacni_pole",
+   "nazev": "Gravitační pole",
+   "strana": 216,
+   "latinsky": "Campa gravita",
+   "parametry": {
+    "mana": "3 za sáh poloměru",
+    "dosah": "50 sáhů",
+    "rozsah": "koule dle dodané many",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "overeni": "Sesílání kouzel (INT) vs. Atletika (SIL) bytostí",
+    "obtiznost": "19",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Po seslání tohoto kouzla se v místě určeném Kouzelníkem objeví neviditelná ochranná koule, která odpuzuje vybraný druh tvorů (například nemrtvé, skřety, krysy atp.). O které tvory se jedná, určí Kouzelník v průběhu vyvolání kouzla. Tyto bytosti jsou pak z místa působení kouzla vytlačovány jeho silou. Jestliže kouzelník uspěje v ověřovacím hodu Sesílání kouzel (INT) vs Atletika (SIL) tvorů, jsou během 1 kola vytlačeni až za hranici dosahu kouzla.\nToto kouzlo lze navíc vyvolat i s opačným účinkem. Lze jím tedy přitahovat tvory, kteří se ocitnou v jeho dosahu. Jestliže neuspějí v ověřovacím hodu na Atletiku (SIL) vs. Sesílání kouzel (INT) Kouzelníka. jsou během jednoho kola vtaženi k jeho středu.\nKouzelník může seslat zaklínadlo na určité místo, nebo přímo na sebe. V takovém případě se gravitační pole pohybuje spolu s ním.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "hibernace",
+   "nazev": "Hibernace",
+   "strana": 216,
+   "latinsky": "Profundus",
+   "parametry": {
+    "mana": "6",
+    "dosah": "dotek",
+    "rozsah": "nemrtví nebo Nekromant",
+    "trvani": "stále",
+    "vyvolani": "2 kola",
+    "overeni": "Postřeh (INT) vs. Sesílání kouzel (INT)",
+    "obtiznost": "12",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Nekromant položí ruce na vybraného hmotného nemrtvého a uvede ho do hlubokého, meditaci podobného, stavu. Tělo se tedy uvolní a vypadá prakticky mrtvé. Jeho oči jsou zavřené a jediný smysl, který mu zbude je sluch.\nZa udržení hibernovaného nemrtvého v tomto stavu nemusí Nekromant platit žádnou manou. Pokud se rozhodne ho znovu probrat k „životu“, musí zaplatit manu potřebnou k udržení daného nemrtvého (viz text u kouzla Oživ neživého, PPP H, strana 224). Oživení probíhá formou myšlenky (okamžitá akce) a to až na vzdálenost tolika sáhů, jaký je desetinásobek jeho úrovně.\nToto kouzlo může Nekromant praktikovat i na sobě samém. Nekromant vnímá své okolí a je schopen se z něj vlastní vůlí probrat.\nAby někdo rozpoznal, že je Nekromant naživu, musí uspět v ověřovacím hodu na Postřeh (INT) vs. Sesílání kouzel (INT) Nekromanta.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "hniloba",
+   "nazev": "Hniloba",
+   "strana": 217,
+   "latinsky": "Putredor",
+   "parametry": {
+    "mana": "15",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "obtiznost": "21",
+    "vyzaduje": "Vitální magie"
+   },
+   "popis": "Toto kouzlo vysaje z živé bytosti její vláhu a energii a ta se začne pomalu zaživa rozkládat. Cíl kouzla tak ztrácí v každém kole 1k6 životů. Jedná-li se navíc o rostlinu či přírodní bytost (viz PPP V - Bestiář), je efekt kouzla na ni dvojnásobný.\nEfekt kouzla lze po dobu jeho trvání tlumit léčbou (prosby, kouzla, magické předměty atd.).",
+   "typ": "kouzlo",
+   "obor": "Vitální magie"
+  },
+  {
+   "id": "hypnoza",
+   "nazev": "Hypnóza",
+   "strana": 217,
+   "latinsky": "Somnos",
+   "parametry": {
+    "mana": "3 × úroveň cíle",
+    "dosah": "5 sáhů",
+    "rozsah": "1 tvor (humanoid)",
+    "trvani": "1 směna",
+    "vyvolani": "3 kola",
+    "overeni": "Vůle Čaroděje (CHAR) vs. Vůle (CHAR) cíle",
+    "obtiznost": "19",
+    "vyzaduje": "Mentální magie - Čaroděj"
+   },
+   "popis": "Čaroděj dokáže ovládat svou myslí jednoho humanoidního tvora. Pokud uspěje v ověřovacím hodu na Vůle Čaroděje (CHAR) vs. Vůle (CHAR) cíle, dostává zhypnotizovanou postavu pod kontrolu a ta bude plnit jeho rozkazy. Ty mohou být obtížné i nebezpečné, avšak nikdy ne takové, aby ublížily ((ttjj.. nnaappřř.. vvyyzzrraazzeenníí cciittlliivvýýcchh iinnffoorrmmaaccíí,, sseebbeevvrraažžddaa a podobně). Instrukce musí být cíli zadávány slovně a pokud možno jednoznačně.\nOčarovaný tvor je během plnění příkazu v jiné formě vědomí, čehož si lze všimnout při úspěchu v ověřovacím hodu na Postřeh (INT) vs. 10. Po skončení Hypnózy ovládaná postava zapomene vše, co dělala pod vlivem kouzla.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "chuze_po_vode",
+   "nazev": "Chůze po vodě",
+   "strana": 217,
+   "latinsky": "Aquambular",
+   "parametry": {
+    "mana": "3 za směnu",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Pomocí tohoto kouzla lze chodit po hladině vody i ostatních nestabilních površích (sníh, písek, bláto atd.). Chůze může být poměrně obtížná, protože pohyb často doprovází vlnění a houpání terénu pod postavou. Rychlost jejího pohybu je tak o polovinu nižší, než je obvyklé.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "identifikuj_predmet",
+   "nazev": "Identifikuj předmět",
+   "strana": 217,
+   "latinsky": "Inverim raritas",
+   "parametry": {
+    "mana": "10 (15)",
+    "dosah": "dotek",
+    "rozsah": "1 předmět",
+    "trvani": "ihned",
+    "vyvolani": "5 (10) kol",
+    "obtiznost": "19 (24)",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Tímto kouzlem dokáže kouzelník získat bližší informace o vybraném předmětu. Těmi základními jsou:\n• Zda je předmět magický nebo ne\n• Zda je očarování pozitivní nebo jde o prokletý předmět\n• Obor magie či alchymie, ke kterému se váže\nJestliže je k seslání kouzla použito více many, lze navíc získat dodatečné informace. Těmi mohou být přibližné vlastnosti a způsob použití předmětu. U magických a prokletých předmětů pak jakým způsobem se aktivují (nasazení, mávnutím, sesílací formulí a podobně). Samotné znění případné formule nebo hesla však kouzlo zjistit nedokáže.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "ignoruj",
+   "nazev": "Ignoruj",
+   "strana": 218,
+   "latinsky": "Neglecta",
+   "parametry": {
+    "mana": "12",
+    "dosah": "dotek",
+    "rozsah": "1 bytost",
+    "trvani": "1 hodina",
+    "vyvolani": "1 kolo",
+    "overeni": "Sesílání kouzel (INT) vs. Postřeh (INT)",
+    "obtiznost": "19",
+    "vyzaduje": "Mentální magie - Čaroděj"
+   },
+   "popis": "Po seslání kouzla se jedna bytost stane pro své okolí naprosto přehlédnutelnou. Mysl všech ji vnímá tak, jako kdyby na dané místo odjakživa patřila a proto ji zcela ignorují (její přítomnost v nich nevzbuzuje žádné myšlenky). Není tedy neviditelná, pokud někdo bude místem procházet, vyhne se jí, ale ignoruje ji.\nOčarované bytosti si všimne pouze ten, kdo uspěje v ověřovacím hodu na Postřeh (INT) vs. Sesílání kouzel (INT) Čaroděje.\nJestliže by očarovaný tvor začal provádět něco opravdu nápadného (jako třeba sesílat kouzlo s gesty a slovy nebo na někoho útočit, sprintovat, nebo začít nějakou jinou výraznou interakci s okolím), efekt kouzla se automaticky zruší.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "jasnozrivost",
+   "nazev": "Jasnozřivost",
+   "strana": 218,
+   "latinsky": "Mentis claritas",
+   "parametry": {
+    "mana": "3 za 50 sáhů",
+    "dosah": "dle dodané many",
+    "rozsah": "koule o poloměru 15 sáhů",
+    "trvani": "1 minuta",
+    "vyvolani": "5 kol",
+    "obtiznost": "14",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Kouzelník se dokáže soustředit na vybrané místo, načež začne vnímat svým vnitřním zrakem obraz, zvuk i pachy kolem něj. Funguje to podobně, jako by se na toto místo sám přenesl a mohl se rozhlížet kolem. Mentální obraz však není zcela ostrý a nelze jím postihnout jemné detaily. Stejně tak i zvuky bývají zkreslené, a nelze postřehnout šepot a podobně.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "jiskrici_zbroj",
+   "nazev": "Jiskřící zbroj",
+   "strana": 218,
+   "latinsky": "Arma scintilla",
+   "parametry": {
+    "mana": "2 za kolo",
+    "dosah": "dotek",
+    "rozsah": "1 cíl",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Kouzlo vytvoří kolem cíle silové pole, které neustále kopíruje postavu a její pohyby. Výrazně přitom jiskří a malé energetické výboje jakoby neustále běhaly po celé postavě. Pokud je postava napadena útokem tváří v tvář, obdrží útočník výbojem magické Zranění za 1k6 životů.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "kamenna_kuze",
+   "nazev": "Kamenná kůže",
+   "strana": 218,
+   "latinsky": "Lapis pelle",
+   "parametry": {
+    "mana": "2 za kolo",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "17",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Tímto kouzlem vytvoří Bojový mág na povrchu tvora ochrannou magickou vrstvu, připomínající kámen, což mu dá vzhled oživlé sochy. Ta ho chrání před fyzickými útoky všech zbraní, i těch magických. Cíl získává rezistence proti sečnému, bodnému i drtivému Zranění.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "kamenna_sprcha",
+   "nazev": "Kamenná sprcha",
+   "strana": 219,
+   "latinsky": "Saxum imbernal",
+   "parametry": {
+    "mana": "8 za střelu",
+    "dosah": "50 sáhů",
+    "rozsah": "dle počtu střel",
+    "trvani": "ihned",
+    "vyvolani": "1 kolo",
+    "obtiznost": "14 (+3 za každou střelu navíc)",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzelník sešle na vybrané tvory střelu tvořenou kamennými střepy, která zraní cíl za 2k10 životů. Pro každou střelu může navíc kouzelník určit vlastní cíl.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "kostena_zbroj",
+   "nazev": "Kostěná zbroj",
+   "strana": 219,
+   "latinsky": "Arma osseum",
+   "parametry": {
+    "mana": "3 + X",
+    "dosah": "dotek",
+    "rozsah": "Nekromant",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Nekromant pod sebe hodí kosti, které se kolem něj začnou samy spojovat a skládat. Působí podobně, jako by bylo tělo Nekromanta chráněno zbrojí tvořenou oživlým kostlivcem. Jeho počet životů je dán množstvím many použité při jeho vyvolání (tedy X).\nK vyvolání tohoto kouzla tedy potřebuje Nekromant tolik kostí, kolik je nutné k vytvoření jednoho kostlivce.\nKostěná zbroj dává nositeli bonus +6 ke KZ a chrání Nekromanta svými životy. Vzhledem ke svému původu nemrtvého má navíc slabinu na Svěcené zranění a stříbro.\nKouzlo vydrží aktivní po dobu 1 směny, pokud není předčasně ukončeno zničením zbroje (ztrátou jejích životů).",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "kuzel_mrazu",
+   "nazev": "Kužel mrazu",
+   "strana": 219,
+   "latinsky": "Conus gelum",
+   "parametry": {
+    "mana": "12",
+    "dosah": "10 sáhů",
+    "rozsah": "všichni tvorové v kuželu a dosahu",
+    "trvani": "ihned",
+    "vyvolani": "1 kolo",
+    "obtiznost": "13",
+    "vyzaduje": "Divoká magie - Bojový mág"
+   },
+   "popis": "Mág roztáhne ruce a zasáhne výseč před sebou (čtvrtkruh) vlnou mrazivého vzduchu smíšenou s krystalky ledu. Všichni tvorové v oblasti musí uspět v ověřovacím hodu na Reflex (OBR) vs. Sesílání kouzel (INT) Kouzelníka. Pokud neuspějí, utrpí Zranění za 3k10 životů a jsou zpomaleni na 3 kola. Při úspěchu je Zranění pouze poloviční a postava není zpomalená.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "magicky_blok",
+   "nazev": "Magický blok",
+   "strana": 219,
+   "latinsky": "Mana obstructo",
+   "parametry": {
+    "mana": "12",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "10 kol",
+    "vyvolani": "půl kola",
+    "overeni": "Atletika (SIL) vs. Sesílání kouzel (INT) Bojového mága",
+    "obtiznost": "14",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Kouzlo zformuje kolem cíle zvláštní ochranou auru, která ho chrání před útoky tváří v tvář. Chce-li útočník cíl napadnout a zranit, musí uspět v ověřovacím hodu na Atletiku (SIL) vs. Sesílání kouzel (INT) Bojového mága. Při neúspěchu je Útok odražen a očarovaný tvor není zraněn.\nToto kouzlo nikterak nepomáhá proti střeleckým a vrhacím útokům. Po úspěšném odražení 3 Útoků skončí magický blok předčasně a již není aktivní.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "mala_metamorfoza",
+   "nazev": "Malá metamorfóza",
+   "strana": 219,
+   "latinsky": "Parsmutátum",
+   "parametry": {
+    "mana": "5",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "10",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Tímto kouzlem je možné proměnit část těla jednoho tvora na odpovídající část jiného, kterého Kouzelník již předtím někdy viděl. Dokáže tak například dotekem proměnit ruce v drápy nebo křídla. Proměnu je možné provést jen ve stejné třídě velikosti.\nOčarovaný tvor je případně stále schopen vyvolávat kouzla bez postihu.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "male_ochranne_kouzlo",
+   "nazev": "Malé ochranné kouzlo",
+   "strana": 220,
+   "latinsky": "Pars protego",
+   "parametry": {
+    "mana": "3 za hodinu",
+    "dosah": "-",
+    "rozsah": "Kouzelník",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "7",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Tímto kouzlem se lze preventivně chránit před následky drobných nehod (uklouznutí, zakopnutí, naražení do překážky a podobně). Kouzelník tak získává Výhodu (bonus +5) ke všem ověřovacím hodům proti pasti na Akrobacii. Zároveň dostává bonus +1 do Základní obrany (ZO).",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "maskovani",
+   "nazev": "Maskování",
+   "strana": 220,
+   "latinsky": "Dissimus",
+   "parametry": {
+    "mana": "6",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 den",
+    "vyvolani": "5 kol",
+    "obtiznost": "12",
+    "overeni": "Sesílání kouzel (INT) vs. Postřeh (INT)",
+    "vyzaduje": "Magie proměn - Nekromant"
+   },
+   "popis": "Nekromant vyzáří do nemrtvého manu, která způsobí, že mu na dobu jednoho dne doroste maso, kůže a podobně. Získá tak zpět svůj humanoidní vzhled a zdravou barvu. Vypadá jako živý. K tomu, aby někdo odhalil, že se jedná o nemrtvého, je pak nutné uspět v ověřovacím hodu na Postřeh (INT) vs. Sesílání kouzel (INT) Nekromanta.\nKouzlem lze ovlivnit tvory s inteligencí vyšší než 1. Po dobu trvání kouzla musí Kouzelník každé kolo použít krátkou akci pro pokračování v našeptávání.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "metamorfoza_v_nemrtveho",
+   "nazev": "Metamorfóza v nemrtvého",
+   "strana": 220,
+   "latinsky": "Mortmutátum",
+   "parametry": {
+    "mana": "dle typu nemrtvého",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 hodina",
+    "vyvolani": "3 kola",
+    "obtiznost": "13",
+    "vyzaduje": "Magie proměn - Nekromant"
+   },
+   "popis": "Tímto kouzlem dokáže Nekromant dočasně proměnit živou bytost v nemrtvého, kterého umí vyvolat. Vybranému tvoru zůstanou jeho fyzické i psychické atributy, stejně jako počet životů, mana atd. Zároveň však získá zvláštní schopnosti daného druhu nemrtvého. Stejně tak i jeho Rezistenci, Imunitu, Slabiny a případné další efekty, které na něj působí.\nKouzlo nelze použít k proměně na vyšší nemrtvé a upíry. Jejich stvoření a moc je totiž naprosto specifická.\nPotřebný počet many ke změně v jednotlivé druhy nemrtvého jsou uvedené v tabulce.\nKostlivec | 6 many\nZombie | 8 many\nGhůl | 10 many\nMumie | 12 many\nSlaugh | 8 many\nPřízrak | 10 many\nDuch | 12 many\nBánší | 21 many",
+   "typ": "kouzlo",
+   "obor": "Magie proměn",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "mimoprostorovy_ukryt",
+   "nazev": "Mimoprostorový úkryt",
+   "strana": 220,
+   "latinsky": "Latibulum",
+   "parametry": {
+    "mana": "25",
+    "dosah": "-",
+    "rozsah": "Kouzelník",
+    "trvani": "1 směna",
+    "vyvolani": "půl kola",
+    "obtiznost": "21",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Toto kouzlo dokáže ochránit Čaroděje skokem do mimoprostoru. Díky němu dočasně zmizí z naší reality, aby se po vypršení trvání kouzla znovu objevil na stejném místě.\nMimoprostorovou schovku lze dokonce vyvolat pouze myšlenkou v téměř nulovém čase jako reakce na nějakou událost, takže lze například i utéci blesku. Pochopitelně to ovšem znamená seslání kouzla bez gest a slov s příslušným nárůstem obtížnosti.\nPři seslání kouzla se Čaroděj musí rozhodnout, jak dlouho v mimoprostoru zůstane (až 1 směna). Pro ostatní to vypadá, jako by Čaroděj najednou na nějaký čas zmizel. On samotný to však vnímá jako pouhý okamžik.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "mlzna_postava",
+   "nazev": "Mlžná postava",
+   "strana": 221,
+   "latinsky": "Persona nebula",
+   "parametry": {
+    "mana": "12",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "15",
+    "vyzaduje": "Magie proměn - Nekromant"
+   },
+   "popis": "Očarovaný tvor se změní v postavu z mlhy. Jako takový se může pohybovat rychlostí 3 sáhy za kolo. Ve svém pohybu není omezen směrem (může tedy i létat). Vítr ho nerozptýlí, ale ovlivňuje jeho pohyb.\nV této formě dokáže očarovaný tvor měnit svou mlžnou podobu. Může tak „protéct“ klíčovou dírkou nebo škvírou pod dveřmi a podobně. Zároveň nedokáže s žádnými předměty manipulovat, protože kolem nich pouze obtéká. Stejně tak nemůže na nikoho zaútočit ani používat své dovednosti (u schopností záleží na rozhodnutí Pána Jeskyně).\nV mlžné podobě je očarovaný zranitelný pouze magickými útoky.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "most",
+   "nazev": "Most",
+   "strana": 221,
+   "latinsky": "Pons arcanum",
+   "parametry": {
+    "mana": "5 za 10 sáhů",
+    "dosah": "10 sáhů",
+    "rozsah": "dle dodané many",
+    "trvani": "1 směna",
+    "vyvolani": "3 kol",
+    "obtiznost": "15",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Na vybraném místě vznikne „magická cesta“ široká jeden sáh, která se táhne směrem dle volby Kouzelníka. O tom, jakou formu cesta má, lze rozhodnout při jejím seslání (hladký povrch, úchyty, schody atd.).\nNosnost „mostu“ je zhruba 100 liber na čtvereční sáh. Krátkodobě však unese i větší zatížení. Pokud by se ho někdo snažil poškodit, stačí ke zničení jednoho sáhu mostu 2 silné rány těžkou zbraní. Zbytek však bude držet dál. Most nepotřebuje žádné ukotvení a lze ho postavit i kolmo.\nKouzelník může most nechat kdykoliv zmizet (krátká akce), jinak se sám rozplyne po vypršení trvání kouzla.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "mysticky_or",
+   "nazev": "Mystický oř",
+   "strana": 221,
+   "latinsky": "Eques arcanum",
+   "parametry": {
+    "mana": "15 (20)",
+    "dosah": "5 sáhů",
+    "rozsah": "1 oř",
+    "trvani": "1 den",
+    "vyvolani": "3 kola",
+    "obtiznost": "19",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Pomocí tohoto kouzla lze vyvolat magického oře tvořeného zářící aurou. Jestliže kouzelník chce, může přidáním 5 bodů many změnit jeho vzhled tak, že vypadá jako běžné zvíře. Pouze pečlivé pozorování dokáže odhalit, že tomu tak není.\nKouzelník se při jízdě na oři nemusí bát, že by spadl, a to ani pokud příliš neovládá jízdu na zvířeti. Za běžné jízdy se totiž „tvor“ stará o to, aby z něj jezdec nespadl. Očekávaný směr jízdy navíc vycítí zvíře přímo z mysli svého pána. Kouzelník se tak může věnovat i sesílání kouzel bez omezení a postihů.\nMystický oř dokáže cválat i po nezpevněném povrchu vodní hladiny. Jedinou podmínkou pro jeho pohyb je přímý kontakt s tělem Kouzelníka. Pokud se přeruší, kůň se zastaví na místě a nehne se.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "nakrm_nemrtveho",
+   "nazev": "Nakrm nemrtvého",
+   "strana": 222,
+   "latinsky": "Nutri mortum",
+   "parametry": {
+    "mana": "4 za zvýšení",
+    "dosah": "dotek",
+    "rozsah": "nemrtví",
+    "trvani": "1 hodina",
+    "vyvolani": "1 kolo",
+    "obtiznost": "14 (+2 za každé zvýšení navíc)",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Prostřednictvím tohoto kouzla může Nekromant „nakrmit“ vybraného nemrtvého a tím ho posílit. Za každé 4 body many, které do kouzla vložil, musí obětovat 1 svůj život. Tím dokáže zvýšit opravu u vybraného atributu (SIL, OBR, ODO apod.) nemrtvého o 1.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "navigacni_svetelko",
+   "nazev": "Navigační světélko",
+   "strana": 222,
+   "latinsky": "Lux directio",
+   "parametry": {
+    "mana": "2 za směnu",
+    "dosah": "10 sáhů",
+    "rozsah": "1 světélko",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "14",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Kouzlo vyčaruje malé světélko, které se objeví do 5 sáhů od kouzelníka. Světélko se napojí na vichry many a v nich hledá stopy. Světélko pozná nejvyužívanější cestu, ale Kouzelník může ovlivnit kudy se světélko vydá. Pokud světélko nenachází žádné stopy, krouží okolo Kouzelníka a pátrá v jeho dohledu. Ignoruje stopy kouzelníka a jeho družiny. Světélko je tedy schopné provést postavy pouští, kde je povede po stopě karavan, nebo bažinou, pokud jsou v nich nějaké stezky.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "navrat",
+   "nazev": "Návrat",
+   "strana": 222,
+   "latinsky": "Returno",
+   "parametry": {
+    "mana": "10 za tvora",
+    "dosah": "dotek",
+    "rozsah": "počet tvorů dle dodané many",
+    "trvani": "1 hodina",
+    "vyvolani": "10 kol",
+    "obtiznost": "12 (+2 za každého tvora navíc)",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Během sesílání tohoto kouzla se musí všechny cíle dotýkat zvoleného místa. Tím je kouzlo připraveno a čeká na svou aktivaci. K té může dojít kdykoliv během následující hodiny. Čaroději stačí použít krátkou akci (myšlenku), a kouzlo přenese všechny zpět na místo svého seslání, ať už byli v daném okamžiku kdekoliv. Pro přenos platí stejná pravidla jako u kouzla Teleport (tedy nesmí být připoutáni atp.).",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "nekroticky_rej",
+   "nazev": "Nekrotický rej",
+   "strana": 222,
+   "latinsky": "Mors celebri",
+   "parametry": {
+    "mana": "30",
+    "dosah": "koule kolem Nekromanta o poloměru 10 sáhů",
+    "rozsah": "všichni živí tvorové v dosahu",
+    "trvani": "ihned",
+    "vyvolani": "2 kola",
+    "obtiznost": "26",
+    "vyzaduje": "Vitální magie"
+   },
+   "popis": "Kouzelník začne splétat složité kouzlo, pak udeří do země a z ní vyrazí nekrotický rej. Ten zraní vše živé v dosahu kouzla (mimo Kouzelníka) za 4k6 životů. Všichni zranění navíc musí uspět v ověřovacím hodu na Výdrž (ODO) vs. Sesílání kouzel Kouzelníka, jinak jsou na krátký okamžik 1 kola v podstatě mrtví (neschopni jakékoliv akce).\nV tomto stavu se jejich těla kácí k zemi a „dočasná smrt“ způsobí narušení magických vazeb. Pokud byla postava pod vlivem nějakého kouzla či kletby, jeho účinky se tímto zruší.\nNekrotický rej zároveň „vyléčí“ všem nemrtvým v dosahu kouzla tolik životů, kolik ztratili zasažení tvorové.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie"
+  },
+  {
+   "id": "neviditelna_usta",
+   "nazev": "Neviditelná ústa",
+   "strana": 222,
+   "latinsky": "Invisio oris",
+   "parametry": {
+    "mana": "4 + (1× za požadované přehrání)",
+    "dosah": "3 sáhy",
+    "rozsah": "1 předmět",
+    "trvani": "1 rok nebo do vyčerpání počtu přehrání",
+    "vyvolani": "1 kolo",
+    "obtiznost": "13",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Kouzelník tímto kouzlem zakleje do zvoleného předmětu krátkou zprávu. Tou je myšlen záznam o délce nejvýše 3 kol. Zpráva se přehraje, ve stejném znění a stejným hlasem, jakým byla namluvena a to v okamžiku, kdy je předmět aktivován.\nAktivaci určuje Kouzelník v okamžiku seslání kouzla. Může jí být pronesení správného hesla, vydání zvuku, dotek a podobně.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "neviditelna_zed",
+   "nazev": "Neviditelná zeď",
+   "strana": 223,
+   "latinsky": "Invisio murus",
+   "parametry": {
+    "mana": "3 za 1 sáh zdi",
+    "dosah": "20 sáhů",
+    "rozsah": "dle dodané many",
+    "trvani": "5 kol",
+    "vyvolani": "půl kola",
+    "overeni": "Postřeh (INT) vs. Sesílání kouzel (INT) Kouzelníka Atletika (SIL) vs. Sesílání kouzel (INT) Kouzelníka",
+    "obtiznost": "19",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Neviditelná zeď je tvořena zpevněným vzduchem. Její výška je 3 sáhy, šířka 1 sáh a délka je závislá na vložené maně. Kouzelník může určit specifický tvar stěny v okamžiku jejího seslání. K odhalení zdi je nutné uspět v ověřovacím hodu na Postřeh (INT) vs. Sesílání kouzel (INT) Bojového mága, jinak je nepostřehnutelná.\nZeď funguje jako odolná stěna, kterou nelze (kromě sesilatele) bez velké snahy projít. Klade totiž houževnatý odpor, a je proto nejprve nutné uspět v ověřovacím hodu na Atletiku (SIL) vs. Sesílání kouzel (INT) Bojového mága. Jestliže dotyčný neuspěje, zůstane před zdí a může se ji pokusit překonat v dalším kole. I v případě úspěchu je však pohyb skrze ni obtížný (zeď se pravidlově považuje za obtížný terén a Pohyblivost v ní je poloviční). Stejně tak i veškeré Útoky skrze ni jsou prováděny s Nevýhodou (postih -5).",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "neznicitelnost",
+   "nazev": "Nezničitelnost",
+   "strana": 223,
+   "latinsky": "Impervius",
+   "parametry": {
+    "mana": "15",
+    "dosah": "-",
+    "rozsah": "Kouzelník",
+    "trvani": "1 kolo",
+    "vyvolani": "půl kola",
+    "obtiznost": "21",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Tímto kouzlem se Bojový mág dokáže po dobu trvání kouzla chránit před jakýmkoliv Zraněním.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "odpuzujici_stit",
+   "nazev": "Odpuzující štít",
+   "strana": 223,
+   "latinsky": "Repellens scutum",
+   "parametry": {
+    "mana": "10",
+    "dosah": "dotek",
+    "rozsah": "1 štít",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "overeni": "Atletika (SIL) obránce vs. Atletika (SIL) útočníka",
+    "obtiznost": "15",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Tímto kouzlem lze očarovat štít tak, aby dočasně získal bonus +1 ke své kvalitě. Pokud navíc odrazí útok tváří v tvář, mana v něm se pokusí odhodit nepřítele zpět o 2 sáhy. Obránce tak musí uspět v ověřovacím hodu na Atletika (SIL) obránce vs. Atletika (SIL) útočníka. Štít mu navíc k tomuto hodu poskytuje Výhodu (bonus +5).",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "odraz_kouzlo",
+   "nazev": "Odraž kouzlo",
+   "strana": 223,
+   "latinsky": "Reflecto magica",
+   "parametry": {
+    "mana": "20",
+    "dosah": "100 sáhů",
+    "rozsah": "1 kouzlo",
+    "trvani": "ihned",
+    "overeni": "Sesílání kouzel (INT) vs. Sesílání kouzel (INT) protivníka",
+    "vyvolani": "půl kola",
+    "obtiznost": "20",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Tímto kouzlem lze odrazit cílené kouzlo divoké magie, které je sesláno na dané místo či tvora v dosahu. Jestliže kouzelník uspěje v ověřovacím hodu na Sesílání kouzel (INT) vs. Sesílání kouzel (INT) protivníka, může vybrat směr odrazu či jiný cíl v dosahu.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "ohniva_boure",
+   "nazev": "Ohnivá bouře",
+   "strana": 223,
+   "latinsky": "Ignus tempest",
+   "parametry": {
+    "mana": "50",
+    "dosah": "100",
+    "rozsah": "mračno o poloměru 10 sáhů",
+    "trvani": "1 směna",
+    "vyvolani": "4 kola",
+    "obtiznost": "21",
+    "vyzaduje": "Divoká magie - Bojový mág"
+   },
+   "popis": "Bojový mág vyčaruje černý mrak, ze kterého začne pršet ohnivý déšť. Jestliže se Bojový mág soustředí, dokáže mrakem po celou dobu jeho trvání pohybovat. Rychlost pohybu mraku je 6 sáhů za kolo a může být ovlivněn větrem.\nOhnivý déšť způsobuje Zranění o síle 1k6 životů za čtvereční sáh. Jestliže tvor zabírá více sáhů, Zranění se úměrně jeho ploše zvyšuje.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "ohniva_stena",
+   "nazev": "Ohnivá stěna",
+   "strana": 224,
+   "latinsky": "Ignus murus",
+   "parametry": {
+    "mana": "30",
+    "dosah": "30 sáhů",
+    "rozsah": "zvláštní (viz popis)",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "22",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Tímto kouzlem lze seslat plamennou stěnu o maximální výšce 5 sáhů, délce 20 sáhů a šířce čtvrt sáhu. Její tvar, velikost i orientaci určuje Kouzelník při jejím seslání.\nOheň a žár, který ze stěny sálá, způsobuje v každém kole zranění za 2k6 životů těm, kteří jsou v dosahu 2 sáhů a 1k6 životů tvorům v dosahu 5 sáhů. Průchod skrze stěnu způsobí zranění za 5k6 životů a zapálí vše hořlavé, co má tvor na sobě.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "ochrana_pred_zivlem",
+   "nazev": "Ochrana před živlem",
+   "strana": 224,
+   "latinsky": "Protego elementi",
+   "parametry": {
+    "mana": "10",
+    "dosah": "dotek",
+    "rozsah": "1 cíl",
+    "trvani": "1 hodina (4 směny)",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16",
+    "vyzaduje": "Divoká magie - Bojový mág"
+   },
+   "popis": "Cíl kouzla je chráněn před projevy živlů a kouzly Divoké magie. Získává tak vůči nim rezistenci, díky níž je jimi způsobené Zranění poloviční. Zároveň poskytuje Výhodu (bonus +5) ke všem ověřovacím hodům proti danému elementu.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "oprav_nemrtveho",
+   "nazev": "Oprav nemrtvého",
+   "strana": 224,
+   "latinsky": "Repari mortem",
+   "parametry": {
+    "mana": "6 za opravu",
+    "dosah": "20 sáhů",
+    "rozsah": "1 nemrtvý tvor",
+    "trvani": "ihned",
+    "vyvolani": "1 kolo",
+    "obtiznost": "13 (+2 za každou opravu navíc)",
+    "vyzaduje": "Magie proměn - Nekromant"
+   },
+   "popis": "Toto kouzlo umožňuje „léčit“ nemrtvé za 2k6 životů. „Léčení“ lze provádět vždy nejvýše do maxima počtu životů daného tvora.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "oznac",
+   "nazev": "Označ",
+   "strana": 224,
+   "latinsky": "Nota bene",
+   "parametry": {
+    "mana": "2 za den",
+    "dosah": "dotek",
+    "rozsah": "1 předmět nebo tvor",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12 (+2 za každou značku navíc)",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Tímto kouzlem Kouzelník označí nějaký předmět neviditelnou značku či runou. Ta se následně může projevovat mnoha způsoby (zářit, vydávat hlasitý pískot, vibrace a podobně). Při seslání kouzla může navíc Kouzelník určit, kdy se efekt značky projeví (například, pokud se předmět vzdálí na víc jak 5 sáhů od kouzelníka a podobně).\nKouzelník může značku zviditelnit nebo aktivovat silou myšlenky (krátká akce) až na vzdálenost 100 sáhů.\nKouzelník není v počtu značek, které vytvoří, omezen. Každá aktivní značka však zvyšuje obtížnost seslání kouzla o 2.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "oziv_neziveho",
+   "nazev": "Oživ neživého",
+   "strana": 224,
+   "latinsky": "Vivifica mortum",
+   "parametry": {
+    "mana": "dle úrovně a typu nemrtvého",
+    "dosah": "dotek",
+    "rozsah": "1 nemrtvý",
+    "trvani": "stálé",
+    "vyvolani": "1 směna",
+    "obtiznost": "12 (+1 za každou úroveň navíc)",
+    "zaklad": "tělo (minimálně 1. úrovně)",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Tímto kouzlem je Nekromant schopen oživit hmotného nemrtvého. Tomu může následně rozkazovat pomocí myšlenky až na vzdálenost 100 sáhů.\nZa udržení nemrtvého pod kontrolou musí Nekromant platit. Jedenkrát denně, nejčastěji po probuzení (případně po meditaci, nemá-li Kouzelník v danou chvíli dost many), si odepíše body many v hodnotě poloviny vyvolávací ceny nemrtvého. Pokud tak neučiní, ztratí nad ním kontrolu a tvor bude jednat dle své přirozenosti.\nAtributy nemrtvého i jeho úroveň jsou ovlivněny volbou Nekromanta. Za obvyklých okolností jsou totiž stejné, jako byly u původního těla. Jejich parametry následně upravuje Tabulka oživení hmotného nemrtvého. Jestliže však Nekromant chce, může ušetřit body many tím, že vyvolá jen nejprimitivnější nemrtvé. Takové, kteří své původní atributy a úroveň nedědí. V tom případě pro ně platí údaje uvedené u hmotných nemrtvých v PPZ V 1.1, (strana 94).\nNemrtví mívají schopnosti, které náleží danému druhu. O schopnosti a kouzla, která měl nemrtvý za života, smrtí obvykle přicházejí.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "ozivle_predmety",
+   "nazev": "Oživlé předměty",
+   "strana": 226,
+   "latinsky": "Anima raritas",
+   "parametry": {
+    "mana": "4 za předmět",
+    "dosah": "30 sáhů",
+    "rozsah": "1 - 5 předmětů",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "17",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Tímto kouzlem dokáže Kouzelník rozpohybovat až 5 libovolných předmětů (brnění, kamenná socha, loutka, atp.), které vidí. Ty navíc reagují na jeho mentální pokyny a snaží se vykonat jeho rozkazy. Každý předmět se samozřejmě pohybuje jen dle svých možností (kniha dokáže jen otáčet stránkami, zbroj dokáže i chodit a podobně).",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "podpor_talent",
+   "nazev": "Podpoř talent",
+   "strana": 226,
+   "latinsky": "Melius artem",
+   "parametry": {
+    "mana": "3 za zlepšení",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 směna",
+    "vyvolani": "půl kola",
+    "obtiznost": "10 (+2 za každé zlepšení navíc)",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Tímto kouzlem lze dočasně upravit fyzické a psychické dispozice jednotlivce tak, aby byl úspěšnější v určité dovednosti. Musí ji však již ovládat aspoň na 1. stupni. Zlepšení stupně zvládnutí dovednosti o 1 stojí vždy 3 body many.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "pokrocila_reanimace",
+   "nazev": "Pokročilá reanimace",
+   "strana": 226,
+   "latinsky": "Provecta revitas",
+   "parametry": {
+    "mana": "dle úrovně a typu nemrtvého",
+    "dosah": "dotek",
+    "rozsah": "1 nemrtvý",
+    "trvani": "stálé",
+    "vyvolani": "1 směna",
+    "obtiznost": "17 (+1 za každou úroveň navíc)",
+    "vyzaduje": "Vitální magie - Nekromant - Sběratel duší"
+   },
+   "popis": "Tímto kouzlem je Nekromant schopen oživit nehmotného nemrtvého. Vyvolaný nemrtvý má veškeré parametry (včetně úrovně) závislé na těle, které Nekromant použil. Netýká se to Síly a Odolnosti (ty ztrácí spolu se svým hmotným tělem). Tyto parametry potom upravuje Tabulka oživení nehmotného nemrtvého. Jestliže však Nekromant chce, může ušetřit body many tím, že vyvolá jen jejich primitivnější varianty. Takové, které své původní atributy a úroveň nedědí. V tom případě pro ně platí údaje uvedené u nehmotných nemrtvých v PPZ V 1.1. Nemrtvý má všechny schopnosti, které k jeho typu patří (posednutí, zakvílení atd.). O schopnosti a kouzla, která měl nemrtvý za života, smrtí obvykle přichází.\nZároveň lze tímto kouzlem oživit i vyšší nemrtvé a mladé upíry. Jedná se o složitý rituál, který je popsán u jednotlivých nemrtvých v pravidlech pro vypravěče (PPP V). Tito nemrtví Nekromanta neposlouchají na slovo, mohou s ním však spolupracovat, pokud je to v jejich zájmu. K vyvolání kouzla potřebuje Nekromant manu v hodnotě 15× úroveň vyššího nemrtvého a mrtvolu humanoida, který měl nečistou duši.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "poplach",
+   "nazev": "Poplach",
+   "strana": 226,
+   "latinsky": "Clamor",
+   "parametry": {
+    "mana": "1 za hodinu",
+    "dosah": "dotek",
+    "rozsah": "koule o poloměru 5 sáhů",
+    "trvani": "dle vložené many",
+    "vyvolani": "3 kola",
+    "obtiznost": "12",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Mana: | 4 × úroveň nemrtvého | 5 × úroveň nemrtvého | 6 × úroveň nemrtvého | 7 × úroveň nemrtvého\nŽivoty: | 5 × Úroveň + 5 | 5 × Úroveň + 5 | 5 × Úroveň + 5 | 5 × Úroveň + 5\nAtributy: | SIL -, OBR X-2, ODO -, INT 3 (-4), CHAR 6 (-2) | SIL -, OBR X-1, ODO -, INT 8 (-1), CHAR 6 (-2) | SIL -, OBR X+1, ODO -, INT 8 (-1), CHAR 6 (-2) | SIL -, OBR X+2, ODO -, INT 12 (+1), CHAR 14 (+2)\nPohyblivost: | 35 (levitace) | 30 (levitace) | 40 (levitace) | 50 (levitace)\nÚtočné číslo: | OBR+5/+2 (pařáty) | OBR+5/+2 (pařáty) | OBR+5/+2 (pařáty) | OBR+5/+2 (pařáty)\nZákladní obrana | OBR+4 (nehmotný) | OBR+4 (nehmotný) | OBR+4 (nehmotný) | OBR+4 (nehmotný)\nObranné číslo | OBR+4 (nehmotný) | OBR+4 (nehmotný) | OBR+4 (nehmotný) | OBR+4 (nehmotný)\nZvl schopnosti: | vidění ve tmě, přízračné pařáty, hejno-slaugharag | vidění ve tmě, posednutí, přeludy, útok skrz zbroj | vidění ve tmě, vysátí úrovně, posednutí, útok skrz zbroj | vycítění života, útok skrz zbroj, zakvílení\nImunita: | jed, krvácení, ovlivnění mysli, ostatní zbraně | jed, krvácení, ovlivnění mysli, ostatní zbraně, oheň | jed, krvácení, ovlivnění mysli, ostatní zbraně, oheň | jed, krvácení, ovlivnění mysli, ostatní zbraně, oheň\nRezistence: | magické zbraně, kouzla, stříbrné zbraně | magické zbraně, kouzla | magické zbraně, kouzla | magické zbraně, kouzla\nSlabina: | svěcené zranění, denní světlo | svěcené zranění, stříbrné zbraně | svěcené zranění, stříbrné zbraně | svěcené zranění, stříbrné zbraně\nDovednosti: | reflex (úroveň+OBR), schování ve stínu (úroveň+OBR) | reflex (úroveň+OBR), schování ve stínu (úroveň+OBR) | reflex (úroveň+OBR), schování ve stínu (úroveň+OBR) | reflex (úroveň+OBR), schování ve stínu (úroveň+OBR)\nKouzlo vytvoří na zvoleném místě ochrannou kouli, která reaguje na narušení nějakým tvorem pomocí hlasitého zvuku. Kouzelník při sesílání může zvolit velikost tvorů, na které má kouzlo reagovat. Ti, kteří se nacházejí při seslání uvnitř koule jí mohou libovolně procházet oběma směry, aniž by se poplach spustil. Kouzelník může kouzlo kdykoli zrušit, a to i před uplynutím doby trvání.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "portal",
+   "nazev": "Portál",
+   "strana": 227,
+   "latinsky": "Mana porti",
+   "parametry": {
+    "mana": "8 + (2× počet mil)",
+    "dosah": "5 sáhů",
+    "rozsah": "Kruh o maximálním poloměru 2 sáhy",
+    "trvani": "10 kol",
+    "vyvolani": "10 kol",
+    "obtiznost": "23",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Čaroděj dokáže tímto kouzlem vytvořit jednosměrné mimoprostorové spojení dvou míst - portál. Jedna strana portálu se zjeví pět sáhů před čarodějem, druhá pak na místě, které Čaroděj určí. Podmínkou je, aby na něm už někdy dříve byl.\nPortál má kruhový tvar a mohou jím projít postavy nejvýše o velikosti C. Tato „brána“ zůstává otevřena po dobu 10 kol. Kdokoliv do portálu během té doby vstoupí, ocitne se na jeho druhé straně. Po uplynutí trvání kouzla se portál rozpadne a spojení mizí.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "portalova_cepel",
+   "nazev": "Portálová čepel",
+   "strana": 228,
+   "latinsky": "Porti aethera",
+   "parametry": {
+    "mana": "7",
+    "dosah": "dotek",
+    "rozsah": "1 sečná nebo bodná zbraň",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "obtiznost": "17",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Čaroděj očaruje sečnou nebo bodnou zbraň. Jakmile je jí nějaký tvor zasažen, je teleportován na náhodné místo v dosahu 2k10 sáhů (dle rozhodnutí / hodu Pána Jeskyně).",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "posledni_vykrik",
+   "nazev": "Poslední výkřik",
+   "strana": 228,
+   "latinsky": "Voca ultima",
+   "parametry": {
+    "mana": "9 za zakvílení",
+    "dosah": "koule o poloměru 10 sáhů",
+    "rozsah": "vše živé v dosahu",
+    "trvani": "ihned",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16 (+2 za každé zakvílení navíc)",
+    "overeni": "Sesílání kouzel (INT) vs. Vůle (CHAR)",
+    "vyzaduje": "Vitální magie"
+   },
+   "popis": "Sesláním tohoto kouzla dokáže Kouzelník napodobit zakvílení bánší. Všichni v dosahu 10 sáhů od něj tak budou zasaženi nekrotickým Zraněním za 1k6+3 životů. Pokud Kouzelník uspěje v ověřovacím hodu na Sesílání kouzel (INT) vs. Vůle (CHAR) cílů, vystraší je a na dobu 3 kol nebudou schopny dělat nic jiného, než utíkat co nejdál od něj. Efekt paniky zmizí, budou-li na útěku napadeny, nebo uspějí v opakovaném ověřovacím hodu (ten mohou provést v každém kole).",
+   "typ": "kouzlo",
+   "obor": "Vitální magie"
+  },
+  {
+   "id": "pouto_nesmrtelnosti",
+   "nazev": "Pouto nesmrtelnosti",
+   "strana": 228,
+   "latinsky": "Nexus immortum",
+   "parametry": {
+    "mana": "veškerá dostupná",
+    "dosah": "dotek",
+    "rozsah": "Nekromant",
+    "trvani": "trvalé",
+    "vyvolani": "12 hodin",
+    "obtiznost": "26",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Toto kouzlo je vrcholem magie Nekromantů. Během jednoho dne ve složitém rituálu odštěpí část své duše s odpovídající vitální energií a v závěru kouzla ji mentálně odřízne. V tuto chvíli se trvale sníží počet jeho bodů many i životů o 10. A to i v případě, že se kouzlo nezdaří. Následně separovanou část duše vloží do předem připraveného předmětu - Vitálu. Ten se tak stává enormně odolným a zničit jej může pouze rozptýlení kouzla nebo mocný předmět (rozhoduje Vypravěč). Nekromant navíc vnímá každý (úspěšný či neúspěšný) útok na Vitál a jeho zničení mu způsobí velkou psychickou bolest. Vitálů dokáže Nekromant prostřednictvím tohoto kouzla vytvořit i více.\nPokud by měl později Nekromant zemřít, jeho tělo (ne však vybavení) se promění v prach. Duše však zůstane v našem světě a začne se obnovovat z Vitálu. Pokud jich měl Nekromant více, může si sám zvolit, který použije.\nObnovení těla trvá 24 hodin. Poté se Nekromant znovu vrátí do života. Za to však zaplatí velkou daň v podobě svých vzpomínek. Ztratí úroveň a jeho zkušenosti se vrátí na hodnotu nezbytnou k přechodu na předchozí úroveň.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "posilej_myslenky",
+   "nazev": "Posílej myšlenky",
+   "strana": 229,
+   "latinsky": "Nexum idea",
+   "parametry": {
+    "mana": "10 + (2× počet tvorů)",
+    "dosah": "0,5 míle",
+    "rozsah": "počet tvorů dle dodané many",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "19 (+1 za každého tvora navíc)",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Toto kouzlo umožňuje Kouzelníkovi spojit svou mysl s jinými inteligentními tvory a komunikovat s nimi beze slov, pouze myšlenkami. Každý z těchto tvorů je pak spojený se všemi ostatními, jako by byli v jedné místnosti a nahlas se spolu bavili. Nelze tedy poslat myšlenku soukromě jednomu. Kouzelník nemusí osoby v době seslání vidět, ale musí je znát alespoň od vidění (ne však z portrétu atp.). Cíl může ze své strany toto spojení odmítnout nebo ukončit, pokud se tak rozhodne.\nPro udržení spojení se Kouzelník musí mírně soustředit. Může se třeba procházet, jíst, dokonce i lehce konverzovat s někým jiným, ale není schopen sesílat kouzla nebo se aktivně účastnit boje. V případě přerušení soustředění kouzlo končí a zhroutí se všechna další spojení. Pokud je někdo takto napojen na posílání myšlenek, nemůže se napojit na jinou skupinu.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "pozmen_predmet",
+   "nazev": "Pozměň předmět",
+   "strana": 229,
+   "latinsky": "Tempero raritas",
+   "parametry": {
+    "mana": "4",
+    "dosah": "dotek",
+    "rozsah": "1 předmět",
+    "trvani": "1 směna",
+    "vyvolani": "2 kola",
+    "obtiznost": "9",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Kouzelník dokáže tímto kouzlem změnit velikost nekouzelného předmětu. Buď ho zmenší na desetinu původní velikosti nebo zvětší na dvojnásobek (například 1 sáh velký předmět zmenší na 10 coulů nebo zvětší na 2 sáhy). Váha zůstane zachována. Originální předmět může být až dva sáhy veliký a do hmotnosti 50 liber.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "promen_predmet",
+   "nazev": "Proměň předmět",
+   "strana": 229,
+   "latinsky": "Muteo raritas",
+   "parametry": {
+    "mana": "20 za směnu",
+    "dosah": "dotek",
+    "rozsah": "1 předmět",
+    "trvani": "stále",
+    "vyvolani": "1 směna",
+    "obtiznost": "18",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Kouzelník dokáže tímto kouzlem vytvořit libovolný předmět dle svých představ. Místo nástrojů k tomu však používá svou magii a vůli.\nK výrobě předmětu je potřeba stejné množství surovin, jaké by vyžadovalo jeho stvoření běžným způsobem. Na jejich podobě však nezáleží. K vytvoření nože stačí železná ruda, k vytvoření dřevěné hole hromada pilin a podobně. Následně provede ověřovací hod na seslání kouzla a pokud uspěje, předmět je vyroben.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "prostorove_skoky",
+   "nazev": "Prostorové skoky",
+   "strana": 229,
+   "latinsky": "Locus itera",
+   "parametry": {
+    "mana": "20",
+    "dosah": "-",
+    "rozsah": "Kouzelník",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "obtiznost": "23",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Kouzelník očaruje sám sebe tak, že je chráněn proti Útokům prostorovými skoky. Jakmile se ho pokusí někdo napadnout, teleportuje ho kouzlo automaticky na náhodné volné místo v okolí 10 sáhů.\nKouzlo zvládne provést nejvýše 3 prostorové skoky. Poté se mana z něj vyčerpá. Kouzlo navíc neúčinkuje proti útokům, které jsou automaticky úspěšné (tj. např. proti kouzlům, jejichž efektům se nelze fyzicky vyhnout). Samotný přesun Kouzelníka nijak nevyruší.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "prozkoumej_mysl",
+   "nazev": "Prozkoumej mysl",
+   "strana": 229,
+   "latinsky": "Mens explorum",
+   "parametry": {
+    "mana": "20",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "10 kol",
+    "vyvolani": "3 kola",
+    "overeni": "Vůle Kouzelníka (CHAR) vs. Vůle (CHAR) cíle",
+    "obtiznost": "23",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Pomocí tohoto kouzla lze prozkoumat vzpomínky jiných. Jestliže Kouzelník uspěje v ověřovacím hodu na past Vůle (CHAR) vs. vůle (CHAR) cíle, stane se pro něj mysl cíle „otevřenou knihou“. Dokáže tak v každém kole prozkoumat jednu vzpomínku v ní obsaženou. Ta se mu v mysli přehraje jako scéna, které se zúčastnil coby cíl kouzla. „Cítí“ přitom i veškeré emoce a myšlenky, které se cíli v tu chvíli honily hlavou. Na zkoumání mysli se musí Kouzelník soustředit.\nVe chvíli, kdy Kouzelník vzpomínky prozkoumává, se znovu přehrávají i jeho cíli. Ten se tedy může dovtípit, co všechno bylo vyzrazeno.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "prehlizej",
+   "nazev": "Přehlížej",
+   "strana": 230,
+   "latinsky": "Obumbratum",
+   "parametry": {
+    "mana": "20 za týden",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "21",
+    "vyzaduje": "Mentální magie - Čaroděj"
+   },
+   "popis": "Tímto kouzlem lze ošálit mysl jiné bytosti tak, že po dobu trvání kouzla přestane vnímat jinou konkrétní bytost nebo typ bytostí. Podvědomě je vnímá tak, jako by k okolí odjakživa patřily, a tím ji nebo je zcela ignoruje (její či jejich přítomnost v cíli nevzbuzuje žádné myšlenky). „Nevnímaná“ bytost není neviditelná, pokud je to potřeba, očarovaný se jí vyhne, ale vlastně ani neví proč, ani že se něčemu vyhnul.\nPokud přehlížený tvor očarovaného napadne (zraní alespoň za 1 život), efekt kouzla končí.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "prezij",
+   "nazev": "Přežij",
+   "strana": 230,
+   "latinsky": "Vita superum",
+   "parametry": {
+    "mana": "7",
+    "dosah": "dotek",
+    "rozsah": "1 živý cíl",
+    "trvani": "1 den",
+    "vyvolani": "3 kola",
+    "obtiznost": "15",
+    "vyzaduje": "Vitální magie"
+   },
+   "popis": "Toto kouzlo posouvá Hranici smrti o 10 životů. Pokud má tedy někdo hranici smrti -10, posune se očarováním na -20 životů. Kouzlo navíc zkracuje dobu nutnou pro probrání se z bezvědomí na polovinu. Na Mezi vyřazení tak zůstává 1k10/2 směn.\nV případě, že má méně životů než 0, si za každé 4 hodiny obnoví 1 život.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie"
+  },
+  {
+   "id": "pridej_rezistenci",
+   "nazev": "Přidej rezistenci",
+   "strana": 230,
+   "latinsky": "Addere resistas",
+   "parametry": {
+    "mana": "10 za rezistenci",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "obtiznost": "19 (+2 za každou rezistenci navíc)",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Toto kouzlo poskytuje Rezistenci (poloviční Zranění) na typ útoků dle přání Bojového mága. Pokud už tvor na daný typ Zranění přirozenou rezistenci má, získá imunitu. Kategorie rezistencí upřesní Vypravěč.\nKouzlem lze navíc vytvořit hned několik rezistencí najednou. Každá z nich však zvyšuje obtížnost kouzla a jeho nároky na manu.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "pouto_osudu",
+   "nazev": "Pouto osudu",
+   "strana": 230,
+   "latinsky": "Nexus fatali",
+   "parametry": {
+    "mana": "80",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "do použití",
+    "vyvolani": "10 kol",
+    "obtiznost": "19",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Tímto kouzlem spojí Čaroděj ve spletitém obrazu své vlákno osudu s vláknem jiného tvora. Je-li kouzlo aktivováno, kolem Kouzelníka i cíle se začnou v zářivých spirálách stáčet vlákna osudu. Čaroděj zanechá u cílového tvora přivolávací předmět (např. flakonek se svým vlasem). K udržování aktivního pouta musí až do přivolání ubrat 10 bodů many ze svého maxima.\nPři použití předmětu Čaroděj postupně ztrácí vidění místa, na němž se nachází, a začíná vidět místo, kde se nalézá cílový tvor a chce-li, je k němu okamžitě přenesen. Po přenesení se Čaroději vložená mana vrátí. Smrt cílového tvora přenesení automaticky neaktivuje, ale může k němu dojít.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "privolej_predmet",
+   "nazev": "Přivolej předmět",
+   "strana": 230,
+   "latinsky": "Raritas invi",
+   "parametry": {
+    "mana": "7",
+    "dosah": "dotek",
+    "rozsah": "1 předmět",
+    "trvani": "1 den",
+    "vyvolani": "10 kol",
+    "obtiznost": "13",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Tímto kouzlem dokáže Čaroděj připravit jeden předmět tak, aby se k němu po „aktivaci“ rozlétl. Aktivace se provádí pronesením patřičného slova, které Čaroděj zvolil při seslání kouzla. Rychlost pohybu předmětu je 30 sáhů za kolo a jde o formu levitace.\nEfekt se projeví pouze v případě, že je předmět v dosahu 1 míle a není těžší než 15 liber. Drží-li ho v danou chvíli jiná osoba, pokusí se jí vytrhnout. To je podmíněno ověřovacím hodem na Sesílání kouzel (INT) vs. Atletika (SIL) držitele. Předmět se nedokáže dostat skrze pevnou překážku (truhla, zavřené dveře), ale dokáže strčením překonat mírný odpor (přivřené dveře).",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "razova_vlna",
+   "nazev": "Rázová vlna",
+   "strana": 231,
+   "latinsky": "Impecto",
+   "parametry": {
+    "mana": "2 za sáh",
+    "dosah": "dotek",
+    "rozsah": "vzdálenost dle dodané many, tvar dle přání Kouzelníka",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "obtiznost": "11 (+1 za každý sáh navíc)",
+    "overeni": "Sesílání kouzel (INT) vs. Atletika (SIL)",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzelník mocným úderem hole nebo dupnutím do země vytvoří silnou rázovou vlnu. Ta se šíří směrem od Kouzelníka ve výseči, kterou sám určí (kruh, půlkruh atd). Všichni tvorové v dosahu (kromě Kouzelníka) musí uspět v ověřovacím hodu na Atletika (SIL) vs. Sesílání kouzel (INT), jinak jsou odhození o 1k6/2 sáhů a povaleni. Vlna má podobný vliv i na všechny neupevněné předměty s ohledem na jejich hmotnost.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "rozkaz",
+   "nazev": "Rozkaz",
+   "strana": 231,
+   "latinsky": "Imperementum",
+   "parametry": {
+    "mana": "5",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "overeni": "Vůle Kouzelníka (CHAR) vs. Vůle (CHAR) cíle",
+    "obtiznost": "16",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Kouzelník vykřikne jednoslovný rozkaz, a pokud uspěje v hodu Vůle (CHAR) vs. Vůle (CHAR) cíle, ten jej musí splnit, jakmile je to možné. Cíl nesplní rozkaz, pokud by měl být očividně zraněn a pochopitelně pokud ho není schopen provést. Tedy například rozkaz „Skoč!“ cíl provede, pokud stojí někde na cestě, ale pokud je na úzké skalní římse nad propastí, neskočí. Déle trvající rozkazy (například, běž, stůj, lehni) odezní po 1 kole od spuštění.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "rozklad",
+   "nazev": "Rozklad",
+   "strana": 231,
+   "latinsky": "Putrefacti",
+   "parametry": {
+    "mana": "40 za sáh krychlový, +10 za další",
+    "dosah": "50 sáhů",
+    "rozsah": "předmět, hmota do rozměrů dle dodané many",
+    "trvani": "ihned",
+    "vyvolani": "2 kola",
+    "obtiznost": "24 (+2 za každý krychlový sáh navíc)",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Tímto kouzlem je Kouzelník schopen rozložit jakoukoliv nemagickou neživou hmotu nebo nekouzelný předmět na jemný prach. Kouzelník může určit, jak velký objem hmoty bude takto zničen, dle dodané many. U předmětů, které nemají tak velký objem, se největší rozměr musí vejít do dvojnásobku sáhů, tedy v základu do dvou sáhů.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "retezovy_blesk",
+   "nazev": "Řetězový blesk",
+   "strana": 231,
+   "latinsky": "Catena fulgorum",
+   "parametry": {
+    "mana": "20",
+    "dosah": "20 sáhů",
+    "rozsah": "až 7 tvorů",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "obtiznost": "21",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzelník zacílí na jednoho tvora v dosahu, jehož zasáhne tímto bleskem.Ten následně přeskočí na další cíl vzdálený do 3 sáhů od něj a z něj pak na další. Celkem takto dokáže zasáhnout až 7 bytostí, každou však pouze jednou. Zasažená bytost utrpí Zranění bleskem za 5k6 životů.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "rychlost_blesku",
+   "nazev": "Rychlost blesku",
+   "strana": 232,
+   "latinsky": "Corsus fulgorum",
+   "parametry": {
+    "mana": "30",
+    "dosah": "dotek",
+    "rozsah": "Kouzelník",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "overeni": "Atletika (SIL) vs. 7",
+    "obtiznost": "20",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Kouzlo Čaroděje neskutečně zrychlí. Díky tomu má 5 pohybových akcí, při nichž může něco udělat, než se zase zpomalí na běžnou rychlost. Během trvání kouzla je velmi těžké zasahovat do okolního světa. I samotný pohyb je ztížen. Pokud se Kouzelník chce pohybovat rychleji než chůzí nebo lehce pohnout nějakým předmětem (letící šíp, ostří meče), musí překonat past Atletika (SIL) vs. 7. Zaútočit zbraní je nemožné, stejně tak i sesílat kouzla. Pokud Kouzelník pustí nějaký předmět, který měl v době sesílání u sebe, ten se zastaví ve vzduchu a již na něj platí normální čas, tedy Kouzelník s ním sotva hne.\nRychlost blesku lze dokonce vyvolat pouze myšlenkou v téměř nulovém čase jako reakci na nějakou událost, takže lze například i utéci blesku nebo zachránit někoho před smrtelnou ranou. Pochopitelně to ovšem znamená seslání kouzla bez gest a slov s příslušným nárůstem obtížnosti.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "sila_many",
+   "nazev": "Síla many",
+   "strana": 232,
+   "latinsky": "Mana fortis",
+   "parametry": {
+    "mana": "7 za hodinu",
+    "dosah": "dotek",
+    "rozsah": "1 cíl",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Tímto zaklínadlem může Kouzelník prostřednictvím dotyku (na předmět či tvora) zacílit poryv větru na vybrané místo. Ten pak tlačí velkou silou směrem, který si Kouzelník zvolí. Jeho intenzitu i směr lze navíc v průběhu kouzla měnit. Stačí, aby se na to Kouzelník 1 kolo soustředil. Během soustředění navíc dokáže přidáním many prodloužit i jeho dobu trvání, aniž by musel znovu provádět ověřovací hod.\nMaximální síla vichru dokáže tlačit i naložený povoz. Navíc zvládne vybraný předmět odhodit, avšak není schopna ho trvale nadnášet.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "sladke_reci",
+   "nazev": "Sladké řeči",
+   "strana": 232,
+   "latinsky": "Dulcio",
+   "parametry": {
+    "mana": "3",
+    "dosah": "doslech",
+    "rozsah": "Kouzelník",
+    "trvani": "1 rozhovor",
+    "vyvolani": "půl kola",
+    "obtiznost": "7",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Toto kouzlo lze s úspěchem použít, pokud chce Kouzelník někoho k něčemu přemluvit. Musí použít aspoň nějaké argumenty, které efekt kouzla podpoří a znějí věrohodně. Má tak jeho prostřednictvím Výhodu (bonus +5) k přesvědčování nebo k hodu na Vůli (CHAR).",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "sloni_pamet",
+   "nazev": "Sloní paměť",
+   "strana": 232,
+   "latinsky": "Memora magna",
+   "parametry": {
+    "mana": "4",
+    "dosah": "dotek",
+    "rozsah": "1 událost v dohledu",
+    "trvani": "stále",
+    "vyvolani": "půl kola",
+    "overeni": "Postřeh (INT) vs. X",
+    "obtiznost": "8",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Díky tomuto kouzlu si lze vrýt do paměti aktuální výjev nebo událost, a to včetně všech podrobností, zvuků, vůní atp. Kdykoli později lze tuto vzpomínku v plné síle vyvolat zpět. Očarovaný si takto dokáže zapamatovat nejvýše tolik událostí, jaká je jeho úroveň. Při dalším použití je nejstarší událost zapomenuta.\nDruhou schopností kouzla je možnost vyvolat vzpomínku na libovolnou událost. V takovém případě se kouzlo pokusí najít informace v zákoutích paměti. Jestliže dotyčný uspěje v ověřovacím hodu na Postřeh (INT) vs. X (určí Vypravěč dle obtížnosti), vzpomene si na jím vybranou věc v podobě intenzivního zážitku se všemi detaily.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "spary_mrtvych",
+   "nazev": "Spáry mrtvých",
+   "strana": 233,
+   "latinsky": "Corsus fulgorum",
+   "parametry": {
+    "mana": "4 za kolo",
+    "dosah": "50 sáhů",
+    "rozsah": "5 sáhů poloměr",
+    "trvani": "dle dodané many",
+    "vyvolani": "2 kola",
+    "obtiznost": "12 (+2 za každé kolo navíc)",
+    "overeni": "Sesílání kouzel (INT) vs. Atletika (SIL) cílů",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Nekromant při seslání kouzla ukáže prstem na místo do vzdálenosti 50 sáhů. Ze země zde následně „vyrazí“ přízračné pařáty, které se pokusí sevřít vše v okruhu 5 sáhů. Za tímto účelem provede Nekromant ověřovací hod na Sesílání kouzel (INT) vs. Atletika (SIL) cílů a pokud uspěje, jsou postižení tvorové uvězněni. Nemohou se tak hýbat a provádět žádné pohybové akce. V každém dalším kole se však mohou proti stejné pasti pokusit osvobodit.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "spoutej_nemrtveho",
+   "nazev": "Spoutej nemrtvého",
+   "strana": 233,
+   "latinsky": "Captus mortem",
+   "parametry": {
+    "mana": "3 + (2 × úroveň nemrtvého)",
+    "dosah": "30 sáhů",
+    "rozsah": "1 nemrtvý",
+    "trvani": "1 den",
+    "vyvolani": "1 kolo",
+    "overeni": "Vůle (CHAR) vs. Vyšší moc",
+    "obtiznost": "14",
+    "vyzaduje": "Vitální magie - Nekromant"
+   },
+   "popis": "Nekromant může tímto kouzlem napadnout mysl nemrtvého a ovládnout ho. K úspěšnému provedení kouzla je zapotřebí správně odhadnout množství many, které bude vyžadovat. Pokud by jí nebylo dost, bude kouzlo automaticky neúspěšné.\nPokud uspěje v ověřovacím hodu na Vůli (CHAR) vs. Vyšší moc nemrtvého, podrobí si jej. Pokud si ho však bude chtít nechat delší dobu (24 hodin poté), musí za jeho udržení platit manou, tak jako u ostatních nemrtvých. V takovém případě mu Vypravěč řekne, kolik bodů many je k tomu zapotřebí.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "telekineticky_rej",
+   "nazev": "Telekinetický rej",
+   "strana": 233,
+   "latinsky": "Motus celebri",
+   "parametry": {
+    "mana": "4 (8) za kolo",
+    "dosah": "30 sáhů",
+    "rozsah": "koule o poloměru 5 sáhů",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "overeni": "Reflex (OBR) vs. 12",
+    "obtiznost": "17",
+    "vyzaduje": "Vysoká magie"
+   },
+   "popis": "Tímto kouzlem dokáže Kouzelník na dálku rozpohybovat či podržet množství předmětů v oblasti koule o poloměru 5 sáhů. Jejich množství není omezeno počtem, ale jejich celková hmotnost nesmí přesáhnout 20 liber.\nPředměty lze pohybovat rychlostí chůze za kolo a není třeba je mít stále na očích. Pokud Kouzelník chce, aby se předměty pohybovaly přesně, musí se na ně soustředit. Při soustředění lze navíc efekt kouzla prodlužovat přidáváním další many.\nAlternativně lze v oblasti způsobit doslova bouři předmětů. V takovém případě se všechny volné drobné předměty v dosahu (do hmotnosti 1 libry) začnou zběsilou rychlostí pohybovat a vířit. Cena kouzla je v tom případě dvojnásobná. Každý tvor v takto zasažené oblasti musí uspět v hodu na past Reflex (OBR) vs. 12 nebo utrpí Zranění za 2k6 životů v každém kole. Od Zranění se odečítá kvalita zbroje.\nPodmínkou provedení kouzla je dostatečné množství volných předmětů v oblasti.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie"
+  },
+  {
+   "id": "trpytiva_zar",
+   "nazev": "Třpytivá zář",
+   "strana": 233,
+   "latinsky": "Scintilla lux",
+   "parametry": {
+    "mana": "20",
+    "dosah": "60 sáhů",
+    "rozsah": "kruh nebo jeho výseč v dosahu",
+    "trvani": "ihned",
+    "vyvolani": "1 kolo",
+    "overeni": "Sesílání kouzel (INT) vs. Reflex (OBR)",
+    "obtiznost": "22",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzelník vyšle do okolí (výseč dle volby Kouzelníka - kruh, půlkruh atd.) oslepující záblesk. Všichni v oblasti musí uspět v ověřovacím hodu na Sesílaní kouzel (INT) vs. Reflex (OBR), jinak jsou na 3 kola oslepeni. Čaroděj nemůže nikoho z kouzla vyjmout, ale pokud je někdo dopředu varován, získává Výhodu (bonus +5) k hodu na Reflex (OBR).",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "tvaruj",
+   "nazev": "Tvaruj",
+   "strana": 234,
+   "latinsky": "Forma",
+   "parametry": {
+    "mana": "4 za sáh Dosah dotek",
+    "rozsah": "1 předmět nebo až 1 krychlový sáh",
+    "trvani": "1 směna",
+    "vyvolani": "5 kol",
+    "obtiznost": "16",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Po seslání může Kouzelník svým dotekem tvarovat jakýkoliv neživý předmět nebo látku. Dokáže tak opracovávat skálu, vytvořit schody, nechat rozestoupit vodní tok a podobně. Během 1 směny zvládne ovlivnit až 1 krychlový sáh materiálu nebo 1 vybraný předmět. Kouzlem není možné tvarovat organické materiály. Po skončení kouzla se tvarovaná věc během 3 kol vrátí do své původní podoby.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "uhas",
+   "nazev": "Uhas",
+   "strana": 234,
+   "latinsky": "Aqua caligo",
+   "parametry": {
+    "mana": "5 + (1× za 10 čtverečních sáhů)",
+    "dosah": "50 sáhů",
+    "rozsah": "dle dodané many",
+    "trvani": "dle dodané many a rozsahu požáru",
+    "vyvolani": "1 kolo",
+    "obtiznost": "14",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Na Kouzelníkův povel se zvedne jemná mlha, která z ohně vysaje jeho sílu, až jej zcela uhasí. Rychlost hašení je 10 sáhů čtverečních za kolo. Na velké a rychle se šířící požáry proto musí spojit své síly více Kouzelníků. Na samotné hašení se již Kouzelník nemusí tolik soustředit, může se pohybovat chůzí a provádět běžné činnosti. Během jeho trvání však není schopen seslat jiné kouzlo ani bojovat (tj. krátká akce dle pravidel pro boj).",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "ukol",
+   "nazev": "Úkol",
+   "strana": 234,
+   "latinsky": "Missio",
+   "parametry": {
+    "mana": "2× úroveň cíle",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "1 den",
+    "vyvolani": "1 kolo",
+    "overeni": "Vůle Kouzelníka (CHAR) vs. Vůle (CHAR) cíle",
+    "obtiznost": "15",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Tímto kouzlem Kouzelník dokáže pomocí několika slov vsugerovat cíli nějakou jednoduchou akci. Pokud uspěje v ověřovacím hodu na Vůle (CHAR) vs. Vůle (CHAR) cíle, musí dotyčný pokyny Kouzelníka poslechnout. Ty se musí vejít do 3 vět. Kouzelník může specifikovat určité okolnosti, které úkol spustí, jako je například nějaké heslo nebo událost. Zjevně sebepoškozující pokyny jako „probodni se“ nebo „skoč do lávy“ automaticky selžou, jako by cíl uspěl v hodu proti pasti.\nKouzlo skončí ihned poté, co cíl provede zadaný úkol. Po skončení kouzla dotyčná osoba ví, že byla očarována.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "uzavreni_mysli",
+   "nazev": "Uzavření mysli",
+   "strana": 234,
+   "latinsky": "Clausa mantis",
+   "parametry": {
+    "mana": "8",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Kouzlo dává bonus (+5) k hodu na Vůli (CHAR) při obraně v Mentálním souboji. Dále Uzavření mysli účinkuje proti všem kouzlům mentální magie a obecně proti útokům na mysl.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "vadaveruv_mentalni_chaos",
+   "nazev": "Vadaverův mentální chaos",
+   "strana": 234,
+   "latinsky": "Mentis aethera",
+   "parametry": {
+    "mana": "5 za kolo a 5 za cíl",
+    "dosah": "20 sáhů",
+    "rozsah": "dle dodané many",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "18 (+2 za každý cíl navíc)",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Kouzelník našeptává do myslí svých cílů nejrůznější teorie o běhu světa, jeho vzniku či stvoření, čímž útočí na jejich bytostnou podstatu. Pokud uspěje v hodu Vůle (CHAR) Kouzelníka vs. Vůle (CHAR) cíle, má cíl po dobu trvání kouzla Nevýhodu (postih -5) ke všem akcím. Všichni pod vlivem kouzla se mohou na začátku svého tahu pokusit o ověřovací hod znovu.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "velka_metamorfoza",
+   "nazev": "Velká metamorfóza",
+   "strana": 234,
+   "latinsky": "Magnamutátum",
+   "parametry": {
+    "mana": "5× úroveň tvora",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 směna",
+    "vyvolani": "3 kola",
+    "obtiznost": "20 + úroveň tvora",
+    "vyzaduje": "Magie proměn - Nekromant"
+   },
+   "popis": "Toto kouzlo je jedním z vrcholných umění Nekromantů. Těch, kteří se pokusili sáhnout až na samotnou podstatu životní energie a její transformaci. Dokáží dotekem proměnit sebe nebo jiného tvora v jinou živou bytost, kterou někdy viděli na vlastní oči.\nKouzlo funguje stejně, jako Metamorfóza (PPZ H 1.1, strana 113), ovšem s několika důležitými rozdíly. Proměna není omezena rozdílem velikostí. Pokud je cíl kouzla proměněn v tvora podobné velikosti (nejvýše o jednu třídu větší či menší), získává rovněž vrozené zvláštní schopnosti tvora (magické, mýtické nebo nadpřirozené povahy). Stále však nezíská jeho naučené dovednosti. Cena kouzla se odvíjí od úrovně cílového tvora.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn",
+   "specializace": "Nekromant"
+  },
+  {
+   "id": "velke_ochranne_kouzlo",
+   "nazev": "Velké ochranné kouzlo",
+   "strana": 235,
+   "latinsky": "Magna protego",
+   "parametry": {
+    "mana": "25 + (2× za posílení)",
+    "dosah": "dotek",
+    "rozsah": "koule o poloměru maximálně 10 sáhů",
+    "trvani": "10 hodin",
+    "vyvolani": "10 kol",
+    "obtiznost": "19 (+1 za každé posílení navíc)",
+    "vyzaduje": "Ochranná magie - Bojový mág"
+   },
+   "popis": "Bojový mág vytvoří neviditelnou kulovou polopropustnou ochrannou bariéru o libovolné velikosti do poloměru 10 sáhů se středem v místě dotyku. Bariéra brání komukoli ve vstupu do kopule, bytost musí uspět v hodu proti pasti Atletika (SIL) vs. 10 + posílení ochrany. Kopuli lze bez problémů opustit. Výjimkou je sesílající Bojový mág, který opuštěním kopule kouzlo automaticky zruší.\nKopule dává tvorům uvnitř bonus +10 k Základní obraně (ZO) proti útokům vedeným zvenčí. Směrem z kopule ven žádnému útoku nebrání.\nKouzla reagující na překážku (například blesk nebo ohnivá koule) a směřující dovnitř zasáhnou bariéru a explodují. Kouzla působící například na myšlenky cíle ovšem projdou bez oslabení.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "vezeni",
+   "nazev": "Vězení",
+   "strana": 235,
+   "latinsky": "Vincula",
+   "parametry": {
+    "mana": "10",
+    "dosah": "100 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "4 kola",
+    "vyvolani": "1 kolo",
+    "overeni": "Sesílání kouzel (INT) vs. Atletika (SIL)",
+    "obtiznost": "19",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzlo vyčaruje kolem cíle jasně viditelnou ledovou klec, ve které je tvor uvězněn. Může použít dlouhou akci, aby se pokusil osvobodit a klec rozbil. Na to je třeba překonat past Sesílání kouzel (INT) vs. Atletika (SIL). Při použití drtivé zbraně má cíl Výhodu (bonus +5) k hodu.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "vodni_dech",
+   "nazev": "Vodní dech",
+   "strana": 235,
+   "latinsky": "Aqua spiro",
+   "parametry": {
+    "mana": "4 za směnu",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "dle dodané many",
+    "vyvolani": "1 kolo",
+    "obtiznost": "8",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Vybranému tvoru po dobu trvání kouzla vyrostou žábry a je schopen dýchat pod vodou, jako kdyby byl na vzduchu.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "vodni_vlna",
+   "nazev": "Vodní vlna",
+   "strana": 236,
+   "latinsky": "Aqua aesto",
+   "parametry": {
+    "mana": "16",
+    "dosah": "15 sáhů",
+    "rozsah": "všichni tvorové v oblasti",
+    "trvani": "ihned",
+    "vyvolani": "2 kola",
+    "overeni": "Sesílání kouzel (INT) vs. Atletika (SIL)",
+    "obtiznost": "18",
+    "vyzaduje": "Divoká magie - Bojový mág"
+   },
+   "popis": "Mág nahromadí na zvoleném místě v dosahu 15 sáhů vodní masu a vyšle ji rychle zvoleným směrem. Všichni tvorové v oblasti o šířce 5 sáhů a délce 15 sáhů jsou zraněni za 2k6+3 životů a pokud neuspějí v pasti past Atletika (SIL) vs. Sesílání kouzel (INT) Kouzelníka, jsou odhození o 1k6 / 2 sáhů a povaleni. Postup vodní vlny může být pozastaven pevnou překážkou, která jí blokuje cestu, dle uvážení Vypravěče. Poté, co se vlna oblastí přežene, zůstane po dobu 1 směny v zasažené oblasti rozmočená půda a bahno (pravidlově se jedná o těžký terén). Každý tvor, který se ji pokusí přejít, má poloviční pohyblivost.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie",
+   "specializace": "Bojový mág"
+  },
+  {
+   "id": "vyhen",
+   "nazev": "Výheň",
+   "strana": 236,
+   "latinsky": "Incendium",
+   "parametry": {
+    "mana": "5 malý předmět (zbraň), 10 větší předmět (zbroj)",
+    "dosah": "20 sáhů",
+    "rozsah": "1 kovový předmět",
+    "trvani": "3 kola",
+    "vyvolani": "1 kolo",
+    "overeni": "Výdrž (ODO) vs. Sesílání kouzel (INT)",
+    "obtiznost": "15",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzelník kouzlem rozžhaví jeden kovový předmět v dohledu, jako by ho strčil do výhně. Pokud se někdo takového předmětu dotýká, utrpí popálení za 1k6 životů. Pokud jde například o zbraň, která je držena, je pochopitelnou reakcí zahození předmětu. Tomu lze odolat hodem na Výdrž (ODO) vs. Sesílání kouzel (INT).\nPokud není předmět odhozen, nebo to není možné (například zbroj), má držitel předmětu Nevýhodu (postih -5) při akci, která nějakým způsobem předmět zahrnuje. Tedy například u zbraně k Útoku (ÚČ) a pokud se jí brání tak i k Obraně (OČ), u zbroje k Základní obraně (ZO). Kouzlo působí 3 kola, po které zraňuje i způsobuje Nevýhodu (postih -5), ale na ověření se hází pouze jednou.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  },
+  {
+   "id": "vytvor_slabinu",
+   "nazev": "Vytvoř slabinu",
+   "strana": 236,
+   "latinsky": "Creare vulneram",
+   "parametry": {
+    "mana": "2 × úroveň cíle za slabinu",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "3 kola",
+    "vyvolani": "1 kolo",
+    "overeni": "Sesílání kouzel (INT) vs. Výdrž (ODO)",
+    "obtiznost": "20 (+2 za každou další)",
+    "vyzaduje": "Vitální magie"
+   },
+   "popis": "Tímto kouzlem Kouzelník přidá cíli svého kouzla Slabinu dle své libosti. Hodí si na ověření Sesílání kouzel (INT) vs. Výdrž (ODO) cíle. Pokud uspěje, vybere Zranění, na které bude nyní tvor zranitelnější. Jestliže měl cíl na vybraný typ Imunitu, změní se na Rezistenci. Pokud měl Rezistenci, je vyrušena. Kouzelník se při seslání kouzla může rozhodnout, že přidá tvorovi více Slabin. V takovém případě je kouzlo náročnější a stojí ho více bodů many. Pokud by Kouzelník vytvořil další Slabinu stejného typu, prodloužil by pouze dobu trvání kouzla, nikoliv efekt.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie"
+  },
+  {
+   "id": "zapomen",
+   "nazev": "Zapomeň",
+   "strana": 236,
+   "latinsky": "Oblivio",
+   "parametry": {
+    "mana": "8",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "stále",
+    "vyvolani": "2 kola",
+    "overeni": "Vůle Kouzelníka (CHAR) vs. Vůle (CHAR) cíle",
+    "obtiznost": "14",
+    "vyzaduje": "Mentální magie - Čaroděj"
+   },
+   "popis": "Pomocí tohoto kouzla lze skrýt v hlavě cíle určitou vzpomínku na nějakou událost. Pokud s tím cíl nesouhlasí, hází si Čaroděj na Vůli (CHAR) vs. Vůle (CHAR) cíle. Pokud se cíl bude snažit na skrytou událost vzpomenout, uvědomí si, že by si to asi měl pamatovat, ale sám od sebe si nevzpomene. Účinek lze zrušit pomocí Rozptyl kouzla nebo jiným zlomením kouzla Zapomeň.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "zastav_krvaceni",
+   "nazev": "Zastav krvácení",
+   "strana": 236,
+   "latinsky": "Prohibe sangui",
+   "parametry": {
+    "mana": "5 za krvácení",
+    "dosah": "30 sáhů",
+    "rozsah": "živá bytost",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "obtiznost": "10 (+2 za každé krvácení navíc)",
+    "vyzaduje": "Vitální magie"
+   },
+   "popis": "Kouzelník očaruje krev vybrané bytosti, která trpí krvácením. Krev na jedné ráně se ihned změní na strup a rána se tak uzavře. Herně si tedy živá bytost může odepsat jedno své Krvácení.",
+   "typ": "kouzlo",
+   "obor": "Vitální magie"
+  },
+  {
+   "id": "zkameneni",
+   "nazev": "Zkamenění",
+   "strana": 237,
+   "latinsky": "Petrificus",
+   "parametry": {
+    "mana": "2 × úroveň cíle",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "1 směna",
+    "vyvolani": "5 kol",
+    "overeni": "Sesílání kouzel (INT) vs. Vůle (CHAR) cíle",
+    "obtiznost": "21",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Kouzelník může proměnit vybraného živého tvora v kámen. Aby jej proměnil, musí Kouzelník prolomit vůli tvora ověřovacím hodem Sesílání kouzel (INT) vs. Vůle (CHAR) tvora. Pokud Kouzelník uspěje, cíl zkamení na 1 směnu. Zkamenělý tvor vnímá, ale nemůže se hýbat, nepotřebuje dýchat a získá vlastnosti a odolnost kamene.\nPokud je kouzlo sesláno na cíl, který se zkameněním souhlasí, je mana potřebná k jeho vyvolání poloviční a Kouzelník si nemusí házet na ověření, zda prolomí vůli cíle.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "zlom_kouzlo",
+   "nazev": "Zlom kouzlo",
+   "strana": 237,
+   "latinsky": "Fractio magica",
+   "parametry": {
+    "mana": "10",
+    "dosah": "100 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "ihned",
+    "overeni": "Sesílání kouzel (INT) vs. Sesílání kouzel (INT)",
+    "vyvolani": "půl kola",
+    "obtiznost": "15",
+    "vyzaduje": "Ochranná magie"
+   },
+   "popis": "Tímto kouzlem lze zlomit kouzlo jiného Kouzelníka předtím, než ho stihne vyvolat. Lze jím lámat kouzla s vyvoláním 1 kolo a více, díky schopnosti Lámání kouzel i s vyvoláním půl kola.\nMana zlomeného kouzla se bez efektu rozptýlí po okolí. Hodem na seslání Zlom kouzlo je zároveň nutno překonat i protivníkův hod na seslání lámaného kouzla.",
+   "typ": "kouzlo",
+   "obor": "Ochranná magie"
+  },
+  {
+   "id": "zmateni",
+   "nazev": "Zmatení",
+   "strana": 237,
+   "latinsky": "Confusio",
+   "parametry": {
+    "mana": "40",
+    "dosah": "50",
+    "rozsah": "koule o poloměru 20",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "overeni": "Vůle Kouzelníka (CHAR) vs. Vůle (CHAR) cíle Postřeh (INT) vs. Sesílání kouzel (INT)",
+    "obtiznost": "22",
+    "vyzaduje": "Mentální magie - Čaroděj"
+   },
+   "popis": "Čaroděj tímto kouzlem zanese zmatek do myslí všech tvorů v dosahu. Každý, kdo neuspěje v hodu Vůle (CHAR) Čaroděje vs. Vůle (CHAR) cíle je zmaten.\nPo dobu trvání kouzla se mu ostatní tvorové, okolí a okolní předměty jeví jinak, než ve skutečnosti jsou. Efekt působí na všechny smysly. Zmatený tvor má ještě možnost uspět v hodu na Postřeh (INT) vs. Seslání kouzla. V případě úspěchu sice stále vnímá nereálné události, ale uvědomuje si, že jde o šálení smyslů. Čaroděj nemůže nikoho z kouzla vyjmout, ale pokud je někdo dopředu varován, získává Výhodu (bonus +5) k hodu na Vůli (CHAR).",
+   "typ": "kouzlo",
+   "obor": "Mentální magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "zmen_teren",
+   "nazev": "Změň terén",
+   "strana": 237,
+   "latinsky": "Mutatum loci",
+   "parametry": {
+    "mana": "35",
+    "dosah": "100 sáhů",
+    "rozsah": "oblast o poloměru 50 sáhů",
+    "trvani": "1 směna",
+    "vyvolani": "2 kola",
+    "obtiznost": "18",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Kouzelník změní strukturu nebo skupenství terénu vybrané oblasti v dosahu kouzla. Může proměnit půdu na bažinu, a tím změnit prostředí na těžký terén, nebo naopak. Kouzlo působí zhruba do hloubky půl sáhu. Nijak neovlivní živé tvory ani živé materiály, jako je třeba dřevo. Po skončení kouzla trvá 3 kola, než se materiál změní zpět a postupně ze sebe vytlačuje to, co do něj nepatří.\nPOZNÁMKA: Pokud je kouzlo sesláno na kamennou podlahu s tím, aby se změnila v písek, tak vše, co se na ní nachází, se propadne pískem o patro níže, ale samotná podlaha stále drží na místě původní kamenné podlahy. Není jím tedy možné snadno ničit budovy a hradby, ale pískovou hradbou lze projít.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "zmena_velikosti",
+   "nazev": "Změna velikosti",
+   "strana": 238,
+   "latinsky": "Magnitudo mutatum",
+   "parametry": {
+    "mana": "10",
+    "dosah": "dotek",
+    "rozsah": "1 cíl",
+    "trvani": "1 směna",
+    "vyvolani": "2 kola",
+    "obtiznost": "12",
+    "vyzaduje": "Magie proměn"
+   },
+   "popis": "Toto kouzlo dokáže změnit velikost cíle o jednu třídu. Kouzlo změní i oblečení a vybavení, které má cíl na sobě.",
+   "typ": "kouzlo",
+   "obor": "Magie proměn"
+  },
+  {
+   "id": "ztrojeni",
+   "nazev": "Ztrojení",
+   "strana": 238,
+   "latinsky": "Tritium",
+   "parametry": {
+    "mana": "5 za klon",
+    "dosah": "100 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "10 kol",
+    "vyvolani": "1 kolo",
+    "overeni": "Sesílání kouzel (INT) vs. Postřeh (INT)",
+    "obtiznost": "12 (+2 za každý klon navíc)",
+    "vyzaduje": "Mentální magie"
+   },
+   "popis": "Tvor, který se zadívá na cíl kouzla, si hodí proti pasti Postřeh (INT) vs. Sesílání kouzel (INT) Kouzelníka, tento hod může protivník opakovat pro každý klon zvlášť. Pokud neuspěje, uvidí (pouze ve své mysli) X klonů cíle vedle sebe a nebude vědět, který je pravý. Pokud by cíl zasáhl, ale zvolil špatně, tak se klon v jeho mysli rozplyne.",
+   "typ": "kouzlo",
+   "obor": "Mentální magie"
+  },
+  {
+   "id": "ziva_iluze",
+   "nazev": "Živá iluze",
+   "strana": 238,
+   "latinsky": "Vita ilusio",
+   "parametry": {
+    "mana": "5 za sáh rozměru",
+    "dosah": "50 sáhů",
+    "rozsah": "dle dodané many",
+    "trvani": "1 směna",
+    "vyvolani": "3 kola",
+    "obtiznost": "17 (22) (+1 za každý sáh navíc)",
+    "vyzaduje": "Vysoká magie - Čaroděj"
+   },
+   "popis": "Čaroděj je pomocí many, vzduchu a případně dalšího okolního materiálu dokáže zhmotnit iluzi. Iluze je pevná, dá se jí dotknout, ale je tvořena pouze tenkou vrstvou „tvrdého“ vzduchu o křehkosti skla. Může být tedy zničena fyzickým útokem. Například déšť bude po iluzi stékat, jako by šlo o pravý předmět, ale kroupy už iluzi zničí. Čaroděj je omezen pouze svojí představivostí a rozměry iluze, kterou chce stvořit.\nČaroděj může udělat i oživlou iluzi, kdy vtiskne iluzi vzor pohybu, který je pak cyklicky vykonáván. Například chvění listí iluzorního stromu. V takovém případě se zvyšuje obtížnost seslání kouzla o 5. Kdykoli během trvání kouzla se pak může Čaroděj soustředit a ovládat pohyb iluze, pokud je v dosahu kouzla. Rozpoznání iluze je hod na Seslání kouzel (INT) vs. Seslání kouzla (INT). Pokud se iluze nehýbá, má tvor snažící se odhalit iluzi Výhodu (bonus +5) k hodu proti pasti.",
+   "typ": "kouzlo",
+   "obor": "Vysoká magie",
+   "specializace": "Čaroděj"
+  },
+  {
+   "id": "zivlobomba",
+   "nazev": "Živlobomba",
+   "strana": 238,
+   "latinsky": "Flux elementi",
+   "parametry": {
+    "mana": "4 za velikost",
+    "dosah": "-",
+    "rozsah": "1 bomba o velikosti dle dodané many",
+    "trvani": "dle Kouzelníka, maximálně 1 hodina",
+    "vyvolani": "1 kolo",
+    "overeni": "Sesílání kouzel (INT) vs. hod na dovednost cíle (dle elementu)",
+    "obtiznost": "12 (+3 za každé zvětšení navíc)",
+    "vyzaduje": "Divoká magie"
+   },
+   "popis": "Kouzelník vytvoří kouli s koncentrovaným živlem o velikosti míče. Obal Živlobomby je celkově křehký a tak je manipulace s ní velmi nebezpečná. Samovolně dojde k explozi za dobu určenou Kouzelníkem při seslání, maximálně za 1 hodinu.\nŽivlobombu lze vrhnout a ona zasáhne vše v oblasti o poloměru 2 sáhy. Určení, zda bomba dopadne kam má, se řídí pravidly pro vrhání předmětů. Pokud není hozena, lze ji odpálit tak, že je jí uděleno zranění za alespoň 1 život (zásah kamenem, šípem, bleskem atd.)\nPři seslání tohoto kouzla si Kouzelník zvolí živel\n• Oheň: ohnivý výbuch - může způsobit zapálení - past na Reflex (OBR)\n• Led: rychlozmrazení - může zmrazit tvory, čímž je uvězní na 1 kolo - past na Výdrž (ODO)\n• Vítr: tlaková vlna - může způsobit odhození 3 sáhy - past na Atletiku (SIL)\n• Země: rozlet kamenných šrapnelů - může způsobit otřesení - past na Reflex (OBR)\nVýbuch způsobuje zranění 1k10 (+1k10 za každé zvětšení) a efekt dle zvoleného živlu.",
+   "typ": "kouzlo",
+   "obor": "Divoká magie"
+  }
+ ],
+ "_statistika": {
+  "pocet_polozek": 96,
+  "bez_oboru": []
+ }
+}

@@ -1,0 +1,2113 @@
+{
+ "_zdroj": "H11_Kouzelník_1.2.5_FINAL.pdf (PPZ 1.2.5, 31 s.), přepis 1. 10. 2026 pro 7c.2",
+ "_generator": "tools/h11_kouzelnik_src.py",
+ "pravidla": {
+  "energie": "Mana – max. z Tabulky kouzelníkovy many (INT × úroveň; energie.json → kouzelnik_mana z PPP04).",
+  "meditace": "1× denně, musí být Svěží; 1 směna; doplní manu do maxima. Vyrušení (leknutí, bolest, útok) → ztratí novou manu, může zkusit znovu (opět Svěží).",
+  "nasati": "Max. tolikrát denně, kolik je úroveň; 1 minuta, volné ruce, soustředění; +1k6 many (do maxima).",
+  "triky": "Kouzelnický trik: 1 mana, Dlouhá akce, bez ověření, bez formulí i gest; dosah 5 sáhů +1 za každou další úroveň; trvání obvykle ≤ 1 minuta. Jen drobné iluze – nezraní, nezapálí.",
+  "overeni": "Sesílání kouzel (INT) vs. Obtížnost kouzla – musí být VYŠŠÍ než obtížnost.",
+  "vyruseni": "Vyrušení (napaden, zraněn) při sesílání → obtížnost +5.",
+  "postihy": {
+   "bezReci": -5,
+   "bezGest": -5,
+   "bezReciAGest": -10,
+   "zbroj": "střední či těžká zbroj při gestech → postih = Kvalita zbroje"
+  },
+  "gesta": "Ke gestikulaci stačí jedna ruka; v druhé lze držet libovolný předmět. Kouzlit lze i skrze drženou hůl (i dotyková kouzla).",
+  "limit": "V jednom tahu nejvýše jedno kouzlo.",
+  "proti_vuli": "Kouzlo na nesouhlasící cíl se automaticky nezdaří (kromě útočných a těch, kde je to uvedeno).",
+  "mana_pod_nulu": "Aktuální mana nesmí klesnout pod nulu; při podhodnocené ceně se kouzlo nezdaří a mana se vyzáří.",
+  "trvani": "Trvání v kolech a déle se počítá od kola po seslání; kouzelník může kouzlo přerušit myšlenkou.",
+  "prvni_uroven": "3 kouzla obecné magie dle výběru (cena ≤ max. many). Sesílání kouzel (INT) na 3. stupni. Kouzelnické triky.",
+  "prestup": "Každá úroveň: nová zvláštní schopnost nebo obor; +2 kouzla (obecná nebo z ovládaných oborů). Dovednostní body 4× úroveň na každé 2. úrovni; charakterové body 2 na každé 3. úrovni.",
+  "obor": "✔ U 1. 10. 2026: obor jen rozšíří nabídku kouzel, kouzlo navíc NEDÁVÁ (H11 s. 14 píše o +1 kouzlu z oboru – nepoužívá se, platí CLASSES.md).",
+  "specializace": "Od 6. úrovně; podmínky podle H11 (dva obory, PPP třetí se nepoužívá ✔ U 22. 9. 2026)."
+ },
+ "kouzla": [
+  {
+   "nazev": "Bertoldův zámek",
+   "zaklinadlo": "Hoddor",
+   "skupina": "obecna",
+   "strana": 6,
+   "mana": "X",
+   "dosah": "dotek",
+   "rozsah": "jeden objekt (dveře / okno)",
+   "trvani": "1 den",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Bertoldův zámek je kouzlo, které dokáže zvýšit odolnost zamčených či zavřených dveří, oken, brány nebo truhly. Ty přitom nemusí mít vůbec žádný zámek či jiný zabezpečovací mechanismus. Při sesílání kouzla se jich stačí dotknout a ochranná bariéra je zasekne v poloze, ve které jsou. Sesilatel kouzla je však dokáže otevřít bez omezení. V takovém případě se však efekt kouzla přeruší a mana vyprchá.\nPokud chce dveře otevřít někdo jiný, musí překonat Nebezpečnost pasti určenou kouzelníkem.\nPříklad: Kouzelník Meredil seslal kouzlo na dřevěnou bránu pevnosti (obtížnost 8). Meredil pro seslání použil 5 bodů many, které ovlivní sílu kouzla. Finální obtížnost pasti tedy bude pro vyrážejícího 13 (základ 8 a dodatečná Síla 5). Překonat něco takového bude pro útočníka velká výzva.",
+   "overeni": "Atletika (SIL) vs. Síla dveří + X",
+   "id": "bertolduv_zamek",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "X",
+    "base": 0,
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Blesk",
+   "zaklinadlo": "Fulgorum",
+   "skupina": "obecna",
+   "strana": 7,
+   "mana": "2 za blesk",
+   "dosah": "20 sáhů",
+   "rozsah": "jeden cíl",
+   "trvani": "ihned",
+   "vyvolani": "Krátká akce",
+   "obtiznost": "6 (+2 za každý blesk navíc)",
+   "vyzaduje": "–",
+   "stitky": [
+    "Divoká magie",
+    "magické",
+    "bleskové"
+   ],
+   "popis": "Blesk je asi nejznámější útočné kouzlo. Z kouzelníkovi ruky vyšlehne ničivá energie proti jednomu cíli. Ta pak způsobí zranění za 1k6 životů (v případě neúspěšného ověření za polovinu).\nKouzelník může seslat v jedné akci najednou i více blesků, které se spojí do jednoho mohutného výboje.",
+   "overeni": "Sesílání kouzel (INT) vs. Výdrž (ODO)",
+   "ucinek": {
+    "damage": "1k6",
+    "perUnit": true,
+    "halfOnSave": true
+   },
+   "id": "blesk",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 za blesk",
+    "base": 2,
+    "per": "blesk",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6 (+2 za každý blesk navíc)",
+    "base": 6,
+    "step": 2,
+    "stepPer": "každý blesk navíc"
+   },
+   "vyvolaniX": {
+    "text": "Krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Kukátko",
+   "zaklinadlo": "Per Mur",
+   "skupina": "obecna",
+   "strana": 7,
+   "mana": "2",
+   "dosah": "dotek",
+   "rozsah": "stěna 1x1x1 sáh",
+   "trvani": "10 kol",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Po seslání tohoto kouzla se stěna, které se kouzelník dotkne, stává pro něj průhlednou. Pro všechny ostatní tvory pak stěna vypadá stejně, jako vždycky. Maximální šíře překážky, kterou dokáže kouzlo překonat, je nejvýše 1 sáh. Kouzlo dokáže působit i skrze organické materiály (dřevo, ale i těla živých tvorů).",
+   "id": "kukatko",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2",
+    "base": 2
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Levitace",
+   "zaklinadlo": "Lévitás",
+   "skupina": "obecna",
+   "strana": 7,
+   "mana": "4 + X",
+   "dosah": "dotek",
+   "rozsah": "jeden tvor / předmět",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Pomocí tohoto kouzla se dokáže postava vznášet nad povrchem (zhruba 30 coulů). Nedokáže sice volně létat, může však třeba zlézat zdi, aniž by se musela obávat pádu z výšky a podobně. Pokud by k tomu došlo, začne se volně snášet k zemi rychlostí 1 sáh za kolo. V případě běžné chůze či běhu se pak pohybuje rychlostí běžné chůze.\nAčkoliv může efekt kouzla vypadat tak, jako že postava nic neváží, není to pravda. Zůstává jí totiž její původní hmotnost, ale tření na ni téměř nepůsobí. Díky tomu je možné ji poměrně snadno odtáhnout (jako kdyby vážila pouhou desetinu své hmotnosti).\nKouzelník dokáže toto kouzlo seslat i na různě těžké předměty. Očarovaný subjekt se pak volně vznáší asi jeden sáh nad zemí. Celková hmotnost cíle (včetně vybavení) však nesmí překročit 100 liber. V takovém případě by kouzlo postavu neuneslo. Kouzelník by musel použít větší množství many. Za každý dodatečný bod many vložený do kouzla se nosnost levitace zvyšuje o dalších 20 lb.",
+   "id": "levitace",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4 + X",
+    "base": 4,
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Magická střela",
+   "zaklinadlo": "Mana Orbi",
+   "skupina": "obecna",
+   "strana": 8,
+   "mana": "8 za střelu",
+   "dosah": "100 sáhů",
+   "rozsah": "koule o poloměru 3 sáhy",
+   "trvani": "ihned",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8 (+2 za každou střelu navíc)",
+   "vyzaduje": "–",
+   "stitky": [
+    "Divoká magie",
+    "magické"
+   ],
+   "popis": "Tato bílá střela divoké energie má schopnost narušovat magické vazby. Po seslání vyletí vysokou rychlostí směrem, který si kouzelník zvolil. Ten ji může nechat explodovat kdykoliv během letu (jinak vybuchne sama, jakmile se vzdálí nad sto sáhů od kouzelníka nebo narazí na jakoukoli překážku).\nExploze se projevuje oslnivým zábleskem, který zraní všechny magické tvory a nadpozemské bytosti v dosahu za 2k6 životů (v případě neúspěšného ověření za polovinu).\nJestliže kouzelník sešle v jedné akci více magických střel, spojí se do jedné veliké a jimi způsobená zranění se sčítají.",
+   "overeni": "Sesílání kouzel (INT) vs. Výdrž (ODO)",
+   "ucinek": {
+    "damage": "2k6",
+    "perUnit": true,
+    "halfOnSave": true,
+    "only": "magičtí tvorové a nadpozemské bytosti"
+   },
+   "id": "magicka_strela",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "8 za střelu",
+    "base": 8,
+    "per": "střelu",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8 (+2 za každou střelu navíc)",
+    "base": 8,
+    "step": 2,
+    "stepPer": "každou střelu navíc"
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Magický štít",
+   "zaklinadlo": "Mana Manor",
+   "skupina": "obecna",
+   "strana": 8,
+   "mana": "2 za kolo",
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "dle dodané many",
+   "vyvolani": "Krátká akce",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Toto kouzlo vytvoří kolem kouzelníka ochrannou auru, která se pohybuje spolu s ním. Obvykle je neviditelná či slabě světélkuje ve vzdálenosti jednoho sáhu od něj. Kouzelníkovi zvyšuje Základní obranu (ZO) o 5. Délku trvání kouzla určí kouzelník při jeho seslání.",
+   "ucinek": {
+    "defenseBase": 5
+   },
+   "id": "magicky_stit",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 za kolo",
+    "base": 2,
+    "per": "kolo",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Najdi předmět",
+   "zaklinadlo": "Invenio Subject",
+   "skupina": "obecna",
+   "strana": 8,
+   "mana": "4",
+   "dosah": "50 sáhů",
+   "rozsah": "jeden předmět",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "5 kol",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Kouzelník prostřednictvím tohoto zaklínadla dokáže najít libovolný předmět. Prostě jeho polohu intuitivně vycítí.\nPři sesílání kouzla je nutné se soustředit na vzhled hledané věci (představit si, jak vypadá). Je-li v okamžiku seslání v dosahu, dokáže kouzelník po dobu trvání určit její polohu (směr, vzdálenost i přesné místo, kde se nachází), nesmí se však vzdálit mimo dosah. Pokud je podobných předmětů v dosahu více, kouzelník vždy vycítí ten, který je mu nejblíže.\nV případě, že se kouzelník pokusí najít předmět, který nikdy předtím neviděl (a zná ho třeba jen z vyprávění), získává Nevýhodu a obtížnost sesílání kouzla se tak zvyšuje o 5.",
+   "id": "najdi_predmet",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "5 kol",
+    "kind": "kola",
+    "n": 5,
+    "rounds": 5
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Neviditelnost",
+   "zaklinadlo": "Avidium",
+   "skupina": "obecna",
+   "strana": 8,
+   "mana": "6",
+   "dosah": "50 sáhů",
+   "rozsah": "jeden tvor nebo předmět (do velikosti C)",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Tvor nebo předmět, na nějž je kouzlo sesláno, se stane neviditelným. To se týká i předmětů, které má na sobě, tedy neživých věcí běžné velikosti, které postava unese. Pokud je však odloží, tyto předměty se zviditelní. Kouzlo nemá žádný vliv na později uchopené předměty. Ty zůstávají i nadále viditelné. Pokud s nimi bude neviditelná postava manipulovat, budou pro okolí vypadat, jako by se vznášely.\nNeviditelnost nijak nemění další fyzikální vlastnosti postavy. Postava nadále zanechává stopy a psi ji mohou vyčenichat.\nBěhem doby trvání kouzla je potřeba být opatrný. Neviditelnost se totiž může velmi snadno narušit. Stačí promluvit, zaútočit, seslat kouzlo (a to i z předmětu) nebo provést nějakou komplexnější akci (jako je třeba výroba předmětů a podobně).",
+   "id": "neviditelnost",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "6",
+    "base": 6
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Očaruj zbraň",
+   "zaklinadlo": "Arma Magen",
+   "skupina": "obecna",
+   "strana": 9,
+   "mana": "4",
+   "dosah": "dotek",
+   "rozsah": "jedna zbraň",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8",
+   "vyzaduje": "–",
+   "stitky": [
+    "Magie proměn",
+    "magické"
+   ],
+   "popis": "Tímto kouzlem lze změnit obyčejnou zbraň na magickou. Ta se pak stává nebezpečnou bytostem, které jsou běžnými zbraněmi nezranitelné (magičtí tvorové, nadpozemské bytosti atd.). Proti běžným tvorům pak působí jako obvykle.\nOčarováním střelných zbraní získají magický efekt i jimi vystřelené projektily (odezní v dalším kole po zásahu cíle).",
+   "id": "ocaruj_zbran",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Oheň",
+   "zaklinadlo": "Igneum",
+   "skupina": "obecna",
+   "strana": 9,
+   "mana": "2 za oheň",
+   "dosah": "10 sáhů",
+   "rozsah": "oheň o velikosti dlaně",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6 (+2 za každý další)",
+   "vyzaduje": "–",
+   "stitky": [
+    "Divoká magie",
+    "magické",
+    "ohnivé"
+   ],
+   "popis": "Kouzelník dokáže vyvolat ohýnek o velikosti jablka, který lze zvětšit dodáním další many. Každý další Oheň zvětší poloměr plamenů o 10 coulů. Magický plamen hoří maximálně jednu směnu, než pohasne (pokud do té doby nezapálil něco dalšího). Tento druh ohně je možné uhasit stejně jako kterýkoliv jiný. Pokud plamen zasáhne živého tvora, způsobí mu zranění za 1–3 životy (1k6 / 2) za každý Oheň.",
+   "ucinek": {
+    "damage": "1k6/2",
+    "perUnit": true
+   },
+   "id": "ohen",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 za oheň",
+    "base": 2,
+    "per": "oheň",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6 (+2 za každý další)",
+    "base": 6,
+    "step": 2,
+    "stepPer": "každý další"
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Rychlost",
+   "zaklinadlo": "Velocitas",
+   "skupina": "obecna",
+   "strana": 9,
+   "mana": "3 za kolo",
+   "dosah": "10 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "dle dodané many",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Vitální magie"
+   ],
+   "popis": "Vlivem tohoto kouzla se stává daná bytost extrémně pohyblivou. Získává v boji navíc jednu krátkou akci. Dále má možnost v rámci bojové akce Útok provést jeden další útok. Podobně při využití bojové akce Obrana má navíc jednu aktivní obranu.\nKouzlo už ze své podstaty nedokáže zkrátit dobu potřebnou k sesílání kouzel, vzývání proseb a podobně. Dobu trvání kouzla určuje kouzelník při jeho seslání.",
+   "ucinek": {
+    "extraShortAction": 1,
+    "extraAttack": 1,
+    "extraDefense": 1
+   },
+   "id": "rychlost",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "3 za kolo",
+    "base": 3,
+    "per": "kolo",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vitalni"
+  },
+  {
+   "nazev": "Světlo",
+   "zaklinadlo": "Fiat Lux",
+   "skupina": "obecna",
+   "strana": 10,
+   "mana": "1 za dva sáhy poloměru",
+   "dosah": "30 sáhů",
+   "rozsah": "koule o poloměru dle vložené many",
+   "trvani": "1 hodina (4 směny)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6",
+   "vyzaduje": "–",
+   "stitky": [
+    "Divoká magie"
+   ],
+   "popis": "Po seslání tohoto kouzla se na vybraném místě rozzáří drobná koule o velikosti jablka. Z ní pak vychází jasná záře, která osvětlí plochu odpovídající rozsahu kouzla. V tomto místě je pak vidět jako za slunného dne. Barvu světla si může kouzelník zvolit.\nO velikosti rozsahu světla rozhoduje množství many v zaklínadle. Kouzelník může seslat zaklínadlo na určité místo nebo přímo na sebe či svou hůl. V takovém případě se světlo pohybuje spolu s ním, případně vychází z jeho hole.\nMagické světlo se chová podobně jako to běžné (vrhá stíny, neprojde zdí a podobně).",
+   "id": "svetlo",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "1 za dva sáhy poloměru",
+    "base": 1,
+    "per": "dva sáhy poloměru",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Teleport",
+   "zaklinadlo": "Portus Máves",
+   "skupina": "obecna",
+   "strana": 10,
+   "mana": "4",
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "ihned",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "9",
+   "vyzaduje": "–",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Teleportem dokáže kouzelník přesunout sebe z jednoho místa na druhé. Největší vzdálenost, kterou lze takto překonat, je 60 sáhů.\nPři teleportaci se zároveň přenese i vše, co má na sobě. Lze takto přesunout i živé tvory o velikosti A0, které má kouzelník u sebe. Nelze však přesunout strom, kterého se kouzelník drží, a podobně (viz níže).\nAby se kouzlo zdařilo, je nutné vidět, kam se má dotyčný teleportovat. V opačném případě hrozí, že se pokusí o přenos na místo, kde je nějaká překážka (běžně skála, strom a podobně). V takovém případě dojde ke zranění za polovinu maximálního počtu životů a přenos se nezdaří.\nJestliže je sesilatel pevně připoutaný k místu (např. řetězy ke stěně), kouzlo se automaticky nezdaří. Běžné svázání však teleportu nijak nevadí (postava prostě zůstane svázaná, jen se objeví jinde).",
+   "id": "teleport",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Beranidlo",
+   "zaklinadlo": "Maradorr",
+   "skupina": "divoka",
+   "strana": 18,
+   "mana": "5 za velikost (počínaje A)",
+   "dosah": "dotek",
+   "rozsah": "1 tvor či překážka",
+   "trvani": "ihned",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "9",
+   "vyzaduje": "Divoká magie",
+   "stitky": [
+    "Divoká magie"
+   ],
+   "popis": "Toto kouzlo sešle silnou dávku divoké energie na vybraného tvora, či překážku. Množství potřebné many je závislé na tom, o jak velký cíl se jedná.\nJestliže je cílem tvor, tak si kouzelník hodí na ověření Sesílání kouzel (INT) proti Atletika (SIL) obránce. V případě kouzelníkova úspěchu je obránce odhozený o tolik sáhů, jaký činil rozdíl mezi jejich hody.\nPokud kouzelník cílil kouzlo na dveře, bránu, či podobný objekt, tak musí svým hodem na Sesílání kouzel (INT) překonat hodnotu (X), kterou nastaví PJ dle Tabulky obtížností akcí. Jestli kouzelník uspěje, tak dveře vyrazí.",
+   "overeni": "Sesílání kouzel (INT) vs. Atletika (SIL); Sesílání kouzel (INT) vs. X",
+   "id": "beranidlo",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "5 za velikost (počínaje A)",
+    "base": 5,
+    "per": "velikost (počínaje A)",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Mrazivá střela",
+   "zaklinadlo": "Frigo Orbi",
+   "skupina": "divoka",
+   "strana": 18,
+   "mana": "6 za střelu",
+   "dosah": "80 sáhů",
+   "rozsah": "koule o poloměru 3 sáhy",
+   "trvani": "ihned",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8 (+2 za každou další)",
+   "vyzaduje": "Divoká magie",
+   "stitky": [
+    "Divoká magie",
+    "magické",
+    "ledové"
+   ],
+   "popis": "Tímto zaklínadlem dokáže kouzelník zformovat ledovou kouli o velikosti hlávky zelí. Ta pak vysokou rychlostí vystřelí směrem, kterým kouzelník ukáže. Může ji nechat explodovat kdykoliv během letu, jinak vybuchne sama, jakmile se vzdálí nad osmdesát sáhů od kouzelníka. V tu chvíli exploduje ve změť malých ledových krystalů.\nVšichni tvorové v oblasti určené rozsahem kouzla utrpí zranění za 1k10 životů a jsou na 1 kolo zpomaleni, takže se jejich pohyblivost sníží na polovinu (v případě neúspěšného ověření je zranění poloviční a nejsou zpomaleni). Zároveň může uhasit oheň menšího rozsahu (pochodeň, lucerna, malý táborák).\nJestliže kouzelník sešle v jedné akci více Mrazivých střel, všechny se spojí do jedné veliké. Poloměr rozsahu se zvýší o 2 sáhy za každou další střelu v ní obsaženou.",
+   "overeni": "Sesílání kouzel (INT) vs. Výdrž (ODO)",
+   "ucinek": {
+    "damage": "1k10",
+    "halfOnSave": true
+   },
+   "id": "mraziva_strela",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "6 za střelu",
+    "base": 6,
+    "per": "střelu",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8 (+2 za každou další)",
+    "base": 8,
+    "step": 2,
+    "stepPer": "každou další"
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Ohnivá čepel",
+   "zaklinadlo": "Ignis Gladius",
+   "skupina": "divoka",
+   "strana": 19,
+   "mana": "1 za kolo",
+   "dosah": "dotek",
+   "rozsah": "1 zbraň",
+   "trvani": "dle dodané many",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "7",
+   "vyzaduje": "Divoká magie",
+   "stitky": [
+    "Divoká magie",
+    "magické",
+    "ohnivé"
+   ],
+   "popis": "Po seslání tohoto kouzla se aktivní část zbraně (obvykle čepel) pokryje vrstvou magického ohně. Ten nepoškozuje zbraň samotnou avšak navenek se jeví žhavá a sálá z ní žár. Zvyšuje také zranění, které zbraň způsobí, a to o 1–3 životy (1k6 / 2) při každém úspěšném útoku. Čepelí jde samozřejmě taktéž zapálit cokoliv hořlavého.\nZbraň samotná neuděluje magické ani ohnivé zranění (to udělují jen magické plameny na zbrani).",
+   "ucinek": {
+    "weaponDamage": "1k6/2"
+   },
+   "id": "ohniva_cepel",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "1 za kolo",
+    "base": 1,
+    "per": "kolo",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Ohnivá koule",
+   "zaklinadlo": "Carica Ignea",
+   "skupina": "divoka",
+   "strana": 19,
+   "mana": "4 za kouli",
+   "dosah": "60 sáhů",
+   "rozsah": "koule o poloměru 3 sáhy",
+   "trvani": "ihned",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "9 (+2 za každou další)",
+   "vyzaduje": "Divoká magie",
+   "stitky": [
+    "Divoká magie",
+    "magické",
+    "ohnivé"
+   ],
+   "popis": "Po seslání tohoto kouzla se vytvoří u kouzelníkových rukou plamenná koule o velikosti hlávky zelí. Ta pak letí vysokou rychlostí směrem, který určí kouzelník. Ten ji může nechat explodovat kdykoliv během letu (jinak vybuchne sama, jakmile se vzdálí nad šedesát sáhů od kouzelníka nebo narazí na jakoukoli překážku).\nExploze zraní všechny zasažené tvory za 1k6 životů (v případě neúspěšného ověření za polovinu). Kouzlo navíc zapálí i předměty, které jsou k tomu náchylné (slaměná střecha, vylitý olej a podobně).\nJestliže kouzelník sešle v jedné akci více ohnivých koulí, spojí se do jedné veliké a jimi způsobená zranění se sčítají.",
+   "overeni": "Sesílání kouzel (INT) vs. Výdrž (ODO)",
+   "ucinek": {
+    "damage": "1k6",
+    "perUnit": true,
+    "halfOnSave": true
+   },
+   "id": "ohniva_koule",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4 za kouli",
+    "base": 4,
+    "per": "kouli",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "9 (+2 za každou další)",
+    "base": 9,
+    "step": 2,
+    "stepPer": "každou další"
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Plamenná ruka",
+   "zaklinadlo": "Ignis Manus",
+   "skupina": "divoka",
+   "strana": 19,
+   "mana": "3 za plamen",
+   "dosah": "6 sáhů",
+   "rozsah": "sesilatel",
+   "trvani": "3 kola",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "7 (+2 za každý plamen navíc)",
+   "vyzaduje": "Divoká magie",
+   "stitky": [
+    "Divoká magie",
+    "magické",
+    "ohnivé"
+   ],
+   "popis": "Ruka kouzelníka začne po seslání tohoto zaklínadla chrlit plameny. Šířka plamenného sloupce je zhruba 30 coulů a lze jím zasáhnout cíl až na vzdálenost 6 sáhů. Aby se tak kouzelníkovi povedlo, musí uspět v hodu na Hbitost (OBR) vs. Hbitost (OBR) obránce. Když uspěje, tak je cíl popálen plamenem za 1k6 životů a to za každý plamen, který kouzelník seslal.\nPlamen může také zapálit hořlavé látky (olej, slaměná střecha, roucho). Sesílatel a jeho vybavení jsou však před tímto efektem chráněni.\nPlamenná ruka je aktivní po dobu 3 kol a kouzelník se může v každém kole pokusit někoho zasáhnou. Na udržení kouzla se však již nemusí soustředit a pokud chce, tak může sesílat i kouzla jiná (jednu ruku mu však zaměstnají plameny).",
+   "overeni": "Hbitost (OBR) vs. Hbitost (OBR)",
+   "ucinek": {
+    "damage": "1k6",
+    "perUnit": true,
+    "everyRound": 3
+   },
+   "id": "plamenna_ruka",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "3 za plamen",
+    "base": 3,
+    "per": "plamen",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "7 (+2 za každý plamen navíc)",
+    "base": 7,
+    "step": 2,
+    "stepPer": "každý plamen navíc"
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Poryv větru",
+   "zaklinadlo": "Flaera",
+   "skupina": "divoka",
+   "strana": 20,
+   "mana": "2 (6)",
+   "dosah": "50 sáhů",
+   "rozsah": "1 sáh široký pás o délce deseti sáhů",
+   "trvani": "ihned",
+   "vyvolani": "Krátká akce",
+   "obtiznost": "7",
+   "vyzaduje": "Divoká magie",
+   "stitky": [
+    "Divoká magie"
+   ],
+   "popis": "Tímto kouzlem je možné vyvolat náhlý poryv větru. O jeho síle a směru rozhoduje kouzelník. Může jít o slabý vánek, který sfoukne plamen svíčky, stejně jako o silný poryv (2 body many), který dokáže sfouknout pochodeň, převrátit vědro či opřenou halapartnu. Může také jít o fičák (6 body many), který dokáže odhodit postavy až o velikosti C na vzdálenost 1k6 sáhů. V tomto případě musí kouzelník překonat hodem na Sesílaní kouzel (INT) hod na Atletiku (SIL) cíle.",
+   "id": "poryv_vetru",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 (6)",
+    "base": 2,
+    "alt": 6
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "Krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "obor": "divoka"
+  },
+  {
+   "nazev": "Dlouhá ruka",
+   "zaklinadlo": "Manus Lungo",
+   "skupina": "promen",
+   "strana": 20,
+   "mana": "2",
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "1 směna",
+   "vyvolani": "3 Dlouhé akce",
+   "obtiznost": "7",
+   "vyzaduje": "Magie proměn",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Tímto zaklínadlem dokáže kouzelník protáhnout svou ruku až na vzdálenost deseti sáhů. Dochází k tomu nejvýše rychlostí 1 sáh za kolo. Musí se přitom „plazit“ po povrchu, protože ji není možné udržet jen tak ve vzduchu. Není také schopna útoku, ale dokáže vzít předmět, odemknout zámek či spustit past. Má totiž stále svůj cit a je stejně zranitelná. Jakmile kouzlo pomine, ruka se začne stejnou rychlostí zase zkracovat.",
+   "id": "dlouha_ruka",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2",
+    "base": 2
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "3 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 3,
+    "rounds": 3
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Mlha",
+   "zaklinadlo": "Nebula",
+   "skupina": "promen",
+   "strana": 20,
+   "mana": "1 za deset sáhů poloměru",
+   "dosah": "30 sáhů",
+   "rozsah": "kruh o poloměru dle vložené many",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "6",
+   "vyzaduje": "Magie proměn",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Kouzelník dokáže seslat magickou mlhu, která není jedovatá, ale je poměrně hustá. Obrysy postav či překážek jsou v ní rozeznatelné maximálně na dva sáhy. Toto omezení se vztahuje i na kouzelníka samotného.\nZaklínadlo může kouzelník seslat na určité místo nebo přímo na sebe. V takovém případě se mlha pohybuje spolu s ním. Je-li kouzelník v dosahu, dodáním many může kouzlo prodloužit.",
+   "id": "mlha",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "1 za deset sáhů poloměru",
+    "base": 1,
+    "per": "deset sáhů poloměru",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Proměna",
+   "zaklinadlo": "Polymorf",
+   "skupina": "promen",
+   "strana": 21,
+   "mana": "6",
+   "dosah": "40 sáhů",
+   "rozsah": "sesilatel",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "9",
+   "vyzaduje": "Magie proměn",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Tímto zaklínadlem se kouzelník dokáže proměnit v jinou živou bytost, kterou vidí a která od něj není dále než čtyřicet sáhů. Tvor, na kterého se chce proměnit, musí být zhruba stejné velikosti jako on (maximálně o jednu třídu velikosti větší či menší).\nPři proměně získá kouzelník fyzickou podobu cíle, stejně jako jeho viditelné doplňky (oblečení, zbraně, vybavení a podobně). Věci, které kouzelník u cíle nevidí (obsah torny, text v zapečetěném svitku a podobně), kouzlo zhmotnit nedokáže. Stejně tak kopie magických předmětů nebudou mít žádné zvláštní schopnosti či manu. Vybavení, které měl kouzelník v okamžiku sesílání u sebe, se stává součástí proměny a dočasně zmizí.\nSpolu se vzhledem získává kouzelník i další fyzické vlastnosti cíle (včetně hlasu a podobně). Počet životů, které bude mít, se však tímto nemění (a to ani kdyby měl cíl vyšší odolnost). Stejně tak získá i zvláštní schopnosti daného tvora (dýchání pod vodou, noční vidění, schopnost létat a podobně), které však nejsou magické, mytické či nadpřirozené povahy (schopnost plivat oheň, způsobit zkamenění a podobně).\nProměna nemá žádný vliv na kouzelníkovu mysl ani jeho znalosti (nezíská tak žádné dovednosti či profesní schopnosti daného cíle).",
+   "id": "promena",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "6",
+    "base": 6
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Protoplazma",
+   "zaklinadlo": "Glutinum",
+   "skupina": "promen",
+   "strana": 21,
+   "mana": "3 za kolo",
+   "dosah": "15 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "dle dodané many",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8",
+   "vyzaduje": "Magie proměn",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Z kouzelníkových rukou vytryskne extrémně lepkavý sliz, který se chová podobně jako pavučina. Pokud někoho zasáhne (kouzelník uspěje v ověřovacím hodu a překoná Hbitost protivníka), přilne k němu a omezí ho v pohybu. Množství protoplazmy, které kouzlo obsahuje, dokáže pacifikovat pouze tvory do velikosti C.\nZasažený cíl má poloviční rychlost (Pohyblivost), než je obvyklé. Zároveň má Nevýhodu (postih -5) ke všem akcím vyžadujícím pohyb, obratnost či gestikulaci (včetně obrany, útoku, iniciativy a provádění kouzelnické magie).",
+   "overeni": "Sesílání kouzel (INT) vs. Hbitost (OBR)",
+   "id": "protoplazma",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "3 za kolo",
+    "base": 3,
+    "per": "kolo",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Tajemné dveře",
+   "zaklinadlo": "Porta Arcánum",
+   "skupina": "promen",
+   "strana": 21,
+   "mana": "5",
+   "dosah": "10 sáhů",
+   "rozsah": "1 dveře",
+   "trvani": "1 hodina",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "7",
+   "vyzaduje": "Magie proměn",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Tajemné dveře jsou kouzlo, které už způsobilo hodně zmatku. Kouzelník jím dokáže proměnit dveře (jejich materiál i celkový vzhled) tak, že vypadají jako okolní stěna. Dveře se v nové podobě nedají otevřít ani odemknout (stávají se skutečnou zdí – cihlovou, dřevěnou či třeba skálou). Po uplynutí kouzla se dveře vrátí do původního stavu, sesilatel může kouzlo kdykoliv dotekem ukončit. Stejně lze ovlivnit i okna nebo třeba poklopy.\nPokud by se někdo pokoušel takto vytvořenou zeď prorazit, tak musí uspět v ověřovacím hodu na Atletiku (SIL) vs. Sesílání kouzel (INT) kouzelníka.",
+   "overeni": "Atletika (SIL) vs. Sesílání kouzel (INT) sesilatele",
+   "id": "tajemne_dvere",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "5",
+    "base": 5
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Temnota",
+   "zaklinadlo": "Tenebris",
+   "skupina": "promen",
+   "strana": 22,
+   "mana": "1 za dva sáhy poloměru",
+   "dosah": "30 sáhů",
+   "rozsah": "koule o poloměru dle vložené many",
+   "trvani": "10 kol (1 minuta)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6",
+   "vyzaduje": "Magie proměn",
+   "stitky": [
+    "Magie proměn"
+   ],
+   "popis": "Po seslání tohoto kouzla se prostor vymezený zaklínadlem ponoří do naprosté tmy. Kdokoliv zvenčí tak ztrácí schopnost vidět cokoliv uvnitř rozsahu tohoto kouzla (podobně, jako když zvenčí hledíš do tmy v jeskyni). Temnota je tak silná, že ruší i zvláštní schopnosti některých ras vidět ve tmě. Zaklínadlo může kouzelník seslat na určité místo nebo přímo na sebe. V takovém případě se temnota pohybuje spolu s ním.\nPostavy uvnitř Temnoty vidí vše, co je mimo ni. Obvykle však nevidí nic z toho, co je uvnitř. Použiješ li při sesílání dvojnásobek požadované many, uvidí všichni uvnitř kouzla bez jakýchkoliv omezení.\nPostavy ukryté Temnotou se počítají jako neviditelné a boj proti nim se řídí pravidlem Boj s neviditelným protivníkem.\nPokud by do bariéry vstoupil někdo se zdrojem světla, bude jeho intenzita odpovídat desetině původní záře (pochodeň bude zářit zhruba jako svíčka a podobně).\nKouzelník může použitím Dlouhé akce a dodáním příslužné many kouzlo prodloužit o další 1 minutu.",
+   "id": "temnota",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "1 za dva sáhy poloměru",
+    "base": 1,
+    "per": "dva sáhy poloměru",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "promen"
+  },
+  {
+   "nazev": "Břichomluvectví",
+   "zaklinadlo": "Ventrilo Qui",
+   "skupina": "mentalni",
+   "strana": 22,
+   "mana": "2 za 10 sáhů",
+   "dosah": "dle dodané many",
+   "rozsah": "koule o poloměru dle dodané many",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "6",
+   "vyzaduje": "Mentální magie",
+   "stitky": [
+    "Mentální magie"
+   ],
+   "popis": "Tímto zaklínadlem může kouzelník nechat vycházet svůj hlas (či jiné zvuky) z vybraného místa v dosahu. Hlas není skutečný, ale je slyšet pouze v hlavách živých inteligentních tvorů (Inteligence větší než 0), které kouzelník nevyloučil z působení daného kouzla.\nPřidáním jedné many (v průběhu trvání kouzla) lze navíc změnit dojem, odkud daný zvuk vychází (lze tak vyvolat pocit, že kolem někdo prochází a podobně).\nKouzlo se projeví u všech, které kouzelník při Ověření úspěchu překonal svou Vůlí.",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "id": "brichomluvectvi",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 za 10 sáhů",
+    "base": 2,
+    "per": "10 sáhů",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "mentalni"
+  },
+  {
+   "nazev": "Dvojník",
+   "zaklinadlo": "Multimero",
+   "skupina": "mentalni",
+   "strana": 23,
+   "mana": "3 za směnu",
+   "dosah": "100 sáhů",
+   "rozsah": "kruh o poloměru 10 sáhů",
+   "trvani": "dle dodané many",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8",
+   "vyzaduje": "Mentální magie",
+   "stitky": [
+    "Mentální magie"
+   ],
+   "popis": "Tímto zaklínadlem dokáže kouzelník vsugerovat jednotlivci nebo skupině živých inteligentních tvorů (Inteligence vyšší než 0) dokonalou mentální iluzi tvora, kterého už někdy viděl, nebo sebe sama. Tato kopie je nehmotná a jedná se pouze o mentální projekci. Ta se objeví v myslích všech, jejichž vůli kouzelník v ověřovacím hodu překonal a které svým rozhodnutím z efektu kouzla nevyjmul.\nKouzelník může nechat iluzi vykonávat nějakou činnost, nebo ji dokonce nechat „mluvit“. Už ze samé podstaty kouzla vyplývá, že se nikdy nejedná o skutečnou fyzickou interakci s okolím (dvojník nedokáže otevřít dveře, sebrat předmět a podobně).\nNa kouzlo je potřeba se po celou jeho dobu trvání soustředit. Jakmile s tím kouzelník přestane, iluze se rozplyne a nelze ji už znovu obnovit.",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "id": "dvojnik",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "3 za směnu",
+    "base": 3,
+    "per": "směnu",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "mentalni"
+  },
+  {
+   "nazev": "Noční můra",
+   "zaklinadlo": "Nocturnum",
+   "skupina": "mentalni",
+   "strana": 23,
+   "mana": "4",
+   "dosah": "30 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "12 hodin",
+   "vyvolani": "5 kol",
+   "obtiznost": "7",
+   "vyzaduje": "Mentální magie",
+   "stitky": [
+    "Mentální magie"
+   ],
+   "popis": "Postava zasažená tímto kouzlem je ve svém spánku atakována nočními děsy. Budí se hrůzou, převaluje se a vykřikuje ze snů. Děsy, které noční můru provází, většinou souvisí s tím, čeho se oběť nejvíc bojí. Kouzelník však taktéž dokáže určit, co přesně se jí má zdát.\nVýsledkem je, že se postavě po probuzení uzdraví pouze jeden život namísto dvou. Navíc zůstane stejně unavená jako před spánkem.\nPokud by byla postava během spánku terčem těchto kouzel opakovaně, bude situace ještě horší. Za každé z nich ztrácí dva životy a musí provést ověřovací hod na Kritické vynaložení sil Výdrž (ODO) vs. 10. Navíc bude postava natolik psychicky rozhozena, že nebude schopna meditace. Doplnění many (jak u hraničáře, tak u kouzelníka) pak bude možné až po dalším nerušeném osmihodinovém spánku.\nEfekt kouzla se projeví tehdy, jestliže kouzelník překoná v ověřovacím hodu Vůli protivníka.",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "id": "nocni_mura",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "5 kol",
+    "kind": "kola",
+    "n": 5,
+    "rounds": 5
+   },
+   "obor": "mentalni"
+  },
+  {
+   "nazev": "Ochromení",
+   "zaklinadlo": "Nervorum",
+   "skupina": "mentalni",
+   "strana": 24,
+   "mana": "3× úroveň cíle",
+   "dosah": "30 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "9",
+   "vyzaduje": "Mentální magie",
+   "stitky": [
+    "Mentální magie"
+   ],
+   "popis": "Tímto kouzlem lze ochromit (paralyzovat) někoho jiného. Efekt kouzla se projeví jen tehdy, jestliže kouzelník v ověřovacím hodu překoná Výdrž protivníka. V takovém případě bude cíl strnulý a neschopen pohybu. Nedokáže navíc ani mluvit nebo mrkat (to se děje jen bezděčně). Zbytek jeho mysli však bude nezasažen. Cíl tak vnímá vše, co se s ním děje.\nMnožství many potřebné k seslání kouzla se liší podle úrovně cíle. Kouzelník tak musí odhadnout, kolik many bude k ochromení potřeba. Jestliže jí nebude dost, kouzlo se automaticky nezdaří a mana se bez efektu rozptýlí do okolí.\nKouzelník se musí na toto kouzlo po celou dobu jeho trvání soustředit (použít akci Soustředění). Pokud by svou koncentraci přerušil, ochromení tvora okamžitě pomine, každé kolo navíc musí uspět v opakovaném ověřovacím hodu, jinak se ochromený tvor vzpamatuje a kouzlo je přerušeno.\nPŘÍKLAD: Kouzelník se pokouší ochromit válečníka na čtvrté úrovni. Bude k tomu tedy potřebovat 12 bodů many (3x4).",
+   "overeni": "Vůle (CHAR) vs. Výdrž (ODO)",
+   "soustredeni": true,
+   "id": "ochromeni",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "3× úroveň cíle",
+    "base": 0,
+    "perTargetLevel": 3,
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "mentalni"
+  },
+  {
+   "nazev": "Sugesce",
+   "zaklinadlo": "Sugescio",
+   "skupina": "mentalni",
+   "strana": 24,
+   "mana": "1× úroveň cíle",
+   "dosah": "30 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "30 minut (2 směny)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "7",
+   "vyzaduje": "Mentální magie",
+   "stitky": [
+    "Mentální magie"
+   ],
+   "popis": "Jestliže kouzelník v ověřovacím hodu překoná Vůli protivníka, dokáže mu vsugerovat určitý pocit (hlad, vztek, vzrušení, bolest zubů a podobně).",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "id": "sugesce",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "1× úroveň cíle",
+    "base": 0,
+    "perTargetLevel": 1,
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "mentalni"
+  },
+  {
+   "nazev": "Vize",
+   "zaklinadlo": "Visio",
+   "skupina": "mentalni",
+   "strana": 24,
+   "mana": "9 za směnu",
+   "dosah": "100 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "dle dodané many",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "9",
+   "vyzaduje": "Mentální magie",
+   "stitky": [
+    "Mentální magie"
+   ],
+   "popis": "Jestliže kouzelník v ověřovacím hodu překoná Vůli protivníka, dokáže mu v mysli vsugerovat obraz něčeho, co není skutečné. Může si vymyslet i místa a scény, které sám nikdy neviděl. Obvyklým příkladem této iluze je třeba kamenná stěna, dveře, jáma v zemi, stejně jako hořící střecha nebo hemžení škorpiónů.\nPanuje-li v okolí nepokoj (boj, panika a podobně), tak je jistá šance, že očarovaný tvor kouzlo předčasně prohlédne. Každé kolo si tedy může hodit na ověření Vůle (CHAR) vs. Vůle (CHAR) kouzelníka.\nKouzlo lze použít na živé inteligentní tvory s Inteligencí vyšší než 0.",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "id": "vize",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "9 za směnu",
+    "base": 9,
+    "per": "směnu",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "mentalni"
+  },
+  {
+   "nazev": "Antimagická bariéra",
+   "zaklinadlo": "Contra Magica",
+   "skupina": "ochranna",
+   "strana": 25,
+   "mana": "X",
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "12 hodin",
+   "vyvolani": "Krátká akce",
+   "obtiznost": "9",
+   "vyzaduje": "Ochranná magie",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Tato bariéra dokáže ochránit kouzelníka před cizí magií. Je pouze na něm, jak silná vlastně bude (dle množství many).\nJestliže je cílem zaklínadla přímo kouzelník, odsaje se z bariéry tolik many, kolik stálo kouzlo na něj seslané. To pak na něj nebude mít žádný efekt. V případě, že je kouzelník cílem kouzla nepřímo (plošné kouzlo), odčerpá se z aury mana v množství odpovídajícím jedné čtvrtině ceny daného kouzla (vždy však aspoň 1). Pokud není v bariéře dostatek energie k pohlcení kouzla, rozplyne se a cizí kouzlo projde beze změny.\nPŘÍKLAD: Kouzelník Meredil sešle auru a vloží do ní 10 bodů many. Síla aury je tedy 10. Během večera se ho pokusí napadnout jiný kouzelník. Ze zálohy na něj sešle blesk (v ceně 3 bodů many). Blesk doletí ke kouzelníkovi, avšak nezasáhne ho. Pár coulů nad jeho tělem zafunguje ochranná bariéra. Ta energii blesku neškodně uvolní do okolí. Za to se z ní odčerpají právě 3 body (jako byla cena blesku). V auře tak zůstane ještě 7 dalších bodů many, které dokáží negovat cizí kouzla.\nBěhem účinku tohoto zaklínadla nedokáže kouzelník sesílat žádné jiné kouzlo. Aura by ho pohltila stejně jako kouzla zvenčí. Může však bariéru průběžně posilovat další manou, pokud jí disponuje.\nKouzelník může bariéru kdykoliv ukončit, mana v ní obsažená se neškodně vyzáří do okolí.",
+   "id": "antimagicka_bariera",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "X",
+    "base": 0,
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "Krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Magická zbroj",
+   "zaklinadlo": "Defendor",
+   "skupina": "ochranna",
+   "strana": 25,
+   "mana": "4 za zbroj",
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "6 hodin",
+   "vyvolani": "Krátká akce",
+   "obtiznost": "8 (+2 za každou zbroj navíc)",
+   "vyzaduje": "Ochranná magie",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Po seslání tohoto kouzla se těsně kolem cíle zformuje zvláštní ochranná aura. Ta není na první pohled viditelná a všimne si jí jen velmi dobrý pozorovatel. Vypadá jako slabé tetelení vzduchu, které můžeš vidět za horkých letních dnů.\nTato aura chrání svého nositele stejně jako kterákoliv jiná zbroj. Za každé 4 body many, které do kouzla vložíš, zvýší Základní obranu (ZO) cíle o +1 (např. za celkem 12 many +3 k obraně).\nPOZNÁMKA: Toto kouzlo je možné seslat i v případě, že už je tvor navlečen do zbroje nebo je chráněn nějakým dalším kouzlem.",
+   "ucinek": {
+    "defenseBase": 1,
+    "perUnit": true
+   },
+   "id": "magicka_zbroj",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4 za zbroj",
+    "base": 4,
+    "per": "zbroj",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8 (+2 za každou zbroj navíc)",
+    "base": 8,
+    "step": 2,
+    "stepPer": "každou zbroj navíc"
+   },
+   "vyvolaniX": {
+    "text": "Krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Naruš pozornost",
+   "zaklinadlo": "Distero",
+   "skupina": "ochranna",
+   "strana": 26,
+   "mana": "X",
+   "dosah": "40 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "Dlouhá akce",
+   "vyvolani": "Krátká akce",
+   "obtiznost": "8",
+   "vyzaduje": "Ochranná magie",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Kouzelník dokáže tímto kouzlem krátkodobě narušit soustředění ostatních. To se projevuje silnými bolestmi hlavy a pískotem v uších. Obtížnost všech akcí vyžadujících Inteligenci a soustředění (tedy i prosby či kouzlení) se tak zvyšuje o X (dle dodané many).",
+   "id": "narus_pozornost",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "X",
+    "base": 0,
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Ochrana před střelami",
+   "zaklinadlo": "Contra Orbi",
+   "skupina": "ochranna",
+   "strana": 26,
+   "mana": "3 za projektil",
+   "dosah": "dotek",
+   "rozsah": "koule kolem cíle o poloměru 2 sáhy",
+   "trvani": "12 hodin",
+   "vyvolani": "Krátká akce",
+   "obtiznost": "8 (+2 za každý další)",
+   "vyzaduje": "Ochranná magie",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Toto kouzlo vytvoří kolem cíle ochrannou kupoli, která dokáže zabránit průniku rychle letících předmětů (střelné a vrhací zbraně). Za každé 3 many bariéra odrazí jeden nemagický projektil.\nV průběhu kouzla není možné z bariéry střílet ven. Pokud se o to někdo pokusí, odčerpá to jednu ochranu a střela neprojde. Kouzlo nijak nechrání před magickými zbraněmi a efekty magie. Blesky, ohnivé koule a podobně tak lze volně sesílat dovnitř i ven.",
+   "id": "ochrana_pred_strelami",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "3 za projektil",
+    "base": 3,
+    "per": "projektil",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8 (+2 za každý další)",
+    "base": 8,
+    "step": 2,
+    "stepPer": "každý další"
+   },
+   "vyvolaniX": {
+    "text": "Krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Rozptyl kouzlo",
+   "zaklinadlo": "Disruptum Magen",
+   "skupina": "ochranna",
+   "strana": 26,
+   "mana": "10",
+   "dosah": "10 sáhů",
+   "rozsah": "1 kouzlo",
+   "trvani": "ihned",
+   "vyvolani": "3 Dlouhé akce",
+   "obtiznost": "9",
+   "vyzaduje": "Ochranná magie",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Toto zaklínadlo dokáže rozptýlit efekt jiného kouzla. Aby se to kouzelníkovi povedlo, tak musí uspět v hodu na ověření Sesílání kouzel (INT) proti Sesílání kouzel (INT) sesilatele.\nToto kouzlo nemá vliv na prosby a přírodní magii.",
+   "overeni": "Sesílání kouzel (INT) vs. Sesílání kouzel (INT) sesilatele",
+   "id": "rozptyl_kouzlo",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "10",
+    "base": 10
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "3 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 3,
+    "rounds": 3
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Schránka",
+   "zaklinadlo": "Arca",
+   "skupina": "ochranna",
+   "strana": 26,
+   "mana": "2 za hodinu",
+   "dosah": "dotek",
+   "rozsah": "1 předmět velikosti hlávky zelí",
+   "trvani": "dle dodané many",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "9",
+   "vyzaduje": "Ochranná magie",
+   "stitky": [
+    "Ochranná magie"
+   ],
+   "popis": "Sesláním tohoto kouzla se kolem vybraného předmětu vytvoří kulovitá, černá (neurčí-li kouzelník jinak), neprůhledná aura. Ta ho dokáže dočasně ochránit před jakýmikoliv vnějšími vlivy (déšť, údery, otřesy, výbuch a podobně). Zároveň je předmět skryt před magickým vyhledáváním (například pomocí kouzla Najdi předmět).\nToto kouzlo nelze seslat na živé tvory. Chráněný předmět nelze z aury vyjmout, dokud kouzlo neskončí. Sesilatel může kouzlo kdykoliv dotekem ukončit.",
+   "id": "schranka",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 za hodinu",
+    "base": 2,
+    "per": "hodinu",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "ochranna"
+  },
+  {
+   "nazev": "Dotek upíra",
+   "zaklinadlo": "Manus Nocturna",
+   "skupina": "vitalni",
+   "strana": 27,
+   "mana": "2 za kolo",
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "dle dodané many",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8",
+   "vyzaduje": "Vitální magie",
+   "stitky": [
+    "Vitální magie",
+    "magické",
+    "nekrotické"
+   ],
+   "popis": "Kouzelník dokáže pomocí tohoto kouzla působit trochu jako upír. Dotkne-li se v daném kole své oběti rukama nebo zbraní, vysaje z ní 1k6 životů a polovinu z nich pak sám hned získá.\nAby k tomu došlo, musí kouzelník v boji zasáhnout svého protivníka (překonat jeho obranu). Jestliže se oběť doteku nebrání, je úspěch efektu kouzla automatický.\nEfekt tohoto kouzla působí jen na živé tvory.",
+   "ucinek": {
+    "drain": "1k6",
+    "selfHeal": "½"
+   },
+   "id": "dotek_upira",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 za kolo",
+    "base": 2,
+    "per": "kolo",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vitalni"
+  },
+  {
+   "nazev": "Posílení smyslu",
+   "zaklinadlo": "Ampli Sensum",
+   "skupina": "vitalni",
+   "strana": 27,
+   "mana": "2",
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "7",
+   "vyzaduje": "Vitální magie",
+   "stitky": [
+    "Vitální magie"
+   ],
+   "popis": "Kouzelník může tímto zaklínadlem posílit vnímání jednoho tvora. Je jen na něm, který ze smyslů se takto rozhodne vylepšit (zrak, sluch, čich, hmat nebo chuť). Jeho citlivost se následně výrazně zvýší (i se všemi klady a zápory, které to s sebou přinese).\nTvor pod vlivem tohoto kouzla navíc získá ke všem hodům s použitím daného smyslu Výhodu (bonus +5).",
+   "id": "posileni_smyslu",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2",
+    "base": 2
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vitalni"
+  },
+  {
+   "nazev": "Pouto života",
+   "zaklinadlo": "Nexum Vitae",
+   "skupina": "vitalni",
+   "strana": 27,
+   "mana": "5",
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "1 směna",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "9",
+   "vyzaduje": "Vitální magie",
+   "stitky": [
+    "Vitální magie"
+   ],
+   "popis": "Tímto zaklínadlem dokáže kouzelník propojit svou životní sílu s energií jiného tvora, který s tím souhlasí. Pokud by jeden z nich utrpěl nějakou ztrátu životů, rozdělí se toto zranění rovnoměrně mezi oba. Toto platí stejně i pro léčení, ale nevztahuje se na ostatní efekty, jako je třeba oslepení, otrava či účinky kouzel a lektvarů neovlivňujících stav životů.\nPokud kouzelník upadne během působení kouzla do bezvědomí kouzlo se ihned přeruší.\nKouzelník může být najednou propojen pouze s jedním tvorem, Nekromant se může propojit i s nemrtvým.",
+   "id": "pouto_zivota",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "5",
+    "base": 5
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "vitalni"
+  },
+  {
+   "nazev": "Přivolej nemrtvé",
+   "zaklinadlo": "Voca Imortus",
+   "skupina": "vitalni",
+   "strana": 28,
+   "mana": "4",
+   "dosah": "100 sáhů",
+   "rozsah": "kruh o poloměru 50 sáhů",
+   "trvani": "ihned",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8",
+   "vyzaduje": "Vitální magie",
+   "stitky": [
+    "Vitální magie"
+   ],
+   "popis": "Tímto zaklínadlem lze přivolat nemrtvé na vybrané místo. Kouzlo v nich vyvolá dojem, že se tam vyskytuje mnoho živých tvorů. Trýzněni neukojitelným hladem se pak ženou daným směrem (efekt kouzla pomine ve chvíli, kdy na místo přijdou).\nKouzlo působí na všechny nemrtvé v okruhu místa seslání. Ignorují ho pouze ti, kteří se právě účastní boje. Aby však na nemrtvé zabralo, tak musí kouzelník uspět v ověřovacím hodu na Vůli (CHAR) vs. Vůle (CHAR) nemrtvých.\nKouzelník se při seslání dozví řádový počet nemrtvých, kteří se nacházejí v rozsahu kouzla (žádný, jednotky, desítky, stovky, …).",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "id": "privolej_nemrtve",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vitalni"
+  },
+  {
+   "nazev": "Vitální transfer",
+   "zaklinadlo": "Trans Vitális",
+   "skupina": "vitalni",
+   "strana": 28,
+   "mana": "5",
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8",
+   "vyzaduje": "Vitální magie",
+   "stitky": [
+    "Vitální magie"
+   ],
+   "popis": "Kouzelník dokáže pomocí many přenést část své životní síly do někoho jiného. Je jen na něm, kolik svých životů cíli daruje. Kouzelník takto zvládne předat nanejvýš polovinu z maxima svých životů. V okamžiku, kdy by tuto hranici překročil, upadne do bezvědomí.",
+   "id": "vitalni_transfer",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "5",
+    "base": 5
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vitalni"
+  },
+  {
+   "nazev": "Voodoo",
+   "zaklinadlo": "Vendolor",
+   "skupina": "vitalni",
+   "strana": 28,
+   "mana": "5 (10)",
+   "dosah": "1 míle",
+   "rozsah": "1 tvor",
+   "trvani": "1 směna",
+   "vyvolani": "2 Dlouhé akce (+5 minut příprava)",
+   "obtiznost": "10",
+   "vyzaduje": "Vitální magie",
+   "stitky": [
+    "Vitální magie"
+   ],
+   "popis": "Toto kouzlo vyžaduje speciální přípravu. Před jeho použitím musíš sehnat nějakou „část těla“ své oběti (obvykle vlasy, zub, nehty a podobně). Tu pak vložíš do jednoduché figurky, kterou si vyrobíš z libovolného materiálu. Pokud figurku nemáš, můžeš si ji vytvořit z čisté energie (kouzlo pak stojí 10 bodů many namísto 5). Předmět z oběti pak levituje v jejím středu.\nJestliže kouzelník v ověřovacím hodu překoná Vůli protivníka, stane se dotyčný na dané kouzlo citlivým. Jakmile kouzelník do figurky bodne, ucítí oběť nesnesitelnou bolest v místě, které bylo na loutce zasaženo. Ta přetrvává po celou dobu trvání kouzla, dokud není jehla vytažena nebo není zasaženo jiné místo.\nBodnutí nezpůsobí oběti žádnou ztrátu životů, avšak vyvolá nepříjemný pocitový efekt spojený s bolestí. Bodnutí do oka figurky způsobí dočasnou ztrátu zraku, do ucha ztrátu sluchu, do končetin jejich krátkodobé ochrnutí a podobně. Taková situace se obvykle projevuje Nevýhodou (postih -5) ke všem akcím tvora. O celkové situaci vždy rozhoduje PJ.\nČást těla oběti potřebná k výrobě figurky je spotřebovaná a nelze ji opětovně využít k seslání tohoto kouzla.",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "id": "voodoo",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "5 (10)",
+    "base": 5,
+    "alt": 10
+   },
+   "obtiznostX": {
+    "text": "10",
+    "base": 10
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce (+5 minut příprava)",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "vitalni"
+  },
+  {
+   "nazev": "Cizí jazyk",
+   "zaklinadlo": "Capire Lingua",
+   "skupina": "vysoka",
+   "strana": 29,
+   "mana": "9",
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "8",
+   "vyzaduje": "Vysoká magie",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Toto zaklínadlo propůjčuje sesilateli schopnost porozumět řeči jiných inteligentních tvorů (ne zvířat). Kouzelník je schopen daným jazykem i hovořit (pokud je to fyzicky možné). Kouzlo umožní i porozumění psanému textu.",
+   "id": "cizi_jazyk",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "9",
+    "base": 9
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Leť",
+   "zaklinadlo": "Volantis",
+   "skupina": "vysoka",
+   "strana": 29,
+   "mana": "1 za 2 kola",
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "dle dodané many",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "9",
+   "vyzaduje": "Vysoká magie",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Díky tomuto kouzlu může cíl (třeba i sám kouzelník) volně létat. Na tento pohyb se však musí soustředit a nemůže během něj provádět jiné akce, jako je třeba boj. Nejvyšší rychlost létání odpovídá zhruba třiceti sáhům za kolo. Dobu trvání kouzla určuje kouzelník při jeho seslání. Je-li cílem sám kouzelník, může ho navíc průběžně prodlužovat.",
+   "id": "let",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "1 za 2 kola",
+    "base": 1,
+    "per": "2 kola",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Najdi kouzla",
+   "zaklinadlo": "Invenio Magen",
+   "skupina": "vysoka",
+   "strana": 29,
+   "mana": "3",
+   "dosah": "sesilatel",
+   "rozsah": "magická rezidua v okruhu 30 sáhů",
+   "trvani": "1 směna",
+   "vyvolani": "3 Dlouhé akce",
+   "obtiznost": "8",
+   "vyzaduje": "Vysoká magie",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Každé seslané kouzlo po sobě zanechá na nějakou dobu „stopu“. Zbytkovou manu, která se drží v místě jeho seslání. Zaklínadlem Najdi kouzlo pak lze takovou manu zviditelnit.\nKouzlo se projeví formou jemného světla v místě, kde nějaké kouzlo působí. Stejně tak dokáže zviditelnit i dozvuky kouzel předchozích. To je běžně možné po dobu jedné hodiny za každý bod many, který byl k seslání doznívajícího kouzla potřeba (např. kouzlo Proměna stojí 6 bodů many, a lze jej tak vystopovat ještě 6 hodin po jeho seslání).\nPokud kouzelník dané kouzlo sám ovládá, dokáže jej navíc bez problémů identifikovat. V opačném případě pouze určí obecnou přítomnost magie. Nedokáže navíc rozpoznat kouzla hraničářů, prosby kleriků či manu obsaženou v alchymistických předmětech.",
+   "id": "najdi_kouzla",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "3 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 3,
+    "rounds": 3
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Oko zření",
+   "zaklinadlo": "Redikulus",
+   "skupina": "vysoka",
+   "strana": 29,
+   "mana": "5",
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "15 minut (1 směna)",
+   "vyvolani": "2 Dlouhé akce",
+   "obtiznost": "8",
+   "vyzaduje": "Vysoká magie",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Po seslání tohoto kouzla dokáže kouzelník spatřit věci, které jsou jinak neviditelné. Může jít o předměty, bytosti či cokoliv dalšího. Kouzlo navíc působí i na neviděné – obávané tvory temnoty, kteří se občas toulají naším světem. Všechny takto zviditelněné předměty i bytosti mají kolem sebe navíc z pohledu kouzelníka slabou zářící auru.",
+   "id": "oko_zreni",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "5",
+    "base": 5
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "2 Dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Psychokineze",
+   "zaklinadlo": "Movera Remori",
+   "skupina": "vysoka",
+   "strana": 30,
+   "mana": "1 za libru hmotnosti",
+   "dosah": "30 sáhů",
+   "rozsah": "1 předmět",
+   "trvani": "10 kol (1 minuta)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "7",
+   "vyzaduje": "Vysoká magie",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Po seslání tohoto kouzla dokáže kouzelník pohybovat na dálku jedním předmětem. Nejvyšší rychlost pohybu předmětu je šest sáhů za kolo. Aby šlo předmětem pohybovat, musí na něj kouzelník vidět.\nToto kouzlo bylo navrženo velmi jednoduše. Pokud by se někdo pokusil předmět zachytit a držet, kouzelníkova magie jeho sílu nepřekoná.",
+   "id": "psychokineze",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "1 za libru hmotnosti",
+    "base": 1,
+    "per": "libru hmotnosti",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vysoka"
+  },
+  {
+   "nazev": "Ticho",
+   "zaklinadlo": "Silencio",
+   "skupina": "vysoka",
+   "strana": 30,
+   "mana": "2 za sáh poloměru",
+   "dosah": "20 sáhů",
+   "rozsah": "koule o poloměru dle dodané many",
+   "trvani": "1 hodina (4 směny)",
+   "vyvolani": "Dlouhá akce",
+   "obtiznost": "8",
+   "vyzaduje": "Vysoká magie",
+   "stitky": [
+    "Vysoká magie"
+   ],
+   "popis": "Na území zasaženém tímto kouzlem nastane naprosté a hrobové ticho. V daném území pak nic nevydává žádný zvuk, a proto jsou postavy pod jeho vlivem pro okolí zcela neslyšné. Stejně tak postavy uvnitř aury neslyší sebe navzájem (tj. kouzelník a klerik sesílá kouzla / prosby s postihem beze slov), avšak slyší všechny zvuky přicházející zvenčí.\nKouzelník může kouzlo při sesílání ještě vylepšit. Zdvojnásobením ceny kouzla dosáhne toho, že se postavy uvnitř kouzla normálně uslyší. Pro všechny venku je však jejich mluvení nadále neslyšitelné.\nTicho se obvykle drží v dané oblasti, pokud se ovšem kouzelník při sesílání nerozhodl (a neoznámil), že ho sesílá na sebe. V takovém případě se kouzlo pohybuje spolu s ním.",
+   "id": "ticho",
+   "zdroj": "H11",
+   "typ": "kouzlo",
+   "cena": {
+    "text": "2 za sáh poloměru",
+    "base": 2,
+    "per": "sáh poloměru",
+    "variable": true
+   },
+   "obtiznostX": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolaniX": {
+    "text": "Dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "obor": "vysoka"
+  }
+ ],
+ "obecna_magie": [
+  "bertolduv_zamek",
+  "blesk",
+  "kukatko",
+  "levitace",
+  "magicka_strela",
+  "magicky_stit",
+  "najdi_predmet",
+  "neviditelnost",
+  "ocaruj_zbran",
+  "ohen",
+  "rychlost",
+  "svetlo",
+  "teleport"
+ ],
+ "obory": [
+  {
+   "id": "obor_divoka",
+   "nazev": "Obor Divoká magie",
+   "obor": "Divoká magie",
+   "strana": 14,
+   "kouzla": [
+    "beranidlo",
+    "mraziva_strela",
+    "ohniva_cepel",
+    "ohniva_koule",
+    "plamenna_ruka",
+    "poryv_vetru"
+   ],
+   "popis": "Formování surové energie – energetické výboje, záblesky, kouzla čerpající sílu z elementů."
+  },
+  {
+   "id": "obor_promen",
+   "nazev": "Obor Magie proměn",
+   "obor": "Magie proměn",
+   "strana": 14,
+   "kouzla": [
+    "dlouha_ruka",
+    "mlha",
+    "promena",
+    "protoplazma",
+    "tajemne_dvere",
+    "temnota"
+   ],
+   "popis": "Proměna struktury a podstaty hmoty – vzhled, forma i vlastnosti."
+  },
+  {
+   "id": "obor_mentalni",
+   "nazev": "Obor Mentální magie",
+   "obor": "Mentální magie",
+   "strana": 14,
+   "kouzla": [
+    "brichomluvectvi",
+    "dvojnik",
+    "nocni_mura",
+    "ochromeni",
+    "sugesce",
+    "vize"
+   ],
+   "popis": "Šálení mysli výjevy, falešnými pocity a dojmy. Působí jen na tvory s INT > 0; nestvůry bez CHAR si k ověření počítají jen hod k10."
+  },
+  {
+   "id": "obor_ochranna",
+   "nazev": "Obor Ochranná magie",
+   "obor": "Ochranná magie",
+   "strana": 14,
+   "kouzla": [
+    "antimagicka_bariera",
+    "magicka_zbroj",
+    "narus_pozornost",
+    "ochrana_pred_strelami",
+    "rozptyl_kouzlo",
+    "schranka"
+   ],
+   "popis": "Ochranné bariéry; narušování, poškozování a znemožňování kouzlení ostatních."
+  },
+  {
+   "id": "obor_vitalni",
+   "nazev": "Obor Vitální magie",
+   "obor": "Vitální magie",
+   "strana": 14,
+   "kouzla": [
+    "dotek_upira",
+    "posileni_smyslu",
+    "pouto_zivota",
+    "privolej_nemrtve",
+    "vitalni_transfer",
+    "voodoo"
+   ],
+   "popis": "Práce s životní silou – posilování, předávání, vysávání."
+  },
+  {
+   "id": "obor_vysoka",
+   "nazev": "Obor Vysoká magie",
+   "obor": "Vysoká magie",
+   "strana": 14,
+   "kouzla": [
+    "cizi_jazyk",
+    "let",
+    "najdi_kouzla",
+    "oko_zreni",
+    "psychokineze",
+    "ticho"
+   ],
+   "popis": "Kouzla ovládající prostor, čas a vědění."
+  }
+ ],
+ "schopnosti": [
+  {
+   "id": "koncentrace_many",
+   "nazev": "Koncentrace many",
+   "strana": 12,
+   "efekt": "Za každou dosaženou úroveň +2 many k maximu (zpětná oprava).",
+   "efekty": [
+    {
+     "target": "manaMax",
+     "op": "add",
+     "value": 2,
+     "per": "level"
+    }
+   ]
+  },
+  {
+   "id": "kouzleni_z_knih",
+   "nazev": "Kouzlení z knih",
+   "strana": 12,
+   "efekt": "S knihou s detailním popisem může seslat i kouzlo, které neovládá: 2× delší vyvolání; obtížnost +3 u oboru, který neovládá, +5 navíc u kouzla jiné specializace. Nelze kombinovat s Rychlým kouzlením. Zápis kouzla do knihy: tolik dní (8 h), kolik je obtížnost; Vzdělání (INT) vs. obtížnost kouzla.",
+   "sesilani": {
+    "castMult": 2,
+    "dcForeignBranch": 3,
+    "dcForeignSpec": 5,
+    "excludes": [
+     "rychle_kouzleni"
+    ]
+   }
+  },
+  {
+   "id": "pamet_na_kouzla",
+   "nazev": "Paměť na kouzla",
+   "strana": 12,
+   "efekt": "Za každou dosaženou úroveň +1 kouzlo navíc (zpětná oprava).",
+   "extraItemsPerLevel": 1
+  },
+  {
+   "id": "ritual_krve",
+   "nazev": "Rituál krve",
+   "strana": 12,
+   "efekt": "Během 1 kola promění vlastní životy na manu 2 : 1 (max. do maxima many); vyžaduje soustředění, rána se na konci kola zatáhne.",
+   "akce": {
+    "hpPerMana": 2,
+    "duration": "1 kolo",
+    "capAtMax": true
+   }
+  },
+  {
+   "id": "rychle_kouzleni",
+   "nazev": "Rychlé kouzlení",
+   "strana": 13,
+   "efekt": "Doba vyvolání ½ (nejméně Krátká akce), obtížnost +3. Hráč ohlásí před sesíláním.",
+   "sesilani": {
+    "castMult": 0.5,
+    "minCast": "kratka",
+    "dc": 3,
+    "optIn": true
+   }
+  },
+  {
+   "id": "vyvolani_pritele",
+   "nazev": "Vyvolání přítele",
+   "strana": 13,
+   "efekt": "Rituál ~1 hodina, klid, vyzáří se celé maximum many; Sesílání kouzel vs. obtížnost tvora (krysa 10, kočka 11, sova 12). Jen 1 přítel; vyrušení = neúspěch, znovu až po meditaci.",
+   "odkaz": "7c+ modul Přátelé (claude/data/pratele.json)"
+  }
+ ],
+ "specializace": [
+  {
+   "id": "bojovy_mag",
+   "nazev": "Bojový mág",
+   "podminky": [
+    "obor_divoka",
+    "obor_ochranna"
+   ]
+  },
+  {
+   "id": "carodej",
+   "nazev": "Čaroděj",
+   "podminky": [
+    "obor_mentalni",
+    "obor_vysoka"
+   ]
+  },
+  {
+   "id": "nekromant",
+   "nazev": "Nekromant",
+   "podminky": [
+    "obor_promen",
+    "obor_vitalni"
+   ]
+  }
+ ],
+ "_statistika": {
+  "kouzla": 49,
+  "obecna": 13,
+  "obory": {
+   "obor_divoka": 6,
+   "obor_promen": 6,
+   "obor_mentalni": 6,
+   "obor_ochranna": 6,
+   "obor_vitalni": 6,
+   "obor_vysoka": 6
+  }
+ }
+}

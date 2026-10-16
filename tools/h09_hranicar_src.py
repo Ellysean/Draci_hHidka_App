@@ -1,0 +1,212 @@
+"""H09 Hraničář (PPZ 1.2.5) → docs/h09_hranicar.json  (7c.1)
+
+Přepsáno z textové vrstvy H09_Hraničář_1.2.5_FINAL.pdf (16 stran).
+PPP02 (pokročilá pravidla) je zvlášť v claude/data/ppp02_hranicar.json.
+"""
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from spell_norm import spell  # noqa: E402
+
+SRC = "H09"
+
+# ---------------------------------------------------------------- kouzla
+KOUZLA = [
+    # --- základní kouzla (všichni hraničáři od 1. úrovně automaticky) ---
+    dict(nazev="Najdi úkryt", skupina="zakladni", strana=5,
+         dusevni_sila="3", dosah="sesilatel", rozsah="kruh o poloměru 1 míle", trvani="1 kolo",
+         vyvolani="dlouhá akce", obtiznost="8", vyzaduje="–", stitky=["Magie pocestných"],
+         popis="Tímto kouzlem dokáže hraničář vycítit směr k nejbližšímu přírodnímu úkrytu (pokud se v okolí nějaký takový nachází). Úkrytem je míněno místo, které dokáže ochránit před větrem, deštěm či zvědavými pohledy tuláků. Běžně se může jednat o skalní převis, vykotlaný kmen stromu nebo třeba jeskyni. Hraničář zároveň vytuší, zda je toto místo dostatečně velké pouze pro něj, nebo i pro zbytek družiny."),
+    dict(nazev="Najdi vodu", skupina="zakladni", strana=5,
+         dusevni_sila="3", dosah="sesilatel", rozsah="kruh o poloměru 1 míle", trvani="1 kolo",
+         vyvolani="dlouhá akce", obtiznost="6", vyzaduje="–", stitky=["Magie pocestných"],
+         popis="S pomocí tohoto kouzla dokáže hraničář vycítit směr a vzdálenost k nejbližšímu zdroji pitné vody (pokud v dosahu nějaká je).\nVždy se navíc musí jednat o její přírodní zdroj (tj. nejbližší řeku, jezírko, pramen a podobně). Nehrozí tedy, že by ho kouzlo zavedlo k měchu s vodou, sudu a podobně."),
+    dict(nazev="Rozdělej oheň", skupina="zakladni", strana=5,
+         dusevni_sila="2", dosah="půl sáhu", rozsah="1 předmět", trvani="ihned",
+         vyvolani="10 kol (1 minuta)", obtiznost="6", vyzaduje="–", stitky=["Magie pocestných"],
+         popis="Tímto kouzlem dokáže hraničář zapálit i zcela mokré dřevo, listí a podobně. Zvládne to i za silného deště či bouřky. Oheň pak bude hořet tak dlouho, dokud je do něj přikládáno.\nKouzlo nelze použít pod vodou ani na předměty v ní ponořené. Stejně tak nebude fungovat ani na živé tvory."),
+    dict(nazev="Znamení", skupina="zakladni", strana=6,
+         dusevni_sila="1", dosah="dotek", rozsah="maximálně 10 značek", trvani="1 den",
+         vyvolani="dlouhá akce", obtiznost="6", vyzaduje="–", stitky=["Magie přírody"],
+         popis="Znamení se používá tehdy, pokud nechce hraničář zabloudit nebo potřebuje někam navést ostatní. Lze jím vytvořit „značku“ na přírodním materiálu. Na stromě může začít jemně vytékat (i světélkovat) pryskyřice, na kameni může začít prosakovat voda a podobně.\nV okamžiku seslání může hraničář rozhodnout, jestli má být značka viditelná stále a všem, nebo jen jemu samotnému, pokud se nachází do deseti sáhů od ní."),
+
+    # --- Magie pocestných ---
+    dict(nazev="Bdělý spánek", skupina="magie_pocestnych", strana=11,
+         dusevni_sila="5", dosah="koule o poloměru 5 sáhů kolem hraničáře", rozsah="vybraní tvorové v dosahu",
+         trvani="8 hodin", vyvolani="6 kol", obtiznost="10", vyzaduje="Magie pocestných", stitky=["Magie pocestných"],
+         popis="Tímto kouzlem se hraničář a jím vybraní tvorové v dosahu kouzla drží během spánku v podivném stavu polobdění. Pokud se někdo cizí přiblíží blíže než na 30 sáhů k hraničáři, pak se hraničář i jím očarované postavy probudí s pocitem, že něco není v pořádku. Ví, že v okolí je někdo, kdo tam nemá co dělat. Hraničář samozřejmě podvědomě určí, kdo je „někdo cizí“. Kouzlo tak nereaguje na členy vlastní družiny, vojáky bojující na stejné straně a podobně."),
+    dict(nazev="Ochrana před bouří", skupina="magie_pocestnych", strana=11,
+         dusevni_sila="3", dosah="sesilatel", rozsah="koule o poloměru 3 sáhy", trvani="8 hodin",
+         vyvolani="3 kola", obtiznost="6", vyzaduje="Magie pocestných", stitky=["Magie pocestných"],
+         popis="Toto kouzlo vytvoří kolem hraničáře neviditelnou auru, která se pohybuje spolu s ním. Ta nedovolí, aby na něj dopadal sníh, déšť, písek či cokoliv podobného. Aura odolá i silné vánici, avšak nedokáže vzdorovat třeba lavině. Navíc dokáže ochránit i před zásahem blesku (nemagického). Efekt aury působí na všechny, kteří se v ní pohybují."),
+    dict(nazev="Rychlost chodce", skupina="magie_pocestnych", strana=12,
+         dusevni_sila="3", dosah="dotek", rozsah="1 tvor", trvani="1 den",
+         vyvolani="3 kola", obtiznost="8", vyzaduje="Magie pocestných", stitky=["Magie pocestných"],
+         popis="Rychlost chodce dokáže tvorovi navrátit ztracenou sílu a zpevnit jeho chůzi. Po celou dobu trvání kouzla je tak schopen putovat o polovinu rychleji, než je obvyklé. Rychlost chodce odpovídá spěšné chůzi, až na to, že se při ní ani nezadýchá, ani neunaví víc než při běžné chůzi."),
+
+    # --- Magie přírody ---
+    dict(nazev="Neutralizuj jed", skupina="magie_prirody", strana=12,
+         dusevni_sila="3", dosah="dotek", rozsah="1 tvor", trvani="ihned",
+         vyvolani="dlouhá akce", obtiznost="8", vyzaduje="Magie přírody", stitky=["Magie přírody"],
+         popis="Tímto kouzlem lze neutralizovat všechny jedy, které v sobě neobsahují manu. Okamžitě po jeho seslání dojde k jejich neutralizaci v těle vybraného tvora."),
+    dict(nazev="Uzdrav lehká zranění", skupina="magie_prirody", strana=12,
+         dusevni_sila="3 za uzdravení", dosah="dotek", rozsah="1 živý tvor", trvani="ihned",
+         vyvolani="krátká akce", obtiznost="6 (+2 za každé další)", vyzaduje="Magie přírody", stitky=["Magie přírody"],
+         ucinek={"heal": "1k6", "perUnit": True},
+         popis="Hraničář dokáže tímto kouzlem uzdravit zranění za 1k6 životů. Léčení lze provádět vždy nejvýše do maxima počtu životů daného tvora.\nHraničář může v jednom kole seslat Uzdrav lehká zranění vícekrát. V takovém případě se léčivá moc přírody spojí do jednoho silného léčivého doteku."),
+    dict(nazev="Úder varování", skupina="magie_prirody", strana=12,
+         dusevni_sila="3 za úder", dosah="10 sáhů", rozsah="1 tvor", trvani="ihned",
+         vyvolani="krátká akce", overeni="Pouto s přírodou (INT) vs. Vůle (CHAR)",
+         obtiznost="8 (+2 za každý úder navíc)", vyzaduje="Magie přírody",
+         stitky=["Magie přírody", "psychické", "magické"],
+         ucinek={"damage": "1k10", "perUnit": True, "halfOnSave": True},
+         popis="Toto kouzlo je forma mentálního útoku. Cíl je zraněn za 1k10 životů za každý seslaný úder (v případě neúspěšného ověření za polovinu). Zranění není fyzické, způsobuje spíše psychický otřes. Viditelný efekt je především překvapení a někdy i šok zasaženého. Vzácně může způsobit i krvácení z nosu či uší (pokud bylo zranění vyšší)."),
+
+    # --- Magie zvířat ---
+    dict(nazev="Najdi zvíře", skupina="magie_zvirat", strana=13,
+         dusevni_sila="3", dosah="koule o poloměru 1 míle kolem hraničáře", rozsah="1 tvor",
+         trvani="15 minut (1 směna)", vyvolani="dvě dlouhé akce", obtiznost="6",
+         vyzaduje="Magie zvířat", stitky=["Magie zvířat"],
+         popis="Hraničář dokáže tímto kouzlem najít nejbližší zvíře daného druhu (pokud je v dosahu kouzla). Po celou dobu trvání kouzla pak vnímá jeho polohu a jeho případný pohyb (vždy zná přesný směr i hrubou vzdálenost k němu).\nTímto kouzlem lze najít i konkrétní zvíře. Stačí, když ho hraničář někdy viděl, zná ho nebo má něco, co danému zvířeti patřilo (chlupy, zub a podobně).\nPOZNÁMKA: Toto kouzlo působí pouze na zvířata (tvory s Inteligencí 1), nepůsobí však na hmyz ani na bestie nebo přírodní bytosti."),
+    dict(nazev="Přivolej zvíře", skupina="magie_zvirat", strana=13,
+         dusevni_sila="3", dosah="koule o poloměru 1 míle kolem hraničáře", rozsah="1 tvor",
+         trvani="ihned", vyvolani="4 kola", obtiznost="8",
+         vyzaduje="Magie zvířat", stitky=["Magie zvířat"],
+         popis="Tímto kouzlem k sobě hraničář dokáže přivolat jedno zvíře. Provede to hlasitým vřísknutím, kterým napodobí hlas daného tvora (kouzlo tedy funguje jen na tvory vydávající nějaké zvuky).\nHraničář může zkusit přivolat libovolného zástupce daného druhu, nebo konkrétního jedince. Tvor uslyší zvolání a v hlavě mu rezonuje vtíravá touha vědět, kdo ho volá. Obvykle se tak vydá směrem, odkud volání přišlo.\nPOZNÁMKA: Kouzlo nefunguje na tvory, kteří neslyší. Stejně tak nemusí fungovat na posedlá, prokletá a jinak magií ovlivněná zvířata."),
+    dict(nazev="Zvířecí smysly", skupina="magie_zvirat", strana=13,
+         dusevni_sila="3", dosah="sesilatel", rozsah="sesilatel", trvani="1 hodina (4 směny)",
+         vyvolani="dvě dlouhé akce", obtiznost="10", vyzaduje="Magie zvířat",
+         stitky=["Magie přírody"],
+         _pozn="Štítek v H09 je „Magie přírody“, přestože kouzlo vyžaduje Magii zvířat – ponecháno podle textu.",
+         popis="Zvířata mají dar vynikajících smyslů. Sova dokáže vidět i za hluboké noci, netopýr slyší za hranicemi lidských možností, vlk cítí i velmi jemné pachy a podobně. Tímto kouzlem si může hraničář jejich smysly na omezenou dobu vypůjčit.\nPři seslání kouzla pomyslí hraničář na zvíře, se kterým se už někdy setkal. Následně začne vnímat podobně jako daný tvor (noční vidění sovy, netopýří sluch, čich vlka nebo třeba schopnost vnímat chvění dostupná hadům)."),
+]
+
+# ------------------------------------------------- směry hraničářské magie
+SMERY = [
+    dict(id="magie_pocestnych", nazev="Magie pocestných", strana=11,
+         efekt="+10 k Pohyblivosti.",
+         efekty=[{"target": "mobility", "op": "add", "value": 10}],
+         kouzla_auto=["bdely_spanek", "ochrana_pred_bouri", "rychlost_chodce"],
+         popis="Tento druh magie využívá hraničář při každodenním putování. Dokáže mu pomoci lépe zvládat útrapy cest, ale také odolávat rozmarům počasí nebo ho chránit před nepříjemným překvapením."),
+    dict(id="magie_prirody", nazev="Magie přírody", strana=11,
+         efekt="+1 k ověření dovednosti Znalost přírody (INT).",
+         efekty=[{"target": "skill:znalost_prirody", "op": "add", "value": 1}],
+         kouzla_auto=["neutralizuj_jed", "uder_varovani", "uzdrav_lehka_zraneni"],
+         popis="Tento druh magie je úzce zaměřen na nejmocnější dar přírody, kterým je život. Hraničář skrze ni dokáže uzdravovat, ale také zraňovat."),
+    dict(id="magie_zvirat", nazev="Magie zvířat", strana=11,
+         efekt="+1 k ověření dovednosti Zvládnutí zvířat (OBR/CHAR).",
+         efekty=[{"target": "skill:zvladnuti_zvirat", "op": "add", "value": 1}],
+         kouzla_auto=["najdi_zvire", "privolej_zvire", "zvireci_smysly"],
+         popis="Tento druh magie se zaměřuje na úzký kontakt hraničáře s dalšími „dětmi přírody“ – zvířaty. Hraničář je dokáže přivolávat a využívat jejich schopnosti."),
+]
+
+# ------------------------------------------------- volitelné schopnosti
+SCHOPNOSTI = [
+    dict(id="boj_se_zviraty", nazev="Boj se zvířaty", strana=7,
+         efekt="Při boji se zvířaty, bestiemi či hmyzem +2 do ÚČ a OČ.",
+         efekty=[{"target": "attack", "op": "add", "value": 2, "when": "proti zvířatům, bestiím, hmyzu"},
+                 {"target": "defense", "op": "add", "value": 2, "when": "proti zvířatům, bestiím, hmyzu"}],
+         situacni=True),
+    dict(id="bojova_hul", nazev="Bojová hůl", strana=7,
+         efekt="+2 do OČ při boji s holí, kopím a podobnými dřevcovými zbraněmi; v rámci akce Obrana jedna Aktivní obrana navíc.",
+         efekty=[{"target": "defense", "op": "add", "value": 2, "when": "hůl, kopí, dřevcová zbraň v ruce"},
+                 {"target": "defensesPerAction", "op": "add", "value": 1, "when": "hůl, kopí, dřevcová zbraň v ruce"}],
+         zbrane=["hůl", "kopí", "dřevcové"]),
+    dict(id="lecitelstvi", nazev="Léčitelství", strana=7,
+         grantsSkill={"id": "lecitelstvi", "attr": "INT", "rank": 3},
+         efekt="Profesní dovednost Léčitelství (INT) na 3. stupni. 1 směna, 1 tvor, obvazy; ověření Léčitelství (INT) vs. chybějící životy → vyléčí stupeň + oprava INT (neúspěch polovinu). Jen 1× denně před Spánkem, projeví se po něm.",
+         pouziti={"cas": "1 směna", "spotreba": "obvazy (1)", "overeni": "Léčitelství (INT) vs. chybějící životy",
+                  "uspech": "stupeň dovednosti + oprava INT", "neuspech": "polovina", "cetnost": "1× denně před Spánkem"}),
+    dict(id="obratne_ostri", nazev="Obratné ostří", strana=8,
+         efekt="Při útoku mečem (tesák, šavle, meč bastard apod.) může započíst opravu OBR místo SIL.",
+         efekty=[{"target": "attackAttr", "op": "allow", "value": "obr", "when": "meče (tesák, šavle, meč bastard…)"}]),
+    dict(id="ochocovani_zvirat", nazev="Ochočování zvířat", strana=8,
+         grantsSkill={"id": "ochocovani_zvirat", "attr": "CHAR", "rank": 3},
+         efekt="Profesní dovednost Ochočování zvířat (CHAR) na 3. stupni. Trvá 1k6 směn; ověření vs. obtížnost ochočení zvířete; neúspěch → znovu až další den. Najednou jen 1 ochočené zvíře (Zvířecí přítel).",
+         odkaz="7c+ modul Přátelé"),
+    dict(id="pruzkumnictvi", nazev="Průzkumnictví", strana=8,
+         grantsSkills=[{"id": "kamuflaz", "attr": "OBR", "rank": 3}, {"id": "liceni_pasti", "attr": "OBR", "rank": 3}],
+         efekt="Profesní dovednosti Kamufláž (OBR) a Líčení pastí (OBR) na 3. stupni.",
+         kamuflaz="Jen v přírodě/terénu; nesmí ho protivník vidět; obvykle 10 kol; ověření vs. X. Odhalení: Postřeh (INT) vs. Kamufláž (OBR), nehybný maskovaný Výhoda +5. Pohyb rychlostí Plížení (1/10 Pohyblivosti); útok ruší.",
+         liceni_pasti="Ověření Líčení pastí (OBR) vs. obtížnost přípravy pasti (Tabulka pastí). Efekt: cíl Postřeh (INT) vs. výsledek Líčení pastí; neuspěje-li, projeví se Popis z tabulky."),
+    dict(id="presna_strelba", nazev="Přesná střelba", strana=10,
+         efekt="1 kolo soustředění a míření (při více útocích za kolo vynechá jeden střelecký útok) → další útok +6. Neživý cíl do 20 sáhů obvykle zasáhne automaticky.",
+         boj={"aim": True, "bonus": 6}),
+    dict(id="rychla_strelba", nazev="Rychlá střelba", strana=10,
+         efekt="Jen luk: v rámci akce Útok více Útoků a v rámci akce Obrana více Obran – 3 za 2 kola (2, 1, 2, 1…). Od 6. úrovně 2 útoky i obrany každé kolo.",
+         boj={"weapon": "luk", "pattern": [2, 1], "from6": [2]}),
+    dict(id="zoceleni", nazev="Zocelení", strana=10,
+         efekt="Jednorázově +4 ke stupni Odolnosti (zpětná oprava životů).",
+         efekty=[{"target": "attr:odo", "op": "add", "value": 4}],
+         _rozhodnuti="✔ U 19. 9. 2026: text (+4) má přednost před tabulkou (+3)."),
+]
+
+SPECIALIZACE = [
+    dict(id="chodec", nazev="Chodec", podminky=["pruzkumnictvi", "magie_pocestnych"],
+         popis="Nejlepší zvědové a průzkumníci; dokonalé maskování, rychlé přesuny, boj s mečem s přirozenou obratností."),
+    dict(id="druid", nazev="Druid", podminky=["lecitelstvi", "magie_prirody"],
+         popis="Domov v lesích a hvozdech; vzdali se kovových věcí; druidská hůl, léčivé masti, lesní kouzla."),
+    dict(id="pan_zvirat", nazev="Pán zvířat", podminky=["ochocovani_zvirat", "magie_zvirat"],
+         popis="Myšlenková komunikace se zvířaty, vidění jejich očima; zvířata jako rovnocenní společníci."),
+]
+
+PRAVIDLA = {
+    "energie": "Duševní síla – max. z Tabulky Duševní síly hraničáře (INT × úroveň, H09; dusevni_sila_H09.json jen úr. 1–6). Zapisuje se do pole Mana. Doplní se do maxima, když je hraničář Svěží.",
+    "overeni": "Pouto s přírodou (INT) vs. Obtížnost kouzla – musí být VYŠŠÍ než obtížnost.",
+    "bez_gest": "Kouzlení je intuitivní – žádná gesta ani zaklínadla (žádné postihy za řeč, gesta ani zbroj).",
+    "vyruseni": "Vyrušení během vyvolání (např. zranění) → Nevýhoda −5 k ověření.",
+    "akce": "Okamžitá – v rámci jiné akce (ohlásit před ověřovacími hody); Krátká/Dlouhá – efekt po skončení akce; delší než 2 dlouhé akce v kolech/směnách/hodinách, sesílá se dlouhými akcemi. Bojová akce Kouzlení.",
+    "energie_pod_nulu": "Aktuální Duševní síla nesmí klesnout pod nulu; při nedostatečném odhadu ceny se kouzlo nezdaří a Duševní síla propadne.",
+    "projevy": "Při sesílání je okolí patrné, že příroda reaguje (ševelení listí, chování zvířat, poryv větru).",
+    "trvani": "Trvání v kolech a déle se počítá od kola po seslání; hraničář může kouzlo přerušit myšlenkou.",
+    "prvni_uroven": "Hraničářské umění: Lov (OBR), Vnímání přírody (INT), Stopování (INT) na 3. stupni. Hraničářská magie: Pouto s přírodou (INT) na 3. stupni. 4 základní kouzla automaticky.",
+    "prestup": "Každá úroveň: nová zvláštní schopnost nebo směr magie; kouzla jen přes směry (každý směr = automaticky 3 kouzla). Dovednostní body 5× úroveň na každé 2. úrovni; charakterové body 2 na každé 3. úrovni.",
+    "specializace": "Od 6. úrovně; podmínky podle H09 (dvě pevné, PPP třetí se nepoužívá ✔ U 22. 9. 2026).",
+}
+
+PASTI = {
+    "_stav": "Tabulka pastí H09 s. 9–10 – přepis od uživatele 1. 10. 2026 (v PDF jen obrázek).",
+    "pravidlo": "Příprava: Líčení pastí (OBR) vs. obtížnost přípravy pasti. Účinek: cíl Postřeh (INT) vs. výsledek Líčení pastí hraničáře; neuspěje-li, nastane Popis z tabulky. Další druhy pastí určuje Vypravěč.",
+    "polozky": [
+        {"id": "jama", "nazev": "Jáma", "vyroba": "2 směny", "vyzaduje": "vhodný terén (jámu), dřevěné kůly", "obtiznost": 10,
+         "ucinek": {"damage": "1k10+6", "damageType": "bodné",
+                    "save": "Hbitost (OBR) vs. Líčení pastí (OBR)", "onFail": {"bleed": "1k6", "until": "ošetření Krvácení"}},
+         "popis": "Hraničáři jámu nekopou, raději najdou vhodnou prohlubeň, kterou upraví. Jáma většinou není příliš hluboká. Na dno jámy umístí hraničář ostré dřevěné kůly a povrch zamaskují větvemi a listím. Po došlápnutí oběť spadne a zraní se (bodné zranění) za 1k10 +6 životů. Oběť navíc musí uspět v hodu na Hbitost (OBR) vs. Líčení pastí (OBR) hraničáře. Pokud neuspěje pak dopadla tak nešikovně, že krvácí za 1k6 životů za kolo. A to až do ošetření Krvácení."},
+        {"id": "celisti", "nazev": "Čelisti", "vyroba": "1 minuta (10 kol)", "vyzaduje": "kovová past (čelisti)", "obtiznost": 6,
+         "cena": "2 zl (kovář)",
+         "ucinek": {"damage": "1k10+2", "damageType": "sečné", "trapped": True,
+                    "escape": "Atletika (SIL) vs. 10", "after": "Zpomalený do vyléčení zranění z pasti nebo První pomoci"},
+         "popis": "Klasická past na vlky, kterou lze koupit u kováře (obvyklá cena je 2 zl). Zvíře je do ní přiláká maso, lidi pak čímkoli zajímavým (třeba kusem látky) umístěným za ní. Při došlápnutí způsobí sečné zranění za 1k10 +2 životů. Oběť navíc zůstává uvězněna. K uvolnění z pasti je potřeba překonat past na Atletika (SIL) vs. 10. Po uvolnění tvor zůstává Zpomalený dokud není vyléčen ze zranění způsobeného pastí nebo ošetřen První pomocí."},
+        {"id": "beranidlo", "nazev": "Beranidlo", "vyroba": "2 směny", "vyzaduje": "lano, kláda, vhodný terén (strom k zavěšení)", "obtiznost": 12,
+         "ucinek": {"damage": "2k10+4", "damageType": "drtivé", "knockback": "1k6 sáhů",
+                    "save": "Výdrž (ODO) vs. Líčení pastí (OBR)", "onFail": {"condition": "otřesení", "rounds": 1}},
+         "popis": "Hraničář dokáže nastražit lano spouštějící past. Jakmile o něj někdo zakopne, spustí se z větví stromů zavěšená kláda, která smete vše v cestě. Past způsobuje drtivé zranění za 2k10 +4 životů a odhození oběti o 1k6 sáhů. Oběť si navíc hodí na Výdrž (ODO) vs. Líčení pastí (OBR) hraničáře. Pokud v hodu neuspěje, je navíc na 1 kolo otřesena a ztrácí své akce."},
+        {"id": "oko", "nazev": "Oko", "vyroba": "1 směna", "vyzaduje": "lano, vhodný terén (strom k zavěšení)", "obtiznost": 8,
+         "ucinek": {"maxSize": "B", "trapped": True, "penalty": -5,
+                    "escape": "Atletika (SIL) vs. Líčení pastí (OBR) nebo odřezání lana"},
+         "popis": "Hraničář nalíčí na zem lapačské oko, které má šanci, že polapí tvora, který přes něj přejde. Pokud tvor velikosti B a menší přejde přes místo, kde je nastražené oko, spustí past. Smyčka se stáhne kolem jeho končetiny, a lano jej vymrští vzhůru. Chycený tvor visí hlavou dolů, takže má Nevýhodu (postih -5) ke všem akcím, dokud se neosvobodí. Z pasti se může osvobodit hodem na Atletiku (SIL) vs. Líčení pastí (OBR) hraničáře a nebo odřezáním lana."},
+    ],
+}
+
+
+def build() -> dict:
+    kouzla = [spell(k, zdroj=SRC, energie="dusevni_sila") for k in KOUZLA]
+    return {
+        "_zdroj": "H09_Hraničář_1.2.5_FINAL.pdf (PPZ 1.2.5, 16 s.), přepis 1. 10. 2026 pro 7c.1",
+        "_generator": "tools/h09_hranicar_src.py",
+        "pravidla": PRAVIDLA,
+        "kouzla": kouzla,
+        "smery": SMERY,
+        "schopnosti": SCHOPNOSTI,
+        "specializace": SPECIALIZACE,
+        "pasti": PASTI,
+        "_statistika": {"kouzla": len(kouzla), "smery": len(SMERY), "schopnosti": len(SCHOPNOSTI)},
+    }
+
+
+if __name__ == "__main__":
+    out = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).parent.parent / "docs" / "h09_hranicar.json")
+    out.write_text(json.dumps(build(), ensure_ascii=False, indent=1), encoding="utf-8")
+    print(out, "OK")

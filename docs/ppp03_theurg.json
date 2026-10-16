@@ -1,0 +1,2836 @@
+{
+ "_zdroj": "Draci_hlidka_PPP_03_Alchymista.pdf s. 53–80 (kniha s. 163–190), specializace Theurg, přepsáno 27. 9. 2026",
+ "_poznamka": "Tabulka efektu bhůtů: 7. stupeň, III. zóna jen „95“ (zřejmě 38–95). U Oživlých pomůcek je v textu 5 receptů (i Živoucí bomba), tabulka schopností jmenuje 4. Esence vzduchu – „odolnost proti“ bez upřesnění. Citrínový talisman nemá strop many (appka 400 z Tabulky drahokamů).",
+ "recipes": [
+  {
+   "id": "chodici_truhla",
+   "name": "Chodící truhla",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 500
+   },
+   "materials": 300,
+   "bases": [
+    {
+     "text": "cestovní truhla",
+     "match": [
+      [
+       "truhl"
+      ],
+      [
+       "bedn"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "7 dní (slunovrat)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16,
+    "text": "16 (Theurgie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "přechovávání a přeprava předmětů a surovin",
+   "check": null,
+   "requires": {
+    "ability": "ozivle_pomucky"
+   },
+   "requiresMoment": "slunovrat",
+   "tags": [
+    "Oživlé pomůcky"
+   ],
+   "description": "cestovní truhlice, které ze dna umí vystrčit spoustu malých nohou",
+   "rules": "Následuje majitele (vždy vycítí směr) i přes obtížný terén – plave, šplhá, protáhne se škvírou, v nouzi prý projde astrálem. Nehořlavá, asi 10× větší objem než běžná bedna, věci v ní nestárnou a jsou odolné proti poškození; pojme suroviny i magické předměty, ne živé tvory. Cizímu se jeví prázdná a zaprášená. Vyrábí se pro konkrétního majitele. Zničená ztratí moc; byl-li obsah větší než běžná truhla, praskne a vše se rozsype.",
+   "pages": "176",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "letajici_lucerna",
+   "name": "Létající lucerna",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 100
+   },
+   "materials": 100,
+   "bases": [
+    {
+     "text": "lucerna",
+     "match": [
+      [
+       "lucern"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny (slunečné poledne)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 13,
+    "text": "13 (Theurgie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "svícení",
+   "check": null,
+   "requires": {
+    "ability": "ozivle_pomucky"
+   },
+   "requiresMoment": "slunečné poledne",
+   "tags": [
+    "Oživlé pomůcky"
+   ],
+   "description": "levitující lucerna",
+   "rules": "Svobodomyslný démon-průzkumník drží s Theurgem nebo určenou osobou. Na mentální příkaz svítí libovolnou barvou 2–12 sáhů nebo zhasne, vznese se a poletuje do 3 sáhů od majitele. Dobrá rána mečem či šipka z kuše ji zničí.",
+   "pages": "176–177",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "mluvici_hlava",
+   "name": "Mluvící hlava",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 80
+   },
+   "materials": 35,
+   "bases": [
+    {
+     "text": "lebka či soška",
+     "match": [
+      [
+       "lebk"
+      ],
+      [
+       "sosk"
+      ],
+      [
+       "panenk"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "5 dní",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 10,
+    "text": "10 (Theurgie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "opakování řečeného",
+   "check": null,
+   "requires": {
+    "ability": "ozivle_pomucky"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Oživlé pomůcky"
+   ],
+   "description": "malá lebka či soška, která dokáže naslouchat a promlouvat",
+   "rules": "Opakuje jen to, co dřív slyšela – slovo od slova, i s intonací a různými hlasy; alchymisté ji používají jako receptář a diář. Mluví běžnou hlasitostí (ztišit se neumí, jen zmlknout), dokáže mluvit i pod vodou. Z lebky zvířete či skřítka nebo ze sošky / panenky s pohyblivými ústy.",
+   "pages": "177",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "ozivly_obusek",
+   "name": "Oživlý obušek",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 150
+   },
+   "materials": 10,
+   "bases": [
+    {
+     "text": "obušek",
+     "match": [
+      [
+       "obusek"
+      ],
+      [
+       "obusk"
+      ],
+      [
+       "kyj"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den (úplněk)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 12,
+    "text": "12 (Theurgie)"
+   },
+   "durationText": "10 kol",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "fyzické řešení problémů",
+   "check": null,
+   "requires": {
+    "ability": "ozivle_pomucky"
+   },
+   "requiresMoment": "úplněk",
+   "tags": [
+    "Oživlé pomůcky"
+   ],
+   "description": "měkký obušek přechovávaný v koženém pytli",
+   "rules": "Po otevření pytle a klíčovém slově vylétne a útočí 6× za kolo na cíle podle Theurga (sám se aktivuje, když Theurg napaden nemůže jednat). Útok = Síla obušku = výsledek hodu při výrobě (Nebezpečnost). Nezraní vážně ani nezabije, jen bolí: Vůle (INT) vs. Síla obušku, úspěch = Nevýhoda (−5), jinak útěk či krytí. Nejvýš 10 kol, pak se vrátí a do půlnoci se dobíjí. Zničit: hod proti Síle obušku, houževnatost 10.",
+   "pages": "177–178",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "zivouci_bomba",
+   "name": "Živoucí bomba",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 30
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "železná koule",
+     "match": [
+      [
+       "zelez",
+       "koul"
+      ],
+      [
+       "koule"
+      ]
+     ]
+    },
+    {
+     "text": "zápalná šňůra",
+     "match": [
+      [
+       "zapaln",
+       "snur"
+      ],
+      [
+       "snur"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 hodina",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 13,
+    "text": "13 (Theurgie)"
+   },
+   "durationText": "ihned",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "železná koule s kusem zápalné šňůry a rytinami",
+   "check": null,
+   "requires": {
+    "ability": "ozivle_pomucky"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Oživlé pomůcky"
+   ],
+   "description": "železná koule s vyrytými kovovými ústy",
+   "rules": "Po zapálení šňůry se probudí, povídá si, komentuje okolí a rád konverzuje; před výbuchem panikaří. Rozptýlí nepřátele nebo je přiláká. Exploze: každý do 5 sáhů 2k6 + 4 životů střepinami. (V knize jsou u receptu Popis a Použití posunuté.)",
+   "pages": "178",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "mimoprostorove_zrcadlo",
+   "name": "Mimoprostorové zrcadlo",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 1000
+   },
+   "materials": 1000,
+   "bases": [
+    {
+     "text": "velké zrcadlo",
+     "match": [
+      [
+       "zrcad"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 měsíc",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17,
+    "text": "17 (Theurgie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "úkryt",
+   "check": null,
+   "requires": {
+    "ability": "portaly_a_zrcadla"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Portály a zrcadla"
+   ],
+   "description": "velké, obvykle zdobené zrcadlo",
+   "rules": "Portál do meziprostoru astrálních sfér – úkryt či laboratoř bez omezení místa, čas neplyne a nic nestárne. Zničené zrcadlo = vše uvnitř zůstane v astrálních sférách.",
+   "pages": "178",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "portal",
+   "name": "Portál",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 2000,
+    "text": "1500 + 500 (aktivační krystal)"
+   },
+   "materials": 1000,
+   "bases": [
+    {
+     "text": "20 krystalů",
+     "match": [
+      [
+       "krystal"
+      ],
+      [
+       "kristal"
+      ]
+     ],
+     "qty": 20
+    }
+   ],
+   "craftTime": {
+    "text": "3 měsíce (zatmění měsíce)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (Theurgie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "přesun na jiné místo",
+   "check": null,
+   "requires": {
+    "ability": "portaly_a_zrcadla"
+   },
+   "requiresMoment": "zatmění měsíce",
+   "tags": [
+    "Portály a zrcadla"
+   ],
+   "description": "kruhový kamenný portál s krystaly",
+   "rules": "Brána s ovládacím panelem (runová „adresa“ každé brány) – vstup do jedné a výstup z druhé v nulovém čase; spojí dvě místa i celou síť. Potřebuje 10 krystalů s démony ze stejné sféry jako protějšek. Aktivační krystal many: otevření 100 many a 50 za každé další kolo, pak se odpojí. Extrémně drahé, vlastní je jen mocné cechy.",
+   "pages": "178–179",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "vidouci_kameny",
+   "name": "Vidoucí kameny",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 600,
+    "text": "500 + 100 (aktivační krystal)"
+   },
+   "materials": 300,
+   "bases": [
+    {
+     "text": "skleněné koule",
+     "match": [
+      [
+       "sklen",
+       "koul"
+      ],
+      [
+       "kristal"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 měsíc (krvavý měsíc)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 10,
+    "text": "10 (Theurgie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "vidění skrze jiný „kámen“",
+   "check": null,
+   "requires": {
+    "ability": "portaly_a_zrcadla"
+   },
+   "requiresMoment": "krvavý měsíc",
+   "tags": [
+    "Portály a zrcadla"
+   ],
+   "description": "skleněná koule",
+   "rules": "Koule s démony stejné sféry – dotyk dlaně a myšlenka na protějšek (bez ní náhodný) přenáší obraz i zvuk. Za každý bod ODO lze spojení udržet 10 kol, nové až další den.",
+   "pages": "179",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "zrcadlo_dusi",
+   "name": "Zrcadlo duší",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 200,
+    "extraMax": 900,
+    "text": "200 + X (30 many za každý stupeň nebezpečnosti)"
+   },
+   "materials": 100,
+   "bases": [
+    {
+     "text": "velké zrcadlo",
+     "match": [
+      [
+       "zrcad"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "týden (novoluní)",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15,
+    "text": "15 (Theurgie)"
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "uvěznění bytostí",
+   "check": null,
+   "requires": {
+    "ability": "portaly_a_zrcadla"
+   },
+   "requiresMoment": "novoluní",
+   "tags": [
+    "Portály a zrcadla"
+   ],
+   "description": "zrcadlo s černým povrchem",
+   "rules": "Kdo má duši (INT 1+, i zvířata) a pohlédne do něj, hází Vůle (CHAR) vs. nebezpečnost zrcadla; neuspěje-li, duše je polapena a tělo bezvládně stojí (bez jídla a pití nakonec umírá). Úspěšný vidí uvězněné duše. Theurg může přikázat duši vypustit; zničení zrcadla vrátí duše do živých těl. Nebezpečnost = přídavná mana ÷ 30 (nebezpečnost 10 = 300 many navíc).",
+   "pages": "179",
+   "craftSkill": "theurgie"
+  },
+  {
+   "id": "detektor_vichru_many",
+   "name": "Detektor vichrů many",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 30
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "kovové jehly",
+     "match": [
+      [
+       "jehl"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "detekce vichrů many",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_vichry_many"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s vichry many"
+   ],
+   "description": "kruhový „amulet“ se střelkou",
+   "rules": "Červená střelka ukazuje směr nejsilnějšího proudění many (mění-li se, stabilní proud tu není), modrá sílu v místě: 10 až 10 000 (many za hodinu). Dosah 10 mil. Kouzelník ve stabilním proudu získá Nasátím many o 2 víc (nejvýš do maxima).",
+   "pages": "185"
+  },
+  {
+   "id": "manafiltr",
+   "name": "Manafiltr",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 150
+   },
+   "materials": 200,
+   "bases": [
+    {
+     "text": "kovový trychtýř a drátky",
+     "match": [
+      [
+       "trychtyr"
+      ],
+      [
+       "drat"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 hodiny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "syntéza many z vichrů",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_vichry_many"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s vichry many"
+   ],
+   "description": "trychtýř s kovovými drátky na jehlicích",
+   "rules": "Z vichru vyfiltruje krystal vázané many (zdroj pro Portály nebo rozdrtit na běžnou manu): nejméně hodina a půl litru vody, zisk = 1/100 síly vichru (určí PJ, změří Detektor).",
+   "pages": "185"
+  },
+  {
+   "id": "managenerator",
+   "name": "Managenerátor",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 300
+   },
+   "materials": 1000,
+   "bases": [
+    {
+     "text": "kovové pláty, dráty a koule",
+     "match": [
+      [
+       "plat"
+      ],
+      [
+       "plech"
+      ],
+      [
+       "drat"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 týdny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 24
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "pohon magických zařízení",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_vichry_many"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s vichry many"
+   ],
+   "description": "kovová skříň s jehličnatou koulí nahoře",
+   "rules": "Pohání a dobíjí vynálezy (portály, trhliny do sfér) a předměty oboru Krystaly a energie – 1 bod many za kolo. Musí stát ve vichru aspoň 1000 many/h, z něj získává až ¼ (tj. až 250 many za hodinu); slabší proud = nefunguje.",
+   "pages": "186"
+  },
+  {
+   "id": "manatransformator",
+   "name": "Manatransformátor",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 200,
+    "extraMax": 1000,
+    "text": "200 + X"
+   },
+   "materials": 300,
+   "bases": [
+    {
+     "text": "velké množství drahokamů",
+     "match": [
+      [
+       "drahokam"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 týden",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 20
+   },
+   "durationText": null,
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "pohon magických zařízení",
+   "check": null,
+   "requires": {
+    "ability": "prace_s_vichry_many"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Práce s vichry many"
+   ],
+   "description": "koule pokrytá krystaly",
+   "rules": "Asi 10 lb. Mění volnou manu na vázanou a naopak v poměru 10 : 1 (kouzelník do něj může vyzářit svou manu). Přídavná mana (X) se po aktivaci vyzařuje jako volná mana – kouzelník ji nasaje s úspěšností 10× úroveň. Funguje jako baterie, často propojený s managenerátorem.",
+   "pages": "186"
+  },
+  {
+   "id": "talisman_achat",
+   "name": "Achátový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 100,
+    "text": "X (max 100)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "achát (aspoň 1 coul)",
+     "match": [
+      [
+       "achat"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "dotek",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "achát obalený koženými provázky nebo v amuletu",
+   "rules": "Přiložen na krvácející ránu (sečnou, bodnou, tržnou) odsaje 5 many a vyléčí 1k6 + 4 životy – nejvýš tolik, kolik ta rána vzala. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_akvamarin",
+   "name": "Akvamarínový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 365,
+    "text": "X (max 365)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "akvamarín (aspoň 1 coul)",
+     "match": [
+      [
+       "akvamarin"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "7 dní",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "1 rok",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "akvamarín obalený koženými provázky nebo v amuletu",
+   "rules": "Výhoda +5 k Plavání; voda a led zraňují jen napůl, stejně tak ztráta životů při tonutí. Každý den nošení −1 mana. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_ametyst",
+   "name": "Ametystový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 200,
+    "text": "X (max 200)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "ametyst (aspoň 1 coul)",
+     "match": [
+      [
+       "ametyst"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "ametyst obalený koženými provázky nebo v amuletu",
+   "rules": "Chrání před zloději: při pokusu o okradení odsaje 10 many a zloděj má automaticky Nevýhodu (−5). Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_citrin",
+   "name": "Citrínový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 400,
+    "text": "X (max 400)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "citrín (aspoň 1 coul)",
+     "match": [
+      [
+       "citrin"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "citrín obalený koženými provázky nebo v amuletu",
+   "rules": "Zvěř k nositeli cítí spříznění a za běžných okolností ho nenapadne ani hladem; zaútočí-li sám na zvíře, moc pomine. Každý den nošení −1 mana. (Strop many není v receptu uveden – appka bere 400 z Tabulky drahokamů.) Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_diamant",
+   "name": "Diamantový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 1000,
+    "text": "X (max 1000)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "diamant (aspoň 1 coul)",
+     "match": [
+      [
+       "diamant"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "14 dní",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "diamant obalený koženými provázky nebo v amuletu",
+   "rules": "Nositel nestárne. Každý den nošení −4 many. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_granat",
+   "name": "Granátový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 100,
+    "text": "X (max 100)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "granát (aspoň 1 coul)",
+     "match": [
+      [
+       "granat"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "granát obalený koženými provázky nebo v amuletu",
+   "rules": "Výhoda +5 k hodu proti jedu; každý takový projev odsaje 10 many. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_jaspis",
+   "name": "Jaspisový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 365,
+    "text": "X (max 365)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "jaspis (aspoň 1 coul)",
+     "match": [
+      [
+       "jaspis"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "12 hodin",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 15
+   },
+   "durationText": "1 rok",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "jaspis obalený koženými provázky nebo v amuletu",
+   "rules": "Nositel nepropadne panice ani strachu (ani magickému); nemůže se ale proměnit v berserkra. Každý den nošení −1 mana. (Mana v receptu 365.) Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_kristal",
+   "name": "Křišťálový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 200,
+    "text": "X (max 200)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "křišťál (aspoň 1 coul)",
+     "match": [
+      [
+       "kristal"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "50 dnů",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "křišťál obalený koženými provázky nebo v amuletu",
+   "rules": "Výhoda +5 ke všem hodům na Vůli a poloviční doba meditace či nasátí many. Každý den nošení −4 many. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_lazurit",
+   "name": "Lazuritový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 200,
+    "text": "X (max 200)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "lazurit (aspoň 1 coul)",
+     "match": [
+      [
+       "lazurit"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "6 hodin",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 16
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "dotek",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "lazurit obalený koženými provázky nebo v amuletu",
+   "rules": "Léčí popáleniny (kyselina, oheň, mráz, divoká mana): odsaje 5 many a vyléčí 1k6 + 4 životy – nejvýš tolik, kolik popálenina vzala. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_opal",
+   "name": "Opálový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 400,
+    "text": "X (max 400)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "opál (aspoň 1 coul)",
+     "match": [
+      [
+       "opal"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "opál obalený koženými provázky nebo v amuletu",
+   "rules": "Zranění ohněm, vodou, větrem a projevy země jsou poloviční; každá taková ochrana odsaje 10 many. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_rubin",
+   "name": "Rubínový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 1000,
+    "text": "X (max 1000)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "rubín (aspoň 1 coul)",
+     "match": [
+      [
+       "rubin"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "7 dní",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "50 dnů",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "rubín obalený koženými provázky nebo v amuletu",
+   "rules": "Nositel neonemocní běžnými nemocemi (stárne normálně) a má max. životy + tolik, kolik je jeho úroveň. Denně −10 many. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_safir",
+   "name": "Safírový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 500,
+    "text": "X (max 500)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "safír (aspoň 1 coul)",
+     "match": [
+      [
+       "safir"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "1 den",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "100 dní",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "safír obalený koženými provázky nebo v amuletu",
+   "rules": "Chrání před nakažením lykantropií a u nakaženého nemoc potlačí, dokud talisman nosí (i mimo úplněk); po sundání či vyprchání many následuje opožděná proměna. Denně −3 many. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_smaragd",
+   "name": "Smaragdový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 1000,
+    "text": "X (max 1000)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "smaragd (aspoň 1 coul)",
+     "match": [
+      [
+       "smaragd"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "3 dny",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 18
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "smaragd obalený koženými provázky nebo v amuletu",
+   "rules": "Maximum many či duševní síly nositele + 1 za každou úroveň; o stejný počet bodů denně ubývá many v talismanu. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  },
+  {
+   "id": "talisman_topaz",
+   "name": "Topazový talisman",
+   "latinName": null,
+   "tier": "ability",
+   "source": "PPP03",
+   "kind": "predmet",
+   "mana": {
+    "base": 0,
+    "extraMax": 300,
+    "text": "X (max 300)"
+   },
+   "materials": 50,
+   "bases": [
+    {
+     "text": "topaz (aspoň 1 coul)",
+     "match": [
+      [
+       "topaz"
+      ]
+     ]
+    }
+   ],
+   "craftTime": {
+    "text": "7 dní",
+    "workshopRequired": false
+   },
+   "difficulty": {
+    "value": 17
+   },
+   "durationText": "do vyčerpání many",
+   "lifespanText": null,
+   "frequencyText": null,
+   "useText": "nošení",
+   "check": null,
+   "requires": {
+    "ability": "talismany"
+   },
+   "requiresMoment": null,
+   "tags": [
+    "Talismany"
+   ],
+   "description": "topaz obalený koženými provázky nebo v amuletu",
+   "rules": "Zabrání odsátí úrovně (vyšší nemrtví a podobní); každé takové použití odsaje 50 many. Působí, dokud je v kameni mana a dotýká se holé kůže; víc talismanů na kůži se navzájem ruší. Vyčerpaný kámen praskne.",
+   "pages": "187–190"
+  }
+ ],
+ "abilities": [
+  {
+   "id": "astralni_sfery",
+   "rules": "Démoni z Tabulky vlastností démonů podle vlastního výběru: z každé sféry nejvýš jeden řádek; při dvou a více pomocnících aspoň tolik škůdců, kolik je pomocníků navíc, a součet úrovní škůdců aspoň polovina součtu úrovní pomocníků. Obtížnost vyvolání = součet (škůdci ji snižují), nesmí přesáhnout magický okamžik. Příprava předmětu: mana a suroviny podle tabulky, 2× tolik hodin, kolik je obtížnost; trhlina 4 směny + 1 kolo. Theurgie (INT) vs. obtížnost; úspěch – démon je v předmětu nebo v Astronu hole, rozdíl hodu určí životnost; neúspěch – démon unikne nebo vnikne náhodný škůdce."
+  },
+  {
+   "id": "ovladnuti_zivlu",
+   "rules": "Bhůtové (Ergar země, Arpas voda, Vayu vzduch, Agni oheň) – hůl, mana v holi podle stupně, Theurgie (INT) vs. obtížnost stupně; místo až stovky sáhů × úroveň Theurga. Formování 5 kol, v 6. kole plný účinek po dobu z tabulky, Theurg ho celou dobu ovládá. Poškození = životy na každý sáh čtvereční v zóně; bez poškození jen Vůle (INT) vs. 10 + stupeň (jinak panika 1k10 kol). Zničit ho jde jen při formování (životy = vložená mana)."
+  },
+  {
+   "id": "ozivle_pomucky",
+   "rules": "Démoni se zvídavým duchem v „domově“ předmětu – smí se pohybovat a projevovat vůli. Recepty Chodící truhla, Létající lucerna, Mluvící hlava, Oživlý obušek, Živoucí bomba; démona lze usadit i do jiného podobně velkého předmětu."
+  },
+  {
+   "id": "portaly_a_zrcadla",
+   "rules": "Démoni polapení do zrcadel a portálů propojují vzdálená místa v reálném čase. Recepty Mimoprostorové zrcadlo, Portál, Vidoucí kameny, Zrcadlo duší."
+  },
+  {
+   "id": "poslove_zivlu",
+   "rules": "Elementálové Igni, Undina, Terra, Sylfa: hůl s manou podle stupně a vzorek živlu (oheň, hrnek vody, hrst hlíny, výdech). Theurgie (INT) vs. obtížnost; při úspěchu si elementál vezme manu z hole a plní jednoduché příkazy (INT 1, bez únavy a strachu, bojuje do posledního života). Poslouchá jen stvořitele (lze předat). Vydrží tolik dní, jaký je jeho stupeň, pak se rozplyne (nebo na příkaz)."
+  },
+  {
+   "id": "prace_s_esencemi",
+   "rules": "Z 1 many 4 body esencí (oheň, voda, vzduch, země), destilační aparaturou 10 many za směnu. Esence se sype na předmět či tvora nebo vrhá; účinek na konci kola, trvá 2k6 kol, na tvory do velikosti C, úspěch automatický. Na vzduchu se rozpadá – drží se ve flakónech."
+  },
+  {
+   "id": "prace_s_vichry_many",
+   "rules": "Rozpozná proudění Vichrů many a jejich sílu: +3 k Vidění many; místo pro zařízení najde hodem Vidění many (INT) vs. X. Recepty Detektor vichrů many, Manafiltr, Managenerátor, Manatransformátor."
+  },
+  {
+   "id": "talismany",
+   "rules": "Drahý kámen aspoň 1 coul (i surový) aktivovaný manou – Lučba (OBR) vs. obtížnost. Působí, dokud je v něm mana (strop podle Tabulky drahokamů) a dotýká se holé kůže; víc talismanů na kůži se ruší. Vyčerpaný kámen praskne."
+  }
+ ],
+ "theurg": {
+  "demons": [
+   {
+    "id": "naldan_1",
+    "sphere": "Naldan",
+    "demon": "Agresor",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Útočnost/Zranění zbraně +1/+0 nebo +0/+2 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 2,
+    "mana": 25,
+    "materials": 10
+   },
+   {
+    "id": "naldan_2",
+    "sphere": "Naldan",
+    "demon": "Agresor",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Útočnost/Zranění zbraně +2/+0, +1/+2 nebo +0/+4 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 4,
+    "mana": 50,
+    "materials": 20
+   },
+   {
+    "id": "naldan_3",
+    "sphere": "Naldan",
+    "demon": "Agresor",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Útočnost/Zranění zbraně +3/+0, +2/+2, +1/+4 nebo +0/+6 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 6,
+    "mana": 75,
+    "materials": 30
+   },
+   {
+    "id": "naldan_4",
+    "sphere": "Naldan",
+    "demon": "Agresor",
+    "cat": "pomocnik",
+    "level": 4,
+    "text": "Útočnost/Zranění zbraně +4/+0, +3/+2, +2/+4, +1/+6 nebo +0/+8 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 8,
+    "mana": 100,
+    "materials": 40
+   },
+   {
+    "id": "naldan_5",
+    "sphere": "Naldan",
+    "demon": "Agresor",
+    "cat": "pomocnik",
+    "level": 5,
+    "text": "Útočnost/Zranění zbraně +5/+0, +4/+2, +3/+4, +2/+6, +1/+8 nebo +0/+10 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 10,
+    "mana": 125,
+    "materials": 50
+   },
+   {
+    "id": "kezachiel_1",
+    "sphere": "Kezachiel",
+    "demon": "Obránce",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Kvalita zbroje nebo Obrana zbraně +1 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 3,
+    "mana": 35,
+    "materials": 15
+   },
+   {
+    "id": "kezachiel_2",
+    "sphere": "Kezachiel",
+    "demon": "Obránce",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Kvalita zbroje nebo Obrana zbraně +2 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 6,
+    "mana": 75,
+    "materials": 30
+   },
+   {
+    "id": "kezachiel_3",
+    "sphere": "Kezachiel",
+    "demon": "Obránce",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Kvalita zbroje nebo Obrana zbraně +3 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 9,
+    "mana": 105,
+    "materials": 45
+   },
+   {
+    "id": "kezachiel_4",
+    "sphere": "Kezachiel",
+    "demon": "Obránce",
+    "cat": "pomocnik",
+    "level": 4,
+    "text": "Kvalita zbroje nebo Obrana zbraně +4 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 12,
+    "mana": 150,
+    "materials": 60
+   },
+   {
+    "id": "kezachiel_5",
+    "sphere": "Kezachiel",
+    "demon": "Obránce",
+    "cat": "pomocnik",
+    "level": 5,
+    "text": "Kvalita zbroje nebo Obrana zbraně +5 (nejvýš dvojnásobek původní hodnoty)",
+    "dc": 15,
+    "mana": 175,
+    "materials": 75
+   },
+   {
+    "id": "enchiel_1",
+    "sphere": "Enchiel",
+    "demon": "Osvícenec",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Stupeň INT nebo CHAR +1",
+    "dc": 10,
+    "mana": 125,
+    "materials": 50
+   },
+   {
+    "id": "enchiel_2",
+    "sphere": "Enchiel",
+    "demon": "Osvícenec",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Stupeň INT nebo CHAR +2",
+    "dc": 15,
+    "mana": 175,
+    "materials": 75
+   },
+   {
+    "id": "enchiel_3",
+    "sphere": "Enchiel",
+    "demon": "Osvícenec",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Stupeň INT nebo CHAR +3",
+    "dc": 20,
+    "mana": 250,
+    "materials": 100
+   },
+   {
+    "id": "abaran_1",
+    "sphere": "Abaran",
+    "demon": "Filozof",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Stupeň konkrétní obecné dovednosti na INT nebo CHAR +1",
+    "dc": 4,
+    "mana": 50,
+    "materials": 20
+   },
+   {
+    "id": "abaran_2",
+    "sphere": "Abaran",
+    "demon": "Filozof",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Stupeň konkrétní obecné dovednosti na INT nebo CHAR +2",
+    "dc": 8,
+    "mana": 100,
+    "materials": 40
+   },
+   {
+    "id": "abaran_3",
+    "sphere": "Abaran",
+    "demon": "Filozof",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Stupeň konkrétní obecné dovednosti na INT nebo CHAR +3",
+    "dc": 12,
+    "mana": 150,
+    "materials": 60
+   },
+   {
+    "id": "taladar_1",
+    "sphere": "Taladar",
+    "demon": "Učenec",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Stupeň konkrétní profesní nemagické dovednosti na INT nebo CHAR, kterou majitel ovládá, +1 (magické jsou Pouto s přírodou, Sesílání kouzel, Prosby, Vidění many a Theurgie)",
+    "dc": 6,
+    "mana": 75,
+    "materials": 30
+   },
+   {
+    "id": "taladar_2",
+    "sphere": "Taladar",
+    "demon": "Učenec",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Stupeň konkrétní profesní nemagické dovednosti na INT nebo CHAR, kterou majitel ovládá, +2 (magické jsou Pouto s přírodou, Sesílání kouzel, Prosby, Vidění many a Theurgie)",
+    "dc": 12,
+    "mana": 150,
+    "materials": 60
+   },
+   {
+    "id": "taladar_3",
+    "sphere": "Taladar",
+    "demon": "Učenec",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Stupeň konkrétní profesní nemagické dovednosti na INT nebo CHAR, kterou majitel ovládá, +3 (magické jsou Pouto s přírodou, Sesílání kouzel, Prosby, Vidění many a Theurgie)",
+    "dc": 18,
+    "mana": 225,
+    "materials": 90
+   },
+   {
+    "id": "vingar_1",
+    "sphere": "Vingar",
+    "demon": "Znalec",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Stupeň konkrétní neprofesní znalostní dovednosti na INT nebo CHAR +1",
+    "dc": 5,
+    "mana": 55,
+    "materials": 25
+   },
+   {
+    "id": "vingar_2",
+    "sphere": "Vingar",
+    "demon": "Znalec",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Stupeň konkrétní neprofesní znalostní dovednosti na INT nebo CHAR +2",
+    "dc": 10,
+    "mana": 125,
+    "materials": 50
+   },
+   {
+    "id": "vingar_3",
+    "sphere": "Vingar",
+    "demon": "Znalec",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Stupeň konkrétní neprofesní znalostní dovednosti na INT nebo CHAR +3",
+    "dc": 15,
+    "mana": 175,
+    "materials": 75
+   },
+   {
+    "id": "lútiel_1",
+    "sphere": "Lútiel",
+    "demon": "Sesilatel",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Stupeň konkrétní profesní magické dovednosti na INT nebo CHAR, kterou majitel ovládá, +1 (magické jsou Pouto s přírodou, Sesílání kouzel, Prosby, Vidění many a Theurgie)",
+    "dc": 12,
+    "mana": 150,
+    "materials": 60
+   },
+   {
+    "id": "lútiel_2",
+    "sphere": "Lútiel",
+    "demon": "Sesilatel",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Stupeň konkrétní profesní magické dovednosti na INT nebo CHAR, kterou majitel ovládá, +2 (magické jsou Pouto s přírodou, Sesílání kouzel, Prosby, Vidění many a Theurgie)",
+    "dc": 24,
+    "mana": 300,
+    "materials": 120
+   },
+   {
+    "id": "belenar_1",
+    "sphere": "Belenar",
+    "demon": "Ochránce",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Ochrana předmětu – ochromí nepovolané, kdo se ho chtějí vědomě zmocnit: past Vůle (CHAR) vs. 12",
+    "dc": 5,
+    "mana": 55,
+    "materials": 25
+   },
+   {
+    "id": "belenar_2",
+    "sphere": "Belenar",
+    "demon": "Ochránce",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Ochrana předmětu – ochromí nepovolané, kdo se ho chtějí vědomě zmocnit: past Vůle (CHAR) vs. 14",
+    "dc": 10,
+    "mana": 125,
+    "materials": 50
+   },
+   {
+    "id": "belenar_3",
+    "sphere": "Belenar",
+    "demon": "Ochránce",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Ochrana předmětu – ochromí nepovolané, kdo se ho chtějí vědomě zmocnit: past Vůle (CHAR) vs. 16",
+    "dc": 15,
+    "mana": 175,
+    "materials": 75
+   },
+   {
+    "id": "belenar_4",
+    "sphere": "Belenar",
+    "demon": "Ochránce",
+    "cat": "pomocnik",
+    "level": 4,
+    "text": "Ochrana předmětu – ochromí nepovolané, kdo se ho chtějí vědomě zmocnit: past Vůle (CHAR) vs. 18",
+    "dc": 20,
+    "mana": 250,
+    "materials": 100
+   },
+   {
+    "id": "belenar_5",
+    "sphere": "Belenar",
+    "demon": "Ochránce",
+    "cat": "pomocnik",
+    "level": 5,
+    "text": "Ochrana předmětu – ochromí nepovolané, kdo se ho chtějí vědomě zmocnit: past Vůle (CHAR) vs. 20",
+    "dc": 25,
+    "mana": 300,
+    "materials": 125
+   },
+   {
+    "id": "elmai_1",
+    "sphere": "Elmai",
+    "demon": "Telekinetik",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Práce s časoprostorem – 2000 sáho/kolo/liber (posun 200 liber hmoty o 10 sáhů za kolo)",
+    "dc": 4,
+    "mana": 50,
+    "materials": 20
+   },
+   {
+    "id": "elmai_2",
+    "sphere": "Elmai",
+    "demon": "Telekinetik",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Práce s časoprostorem – 4000 sáho/kolo/liber (posun 400 liber hmoty o 10 sáhů za kolo)",
+    "dc": 8,
+    "mana": 100,
+    "materials": 40
+   },
+   {
+    "id": "elmai_3",
+    "sphere": "Elmai",
+    "demon": "Telekinetik",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Práce s časoprostorem – 6000 sáho/kolo/liber (posun 600 liber hmoty o 10 sáhů za kolo)",
+    "dc": 12,
+    "mana": 150,
+    "materials": 60
+   },
+   {
+    "id": "elmai_4",
+    "sphere": "Elmai",
+    "demon": "Telekinetik",
+    "cat": "pomocnik",
+    "level": 4,
+    "text": "Práce s časoprostorem – 8000 sáho/kolo/liber (posun 800 liber hmoty o 10 sáhů za kolo)",
+    "dc": 16,
+    "mana": 200,
+    "materials": 80
+   },
+   {
+    "id": "elmai_5",
+    "sphere": "Elmai",
+    "demon": "Telekinetik",
+    "cat": "pomocnik",
+    "level": 5,
+    "text": "Práce s časoprostorem – 10000 sáho/kolo/liber (posun 1000 liber hmoty o 10 sáhů za kolo)",
+    "dc": 20,
+    "mana": 250,
+    "materials": 100
+   },
+   {
+    "id": "viledar_1",
+    "sphere": "Viledar",
+    "demon": "Větrník",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Vlastní denní mana démona (max 6); jednou denně si obnoví 1k6 many z vichrů a sesílá jí kouzla (viz Magik)",
+    "dc": 10,
+    "mana": 125,
+    "materials": 50
+   },
+   {
+    "id": "viledar_2",
+    "sphere": "Viledar",
+    "demon": "Větrník",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Vlastní denní mana démona (max 12); jednou denně si obnoví 2k6 many z vichrů a sesílá jí kouzla (viz Magik)",
+    "dc": 12,
+    "mana": 150,
+    "materials": 60
+   },
+   {
+    "id": "viledar_3",
+    "sphere": "Viledar",
+    "demon": "Větrník",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Vlastní denní mana démona (max 18); jednou denně si obnoví 3k6 many z vichrů a sesílá jí kouzla (viz Magik)",
+    "dc": 14,
+    "mana": 175,
+    "materials": 70
+   },
+   {
+    "id": "viledar_4",
+    "sphere": "Viledar",
+    "demon": "Větrník",
+    "cat": "pomocnik",
+    "level": 4,
+    "text": "Vlastní denní mana démona (max 24); jednou denně si obnoví 4k6 many z vichrů a sesílá jí kouzla (viz Magik)",
+    "dc": 16,
+    "mana": 200,
+    "materials": 80
+   },
+   {
+    "id": "viledar_5",
+    "sphere": "Viledar",
+    "demon": "Větrník",
+    "cat": "pomocnik",
+    "level": 5,
+    "text": "Vlastní denní mana démona (max 30); jednou denně si obnoví 5k6 many z vichrů a sesílá jí kouzla (viz Magik)",
+    "dc": 18,
+    "mana": 225,
+    "materials": 90
+   },
+   {
+    "id": "argotar_1",
+    "sphere": "Argotar",
+    "demon": "Magik",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Démon umí 1 kouzelnické kouzlo; sesílá je vlastní manou (viz Větrník)",
+    "dc": 5,
+    "mana": 55,
+    "materials": 25
+   },
+   {
+    "id": "argotar_2",
+    "sphere": "Argotar",
+    "demon": "Magik",
+    "cat": "pomocnik",
+    "level": 2,
+    "text": "Démon umí 2 kouzelnická kouzla; sesílá je vlastní manou (viz Větrník)",
+    "dc": 10,
+    "mana": 125,
+    "materials": 50
+   },
+   {
+    "id": "argotar_3",
+    "sphere": "Argotar",
+    "demon": "Magik",
+    "cat": "pomocnik",
+    "level": 3,
+    "text": "Démon umí 3 kouzelnická kouzla; sesílá je vlastní manou (viz Větrník)",
+    "dc": 15,
+    "mana": 175,
+    "materials": 75
+   },
+   {
+    "id": "argotar_4",
+    "sphere": "Argotar",
+    "demon": "Magik",
+    "cat": "pomocnik",
+    "level": 4,
+    "text": "Démon umí 4 kouzelnická kouzla; sesílá je vlastní manou (viz Větrník)",
+    "dc": 20,
+    "mana": 250,
+    "materials": 100
+   },
+   {
+    "id": "argotar_5",
+    "sphere": "Argotar",
+    "demon": "Magik",
+    "cat": "pomocnik",
+    "level": 5,
+    "text": "Démon umí 5 kouzelnických kouzel; sesílá je vlastní manou (viz Větrník)",
+    "dc": 25,
+    "mana": 300,
+    "materials": 125
+   },
+   {
+    "id": "sirael_1",
+    "sphere": "Sirael",
+    "demon": "Živlů",
+    "cat": "pomocnik",
+    "level": 1,
+    "text": "Efekt vybraného elementu do předmětu (zranění ohnivé, mrazivé a podobně)",
+    "dc": 20,
+    "mana": 300,
+    "materials": 150
+   },
+   {
+    "id": "netheron_1",
+    "sphere": "Netheron",
+    "demon": "Rasista",
+    "cat": "skudce",
+    "level": 1,
+    "text": "Schopnosti předmětu fungují, jen když ho používá vybraná rasa (hráčská či z Bestiáře)",
+    "dc": -1,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "netheron_2",
+    "sphere": "Netheron",
+    "demon": "Rasista",
+    "cat": "skudce",
+    "level": 2,
+    "text": "Schopnosti předmětu fungují jen proti tvorovi vybrané rasy (hráčská či z Bestiáře)",
+    "dc": -3,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "ondoreth_1",
+    "sphere": "Ondoreth",
+    "demon": "Krvesaj",
+    "cat": "skudce",
+    "level": 1,
+    "text": "Démon musí denně nasát krev ze zranění za 2 životů, jinak uteče do astrálu",
+    "dc": -1,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "ondoreth_2",
+    "sphere": "Ondoreth",
+    "demon": "Krvesaj",
+    "cat": "skudce",
+    "level": 2,
+    "text": "Démon musí denně nasát krev ze zranění za 4 životů, jinak uteče do astrálu",
+    "dc": -2,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "ondoreth_3",
+    "sphere": "Ondoreth",
+    "demon": "Krvesaj",
+    "cat": "skudce",
+    "level": 3,
+    "text": "Démon musí denně nasát krev ze zranění za 8 životů, jinak uteče do astrálu",
+    "dc": -3,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "ondoreth_4",
+    "sphere": "Ondoreth",
+    "demon": "Krvesaj",
+    "cat": "skudce",
+    "level": 4,
+    "text": "Démon musí denně nasát krev ze zranění za 16 životů, jinak uteče do astrálu",
+    "dc": -4,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "ondoreth_5",
+    "sphere": "Ondoreth",
+    "demon": "Krvesaj",
+    "cat": "skudce",
+    "level": 5,
+    "text": "Démon musí denně nasát krev ze zranění za 32 životů, jinak uteče do astrálu",
+    "dc": -5,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "valandir_1",
+    "sphere": "Valandir",
+    "demon": "Našeptávač",
+    "cat": "skudce",
+    "level": 1,
+    "text": "Charakterová vlastnost působící nositeli potíže (agresivita, mamon, melancholie, alkoholismus…) – při nasazení Vůle (CHAR) vs. 12",
+    "dc": -1,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "valandir_2",
+    "sphere": "Valandir",
+    "demon": "Našeptávač",
+    "cat": "skudce",
+    "level": 2,
+    "text": "Charakterová vlastnost působící nositeli potíže (agresivita, mamon, melancholie, alkoholismus…) – při nasazení Vůle (CHAR) vs. 14",
+    "dc": -2,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "valandir_3",
+    "sphere": "Valandir",
+    "demon": "Našeptávač",
+    "cat": "skudce",
+    "level": 3,
+    "text": "Charakterová vlastnost působící nositeli potíže (agresivita, mamon, melancholie, alkoholismus…) – při nasazení Vůle (CHAR) vs. 16",
+    "dc": -3,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "valandir_4",
+    "sphere": "Valandir",
+    "demon": "Našeptávač",
+    "cat": "skudce",
+    "level": 4,
+    "text": "Charakterová vlastnost působící nositeli potíže (agresivita, mamon, melancholie, alkoholismus…) – při nasazení Vůle (CHAR) vs. 18",
+    "dc": -4,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "valandir_5",
+    "sphere": "Valandir",
+    "demon": "Našeptávač",
+    "cat": "skudce",
+    "level": 5,
+    "text": "Charakterová vlastnost působící nositeli potíže (agresivita, mamon, melancholie, alkoholismus…) – při nasazení Vůle (CHAR) vs. 20",
+    "dc": -5,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "lumindor_1",
+    "sphere": "Lumindor",
+    "demon": "Nešika",
+    "cat": "skudce",
+    "level": 1,
+    "text": "Postih −1 na dovednost, v níž má majitel nejvyšší stupeň",
+    "dc": -1,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "lumindor_2",
+    "sphere": "Lumindor",
+    "demon": "Nešika",
+    "cat": "skudce",
+    "level": 2,
+    "text": "Postih −2 na 2 dovednosti, v nichž má majitel nejvyšší stupeň",
+    "dc": -2,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "lumindor_3",
+    "sphere": "Lumindor",
+    "demon": "Nešika",
+    "cat": "skudce",
+    "level": 3,
+    "text": "Postih −3 na 2 dovednosti, v nichž má majitel nejvyšší stupeň",
+    "dc": -3,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "lumindor_4",
+    "sphere": "Lumindor",
+    "demon": "Nešika",
+    "cat": "skudce",
+    "level": 4,
+    "text": "Postih −4 na 2 dovednosti, v nichž má majitel nejvyšší stupeň",
+    "dc": -4,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "lumindor_5",
+    "sphere": "Lumindor",
+    "demon": "Nešika",
+    "cat": "skudce",
+    "level": 5,
+    "text": "Postih −5 na 2 dovednosti, v nichž má majitel nejvyšší stupeň",
+    "dc": -5,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "zarathas_1",
+    "sphere": "Zarathas",
+    "demon": "Pacifista",
+    "cat": "skudce",
+    "level": 1,
+    "text": "Postih −1 k ÚČ majitele předmětu",
+    "dc": -1,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "zarathas_2",
+    "sphere": "Zarathas",
+    "demon": "Pacifista",
+    "cat": "skudce",
+    "level": 2,
+    "text": "Postih −2 k ÚČ majitele předmětu",
+    "dc": -2,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "zarathas_3",
+    "sphere": "Zarathas",
+    "demon": "Pacifista",
+    "cat": "skudce",
+    "level": 3,
+    "text": "Postih −3 k ÚČ majitele předmětu",
+    "dc": -3,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "zarathas_4",
+    "sphere": "Zarathas",
+    "demon": "Pacifista",
+    "cat": "skudce",
+    "level": 4,
+    "text": "Postih −4 k ÚČ majitele předmětu",
+    "dc": -4,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "zarathas_5",
+    "sphere": "Zarathas",
+    "demon": "Pacifista",
+    "cat": "skudce",
+    "level": 5,
+    "text": "Postih −5 k ÚČ majitele předmětu",
+    "dc": -5,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "seraphiel_1",
+    "sphere": "Seraphiel",
+    "demon": "Berserker",
+    "cat": "skudce",
+    "level": 1,
+    "text": "Postih −1 k ZO majitele předmětu",
+    "dc": -1,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "seraphiel_2",
+    "sphere": "Seraphiel",
+    "demon": "Berserker",
+    "cat": "skudce",
+    "level": 2,
+    "text": "Postih −2 k ZO majitele předmětu",
+    "dc": -2,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "seraphiel_3",
+    "sphere": "Seraphiel",
+    "demon": "Berserker",
+    "cat": "skudce",
+    "level": 3,
+    "text": "Postih −3 k ZO majitele předmětu",
+    "dc": -3,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "seraphiel_4",
+    "sphere": "Seraphiel",
+    "demon": "Berserker",
+    "cat": "skudce",
+    "level": 4,
+    "text": "Postih −4 k ZO majitele předmětu",
+    "dc": -4,
+    "mana": 0,
+    "materials": 0
+   },
+   {
+    "id": "seraphiel_5",
+    "sphere": "Seraphiel",
+    "demon": "Berserker",
+    "cat": "skudce",
+    "level": 5,
+    "text": "Postih −5 k ZO majitele předmětu",
+    "dc": -5,
+    "mana": 0,
+    "materials": 0
+   }
+  ],
+  "moments": [
+   {
+    "id": "denni",
+    "name": "každodenní (poledne, půlnoc)",
+    "max": 12,
+    "shortGame": "několikrát za dobrodružství či sezení"
+   },
+   {
+    "id": "mesicni",
+    "name": "měsíční (nov, úplněk)",
+    "max": 15,
+    "shortGame": "jednou za dobrodružství či sezení"
+   },
+   {
+    "id": "ctvrtletni",
+    "name": "několikrát do roka (slunovrat, rovnodennost)",
+    "max": 18,
+    "shortGame": "nejvýš jednou za dobrodružství při úspěchu Theurgie vs. 18"
+   },
+   {
+    "id": "vyrocni",
+    "name": "jednou za rok (zatmění měsíce, částečné zatmění slunce, konstelace)",
+    "max": 21,
+    "shortGame": "nejvýš jednou za dobrodružství při úspěchu Theurgie vs. 21"
+   },
+   {
+    "id": "vzacny",
+    "name": "jednou za několik let (úplné zatmění slunce, vlasatice)",
+    "max": 24,
+    "shortGame": "nejvýš jednou za dobrodružství při úspěchu Theurgie vs. 24"
+   },
+   {
+    "id": "kombinace",
+    "name": "slabší okamžik + výrazné omezení (X + 3)",
+    "max": null,
+    "shortGame": "nejvýš jednou za dobrodružství při úspěchu Theurgie vs. X + 3"
+   }
+  ],
+  "lifespan": [
+   {
+    "min": 1,
+    "max": 1,
+    "text": "do příštího každodenního magického okamžiku (poledne, půlnoc)"
+   },
+   {
+    "min": 2,
+    "max": 3,
+    "text": "do příštího měsíčního okamžiku (nov, úplněk)"
+   },
+   {
+    "min": 4,
+    "max": 5,
+    "text": "do příštího čtvrtletního okamžiku (slunovrat, rovnodennost)"
+   },
+   {
+    "min": 6,
+    "max": 8,
+    "text": "do příštího výročního okamžiku (zatmění měsíce, částečné zatmění slunce, konstelace)"
+   },
+   {
+    "min": 9,
+    "max": 11,
+    "text": "do příštího vzácného okamžiku (úplné zatmění slunce, průlet vlasatice)"
+   },
+   {
+    "min": 12,
+    "max": 15,
+    "text": "do příštího velmi vzácného okamžiku (konec epochy, narození sedmého syna sedmého syna)"
+   },
+   {
+    "min": 16,
+    "max": null,
+    "text": "dokud démon nesplní tajný úkol (vrácení na místo vyvolání, zahnání démona nepřátelské frakce…)"
+   }
+  ],
+  "bhuts": {
+   "kinds": [
+    {
+     "id": "zeme",
+     "name": "Ergar (země)",
+     "text": "zemětřesení, trhliny v zemi"
+    },
+    {
+     "id": "voda",
+     "name": "Arpas (voda)",
+     "text": "déšť, bouřka, mohutné vlny z přiměřeného zdroje vody"
+    },
+    {
+     "id": "vzduch",
+     "name": "Vayu (vzduch)",
+     "text": "poryvy vichru, blizzard, hurikán, cyklón"
+    },
+    {
+     "id": "ohen",
+     "name": "Agni (oheň)",
+     "text": "požár, blesky, kulové blesky"
+    }
+   ],
+   "rows": [
+    {
+     "st": 1,
+     "dc": 10,
+     "mana": 20,
+     "dur": "2 kola",
+     "z1": "0–1",
+     "d1": 5,
+     "z2": "1–3",
+     "d2": null,
+     "z3": "2–6",
+     "d3": null
+    },
+    {
+     "st": 2,
+     "dc": 15,
+     "mana": 40,
+     "dur": "4 kola",
+     "z1": "0–2",
+     "d1": 10,
+     "z2": "2–5",
+     "d2": 3,
+     "z3": "5–12",
+     "d3": null
+    },
+    {
+     "st": 3,
+     "dc": 18,
+     "mana": 60,
+     "dur": "6 kol",
+     "z1": "0–3",
+     "d1": 20,
+     "z2": "3–8",
+     "d2": 7,
+     "z3": "8–19",
+     "d3": 2
+    },
+    {
+     "st": 4,
+     "dc": 21,
+     "mana": 80,
+     "dur": "8 kol",
+     "z1": "0–4",
+     "d1": 30,
+     "z2": "4–10",
+     "d2": 10,
+     "z3": "10–25",
+     "d3": 3
+    },
+    {
+     "st": 5,
+     "dc": 24,
+     "mana": 100,
+     "dur": "10 kol",
+     "z1": "0–5",
+     "d1": 40,
+     "z2": "5–13",
+     "d2": 13,
+     "z3": "13–32",
+     "d3": 4
+    },
+    {
+     "st": 6,
+     "dc": 27,
+     "mana": 200,
+     "dur": "14 kol",
+     "z1": "0–10",
+     "d1": 60,
+     "z2": "10–25",
+     "d2": 20,
+     "z3": "25–63",
+     "d3": 6
+    },
+    {
+     "st": 7,
+     "dc": 30,
+     "mana": 300,
+     "dur": "18 kol",
+     "z1": "0–15",
+     "d1": 100,
+     "z2": "15–38",
+     "d2": 33,
+     "z3": "(38–)95",
+     "d3": 11
+    },
+    {
+     "st": 8,
+     "dc": 33,
+     "mana": 500,
+     "dur": "25 kol",
+     "z1": "0–30",
+     "d1": 150,
+     "z2": "30–75",
+     "d2": 50,
+     "z3": "75–190",
+     "d3": 15
+    },
+    {
+     "st": 9,
+     "dc": 36,
+     "mana": 1000,
+     "dur": "30 kol",
+     "z1": "0–50",
+     "d1": 200,
+     "z2": "50–125",
+     "d2": 66,
+     "z3": "125–315",
+     "d3": 22
+    }
+   ],
+   "materials": [
+    {
+     "name": "Dřevo",
+     "hp": 10
+    },
+    {
+     "name": "Dřevo – masiv",
+     "hp": 20
+    },
+    {
+     "name": "Kámen – stěna",
+     "hp": 30
+    },
+    {
+     "name": "Kámen – hradba",
+     "hp": 40
+    },
+    {
+     "name": "Ocel",
+     "hp": 60
+    }
+   ],
+   "damage": [
+    {
+     "upTo": 10,
+     "name": "lehké poškození"
+    },
+    {
+     "upTo": 30,
+     "name": "střední poškození"
+    },
+    {
+     "upTo": 50,
+     "name": "těžké poškození"
+    },
+    {
+     "upTo": 80,
+     "name": "ruiny"
+    },
+    {
+     "upTo": 100,
+     "name": "naprosté zničení"
+    }
+   ]
+  },
+  "elementals": [
+   {
+    "id": "igni",
+    "name": "Igni (oheň)",
+    "mana": [
+     10,
+     10
+    ],
+    "dc": [
+     5,
+     1
+    ],
+    "level": [
+     1,
+     1
+    ],
+    "hp": [
+     10,
+     5
+    ],
+    "attrs": "SIL –, OBR 14 (+2), ODO 10 (+0), INT 1 (−5), CHAR 14 (+2)",
+    "sizes": [
+     [
+      1,
+      3,
+      "A"
+     ],
+     [
+      4,
+      8,
+      "B"
+     ],
+     [
+      9,
+      14,
+      "C"
+     ],
+     [
+      15,
+      null,
+      "D"
+     ]
+    ],
+    "mobility": "32 (levitace)",
+    "attack": [
+     3,
+     2
+    ],
+    "attacks": 2,
+    "zo": 3,
+    "oc": 3,
+    "immune": "jed, krvácení, zkamenění, nemagické zbraně, ovlivnění mysli, oheň",
+    "weak": "voda, led",
+    "abilities": [
+     "Žár (pasivní): dotek či zásah pařáty + 1k6 popálenin.",
+     "Plameny (dlouhá akce): cíl do 30 sáhů hází Reflex (OBR) vs. 2 + stupeň, jinak 2k6 a hoří 3 kola po 1k6/2.",
+     "Exploze (speciální, 1× za 3 kola): kolo nasává, pak vše do 5 sáhů Reflex (OBR) vs. stupeň – neúspěch 4k6 a povalení (1 kolo vstávat), úspěch polovina."
+    ]
+   },
+   {
+    "id": "undina",
+    "name": "Undina (voda)",
+    "mana": [
+     10,
+     10
+    ],
+    "dc": [
+     5,
+     1
+    ],
+    "level": [
+     1,
+     1
+    ],
+    "hp": [
+     10,
+     5
+    ],
+    "attrs": "SIL 8 (−1), OBR 16 (+3), ODO 10 (+0), INT 1 (−5), CHAR 14 (+2)",
+    "sizes": [
+     [
+      1,
+      3,
+      "A"
+     ],
+     [
+      4,
+      8,
+      "B"
+     ],
+     [
+      9,
+      14,
+      "C"
+     ],
+     [
+      15,
+      null,
+      "D"
+     ]
+    ],
+    "mobility": "23 (na zemi), 43 (ve vodě)",
+    "attack": [
+     3,
+     0
+    ],
+    "attacks": 2,
+    "zo": 4,
+    "oc": 4,
+    "immune": "jed, krvácení, zkamenění, nemagické zbraně, ovlivnění mysli, voda, led",
+    "weak": "oheň",
+    "abilities": [
+     "Dotek (pasivní): zásah + 1k6 (voda v těle).",
+     "Rampouch (dlouhá akce): cíl do 30 sáhů Reflex (OBR) vs. 2 + stupeň, jinak 3k6.",
+     "Proud (speciální, 1× za 3 kola): přesune se na protivníka stejné či menší velikosti – Reflex (OBR) vs. stupeň, jinak ho obklopí a topí; oběť se každé kolo může vyprostit Plaváním (SIL/OBR) vs. stupeň."
+    ]
+   },
+   {
+    "id": "terra",
+    "name": "Terra (země)",
+    "mana": [
+     5,
+     10
+    ],
+    "dc": [
+     5,
+     1
+    ],
+    "level": [
+     1,
+     1
+    ],
+    "hp": [
+     10,
+     10
+    ],
+    "attrs": "SIL 19 (+4), OBR 4 (−3), ODO 21 (+5), INT 1 (−5), CHAR 8 (−1)",
+    "sizes": [
+     [
+      1,
+      3,
+      "A"
+     ],
+     [
+      4,
+      6,
+      "B"
+     ],
+     [
+      7,
+      14,
+      "C"
+     ],
+     [
+      15,
+      null,
+      "D"
+     ]
+    ],
+    "mobility": "17 (na zemi)",
+    "attack": [
+     4,
+     3
+    ],
+    "attacks": 2,
+    "zo": 3,
+    "oc": 3,
+    "immune": "jed, krvácení, zkamenění, nemagické zbraně, ovlivnění mysli, oheň",
+    "weak": "drtivé zranění",
+    "abilities": [
+     "Otřes (dlouhá akce): vše do 20 sáhů Reflex (OBR) vs. stupeň, jinak povaleno (1 kolo vstávat).",
+     "Zkamenění (speciální, 1× za 3 kola): tvor do 3 sáhů Vůle (CHAR) vs. 2 + stupeň, jinak během 3 kol trvale zkamení (nohy, ruce, celý) – zruší prosba Odstraň kletbu."
+    ]
+   },
+   {
+    "id": "sylfa",
+    "name": "Sylfa (vzduch)",
+    "mana": [
+     10,
+     10
+    ],
+    "dc": [
+     5,
+     1
+    ],
+    "level": [
+     1,
+     1
+    ],
+    "hp": [
+     9,
+     4
+    ],
+    "attrs": "SIL –, OBR 20 (+5), ODO 8 (−1), INT 1 (−5), CHAR 10 (0)",
+    "sizes": [
+     [
+      1,
+      3,
+      "A"
+     ],
+     [
+      4,
+      8,
+      "B"
+     ],
+     [
+      9,
+      14,
+      "C"
+     ],
+     [
+      15,
+      null,
+      "D"
+     ]
+    ],
+    "mobility": "65 (létání)",
+    "attack": [
+     1,
+     0
+    ],
+    "attacks": 2,
+    "zo": 6,
+    "oc": 6,
+    "immune": "jed, krvácení, zkamenění, nemagické zbraně, ovlivnění mysli",
+    "weak": "oheň",
+    "abilities": [
+     "Odklonění (pasivní): střelné a vrhací útoky na ni s Nevýhodou (−5).",
+     "Větrný úder (dlouhá akce): přesun až 65 sáhů na cíl a jeden útok navíc.",
+     "Tornádo (speciální, 1× za 3 kola): poloměr 5 sáhů, Atletika (SIL) vs. stupeň, jinak vymrštěn 8 sáhů a pád 6k6; pak Reflex (OBR) vs. stupeň − 2, jinak povalen."
+    ]
+   }
+  ],
+  "essences": {
+   "kinds": [
+    {
+     "id": "ohen",
+     "name": "oheň",
+     "color": "oranžová"
+    },
+    {
+     "id": "voda",
+     "name": "voda",
+     "color": "modrá"
+    },
+    {
+     "id": "vzduch",
+     "name": "vzduch",
+     "color": "bílá"
+    },
+    {
+     "id": "zeme",
+     "name": "země",
+     "color": "zelená"
+    }
+   ],
+   "perMana": 4,
+   "manaPerShift": 10,
+   "effects": {
+    "ohen": [
+     [
+      "magické ohnivé zranění 1k6 (posypání zbraně, rukou, ohnivý dech)",
+      10
+     ],
+     [
+      "zvýšení teploty, vysoušení, vznícení posypaného",
+      12
+     ],
+     [
+      "odolnost proti vodě a zimě (předmět či tvor)",
+      12
+     ],
+     [
+      "hrubá smyslová změna ohně (barva, velikost, hluk)",
+      14
+     ],
+     [
+      "jemná smyslová změna ohně (tvarování plamenů, písmena, tváře)",
+      16
+     ],
+     [
+      "„pevný“ oheň (lze po něm chodit či šplhat)",
+      18
+     ]
+    ],
+    "voda": [
+     [
+      "magické ledové zranění 1k6 (posypání zbraně, rukou, ledový dech)",
+      10
+     ],
+     [
+      "snížení teploty, mokření, ledování, popraskání mrazem",
+      12
+     ],
+     [
+      "odolnost proti ohni (předmět či tvor)",
+      12
+     ],
+     [
+      "hrubá smyslová změna vody (barva, velikost, hluk, chuť, proudění)",
+      14
+     ],
+     [
+      "jemná smyslová změna vody (vlnky, písmena, tváře)",
+      16
+     ],
+     [
+      "„pevná“ voda (lze po ní chodit či šplhat)",
+      18
+     ]
+    ],
+    "zeme": [
+     [
+      "magické jedové zranění 1k6 (posypání zbraně, rukou, jedovatý dech)",
+      10
+     ],
+     [
+      "změna konzistence (kámen, hlína, písek)",
+      12
+     ],
+     [
+      "odolnost proti jedům a žíravinám (předmět či tvor)",
+      12
+     ],
+     [
+      "hrubá smyslová změna pevné přírodní látky (barva, velikost, tvar, chuť)",
+      14
+     ],
+     [
+      "jemná smyslová změna pevné látky (písmena, tváře, textura)",
+      16
+     ],
+     [
+      "rozpohybování pevné přírodní látky",
+      18
+     ]
+    ],
+    "vzduch": [
+     [
+      "magické „elektrické“ zranění 1k6 (posypání zbraně, rukou, elektrická slina)",
+      10
+     ],
+     [
+      "dodání odolnosti (předmět či tvor; v knize chybí proti čemu)",
+      12
+     ],
+     [
+      "hrubá smyslová změna plynu (barva, velikost, tvar, vůně)",
+      14
+     ],
+     [
+      "jemná smyslová změna plynu (písmena, tváře, tvarování dýmu)",
+      16
+     ],
+     [
+      "„pevný“ vzduch (lze po něm chodit či šplhat)",
+      18
+     ]
+    ]
+   }
+  },
+  "gems": [
+   {
+    "id": "achat",
+    "name": "Achát",
+    "rarity": 5,
+    "maxMana": 100
+   },
+   {
+    "id": "akvamarin",
+    "name": "Akvamarín",
+    "rarity": 7,
+    "maxMana": 400
+   },
+   {
+    "id": "ametyst",
+    "name": "Ametyst",
+    "rarity": 7,
+    "maxMana": 200
+   },
+   {
+    "id": "citrin",
+    "name": "Citrín",
+    "rarity": 6,
+    "maxMana": 400
+   },
+   {
+    "id": "diamant",
+    "name": "Diamant",
+    "rarity": 10,
+    "maxMana": 2000
+   },
+   {
+    "id": "granat",
+    "name": "Granát",
+    "rarity": 8,
+    "maxMana": 100
+   },
+   {
+    "id": "jaspis",
+    "name": "Jaspis",
+    "rarity": 5,
+    "maxMana": 400
+   },
+   {
+    "id": "kristal",
+    "name": "Křišťál",
+    "rarity": 8,
+    "maxMana": 200
+   },
+   {
+    "id": "lazurit",
+    "name": "Lazurit",
+    "rarity": 7,
+    "maxMana": 200
+   },
+   {
+    "id": "opal",
+    "name": "Opál",
+    "rarity": 6,
+    "maxMana": 400
+   },
+   {
+    "id": "rubin",
+    "name": "Rubín",
+    "rarity": 9,
+    "maxMana": 1000
+   },
+   {
+    "id": "safir",
+    "name": "Safír",
+    "rarity": 9,
+    "maxMana": 500
+   },
+   {
+    "id": "smaragd",
+    "name": "Smaragd",
+    "rarity": 9,
+    "maxMana": 1000
+   },
+   {
+    "id": "topaz",
+    "name": "Topaz",
+    "rarity": 8,
+    "maxMana": 300
+   }
+  ],
+  "staff": {
+   "attack": 7,
+   "damage": 1,
+   "defense": 1,
+   "reach": "1,5 sáhu",
+   "weightLb": 1.5,
+   "priceZl": 500,
+   "maxMana": 1000,
+   "chargePerRound": 10,
+   "craftMana": 300,
+   "craftText": "kořen jasanu či ebenu, balzamovací olej s 200 many (týden v zemi), Astron z trpasličího křišťálu a zrcadel za úplňku (100 many)"
+  }
+ }
+}

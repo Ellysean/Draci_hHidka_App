@@ -1,0 +1,1938 @@
+{
+ "_zdroj": "Draci_hlidka_PPP_02_Hranicar.pdf s. 61–110 – strojově z docs/pravidla/PPP02_Hranicar_AI.json (přepis od uživatele 1. 10. 2026)",
+ "_generator": "tools/ppp02_hranicar_src.py",
+ "_poznamka": "Schopnosti, specializace a tabulky viz claude/data/ppp02_hranicar.json v projektu (ruční výtah 27. 9. 2026).",
+ "skupiny_kouzel": {
+  "Magie Hraničářského luku": [
+   "Déšť šípů",
+   "Jasná střela",
+   "Ochromující šíp",
+   "Plamenný šíp",
+   "Trefa do černého"
+  ],
+  "Magie Hraničářského koně": [
+   "Nezdolnost",
+   "Přivolej koně",
+   "S větrem o závod",
+   "Uklidni zvíře",
+   "Zvířecí posel"
+  ],
+  "Další hraničářská kouzla": [
+   "Ochrana před smečkou",
+   "Ochrana před zimou",
+   "Odvracení zvířat",
+   "Sledování",
+   "Úder nenávisti",
+   "Uzdrav těžká zranění"
+  ],
+  "Magie Chodcova meče": [
+   "Odražení kouzla",
+   "Posílení zbraně",
+   "Transmutace zbraně",
+   "Záblesk",
+   "Živelné ostří"
+  ],
+  "Magie lovců monster": [
+   "Bleskový výpad",
+   "Dvojitý švih",
+   "Poškození zbraně",
+   "Sražení projektilu",
+   "Vířivé ostří"
+  ],
+  "Chodecká magie": [
+   "Falešná stopa",
+   "Matení pachů",
+   "Matení stop",
+   "Oči přírody",
+   "Uhrančivý pohled"
+  ],
+  "Soustředění Duševní síly": [
+   "Očištění",
+   "Přizpůsobení",
+   "Utužení",
+   "Uvolnění",
+   "Zacelení"
+  ],
+  "Druidské rituály": [
+   "Dar života",
+   "Láska hvozdu",
+   "Nenávist hvozdu",
+   "Uzdrav lykantropii",
+   "Uzdrav zmrzačení",
+   "Zruš zkamenění"
+  ],
+  "Magie lesa": [
+   "Bludný kořen",
+   "Listová bouřka",
+   "Otevřená náruč lesa",
+   "Povolej víly",
+   "Procházení stromy",
+   "Přivolej bludičky",
+   "Snový mrak",
+   "Změna počasí"
+  ],
+  "Magie hvozdu": [
+   "Hněv hvozdu",
+   "Koroze",
+   "Najdi bytost",
+   "Probuzení Pastýře lesa",
+   "Probuzení stromu",
+   "Trnová stěna",
+   "Zapletení",
+   "Zestromovatění"
+  ],
+  "Divoké pokřiky": [
+   "Bojovný řev",
+   "Děsivý řev",
+   "Pokřik lovu",
+   "Vábivý křik",
+   "Varovný výkřik"
+  ],
+  "Magie smečky": [
+   "Chraň",
+   "Štvi",
+   "Trhej",
+   "Zadrž",
+   "Zachraň"
+  ],
+  "Pokročilá Magie zvířat": [
+   "Mimikry",
+   "Nakrm zvíře",
+   "Oči zvířete",
+   "Pochvala",
+   "Poslouchej"
+  ]
+ },
+ "polozky": [
+  {
+   "id": "dest_sipu",
+   "nazev": "Déšť šípů",
+   "strana": 69,
+   "parametry": {
+    "dusevni_sila": "2 za každý cíl",
+    "dosah": "dotek",
+    "rozsah": "kruh o poloměru 2 sáhy",
+    "trvani": "ihned",
+    "vyvolani": "ihned",
+    "obtiznost": "6+2 za každý šíp",
+    "vyzaduje": "Hraničářský luk"
+   },
+   "popis": "Tímto kouzlem dokáže Hraničář „zasypat“ vybranou oblast svými šípy. Za každý cíl, který chce v daném místě zasáhnout, musí zaplatit 2 body své Duševní síly. Následně proti nim vede běžný útok lukem na každý cíl.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského luku"
+   ]
+  },
+  {
+   "id": "jasna_strela",
+   "nazev": "Jasná střela",
+   "strana": 69,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "dotek",
+    "rozsah": "kruh o poloměru 5 sáhů",
+    "trvani": "ihned",
+    "vyvolani": "ihned",
+    "obtiznost": "8",
+    "vyzaduje": "Hraničářský luk"
+   },
+   "popis": "Hraničář dokáže vystřelit šíp, jehož hrot za letu září jasným denním světlem. Tím osvětlí kulový prostor o poloměru 5 sáhů kolem něj. Jasné světlo navíc dokáže oslabit nemrtvé v dosahu. Ti, kteří mu byli vystaveni a neuspějí v ověřovacím hodu na ODO vs. 10, jsou na dobu 3 kol oslabení. Mají tak Nevýhodu (Postih -5) ke všem svým akcím. Obvykle se však toto kouzlo používá spíše k průzkumu temných chodeb, zákoutí a hlubin.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského luku"
+   ]
+  },
+  {
+   "id": "nezdolnost",
+   "nazev": "Nezdolnost",
+   "strana": 69,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotyk",
+    "rozsah": "zvíře",
+    "trvani": "1 hodina",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Hraničářův kůň"
+   },
+   "popis": "S pomocí tohoto kouzla očaruješ své jezdecké zvíře tak, aby dočasně překonalo svou bolest, zranění a únavu. Po dobu čtyř směn se tak navýší jeho mez vyřazení o 20 a nepocítí únavu. Jakmile však efekt kouzla vyprchá, mez vyřazení se vrátí na původní úroveň a únava na něj dolehne plnou silou.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského koně"
+   ]
+  },
+  {
+   "id": "odvraceni_zvirat",
+   "nazev": "Odvracení zvířat",
+   "strana": 69,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "-",
+    "rozsah": "kruh o poloměru 2 sáhy kolem Hraničáře",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Magie zvířat"
+   },
+   "popis": "Tímto kouzlem dokáže Hraničář odvrátit útok zvířete proti sobě i vybraným tvorům ve svém bezprostředním okolí. Útočící zvířata si jich pak přestanou všímat a nechají je na pokoji.\nJestliže je odvracené zvíře družinou následně napadeno nebo provokováno, efekt kouzla okamžitě a trvale odezní. Na dalších 24 hodin pak nelze na daného tvora toto kouzlo seslat. Kouzlo rovněž nepůsobí na zvířata, která jsou posedlá nebo ovládaná magií.\nHraničář vždy vycítí, zda je, či není schopen konkrétní zvíře odvrátit. Příčinu toho, proč to případně není možné, však nepozná.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Další hraničářská kouzla (od 6. úr.)"
+   ]
+  },
+  {
+   "id": "ochrana_pred_smeckou",
+   "nazev": "Ochrana před smečkou",
+   "strana": 70,
+   "parametry": {
+    "dusevni_sila": "2 za osobu",
+    "dosah": "kruh o poloměru 2 sáhy",
+    "rozsah": "dle dodané many",
+    "trvani": "1 den",
+    "vyvolani": "1 kolo",
+    "obtiznost": "8",
+    "vyzaduje": "Magie zvířat"
+   },
+   "popis": "Pomocí magie dokáže Hraničář odradit zvěř od toho, aby šla v jeho stopách. Kouzlo totiž zanechává pach rozzuřené šelmy, který u ní vzbuzuje přirozený strach.\nEfekt kouzla ovlivňuje pouze čich zvířat. Jestliže by Hraničáře spatřila nebo zaslechla, mohla by se za ním samozřejmě vydat. Není však jisté, zda to skutečně udělají. Stále totiž cítí neurčitý strach z možné přítomnosti šelmy. K ověření jejich reakce se obvykle používá náhodný hod 1k10 (1-5 znamená Útok, vyšší číslo stažení zvířat pryč).",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Další hraničářská kouzla (od 6. úr.)"
+   ]
+  },
+  {
+   "id": "ochrana_pred_zimou",
+   "nazev": "Ochrana před zimou",
+   "strana": 70,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotyk",
+    "rozsah": "1 tvor",
+    "trvani": "1 den",
+    "vyvolani": "1 kolo",
+    "obtiznost": "8",
+    "vyzaduje": "Magie pocestných"
+   },
+   "popis": "Díky tomuto kouzlu dokáže vybraný tvor odolat chladu a mrazu. Nejen že ho necítí, ale neutrpí jejich působením ani žádná zranění. Kouzlo působí jen na přirozenou zimu. Na efekty magie nemá bohužel žádný vliv.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Další hraničářská kouzla (od 6. úr.)"
+   ]
+  },
+  {
+   "id": "ochromujici_sip",
+   "nazev": "Ochromující šíp",
+   "strana": 70,
+   "parametry": {
+    "dusevni_sila": "5",
+    "dosah": "dotyk",
+    "rozsah": "šíp",
+    "trvani": "ihned",
+    "ucinek": "ihned (postřelení) Past: Reflex (OBR) cíle vs. Pouto s přírodou (INT) Hraničáře",
+    "vyvolani": "do útoku",
+    "obtiznost": "12",
+    "vyzaduje": "Hraničářský luk"
+   },
+   "popis": "Pomocí tohoto kouzla dokáže Hraničář přesně zaměřit a zmrzačit konkrétní část těla protivníka. Kam přesně (na jakou část těla) chce Hraničář střílet, je nutné oznámit ještě před výstřelem (hodem na Útok).\nJe-li protivník zasažen a zraněn, může dojít k ověření toho, zda došlo k jeho zmrzačení (zjišťuje se ověřovacím hodem). Pokud v něm Hraničář uspěl, získává dotyčný tvor Nevýhodu (postih -5) ke všem bojovým akcím a činnostem vyžadujícím danou část těla. Jedná-li se o nohu, tvor je navíc zpomalen a jeho pohyblivost se snižuje na polovinu. Zmrzačení trvá tak dlouho, dokud není řádně ošetřeno.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského luku"
+   ]
+  },
+  {
+   "id": "plamenny_sip",
+   "nazev": "Plamenný šíp",
+   "strana": 71,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotyk",
+    "rozsah": "šíp",
+    "trvani": "5 kol",
+    "vyvolani": "ihned",
+    "obtiznost": "12",
+    "vyzaduje": "Hraničářský luk"
+   },
+   "popis": "Pouto s přírodou umožňuje Hraničáři zapálit libovolný dřevěný šíp. Ten začne okamžitě po seslání kouzla hořet jasným plamenem. K vznícení dochází „zevnitř“ šípu přímo pod hrotem a velmi rychle se šíří až k dříku. Po pár kolech tak šíp shoří na troud a nic z něj nezbyde. Do té doby však funguje jako zápalný šíp. Dokáže zapálit hořlavé látky a zasáhne-li tvory zranitelné ohněm, způsobuje dodatečné zranění za 1k6 životů.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského luku"
+   ]
+  },
+  {
+   "id": "privolej_kone",
+   "nazev": "Přivolej koně",
+   "strana": 71,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "5 mil",
+    "rozsah": "zvíře",
+    "trvani": "-",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Hraničářův kůň"
+   },
+   "popis": "Hraničář dokáže dát svému jezdeckému zvířeti povel, kterým ho k sobě přivolá. Jde o mentální (neslyšný) signál, který zazní v hlavě zvířete jako hvízdnutí. Pokud mu v tom nic nebrání, vydá se zvíře za ním. S ohledem na naléhavost signálu pak volí svou rychlost.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského koně"
+   ]
+  },
+  {
+   "id": "sledovani",
+   "nazev": "Sledování",
+   "strana": 71,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "5 mil",
+    "rozsah": "1 předmět",
+    "trvani": "1 týden",
+    "vyvolani": "1 kolo",
+    "obtiznost": "14",
+    "vyzaduje": "Magie pocestných"
+   },
+   "popis": "Hraničář dokáže svým dotykem očarovat jeden předmět tak, aby sloužil jako „mentální maják“. Stačí ho někomu předat a je pak možné dotyčného sledovat. S přesností na 5 sáhů Hraničář instinktivně cítí jeho polohu. Pokud se předmět dostane z jeho dosahu, kouzlo pomine.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Další hraničářská kouzla (od 6. úr.)"
+   ]
+  },
+  {
+   "id": "s_vetrem_o_zavod",
+   "nazev": "S větrem o závod",
+   "strana": 71,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "dotyk",
+    "rozsah": "zvíře",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "10",
+    "vyzaduje": "Hraničářův kůň"
+   },
+   "popis": "Očaruješ hraničářského koně tak, aby dokázal běžel dvakrát rychleji a doskočil dvakrát dále. Toto má samozřejmě vliv na jeho únavu (PPZ H 1.1, strana 191). Kouzlo lze seslat na jezdecké zvíře nejvýše tolikrát, jaký je jeho bonus za Odolnost (ODO). Při překročení počtu hrozí, že se zvíře zchvátí a zemře.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského koně"
+   ]
+  },
+  {
+   "id": "trefa_do_cerneho",
+   "nazev": "Trefa do černého",
+   "strana": 71,
+   "parametry": {
+    "dusevni_sila": "8",
+    "dosah": "dotyk",
+    "rozsah": "šíp",
+    "trvani": "ihned",
+    "vyvolani": "ihned",
+    "obtiznost": "15",
+    "vyzaduje": "Hraničářský luk"
+   },
+   "popis": "Tímto kouzlem dokáže Hraničář očarovat svůj šíp tak, aby se spojil s poryvem větru. Ten pak vede střelu rychle a neomylně k cíli.\nOběť, na niž Hraničář vystřelil, si nehází proti šípu na obranu. Chrání ji tak pouze hodnota její Základní obrany (ZO). Jestliže je šípem zraněna, způsobí jí střela navíc Krvácivé zranění za 1k6 životů/kolo.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského luku"
+   ]
+  },
+  {
+   "id": "uder_nenavisti",
+   "nazev": "Úder nenávisti",
+   "strana": 72,
+   "parametry": {
+    "dusevni_sila": "10",
+    "dosah": "10 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "obtiznost": "15",
+    "vyzaduje": "Magie přírody"
+   },
+   "popis": "Toto kouzlo je formou pokročilého mentálního útoku, který způsobí zranění za 3k10 životů. Kouzlo lze v jednom okamžiku použít až proti třem protivníkům najednou. Celkové Zranění se pak rozdělí rovnoměrně mezi všechny cíle.\nFyzický efekt kouzla se projevuje silným Krvácením z nosu, uší, úst a někdy i očí (pokud bylo Zranění vyšší). Na mentální úrovni znamená obvykle hluboký psychický otřes, strach a paniku.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Další hraničářská kouzla (od 6. úr.)"
+   ]
+  },
+  {
+   "id": "uklidni_zvire",
+   "nazev": "Uklidni zvíře",
+   "strana": 72,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "dotyk",
+    "rozsah": "zvíře",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "10",
+    "vyzaduje": "Hraničářův kůň"
+   },
+   "popis": "Očaruješ jezdecké zvíře tak, aby potlačilo své zvířecí instinkty a strach. Zvíře ti pak věří, poslouchá tě a nepropadá panice. Pokud bylo navíc pod vlivem kouzla nebo nějaké stresující situace, její negativní efekt odezní nebo se utlumí. Pohoda a poslušnost zvířete pak přetrvá po celou dobu fungování kouzla.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského koně"
+   ]
+  },
+  {
+   "id": "uzdrav_tezka_zraneni",
+   "nazev": "Uzdrav těžká zranění",
+   "strana": 72,
+   "parametry": {
+    "dusevni_sila": "6",
+    "dosah": "dotek",
+    "rozsah": "1 živý tvor",
+    "trvani": "ihned",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Magie přírody"
+   },
+   "popis": "Hraničář dokáže tímto kouzlem uzdravit Zranění za 3k6+4 životů. Léčení lze provádět vždy nejvýše do maxima počtu životů daného tvora.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Další hraničářská kouzla (od 6. úr.)"
+   ]
+  },
+  {
+   "id": "zvireci_posel",
+   "nazev": "Zvířecí posel",
+   "strana": 72,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "10 sáhů",
+    "rozsah": "zvíře",
+    "trvani": "-",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Hraničářův kůň"
+   },
+   "popis": "Tímto kouzlem dokáže Hraničář vyslat svého koně na vybrané místo. Podmínkou je, aby hraničář nebo kůň toto místo sám někdy dříve navštívil. Případně, aby bylo možné aspoň přibližně určit jeho polohu z vyprávění či mapy. Kůň pak podvědomě vycítí směr, kterým jít a udělá vše proto, aby na místo došel. Pokud uspěje, obvykle si nejprve odpočine a pak se vydá zpět za hraničářem.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Hraničářského koně"
+   ]
+  },
+  {
+   "id": "jedova_past",
+   "nazev": "Jedová past",
+   "strana": 76,
+   "parametry": {
+    "dusevni_sila": "2",
+    "zaklad": "houby",
+    "rozsah": "kruh o poloměru 2 sáhy",
+    "vyroba": "8 kol",
+    "obtiznost": "14 (Pouto s přírodou)"
+   },
+   "popis": "Chodec rozmístí na vybrané místo jedovaté houby a opatrně je zakryje listím nebo hlínou. Pokud někdo projde v těsné blízkosti pasti, aktivuje ji. Dojde tak k vychrlení oblaku jedovatých spor, které se hustě rozptýlí po okolí. Zasažený tvor si hází na ověření ODO vs. 8 a pokud neuspěje, je otráven za 1k6 životů. Otrava se pak projevuje ještě další 3 kola.",
+   "typ": "past",
+   "skupiny": [
+    "Magické pasti"
+   ]
+  },
+  {
+   "id": "svazujici_past",
+   "nazev": "Svazující past",
+   "strana": 76,
+   "parametry": {
+    "dusevni_sila": "6",
+    "zaklad": "lano, vlákno obřích pavouků, popínavá rostlina",
+    "rozsah": "kruh o poloměru 2 sáhy",
+    "vyroba": "5 kol",
+    "obtiznost": "14 (Pouto s přírodou)"
+   },
+   "popis": "Chodec najde vhodnou puklinu, ať už ve stromě nebo kameni, do které vtěsná kusy vlákna, popínavky nebo silné pavučiny. Jakmile někdo projde v těsné blízkosti pasti, dojde k jejímu spuštění. Na cíl je tak vržena připravená nástraha iniciovaná manou.\nPokud tvor neuspěje v ověřovacím hodu na Reflex (OBR) vs. 10, je znehybněn na 10 kol. V každém dalším kole se pak může pokusit stejným hodem osvobodit. Past dokáže ochromit cíl nejvýše do velikosti C (včetně).",
+   "typ": "past",
+   "skupiny": [
+    "Magické pasti"
+   ]
+  },
+  {
+   "id": "varovna_past",
+   "nazev": "Varovná past",
+   "strana": 77,
+   "parametry": {
+    "dusevni_sila": "1",
+    "zaklad": "suché větvičky",
+    "rozsah": "plocha o poloměru 5 sáhů",
+    "vyroba": "1 minuta",
+    "obtiznost": "14 (Pouto s přírodou)"
+   },
+   "popis": "Chodec vyrobí past, která při narušení vydá velmi silný praskavý zvuk slyšitelný až na vzdálenost 100 sáhů.\nVýhodou této pasti je její nenápadnost. Poloha větví na zemi vypadá přirozeně. Nelze tak rozeznat, že je v nich přítomna magie, která hluk násobí. Dotyčný, který past spustí, tak obvykle přisuzuje všechen lomoz své nešikovnosti. Teoreticky si dokáže pasti všimnout zkušený Hraničář (Postřeh vs. 15) nebo ten, kdo ovládá schopnost Magické pasti (automatický úspěch).",
+   "typ": "past",
+   "skupiny": [
+    "Magické pasti"
+   ]
+  },
+  {
+   "id": "vrestik",
+   "nazev": "Vřeštík",
+   "strana": 77,
+   "parametry": {
+    "dusevni_sila": "5",
+    "zaklad": "bodláky či jiné přilnavé rostliny",
+    "rozsah": "plocha o poloměru 2 sáhy",
+    "vyroba": "5 kol",
+    "obtiznost": "14 (Pouto s přírodou)"
+   },
+   "popis": "Chodec uchytí na vybrané místo bodláčí, pálivý list či jiné přilnavé rostliny. Pokud nějaký tvor projde v jeho těsné blízkosti, past se aktivuje. Pokud tvor neuspěje v ověřovacím hodu na Reflex (OBR) vs. 10, nástraha se na dotyčném zachytí a začne vylučovat jed.\nPůvod jedu vřeštíku je magický. Vyvolává intenzivní pocit pálení, jako by byl dotyčný poléván vroucí vodou či olejem. Není divu, že jeho oběti řvou bolestí (odtud ostatně pochází i jeho název). Ve skutečnosti však jed nepůsobí žádné skutečné Zranění. Pro neznalého to však není na první pohled zřejmé. Viditelným následkem je bolestivé zarudnutí kůže a puchýře.\nÚčinek jedu přetrvává tak dlouho, dokud jsou rostliny přilepené na oběti. Odstranit nalepenou rostlinu vyžaduje úspěch v ověřovacím hodu na OBR vs. 12. Rostlina se jinak sama uvolní zhruba po hodině.",
+   "typ": "past",
+   "skupiny": [
+    "Magické pasti"
+   ]
+  },
+  {
+   "id": "vybusna_past",
+   "nazev": "Výbušná past",
+   "strana": 77,
+   "parametry": {
+    "dusevni_sila": "7",
+    "zaklad": "pryskyřice",
+    "rozsah": "plocha o poloměru 5 sáhů",
+    "vyroba": "1 minuta",
+    "obtiznost": "14 (Pouto s přírodou)"
+   },
+   "popis": "Chodec přilepí na vybraný kámen, strom či jiný povrch speciální pryskyřici. Ta je iniciována manou a ve tmě vydává slabou zlatavou záři. Pokud někdo projde v bezprostřední blízkosti pasti, dojde k explozi, která zraní všechny v dosahu za 2k6 životů. Výbuch navíc dokáže zapálit hořlavé věci.",
+   "typ": "past",
+   "skupiny": [
+    "Magické pasti"
+   ]
+  },
+  {
+   "id": "vyskakujici_koliky",
+   "nazev": "Vyskakující kolíky",
+   "strana": 77,
+   "parametry": {
+    "dusevni_sila": "6",
+    "zaklad": "větve",
+    "rozsah": "plocha o poloměru 5 sáhů",
+    "vyroba": "1 minuta",
+    "obtiznost": "14 (Pouto s přírodou)"
+   },
+   "popis": "Chodec připraví kruh plný ostrých kůlu a větví, který následně zamaskuje. Jakmile do něj někdo vstoupí, dojde k iniciaci many. Po vteřině jsou tak všechny nastražené předměty vyvrženy velkou silou vzhůru. Každý, kdo je v okamžiku aktivace pasti uvnitř kruhu, je zraněn za 2k6 životů.",
+   "typ": "past",
+   "skupiny": [
+    "Magické pasti"
+   ]
+  },
+  {
+   "id": "bleskovy_vypad",
+   "nazev": "Bleskový výpad",
+   "strana": 79,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "ihned",
+    "vyvolani": "ihned, v útoku",
+    "obtiznost": "14",
+    "vyzaduje": "Magie lovců monster"
+   },
+   "popis": "Chodec využije svou Duševní sílu k extrémně rychlému výpadu. Útok je natolik překvapivý, že ho obránce nemusí ani zaregistrovat. Pokud neuspěje v ověřovacím hodu na Reflex (OBR) vs. Pouto s přírodou (INT) Chodce, nemůže se aktivně bránit. V takovém případě je Útok veden jen proti jeho Základní obraně (ZO). V opačném případě se může bránit běžným způsobem.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lovců monster"
+   ]
+  },
+  {
+   "id": "dvojity_svih",
+   "nazev": "Dvojitý švih",
+   "strana": 79,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "ihned",
+    "vyvolani": "ihned, v útoku",
+    "obtiznost": "14",
+    "vyzaduje": "Magie lovců monster"
+   },
+   "popis": "Tímto kouzlem dokáže Chodec provést v daném kole o jeden útok navíc. Kouzlo lze aplikovat pouze na zbraně pro boj tváří v tvář.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lovců monster"
+   ]
+  },
+  {
+   "id": "falesna_stopa",
+   "nazev": "Falešná stopa",
+   "strana": 79,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "500 sáhů",
+    "rozsah": "kámen/větev/přírodní předmět",
+    "trvani": "1 směna",
+    "vyvolani": "3 kola",
+    "obtiznost": "8",
+    "vyzaduje": "Chodecká magie"
+   },
+   "popis": "Chodec může očarovat přírodní materiál (obvykle menší kámen či větev) tak, aby se kutálela po zemi a vytvářela zdání falešných stop (zválená, často používaná stezka).\nPo seslání kouzla určí Chodec směr, kterým se má předmět přesouvat a ten tak rychlostí pomalé chůze učiní. Svým pohybem pak obvykle spolehlivě ohne větvičky, trávu, promáčkne zem, jako by tímto směrem někdo nedávno prošel. Jestliže narazí na překážku, kterou nedokáže silou překonat, odkulí se stranou a snaží se nejkratší cestou pokračovat k místu, které určil Chodec.\nFalešná stopa je dlouhá přibližně 500 sáhů. Pronásledovatelé mají šanci, že ji odhalí - ověření Stopování (INT) vs. Pouto s přírodou (INT) Chodce.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Chodecká magie"
+   ]
+  },
+  {
+   "id": "mateni_pachu",
+   "nazev": "Matení pachů",
+   "strana": 79,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 hodina",
+    "vyvolani": "2 kola",
+    "obtiznost": "12",
+    "vyzaduje": "Chodecká magie"
+   },
+   "popis": "Tímto kouzlem může Chodec zmást všechny, kteří sledují jeho pach (smečka, medvědi, monstra atd.). Kouzlo má dva způsoby použití.\nPrvní varianta umožňuje Chodci, aby napodobil pach někoho jiného. Podmínkou je, že měl možnost se daného tvora někdy dříve dotknout nebo cítit jeho pach. Lze tak třeba předstírat přítomnost medvěda, která odradí šelmy od pronásledování.\nDruhá varianta nabízí Chodci možnost „přehodit“ svůj pach na někoho jiného. Stačí, aby se ho jen letmo dotkl. Dotyčný si toho obvykle nemusí být ani vědom, ale pronásledovatelé pak pokračují v jeho stopách.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Chodecká magie"
+   ]
+  },
+  {
+   "id": "mateni_stop",
+   "nazev": "Matení stop",
+   "strana": 79,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "1 hodina",
+    "vyvolani": "2 kola",
+    "obtiznost": "12",
+    "vyzaduje": "Chodecká magie"
+   },
+   "popis": "S pomocí tohoto kouzla dokáže Chodec změnit vzhled stop. Ty pak vypadají jako otisky jiné osoby nebo tvora. Chodec může přesně napodobit stopy, které už viděl nebo vyrábět takové, jaké sám chce.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Chodecká magie"
+   ]
+  },
+  {
+   "id": "oci_prirody",
+   "nazev": "Oči přírody",
+   "strana": 80,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "1 míle",
+    "rozsah": "kámen",
+    "trvani": "den",
+    "vyvolani": "10 kol",
+    "obtiznost": "12",
+    "vyzaduje": "Chodecká magie"
+   },
+   "popis": "Tímto kouzlem dokáže Chodec sledovat prostor pomocí očarovaného kamene. Stačí, aby se s ním myšlenkou spojil (je-li v dosahu) a může pozorovat jeho okolí ve všech směrech. V tomto stavu je Chodec v částečném transu a nevnímá tak věci kolem sebe. Může však své pozorování kdykoliv přerušit a vrátit se do reality.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Chodecká magie"
+   ]
+  },
+  {
+   "id": "ocisteni",
+   "nazev": "Očištění",
+   "strana": 80,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "-",
+    "rozsah": "Chodec",
+    "trvani": "10 kol",
+    "vyvolani": "půl kola",
+    "obtiznost": "10",
+    "vyzaduje": "Soustředění Duševní síly"
+   },
+   "popis": "Chodec dokáže „očistit“ svou mysl, aby byla odolnější vůči psychickým kouzlům a útokům. Po celou dobu trvání kouzla má tak Výhodou (bonus +5) ke všem ověřovacím hodům na Vůli.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Soustředění Duševní síly"
+   ]
+  },
+  {
+   "id": "odrazeni_kouzla",
+   "nazev": "Odražení kouzla",
+   "strana": 80,
+   "parametry": {
+    "dusevni_sila": "3+X (z Chodcova meče)",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "ihned",
+    "vyvolani": "ihned, v obraně",
+    "obtiznost": "16",
+    "vyzaduje": "Magie Chodcova meče"
+   },
+   "popis": "Chodec dokáže čepelí svého meče odrazit kouzla divoké magie (blesky a podobně). Podmínkou je, že jde o cílená, nikoliv plošná kouzla. Ostří čepele se v tu chvíli podobá temně černému zrcadlu.\nAby v odražení uspěl, musí v ověřovacím hodu na Pouto s přírodou (INT) vs. Sesílání kouzel (INT) překonat výsledek sesílajícího kouzelníka. Uspěje-li, je proud magie odkloněn stranou. Jestliže je navíc výsledek jeho hodu o 5 vyšší, než byla jeho obtížnost, může sám určit, na jaké místo chce kouzlo odrazit.\nOdražení kouzla stojí Chodce jednu Aktivní obranu a lze ho použít i v reakci na protivníkem seslané kouzlo.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Chodcova meče"
+   ]
+  },
+  {
+   "id": "srazeni_projektilu",
+   "nazev": "Sražení projektilu",
+   "strana": 80,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "ihned",
+    "vyvolani": "ihned, v obraně",
+    "obtiznost": "10",
+    "vyzaduje": "Magie lovců monster"
+   },
+   "popis": "Tímto kouzlem dokáže Chodec zneškodnit projektily letící proti němu. Prostě je svým mečem srazí jiným směrem. Projektily jsou míněny drobné předměty (šípy, šipky, vržená dýka, kámen a podobně).\nAby Chodec uspěl, musí mít v daném kole ještě možnost aktivní obrany. V takovém případě si proti útoku nehází. Kouzlo se totiž o vše postará.\nDŮLEŽITÉ: Použití kouzla je nutné oznámit ještě před začátkem dané obranné akce",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lovců monster"
+   ]
+  },
+  {
+   "id": "posileni_zbrane",
+   "nazev": "Posílení zbraně",
+   "strana": 80,
+   "parametry": {
+    "dusevni_sila": "X (z Chodcova meče)",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "3 kola",
+    "vyvolani": "1 kolo",
+    "obtiznost": "8 (+1 za každé další)",
+    "vyzaduje": "Magie Chodcova meče"
+   },
+   "popis": "Chodec může využít magii k posílení Útočnosti (ÚZ) či Obrany (OZ) zbraně. Kouzlem lze posílit vždy jen jednu z hodnot. Každé její zvýšení o +1 vyžaduje jeden bod many z meče.\nMaximální hodnota, na kterou lze ÚČ či OZ posílit, odpovídá dvojnásobku jejich základu.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Chodcova meče"
+   ]
+  },
+  {
+   "id": "poskozeni_zbrane",
+   "nazev": "Poškození zbraně",
+   "strana": 80,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "1 kolo",
+    "vyvolani": "ihned, v útoku",
+    "obtiznost": "14",
+    "vyzaduje": "Magie lovců monster"
+   },
+   "popis": "S pomocí tohoto kouzla dokáže Chodec poškodit či zničit protivníkovu nemagickou zbraň.\nPokud by v daném kole svým útokem protivníka zranil (jeho útok je silnější než protivníkova obrana), dojde místo zranění k trvalému poškození zbraně. Míra poškození se určí dle síly útoku. Za každých 10 „načatých“ životů, klesá Útočnost i Obrana zbraně o 1.\nJakmile klesne hranice kterékoli hodnoty zbraně na nulu, je nenávratně zničená a nepoužitelná.\nPŘÍKLAD: Jestliže Chodcův útok při použití kouzla způsobí „zranění“ za 1 život, poškodí se Útočnost i Obrana zbraně o 1 bod. Jestliže by „zranění“ bylo větší (třeba 15), sníží se o 2 body atd.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lovců monster"
+   ]
+  },
+  {
+   "id": "prizpusobeni",
+   "nazev": "Přizpůsobení",
+   "strana": 81,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "-",
+    "rozsah": "Chodec",
+    "trvani": "10 kol",
+    "vyvolani": "ihned, lze v obraně",
+    "obtiznost": "10",
+    "vyzaduje": "Soustředění Duševní síly"
+   },
+   "popis": "Chodec dokáže své tělo na velmi krátkou dobu přizpůsobit extrémním podmínkám (požár, sněhová bouře, otrava a podobně). Po dobu trvání kouzla tak získá Výhodu (bonus +5) ke všem ověřovacím hodům na Odolnost (ODO).",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Soustředění Duševní síly"
+   ]
+  },
+  {
+   "id": "transmutace_zbrane",
+   "nazev": "Transmutace zbraně",
+   "strana": 81,
+   "parametry": {
+    "dusevni_sila": "2 (z Chodcova meče)",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "stálé",
+    "vyvolani": "1 kolo",
+    "obtiznost": "10",
+    "vyzaduje": "Magie Chodcova meče"
+   },
+   "popis": "Magie meče dokáže změnit jeho strukturu. Čepel tak dokáže vykazovat podobné vlastnosti, jako by byla z čistého stříbra, zlata, nebo meteorické oceli. Záleží na Chodci, jaký druh kovu při proměně zvolí.\nPůvodní atributy zbraně se proměnou nijak nemění. Je však šance, že vybraný materiál pronikne slabinou daného monstra (stříbro si dokáže poradit s nemrtvými, lykantropy a podobně).\nČepel zůstává v proměněném stavu až do okamžiku případné další proměny. Chce-li ji tedy Chodec v původním stavu, musí kouzlo použít opakovaně.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Chodcova meče"
+   ]
+  },
+  {
+   "id": "uhrancivy_pohled",
+   "nazev": "Uhrančivý pohled",
+   "strana": 81,
+   "parametry": {
+    "dusevni_sila": "5",
+    "dosah": "10 sáhů",
+    "rozsah": "1 bytost",
+    "trvani": "3 kola",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16",
+    "vyzaduje": "Chodecká magie"
+   },
+   "popis": "Chodec se upřeně zahledí na svůj cíl a pokusí se v něm probudit vnitřní strach. Jestliže uspěje v ověřovacím hodu na Vůle (CHAR) vs. Vůle (CHAR) cíle, bude vůči němu oběť cítit velký respekt a bázeň a zároveň utrpí Nevýhodu (postih -5) k Útoku (ÚČ), Obraně (OČ) i Sesílání kouzel, které by směřovaly proti Chodci.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Chodecká magie"
+   ]
+  },
+  {
+   "id": "utuzeni",
+   "nazev": "Utužení",
+   "strana": 81,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "-",
+    "rozsah": "hraničář",
+    "trvani": "ihned",
+    "vyvolani": "ihned, lze použít v každé obraně",
+    "obtiznost": "10",
+    "vyzaduje": "Soustředění Duševní síly"
+   },
+   "popis": "Hraničář dokáže soustředěním Duševní síly utužit vybrané místo na svém těle. Tím sníží případné Zranění, které je mu v daném kole způsobeno o 8 životů. Nikdy ho však nedokáže utlumit úplně. Každé Zranění způsobí ztrátu aspoň 1 života.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Soustředění Duševní síly"
+   ]
+  },
+  {
+   "id": "uvolneni",
+   "nazev": "Uvolnění",
+   "strana": 82,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "-",
+    "rozsah": "Chodec",
+    "trvani": "10 kol",
+    "vyvolani": "půl kola",
+    "obtiznost": "10",
+    "vyzaduje": "Soustředění Duševní síly"
+   },
+   "popis": "Po krátkém soustředění získá Chodec bonus +2 ke své opravě za Sílu (SIL) a Obratnost (OBR) +2. V rozšířeném soubojovém systému získá navíc i bonus +2 ke své Iniciativě.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Soustředění Duševní síly"
+   ]
+  },
+  {
+   "id": "virive_ostri",
+   "nazev": "Vířivé ostří",
+   "strana": 82,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotek",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "ihned",
+    "vyvolani": "ihned, v útoku",
+    "obtiznost": "12",
+    "vyzaduje": "Magie lovců monster"
+   },
+   "popis": "Tímto kouzlem dokáže Chodec rozpohybovat svou zbraň natolik, že se jeví jako obtížně postřehnutelná šmouha. Získává tak při Útoku (ÚČ) s ní Výhodu (bonus +5).",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lovců monster"
+   ]
+  },
+  {
+   "id": "zablesk",
+   "nazev": "Záblesk",
+   "strana": 82,
+   "parametry": {
+    "dusevni_sila": "3 (z Chodcova meče)",
+    "dosah": "dotek",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "ihned",
+    "vyvolani": "ihned, v útoku",
+    "obtiznost": "12",
+    "vyzaduje": "Magie Chodcova meče"
+   },
+   "popis": "Toto kouzlo lze využít jen tehdy, je-li v okolí Chodce aspoň nějaký zdroj světla. To lze následně, pomocí kouzla a správného natočeného ostří, proměnit v oslnivý záblesk,\nOslněný protivník má na dobu 1k6 kol automaticky Nevýhodu (postih -5) k Útoku (ÚČ) i Obraně (OČ), stejně jako ke všem akcím vyžadujícím zrak.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Chodcova meče"
+   ]
+  },
+  {
+   "id": "zaceleni",
+   "nazev": "Zacelení",
+   "strana": 82,
+   "parametry": {
+    "dusevni_sila": "1",
+    "dosah": "-",
+    "rozsah": "Chodec",
+    "trvani": "10 kol",
+    "vyvolani": "ihned, lze v obraně",
+    "obtiznost": "10",
+    "vyzaduje": "Soustředění Duševní síly"
+   },
+   "popis": "Tímto kouzlem může Chodec dočasně zastavit Krvácení. Vyvolá v těle stav podobný šoku, který neumožní, aby se krev z rány řinula. Po deseti kolech však efekt odezní a pokud není rána ošetřena, pokračuje Krvácení v plné síle.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Soustředění Duševní síly"
+   ]
+  },
+  {
+   "id": "zivelne_ostri",
+   "nazev": "Živelné ostří",
+   "strana": 82,
+   "parametry": {
+    "dusevni_sila": "3 za kolo (z Chodcova meče)",
+    "dosah": "dotyk",
+    "rozsah": "Chodcova zbraň",
+    "trvani": "dle dodané Duševní síly",
+    "vyvolani": "1 kolo",
+    "obtiznost": "14",
+    "vyzaduje": "Magie Chodcova meče"
+   },
+   "popis": "Chodec očaruje ostří své zbraně tak, že ho obklopí plameny nebo namodralá krusta ledu. Pokud jím někoho zasáhne, způsobí mu dodatečně zraní za 1k6 životů.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie Chodcova meče"
+   ]
+  },
+  {
+   "id": "obri_rust",
+   "nazev": "Obří růst",
+   "strana": 88,
+   "parametry": {
+    "dusevni_sila": "2 za každý sáh",
+    "dosah": "dotyk",
+    "rozsah": "1 rostlina",
+    "trvani": "stálé",
+    "vyvolani": "10 kol",
+    "obtiznost": "10",
+    "vyzaduje": "Magie přírody",
+    "zaklad": "semínko nebo plod rostliny"
+   },
+   "popis": "Tímto kouzlem dokáže Druid urychlit růst vybrané rostliny. Ta během doby vyvolání vyroste do své maximální přirozené výšky. Druid ji však může do jisté míry tvarovat, kroutit a přetvářet. Lze tak dosáhnout toho, že zatarasí cestu, vytvoří úkryt a podobně. Cena kouzla je závislá na cílové velikosti rostliny.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "poskytni_pribytek",
+   "nazev": "Poskytni příbytek",
+   "strana": 88,
+   "parametry": {
+    "dusevni_sila": "3+X",
+    "dosah": "dotyk",
+    "rozsah": "1 strom",
+    "trvani": "6 + X hodin + dle použité Duševní síly",
+    "vyvolani": "10 kol",
+    "obtiznost": "10",
+    "vyzaduje": "kůra stromu"
+   },
+   "popis": "Druid požádá přírodu, aby mu na vybraném místě vytvořila z rostlin příbytek. Větve stromů se tak ohnou do tvaru střechy, prorostou hustým listím a popínavé rostliny vytvoří stěny. Velikost příbytku je kopule o poloměru 3 sáhů. V příbytku je příjemné teplo, neprší do něj, ani nefouká.\nDélka trvání kouzla je ovlivněna množstvím Duševní síly v něm. Za každý dodatečný bod navíc se efekt prodlužuje o hodinu.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "pozehnani_prirody",
+   "nazev": "Požehnání přírody",
+   "strana": 88,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "dotyk",
+    "rozsah": "1 bytost",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Magie přírody",
+    "zaklad": "ratolest stromu"
+   },
+   "popis": "Druid vezme do ruky ratolest stromu, přiloží ji nad vybraného tvora a pronese zaříkání. Takto očarovaná bytost získá dočasně posílení některé ze svých vlastností. Efekt kouzla se liší podle druhu použité větvičky.\n• Buk zvýší bonus za SIL o 2\n• Jasan zvýší bonus za OBR o 2\n• Dub zvýší bonus za ODO o 2\n• Třešeň zvýší bonus za CHAR o 2\nV jeden okamžik nelze na vybraného tvora seslat víc než jedno požehnání. Pokud by k tomu došlo, efekt předchozího kouzla okamžitě odezní.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "probuzeni_hvozdu",
+   "nazev": "Probuzení hvozdu",
+   "strana": 89,
+   "parametry": {
+    "dusevni_sila": "X",
+    "dosah": "dotyk",
+    "rozsah": "hvozd",
+    "trvani": "-",
+    "vyvolani": "1 směna",
+    "obtiznost": "12",
+    "vyzaduje": "-",
+    "zaklad": "-"
+   },
+   "popis": "Toto je jedno z nejnebezpečnějších kouzel Druida. Navyšuje totiž energii, která se ve hvozdu střádá a může vést k jeho procitnutí. Dojde-li k tomu, větve stromů se prohnou pod náporem neviditelného vichru, k zemi se snese sprška listí a zvěř začne vyděšeně prchat. Pak buď vše zdánlivě ustane, nebo se celá situace ještě zhorší.\nProvedením kouzla se veškerá Duševní síla, kterou do něj Druid vložil, „přelije“ do probouzecí many hvozdu. Jestliže její množství překročí kritickou úroveň (viz kapitola Stupně probuzenosti hvozdu na str. 86), dojde k probuzení hvozdu na vyšší stupeň procitnutí.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "prilnavost_brectanu",
+   "nazev": "Přilnavost břečťanu",
+   "strana": 89,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotyk",
+    "rozsah": "50 sáhů",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "8",
+    "vyzaduje": "Magie přírody",
+    "zaklad": "list popínavé rostliny"
+   },
+   "popis": "Druid v ruce rozmačká list břečťanu nebo jiné popínavé rostliny. Z takto rozdrcených zbytků okamžitě vyraší až padesát sáhů dlouhé liány. Ty s přehledem unesou váhu plně naloženého člověka. Liány se dokáží pnout a uchytávat podle požadavků Druida. Lze tak použít ke spojení věcí.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "privolej_druida",
+   "nazev": "Přivolej druida",
+   "strana": 89,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "50 mil",
+    "rozsah": "Hraničář",
+    "trvani": "ihned",
+    "vyvolani": "1 směna",
+    "obtiznost": "12",
+    "vyzaduje": "Magie přírody",
+    "zaklad": "dubový list"
+   },
+   "popis": "Tímto kouzlem se lze pokusit přivolat jiné Druidy. Pokud sesilatel chce, může jim navíc zanechat krátkou mentální zprávu (1 věta), která bude součástí vnuknutí.\nJakmile je kouzlo sesláno, vycítí Druidi, že je někdo volá a kde přesně se nachází. Je však jen na nich, zda a jak na výzvu zareagují.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "splynuti",
+   "nazev": "Splynutí",
+   "strana": 89,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotyk",
+    "rozsah": "1 tvor",
+    "trvani": "-",
+    "vyvolani": "půl kola",
+    "obtiznost": "10",
+    "vyzaduje": "Magie přírody",
+    "zaklad": "mech"
+   },
+   "popis": "Pomocí tohoto kouzla lze seslat na postavu přírodní maskování. Pakliže se vybraný tvor přitiskne k přírodní překážce (strom, skála atd.), jeho tělo změní barvu podle ní. Stává se tak takřka „nepostřehnutelným“. Má-li být odhalen, musí protivník uspět v ověřovacím hodu na Postřeh (INT) vs. Pouto s přírodou (INT) Druida.\nKouzlo trvá tak dlouho, dokud jej Druid nezruší nebo se očarovaný tvor nerozhodne odejít či provést nějaký prudký pohyb.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "trnovy_stit",
+   "nazev": "Trnový štít",
+   "strana": 90,
+   "parametry": {
+    "dusevni_sila": "5",
+    "dosah": "dotyk",
+    "rozsah": "1 štít/předmět",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "10",
+    "vyzaduje": "Magie přírody",
+    "zaklad": "semínka (růže nebo trnky)"
+   },
+   "popis": "Toto kouzlo lze seslat na vybraný předmět (obvykle štít), který následně obroste trnovými šlahouny. Ty zvyšují jeho KZ o 1. Kouzlo lze seslat i na zbroj, avšak způsobí postavě omezení pohybu. Má pak Nevýhodu (postih -5) k Útoku (ÚČ) i všem akcím vyžadujícím Obratnost, Je-li očarovaná drtivá zbraň, zvýší se její Zranění o 2. Trvá však jen poloviční dobu, než se její šlahouny poničí a odpadnou.\nPokud se postava s trnovým štítem aktivně brání a ubrání, způsobí útočníkovi automaticky Zranění za 1k6 životů.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "uklidneni_hvozdu",
+   "nazev": "Uklidnění hvozdu",
+   "strana": 90,
+   "parametry": {
+    "dusevni_sila": "X",
+    "dosah": "dotyk",
+    "rozsah": "hvozd",
+    "trvani": "-",
+    "vyvolani": "1 směna",
+    "obtiznost": "12",
+    "vyzaduje": "-",
+    "zaklad": "-"
+   },
+   "popis": "Uklidnění hvozdu patří mezi nejdůležitější druidská kouzla. Dokáže totiž bránit probuzení hvozdu tím, že z něj uvolní část nasbírané energie. Druid je schopen takto „odstranit“ tolik probouzecí many, jako je množství Duševní síly, které do kouzla vložil. Pro snížení stupně probuzenosti hvozdu se musí sejít aspoň 5 Druidů.\nPOZNÁMKA: Uspání vysoce probuzeného hvozdu bývá extrémně obtížné. Aby z něj Druidi dokázali uvolnit co nejvíc energie, volí často společný rituál na posvátném místě.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "uvadni",
+   "nazev": "Uvadni",
+   "strana": 90,
+   "parametry": {
+    "dusevni_sila": "1 za sáh velikosti",
+    "dosah": "dotyk",
+    "rozsah": "1 rostlina",
+    "trvani": "stále",
+    "vyvolani": "10 kol",
+    "obtiznost": "10",
+    "vyzaduje": "Magie přírody",
+    "zaklad": "rostlina obsahující manu"
+   },
+   "popis": "Podobně, jako dokáže Druid nechat rostliny vyrůst, umí je nechat i uvadnout. V takovém případě se z nich ztratí všechna životní síla a během krátké chvíle uschnou. Cena kouzla je závislá na tom, o jak velkou rostlinu se jedná.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidova kouzla"
+   ]
+  },
+  {
+   "id": "leciva_mast",
+   "nazev": "Léčivá mast",
+   "strana": 92,
+   "parametry": {
+    "dusevni_sila": "-",
+    "zaklad": "konopí, sádlo",
+    "trvani": "ihned",
+    "vyroba": "1 hodina",
+    "pouziti": "namazání",
+    "obtiznost": "10 (Znalost přírody) Počet: 10 namazání",
+    "vyzaduje": "Druidské odvary"
+   },
+   "popis": "Tato léčivá mast podporuje regeneraci organismu. Aplikuje se před spánkem na špatně se hojící rány, popáleniny, omrzliny, záněty a podobně. Po probuzení si postava vyléčí navíc 2k6 životů.",
+   "typ": "odvar",
+   "skupiny": [
+    "Dary přírody"
+   ]
+  },
+  {
+   "id": "odvar_z_bezoaru",
+   "nazev": "Odvar z bezoáru",
+   "strana": 92,
+   "parametry": {
+    "dusevni_sila": "-",
+    "zaklad": "bezoár, voda",
+    "trvani": "ihned",
+    "vyroba": "5 minut",
+    "pouziti": "pozření",
+    "obtiznost": "8 (znalost přírody)",
+    "vyzaduje": "Druidské odvary"
+   },
+   "popis": "Odvar z bezoáru očistí organismus od většiny přírodních jedů. Po požití tedy okamžitě odezní jejich účinek.",
+   "typ": "odvar",
+   "skupiny": [
+    "Dary přírody"
+   ]
+  },
+  {
+   "id": "odvar_jarni_dousek",
+   "nazev": "Odvar jarní doušek",
+   "strana": 92,
+   "parametry": {
+    "dusevni_sila": "4",
+    "zaklad": "hrst léčivých bylin, voda",
+    "trvani": "1 směna",
+    "vyroba": "1 směna",
+    "pouziti": "pozření",
+    "cetnost": "6 hodin",
+    "obtiznost": "12 (znalost přírody)",
+    "vyzaduje": "Druidské odvary"
+   },
+   "popis": "Jarní doušek je osvěžující odvar z léčivých bylin. Dovede zahnat únavu a povzbudit organismus. Tvor, který ho vypije si odstraní 5+ODO bodů únavy. Po dobu 5 hodin navíc nepotřebuje spát.",
+   "typ": "odvar",
+   "skupiny": [
+    "Dary přírody"
+   ]
+  },
+  {
+   "id": "odvar_letni_zar",
+   "nazev": "Odvar letní žár",
+   "strana": 92,
+   "parametry": {
+    "dusevni_sila": "5",
+    "zaklad": "hrst léčivých bylin, voda",
+    "trvani": "1 den",
+    "vyroba": "1 směna",
+    "pouziti": "pozření",
+    "cetnost": "1 den",
+    "obtiznost": "12 (znalost přírody)",
+    "vyzaduje": "Druidské odvary"
+   },
+   "popis": "Letní žár je odvar z bylin, který má výrazně kyselou chuť. Po vypití povzbudí celkové životní funkce tvora, což se projeví zvýšením jeho bonusu za SIL a OBR o 2. Vedlejším efektem je, že lehce povzbuzuje i libido konzumenta.",
+   "typ": "odvar",
+   "skupiny": [
+    "Dary přírody"
+   ]
+  },
+  {
+   "id": "odvar_podzimni_pomocnik",
+   "nazev": "Odvar podzimní pomocník",
+   "strana": 92,
+   "parametry": {
+    "dusevni_sila": "2",
+    "zaklad": "hrst léčivých bylin, voda",
+    "trvani": "1 směna",
+    "vyroba": "1 směna",
+    "pouziti": "pozření",
+    "cetnost": "1 den",
+    "obtiznost": "12 (znalost přírody)",
+    "vyzaduje": "Druidské odvary"
+   },
+   "popis": "Podzimní pomocník je hnědá kapalina vonící po skořici. Tvor, který ji vypije, se do druhého dne zbaví horečky a následků běžných krátkodobých nemocí. Během spánku si navíc doplní 1k6 životů.",
+   "typ": "odvar",
+   "skupiny": [
+    "Dary přírody"
+   ]
+  },
+  {
+   "id": "odvar_zimni_spac",
+   "nazev": "Odvar zimní spáč",
+   "strana": 92,
+   "parametry": {
+    "dusevni_sila": "6",
+    "zaklad": "hrst léčivých bylin, voda",
+    "trvani": "1 směna",
+    "ucinek": "ihned",
+    "vyroba": "1 směna",
+    "pouziti": "pozření",
+    "cetnost": "3 dny",
+    "obtiznost": "12 (znalost přírody)",
+    "vyzaduje": "Druidské odvary"
+   },
+   "popis": "Zimní spáč je odvar z velmi silných bylin, které jsou hořké jako pelyněk. Jeho vypití způsobí, že cíl okamžitě usne tvrdým spánkem. Ten lze přirovnat k hibernaci medvěda během zimy. Sníží se mu tak výrazně tep a jeho potřeba jídla i pití se omezí na minimum. Tvor se sám od sebe probudí až za 1 týden. Je ho však možné předčasně probudit násilím.",
+   "typ": "odvar",
+   "skupiny": [
+    "Dary přírody"
+   ]
+  },
+  {
+   "id": "bludny_koren",
+   "nazev": "Bludný kořen",
+   "strana": 95,
+   "parametry": {
+    "dusevni_sila": "5",
+    "dosah": "dotyk",
+    "rozsah": "1 kořen stromu/větvička",
+    "trvani": "1 den",
+    "vyvolani": "1 kolo",
+    "obtiznost": "10",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "kořen Probuzení: 1"
+   },
+   "popis": "Druid očaruje vybraný kořen nebo pohodí na zem očarovanou větvičku. Pokud kolem ní někdo projde (max 5 sáhů), musí uspět v ověřovacím hodu na Orientaci (INT) vs. 15, jinak se ztratí a bude chodit v kruhu. Po každé hodině bloudění se může postava pokusit o další ověřovací hod. Jeho obtížnost je vždy o 5 bodů nižší, než byla u předchozího hodu.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "dar_zivota",
+   "nazev": "Dar života",
+   "strana": 95,
+   "parametry": {
+    "dusevni_sila": "veškerá dostupná",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "ihned",
+    "vyvolani": "3 hodiny (nad ránem)",
+    "cetnost": "1× za rok",
+    "obtiznost": "31",
+    "vyzaduje": "Druidské rituály",
+    "zaklad": "léčivé byliny"
+   },
+   "popis": "Dar života je dechberoucí rituál, který začíná za temné noci a vrcholí až nad ránem. Všemu obvykle předchází sběr různých bylin, kterými se hustě pokryje obřadní kámen. Na toto „lůžko“ se pak uloží nahé tělo zemřelého. To se během obřadu omývá chladnou vodou z lesních pramenů. S příchodem nového dne, když se sluneční paprsky dotknou obřadního kamene, mrtvé tělo znovu ožije.\nTímto rituálem je možné vrátit život zemřelému. Podmínkou je, že má Druid k dotyčnému nějaké pouto. Musí jít o přítele, někoho, kdo je mu blízký a za koho by sám obětoval život. Dále platí, že dotyčný nesmí být mrtvý déle než měsíc a fyzické ostatky musí být z větší části pohromadě (nelze oživovat pouhé fragmenty, jako je samotná hlava a podobně, stejně jako tělo spálené na prach).\nJestliže byl rituál úspěšný, moc přírody zahojí všechny rány, propojí potrhané a poškozené části těla a mrtvý se probudí k životu. Cítí se jako po dlouhém a zvláštním snu. Bude však plně odpočatý a na maximu svých životů.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidské rituály"
+   ]
+  },
+  {
+   "id": "hnev_hvozdu",
+   "nazev": "Hněv hvozdu",
+   "strana": 95,
+   "parametry": {
+    "dusevni_sila": "22",
+    "dosah": "koule o poloměru 100 sáhů kolem Druida",
+    "rozsah": "vybraní tvorové v dosahu Trvaní: 5 kol",
+    "vyvolani": "1 kolo",
+    "obtiznost": "22",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Po seslání tohoto kouzla se v lese rozprostře nepřirozená temnota. Větve stromů zakryjí oblohu, hrozivě se kývají a vydávají praskavé zvuky. Druid si hodí na ověření Pouta s přírodou (INT) vs. Vůle (CHAR) všech cílů v dosahu. Každý z nich, kdo neuspěje, propadá panice a bude po dobu 5 kol utíkat jako o život.\nI ti, kteří kouzlu odolali nebo u nichž panika ustoupila se však budou v lese cítit velmi znepokojeně. Tento neklid se podepíše Nevýhodou (postih -5) ke všem jejich akcím.\nPokud Druid chce, může vybrané tvory z efektu kouzla vyjmout.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "koroze",
+   "nazev": "Koroze",
+   "strana": 96,
+   "parametry": {
+    "dusevni_sila": "10",
+    "dosah": "10",
+    "rozsah": "1 tvor",
+    "trvani": "3 kola (stálé)",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Druid se mocně nadechne a vyfoukne magický pyl směrem k nepříteli. Veškeré kovové materiály, kterých se pyl dotkne, začnou okamžitě korodovat. Každé kolo se tak trvale snižuje Útočnost i Obrana kovové zbraně, stejně jako Kvalita kovové zbroje a štítu o 1 bod.\nToto kouzlo je možné seslat i opakovaně. Jestliže Útočnost či Obrana zbraně nebo Kvalita zbroje či štítu klesnou na 0 a méně, předmět se rozpadne a je již dále nepoužitelný.\nTímto kouzlem lze rovněž napadat běžné kovové předměty, jako třeba zámek u truhly a podobně. Na magické zbraně a vybavení však nemá žádný vliv.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "laska_hvozdu",
+   "nazev": "Láska hvozdu",
+   "strana": 96,
+   "parametry": {
+    "dusevni_sila": "veškerá dostupná",
+    "dosah": "50 sáhů",
+    "rozsah": "1 tvor",
+    "trvani": "trvalé",
+    "vyvolani": "3 hodiny",
+    "cetnost": "1× za čtvrt roku",
+    "obtiznost": "26",
+    "vyzaduje": "Druidské rituály",
+    "zaklad": "jedlová chvoj, lesní plody"
+   },
+   "popis": "Láska lesa je rituál, který se koná za východu slunce. Účastníci obřadu se tedy sejdou ještě za tmy a uchystají místo. Na posvátné kameny je potřeba umístit obětiny v podobě lesních plodů a pletených věnců. Druidové odevzdají svou Duševní sílu hvozdu a celé místo se stane najednou barevnější a veselejší. Z dutin stromů vylétnou malé lesní dryády, poletuchy i jiné zapomenuté děti lesa, aby se staly jeho součástí. Na konci úspěšného rituálu se světlo stáhne k vybrané osobě a „uloží“ se v ní. Zbyde po něm hřejivý pocit síly a bezpečí.\nLáska lesa je požehnání samotného hvozdu. Ten, na koho je kouzlo sesláno, je tak pod jeho ochranou.\nZvířata ani tvorové hvozdu na něj v lese nezaútočí. Pokud by se o to pokusil někdo jiný, bude ho hvozd bránit všemi silami (dle stupně své probuzenosti).\nEfekt kouzla je obvykle trvalý a zruší se jen tehdy, pokud dotyčný ublíží hvozdu nebo jeho služebníkům.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidské rituály"
+   ]
+  },
+  {
+   "id": "listova_bourka",
+   "nazev": "Listová bouřka",
+   "strana": 96,
+   "parametry": {
+    "dusevni_sila": "6 za každé kolo",
+    "dosah": "40 sáhů",
+    "rozsah": "koule o poloměru 5 sáhů",
+    "trvani": "dle dodané Duševní síly",
+    "vyvolani": "1 kolo",
+    "obtiznost": "16",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "ratolest stromu/listí"
+   },
+   "popis": "Druid vyhodí do vzduchu hrst listí a přivolá silný poryv větru. Ten se přižene na vybranou oblast a zformuje se do podoby větrného víru. Následně do sebe nasaje drobné kameny a větve v okolí, čímž zraňuje všechny uvnitř za 2k6 životů v každém kole.\nTi, kdo neuspějí v ověřovacím hodu na Atletiku (SIL) vs. Pouto s přírodou (INT) Druida, jsou navíc zpomaleni. Jejich rychlost i pohyblivost se tak snižuje na polovinu.\nPokud by se někdo pokusil skrze zasaženou oblast střílet, má ke svému Útoku (ÚČ) Nevýhodu (postih -5).",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "najdi_bytost",
+   "nazev": "Najdi bytost",
+   "strana": 96,
+   "parametry": {
+    "dusevni_sila": "8",
+    "dosah": "5 mil",
+    "rozsah": "Druid",
+    "trvani": "ihned",
+    "vyvolani": "1 směna",
+    "obtiznost": "14",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Druid se ztiší a kouzlem spojí s duchy přírody. Ti mu pomohou určit přesnou polohu hledaného tvora. Při seslání kouzla je nutné specifikovat, koho Druid hledá. Funguje však i obecné zadání („Najděte mi nejbližšího člověka mimo tento palouk“ a podobně). Jestliže daný tvor v okolí není, duchové mlčí. Obecně však platí, že se mu snaží upřímně pomoci.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "nenavist_hvozdu",
+   "nazev": "Nenávist hvozdu",
+   "strana": 97,
+   "parametry": {
+    "dusevni_sila": "veškerá dostupná",
+    "dosah": "hvozd",
+    "rozsah": "1 tvor",
+    "trvani": "trvalé",
+    "vyvolani": "3 hodiny",
+    "cetnost": "1× za půl roku",
+    "obtiznost": "36",
+    "vyzaduje": "Druidské rituály",
+    "zaklad": "věc cíle, jedovaté plody"
+   },
+   "popis": "Nenávist hvozdu je pochmurný rituál, který se koná vždy o půlnoci. Účastníci nasbírají jedovaté byliny a plody, které se položí k posvátným menhirům. Na obětní kámen se pak vyleje trocha vody, v níž se po celou dobu obřadu zrcadlí podoba toho, na koho je kouzlo sesláno. Jakmile je po všem, je dotyčný proklet silami přírody a neúnavně trestán.\nTento rituál způsobí, že hvozd na dotyčného tvora pohlíží jako na největšího nepřítele. Pouhý pohyb v něm se tak stává smrtelně nebezpečným (více či méně, dle probuzenosti hvozdu). Obvykle je napadán zvířaty, bezdůvodně na něj padají větve, zakopává o kořeny a je takřka neustále zraňován. Sám dotyčný má pak z hvozdu neustálý pocit hrůzy a děsu.\nEfekt rituálu je trvalý, pokud není zrušen obřadem Láska lesa.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidské rituály"
+   ]
+  },
+  {
+   "id": "otevrena_naruc_lesa",
+   "nazev": "Otevřená náruč lesa",
+   "strana": 97,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "Druid",
+    "rozsah": "koule o poloměru 15 sáhů",
+    "trvani": "1 den",
+    "vyvolani": "5 kol",
+    "obtiznost": "10",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "list/větvička"
+   },
+   "popis": "Po seslání tohoto kouzla dokáže Druid vést družinu hustým lesem tak, jako by kráčela po kvalitní cestě. Je tedy velmi rychlá a dokáže dokonce přepravovat vůz. Větve uhýbají družině z cesty, kořeny se plazí stranou, křoviska se rozestupují a podobně. Za družinou se pak les znovu pomalu uzavírá.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "povolej_vily",
+   "nazev": "Povolej víly",
+   "strana": 97,
+   "parametry": {
+    "dusevni_sila": "4 za vílu",
+    "dosah": "Druid",
+    "rozsah": "5 mil",
+    "trvani": "1 den",
+    "vyvolani": "10 kol",
+    "obtiznost": "12",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "med lesních včel"
+   },
+   "popis": "Tímto kouzlem k sobě dokáže Druid přivolat lesní víly. Těch může být nejvýše tolik, jakou má Druid úroveň.\nVíly žijí všude tam, kde jsou rostliny s velkými květy, tedy v lesích, na lukách i v zahradách. Jsou to malé, asi 10 coulů vysoké bytosti s velkýma černýma očima. Jejich barva je zelená a mají lesklá, stříbřitě blanitá křídla. Kromě toho mají drobné, překvapivě ostré zoubky.\nŽivoty | 7\nÚroveň | 2\nAtributy | SIL 4 (-3), OBR 20 (+5), ODO 8 (-1), INT 8 (-1), CHAR 18 (+4)\nVelikost | A1\nPohyblivost | 40 (ve vzduchu)\nÚtočné číslo | (-3+3/+1+1/+0) = 1/+1 (zuby)\nZákl obrana | (5+1+0) = 6 (kůže)\nObranné číslo | (5+1+1) = 7 (kůže)\nRezistence | ovlivnění mysli, nemagické zbraně\nZvláštní schopnost | úder varování, uzdrav lehká zranění\nDovednosti | postřeh (7)\nPo svém přivolání jsou víly připraveny Druida chránit, jako by byl jednou z nich. Stejně tak budou automaticky napadat každého, kdo by chtěl ublížit lesu, hvozdu či rostlinám.\nVíly dokáží seslat 1× denně kouzlo Úder varování (PPZ H 1.1, strana 63) a Uzdrav lehká zranění (PPZ H 1.1, strana 63). Počet víl, jež tímto kouzlem Druid přivolá, závisí na množství Duševní síly, kterou do kouzla dá. Jakmile víly zaženou nepřátele Druida nebo jich víc než polovina zemře, odletí rychle zpět do svých květů.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "probuzeni_pastyre_lesa",
+   "nazev": "Probuzení Pastýře lesa",
+   "strana": 98,
+   "parametry": {
+    "dusevni_sila": "20",
+    "dosah": "dotyk",
+    "rozsah": "1 strom",
+    "trvani": "stálé",
+    "vyvolani": "1 směna",
+    "obtiznost": "22",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Druid dokáže tímto kouzlem iniciovat skryté vědomí hvozdu a stvořit z vybraného stromu Pastýře lesa. Oživlého zástupce prastaré rasy (viz Pastýř lesa, PPP - Pravidla pro vypravěče).\nProbuzení Pastýře lesa je velmi náročné. Jsou to totiž moudré živé bytosti, které mají vlastní rozum, city i vzpomínky. Při jejich úspěšném vyvolání Druid obětuje část své Duševní síly a sníží si její maximum natrvalo o 2 body.\nŽivoty | 80\nVelikost | D\nPohyblivost | 20\nÚtočné číslo | (5+6/+4+4/+2) = 15/+6 (větev) 2×\nZákl obrana | (-2+7+2) = 7 (dřevo)\nObranné číslo | (-2+7+4) = 9 (dřevo)\nRezistence | bodné a drtivé zranění\nImunita | jed, krvácení\nSlabina | oheň\nAčkoliv je Pastýř lesa po svém probuzení stále dítětem hvozdu, cítí ke svému stvořiteli velké přátelství. Pokud Druid chováním k němu nebo hvozdu nepokazí, vydrží jim na celý život. Díky tomu se Pastýř lesa bude snažit svému příteli pomoci, jak jen to bude možné. Dokáže sbírat informace, komunikovat se stromy a zvířaty a dokonce nosit různé předměty. Pohybuje se však poměrně pomalu a z hvozdu se vzdálí pouze po velmi obtížném přesvědčování.\nPastýři lesa dokáží používat přírodní magii a energii hvozdu. Jednou denně tak zvládnou seslat kterékoliv z kouzel Magie přírody.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "probuzeni_stromu",
+   "nazev": "Probuzení stromu",
+   "strana": 98,
+   "parametry": {
+    "dusevni_sila": "8",
+    "dosah": "dotek",
+    "rozsah": "1 strom",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "18",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Druid dokáže přivést k životu libovolný strom. Takto oživlé dřevo neoplývá žádnou zvláštní inteligencí. Je poháněno divokou silou přírody a jedná spíše pudově a nekontrolovaně. Za normální situace je přítomnost těchto bytostí prvním příznakem probuzeného hvozdu.\nPokud je strom Druidem probuzen, nechává svého stvořitele na pokoji. Stejně tak ignoruje i tvory, které mu Druid určí.\nStrom se obvykle pohybuje rychlostí běžné chůze. Nakrátko však dokáže zrychlit až do běhu, čímž si obvykle poláme pár větví. Takto rozběsněný pak bojuje, dokud je někdo okolo něj naživu.\nŽivoty | 68\nÚroveň | 4\nAtributy | SIL 20 (+5), OBR 1 (-5), ODO 2 (-1), INT 8 (-1), CHAR 18 (+4)\nVelikost | D-E\nPohyblivost | 5 (země)\nÚtočné číslo | (5+6/+4+2/+1) = 13/+5 (větve) 2×\nZákl obrana | (-5+9+1) = 5 (dřevo)\nObranné číslo | (-5+9+1) = 5 (dřevo)\nRezistence | bodné a drtivé zranění\nImunita | jed, krvácení, ovlivnění mysli",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "prochazeni_stromy",
+   "nazev": "Procházení stromy",
+   "strana": 99,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "Druid",
+    "rozsah": "stromy",
+    "trvani": "20 kol",
+    "vyvolani": "půl kola",
+    "obtiznost": "14",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "kůra stromu"
+   },
+   "popis": "Tímto kouzlem dokáže Druid procházet skrze stromy. Jejich hmota na něj působí podobně jako masa vody. Pohyb v nich je tedy pomalejší a obtížnější (čtvrtina Pohyblivosti Druida), ale nijak zvlášť ho neomezuje.\nPokud Druid do nějakého stromu vstoupí, je to pro něj, jako by „vešel do domu“. Může z něj vyhlížet ven a pozorovat okolí, ačkoli není sám vidět. Jestliže by Druid setrval ve stromě i po skončení trvání kouzla, bude z něj silou vypuzen.\nStrom, ve kterém je Druid ukrytý, působí navíc na citlivé tvory nepřirozeně. Pokud uspějí v ověřovacím hodu na Postřeh (INT) vs. Pouto s přírodou (INT) Druida, začnou z něj mít divný a nepříjemný pocit. Ti, kteří se s kouzly Druidů setkali nebo o nich slyšeli mohou původ toho všeho odhalit a adekvátně reagovat.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "privolej_bludicky",
+   "nazev": "Přivolej bludičky",
+   "strana": 100,
+   "parametry": {
+    "dusevni_sila": "6 (+6)",
+    "dosah": "dotek",
+    "rozsah": "5 mil",
+    "trvani": "1 den",
+    "vyvolani": "5 kol",
+    "obtiznost": "10",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "sušený blatouch (květina)"
+   },
+   "popis": "Druid dokáže očarovat vybrané místo tak, že k sobě začne lákat všechny bludičky (PPZ PJ 1.1, str. 99) z širokého okolí. Jejich počet je obvykle 2k6 kusů a objeví se nejpozději do jedné směny od seslání kouzla.\nBludičky nejsou příliš inteligentní. Neví, proč jsou k danému místu přitahovány, ale je jim tam dobře. Pokud se v okolí objeví nějaká oběť, pokusí se jí klasicky zmámit a odvést ji ke svému domovu.\nJestliže vloží Druid do kouzla dalších 6 bodů své Duševní síly, může vytvořit jedno místo, kam naláká bludičky a označit druhé místo, kam povedou svou oběť. Zmate totiž jejich mysl natolik, že budou ono místo považovat za svůj domov.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "snovy_mrak",
+   "nazev": "Snový mrak",
+   "strana": 100,
+   "parametry": {
+    "dusevni_sila": "8",
+    "dosah": "50 sáhů",
+    "rozsah": "koule o poloměru 3 sáhy",
+    "trvani": "3 kola",
+    "vyvolani": "2 kola",
+    "obtiznost": "14",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "suché květy"
+   },
+   "popis": "1-2 | Tvor zaútočí na nejbližšího tvora, bez ohledu na to, zda je to jeho přítel.\n3-5 | Tvor prchá z místa pryč.\n6-8 | Tvor utrží Nevýhodu (postih -5) ke všem svým akcím.\n9-10 | Účinek je slabý a nemá na tvora zásadní vliv.\nNa vybraném místě vyrostou během jednoho kola obří květy, ze kterých se rozptýlí „snový pyl“. Jestliže ho někdo vdechne, musí uspět v ověřovacím hodu na ODO vs. 8, jinak bude trpět následující 3 kola halucinacemi. Jaký vliv to na něj bude mít, zjistí dotyčný v tabulce po hodu 1k10.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "trnova_stena",
+   "nazev": "Trnová stěna",
+   "strana": 100,
+   "parametry": {
+    "dusevni_sila": "6+X",
+    "dosah": "30 sáhů",
+    "rozsah": "6+X sáhů",
+    "trvani": "1 den",
+    "vyvolani": "2 kola",
+    "obtiznost": "16",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Ze země vyraší propletená trnová stěna, která si najde pevné body a vytvoří neprostupnou překážku. Stěna je sáh široká, tři sáhy vysoká a šest sáhů dlouhá. Za každý dodatečný bod Duševní síly vložený do kouzla při vyvolání lze délku stěny o sáh prodloužit.\nŽivoty | 60+10 za každý další sáh\nZákl obrana | (0+7) = 7 (dřevo)\nRezistence | bodné a drtivé zranění\nImunita | jed, krvácení\nSlabina | oheň\nVětve trnové stěny jsou natolik husté, že přes ně nejde vidět. Neprojdou ji proto ani běžná kouzla divoké magie.\nPokud by chtěl stěnu někdo překonat, musí se buď prosekat nebo ji spálit. Prosekání jednoho sáhu zabere 3 kola. V každém z nich je dotyčný navíc zraněn trny za 1k6/2 životů. Spálení stejně velké oblasti zabere 10 kol, avšak bez rizika pobodání trny.\nPo skončení kouzla se zeď promění v hromadu drti a trní.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "uzdrav_lykantropii",
+   "nazev": "Uzdrav lykantropii",
+   "strana": 100,
+   "parametry": {
+    "dusevni_sila": "40",
+    "dosah": "dotyk",
+    "rozsah": "1 živý tvor",
+    "trvani": "ihned",
+    "vyvolani": "12 hodin (úplněk)",
+    "obtiznost": "25",
+    "vyzaduje": "Druidské rituály",
+    "zaklad": "zuby zvířete daného druhu, vlčí mor"
+   },
+   "popis": "Tento rituál začíná v pravé poledne přivázáním lykantropa k obřadnímu kameni nebo srdci hvozdu. Následně je celé okolí posypáno vlčím morem a bylinami. Celý rituál trvá 12 hodin a vrcholí o půlnoci hrůznou proměnou. Ta však tentokrát nedojde konce zvrátí se jednou provždy zpět.\nTímto rituálem se může Druid pokusit zrušit nákazu lykantropie. O úspěchu však rozhoduje síla vůle nakaženého. Ten musí na konci obřadu uspět v ověřovacím hodu na Vůli (CHAR) vs. Obtížnost nákazy, kterou zná Pán Jeskyně. Díky rituálu má navíc k výsledku Výhodu (bonus +5). Pokud uspěl, je uzdraven a proti lykantropii navždy imunní. V opačném případě lze rituál opakovat nejdříve při dalším úplňku (za měsíc).",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidské rituály"
+   ]
+  },
+  {
+   "id": "uzdrav_zmrzaceni",
+   "nazev": "Uzdrav zmrzačení",
+   "strana": 101,
+   "parametry": {
+    "dusevni_sila": "veškerá dostupná",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "ihned",
+    "vyvolani": "1 hodina (noc)",
+    "cetnost": "1× za půl roku",
+    "obtiznost": "31",
+    "vyzaduje": "Druidské rituály",
+    "zaklad": "kostival či jiné léčivé byliny"
+   },
+   "popis": "Tento rituál se provádí obvykle na jaře, kdy je síla přírody nejmocnější. Dá se tak využít k léčení těch nejtěžších zranění a obnově toho, co bylo ztraceno. Obřad se provádí za hluboké noci, během které ze země všude kolem vyraší zlatavé kvítky. Jejich omamná vůně uklidní mysl a tlumí bolest proměny, která přijde.\nDruid může tímto rituálem obnovit tok energie v těle. Ta pak zvládne „samovolně“ narovnat polámané kosti, opravit pořezané šlachy i nervy a podobně. Rituál má navíc takovou moc, že dokáže i nechat dorůst amputované či jinak zmrzačené orgány a končetiny.\nPo jeho úspěšném provedení se tak dotyčnému vyléčí 3k6+ODO životů a je mu případně uzdraveno jedno Druidem vybrané zmrzačení.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidské rituály"
+   ]
+  },
+  {
+   "id": "zapleteni",
+   "nazev": "Zapletení",
+   "strana": 101,
+   "parametry": {
+    "dusevni_sila": "6+2 za každý další sáh",
+    "dosah": "30 sáhů",
+    "rozsah": "koule o poloměru 3+X sáhů (dle dodané dušení síly)",
+    "trvani": "3 kola",
+    "vyvolani": "1 kolo",
+    "obtiznost": "18",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Druid dokáže silou kouzel oživit kořeny stromů. Ty jsou často v zemi ukryté i tam, kde už dávno žádné stromy nestojí. Pomocí kořenů pak může nechat polapit tvory v jejich okolí. Vždy však nejvýše bytosti velikosti C.\nPokud oběť neuspěje v ověřovacím hodu na Reflex (OBR) vs. Pouto s přírodou (INT) Druida, je uvězněna. Znamená to, že nemůže vykonávat žádnou pohybovou akci, tedy ani obranu. Její záda jsou navíc odkrytá a nepřítel, který toho využije, má k Útoku (ÚČ) Výhodu (bonus +5).\nUvěznění trvá tak dlouho, dokud se z něj oběť nevyprostí. Ověřovací hod lze provádět v každém kole.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "zestromovateni",
+   "nazev": "Zestromovatění",
+   "strana": 101,
+   "parametry": {
+    "dusevni_sila": "18",
+    "dosah": "dotyk",
+    "rozsah": "1 tvor",
+    "trvani": "stálé",
+    "vyvolani": "3 kola",
+    "obtiznost": "20",
+    "vyzaduje": "Magie hvozdu"
+   },
+   "popis": "Tímto kouzlem dokáže Druid proměnit jinou živou bytost ve strom. Jestliže oběť neuspěje v ověřovacím hodu na Pouto s přírodou (INT) vs. Vůle (CHAR) oběti, začnou se u ní projevovat první příznaky. Nejprve se několik hodin cítí unavená a snaží se najít si místo k odpočinku. Jakmile však usne, začne se měnit její vzhled. Pokožka získá šedozelenou barvu a později i vlastnosti stromové kůry. Místo vlasů vyraší listoví, její nohy se zkřiví a promění v kořeny. Po čtyřech hodinách je proměna dokončena a nešťastník se tak už neprobudí. Jedinou vzpomínkou na to, čím kdysi byl, je obrys tváře v kůře stromu.\nToto kouzlo (či spíše kletbu) může zrušit Druid rituálem Zruš zkamenění. Stejnou šanci má klerik s prosbou Odstraň kletbu (PPZ H 1.1, strana 150). Obtížnost je v obou případech 15.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie hvozdu"
+   ]
+  },
+  {
+   "id": "zmena_pocasi",
+   "nazev": "Změna počasí",
+   "strana": 102,
+   "parametry": {
+    "dusevni_sila": "10",
+    "dosah": "1 míle",
+    "rozsah": "kruh o poloměru 1 míle",
+    "trvani": "1 hodina",
+    "vyvolani": "1 směna",
+    "obtiznost": "14",
+    "vyzaduje": "Magie lesa",
+    "zaklad": "voda"
+   },
+   "popis": "Druid dokáže pomocí lesní magie ovlivnit počasí. Není to však snadné a nelze tak změnit slunný den v mrazivou bouřku. Jedno seslání kouzla dokáže upravit ráz počasí vždy jen o jeden stupeň (viz tabulka dále). Je-li kouzlo sesláno v době mrazu, je déšť nahrazen sněhem.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie lesa"
+   ]
+  },
+  {
+   "id": "zrus_zkameneni",
+   "nazev": "Zruš zkamenění",
+   "strana": 102,
+   "parametry": {
+    "dusevni_sila": "veškerá dostupná",
+    "dosah": "dotek",
+    "rozsah": "1 tvor",
+    "trvani": "ihned",
+    "vyvolani": "1 hodina (den)",
+    "cetnost": "1× za měsíc",
+    "obtiznost": "20",
+    "vyzaduje": "Druidské rituály",
+    "zaklad": "voda"
+   },
+   "popis": "Tento rituál lze provést jen za slunečného dne. Druid při něm rozloží na oltář různě velké oblázky, které polévá vodou. Toto omývání symbolizuje erozi, která dokáže zlomit sílu zkamenění. Jakmile se kameny vysuší a zjeví se na nich typická „kresba“, nastává čas „sloupnout“ kamennou kůži z nešťastníka.\nTímto rituálem lze zrušit efekt zkamenění a paralýzy. Dokáže si tak poradit nejen s následky řádění medúzy či baziliška, ale také s kletbami a kouzly.\nTropy | Nebe bez jediného mráčku a absolutní bezvětří.\nJasno | Jasné nebo polojasné nebe s mírným vánkem.\nDéšť | Zatažené nebe, ze kterého vytrvale prší a fouká mírný vítr.\nBouře | Těžká temná mračna plná blesků, provázená mohutnými poryvy větru a silnými proudy deště.\nBlizzard/ Hurikán | Viditelnost je naprosto minimální, poryvy větru strhávají i stabilní věci (stromy a podobně), déšť přechází ve zničující krupobití.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Druidské rituály"
+   ]
+  },
+  {
+   "id": "bojovny_rev",
+   "nazev": "Bojovný řev",
+   "strana": 107,
+   "parametry": {
+    "dusevni_sila": "5",
+    "dosah": "koule o poloměru 10 sáhů kolem Pána zvířat",
+    "rozsah": "zvířata smečky v dosahu",
+    "trvani": "3 kola",
+    "vyvolani": "ihned",
+    "obtiznost": "12",
+    "vyzaduje": "Divoké pokřiky"
+   },
+   "popis": "Pán zvířat vydá hlasitý zvířecí řev, kterým vyburcuje sílu a odhodlání svých druhů. Každý spojenec v dosahu kouzla tak získá bonus +1 na Útok (ÚČ) a Obranu (OČ). Tento efekt vydrží po dobu 3 kol. Pokud by byl během nich proveden znovu, prodlouží se délka jeho trvání.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Divoké pokřiky"
+   ]
+  },
+  {
+   "id": "chran",
+   "nazev": "Chraň",
+   "strana": 107,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "30 sáhů",
+    "rozsah": "smečka",
+    "trvani": "10 kol",
+    "vyvolani": "půl kola",
+    "obtiznost": "10",
+    "vyzaduje": "Magie smečky"
+   },
+   "popis": "Pán zvířat dokáže využít pouto smečky k jejímu semknutí. Každý její člen tak chrání slabšího. V praxi se to projevuje tak, že Útoky vedené proti slabšímu jedinci (tomu, který má menší počet životů) se bude snažit vykrýt jiný (silnější) člen smečky. Útok je tedy automaticky veden proti němu.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie smečky"
+   ]
+  },
+  {
+   "id": "desivy_rev",
+   "nazev": "Děsivý řev",
+   "strana": 107,
+   "parametry": {
+    "dusevni_sila": "5",
+    "dosah": "koule o poloměru 5 sáhů kolem Pána zvířat",
+    "rozsah": "vše živé v dosahu",
+    "trvani": "1 kolo",
+    "vyvolani": "ihned",
+    "obtiznost": "14",
+    "vyzaduje": "Divoké pokřiky"
+   },
+   "popis": "Pán zvířat se zhluboka nadechne a vydá ze sebe hlasitý řev běsnící šelmy. Je to zvuk tak děsivý, že útočí na základní instinkty každé živé bytosti. Všichni v dosahu, mimo smečku a družinu, si musí hodit na ověření Vůle (CHAR) vs. Pouto s přírodou (INT) Pána zvířat. Pokud neuspějí, jsou zastrašení a jejich bojová morálka opadne. Získají tedy na další kolo Nevýhodu (postih -5) k Iniciativě, Útoku (ÚČ) i Sesílání kouzel, či Proseb.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Divoké pokřiky"
+   ]
+  },
+  {
+   "id": "mimikry",
+   "nazev": "Mimikry",
+   "strana": 108,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotek",
+    "rozsah": "1 živý tvor",
+    "trvani": "1 hodina",
+    "vyvolani": "3 kola",
+    "obtiznost": "12",
+    "vyzaduje": "Pokročilá Magie zvířat"
+   },
+   "popis": "Pán zvířat vztáhne ruku na vybraný cíl a kouzlem ho donutí se přizpůsobit okolnímu prostředí. Živému tvoru se tedy změní barva chlupů a kůže tak, aby lépe splýval s okolní krajinou. To má za následek to, že vybraný tvor získá Výhodu (bonus +5) k dovednostem Kamufláž, Plížení a podobně. Toto kouzlo je funkční jen v přírodě.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Pokročilá Magie zvířat"
+   ]
+  },
+  {
+   "id": "nakrm_zvire",
+   "nazev": "Nakrm zvíře",
+   "strana": 108,
+   "parametry": {
+    "dusevni_sila": "1",
+    "dosah": "dotek",
+    "rozsah": "zvíře",
+    "trvani": "ihned",
+    "vyvolani": "3 kola",
+    "obtiznost": "10",
+    "vyzaduje": "Pokročilá Magie zvířat"
+   },
+   "popis": "Pán zvířat očaruje kus masa, či jinou dobrotu, kterou potom hodí svému zvířeti. Očarované jídlo má kromě běžného nasycení zvířete za následek i blahodárné léčivé účinky. Během následujícího plnohodnotného spánku se tak zvířeti vyléčí třikrát více životů, než je obvyklé.\nToto kouzlo neúčinkuje, pokud se zvíře dostatečně nevyspí. Efekt není možné sčítat dohromady jeho opakovaným sesíláním.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Pokročilá Magie zvířat"
+   ]
+  },
+  {
+   "id": "oci_zvirete",
+   "nazev": "Oči zvířete",
+   "strana": 108,
+   "parametry": {
+    "dusevni_sila": "2",
+    "dosah": "1 míle",
+    "rozsah": "zvíře",
+    "trvani": "1 směna",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Pokročilá Magie zvířat"
+   },
+   "popis": "Tímto kouzlem dokáže Pán zvířat „vstoupit“ do mysli libovolného zvířete. Podmínkou je, aby ho viděl nebo aspoň s jistotou věděl, kde se nachází. Následně dokáže vidět, slyšet i cítit vše stejným způsobem, jako vnímá dotyčný tvor. Nedokáže ho však nijak kontrolovat.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Pokročilá Magie zvířat"
+   ]
+  },
+  {
+   "id": "pochvala",
+   "nazev": "Pochvala",
+   "strana": 108,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "dotek",
+    "rozsah": "zvířecí společník",
+    "trvani": "1 den",
+    "vyvolani": "1 kolo",
+    "obtiznost": "12",
+    "vyzaduje": "Pokročilá Magie zvířat"
+   },
+   "popis": "Pán zvířat poplácá svého společníka po hlavě a pochválí ho. Zároveň na něj sešle kouzlo, které zvedne jeho morálku. Zvíře je tak motivováno a svou další akci se bude snažit vyplnit co nejlépe. K jím zvolenému ověřovacímu hodu, ať už na dovednost či na boj, získá zvíře Výhodu (bonus +5). K využití efektu kouzla musí dojít nejpozději do 24 hodin od jeho seslání.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Pokročilá Magie zvířat"
+   ]
+  },
+  {
+   "id": "pokrik_lovu",
+   "nazev": "Pokřik lovu",
+   "strana": 109,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "koule o poloměru 10 sáhů kolem Pána zvířat",
+    "rozsah": "smečka",
+    "trvani": "1 kolo",
+    "vyvolani": "ihned",
+    "obtiznost": "10",
+    "vyzaduje": "Divoké pokřiky"
+   },
+   "popis": "Pán zvířat vyštěkne jako šelma na lovu. Tím vyburcuje své zvířecí druhy ke zběsilé rychlosti. Všem vybraným tvorům v dosahu se tak zvýší pohyblivost na dvojnásobek. Pohybují se tedy dvakrát rychleji, než je obvyklé.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Divoké pokřiky"
+   ]
+  },
+  {
+   "id": "poslouchej",
+   "nazev": "Poslouchej",
+   "strana": 109,
+   "parametry": {
+    "dusevni_sila": "4",
+    "dosah": "30 sáhů",
+    "rozsah": "zvíře",
+    "trvani": "1 směna",
+    "vyvolani": "půl kola",
+    "obtiznost": "10",
+    "vyzaduje": "Pokročilá Magie zvířat"
+   },
+   "popis": "Tímto kouzlem dokáže Pán zvířat „vstoupit“ do mysli libovolného zvířete v dosahu. Jestliže uspěje v ověřovacím hodu na Vůle (CHAR) vs. Vůle (CHAR) zvířete, bude ho tvor poslouchat. Pán zvířat s ním může následně telepaticky komunikovat a dávat mu i složitější rozkazy. Pokud se od něj zvíře vzdálí na víc než 1 míli, efekt kouzla ihned pomine.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Pokročilá Magie zvířat"
+   ]
+  },
+  {
+   "id": "stvi",
+   "nazev": "Štvi",
+   "strana": 109,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "1 míle",
+    "rozsah": "smečka",
+    "trvani": "1 směna",
+    "vyvolani": "půl kola",
+    "obtiznost": "14 (+2 za každé další zvíře)",
+    "vyzaduje": "Magie smečky"
+   },
+   "popis": "Pomocí tohoto kouzla dokáže Pán zvířat poštvat smečku na vybranou oběť. Jejím cílem však nebude jít do přímé konfrontace, ale tvora děsit a hnát na vybrané místo, aniž by si to sám uvědomil. Obvykle na místo, ze kterého už není úniku.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie smečky"
+   ]
+  },
+  {
+   "id": "trhej",
+   "nazev": "Trhej",
+   "strana": 109,
+   "parametry": {
+    "dusevni_sila": "2 za každé zvíře",
+    "dosah": "30 sáhů",
+    "rozsah": "dle dodané Duševní síly",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "obtiznost": "12 (+2 za každé další zvíře)",
+    "vyzaduje": "Magie smečky"
+   },
+   "popis": "Pán zvířat se napojí na mentální pouta smečky a vydá příkaz, aby zvíře trhalo. To se vrhne na svého protivníka a získá tak o jeden Útok navíc. Zároveň však ztratí jednu svou Obranu. Toto kouzlo je možné seslat i na více zvířat současně.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie smečky"
+   ]
+  },
+  {
+   "id": "varovny_vykrik",
+   "nazev": "Varovný výkřik",
+   "strana": 109,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "30 sáhů",
+    "rozsah": "zvíře smečky",
+    "trvani": "ihned",
+    "vyvolani": "ihned",
+    "obtiznost": "12",
+    "vyzaduje": "Divoké pokřiky"
+   },
+   "popis": "Pokud si Pán zvířat všimne, že je jeho zvířecí druh v nebezpečí, může ho bleskově varovat. Zvíře musí uspět v ověřovacím hodu na na Reflex (OBR) vs. Reflex (OBR) nepřítele. V takovém případě stihne ještě před útokem odběhnout či uskočit z dosahu svého protivníka o vzdálenost krátkého pohybu. Kouzlo je však nutné seslat ještě před protivníkovým hodem na Útok.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Divoké pokřiky"
+   ]
+  },
+  {
+   "id": "vabivy_krik",
+   "nazev": "Vábivý křik",
+   "strana": 110,
+   "parametry": {
+    "dusevni_sila": "3",
+    "dosah": "koule o poloměru 5 mil kolem Pána zvířat",
+    "rozsah": "vybraný druh zvířete",
+    "trvani": "ihned",
+    "vyvolani": "ihned",
+    "obtiznost": "10",
+    "vyzaduje": "Divoké pokřiky"
+   },
+   "popis": "Pán zvířat napodobí křik, či řev, konkrétního druhu zvířete a tím ho k sobě přiláká. Pokud se tedy daný tvor v dosahu kouzla nachází, zpravidla do 1 směny dorazí. Pán zvířat si při seslání vybere, zdali bude volat jedno konkrétní zvíře nebo zavolá všechna zvířata daného druhu.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Divoké pokřiky"
+   ]
+  },
+  {
+   "id": "zadrz",
+   "nazev": "Zadrž",
+   "strana": 110,
+   "parametry": {
+    "dusevni_sila": "3 za každé zvíře",
+    "dosah": "30 sáhů",
+    "rozsah": "dle dodané Duševní síly",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "obtiznost": "14 (+2 za každé další zvíře)",
+    "vyzaduje": "Magie smečky"
+   },
+   "popis": "Pán zvířat se napojí na Pouto smečky a dá zvířeti příkaz, aby někoho zadrželo. To se do svého protivníka zakousne a bude se snažit udržet ho na jednom místě. Toto kouzlo je možné seslat i na více zvířat současně tak, aby se každé pokusilo zadržet jiný cíl.\nK zadržení je nutné, aby zvíře uspělo v ověřovacím hodu na Atletika (SIL) vs. Atletika (SIL) oběti. V takovém případě bude cíl znehybněn a nebude schopen vykonávat žádné pohybové akce. Ze Zadržení je možné se pokusit každé kolo osvobodit. Je však nutné uspět v opačném ověřovacím hodu. U ptáků je navíc možné využít ověřovací hod založený na Reflexu.\nVyužije-li někdo situaci a uvězněného napadne, má vzhledem k nekrytým zádům protivníka Výhodu (bonus +5) k Útoku (ÚČ).\nZvíře, které oběť drží, nemůže po dobu zadržení na nikoho útočit, ale může se standardně bránit.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie smečky"
+   ]
+  },
+  {
+   "id": "zachran",
+   "nazev": "Zachraň",
+   "strana": 110,
+   "parametry": {
+    "dusevni_sila": "5",
+    "dosah": "30 sáhů",
+    "rozsah": "zvíře smečky",
+    "trvani": "ihned",
+    "vyvolani": "půl kola",
+    "obtiznost": "14 (+2 za každé další zvíře)",
+    "vyzaduje": "Magie smečky"
+   },
+   "popis": "Pán zvířat se napojí na Pouto smečky a předá vybranému zvířeti část své životní síly. Počet takto předaných životů závisí na jeho uvážení.",
+   "typ": "kouzlo",
+   "skupiny": [
+    "Magie smečky"
+   ]
+  }
+ ],
+ "_statistika": {
+  "pocet_polozek": 95,
+  "bez_skupiny": []
+ }
+}

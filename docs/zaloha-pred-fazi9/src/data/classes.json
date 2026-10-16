@@ -1,0 +1,133 @@
+[
+ {
+  "id": "valecnik",
+  "name": "Válečník",
+  "tabLabel": "TRIKY",
+  "icon": "fist",
+  "energyName": "Adrenalin",
+  "skillPointMultiplier": 3,
+  "dominantAttributes": [
+   "sil",
+   "odo"
+  ],
+  "basicSkills": [
+   "atletika",
+   "prvni_pomoc",
+   "vydrz"
+  ],
+  "professionSkills": [],
+  "energyTable": null
+ },
+ {
+  "id": "hranicar",
+  "name": "Hraničář",
+  "tabLabel": "PŘÍRODA",
+  "icon": "leaf",
+  "energyName": "Duševní síla",
+  "skillPointMultiplier": 5,
+  "dominantAttributes": [
+   "obr",
+   "int"
+  ],
+  "basicSkills": [
+   "postreh",
+   "preziti_v_prirode",
+   "znalost_prirody"
+  ],
+  "professionSkills": [
+   "pouto_s_prirodou",
+   "lov",
+   "vnimani_prirody",
+   "stopovani"
+  ],
+  "energyTable": "hranicar"
+ },
+ {
+  "id": "alchymista",
+  "name": "Alchymista",
+  "tabLabel": "ALCHYMIE",
+  "icon": "flask",
+  "energyName": "Mana",
+  "skillPointMultiplier": 5,
+  "dominantAttributes": [
+   "obr",
+   "int"
+  ],
+  "basicSkills": [
+   "mechanika",
+   "vzdelani",
+   "znalost_prirody"
+  ],
+  "professionSkills": [
+   "prace_s_manou",
+   "lucba"
+  ],
+  "energyTable": null
+ },
+ {
+  "id": "kouzelnik",
+  "name": "Kouzelník",
+  "tabLabel": "KOUZLA",
+  "icon": "spark",
+  "energyName": "Mana",
+  "skillPointMultiplier": 4,
+  "dominantAttributes": [
+   "int",
+   "char"
+  ],
+  "basicSkills": [
+   "mystika",
+   "vule",
+   "vzdelani"
+  ],
+  "professionSkills": [
+   "sesilani_kouzel"
+  ],
+  "energyTable": "kouzelnik"
+ },
+ {
+  "id": "zlodej",
+  "name": "Zloděj",
+  "tabLabel": "UMĚNÍ",
+  "icon": "mask",
+  "energyName": null,
+  "skillPointMultiplier": 6,
+  "dominantAttributes": [
+   "obr",
+   "char"
+  ],
+  "basicSkills": [
+   "etiketa",
+   "hbitost",
+   "umeni"
+  ],
+  "professionSkills": [
+   "hazardni_hry",
+   "odhad_ceny",
+   "presvedcovani",
+   "vybirani_kapes"
+  ],
+  "energyTable": null
+ },
+ {
+  "id": "klerik",
+  "name": "Klerik",
+  "tabLabel": "VÍRA",
+  "icon": "sun",
+  "energyName": "Přízeň",
+  "skillPointMultiplier": 4,
+  "dominantAttributes": [
+   "odo",
+   "char"
+  ],
+  "basicSkills": [
+   "mystika",
+   "prvni_pomoc",
+   "vule"
+  ],
+  "professionSkills": [
+   "prosby"
+  ],
+  "energyTable": "klerik"
+ }
+]

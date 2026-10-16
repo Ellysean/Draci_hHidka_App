@@ -1,0 +1,31 @@
+// SVG ikony (24×24, obrys) – převzato z prototypu v9.1. Ve Fázi 9 je nahradí grafika z mockupu.
+export const ICONS = {
+  "person": "<path d=\"M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4.4 3.6-7 8-7s8 2.6 8 7\"/>",
+  "swords": "<path d=\"M4 4l10 10M4 4h4M4 4v4M20 4L10 14M20 4h-4M20 4v4M7 17l-3 3M17 17l3 3M6 15l3 3M18 15l-3 3\"/>",
+  "quill": "<path d=\"M20 3C12 4 7 9 5 19l2 2c3-6 7-9 12-10M9 15l5-5M4 21l3-3\"/>",
+  "book": "<path d=\"M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1zM12 6v14\"/>",
+  "flask": "<path d=\"M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3M7 15h10\"/>",
+  "heart": "<path d=\"M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10zM12 9.5v5M9.5 12h5\"/>",
+  "bolt": "<path d=\"M13 2L5 13h6l-1 9 8-11h-6z\"/>",
+  "hourglass": "<path d=\"M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9\"/>",
+  "star": "<path d=\"M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z\"/>",
+  "spark": "<path d=\"M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2zM19 3v4M17 5h4\"/>",
+  "sword": "<path d=\"M14 4h6v6L9 21l-3-3zM6 18l-2 2M4 14l6 6\"/>",
+  "shield": "<path d=\"M12 3l8 3v5c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z\"/>",
+  "coin": "<ellipse cx=\"12\" cy=\"7\" rx=\"7\" ry=\"3\"/><path d=\"M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7M5 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5\"/>",
+  "bag": "<path d=\"M6 8h12l1 13H5zM9 8V6a3 3 0 0 1 6 0v2M9 12h6\"/>",
+  "skull": "<path d=\"M12 3a8 8 0 0 0-5 14v3h10v-3a8 8 0 0 0-5-14zM9 12h.01M15 12h.01M10 20v-2M14 20v-2\"/>",
+  "paw": "<circle cx=\"6\" cy=\"10\" r=\"2\"/><circle cx=\"10\" cy=\"6\" r=\"2\"/><circle cx=\"14\" cy=\"6\" r=\"2\"/><circle cx=\"18\" cy=\"10\" r=\"2\"/><path d=\"M12 12c-3 0-6 4-6 6.5S9 21 12 20s6 1 6-1.5-3-6.5-6-6.5z\"/>",
+  "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2\"/>",
+  "mask": "<path d=\"M3 7c6-2 12-2 18 0-1 7-4 11-9 11S4 14 3 7zM8 11h2M14 11h2\"/>",
+  "up": "<path d=\"M12 19V5M5 12l7-7 7 7\"/>",
+  "plus": "<path d=\"M12 5v14M5 12h14\"/>",
+  "leaf": "<path d=\"M5 19c0-8 5-14 15-15-1 10-7 15-15 15zM5 19l8-8\"/>",
+  "fist": "<path d=\"M7 11V6a1.5 1.5 0 0 1 3 0v4M10 10V5a1.5 1.5 0 0 1 3 0v5M13 10V6a1.5 1.5 0 0 1 3 0v6M16 11a1.5 1.5 0 0 1 3 0v3c0 4-3 7-7 7s-6-3-6-6v-2l1-2\"/>",
+  "download": "<path d=\"M12 3v12M7 10l5 5 5-5M4 17v3h16v-3\"/>",
+  "upload": "<path d=\"M12 15V3M7 8l5-5 5 5M4 17v3h16v-3\"/>",
+  "print": "<path d=\"M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z\"/>",
+  "chest": "<path d=\"M3 10a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10H3zM3 12h18M11 11h2v3h-2z\"/>",
+} as const;
+
+export type IconName = keyof typeof ICONS;

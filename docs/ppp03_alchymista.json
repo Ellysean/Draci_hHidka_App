@@ -1,0 +1,93 @@
+{
+ "_zdroj": "Draci_hlidka_PPP_03_Alchymista.pdf (80 stran), dodal uživatel 22. 9. 2026",
+ "_poznamka": "PPP03 není jen sada štítků – je to plnohodnotné rozšíření Alchymisty: 13 obecných volitelných schopností od 6. úrovně, 8+8+8 schopností pro tři specializace a ~70 nových vyrobitelných předmětů (v textu 67× 'Mana:', 70× 'Suroviny:'/'Obtížnost:', 73× 'Výroba:'). Ovlivňuje milník 7a – viz claude/CRAFTING_ALCHYMISTA.md.",
+
+ "dilny": {
+  "_zdroj": "PPP03 s. 2, Tabulka alchymistických dílen",
+  "_poznamka": "Dílna NENÍ boolean přepínač (jak předpokládal model podle H10), ale má 4 velikosti s vlastními limity a bonusem. Tabulka pokrývá i speciální varianty (astroláb = Theurg, laboratoř = Medicus, výheň = Pyromant). Zařízení nové dílny trvá 1 týden.",
+  "_rozpor": "H10 uvádí u dílny '+1 ke všem alchymistickým hodům jen do 6. úrovně'. PPP03 uvádí bonus +2 až +5 do profesních dovedností podle velikosti dílny, bez omezení úrovní. K rozhodnutí.",
+  "polozky": [
+   { "velikost": 1, "nazev": "Malá (jedna místnost)", "zrizeni_zl": 400, "zrizeni_vybaveni_zl": 300, "udrzba_denni": "1 st", "max_many": 1200, "max_surovin": 6000, "destilace": "2× rychlejší", "bonus_profesni_dovednosti": 2, "pronajem_1h": "5 st", "udrzba_svepomoci_hodin": 1 },
+   { "velikost": 2, "nazev": "Střední (2-3 místnosti)", "zrizeni_zl": 1000, "zrizeni_vybaveni_zl": 800, "udrzba_denni": "3 st", "max_many": 3000, "max_surovin": 15000, "destilace": "3× rychlejší", "bonus_profesni_dovednosti": 3, "pronajem_1h": "1 zl", "udrzba_svepomoci_hodin": 2 },
+   { "velikost": 3, "nazev": "Velká (celý dům)", "zrizeni_zl": 2000, "zrizeni_vybaveni_zl": 1000, "udrzba_denni": "1 zl", "max_many": 6000, "max_surovin": 30000, "destilace": "4× rychlejší", "bonus_profesni_dovednosti": 4, "pronajem_1h": "5 zl", "udrzba_svepomoci_hodin": 3 },
+   { "velikost": 4, "nazev": "Věž", "zrizeni_zl": 5000, "zrizeni_vybaveni_zl": 3000, "udrzba_denni": "3 zl", "max_many": 10000, "max_surovin": 50000, "destilace": "5× rychlejší", "bonus_profesni_dovednosti": 5, "pronajem_1h": "20 zl", "udrzba_svepomoci_hodin": 4 }
+  ],
+  "bonus_plati_na": "Lučba + dovednost vázaná k danému typu dílny"
+ },
+
+ "volitelne_schopnosti_alchymisty": {
+  "_zdroj": "PPP03 s. 4, Tabulka volitelných schopností Alchymisty",
+  "_dostupnost": "od 6. úrovně, všem Alchymistům včetně specializovaných",
+  "polozky": [
+   { "id": "artefakty", "nazev": "Artefakty", "opakovatelna": true, "efekt": "Vytvoří unikátní trvalý předmět se jménem tvůrce; pro každý další artefakt je nutné schopnost zvolit znovu." },
+   { "id": "bojova_konzumace", "nazev": "Bojová konzumace", "efekt": "Vyrábí jednoduché lektvary a elixíry pozřením přísad; dlouhá akce 1 kolo, má tabulku vedlejších účinků (PPP03 s. 5)." },
+   { "id": "cestovni_alchymie", "nazev": "Cestovní alchymie", "efekt": "Vyšší šance najít zdroje many a surovin v terénu.", "odemyka": ["Ječák", "Kotlík samovar", "Magický kompas", "Neúnavné boty", "Plátěný palác"] },
+   { "id": "forenzika", "nazev": "Forenzika", "efekt": "Vyšetřování a odhalování podstaty věcí.", "odemyka": ["Akustický kalich", "Prášek Deletorium", "Krevní lampa", "Protijedová esence", "Zornítko"] },
+   { "id": "herbalista", "nazev": "Herbalista", "efekt": "Pěstuje rostliny bohaté na manu a suroviny.", "odemyka": ["Hydroponický nálev", "Lektvar Houbovrah", "Lektvar Likvidátor", "Lektvar Manamutace", "Prášek Rychlorůst"] },
+   { "id": "hromadna_vyroba", "nazev": "Hromadná výroba", "efekt": "Více dávek/kusů jednoho předmětu za stejný čas (PPP03 s. 10)." },
+   { "id": "koncentrovane_substance", "nazev": "Koncentrované substance", "efekt": "Vylepší nebezpečnost, účinnost nebo délku trvání u lektvarů, elixírů, jedů a receptů oboru Nestabilní substance." },
+   { "id": "laboratorni_specialista", "nazev": "Laboratorní specialista", "efekt": "Zvyšuje počet dovednostních bodů.", "odemyka": ["Kukátko zření many", "Pokročilá destilační aparatura", "Křišťálová mísa", "Postříbřený flakón"] },
+   { "id": "magicke_hulky", "nazev": "Magické hůlky", "efekt": "Vyrábí magické hůlky; s Výrobou svitků i hůlky s kouzly.", "odemyka": ["Ebonitová hůlka", "Hůlka vzduchu", "Hůlka země", "Ohnivá hůlka", "Vodní hůlka"] },
+   { "id": "recyklator", "nazev": "Recyklátor", "efekt": "Opraví poškozený magický předmět, nebo ho rozebere zpět na základ a část many i surovin." },
+   { "id": "sabotér", "nazev": "Sabotér", "efekt": "Upraví výrobek tak, aby za daných podmínek selhal nebo se projevil jinak." },
+   { "id": "travicstvi", "nazev": "Travičství", "efekt": "Utajené receptury vzácných jedů.", "odemyka": ["Antisérum", "Arzaharův jed", "jed Bolehlav", "jed Post Scriptum", "jed Temnota"] }
+  ]
+ },
+
+ "specializace": {
+  "medicus": {
+   "dilna": "Laboratoř (PPP03 s. 18)",
+   "schopnosti": [
+    { "id": "biologicka_augmentace", "nazev": "Biologická augmentace", "odemyka": ["Druhý mozek", "Druhé srdce", "Vílí křídla", "Žábra"] },
+    { "id": "bojova_anatomie", "nazev": "Bojová anatomie", "efekt": "Ohledání mrtvých + bojové využití znalosti anatomie (PPP03 s. 22, Tabulka končetin s. 28)." },
+    { "id": "infuze_a_inhalace", "nazev": "Infuze a inhalace", "odemyka": ["Elixír lásky", "Lektvar Berserker", "Lektvar Purpurových řek", "Lektvar Změny osobnosti", "Sérum pravdy", "Umělá krev"] },
+    { "id": "mechanicka_augmentace", "nazev": "Mechanická augmentace", "odemyka": ["Exoskelet", "Mechanické oko", "Umělá noha", "Umělá paže"] },
+    { "id": "plasticka_chirurgie", "nazev": "Plastická chirurgie", "efekt": "Šití bez jizev, sběr kůže a obličejů jako masek." },
+    { "id": "resuscitace", "nazev": "Resuscitace", "efekt": "Obnova životních funkcí čerstvě zemřelého; jinak orgány jako zdroj many a surovin." },
+    { "id": "sesivanci", "nazev": "Sešívanci", "efekt": "Sešívá těla a orgány; monstrum poslouchá jako služebník. Vlastní tabulky: končetiny, hlavy, typy kůže, kontrolní krystaly (PPP03 s. 28–31)." },
+    { "id": "tetovani", "nazev": "Tetování", "odemyka": ["Inkoust doplňování many", "Inkoust průběžné léčby", "Inkoust protekce dračímu dechu", "Inkoust protekce fyzických zranění", "Inkoust protekce mrazu", "Inkoust protekce ohni"] }
+   ]
+  },
+  "pyromant": {
+   "dilna": "Výheň (PPP03 s. 34)",
+   "dovednost": "Pyromancie (OBR)",
+   "schopnosti": [
+    { "id": "kapsulacni_gemy", "nazev": "Kapsulační gemy", "efekt": "Mana uzamčená v runových kamenech jako baterie (běžná kapacita 100 bodů many); s Výrobou svitků i opakovaně aktivovatelná kouzla." },
+    { "id": "konstrukty", "nazev": "Konstrukty", "efekt": "Mechaničtí pomocníci; tabulky těla, mozku, vylepšení a paliva (PPP03 s. 36–39)." },
+    { "id": "mistr_nestabilnich_substanci", "nazev": "Mistr nestabilních substancí", "efekt": "CHAR −5, Rezistence proti ohni/mrazu/kyselině.", "odemyka": ["Chrlič", "Dusivý plyn", "Leptavý plyn", "Mrazivý plyn", "Slzný plyn"] },
+    { "id": "palne_zbrane", "nazev": "Palné zbraně", "odemyka": ["Hákovnice", "Pistole", "Polní dělo", "Ručnice", "Turét"] },
+    { "id": "prace_s_energii", "nazev": "Práce s energií", "efekt": "Dobíjení magických předmětů.", "odemyka": ["Hrací skříňka", "Kostka štěstí", "Paralyzér", "Plášť proměn", "Replikátor"] },
+    { "id": "sapersky_vycvik", "nazev": "Sapérský výcvik", "efekt": "Výhoda +5 na nalezení, zneškodnění nebo nastražení pasti.", "odemyka": ["Bomba s krystalem", "Detektor pohybu", "Detektor výbušnin", "Detonátor", "Nášlapná past"] },
+    { "id": "strely_a_rachejtle", "nazev": "Střely a rachejtle", "odemyka": ["Lehká rachejtle", "Ohňostroj", "Řízená střela", "Střela naváděná na terč", "Světlice", "Těžká rachejtle"] },
+    { "id": "transmutace_kovu", "nazev": "Transmutace kovu", "efekt": "Změna struktury a druhu kovu; tabulky transmutací a speciálních slitin (PPP03 s. 52)." }
+   ]
+  },
+  "theurg": {
+   "dilna": "Astroláb (PPP03 s. 54)",
+   "dovednost": "Theurgie (INT)",
+   "vybava": "Theurgova hůl (má vlastní bojové hodnoty, PPP03 s. 54)",
+   "schopnosti": [
+    { "id": "astralni_sfery", "nazev": "Astrální sféry", "efekt": "Přivolávání démonů s vlastnostmi na přání → unikátní vlastní předměty. Tabulky magických okamžiků, vlastností démonů (s. 57–62) a životnosti démonů (s. 63)." },
+    { "id": "ovladnuti_zivlu", "nazev": "Ovládnutí živlů", "efekt": "Zemětřesení, přílivová vlna, požár, hurikán – síla dle volby." },
+    { "id": "ozivle_pomucky", "nazev": "Oživlé pomůcky", "odemyka": ["Chodící truhla", "Létající lucerna", "Mluvící hlava", "Oživlý obušek"] },
+    { "id": "portaly_a_zrcadla", "nazev": "Portály a zrcadla", "odemyka": ["Mimoprostorové zrcadlo", "Portál", "Vidoucí kameny", "Zrcadlo duší"] },
+    { "id": "poslove_zivlu", "nazev": "Poslové živlů", "efekt": "Přivolání elementálů: Igni (oheň), Undina (voda), Terra (země), Sylfa (vzduch) – PPP03 s. 70–73." },
+    { "id": "prace_s_esencemi", "nazev": "Práce s esencemi", "efekt": "Separace esencí z many, jednoduché změny hmoty a energie (s. 73–75)." },
+    { "id": "prace_s_vichry_many", "nazev": "Práce s vichry many", "odemyka": ["Detektor vichrů many", "Manafiltr", "Managenerátor", "Manatransformátor"] },
+    { "id": "talismany", "nazev": "Talismany", "efekt": "Aktivace skryté síly drahých kamenů; seznam talismanů a Tabulka drahokamů (s. 76–80)." }
+   ]
+  }
+ },
+
+ "dalsi_tabulky_v_ppp03": [
+  "Tabulka vedlejších účinků bojové konzumace (s. 5)",
+  "Tabulka končetin / hlav sešívance / typů kůže (s. 28)",
+  "Tabulka vylepšení konstruktů, paliva konstruktů, těla konstruktů (s. 36, 38)",
+  "Základní tabulka transmutací kovu + Tabulka speciálních slitin (s. 52)",
+  "Tabulka magických okamžiků (s. 57)",
+  "Tabulka vlastností démonů (s. 58–62) a Tabulka životnosti démonů (s. 63)",
+  "Tabulka efektu bhůtů (s. 64)",
+  "Odolnost materiálů, Tabulka počtu životů staveb, Tabulka poškození budov (s. 65)",
+  "Tabulka drahokamů (s. 77)"
+ ]
+}
