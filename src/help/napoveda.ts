@@ -274,7 +274,7 @@ export const HELP: HelpSection[] = [
       {
         h: 'Hraničář – záložka PŘÍRODA',
         list: [
-          'Duševní síla s obnovou (jen svěží; nad 6. úrovní maximum ručně), směry hraničářské magie, schopnosti a specializace, situační bonusy, **pasti** s hodem Líčení pastí, kouzla a odvary se sesíláním mimo boj.',
+          'Duševní síla s obnovou (jen svěží; úrovně 1–6 podle H09, vyšší dopočtené přírůstky z PPP02), směry hraničářské magie, schopnosti a specializace, situační bonusy, **pasti** s hodem Líčení pastí, kouzla a odvary se sesíláním mimo boj.',
           'V boji: Rychlá střelba, Bojová hůl, kouzla z plných dat.',
         ],
       },

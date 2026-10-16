@@ -302,13 +302,14 @@ export function derive(c: Character): Derived {
     const bonus = effectSum(c, 'manaMax');
     const below = av < t.attributeMin;
     if (level > t.byLevel.length) {
-      // Tabulka v podkladech nepokrývá tuhle úroveň (H09: jen 1–6) – hodnotu zadá hráč ručně.
+      // Tabulka nepokrývá tuhle úroveň – hodnotu zadá hráč ručně.
       manaMax = plain(null, `Tabulka ${cls.energyName} v podkladech končí ${t.byLevel.length}. úrovní – zadej maximum ručně`);
     } else {
       const v = below ? 0 : lookupByLevel(t, av, level).value;
       // Klerik (PPP06): Asketismus ×2, Ikony −10 za každou.
       const adj = clericManaAdjust(c, v + bonus.total);
-      const txt = `Tabulka: ${cls.energyName}, ${level}. úroveň, ${ATTR_LABELS[t.attribute].short} ${av}${below ? ' (pod tabulkou → 0)' : ''}${bonus.parts.length ? ' + ' + bonus.parts.join(' + ') : ''}`;
+      const est = t.sourceLevels && level > t.sourceLevels ? ` (dopočet: H09 pro ${t.sourceLevels}. úroveň + přírůstek PPP02)` : '';
+      const txt = `Tabulka: ${cls.energyName}, ${level}. úroveň${est}, ${ATTR_LABELS[t.attribute].short} ${av}${below ? ' (pod tabulkou → 0)' : ''}${bonus.parts.length ? ' + ' + bonus.parts.join(' + ') : ''}`;
       manaMax = plain(adj.value, adj.parts.length ? `(${txt}) ${adj.parts.join(' ')}` : txt);
     }
   } else if (cls.id === 'valecnik') {

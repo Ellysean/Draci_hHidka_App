@@ -66,7 +66,7 @@ function DusevniSila({ c, d, put, say }: P) {
             Obnovit do maxima
           </button>
           {why && <span className="small muted"> {why}</span>}
-          {max == null && <p className="small bad-t" style={{ margin: '4px 0 0' }}>Tabulka H09 má jen úrovně 1–6 – maximum zadej ručně na záložce Postava (✎).</p>}
+          {max == null && <p className="small bad-t" style={{ margin: '4px 0 0' }}>Tabulka duševní síly pro tuto úroveň chybí – maximum zadej ručně na záložce Postava (✎).</p>}
         </div>
       </div>
     </Sheet>

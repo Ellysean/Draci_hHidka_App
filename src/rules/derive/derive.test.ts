@@ -88,11 +88,17 @@ describe('další pravidla', () => {
     c.attributes.int = 3;
     expect(derive(c).manaMax.value).toBe(0);
   });
-  it('nad 6. úrovní tabulka H09 chybí → ruční zadání', () => {
+  it('nad 6. úrovní: H09 pro 6. úroveň + přírůstek PPP02 (✔ U 16. 10. 2026), ruční přepis dál funguje', () => {
     const c = newCharacter();
     c.basic.classId = 'hranicar';
+    c.attributes.int = 16;
+    c.progression.level = 6;
+    expect(derive(c).manaMax.value).toBe(24); // H09
     c.progression.level = 7;
-    expect(derive(c).manaMax.value).toBeNull();
+    expect(derive(c).manaMax.value).toBe(26); // 24 + (PPP02 7. úr. 19 − 6. úr. 17)
+    expect(derive(c).manaMax.formula).toContain('dopočet');
+    c.progression.level = 24;
+    expect(derive(c).manaMax.value).toBe(51); // 24 + (44 − 17)
     c.overrides = { manaMax: 20 };
     expect(derive(c).manaMax).toMatchObject({ value: 20, overridden: true });
   });

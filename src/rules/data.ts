@@ -94,6 +94,8 @@ export interface TableByLevel {
   attribute: AttrKey;
   attributeMin: number;
   byLevel: number[][];
+  /** Kolik úrovní je přímo z pravidel – vyšší jsou dopočtené (hraničář: H09 1–6, dál přírůstky PPP02). */
+  sourceLevels?: number;
 }
 
 export const RACES = racesJson as RaceDef[];
