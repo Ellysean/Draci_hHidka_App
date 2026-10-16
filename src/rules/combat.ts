@@ -11,6 +11,7 @@ import { CONDITIONS, FATIGUE, getSkill } from './data';
 import type { Derived } from './derive';
 import { sgn } from './derive';
 import { rollDie } from './dice';
+import { robeBonus } from './equipment';
 import { isThief, thiefCombatMods, thiefRound } from './zlodej';
 import {
   TRICK_KIND_LABEL, adrenalinAtStart, adrenalinGain, attacksPerRound, commandBonus, defensesPerRound, furyOn, hasAbility, isWarrior,
@@ -651,7 +652,11 @@ export function spellCheck(c: Character, d: Derived, s: SpellDef): { bonus: numb
   const base = castBonus(c, d);
   if (isCleric(c)) { const k = prayerCheckBonus(c); return { bonus: base.bonus + k.bonus, parts: k.parts }; }
   const sp = isWizard(c) ? spellByName(s.n) : undefined;
-  if (!sp) return { bonus: base.bonus, parts: [] };
+  if (!sp) {
+    // Hraničář: róba usnadňuje i přírodní kouzla (H15).
+    const robe = c.basic.classId === 'hranicar' ? robeBonus(c) : { value: 0, name: '' };
+    return robe.value ? { bonus: base.bonus + robe.value, parts: [`${robe.name} +${robe.value}`] } : { bonus: base.bonus, parts: [] };
+  }
   const p = castProfile(c, d, sp);
   return { bonus: base.bonus + p.bonus, parts: p.bonusParts };
 }

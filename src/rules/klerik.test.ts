@@ -252,3 +252,14 @@ describe('mimo boj, přestup a migrace', () => {
     expect('activeAura' in m.classState.klerik!).toBe(false);
   });
 });
+
+describe('róba usnadní prosby (H15)', () => {
+  it('nasazená Róba +3 k ověření, sundaná nic', () => {
+    const c = cleric();
+    expect(prayerCheckBonus(c).bonus).toBe(0);
+    c.equipment.armor = { itemId: 'roba_roba', custom: null, equipped: true, weightLb: null };
+    expect(prayerCheckBonus(c)).toMatchObject({ bonus: 3, parts: ['Róba +3'] });
+    c.equipment.armor = { ...c.equipment.armor, equipped: false };
+    expect(prayerCheckBonus(c).bonus).toBe(0);
+  });
+});

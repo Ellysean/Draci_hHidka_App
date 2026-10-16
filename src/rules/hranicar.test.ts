@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { buildCharacter, newDraft } from '../creation/draft';
 import type { Character } from '../model/types';
 import { applyLevelUp, autoGains, emptyLevelUp, options, skillGrants, specOptions } from '../progression/levelup';
-import { knownSpells, roundInfo, startCombat, takeDefense, canDefend, attack, attackWhy, newRound, endTurn, myTurn } from './combat';
+import { knownSpells, roundInfo, startCombat, takeDefense, canDefend, attack, attackWhy, newRound, endTurn, myTurn, spellCheck } from './combat';
 import { derive } from './derive';
 import { RANGER, RANGER_SPELLS, knownRangerSpells, spellLock, toSpellDef } from './hranicar';
 
@@ -138,5 +138,17 @@ describe('deník a boj hraničáře', () => {
     x = takeDefense(x, d);
     expect([x.play.combat!.k, x.play.combat!.defUsed]).toEqual([1, 2]);
     expect(canDefend(x, d)).toBe('všech 2 obran v kole použito');
+  });
+});
+
+describe('róba usnadní kouzla hraničáře (H15)', () => {
+  it('Talár +2 k ověření kouzla v boji', () => {
+    const c = ranger();
+    const s = toSpellDef(knownRangerSpells(c)[0]);
+    const before = spellCheck(c, derive(c), s).bonus;
+    c.equipment.armor = { itemId: 'roba_talar', custom: null, equipped: true, weightLb: null };
+    const after = spellCheck(c, derive(c), s);
+    expect(after.bonus).toBe(before + 2);
+    expect(after.parts).toEqual(['Talár +2']);
   });
 });

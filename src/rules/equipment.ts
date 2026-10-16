@@ -283,3 +283,13 @@ export function saveCustom(c: Character, item: Omit<CustomCatalogItem, 'id'> & {
 export function deleteCustom(c: Character, id: string): Character {
   return { ...c, equipment: { ...c.equipment, customCatalog: c.equipment.customCatalog.filter((x) => x.id !== id) } };
 }
+
+/**
+ * Bonus nasazené róby k ověření magie (H15: „Sesílání kouzel i proseb je v nich mnohem snazší“) – platí pro kouzla
+ * kouzelníka a hraničáře i pro prosby klerika. Nenasazená róba ani vlastní zbroj bonus nedávají.
+ */
+export function robeBonus(c: Character): { value: number; name: string } {
+  const a = c.equipment.armor;
+  const def = a.equipped ? getArmor(a.itemId) : undefined;
+  return { value: def?.magicBonus ?? 0, name: def?.n ?? '' };
+}

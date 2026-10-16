@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { derive } from '../rules/derive';
-import { assignDie, attributesDone, buildCharacter, buildEquipment, canStep, changeClass, diceState, finalAttributes, firstBlocked, newDraft, type Draft } from './draft';
+import { applyRecommended, assignDie, attributesDone, missingRecommended, buildCharacter, buildEquipment, canStep, changeClass, diceState, finalAttributes, firstBlocked, newDraft, type Draft } from './draft';
 
 const lomiel = (): Draft => ({
   ...newDraft(), name: 'Lómiel', raceId: 'elf', classId: 'kouzelnik', method: 'points',
@@ -65,5 +65,31 @@ describe('průvodce tvorbou postavy', () => {
     expect(d.picks).toEqual([]);
     expect(d.choice).toBeNull();
     expect(d.rolls).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+});
+
+describe('doporučené dovednosti pro začínající hráče (H05 s. 7)', () => {
+  it('kouzelník dostane Hbitost, Postřeh a Výdrž za 3 body', () => {
+    const d = applyRecommended(lomiel());
+    expect(d.added.map((a) => a.id)).toEqual(['hbitost', 'postreh', 'vydrz']);
+    expect(derive(buildCharacter(d)).skillPoints.available.value).toBe(0);
+    expect(missingRecommended(d)).toEqual([]);
+  });
+  it('člověku zbude bod navíc (Všestrannost)', () => {
+    const d = applyRecommended({ ...lomiel(), raceId: 'clovek' });
+    expect(d.added).toHaveLength(3);
+    expect(derive(buildCharacter(d)).skillPoints.available.value).toBe(1);
+  });
+  it('klerik: Znalost poměrů jako vlastní dovednost', () => {
+    const d = applyRecommended({ ...lomiel(), classId: 'klerik' });
+    const zp = buildCharacter(d).skills.find((s) => s.customName === 'Znalost poměrů');
+    expect(zp?.source).toBe('custom');
+    expect(zp?.rank).toBe(1);
+  });
+  it('už naučené se nepřidají znovu a nepřekročí se body', () => {
+    let d: Draft = { ...lomiel(), added: [{ id: 'postreh', customName: null, attribute: 'int' }, { id: 'atletika', customName: null, attribute: 'sil' }] };
+    d = applyRecommended(d);
+    expect(d.added.map((a) => a.id)).toEqual(['postreh', 'atletika', 'hbitost']);
+    expect(missingRecommended(d).map((r) => r.id)).toEqual(['vydrz']);
   });
 });

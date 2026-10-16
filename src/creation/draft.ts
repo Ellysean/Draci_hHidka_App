@@ -206,6 +206,56 @@ export function buildEquipment(d: Draft): BuiltEquipment {
   return out;
 }
 
+// ---------- doporučené dovednosti pro začínající hráče (H05 s. 7) ----------
+
+export interface RecommendedSkill {
+  id: string;
+  name: string;
+  attribute: AttrKey;
+  /** Dovednost, která v H14 není – přidá se jako vlastní (štítek VLASTNÍ, schvaluje PJ). */
+  custom?: boolean;
+}
+
+const rec = (id: string, attribute?: AttrKey): RecommendedSkill => {
+  const s = getSkill(id);
+  return { id, name: s?.name ?? id, attribute: attribute ?? s?.defaultAttribute ?? 'int' };
+};
+
+/** Tabulka dovedností pro začínající hráče (H05 s. 7), sloupec Doporučené dovednosti – každá na 1. stupni. */
+export const RECOMMENDED_SKILLS: Record<ClassId, RecommendedSkill[]> = {
+  valecnik: [rec('hbitost'), rec('preziti_v_prirode'), rec('zvladnuti_zvirat')],
+  hranicar: [rec('prvni_pomoc'), rec('vydrz'), rec('zvladnuti_zvirat')],
+  alchymista: [rec('hbitost'), rec('postreh'), rec('preziti_v_prirode')],
+  kouzelnik: [rec('hbitost'), rec('postreh'), rec('vydrz')],
+  zlodej: [rec('atletika'), rec('mechanika'), rec('postreh')],
+  // „Znalost poměrů (INT/CHAR)“ v H14 není → vlastní dovednost.
+  klerik: [rec('postreh'), rec('vzdelani'), { id: 'custom:znalost poměrů', name: 'Znalost poměrů', attribute: 'int', custom: true }],
+};
+
+/** Dovednostní body, které v konceptu ještě zbývají (3, člověk 4, minus nově naučené). */
+export function draftSkillPointsLeft(d: Draft): number {
+  return derive(buildCharacter(d)).skillPoints.available.value;
+}
+
+/** Doporučené dovednosti, které postava ještě nemá. */
+export function missingRecommended(d: Draft): RecommendedSkill[] {
+  if (!d.classId) return [];
+  const owned = new Set([...classSkills(d.classId).map((s) => s.id), ...d.added.map((a) => a.id)]);
+  return RECOMMENDED_SKILLS[d.classId].filter((r) => !owned.has(r.id));
+}
+
+/** Přidá chybějící doporučené dovednosti (každá za 1 bod), dokud stačí body. */
+export function applyRecommended(d: Draft): Draft {
+  let left = draftSkillPointsLeft(d);
+  const added = [...d.added];
+  for (const r of missingRecommended(d)) {
+    if (left < 1) break;
+    added.push({ id: r.id, customName: r.custom ? r.name : null, attribute: r.attribute });
+    left--;
+  }
+  return { ...d, added };
+}
+
 // ---------- sestavení postavy ----------
 
 export function classSkills(classId: ClassId): CharacterSkill[] {

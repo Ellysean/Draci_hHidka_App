@@ -2,7 +2,7 @@
 // Stav je koncept v úložišti; aktivní postava se nahradí až v posledním kroku.
 import { useMemo, useState, type ReactNode } from 'react';
 import {
-  STEPS, additions, assignDie, buildCharacter, buildEquipment, canStep, changeClass, classChangeLosses, classSkills,
+  RECOMMENDED_SKILLS, STEPS, additions, applyRecommended, assignDie, missingRecommended, buildCharacter, buildEquipment, canStep, changeClass, classChangeLosses, classSkills,
   diceState, finalAttributes, firstBlocked, lineName, pointsUsed, whyNot, type Draft,
 } from '../creation/draft';
 import { useDraft } from '../creation/useDraft';
@@ -311,6 +311,26 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
           })}
         </tbody>
       </table>
+      {d.classId && (() => {
+        const recs = RECOMMENDED_SKILLS[d.classId];
+        const missing = missingRecommended(d);
+        return (
+          <div className="help" style={{ gridTemplateColumns: '1fr', marginTop: 10 }}>
+            <b className="lbl">Začínáš s Hlídkou? Doporučené dovednosti (H05)</b>
+            <p className="small" style={{ margin: 0 }}>
+              Pro povolání {getClass(d.classId).name}: {recs.map((r) => `${r.name} (${ATTR_LABELS[r.attribute].short})`).join(', ')} – každá na stupni 1 za 1 bod.
+              {recs.some((r) => r.custom) && ' Znalost poměrů v seznamu dovedností H14 není, přidá se jako vlastní dovednost (schvaluje PJ).'}
+            </p>
+            <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', alignItems: 'center' }}>
+              {missing.length === 0
+                ? <span className="pill ok">DOPORUČENÉ MÁŠ</span>
+                : <button className="btn dark" type="button" disabled={left < 1} onClick={() => update(applyRecommended)}>
+                    Použít doporučené · {Math.min(missing.length, left)} b.
+                  </button>}
+            </div>
+          </div>
+        );
+      })()}
       {open ? (
         <div className="help" style={{ gridTemplateColumns: '1fr', marginTop: 10 }}>
           <b className="lbl">Nová dovednost · 1 bod · stupeň 1</b>

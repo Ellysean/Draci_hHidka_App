@@ -6,6 +6,7 @@ import { emptyCleric, uid } from '../model/defaults';
 import type { Character, ClericActivePrayer, ClericCastMods, ClericMessenger, ClericState } from '../model/types';
 import type { Cast } from './hranicar';
 import { castLen } from './hranicar';
+import { robeBonus } from './equipment';
 import type { RoundCount, WeaponBonus, WeaponInfo } from './valecnik';
 
 // ---------------------------------------------------------------- data
@@ -122,7 +123,7 @@ export function prayerDc(c: Character, p: Prayer, units: number): { dc: number |
 
 /**
  * Bonus k ověření Prosby (CHAR) navíc k dovednosti (H13, PPP06): Posvátný symbol +2 (od 6. úr. +3), Rituály a obřady +3 na den,
- * bez odříkání −5, vyrušení −5, posvátné místo vlastního boha +5 / cizího −5, symbol jiného boha −5.
+ * bez odříkání −5, vyrušení −5, posvátné místo vlastního boha +5 / cizího −5, symbol jiného boha −5, nasazená róba +bonus (H15).
  */
 export function prayerCheckBonus(c: Character, m: ClericCastMods = cle(c).mods): { bonus: number; parts: string[] } {
   const S = cle(c);
@@ -136,6 +137,8 @@ export function prayerCheckBonus(c: Character, m: ClericCastMods = cle(c).mods):
   if (m.place === 'own') add(5, 'posvátné místo');
   if (m.place === 'foreign') add(-5, 'místo cizího boha');
   if (m.foreignSymbol) add(-5, 'symbol jiného boha');
+  const robe = robeBonus(c);
+  if (robe.value) add(robe.value, robe.name);
   return { bonus: b, parts };
 }
 

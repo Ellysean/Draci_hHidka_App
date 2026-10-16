@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Character } from '../model/types';
 import { record } from '../rules/combat';
+import { robeBonus } from '../rules/equipment';
 import { sgn, type Derived } from '../rules/derive';
 import { GROUP_LABEL, RANGER, RANGER_SPELLS, knownRangerSpells, rangerNotes, rangerOwned, restoreWhy, spellLock, trapWhy, type MagicSpell } from '../rules/hranicar';
 import { progressionName } from '../progression/levelup';
@@ -193,7 +194,8 @@ function Kouzla({ c, d, put, say }: P) {
   const known = useMemo(() => new Set(knownRangerSpells(c).map((s) => s.id)), [c]);
   const own = useMemo(() => rangerOwned(c), [c]);
   const pouto = d.skills.find((s) => s.id === 'pouto_s_prirodou');
-  const bonus = pouto?.total ?? 0;
+  const robe = robeBonus(c);
+  const bonus = (pouto?.total ?? 0) + robe.value;
   const pool = flt === 'known' ? RANGER_SPELLS.filter((s) => known.has(s.id)) : RANGER_SPELLS;
   const groups = [...new Set(pool.map((s) => s.skupina))];
   const list = pool.filter((s) => (!grp || s.skupina === grp) && (!q || `${s.nazev} ${s.popis}`.toLowerCase().includes(q.toLowerCase())));
@@ -207,7 +209,7 @@ function Kouzla({ c, d, put, say }: P) {
   };
   return (
     <Sheet>
-      <div className="ribbon-row"><Ribbon icon="book">KOUZLA</Ribbon><span className="small tn">zná {known.size} · Duševní síla {c.vitals.manaCurrent} · Pouto s přírodou {sgn(bonus)}</span></div>
+      <div className="ribbon-row"><Ribbon icon="book">KOUZLA</Ribbon><span className="small tn">zná {known.size} · Duševní síla {c.vitals.manaCurrent} · Pouto s přírodou {sgn(bonus)}{robe.value ? ` (vč. ${robe.name} +${robe.value})` : ''}</span></div>
       <div className="chips">
         {([['known', `Známá (${known.size})`], ['all', `Všechna (${RANGER_SPELLS.length})`]] as const).map(([k, l]) => (
           <button key={k} type="button" className="chip" aria-pressed={flt === k} onClick={() => { setFlt(k); setGrp(null); }}>{l}</button>
