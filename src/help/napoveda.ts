@@ -98,7 +98,7 @@ export const HELP: HelpSection[] = [
         list: [
           '**Atributy** – rozdělení bodů podle rasy a povolání, opravy se ukazují hned.',
           '**Životy a energie** – z tabulek, nic se nezadává ručně.',
-          '**Dovednosti** – základní a profesní dovednosti povolání a body na další.',
+          '**Dovednosti** – základní a profesní dovednosti povolání a body na další. Kdo začíná, může jedním tlačítkem vzít **doporučené dovednosti** z H05; rámeček **Záchranné hody** ukáže, které z dovedností pro záchranné hody (Atletika, Vůle, Postřeh, Výdrž, Hbitost) postavě chybí, a naučí je za 1 bod.',
           '**Vybavení** – doporučená výbava podle povolání, nebo **na míru** s obchodem (nákup s rozměňováním mincí, kurz 1 zl = 10 st = 100 md).',
         ],
       },

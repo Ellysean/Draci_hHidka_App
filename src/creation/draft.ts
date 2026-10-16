@@ -18,6 +18,7 @@ import {
 import { derive } from '../rules/derive';
 import { startingBases } from '../rules/alchemy';
 import { mdToMoney } from '../rules/money';
+import { SAVE_SKILLS } from '../rules/rasy';
 
 export type CartKind = 'gear' | 'acc' | 'weapon' | 'armor' | 'robe' | 'shield';
 
@@ -212,8 +213,6 @@ export interface RecommendedSkill {
   id: string;
   name: string;
   attribute: AttrKey;
-  /** Dovednost, která v H14 není – přidá se jako vlastní (štítek VLASTNÍ, schvaluje PJ). */
-  custom?: boolean;
 }
 
 const rec = (id: string, attribute?: AttrKey): RecommendedSkill => {
@@ -228,9 +227,22 @@ export const RECOMMENDED_SKILLS: Record<ClassId, RecommendedSkill[]> = {
   alchymista: [rec('hbitost'), rec('postreh'), rec('preziti_v_prirode')],
   kouzelnik: [rec('hbitost'), rec('postreh'), rec('vydrz')],
   zlodej: [rec('atletika'), rec('mechanika'), rec('postreh')],
-  // „Znalost poměrů (INT/CHAR)“ v H14 není → vlastní dovednost.
-  klerik: [rec('postreh'), rec('vzdelani'), { id: 'custom:znalost poměrů', name: 'Znalost poměrů', attribute: 'int', custom: true }],
+  // H05 uvádí „Znalost poměrů (INT/CHAR)“ – ta byla nahrazena Etiketou (✔ U 16. 10. 2026).
+  klerik: [rec('postreh'), rec('vzdelani'), rec('etiketa')],
 };
+
+/** Dovednosti pro záchranné hody (Atletika, Vůle, Postřeh, Výdrž, Hbitost – ✔ U 3. 10. 2026), které postava nemá. */
+export function missingSaveSkills(d: Draft): RecommendedSkill[] {
+  if (!d.classId) return [];
+  const owned = new Set([...classSkills(d.classId).map((s) => s.id), ...d.added.map((a) => a.id)]);
+  return [...SAVE_SKILLS].filter((id) => !owned.has(id)).map((id) => rec(id));
+}
+
+/** Naučí jednu doporučenou dovednost (1 bod), pokud ji postava nemá a zbývá bod. */
+export function learnRecommended(d: Draft, r: RecommendedSkill): Draft {
+  if (draftSkillPointsLeft(d) < 1 || d.added.some((a) => a.id === r.id)) return d;
+  return { ...d, added: [...d.added, { id: r.id, customName: null, attribute: r.attribute }] };
+}
 
 /** Dovednostní body, které v konceptu ještě zbývají (3, člověk 4, minus nově naučené). */
 export function draftSkillPointsLeft(d: Draft): number {
@@ -250,7 +262,7 @@ export function applyRecommended(d: Draft): Draft {
   const added = [...d.added];
   for (const r of missingRecommended(d)) {
     if (left < 1) break;
-    added.push({ id: r.id, customName: r.custom ? r.name : null, attribute: r.attribute });
+    added.push({ id: r.id, customName: null, attribute: r.attribute });
     left--;
   }
   return { ...d, added };

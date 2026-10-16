@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { derive } from '../rules/derive';
-import { applyRecommended, assignDie, attributesDone, missingRecommended, buildCharacter, buildEquipment, canStep, changeClass, diceState, finalAttributes, firstBlocked, newDraft, type Draft } from './draft';
+import { applyRecommended, assignDie, attributesDone, learnRecommended, missingRecommended, missingSaveSkills, buildCharacter, buildEquipment, canStep, changeClass, diceState, finalAttributes, firstBlocked, newDraft, type Draft } from './draft';
 
 const lomiel = (): Draft => ({
   ...newDraft(), name: 'Lómiel', raceId: 'elf', classId: 'kouzelnik', method: 'points',
@@ -80,11 +80,20 @@ describe('doporučené dovednosti pro začínající hráče (H05 s. 7)', () => 
     expect(d.added).toHaveLength(3);
     expect(derive(buildCharacter(d)).skillPoints.available.value).toBe(1);
   });
-  it('klerik: Znalost poměrů jako vlastní dovednost', () => {
+  it('klerik: místo Znalosti poměrů Etiketa (✔ U 16. 10. 2026)', () => {
     const d = applyRecommended({ ...lomiel(), classId: 'klerik' });
-    const zp = buildCharacter(d).skills.find((s) => s.customName === 'Znalost poměrů');
-    expect(zp?.source).toBe('custom');
-    expect(zp?.rank).toBe(1);
+    expect(d.added.map((a) => a.id)).toEqual(['postreh', 'vzdelani', 'etiketa']);
+    expect(buildCharacter(d).skills.find((s) => s.id === 'etiketa')).toMatchObject({ source: 'bought', rank: 1 });
+  });
+  it('chybějící dovednosti pro záchranné hody a jejich naučení za 1 bod', () => {
+    let d = lomiel(); // kouzelník má Vůli
+    expect(missingSaveSkills(d).map((r) => r.id)).toEqual(['atletika', 'postreh', 'vydrz', 'hbitost']);
+    d = learnRecommended(d, missingSaveSkills(d)[0]);
+    expect(d.added.map((a) => a.id)).toEqual(['atletika']);
+    expect(missingSaveSkills(d)).toHaveLength(3);
+    d = learnRecommended(learnRecommended(d, missingSaveSkills(d)[0]), missingSaveSkills(d)[1]);
+    expect(derive(buildCharacter(d)).skillPoints.available.value).toBe(0);
+    expect(learnRecommended(d, missingSaveSkills(d)[0])).toBe(d); // bez bodů nic
   });
   it('už naučené se nepřidají znovu a nepřekročí se body', () => {
     let d: Draft = { ...lomiel(), added: [{ id: 'postreh', customName: null, attribute: 'int' }, { id: 'atletika', customName: null, attribute: 'sil' }] };

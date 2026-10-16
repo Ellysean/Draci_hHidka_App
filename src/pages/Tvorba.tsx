@@ -2,7 +2,7 @@
 // Stav je koncept v úložišti; aktivní postava se nahradí až v posledním kroku.
 import { useMemo, useState, type ReactNode } from 'react';
 import {
-  RECOMMENDED_SKILLS, STEPS, additions, applyRecommended, assignDie, missingRecommended, buildCharacter, buildEquipment, canStep, changeClass, classChangeLosses, classSkills,
+  RECOMMENDED_SKILLS, STEPS, additions, applyRecommended, assignDie, learnRecommended, missingRecommended, missingSaveSkills, buildCharacter, buildEquipment, canStep, changeClass, classChangeLosses, classSkills,
   diceState, finalAttributes, firstBlocked, lineName, pointsUsed, whyNot, type Draft,
 } from '../creation/draft';
 import { useDraft } from '../creation/useDraft';
@@ -17,6 +17,7 @@ import { Ribbon } from '../ui/Ribbon';
 import { Sheet } from '../ui/Sheet';
 import { ConfirmDialog } from '../ui/ConfirmDialog';
 import { isBlank } from '../storage/backup';
+import { SAVE_SKILLS } from '../rules/rasy';
 import { Shop } from './Shop';
 
 type Update = (patch: Partial<Draft> | ((d: Draft) => Draft)) => void;
@@ -297,7 +298,7 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
             const ai = d.added.findIndex((a) => a.id === s.id);
             return (
               <tr key={s.id}>
-                <td><b>{s.customName ?? getSkill(s.id)?.name ?? s.id}</b></td>
+                <td><b>{s.customName ?? getSkill(s.id)?.name ?? s.id}</b>{SAVE_SKILLS.has(s.id) && <> <span className="pill save" title="Používá se k záchranným hodům (ověření proti pasti, jedu, pádu… – vyzve PJ)">ZÁCHRANNÝ HOD</span></>}</td>
                 <td className="c">{ATTR_LABELS[s.attribute].short}</td>
                 <td className="c">{s.rank}</td>
                 <td><span className={`pill ${ai >= 0 ? 'ok' : ''}`}>{ai >= 0 ? (s.customName ? 'VLASTNÍ' : 'NOVÁ · 1 B.') : classOwn.has(s.id) && s.source === 'class-profession' ? 'PROFESNÍ' : 'ZÁKLADNÍ'}</span></td>
@@ -314,12 +315,15 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
       {d.classId && (() => {
         const recs = RECOMMENDED_SKILLS[d.classId];
         const missing = missingRecommended(d);
+        const saves = missingSaveSkills(d);
+        const savePill = <span className="pill save">ZÁCHRANNÝ HOD</span>;
         return (
           <div className="help" style={{ gridTemplateColumns: '1fr', marginTop: 10 }}>
             <b className="lbl">Začínáš s Hlídkou? Doporučené dovednosti (H05)</b>
             <p className="small" style={{ margin: 0 }}>
-              Pro povolání {getClass(d.classId).name}: {recs.map((r) => `${r.name} (${ATTR_LABELS[r.attribute].short})`).join(', ')} – každá na stupni 1 za 1 bod.
-              {recs.some((r) => r.custom) && ' Znalost poměrů v seznamu dovedností H14 není, přidá se jako vlastní dovednost (schvaluje PJ).'}
+              Pro povolání {getClass(d.classId).name}: {recs.map((r, i) => (
+                <span key={r.id}>{i ? ', ' : ''}{r.name} ({ATTR_LABELS[r.attribute].short}){SAVE_SKILLS.has(r.id) && <> {savePill}</>}</span>
+              ))} – každá na stupni 1 za 1 bod.
             </p>
             <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', alignItems: 'center' }}>
               {missing.length === 0
@@ -328,6 +332,21 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
                     Použít doporučené · {Math.min(missing.length, left)} b.
                   </button>}
             </div>
+            <b className="lbl" style={{ marginTop: 6 }}>Záchranné hody</b>
+            <p className="small" style={{ margin: 0 }}>
+              Když PJ vyzve k záchrannému hodu (past, jed, pád…), hází se na Atletiku, Vůli, Postřeh, Výdrž nebo Hbitost –
+              vyplatí se je mít aspoň na stupni 1.
+              {saves.length === 0 ? ' Všechny už máš.' : ` Chybí ti: ${saves.map((r) => r.name).join(', ')}.`}
+            </p>
+            {saves.length > 0 && (
+              <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                {saves.map((r) => (
+                  <button key={r.id} className="btn" type="button" disabled={left < 1} onClick={() => update((x) => learnRecommended(x, r))}>
+                    + {r.name} ({ATTR_LABELS[r.attribute].short}) · 1 b.
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         );
       })()}
@@ -339,7 +358,7 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
               <label className="lbl" htmlFor="wz-skill">Dovednost</label>
               <select className="field" id="wz-skill" value={skillId} onChange={(e) => { setSkillId(e.target.value); const s = getSkill(e.target.value); if (s) setAttr(s.defaultAttribute); }}>
                 <option value="">— vyber —</option>
-                <optgroup label="Základní dovednosti (H14)">{offer.filter((s) => s.kind === 'basic').map((s) => <option key={s.id} value={s.id}>{s.name} ({s.attributes.map((a) => ATTR_LABELS[a].short).join('/')})</option>)}</optgroup>
+                <optgroup label="Základní dovednosti (H14)">{offer.filter((s) => s.kind === 'basic').map((s) => <option key={s.id} value={s.id}>{s.name} ({s.attributes.map((a) => ATTR_LABELS[a].short).join('/')}){SAVE_SKILLS.has(s.id) ? ' · záchranný hod' : ''}</option>)}</optgroup>
                 <optgroup label="Rozšířené (Pravidla pro pokročilé)">{offer.filter((s) => s.kind === 'extended').map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}</optgroup>
                 <option value="__own">Jiná – napsat vlastní…</option>
               </select>
