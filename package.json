@@ -1,7 +1,7 @@
 {
   "name": "draci-hlidka-denik",
   "private": true,
-  "version": "0.15.3",
+  "version": "0.15.4",
   "type": "module",
   "description": "Osobní deník pro Dračí hlídku – webová appka (React)",
   "scripts": {

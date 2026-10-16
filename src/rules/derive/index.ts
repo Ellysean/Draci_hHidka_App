@@ -220,7 +220,11 @@ export interface Derived {
   loadLimit: Calc<number | null>;
   fatigueMax: Calc<number | null>;
   skillPoints: { earned: number; spent: number; available: Calc<number>; byLevel: { level: number; points: number }[] };
-  skills: { id: string; name: string; attribute: AttrKey; rank: number; mod: number; bonus: number; bonusParts: string[]; total: number; source: CharacterSkill['source'] }[];
+  skills: {
+    id: string; name: string; attribute: AttrKey; rank: number; mod: number; bonus: number; bonusParts: string[]; total: number; source: CharacterSkill['source'];
+    /** Dovednost s více atributy (Mechanika OBR/INT…): hodnota pro každý z nich – atribut se volí podle situace. Jinak prázdné. */
+    options: { attribute: AttrKey; mod: number; bonus: number; total: number }[];
+  }[];
   experience: {
     levelByXp: number;
     nextLevelXp: number | null;
@@ -501,8 +505,12 @@ export function derive(c: Character): Derived {
   const skills = c.skills.map((s) => {
     const def = getSkill(s.id);
     const eff = effectSum(c, `skill:${s.id}`);
-    if (mrstnost && s.attribute === 'obr') { eff.total += 2; eff.parts.push('Mrštnost +2'); }
-    return { id: s.id, name: s.customName ?? def?.name ?? s.id, attribute: s.attribute, rank: s.rank, mod: m[s.attribute], bonus: eff.total, bonusParts: eff.parts, total: s.rank + m[s.attribute] + eff.total, source: s.source };
+    const bonusFor = (a: AttrKey) => eff.total + (mrstnost && a === 'obr' ? 2 : 0);
+    const options = def && def.attributes.length > 1
+      ? def.attributes.map((a) => ({ attribute: a, mod: m[a], bonus: bonusFor(a), total: s.rank + m[a] + bonusFor(a) }))
+      : [];
+    const parts = mrstnost && s.attribute === 'obr' ? [...eff.parts, 'Mrštnost +2'] : eff.parts;
+    return { id: s.id, name: s.customName ?? def?.name ?? s.id, attribute: s.attribute, rank: s.rank, mod: m[s.attribute], bonus: bonusFor(s.attribute), bonusParts: parts, total: s.rank + m[s.attribute] + bonusFor(s.attribute), source: s.source, options };
   });
 
   // --- zkušenosti ---

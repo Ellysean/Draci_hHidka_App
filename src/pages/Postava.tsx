@@ -302,7 +302,7 @@ export function Postava() {
           <tbody>
             {d.skills.length === 0 && <tr><td colSpan={4} className="muted small">Zatím žádné dovednosti.</td></tr>}
             {d.skills.map((s) => (
-              <tr key={s.id}><td>{s.name}</td><td className="c">{ATTR_LABELS[s.attribute].short}</td><td className="c">{s.rank}</td><td className="c">{sgn(s.total)}</td></tr>
+              <tr key={s.id}><td>{s.name}</td><td className="c">{s.options.length ? s.options.map((o) => ATTR_LABELS[o.attribute].short).join(' / ') : ATTR_LABELS[s.attribute].short}</td><td className="c">{s.rank}</td><td className="c">{s.options.length ? s.options.map((o) => sgn(o.total)).join(' / ') : sgn(s.total)}</td></tr>
             ))}
           </tbody>
         </table>

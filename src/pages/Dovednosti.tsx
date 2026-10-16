@@ -24,7 +24,7 @@ export function Dovednosti() {
   const { character: c, derived: d, dispatch } = useStore();
   const [manual, setManual] = useState(false);
   const [criticals, setCriticals] = useState(true);
-  const [rolls, setRolls] = useState<Record<string, CheckRoll>>({});
+  const [rolls, setRolls] = useState<Record<string, CheckRoll & { attr?: AttrKey }>>({});
   const [confirmRemove, setConfirmRemove] = useState<string | null>(null);
   const upd = (fn: (x: Character) => Character) => dispatch({ type: 'update', fn });
 
@@ -33,7 +33,7 @@ export function Dovednosti() {
   const exp = hasExpertise(c);
   const spent = spentByLevel(c);
 
-  const roll = (id: string, total: number) => setRolls((r) => ({ ...r, [id]: rollCheck(total, criticals) }));
+  const roll = (id: string, total: number, attr?: AttrKey) => setRolls((r) => ({ ...r, [id]: { ...rollCheck(total, criticals), attr } }));
 
   const table = (
     <Sheet>
@@ -47,7 +47,7 @@ export function Dovednosti() {
           <div className="ics">{ATTR_KEYS.map((k) => <i key={k}>{ATTR_LABELS[k].short}</i>)}</div>
           <ul>
             <li>Ověření = 1k10 + oprava atributu + stupeň (+ bonusy schopností).</li>
-            <li>U dvouatributových dovedností vyber atribut podle situace (rozhoduje PJ).</li>
+            <li>Dovednosti se dvěma atributy (Mechanika, Etiketa, Umění, Řemesla, Zvládnutí zvířat…) mají <b>hod pro každý atribut</b> – hoď na ten, který odpovídá tomu, co postava právě dělá (rozhoduje PJ).</li>
             <li>Zlepšení na stupeň N stojí N bodů, nová dovednost 1 bod (stupeň 1). Nevyužité body zůstávají.</li>
             <li>Každá dovednost nejvýš <b>+1 stupeň za úroveň</b>{exp ? ' – Expertiza: na sudé úrovni jedna dovednost až +2, nejvýš na úroveň + 2' : ''}. Zlepšení tady se počítá k aktuální ({level}.) úrovni, stejně jako v průvodci přestupem.</li>
             <li>Profesní dovednosti nejdou koupit – dává je schopnost povolání (na 3. stupni).</li>
@@ -104,7 +104,9 @@ export function Dovednosti() {
                     ))}
                   </td>
                   <td className="c sk-a">
-                    {attrs.length > 1 ? (
+                    {s.options.length > 1 ? (
+                      <span title="Atribut se volí podle situace – hoď na ten, který odpovídá tomu, co postava dělá (rozhodne PJ)">{s.options.map((o) => ATTR_LABELS[o.attribute].short).join(' / ')}</span>
+                    ) : attrs.length > 1 ? (
                       <select className="sk-attr" aria-label={`Atribut pro ${s.name}`} value={s.attribute} onChange={(e) => upd((x) => setSkillAttribute(x, s.id, e.target.value as AttrKey))}>
                         {attrs.map((a) => <option key={a} value={a}>{ATTR_LABELS[a].short}</option>)}
                       </select>
@@ -115,13 +117,32 @@ export function Dovednosti() {
                       <input className="sk-rank" type="number" min={1} step={1} aria-label={`Stupeň ${s.name}`} value={s.rank} onChange={(e) => upd((x) => setSkillRankManual(x, s.id, Number(e.target.value)))} />
                     ) : <b>{s.rank}</b>}
                   </td>
-                  <td className="c sk-opt" title={s.bonusParts.length ? `bonusy: ${s.bonusParts.join(', ')}` : undefined}>{sgn(s.mod)}{s.bonus ? <span className="muted small"> {sgn(s.bonus)}</span> : null}</td>
-                  <td className="c sk-t"><b>{sgn(s.total)}</b></td>
+                  <td className="c sk-opt" title={s.bonusParts.length ? `bonusy: ${s.bonusParts.join(', ')}` : undefined}>
+                    {s.options.length > 1
+                      ? s.options.map((o) => sgn(o.mod)).join(' / ')
+                      : sgn(s.mod)}
+                    {s.bonus ? <span className="muted small"> {sgn(s.bonus)}</span> : null}
+                  </td>
+                  <td className={`c sk-t${s.options.length > 1 ? ' multi' : ''}`}>
+                    {s.options.length > 1
+                      ? <b>{s.options.map((o) => `${ATTR_LABELS[o.attribute].short} ${sgn(o.total)}`).join(' · ')}</b>
+                      : <b>{sgn(s.total)}</b>}
+                  </td>
                   <td className="c sk-h">
-                    <button className="btn sk-roll" type="button" aria-label={`Hodit k10 ${sgn(s.total)} na ${s.name}`} onClick={() => roll(s.id, s.total)}>⚄ k10 {sgn(s.total)}</button>
+                    {s.options.length > 1 ? (
+                      <div className="sk-rolls">
+                        {s.options.map((o) => (
+                          <button key={o.attribute} className="btn sk-roll" type="button" aria-label={`Hodit k10 ${sgn(o.total)} na ${s.name} s ${ATTR_LABELS[o.attribute].short}`} onClick={() => roll(s.id, o.total, o.attribute)}>
+                            ⚄ {ATTR_LABELS[o.attribute].short} {sgn(o.total)}
+                          </button>
+                        ))}
+                      </div>
+                    ) : (
+                      <button className="btn sk-roll" type="button" aria-label={`Hodit k10 ${sgn(s.total)} na ${s.name}`} onClick={() => roll(s.id, s.total)}>⚄ k10 {sgn(s.total)}</button>
+                    )}
                     {r && (
                       <div className={`sk-res${r.outcome ? ` ${r.outcome}` : ''}`} aria-live="polite">
-                        <b>{r.total}</b> <span className="muted small">({r.die}{r.second != null ? ` → ${r.second}` : ''} {sgn(r.bonus)})</span>
+                        <b>{r.total}</b> <span className="muted small">({r.attr ? `${ATTR_LABELS[r.attr].short}: ` : ''}{r.die}{r.second != null ? ` → ${r.second}` : ''} {sgn(r.bonus)})</span>
                         {r.outcome && <div className="small"><b>{ROLL_TEXT[r.outcome]}</b></div>}
                       </div>
                     )}

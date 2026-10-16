@@ -115,7 +115,7 @@ export function Tisk() {
               <tbody>
                 {d.skills.length === 0 && <tr><td colSpan={4}>—</td></tr>}
                 {d.skills.map((s) => (
-                  <tr key={s.id}><td>{s.name || getSkill(s.id)?.name || s.id}</td><td>{ATTR_LABELS[s.attribute].short}</td><td>{s.rank}</td><td><b>{sgn(s.total)}</b></td></tr>
+                  <tr key={s.id}><td>{s.name || getSkill(s.id)?.name || s.id}</td><td>{s.options.length ? s.options.map((o) => ATTR_LABELS[o.attribute].short).join(' / ') : ATTR_LABELS[s.attribute].short}</td><td>{s.rank}</td><td><b>{s.options.length ? s.options.map((o) => sgn(o.total)).join(' / ') : sgn(s.total)}</b></td></tr>
                 ))}
               </tbody>
             </table>

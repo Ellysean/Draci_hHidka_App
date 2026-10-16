@@ -237,3 +237,23 @@ describe('zbraň v ruce', () => {
     expect(derive(c).attackNumber.value).toBe(2);
   });
 });
+
+describe('dovednosti s více atributy – volba podle situace', () => {
+  it('Mechanika má hodnotu pro OBR i INT, jednoatributová nemá volby', () => {
+    const c = newCharacter();
+    c.attributes.obr = 14; c.attributes.int = 8;
+    c.skills = [
+      { id: 'mechanika', customName: null, attribute: 'obr', rank: 3, source: 'bought' },
+      { id: 'postreh', customName: null, attribute: 'int', rank: 1, source: 'bought' },
+    ];
+    const d = derive(c);
+    const mech = d.skills.find((s) => s.id === 'mechanika')!;
+    expect(mech.options.map((o) => o.attribute)).toEqual(['obr', 'int']);
+    const obr = mech.options.find((o) => o.attribute === 'obr')!;
+    const int = mech.options.find((o) => o.attribute === 'int')!;
+    expect(obr.total - int.total).toBe(obr.mod - int.mod);
+    expect(obr.mod).toBeGreaterThan(int.mod);
+    expect(mech.total).toBe(obr.total); // výchozí atribut
+    expect(d.skills.find((s) => s.id === 'postreh')!.options).toEqual([]);
+  });
+});
