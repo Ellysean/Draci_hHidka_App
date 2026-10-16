@@ -1,0 +1,94 @@
+/* Fáze 8 – záloha, import, potvrzovací dialog a tisk. */
+
+/* potvrzovací dialog */
+dialog.confirm{max-width:min(520px,calc(100vw - 32px))}
+.confirm-body{font-size:15px}
+.confirm-body p{margin:0 0 10px}
+
+/* lišta nad deníkem */
+.denik-bar.warn{border-color:var(--blood)}
+.denik-bar.warn .save-state b{color:var(--blood)}
+
+/* stránka Záloha */
+.zl-page .cols{align-items:start}
+.zl-cur{margin:0 0 10px}
+.zl-last{border-left:3px solid var(--structure);padding:4px 10px;margin:10px 0;font-size:14px;background:var(--paper)}
+.zl-last.warn{border-color:var(--blood);color:var(--blood);font-weight:500}
+.zl-btns{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.zl-drop{border:2px dashed var(--structure);background:var(--paper);padding:16px;text-align:center;margin-bottom:10px}
+.zl-drop.on{border-color:var(--wine);background:var(--note-bg)}
+.zl-drop p{margin:0 0 10px}
+@media (hover:none){.zl-desk{display:none}}
+.zl-msg{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid var(--ink);padding:8px 12px;font-size:14px}
+.zl-snaps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.zl-snaps li{display:flex;gap:8px;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid var(--atmos);padding:6px 8px}
+.zl-snaps li>div:first-child{display:grid;gap:2px;min-width:0}
+.zl-sbtn{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.zl-new{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 12px;align-items:center}
+.zl-new .btn{justify-content:center}
+@media (max-width:520px){.zl-new{grid-template-columns:minmax(0,1fr)}.zl-new .small{margin-bottom:6px}}
+.zl-check{display:flex;gap:8px;align-items:center;font-size:14px;margin-top:6px}
+.zl-prev{background:var(--paper);border:1px solid var(--structure);padding:10px 12px;margin-bottom:12px}
+.zl-name{font:700 16px/1.2 var(--f-display);display:block;margin-bottom:6px}
+.zl-prev dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 12px;margin:0;font-size:14px}
+.zl-prev dt{color:var(--structure)}
+.zl-prev dd{margin:0}
+.zl-file{overflow-wrap:anywhere}
+.zl-warn{color:var(--blood);margin:8px 0 0;font-size:14px}
+
+/* TISK – souhrn postavy */
+.tisk-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.tisk-bar .small{flex:1;min-width:200px}
+.tisk-page{background:#fff;color:#000;padding:18px 20px;max-width:900px;margin:0 auto;font-size:13px;line-height:1.3;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.tisk-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:10px}
+.tisk-head h1{font:700 24px/1.1 var(--f-display);margin:0}
+.tisk-head p{margin:2px 0 0}
+.tisk-meta{display:grid;gap:2px;text-align:right}
+.tisk-grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:8px}
+.tisk-grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:8px}
+.tisk-box{border:1px solid #000;padding:6px 8px;break-inside:avoid;margin-bottom:8px}
+.tisk-grid4 .tisk-box,.tisk-grid2 .tisk-box{margin-bottom:0}
+.tisk-box h2{font:700 12px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;margin:0 0 5px;border-bottom:1px solid #999;padding-bottom:3px}
+.tisk-box table{width:100%;border-collapse:collapse}
+.tisk-box th{text-align:left;font-weight:400;color:#333;padding:1px 4px 1px 0}
+.tisk-box td{padding:1px 0 1px 4px;text-align:right;font-variant-numeric:tabular-nums}
+.tisk-tab th{font-weight:700;color:#000;border-bottom:1px solid #999;text-align:left}
+.tisk-tab td{text-align:left;border-bottom:1px dotted #bbb}
+.tisk-tab td:not(:first-child),.tisk-tab th:not(:first-child){text-align:center}
+.tisk-line{margin:6px 0 0}
+.tisk-list{margin:0;padding-left:16px}
+.tisk-list.cols2{columns:2;column-gap:18px}
+.tisk-list i{color:#555}
+.tisk-notes{white-space:pre-wrap;margin:0 0 6px}
+.tisk-foot{font-size:11px;color:#555;border-top:1px solid #999;padding-top:4px;margin-top:6px}
+@media (max-width:720px){.tisk-grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.tisk-grid2{grid-template-columns:minmax(0,1fr)}.tisk-meta{text-align:left}.tisk-page{padding:12px}}
+
+@media print{
+  @page{size:A4;margin:12mm}
+  body{background:#fff!important}
+  .side,.noprint,.proto,.banner,.dice-fab,#dice-tray,nav{display:none!important}
+  .app,.main{display:block!important;padding:0!important;margin:0!important;max-width:none!important;background:#fff!important}
+  .tisk-page{box-shadow:none;padding:0;max-width:none}
+  .tisk-grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .tisk-grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tisk-meta{text-align:right}
+}
+
+/* NÁPOVĚDA */
+.help-search input{width:100%;height:38px;font-size:16px}
+.help-toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px;margin-top:12px}
+.help-toc-i{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--paper);border:1px solid var(--atmos);padding:8px 10px}
+.help-toc-i:hover{border-color:var(--ink)}
+.help-toc-i svg{width:20px;height:20px;flex-shrink:0;margin-top:1px}
+.help-toc-i span{display:grid;gap:2px}
+.help-toc-i b{font:700 14px/1.15 var(--f-display);letter-spacing:.04em}
+.help-toc-i small{font-size:12.5px;color:var(--structure);line-height:1.3}
+.help-sec{scroll-margin-top:12px}
+.help-lead{margin:-4px 0 10px;font-style:italic;color:var(--structure)}
+.help-block{max-width:78ch}
+.help-block h3{font:700 15px/1.2 var(--f-display);letter-spacing:.05em;margin:14px 0 6px}
+.help-block p{margin:0 0 8px}
+.help-block ul{margin:0 0 8px;padding-left:20px}
+.help-block li{margin:3px 0}
+.help-block code{background:var(--paper);padding:0 4px;font-size:.92em}
+.help-tip{background:var(--note-bg);border-left:3px solid var(--pencil);padding:6px 10px}

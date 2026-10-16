@@ -1,0 +1,742 @@
+{
+ "_source": "tools/build-pratele.py – H09, PPP02, H11, PPP04, PPP05, V14 (7c+, Důvěrník 7e)",
+ "druhy": [
+  {
+   "id": "pes",
+   "name": "Pes",
+   "src": "H09",
+   "page": 14,
+   "tame": 4,
+   "tameNote": "domestikovaný, smečka",
+   "level": 1,
+   "size": "A",
+   "hp": 6,
+   "mobility": "45",
+   "attrs": {
+    "sil": 12,
+    "obr": 12,
+    "odo": 10,
+    "int": 1,
+    "char": 13
+   },
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 5,
+     "dmg": 2
+    }
+   ],
+   "zo": 2,
+   "oc": 3,
+   "skills": {
+    "Atletika": 2,
+    "Postřeh": 5,
+    "Stopování": 7
+   },
+   "talent": "Při stopování má pán Výhodu +5 ke Stopování. Hlídač: na 40 sáhů zbystří, na 20 sáhů štěká (spí-li, poloviční vzdálenosti).",
+   "kind": "zvire"
+  },
+  {
+   "id": "vlk_lesni",
+   "name": "Vlk lesní",
+   "src": "H09",
+   "page": 14,
+   "tame": 9,
+   "tameNote": "smečka",
+   "level": 1,
+   "size": "A",
+   "hp": 8,
+   "mobility": "45",
+   "attrs": {
+    "sil": 14,
+    "obr": 14,
+    "odo": 14,
+    "int": 1,
+    "char": 10
+   },
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 6,
+     "dmg": 2
+    }
+   ],
+   "zo": 3,
+   "oc": 4,
+   "skills": {
+    "Atletika": 3,
+    "Lov": 8,
+    "Postřeh": 3,
+    "Stopování": 6
+   },
+   "talent": "Při lovu má pán Výhodu +5 k Lovu.",
+   "kind": "zvire"
+  },
+  {
+   "id": "sokol",
+   "name": "Sokol",
+   "src": "H09",
+   "page": 14,
+   "tame": 10,
+   "tameNote": "dominantní",
+   "level": 1,
+   "size": "A1",
+   "hp": 5,
+   "mobility": "70 (létání)",
+   "attrs": {
+    "sil": 5,
+    "obr": 19,
+    "odo": 8,
+    "int": 1,
+    "char": 12
+   },
+   "attacks": [
+    {
+     "n": "spáry",
+     "atk": 1,
+     "dmg": 3
+    }
+   ],
+   "zo": 5,
+   "oc": 6,
+   "skills": {
+    "Hbitost": 5,
+    "Postřeh": 8
+   },
+   "talent": "Při určování směru v přírodě má pán Výhodu +5 k Vnímání přírody. Vidí dál než ostatní, křikem varuje před nebezpečím.",
+   "kind": "zvire"
+  },
+  {
+   "id": "vlk_sedy",
+   "name": "Vlk šedý",
+   "src": "V14",
+   "page": null,
+   "tame": 10,
+   "tameNote": "smečka",
+   "level": 2,
+   "size": "A",
+   "hp": 11,
+   "mobility": "55",
+   "attrs": {
+    "sil": 14,
+    "obr": 14,
+    "odo": 14,
+    "int": 1,
+    "char": 9
+   },
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 7,
+     "dmg": 1
+    }
+   ],
+   "zo": 3,
+   "oc": 4,
+   "skills": {
+    "Atletika": 3,
+    "Hbitost": 3,
+    "Výdrž": 4,
+    "Postřeh": 9,
+    "Vůle": 1,
+    "Stopování": 8
+   },
+   "special": "Ostré smysly: Výhoda +5 k Postřehu sluchem a čichem; v noci vidí jako za šera na 40 sáhů.",
+   "kind": "zvire"
+  },
+  {
+   "id": "vlk_alfa",
+   "name": "Vlk šedý – alfa",
+   "src": "V14",
+   "page": null,
+   "tame": 15,
+   "tameNote": "smečka, dominantní",
+   "level": 3,
+   "size": "B",
+   "hp": 14,
+   "mobility": "55",
+   "attrs": {
+    "sil": 14,
+    "obr": 14,
+    "odo": 14,
+    "int": 1,
+    "char": 9
+   },
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 9,
+     "dmg": 2
+    }
+   ],
+   "zo": 5,
+   "oc": 6,
+   "skills": {
+    "Atletika": 3,
+    "Hbitost": 3,
+    "Výdrž": 4,
+    "Postřeh": 9,
+    "Vůle": 1,
+    "Stopování": 8
+   },
+   "special": "Ostré smysly: Výhoda +5 k Postřehu sluchem a čichem; v noci vidí jako za šera na 40 sáhů.",
+   "kind": "zvire"
+  },
+  {
+   "id": "rys",
+   "name": "Rys",
+   "src": "V14",
+   "page": null,
+   "tame": 16,
+   "tameNote": "dominantní",
+   "level": 2,
+   "size": "A",
+   "hp": 11,
+   "mobility": "55",
+   "attrs": {
+    "sil": 14,
+    "obr": 18,
+    "odo": 14,
+    "int": 1,
+    "char": 11
+   },
+   "attacks": [
+    {
+     "n": "drápy",
+     "atk": 6,
+     "dmg": 1
+    },
+    {
+     "n": "zuby",
+     "atk": 7,
+     "dmg": 1
+    }
+   ],
+   "zo": 5,
+   "oc": 6,
+   "skills": {
+    "Atletika": 3,
+    "Hbitost": 7,
+    "Výdrž": 4,
+    "Postřeh": 8,
+    "Vůle": 1
+   },
+   "special": "Skok (1× za 3 kola): skočí na protivníka do 5 sáhů; Hbitost vs. Hbitost – neuspěje-li oběť (vel. B a menší), je povalena a rys hned kousne s Výhodou +5.",
+   "kind": "zvire"
+  },
+  {
+   "id": "medved",
+   "name": "Medvěd",
+   "src": "V14",
+   "page": null,
+   "tame": 20,
+   "tameNote": "dominantní",
+   "level": 4,
+   "size": "C",
+   "hp": 26,
+   "mobility": "42",
+   "attrs": {
+    "sil": 18,
+    "obr": 14,
+    "odo": 16,
+    "int": 1,
+    "char": 11
+   },
+   "attacks": [
+    {
+     "n": "drápy",
+     "atk": 10,
+     "dmg": 3
+    },
+    {
+     "n": "zuby",
+     "atk": 11,
+     "dmg": 3
+    }
+   ],
+   "zo": 6,
+   "oc": 7,
+   "skills": {
+    "Atletika": 8,
+    "Hbitost": 4,
+    "Výdrž": 6,
+    "Postřeh": 5,
+    "Vůle": 1
+   },
+   "special": "Objetí (1× za 3 kola): tvora vel. C a menšího povalí a uvězní (Hbitost vs. Hbitost), hned kousne; útoky na povaleného s Výhodou +5.",
+   "kind": "zvire"
+  },
+  {
+   "id": "hranicaruv_kun",
+   "kind": "kun",
+   "name": "Hraničářův kůň",
+   "src": "PPP02",
+   "page": 66,
+   "level": 2,
+   "size": "C",
+   "hp": 21,
+   "mobility": "65",
+   "attrs": {
+    "sil": 16,
+    "obr": 14,
+    "odo": 13,
+    "int": 4,
+    "char": 14
+   },
+   "attacks": [
+    {
+     "n": "kopyta",
+     "atk": 8,
+     "dmg": 3
+    }
+   ],
+   "zo": 5,
+   "oc": 6,
+   "skills": {
+    "Atletika": 7,
+    "Postřeh": 8,
+    "Orientace": 5,
+    "Plavání": 3
+   },
+   "special": "Odkopnutí. Speciální povely (tolik, kolik je bonus INT hraničáře): naučení 1 směna, signál hvízdnutím či gestem."
+  },
+  {
+   "id": "krysa",
+   "name": "Krysa",
+   "src": "H11",
+   "page": 16,
+   "dc": 10,
+   "minLevel": null,
+   "size": "A0",
+   "hp": 5,
+   "mana": 5,
+   "spells": 2,
+   "mobility": "20 (lezení)",
+   "attrs": {
+    "sil": 4,
+    "obr": 20,
+    "odo": 12,
+    "int": null,
+    "char": 10
+   },
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 0,
+     "dmg": 1
+    }
+   ],
+   "zo": 6,
+   "oc": 7,
+   "skillList": [
+    "Hbitost",
+    "Výdrž",
+    "Postřeh",
+    "Sesílání kouzel",
+    "Vůle"
+   ],
+   "special": "Vidění ve tmě. Pronikne takřka kamkoliv, skvěle plave, jídlo a pití si najde sama.",
+   "kind": "mag",
+   "level": null
+  },
+  {
+   "id": "kocka",
+   "name": "Kočka",
+   "src": "H11",
+   "page": 16,
+   "dc": 11,
+   "minLevel": null,
+   "size": "A1",
+   "hp": 9,
+   "mana": 4,
+   "spells": 2,
+   "mobility": "24 (lezení)",
+   "attrs": {
+    "sil": 8,
+    "obr": 18,
+    "odo": 10,
+    "int": null,
+    "char": 14
+   },
+   "attacks": [
+    {
+     "n": "drápy",
+     "atk": 2,
+     "dmg": 0
+    }
+   ],
+   "zo": 5,
+   "oc": 6,
+   "skillList": [
+    "Atletika",
+    "Hbitost",
+    "Postřeh",
+    "Sesílání kouzel",
+    "Vůle"
+   ],
+   "special": "Vidění ve tmě. Odloučení od pána snese dvakrát déle než ostatní přátelé.",
+   "kind": "mag",
+   "level": null
+  },
+  {
+   "id": "sova",
+   "name": "Sova",
+   "src": "H11",
+   "page": 16,
+   "dc": 12,
+   "minLevel": null,
+   "size": "A1",
+   "hp": 7,
+   "mana": 6,
+   "spells": 3,
+   "mobility": "43 (létání), 13 (na zemi)",
+   "attrs": {
+    "sil": 6,
+    "obr": 16,
+    "odo": 9,
+    "int": null,
+    "char": 16
+   },
+   "attacks": [
+    {
+     "n": "spáry",
+     "atk": 1,
+     "dmg": 2
+    }
+   ],
+   "zo": 3,
+   "oc": 4,
+   "skillList": [
+    "Hbitost",
+    "Postřeh",
+    "Sesílání kouzel",
+    "Vůle"
+   ],
+   "special": "Vidění ve tmě, létá neslyšně. Přes den nejraději spí – na cestách potřebuje víc péče.",
+   "kind": "mag",
+   "level": null
+  },
+  {
+   "id": "had",
+   "name": "Had",
+   "src": "PPP04",
+   "page": 193,
+   "dc": 13,
+   "minLevel": 6,
+   "size": "A1",
+   "hp": 8,
+   "mana": 6,
+   "spells": 3,
+   "mobility": "30",
+   "attrs": null,
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 1,
+     "dmg": 2
+    }
+   ],
+   "zo": 4,
+   "oc": 7,
+   "skills": {
+    "Postřeh": 4
+   },
+   "skillList": [
+    "Sesílání kouzel"
+   ],
+   "special": "Jed (váček se denně doplní): kousnutý hází past ODO vs. 8, jinak ztrácí 1k6 životů každé kolo do ošetření. Tichý, plave, proplíží se všude.",
+   "kind": "mag",
+   "level": null
+  },
+  {
+   "id": "havran",
+   "name": "Havran",
+   "src": "PPP04",
+   "page": 194,
+   "dc": 14,
+   "minLevel": 6,
+   "size": "A1",
+   "hp": 7,
+   "mana": 4,
+   "spells": 2,
+   "mobility": "50",
+   "attrs": null,
+   "attacks": [
+    {
+     "n": "zobák",
+     "atk": 1,
+     "dmg": 0
+    }
+   ],
+   "zo": 3,
+   "oc": 6,
+   "skills": {
+    "Postřeh": 6
+   },
+   "skillList": [
+    "Sesílání kouzel"
+   ],
+   "special": "Domluví se s jinými havrany v okolí. Umí Kouzelnické triky jako jeho pán.",
+   "kind": "mag",
+   "level": null
+  },
+  {
+   "id": "netopyr",
+   "name": "Netopýr",
+   "src": "PPP04",
+   "page": 194,
+   "dc": 14,
+   "minLevel": 6,
+   "size": "A0",
+   "hp": 6,
+   "mana": 3,
+   "spells": 1,
+   "mobility": "70",
+   "attrs": null,
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 0,
+     "dmg": 1
+    }
+   ],
+   "zo": 6,
+   "oc": 9,
+   "skills": {
+    "Postřeh": 8
+   },
+   "skillList": [
+    "Sesílání kouzel"
+   ],
+   "special": "Echolokace – obratně létá i v naprosté tmě a pronikne malými skulinami.",
+   "kind": "mag",
+   "level": null
+  },
+  {
+   "id": "potkan",
+   "name": "Potkan",
+   "size": "A0",
+   "hp": 3,
+   "mobility": "15 (na zemi)",
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 0,
+     "dmg": 1
+    }
+   ],
+   "zo": 4,
+   "oc": 5,
+   "skills": {
+    "Postřeh": 4,
+    "Plavání": 4
+   },
+   "tricks": {
+    "Lezení": 8,
+    "Odstranění pastí": 4,
+    "Odvedení pozornosti": 1
+   },
+   "kind": "lup",
+   "src": "PPP05",
+   "page": 260,
+   "level": null,
+   "attrs": null
+  },
+  {
+   "id": "papousek",
+   "name": "Papoušek",
+   "size": "A1",
+   "hp": 4,
+   "mobility": "45 (létání)",
+   "attacks": [
+    {
+     "n": "zobák",
+     "atk": 1,
+     "dmg": 0
+    }
+   ],
+   "zo": 4,
+   "oc": 5,
+   "skills": {
+    "Postřeh": 5
+   },
+   "tricks": {
+    "Imitace": 7,
+    "Odvedení pozornosti": 2
+   },
+   "kind": "lup",
+   "src": "PPP05",
+   "page": 260,
+   "level": null,
+   "attrs": null
+  },
+  {
+   "id": "kocka_lupic",
+   "name": "Kočka",
+   "size": "A1",
+   "hp": 6,
+   "mobility": "45 (na zemi)",
+   "attacks": [
+    {
+     "n": "drápy",
+     "atk": 1,
+     "dmg": 1
+    },
+    {
+     "n": "zuby",
+     "atk": 2,
+     "dmg": 1
+    }
+   ],
+   "zo": 5,
+   "oc": 6,
+   "skills": {
+    "Postřeh": 5
+   },
+   "tricks": {
+    "Lezení": 6,
+    "Ohebnost": 2,
+    "Pád z výšky": 2,
+    "Získání důvěry": 2
+   },
+   "kind": "lup",
+   "src": "PPP05",
+   "page": 260,
+   "level": null,
+   "attrs": null
+  },
+  {
+   "id": "opice",
+   "name": "Opice",
+   "size": "A",
+   "hp": 7,
+   "mobility": "40 (na zemi)",
+   "attacks": [
+    {
+     "n": "zuby",
+     "atk": 3,
+     "dmg": 1
+    }
+   ],
+   "zo": 5,
+   "oc": 6,
+   "skills": {
+    "Postřeh": 4
+   },
+   "tricks": {
+    "Lezení": 7,
+    "Vybírání kapes": 4,
+    "Splynutí s davem": 2
+   },
+   "kind": "lup",
+   "src": "PPP05",
+   "page": 260,
+   "level": null,
+   "attrs": null
+  },
+  {
+   "id": "duvernik",
+   "name": "Důvěrník",
+   "size": null,
+   "hp": 50,
+   "mobility": "30",
+   "attacks": [
+    {
+     "n": "zbraň",
+     "atk": 9,
+     "dmg": null
+    }
+   ],
+   "zo": 4,
+   "oc": 7,
+   "skills": {},
+   "tricks": {},
+   "special": "3 libovolné obecné dovednosti a 2 zlodějská Umění na stupni 8; 2 zlodějské triky ověřované Uměním, které ovládá; 2 libovolné triky Válečníka (PPZ). Velikost podle rasy. Žold nepotřebuje.",
+   "talent": "Loajální rádce a bodyguard Sicca – v boji o jeho akcích rozhoduje hráč, mimo boj ho obvykle vede Vypravěč.",
+   "kind": "duv",
+   "src": "PPP05",
+   "page": 273,
+   "level": null,
+   "attrs": null
+  }
+ ],
+ "magSkillAttr": {
+  "Atletika": "sil",
+  "Hbitost": "obr",
+  "Výdrž": "odo",
+  "Postřeh": "int",
+  "Vůle": "char",
+  "Sesílání kouzel": "pan"
+ },
+ "rust": {
+  "zvire": {
+   "src": "H09 s. 14 (poznámka * u tabulky)",
+   "text": "Za každou úroveň, které dosáhne spolu s hraničářem: +3 max. životy a 2 vybrané dovednosti +1 (známé, nově lze Atletika, Akrobacie, Výdrž, Postřeh, Vůle). Každá 3. taková úroveň: ÚČ, Zranění a ZO (tím i OČ) +1. Bez zpětné opravy.",
+   "hp": 3,
+   "skills": 2,
+   "newSkills": [
+    "Atletika",
+    "Akrobacie",
+    "Výdrž",
+    "Postřeh",
+    "Vůle"
+   ],
+   "every3": {
+    "atk": 1,
+    "dmg": 1,
+    "zo": 1,
+    "oc": 1
+   }
+  },
+  "lup": {
+   "src": "PPP05 s. 260",
+   "text": "Při každém přestupu spolu se Zlodějem +2 max. životy; každou 3. takovou úroveň +1 do ÚČ nebo ZO (a OČ), +1 k Postřehu a +1 k jednomu triku. Bez zpětné opravy.",
+   "hp": 2,
+   "every3": {
+    "pick": [
+     "uc",
+     "zo"
+    ],
+    "skill": "Postřeh",
+    "trick": 1
+   }
+  },
+  "duv": {
+   "src": "PPP05 s. 273",
+   "text": "Při každém přestupu dosaženém spolu se Siccem +1k6 max. životů; každou 3. takovou úroveň +1 do ÚČ nebo ZO (a tím OČ) a +1 stupeň vybrané dovednosti. Bez zpětné opravy.",
+   "hp": null,
+   "every3": {
+    "pick": [
+     "uc",
+     "zo"
+    ],
+    "skill": 1
+   }
+  },
+  "mag": {
+   "src": "H11 s. 16",
+   "text": "Roste s úrovní kouzelníka: za každou úroveň +2 životy, +1 mana a +1 kouzlo (vybírá se z kouzel pána při přestupu); ÚČ a OČ +1 za každé 2 úrovně, ZO +1 za každé 4 úrovně; dovednosti na stupni = úroveň kouzelníka + atribut tvora; INT a Sesílání kouzel jako pán (bez jeho dalších bonusů)."
+  },
+  "kun": {
+   "src": "PPP02 s. 66",
+   "text": "Pravidla růst koně neuvádějí – hodnoty z tabulky (2. úroveň) zůstávají, úpravy podle PJ ručně."
+  }
+ },
+ "pravidla": {
+  "ochoceni": "Ochočování zvířat (CHAR) vs. obtížnost ochočení zvířete (H09 s. 8). Trvá 1k6 směn; při neúspěchu nový pokus o stejného tvora nejdřív další den. Najednou jen 1 ochočené zvíře (kromě Pána zvířat). Ochočí-li zvíře někdo jiný než hraničář, nemá schopnosti Zvířecího přítele.",
+  "ochoceniBonus": "Výhoda +5 při ochočování mláděte (výklad k potvrzení); Spřízněnost se zvířaty (PPP02) dává Výhodu +5 vždy.",
+  "komunikace": "Hraničář se zvířetem komunikuje gesty, slovy nebo pískáním; zvíře reaguje jako skvěle vycvičený pes, rozumí i složitějším povelům.",
+  "ztrataZvire": "Smrt: hraničář si může ochočit dalšího tvora stejného druhu, vždy nejdřív po přestupu na další úroveň. Zvíře, o které se pán nestará, nakonec uteče a už nikdy nejde ochočit. Pán může zvířeti dát svobodu (H09 s. 15).",
+  "kun": "Navázání duševního pouta trvá 4 směny (1 hodina); najednou jen s jedním jezdeckým tvorem. Pouto se prolomí smrtí zvířete či hraničáře nebo jeho rozhodnutím (okamžitě); nové pouto až na další úrovni. Kůň svého pána nikdy neopustí, není ho třeba krmit ani uvazovat (PPP02 s. 65–66).",
+  "vyvolani": "Rituál asi 1 hodinu v klidu, vyzáří se celé maximum many (i při neúspěchu); Sesílání kouzel (INT) vs. obtížnost tvora. Vyrušení = neúspěch, znovu až po meditaci. Jen 1 přítel (H11).",
+  "magPouto": "Empatické spojení do 1 míle, přítel kouzlí silou myšlenky (bez gest a řeči) s INT a stupněm Sesílání kouzel pána. Manu si doplní při pánově meditaci, když se ho dotýká. Odloučení déle než týden = ztráta kouzlení, déle než měsíc = ztráta přítele (H11 s. 16–17).",
+  "ztrataMag": "Zahyne-li přítel, kouzelník si už nikdy nepřivolá tvora stejného druhu a jiného nejdřív po dosažení další úrovně (H11 s. 17).",
+  "partak": "Vycvičené zvíře, nové až na další úrovni (PPP05 s. 260).",
+  "duvernik": "Blízký přítel, kterého Sicco zachránil nebo mu pomohl – zapřísáhlý stoupenec a bodyguard. Získá se v herní situaci (řekni Vypravěči a vyčkej na příležitost). Je napojený na síť, žold nepotřebuje (PPP05 s. 272).",
+  "smecka": "Pán zvířat má víc zvířecích společníků; součet jejich úrovní nesmí být vyšší než jeho úroveň. Při přestupu vycvičí jen jedno zvíře (PPP02 s. 104).",
+  "dalsiPratele": "Pán zvířat najde zvláštní talent u každého ochočeného zvířete (např. vrána místo sokola, rys místo vlka); fyzické atributy podle druhu (PPP02 s. 104).",
+  "sampion": "Jedno zvíře smečky: velikost o třídu větší, +20 max. životů, +15 pohyblivost, +3 ÚČ i ZO. Spojení trvá 1 směnu a natrvalo sníží maximum Duševní síly Pána zvířat o 2 (PPP02 s. 107).",
+  "bojVeSmecce": "+1 ÚČ i OČ Pána zvířat za každého člena smečky v boji, nejvýš +5 (PPP02 s. 105).",
+  "hraniceSmrti": "Hranice smrti tvora = −(10 + oprava ODO); na 0 životech upadá do bezvědomí (V14)."
+ }
+}

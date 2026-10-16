@@ -1,0 +1,18 @@
+{
+ "_source": "H08–H13 (schopnosti 1. úrovně), CLASSES.md → Start položek; převzato z prototypu v9.1",
+ "concepts": [
+  "trpasličí kovářka a hrdinka z lidu schopná strhnout davy",
+  "obří propuštěný otrok s nadáním pro magii hledající ztracené příbuzné",
+  "gnómský kejklíř a falešný hráč",
+  "student okultních nauk s temnou minulostí",
+  "stopařka a průvodkyně divočinou chránící svůj kmen"
+ ],
+ "byClass": {
+  "valecnik": {"abilities": ["Léčba vlastních zranění", "Bojové triky"], "auto": [], "choose": {"n": 2, "word": "základní bojové triky", "itemLabel": "základní trik", "pool": ["Bojová připravenost", "Odražení projektilu", "Rychlý přesun", "Rychlý úder", "Zuřivý útok"]}},
+  "hranicar": {"abilities": [], "auto": ["Najdi úkryt", "Najdi vodu", "Rozdělej oheň", "Znamení"], "autoWord": "základní kouzla"},
+  "alchymista": {"abilities": ["Alchymistické umění"], "auto": ["13 základních receptů (H10)", "19 startovních základů do výbavy"], "autoWord": "recepty a základy"},
+  "kouzelnik": {"abilities": ["Kouzelnické triky"], "auto": [], "choose": {"n": 3, "word": "kouzla obecné magie", "itemLabel": "obecná magie", "pool": ["Bertoldův zámek", "Blesk", "Kukátko", "Levitace", "Magická střela", "Magický štít", "Najdi předmět", "Neviditelnost", "Očaruj zbraň", "Oheň", "Rychlost", "Světlo", "Teleport"]}},
+  "zlodej": {"abilities": ["Zlodějská hantýrka"], "auto": []},
+  "klerik": {"abilities": ["Svěcení"], "auto": ["Léčivé slovo", "Očištění", "Štít víry", "Úder moci", "Uzdrav otravu"], "autoWord": "základní prosby"}
+ }
+}

@@ -1,0 +1,53 @@
+/* Alchymie (milník 7a) */
+.al-resrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.al-res{display:grid;gap:4px;justify-items:center;text-align:center;border:1px solid var(--ink);background:var(--paper);padding:8px}
+.al-big{font:800 34px/1 var(--f-display)}
+.al-adj{display:flex;gap:4px;align-items:center}
+.al-adj .field{width:70px;height:30px;font-size:15px}
+.al-adj .btn{padding:4px 8px;font-size:11px}
+.al-proc{display:grid;gap:8px;margin-top:10px;border:1px dashed var(--structure);background:rgba(216,215,210,.35);padding:10px}
+.al-proc label{display:inline-flex;gap:6px;align-items:center}
+.al-proc .field{height:32px}
+.al-proc .field.num{width:80px;font-size:16px}
+.al-ws{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:end}
+.al-ws .field{height:34px;min-width:130px}
+.al-here{display:inline-flex;gap:6px;align-items:center;padding-bottom:8px}
+.al-here input,.al-craft input[type="checkbox"],.al-page .steps input[type="checkbox"]{accent-color:var(--wine-lit)}
+.al-addbase{margin-top:8px;align-items:center}
+.al-addbase .field{height:32px}
+.al-addbase .field:not(.num){flex:1;min-width:160px}
+.al-addbase .field.num{width:64px;font-size:15px}
+.al-list{margin-top:8px;border-top:1.5px solid var(--ink)}
+.recipe{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:9px 0;border-bottom:1px solid rgba(36,39,43,.3);align-items:center}
+.recipe h4{margin:0;font:700 16px/1.25 var(--f-display)}
+.recipe .meta{font-size:13px;color:var(--structure)}
+.recipe .miss,.recipe .meta .miss{color:var(--blood);font-weight:700}
+.al-name{font:inherit;color:var(--ink);text-decoration:none;margin:0}
+.al-name:hover{text-decoration:underline}
+.al-detail{grid-column:1/-1;background:var(--paper);border:1px solid rgba(36,39,43,.3);padding:8px 12px;font-size:14px;max-width:80ch}
+.al-detail dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0 0 6px}
+.al-detail dt{font:700 11px/1.6 var(--f-display);letter-spacing:.1em;color:var(--structure)}
+.al-detail dd{margin:0}
+.al-craft{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:14px;align-items:start;margin-top:10px}
+.al-craft label{display:inline-flex;gap:6px;align-items:center}
+.al-craft .kf{display:grid}
+.al-craft .field{height:32px}
+.al-craft .field.num{width:90px;font-size:16px}
+.al-bases td{vertical-align:top}
+.al-bases select{min-width:0;width:100%;font-size:14px}
+.al-items li{align-items:center}
+.al-extra{display:inline-flex;gap:4px;align-items:center;flex-wrap:wrap}
+.al-extra .field{width:58px;height:26px;font-size:14px}
+.al-extra .btn,.al-items .btn{padding:4px 8px;font-size:11px}
+@media (max-width:760px){.al-craft{grid-template-columns:1fr}.al-resrow{grid-template-columns:1fr 1fr}.al-big{font-size:28px}}
+
+/* Medicus (7a+.1) */
+.md .field{height:34px}
+.md .field.num,.md-part .field.num{width:72px;font-size:16px}
+.md .al-ws .field:not(.num){min-width:200px}
+.md-form{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px 10px}
+.md-form .kf{display:grid!important;gap:2px}
+.md-form .field{width:100%;height:32px}
+.md-part{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;padding:6px 0;border-bottom:1px solid rgba(36,39,43,.25)}
+.md-part .field{height:30px}
+.md-part .field:not(.num){min-width:120px;flex:1}

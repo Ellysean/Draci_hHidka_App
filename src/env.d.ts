@@ -1,0 +1,3 @@
+/// <reference types="vite/client" />
+/** Verze appky z package.json (vite.config.ts → define). */
+declare const __APP_VERSION__: string;

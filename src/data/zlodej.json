@@ -1,0 +1,1899 @@
+{
+ "_source": "tools/build-zlodej.py ← docs/h12_zlodej.json (H12) + docs/ppp05_zlodej.json (PPP05 s. 239–278)",
+ "pravidla": {
+  "podstata": "Zloděj je jediná profese bez many – spoléhá jen na své schopnosti a dovednosti, které může používat neustále. Povolání stojí na široké škále profesních dovedností; jejich zvládnutí umožňuje provádět unikátní triky.",
+  "zaklady": "Základy zlodějského umění (1. úroveň): dovednosti Hazardní hry (OBR), Odhad ceny (INT), Přesvědčování (CHAR) a Vybírání kapes (OBR) na 3. stupni.",
+  "hantyrka": "Zlodějská hantýrka (1. úroveň): tajná řeč podsvětí – na první poslech běžná řeč, slova ale mají jiný význam. Zloděj pozná hovor se skrytým významem i to, kdo patří „k oboru“, a sám slang dobře používá. Učit ji nezasvěcené se trestá smrtí.",
+  "prestup": "Na každé další úrovni: nová zvláštní schopnost nebo zlodějské umění, dovednostní body, životy podle Tabulky životů, na každé 3. úrovni 2 charakterové body. Od 6. úrovně specializace Assassin, Lupič nebo Sicco.",
+  "umeni": "Zlodějská umění jsou dovednosti, které zloděj ovládne rovnou na 3. stupni; každé dá automaticky 3 zlodějské triky.",
+  "triky": "Zlodějské triky jsou speciální akce, které dokáže jen zloděj. Četnost = jak často jde trik opakovat (u jednorázových si dá oběť pozor). Použití = některé triky jdou v boji k Útoku nebo Obraně – ke každé takové akci jen jeden trik, nejdou kombinovat ani sčítat; má-li zloděj v kole víc útoků či obran, může zkusit trik u každé. Ověření = hod na zlodějské Umění (dovednost), ke kterému trik patří; obtížnost určí PJ nebo je to hod protivníka.",
+  "ppp_pokrocily": "Na 6. úrovni se ze Zloděje stává pokročilý dobrodruh a získá dvě rozšíření, společná všem Zlodějům bez ohledu na specializaci: Speciální předměty Zloděje a Zlodějský cech.",
+  "ppp_tetovani": "Symbolem Zlodějů je kočka (často podle „rodiny“, které dal Zloděj slib); specializace přidává vlastní znak – Assassin had, Lupič klíč, Sicco znak své sítě. Tetování bývá na pěsti, chytřejší ho mají na předloktí. Bez pravidlového efektu.",
+  "ppp_triky": "Zlodějské triky se zdánlivě podobají válečnickým. Četnost: u triků použitelných v boji obvykle platí, že je lze použít jen jednou za celý souboj. Použití: ke každé akci Útok či Obrana jen jeden trik, nejdou kombinovat ani sčítat; při víc útocích či obranách za kolo lze trik zkusit u každé. Ověření: hod na zlodějské Umění (dovednost), ke kterému trik patří; obtížnost určí PJ nebo je to hod protivníka. Od verze 1.2 jsou původní zlodějské dovednosti „akcemi“ uvnitř Umění.",
+  "ppp_specialni_predmety": "Předměty, které se v běžném obchodě neseženou – kupují se na černém trhu Zlodějského cechu (dodávají je lupiči, zbrojíři, alchymisté a překupníci za vyšší cenu). Bomby vyrobí dle zlodějových specifikací jakýkoli Alchymista (suroviny a základ v tabulce, výroba 1 směna); zbraně jinak vyrobí Lupič se schopností Lupičská udělátka.",
+  "ppp_cech": "Od 6. úrovně přístup do místních doupat podsvětí – Zloděj rozpozná skryté značky. Sídlo cechu je neutrální místo s přísnými pravidly (zákaz krást, vraždit, podvádět ve hrách), pod ochranou syndikátů. Funguje tu černý trh, uzavírají se dohody a zakázky, dá se tu ukrýt před spravedlností a získat zákulisní informace (kontakty, razie gardy, vypsané odměny). Přístup jen „lidé z profese“; vyzrazení polohy = doživotní vyloučení a odměna na hlavu.",
+  "ppp_schranky": "Tajné schránky (uvolněný kámen, prasklá váza, dutá trubička pod stolem) slouží k předávání zpráv bez setkání. Každý Zloděj zná základní nouzová místa schránek cechu ve městě; rodiny a bratrstva mají vlastní.",
+  "ppp_specializace": "Od 6. úrovně (při přestupu, oznámit PJ) se Zloděj může stát Assassinem, Lupičem nebo Siccem – je třeba mít zvládnuté podmínky. Specializace není povinná a volba je natrvalo. Se specializací lze dál brát i obecné schopnosti Zloděje. Bez specializace smí Zloděj na každé 6. úrovni vzít jednu schopnost kterékoli specializace.",
+  "ppp_holubi": "Přes cech lze koupit poštovní holuby (5 zl za kus), kteří donesou zprávu do vybraného města – tamní cech ji předá adresátovi."
+ },
+ "zaklady": [
+  {
+   "id": "hazardni_hry",
+   "nazev": "Hazardní hry",
+   "atribut": "OBR",
+   "overeni": "Hazardní hry (OBR) vs. Postřeh (INT)",
+   "popis": "Zloději ve hrách nenechávají nic náhodě – cinknuté karty, triky a pečlivý výběr těch, koho oberou. Pokud zloděj překoná Postřeh protivníka, podaří se mu hru zfalšovat ve svůj prospěch a vyhrává vše, o co se dané kolo hrálo."
+  },
+  {
+   "id": "odhad_ceny",
+   "nazev": "Odhad ceny",
+   "atribut": "INT",
+   "overeni": "Odhad ceny (INT) vs. X",
+   "popis": "Zloděj určí, za kolik se předmět dá prodat na černém trhu. Překoná-li obtížnost PJ, získá velmi dobrou představu o ceně. Odhadne běžné věci, zbraně, drahokamy, šperky i umění; u magických či náboženských předmětů jen cenu předmětu samotného (bez magických schopností)."
+  },
+  {
+   "id": "presvedcovani",
+   "nazev": "Přesvědčování",
+   "atribut": "CHAR",
+   "overeni": "Přesvědčování (CHAR) vs. Vůle (CHAR)",
+   "popis": "Herectví, rétorika, empatie, diplomacie i skryté hrozby. Překoná-li zloděj Vůli protivníka, přesvědčí ho (změní názor, vyjedná lepší cenu…); jinak se protivník zatvrdí. O každé věci lze přesvědčovat jen jednou."
+  },
+  {
+   "id": "vybirani_kapes",
+   "nazev": "Vybírání kapes",
+   "atribut": "OBR",
+   "overeni": "Vybírání kapes (OBR) vs. Postřeh (INT)",
+   "popis": "Nenápadné prošacování nebo krádež (vybrat kapsu, odříznout měšec). Zabere 1 kolo; je třeba překonat Postřeh protivníka. U lépe chráněných předmětů (přívěsek na krku) má cíl k Postřehu bonus podle PJ."
+  }
+ ],
+ "umeni": [
+  {
+   "id": "kocici_pohyb",
+   "skill": "umeni_kociciho_pohybu",
+   "nazev": "Umění kočičího pohybu",
+   "atribut": "OBR",
+   "popis": "Lezení ti umožní proniknout na těžko dostupná místa, Ohebnost uniknout z popruhů či pout a Pád z výšky ti může zachránit život.",
+   "triky": [
+    "Lezení",
+    "Ohebnost",
+    "Pád z výšky"
+   ]
+  },
+  {
+   "id": "promeny",
+   "skill": "umeni_promen",
+   "nazev": "Umění proměn",
+   "atribut": "CHAR",
+   "popis": "Triky, díky nimž ze sebe dokážeš udělat někoho jiného: Mimika (proměna tváře), Převleky (celkový vzhled) a Imitace (hlas někoho jiného).",
+   "triky": [
+    "Imitace",
+    "Mimika",
+    "Převleky"
+   ]
+  },
+  {
+   "id": "rvaci",
+   "skill": "umeni_rvacu",
+   "nazev": "Umění rváčů",
+   "atribut": "OBR",
+   "popis": "Triky pro konfliktní situace: Falešný útok protivníka zmate, Oko střelce dá nebývalou přesnost a Omráčením dokážeš někoho odklidit nebo zajmout.",
+   "triky": [
+    "Falešný útok",
+    "Oko střelce",
+    "Omráčení"
+   ]
+  },
+  {
+   "id": "skryvani",
+   "skill": "umeni_skryvani",
+   "nazev": "Umění skrývání",
+   "atribut": "OBR",
+   "popis": "Triky pro ochranu: Schováním ve stínu se ukryješ v budovách, Splynutí s davem pomůže v ulicích a Tichý pohyb zajistí nenápadný přesun.",
+   "triky": [
+    "Schování se ve stínu",
+    "Splynutí s davem",
+    "Tichý pohyb"
+   ]
+  },
+  {
+   "id": "sarm",
+   "skill": "umeni_sarmu",
+   "nazev": "Umění šarmu",
+   "atribut": "CHAR",
+   "popis": "Triky, jak poznat a ovlivnit ostatní: Odhad lidí, Získání důvěry a Odvedení pozornosti.",
+   "triky": [
+    "Odhad lidí",
+    "Odvedení pozornosti",
+    "Získání důvěry"
+   ]
+  },
+  {
+   "id": "zelezny_klic",
+   "skill": "umeni_zelezneho_klice",
+   "nazev": "Umění železného klíče",
+   "atribut": "OBR",
+   "popis": "Základ budoucích lupičů: Odstranění pastí, Otevírání zámků a Padělání.",
+   "triky": [
+    "Odstranění pastí",
+    "Otevírání zámků",
+    "Padělání"
+   ]
+  }
+ ],
+ "skupiny": {
+  "kocici_pohyb": "Umění kočičího pohybu",
+  "promeny": "Umění proměn",
+  "rvaci": "Umění rváčů",
+  "skryvani": "Umění skrývání",
+  "sarm": "Umění šarmu",
+  "zelezny_klic": "Umění železného klíče",
+  "boj_beze_zbrane": "Boj beze zbraně",
+  "improvizace": "Improvizace",
+  "odezirani_ze_rtu": "Odezírání ze rtů",
+  "vrazedne_ostri": "Vražedné ostří",
+  "vrhani_dyk": "Vrhání dýk",
+  "zakerna_kuse": "Zákeřná kuše",
+  "boj_se_dvema_zbranemi": "Boj se dvěma zbraněmi",
+  "cileny_utok": "Cílený útok",
+  "citliva_mista": "Citlivá místa",
+  "expertiza": "Expertiza",
+  "mistrovstvi_sily_osobnosti": "Mistrovství síly osobnosti",
+  "mistrovstvi_zlatky": "Mistrovství zlatky",
+  "nocni_zivel": "Noční živel",
+  "obratny_bojovnik": "Obratný bojovník",
+  "rychle_taseni": "Rychlé tasení",
+  "svizne_ostri": "Svižné ostří",
+  "sesty_smysl": "Šestý smysl",
+  "technika_nabijeni": "Technika nabíjení",
+  "assassinace": "Assassinace",
+  "mistrovstvi_rvacu": "Mistrovství rváčů",
+  "mistrovstvi_skryvani": "Mistrovství skrývání",
+  "riskantni_utok": "Riskantní útok",
+  "umeni_prepadu": "Umění přepadů",
+  "vejir_dyk": "Vějíř dýk",
+  "vyhodna_pozice": "Výhodná pozice",
+  "vyroba_jedu": "Výroba jedů",
+  "bojova_kreativita": "Bojová kreativita",
+  "druha_sance": "Druhá šance",
+  "lupicska_udelatka": "Lupičská udělátka",
+  "lupicuv_partak": "Lupičův parťák",
+  "mistr_uteku": "Mistr útěku",
+  "mistrovstvi_kociciho_pohybu": "Mistrovství kočičího pohybu",
+  "mistrovstvi_zelezneho_klice": "Mistrovství železného klíče",
+  "umeni_neferoveho_boje": "Umění neférového boje",
+  "alter_ego": "Alter ego",
+  "duvernik": "Důvěrník",
+  "mistrovstvi_promen": "Mistrovství proměn",
+  "mistrovstvi_sarmu": "Mistrovství šarmu",
+  "povesti_a_drby": "Pověsti a drby",
+  "sifrovani": "Šifrování",
+  "umeni_boje_s_plastem": "Umění boje s pláštěm",
+  "zrcadleni": "Zrcadlení"
+ },
+ "schopnosti": {
+  "boj_beze_zbrane": {
+   "name": "Boj beze zbraně",
+   "short": "Bojuje-li zloděj beze zbraně, má při boji tváří v tvář +3 do ÚČ a OČ. Nelze přitom držet štít, jednoruční zbraň a podobně.",
+   "text": "Bojuje-li zloděj beze zbraně, má při boji tváří v tvář +3 do ÚČ a OČ. Nelze přitom držet štít, jednoruční zbraň a podobně.",
+   "source": "H12",
+   "page": 3,
+   "spec": null,
+   "minLevel": null
+  },
+  "improvizace": {
+   "name": "Improvizace",
+   "short": "Neuspěje-li zloděj v hodu na profesní dovednost a je odhalen (někdo si všiml jeho akce), získá ještě před reakcí protivníka 1 herní tah navíc a sám rozhodne, jaké akce v něm provede. Nelze v souboji, ale těsně před ním ano (před hodem na iniciativu).",
+   "text": "Neuspěje-li zloděj v hodu na profesní dovednost a je odhalen (někdo si všiml jeho akce), získá ještě před reakcí protivníka 1 herní tah navíc a sám rozhodne, jaké akce v něm provede. Nelze v souboji, ale těsně před ním ano (před hodem na iniciativu).",
+   "source": "H12",
+   "page": 4,
+   "spec": null,
+   "minLevel": null
+  },
+  "odezirani_ze_rtu": {
+   "name": "Odezírání ze rtů",
+   "short": "S dobrým výhledem na rty a nejdál 20 sáhů zachytí zloděj artikulaci – musí znát jazyk. Nepochytí všechna slova, ale porozumí celkovému kontextu.",
+   "text": "S dobrým výhledem na rty a nejdál 20 sáhů zachytí zloděj artikulaci – musí znát jazyk. Nepochytí všechna slova, ale porozumí celkovému kontextu.",
+   "source": "H12",
+   "page": 4,
+   "spec": null,
+   "minLevel": null
+  },
+  "vrazedne_ostri": {
+   "name": "Vražedné ostří",
+   "short": "Při boji s lehkou krátkou či lehkou bodnou zbraní (vrhací i tváří v tvář) +2 do ÚČ a OČ.",
+   "text": "Při boji s lehkou krátkou či lehkou bodnou zbraní (vrhací i tváří v tvář) +2 do ÚČ a OČ.",
+   "source": "H12",
+   "page": 5,
+   "spec": null,
+   "minLevel": null
+  },
+  "vrhani_dyk": {
+   "name": "Vrhání dýk",
+   "short": "Zbraně vrhá i vícekrát za kolo: v rámci akce Útok tři vrhy za dvě kola (v prvním kole dva, v dalším jeden, a tak dokola); stejně tak v rámci akce Obrana tři obrany za dvě kola. Od 6. úrovně útočí v každém kole dvakrát. Platí i pro všechny ostatní lehké vrhací zbraně.",
+   "text": "Zbraně vrhá i vícekrát za kolo: v rámci akce Útok tři vrhy za dvě kola (v prvním kole dva, v dalším jeden, a tak dokola); stejně tak v rámci akce Obrana tři obrany za dvě kola. Od 6. úrovně útočí v každém kole dvakrát. Platí i pro všechny ostatní lehké vrhací zbraně.",
+   "source": "H12",
+   "page": 5,
+   "spec": null,
+   "minLevel": null
+  },
+  "zakerna_kuse": {
+   "name": "Zákeřná kuše",
+   "short": "+2 do Útočného čísla a Zranění ke střeleckému útoku kuší nebo improvizovaným mechanismem (foukačky, hole střílející jehlice, zápěstní kuše…).",
+   "text": "+2 do Útočného čísla a Zranění ke střeleckému útoku kuší nebo improvizovaným mechanismem (foukačky, hole střílející jehlice, zápěstní kuše…).",
+   "source": "H12",
+   "page": 5,
+   "spec": null,
+   "minLevel": null
+  },
+  "boj_se_dvema_zbranemi": {
+   "name": "Boj se dvěma zbraněmi",
+   "short": "K boji beze zbraně nebo lehké jednoruční zbrani ve druhé ruce lehká krátká zbraň – statistiky se sčítají.",
+   "text": "Když Zloděj bojuje beze zbraně nebo s jednoruční lehkou zbraní, může v druhé ruce držet navíc i lehkou krátkou zbraň a efektivně ji využít. Statistiky obou zbraní se pro boj sčítají. Bonusy za schopnosti vyžadující určitý typ zbraně se uplatní pro obě zbraně, vždy však jen jednou.\nPříklad: Kvítko s kordem (5/0/2) a dýkou (2/1/1) a Vražedným ostřím (2/0/2) má v součtu 9/1/5. Kramář s okovanými rukavicemi (0/1/1), nožem (1/1/0), Bojem beze zbraně (3/0/3) a Vražedným ostřím (2/0/2) má 6/2/6.",
+   "source": "PPP05",
+   "page": 246,
+   "spec": null,
+   "minLevel": 6
+  },
+  "cileny_utok": {
+   "name": "Cílený útok",
+   "short": "Útok −5 na hlavu, ruku nebo nohu; po zásahu Reflex vs. Reflex – krvácení a −1 CHAR / −5 Útok a gesta / poloviční Pohyblivost.",
+   "text": "Zloděj zaměří Útok na ruku, nohu nebo hlavu – útočí s Nevýhodou −5 a po zásahu hází Reflex (OBR) vs. Reflex (OBR) protivníka. Při úspěchu:\n• hlava (zohavení obličeje) – Krvácivé zranění 1k6 a základ Charismatu −1,\n• ruka (zmrzačení ruky) – Nevýhoda −5 na Útok (ÚČ) a gestikulaci,\n• noha (zmrzačení nohy) – Pohyblivost na polovinu.\nÚčinky trvají do důkladného ošetření. Lze kombinovat se Zlodějskými triky použitelnými do útoku.",
+   "source": "PPP05",
+   "page": 247,
+   "spec": null,
+   "minLevel": 6
+  },
+  "citliva_mista": {
+   "name": "Citlivá místa",
+   "short": "+3 ke Zranění střelnými, vrhacími a lehkými zbraněmi (i pěstmi).",
+   "text": "Dodatečné zranění +3 při útocích vedených střelnými a vrhacími zbraněmi, lehkými zbraněmi a pěstmi při boji tváří v tvář.",
+   "source": "PPP05",
+   "page": 247,
+   "spec": null,
+   "minLevel": 6
+  },
+  "expertiza": {
+   "name": "Expertiza",
+   "short": "Při přestupu jedna dovednost až o 2 stupně (max. úroveň + 2); +1 dovednostní bod za úroveň (zpětně).",
+   "text": "Při každém přestupu na vyšší úroveň může Zloděj navýšit zvládnutí vybrané dovednosti o 2 stupně najednou, vždy nejvýše na úroveň + 2. Zároveň se zvyšuje počet dovednostních bodů za přestup o 1 (platí Pravidlo zpětné opravy). V appce: body jen na sudých úrovních (✔ U).",
+   "source": "PPP05",
+   "page": 247,
+   "spec": null,
+   "minLevel": 6
+  },
+  "mistrovstvi_sily_osobnosti": {
+   "name": "Mistrovství síly osobnosti",
+   "short": "+1 k Hazardním hrám a Přesvědčování; triky Manipulace a Podstrčení předmětu.",
+   "text": "Rozšiřuje Základy zlodějského umění – akce spojené s Hazardními hrami a Přesvědčováním: +1 k ověřovacím hodům. Otevírá 2 zlodějské triky: Manipulace a Podstrčení předmětu. (Souhrnná tabulka uvádí „Odhad sociálního statusu“ – platí text.)",
+   "source": "PPP05",
+   "page": 247,
+   "spec": null,
+   "minLevel": 6,
+   "grantsItems": [
+    "Manipulace",
+    "Podstrčení předmětu"
+   ],
+   "skillPlus": [
+    "hazardni_hry",
+    "presvedcovani"
+   ]
+  },
+  "mistrovstvi_zlatky": {
+   "name": "Mistrovství zlatky",
+   "short": "+1 k Odhadu ceny a Vybírání kapes; triky Handlování a Ukrytí předmětu.",
+   "text": "Rozšiřuje Základy zlodějského umění – akce spojené s Odhadem ceny a Vybíráním kapes: +1 k ověřovacím hodům. Otevírá 2 zlodějské triky: Handlování a Ukrytí předmětu.",
+   "source": "PPP05",
+   "page": 248,
+   "spec": null,
+   "minLevel": 6,
+   "grantsItems": [
+    "Handlování",
+    "Ukrytí předmětu"
+   ],
+   "skillPlus": [
+    "odhad_ceny",
+    "vybirani_kapes"
+   ]
+  },
+  "nocni_zivel": {
+   "name": "Noční živel",
+   "short": "V bezprostřední blízkosti všechny běžné akce i v naprosté tmě bez Nevýhody.",
+   "text": "Zloděj se v naprosté tmě orientuje sluchem, hmatem a čichem: nemá Nevýhodu, když útočí ve tmě tváří v tvář, určí polohu nepřítele podle zvuků a bez postihu používá dovednosti. PJ posoudí, zda je akce poslepu vůbec možná (číst nejde, past spouštěnou jemným dotykem nenajde).",
+   "source": "PPP05",
+   "page": 249,
+   "spec": null,
+   "minLevel": 6
+  },
+  "obratny_bojovnik": {
+   "name": "Obratný bojovník",
+   "short": "Beze zbraně nebo s lehkými zbraněmi do Útoku OBR místo SIL.",
+   "text": "Bojuje-li Zloděj tváří v tvář beze zbraně nebo s lehkými zbraněmi, může si do Útoku (ÚČ) započítat bonus za obratnost (OBR) místo bonusu za sílu (SIL).",
+   "source": "PPP05",
+   "page": 249,
+   "spec": null,
+   "minLevel": 6
+  },
+  "rychle_taseni": {
+   "name": "Rychlé tasení",
+   "short": "1× za kolo okamžitou akcí přezbrojit, vypít lektvar nebo aplikovat jed.",
+   "text": "Jedenkrát za kolo dokáže Zloděj během své okamžité akce přezbrojit, vypít lektvar nebo aplikovat jed na zbraň.",
+   "source": "PPP05",
+   "page": 249,
+   "spec": null,
+   "minLevel": 6
+  },
+  "svizne_ostri": {
+   "name": "Svižné ostří",
+   "short": "Tváří v tvář beze zbraně či s lehkými zbraněmi 3 útoky za 2 kola, od 12. úrovně 2 za kolo.",
+   "text": "Při boji tváří v tvář beze zbraně nebo s lehkými zbraněmi může Zloděj útočit 3× za 2 kola. Od dvanácté úrovně 2× za kolo.",
+   "source": "PPP05",
+   "page": 249,
+   "spec": null,
+   "minLevel": 6
+  },
+  "sesty_smysl": {
+   "name": "Šestý smysl",
+   "short": "Výhoda +5 k náhlým hodům na Postřeh a Reflex, trvale +3 k Iniciativě.",
+   "text": "Výhoda +5 k náhlým hodům na Postřeh a Reflex – ke všem, k nimž ho vyzve PJ (šipka z mechanismu pasti, plížící se nepřátelé, překvapivé útoky). Neprojevuje se při cílené činnosti (hledání pastí) ani při Cíleném útoku. Navíc trvale +3 k Iniciativě.",
+   "source": "PPP05",
+   "page": 250,
+   "spec": null,
+   "minLevel": 6
+  },
+  "technika_nabijeni": {
+   "name": "Technika nabíjení",
+   "short": "Kuše nemají nárok na SIL, ale na OBR.",
+   "text": "Nabíjecí kladky: kuše, na které nemá Zloděj dost síly, používá efektivně – požadavek na SIL nahradí OBR. Příklad: střední kuše potřebuje +0 OBR místo +0 SIL.",
+   "source": "PPP05",
+   "page": 250,
+   "spec": null,
+   "minLevel": 6
+  },
+  "assassinace": {
+   "name": "Assassinace",
+   "short": "Zásah tvora, který ho nevidí nebo se nemůže bránit = dvojnásobná Zranění.",
+   "text": "Zasáhne-li Assassin Útokem postavu, která ho nevidí (útok ze stínů, neviditelnost, ze zálohy) nebo se nemůže bránit (vyplýtvaná Aktivní obrana, Paralýza, Útok na bezbranného), jsou veškerá jím způsobená zranění daného Útoku dvojnásobná.",
+   "source": "PPP05",
+   "page": 252,
+   "spec": "assassin",
+   "minLevel": 6
+  },
+  "mistrovstvi_rvacu": {
+   "name": "Mistrovství rváčů",
+   "short": "+1 k Umění rváčů; triky Dokonalá muška, Otřesení, Přesný zásah.",
+   "text": "K dokonalosti vytrénované Umění rváčů: +1 k ověřovacím hodům na Umění rváčů. Otevírá 3 zlodějské triky (ověřují se stupněm této dovednosti): Dokonalá muška, Otřesení, Přesný zásah.",
+   "source": "PPP05",
+   "page": 252,
+   "spec": "assassin",
+   "minLevel": 6,
+   "grantsItems": [
+    "Dokonalá muška",
+    "Otřesení",
+    "Přesný zásah"
+   ],
+   "skillPlus": [
+    "umeni_rvacu"
+   ]
+  },
+  "mistrovstvi_skryvani": {
+   "name": "Mistrovství skrývání",
+   "short": "+1 k Umění skrývání; triky Infiltrace, Pán stínů, Utajený útok.",
+   "text": "K dokonalosti vytrénované Umění skrývání: +1 k ověřovacím hodům na Umění skrývání. Otevírá 3 zlodějské triky: Infiltrace, Pán stínů, Utajený útok.",
+   "source": "PPP05",
+   "page": 254,
+   "spec": "assassin",
+   "minLevel": 6,
+   "grantsItems": [
+    "Infiltrace",
+    "Pán stínů",
+    "Utajený útok"
+   ],
+   "skillPlus": [
+    "umeni_skryvani"
+   ]
+  },
+  "riskantni_utok": {
+   "name": "Riskantní útok",
+   "short": "1× za kolo vymění jednu Obranu za Útok navíc.",
+   "text": "Assassin může během kola vyměnit jednu svou Obranu za Útok navíc. V daném kole jen jednou.",
+   "source": "PPP05",
+   "page": 255,
+   "spec": "assassin",
+   "minLevel": 6
+  },
+  "umeni_prepadu": {
+   "name": "Umění přepadů",
+   "short": "Nová dovednost (OBR) na 5. stupni; triky Hlavounova finta, Kontrolovaná trajektorie, Prohození pozic.",
+   "text": "Nová profesní dovednost Umění přepadů (OBR), kterou Assassin ovládá rovnou na 5. stupni. Dává 3 zlodějské triky použitelné v boji: Hlavounova finta, Kontrolovaná trajektorie, Prohození pozic.",
+   "source": "PPP05",
+   "page": 255,
+   "spec": "assassin",
+   "minLevel": 6,
+   "grantsItems": [
+    "Hlavounova finta",
+    "Kontrolovaná trajektorie",
+    "Prohození pozic"
+   ],
+   "grantsSkills": [
+    {
+     "id": "umeni_prepadu",
+     "rank": 5
+    }
+   ]
+  },
+  "vejir_dyk": {
+   "name": "Vějíř dýk",
+   "short": "Vrhne 2 projektily najednou (i na různé cíle), každý s Nevýhodou −5.",
+   "text": "K Útoku vrhací zbraní použije i dva projektily najednou – ke každému Útoku má Nevýhodu −5, může jimi mířit i na různé cíle a na Útok hází za každý zvlášť.",
+   "source": "PPP05",
+   "page": 256,
+   "spec": "assassin",
+   "minLevel": 6
+  },
+  "vyhodna_pozice": {
+   "name": "Výhodná pozice",
+   "short": "První Útok v souboji: místo k6 rovnou 6 + další hod; znovu za cenu jednoho Útoku.",
+   "text": "Při prvním Útoku v souboji si místo hodu k6 započítá rovnou 6 a teprve k ní přičte výsledek následujícího hodu – šance na kritický (krvácivý) Útok rapidně vzroste. Během souboje ji může získat znovu tak, že se vzdá jednoho svého Útoku (i při vícenásobných útocích); pro další Útok pak znovu platí.",
+   "source": "PPP05",
+   "page": 256,
+   "spec": "assassin",
+   "minLevel": 6
+  },
+  "vyroba_jedu": {
+   "name": "Výroba jedů",
+   "short": "Chová exotická zvířata – denně 1 dávka jedu (Černá smrt, Divotvorné sérum, Měsíční polibek).",
+   "text": "Assassin chová vzácné drobné exotické živočichy (hady, žáby, pavouky) a každý den z nich získá jednu dávku jedu. Jedy lze požít, nebo jimi potřít čepel či hrot šípu – pak působí při prvním Zranění protivníka a setřou se (další Útoky už neotráví).",
+   "source": "PPP05",
+   "page": 256,
+   "spec": "assassin",
+   "minLevel": 6
+  },
+  "bojova_kreativita": {
+   "name": "Bojová kreativita",
+   "short": "První kolo s novou improvizovanou zbraní Výhoda +5 do ÚČ i OČ.",
+   "text": "V prvním kole, kdy Lupič využije Improvizovanou zbraň, získá Výhodu +5 do Útoku (ÚČ) i Obrany (OČ). Pro obnovení musí v dalším kole přezbrojit za jinou, dosud nepoužitou improvizovanou zbraň a znovu protivníka překvapit.",
+   "source": "PPP05",
+   "page": 258,
+   "spec": "lupic",
+   "minLevel": 6
+  },
+  "druha_sance": {
+   "name": "Druhá šance",
+   "short": "1× denně okamžitě zopakuje neúspěšný hod na profesní dovednost.",
+   "text": "Selže-li Lupič v hodu na profesní dovednost (např. Umění železného klíče u Odstranění pastí), může se okamžitě pokusit ještě jednou – zopakuje ověřovací hod. Extrémně stresující: nejvýše 1× za den. Se systémem únavy stojí 8 bodů.",
+   "source": "PPP05",
+   "page": 259,
+   "spec": "lupic",
+   "minLevel": 6
+  },
+  "lupicska_udelatka": {
+   "name": "Lupičská udělátka",
+   "short": "Vyrábí zbraně Zlodějského cechu a udělátka Padák, Sada univerzálních klíčů, Zvonící koule.",
+   "text": "Lupič ovládne výrobu speciálních zbraní Zlodějského cechu (s. 242) – může je vyrábět na cestách místo nákupu v cechu. Zvládne i tři lupičská udělátka: Padák, Sada univerzálních klíčů, Zvonící koule. Cena u předmětů zahrnuje i materiál potřebný k výrobě.",
+   "source": "PPP05",
+   "page": 259,
+   "spec": "lupic",
+   "minLevel": 6
+  },
+  "lupicuv_partak": {
+   "name": "Lupičův parťák",
+   "short": "Vycvičené zvíře – potkan, papoušek, kočka nebo opice (záložka Přátelé).",
+   "text": "Lupič si vycvičí drobné zvíře, které mu pomáhá nebo za něj i loupí: potkan, papoušek, kočka nebo opice. Zvíře má vlastní hlavu – v ohrožení může utéct. Přijde-li o parťáka, nového vycvičí až na další úrovni. Hodnoty a růst viz záložka Přátelé.",
+   "source": "PPP05",
+   "page": 260,
+   "spec": "lupic",
+   "minLevel": 6
+  },
+  "mistr_uteku": {
+   "name": "Mistr útěku",
+   "short": "Pohyblivost +10; při Přesunu/Sprintu se může bránit svým OČ.",
+   "text": "Pohyblivost Lupiče je o 10 vyšší. Při pohybové akci Přesun / Sprint se navíc může bránit svým Obranným číslem (OČ).",
+   "source": "PPP05",
+   "page": 261,
+   "spec": "lupic",
+   "minLevel": 6
+  },
+  "mistrovstvi_kociciho_pohybu": {
+   "name": "Mistrovství kočičího pohybu",
+   "short": "+1 k Umění kočičího pohybu; triky Flexibilita, Parkur, Útok z výšky.",
+   "text": "K dokonalosti vytrénované Umění kočičího pohybu: +1 k ověřovacím hodům. Otevírá 3 zlodějské triky: Flexibilita, Parkur, Útok z výšky.",
+   "source": "PPP05",
+   "page": 261,
+   "spec": "lupic",
+   "minLevel": 6,
+   "grantsItems": [
+    "Flexibilita",
+    "Parkur",
+    "Útok z výšky"
+   ],
+   "skillPlus": [
+    "umeni_kociciho_pohybu"
+   ]
+  },
+  "mistrovstvi_zelezneho_klice": {
+   "name": "Mistrovství železného klíče",
+   "short": "+1 k Umění železného klíče; triky Nastražení pasti, Otevírání magických zámků, Padělání cenností.",
+   "text": "K dokonalosti vytrénované Umění železného klíče: +1 k ověřovacím hodům. Otevírá 3 zlodějské triky: Nastražení pasti, Otevírání magických zámků, Padělání cenností.",
+   "source": "PPP05",
+   "page": 262,
+   "spec": "lupic",
+   "minLevel": 6,
+   "grantsItems": [
+    "Nastražení pasti",
+    "Otevírání magických zámků",
+    "Padělání cenností"
+   ],
+   "skillPlus": [
+    "umeni_zelezneho_klice"
+   ]
+  },
+  "umeni_neferoveho_boje": {
+   "name": "Umění neférového boje",
+   "short": "Nová dovednost (OBR) na 5. stupni; triky Podkopnutí, Souboj na zemi, Útok do slabin.",
+   "text": "Nová profesní dovednost Umění neférového boje (OBR) rovnou na 5. stupni – zákeřné pohyby pouličních rváčů. Dává 3 zlodějské triky: Podkopnutí, Souboj na zemi, Útok do slabin.",
+   "source": "PPP05",
+   "page": 265,
+   "spec": "lupic",
+   "minLevel": 6,
+   "grantsItems": [
+    "Podkopnutí",
+    "Souboj na zemi",
+    "Útok do slabin"
+   ],
+   "grantsSkills": [
+    {
+     "id": "umeni_neferoveho_boje",
+     "rank": 5
+    }
+   ]
+  },
+  "alter_ego": {
+   "name": "Alter ego",
+   "short": "Falešná identita – Výhoda +5 ke všem zlodějským dovednostem s CHAR.",
+   "text": "Zfalšovanými dokumenty, podplácením a studiem regionů vytvoří Sicco věrohodnou neexistující osobnost s alibi (může jich mít víc – přízvuk, chůze, chování, povaha, krycí legenda s příbuznými). Získá tak Výhodu +5 ke všem zlodějským dovednostem využívajícím CHAR.",
+   "source": "PPP05",
+   "page": 272,
+   "spec": "sicco",
+   "minLevel": 6
+  },
+  "duvernik": {
+   "name": "Důvěrník",
+   "short": "Loajální rádce a bodyguard bez žoldu; v boji ho ovládá hráč (záložka Přátelé).",
+   "text": "Blízký přítel, kterému Sicco zachránil život nebo pomohl z neřešitelné situace – zapřísáhlý stoupenec a bodyguard, rádce a pravá ruka. Získá se v herní situaci (řekni Vypravěči a vyčkej na příležitost). Doprovází Sicca na cestách nebo spravuje jeho záležitosti, poslouchá rozkazy, za Sicca obětuje i život. Je napojen na síť a její zisky – žold nepotřebuje. V boji o jeho akcích rozhoduje Sicco, mimo boj ho obvykle vede Vypravěč.",
+   "source": "PPP05",
+   "page": 272,
+   "spec": "sicco",
+   "minLevel": 6
+  },
+  "mistrovstvi_promen": {
+   "name": "Mistrovství proměn",
+   "short": "+1 k Umění proměn; triky Hraní mrtvého, Makety, Falešné tváře.",
+   "text": "K dokonalosti vytrénované Umění proměn: +1 k ověřovacím hodům. Otevírá 3 zlodějské triky: Hraní mrtvého, Makety, Falešné tváře.",
+   "source": "PPP05",
+   "page": 273,
+   "spec": "sicco",
+   "minLevel": 6,
+   "grantsItems": [
+    "Hraní mrtvého",
+    "Makety",
+    "Falešné tváře"
+   ],
+   "skillPlus": [
+    "umeni_promen"
+   ]
+  },
+  "mistrovstvi_sarmu": {
+   "name": "Mistrovství šarmu",
+   "short": "+1 k Umění šarmu; triky Odhad nepřítele, Ostrý jazyk, Sladká slova.",
+   "text": "K dokonalosti vytrénované Umění šarmu: +1 k ověřovacím hodům. Otevírá 3 zlodějské triky: Odhad nepřítele, Ostrý jazyk, Sladká slova.",
+   "source": "PPP05",
+   "page": 274,
+   "spec": "sicco",
+   "minLevel": 6,
+   "grantsItems": [
+    "Odhad nepřítele",
+    "Ostrý jazyk",
+    "Sladká slova"
+   ],
+   "skillPlus": [
+    "umeni_sarmu"
+   ]
+  },
+  "povesti_a_drby": {
+   "name": "Pověsti a drby",
+   "short": "Za ≥ 1 den šíření dá osobě Výhodu +5 nebo Nevýhodu −5 k sociálním interakcím tam, kde se o ní ví.",
+   "text": "Sicco ovlivňuje veřejné mínění o osobě, místě či události. Šíření zabere aspoň 1 den hovorů s co nejvíc lidmi, pak se pověst šíří sama. Osoba získá Výhodu +5 nebo Nevýhodu −5 ke všem sociálním interakcím – jen tam, kde o ní někdo slyšel. Pověst platí, dokud ji nepřebije opačná.",
+   "source": "PPP05",
+   "page": 275,
+   "spec": "sicco",
+   "minLevel": 6
+  },
+  "sifrovani": {
+   "name": "Šifrování",
+   "short": "Šifra = hod Čtení a psaní +5; dešifrování s Výhodou +5; zpráva nebo naučení klíče 1 směna.",
+   "text": "Obtížnost šifry je dána hodem Sicca na Čtení a psaní (INT) s Výhodou +5. Kdo zná klíč, přečte ji automaticky; kdo ne, musí hodit Čtení a psaní (INT) vs. obtížnost šifry. Sicco má k dešifrování Výhodu +5. Zašifrování zprávy obvykle 1 směna, stejně tak naučení klíče jiné inteligentní postavě.",
+   "source": "PPP05",
+   "page": 276,
+   "spec": "sicco",
+   "minLevel": 6
+  },
+  "umeni_boje_s_plastem": {
+   "name": "Umění boje s pláštěm",
+   "short": "Nová dovednost (OBR) na 5. stupni; triky Držení, Oslepení pláštěm, Svedení útoku.",
+   "text": "Nová profesní dovednost Umění boje s pláštěm (OBR) rovnou na 5. stupni – plášť s vpletenými háčky jako zbraň. Dává 3 zlodějské triky: Držení, Oslepení pláštěm, Svedení útoku.",
+   "source": "PPP05",
+   "page": 276,
+   "spec": "sicco",
+   "minLevel": 6,
+   "grantsItems": [
+    "Držení",
+    "Oslepení pláštěm",
+    "Svedení útoku"
+   ],
+   "grantsSkills": [
+    {
+     "id": "umeni_boje_s_plastem",
+     "rank": 5
+    }
+   ]
+  },
+  "zrcadleni": {
+   "name": "Zrcadlení",
+   "short": "1× denně okamžitě (nejpozději další kolo) napodobí fyzickou akci či trik viděného humanoida se svými atributy.",
+   "text": "Vykoná-li humanoid v dohledu bojovou akci, bojový trik, schopnost, dovednost či techniku, může ji Sicco okamžitě napodobit (v daném či nejpozději následujícím kole) se svými atributy – i válečnický trik, nebo Výhodu +5 k dovednosti, kterou napodobuje. Nejvýše 1× denně.",
+   "source": "PPP05",
+   "page": 278,
+   "spec": "sicco",
+   "minLevel": 6
+  }
+ },
+ "specializace": {
+  "assassin": {
+   "name": "Assassin",
+   "page": 251,
+   "intro": "Nejobávanější zabijáci podsvětí, stíhaní lovci odměn – sdružují se do malých bratrstev, kterým jsou naprosto oddáni; za vraždu člena se platí krví.",
+   "popis": "Nájemný zabiják – mistr překvapivých útoků, skrytých zbraní, kuší, nožů a jedů, kterého se bojí i zločinci.",
+   "requires": [
+    "skryvani",
+    "vrhani_dyk"
+   ],
+   "need": 2,
+   "requiresPpp": [
+    "Umění rváčů",
+    "Umění skrývání",
+    "Vrhání dýk"
+   ],
+   "auto": [
+    {
+     "id": "bratrstvo_assassinu",
+     "name": "Bratrstvo Assassinů",
+     "text": "Uzavřený spolek (znak had, tetování podle klanu). Ve Zlodějském cechu tajné informace o vraždách a únosech v oblasti, vypsaných odměnách a zakázkách. Klan, jeho cíle a znamení si dohodni s PJ."
+    },
+    {
+     "id": "vrazedne_zbrane",
+     "name": "Vražedné zbraně",
+     "text": "Se zbraněmi označenými jako Assassinské +3 do Útoku (ÚČ) a Obrany (OČ)."
+    }
+   ]
+  },
+  "lupic": {
+   "name": "Lupič",
+   "page": 257,
+   "intro": "Cílem už nejsou kapsy měšťanů, ale dobře střežené trezory bank a gild chráněné magií, zámky a pastmi. Ani při konfrontaci s ochrankou nesmí zpanikařit.",
+   "popis": "Od vybírání kapes k rabování pokladnic a trezorů – žádná past ho neodradí, žádný zámek nezastaví, a když ho načapají, má vždy záložní plán.",
+   "requires": [
+    "kocici_pohyb",
+    "boj_beze_zbrane"
+   ],
+   "need": 2,
+   "requiresPpp": [
+    "Umění železného klíče",
+    "Umění kočičího pohybu",
+    "Improvizace"
+   ],
+   "auto": [
+    {
+     "id": "bratrstvo_lupicu",
+     "name": "Bratrstvo lupičů",
+     "text": "Uzavřený spolek (znak klíč). Ve Zlodějském cechu tajné informace k vytipování cílů loupeže – vzácné zboží ve městě či na cestě, majitel, cena, místo, zabezpečení; vypsané odměny a zakázky. Klan si dohodni s PJ."
+    },
+    {
+     "id": "improvizovane_zbrane",
+     "name": "Improvizované zbraně",
+     "text": "S improvizovanými zbraněmi (střep, svícen, kůl i zbraně cechu označené jako improvizované) +3 do Útoku (ÚČ) i Obrany (OČ). Sebrání předmětu = akce Přezbrojení; PJ určí, zda jde o obdobu krátké lehké (2/1/1, dostřel 6/15) nebo lehké obouruční zbraně (5/0/1)."
+    }
+   ]
+  },
+  "sicco": {
+   "name": "Sicco",
+   "page": 267,
+   "intro": "Sicco do žádné organizace nevstupuje – je tím, kdo ji vytváří a vládne jí: hlava rodiny, šedá eminence nad sítí informátorů a vykonavatelů.",
+   "popis": "Šedá eminence podsvětí – mění vzhled, hlas i podobu, rozmluví i mlčenlivé strážné, obchoduje s informacemi a časem přebírá vládu nad podsvětím.",
+   "requires": [
+    "sarm",
+    "odezirani_ze_rtu"
+   ],
+   "need": 2,
+   "requiresPpp": [
+    "Umění proměn",
+    "Umění šarmu",
+    "Zlodějská hantýrka"
+   ],
+   "auto": [
+    {
+     "id": "siccova_sit",
+     "name": "Siccova síť",
+     "text": "Vlastní zločinecká organizace – nejvýše tolik kumpánů, kolik je úroveň Sicca; první člen každého typu je kápo týmu. Akce sítě: 1k10 + 1 za každého zapojeného kumpána vs. obtížnost PJ."
+    },
+    {
+     "id": "zbrane_gentlemana",
+     "name": "Zbraně gentlemana",
+     "text": "Se všemi gentlemanskými zbraněmi (Zlodějský cech) +3 do Útoku (ÚČ) i Obrany (OČ)."
+    }
+   ]
+  }
+ },
+ "triky": [
+  {
+   "id": "lezeni",
+   "n": "Lezení",
+   "skupina": "kocici_pohyb",
+   "skill": "umeni_kociciho_pohybu",
+   "zdroj": "H12",
+   "strana": 7,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění kočičího pohybu (OBR) vs. X",
+   "popis": "Nejzajímavější kořist bývá nejvýš – hnízdo gryfa, laboratoř alchymisty, pokladnice barona. Zdolávání skal, hradeb a zdí je pro zkušeného zloděje samozřejmost.\nÚspěšnost se ověřuje podle situace, nejčastěji po 5 či 10 zdolaných sázích; obtížnost určí PJ. Rychlost lezení je obvykle 2 sáhy za kolo.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "ohebnost",
+   "n": "Ohebnost",
+   "skupina": "kocici_pohyb",
+   "skill": "umeni_kociciho_pohybu",
+   "zdroj": "H12",
+   "strana": 7,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění kočičího pohybu (OBR) vs. X",
+   "popis": "Jako akrobati se zloději kroutí, ohýbají a „lámou“ do nemožných poloh, uvolní svaly i šlachy, vykloubí a narovnají končetiny či prsty – dostanou se z okovů a pout a prolezou otvory sotva širšími než hlava.\nZloděj musí překonat obtížnost PJ; při úspěchu akci provede. Při neúspěchu se obvykle nic nestane, při velkém rozdílu se věci mohou zkomplikovat – následky určí PJ.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "pad_z_vysky",
+   "n": "Pád z výšky",
+   "skupina": "kocici_pohyb",
+   "skill": "umeni_kociciho_pohybu",
+   "zdroj": "H12",
+   "strana": 7,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění kočičího pohybu (OBR) vs. X",
+   "popis": "Zloději se naučili tlumit pád zachytáváním za výčnělky a kotoulem.\nPři pádu z výšky hází zloděj proti obtížnosti PJ: při úspěchu ustojí pád zcela nezraněn, jinak utrpí poloviční zranění. Chrání ho i při nečekaném pádu (zakopnutí, násilné shození).",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "imitace",
+   "n": "Imitace",
+   "skupina": "promeny",
+   "skill": "umeni_promen",
+   "zdroj": "H12",
+   "strana": 8,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění proměn (CHAR) vs. Postřeh (INT)",
+   "popis": "Zloděj má skvělý sluch a hlasovou paměť – zachytí tempo, tón, barvu i hloubku cizího hlasu.\nNapodobí každého, koho někdy zřetelně slyšel mluvit: jednotlivá slova, rozkazy, výkřiky. Plynulá řeč cizím hlasem vyžaduje hlas pořádně naposlouchat (asi 5 minut). K ošálení musí překonat Postřeh (INT) cíle.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "mimika",
+   "n": "Mimika",
+   "skupina": "promeny",
+   "skill": "umeni_promen",
+   "zdroj": "H12",
+   "strana": 8,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění proměn (CHAR) vs. Postřeh (INT)",
+   "popis": "Zloděj ovládá mimické svaly dokonale – nasadí jakýkoli výraz (šibalský úsměv i kamennou tvář).\nPravé mistrovství je změna vzhledu obličeje: nakrabacené čelo, zdvižené obočí, svěšený koutek, nafouklé tváře, vypoulené či zapadlé oči – vzhled se změní k nepoznání. K ošálení musí překonat Postřeh. (V H12 u popisu omylem „Umění šarmu“ – trik patří k Umění proměn.)",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "prevleky",
+   "n": "Převleky",
+   "skupina": "promeny",
+   "skill": "umeni_promen",
+   "zdroj": "H12",
+   "strana": 8,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění proměn (CHAR) vs. Postřeh (INT)",
+   "popis": "Převleky a masky zvýší důvěryhodnost, pomohou proniknout na chráněná místa nebo zmizet. Zloděj se umí maskovat za postavu své třídy velikosti; nedokonalosti zakryje šero, vzdálenost a herecký talent.\nK ošálení musí překonat Postřeh. Potřebuje aspoň základní herecké rekvizity (vak s hadry, líčidly a cetkami – stačí na běžná povolání: trhovec, poutník, nevěstka, řemeslník). Netypické převleky (nebo bez rekvizit) vyžadují oblečení nejdřív sehnat či ušít.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "falesny_utok",
+   "n": "Falešný útok",
+   "skupina": "rvaci",
+   "skill": "umeni_rvacu",
+   "zdroj": "H12",
+   "strana": 9,
+   "cetnost": "jednorázově",
+   "pouziti": "do útoku",
+   "overeni": "Umění rváčů (OBR) vs. Akrobacie (OBR)",
+   "popis": "Zloděj naznačí útok, a když se protivník kryje, napadne ho z jiné strany.\nSpeciální akce, která nestojí žádný čas a je součástí běžného útoku. Překoná-li Umění rváčů Akrobacii protivníka, cíl se v daném kole nebrání (brání se falešnému útoku) – skutečný útok jde do jeho ZO. Na každého protivníka jen jednou.",
+   "boj": "utok",
+   "once": true,
+   "fx": {
+    "note": "cíl se v tomto kole nebrání – útok jde do jeho ZO"
+   }
+  },
+  {
+   "id": "oko_strelce",
+   "n": "Oko střelce",
+   "skupina": "rvaci",
+   "skill": "umeni_rvacu",
+   "zdroj": "H12",
+   "strana": 9,
+   "cetnost": "neomezeně",
+   "pouziti": "do útoku",
+   "overeni": "Umění rváčů (OBR) vs. X; proti tvoru vs. Akrobacie (OBR)",
+   "popis": "Neobvyklá přesnost při střelbě z kuše či jiného improvizovaného mechanismu.\nZloděj 1 kolo zaujímá střelecký postoj (vítr, vzdálenost…) a vystřelí ve svém příštím tahu. Proti obtížnosti PJ přesně zasáhne neživý cíl (lanko, svíčka, kyvadlo, lampa), vystřelí šipku se vzkazem či kotvičku s lanem. Střílí-li na tvora, hází Umění rváčů vs. Akrobacie obránce – při úspěchu má ke střeleckému útoku Výhodu +5.",
+   "boj": "utok",
+   "once": false,
+   "fx": {
+    "atk": 5,
+    "aim": true,
+    "ranged": true,
+    "note": "1 kolo míření, pak střelecký útok s Výhodou +5"
+   }
+  },
+  {
+   "id": "omraceni",
+   "n": "Omráčení",
+   "skupina": "rvaci",
+   "skill": "umeni_rvacu",
+   "zdroj": "H12",
+   "strana": 9,
+   "cetnost": "neomezeně",
+   "pouziti": "místo útoku",
+   "overeni": "Umění rváčů (OBR) vs. Výdrž (ODO)",
+   "popis": "Zloděj se ukryje u cesty oběti a udeří ji zezadu obuškem či kamenem v látce.\nJen na tvora, který může ztratit vědomí (ne nemrtvé, houby…) a o zloději neví – akce se provádí v momentu překvapení mimo zorné pole oběti. Překoná-li Výdrž (ODO), cíl ztratí vědomí na 1k6 směn (životy neztratí); jinak se hází na Iniciativu a začíná boj. Obvykle jen na tvory své třídy velikosti a menší. Tělo zachytí tak, aby pád nezpůsobil povyk.",
+   "boj": "misto",
+   "once": false,
+   "fx": {
+    "note": "jen z úkrytu – cíl ztratí vědomí na 1k6 směn"
+   }
+  },
+  {
+   "id": "schovani_se_ve_stinu",
+   "n": "Schování se ve stínu",
+   "skupina": "skryvani",
+   "skill": "umeni_skryvani",
+   "zdroj": "H12",
+   "strana": 10,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění skrývání (OBR) vs. X; hledající Postřeh (INT) vs. výsledek",
+   "popis": "Ve stínu nebo tmě se zloděj ukryje: akce trvá 1 kolo, bez postihu k plížení za Lehkou zbroj. Během ní ho nesmí spatřit ten, před kým se ukrývá (jinak automatický neúspěch). Obtížnost určí PJ (tvar místnosti, světlo…).\nPři úspěchu je prakticky nepostřehnutelný a může se plížit (1/10 Pohyblivosti); útok nebo jiné upozornění ho prozradí. Odhalit ho může jen aktivní hledání: Postřeh (INT) hledajícího musí překonat výsledek triku; nehýbe-li se zloděj, má proti hledajícímu Výhodu +5.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "splynuti_s_davem",
+   "n": "Splynutí s davem",
+   "skupina": "skryvani",
+   "skill": "umeni_skryvani",
+   "zdroj": "H12",
+   "strana": 10,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění skrývání (OBR) vs. Postřeh (INT)",
+   "popis": "Zloděj se přikrčí, změní držení těla, chůzi, kus oblečení a zapadne mezi lidi jako někdo jiný.\nTrvá 1 kolo a vyžaduje větší skupinu lidí (obvykle aspoň 10). Při úspěchu (proti Postřehu pronásledovatelů) se jim ztratí z očí; znovu si ho všimnou, jen když jejich Postřeh překoná sílu triku – nevidí-li mu do tváře, má Výhodu +5.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "tichy_pohyb",
+   "n": "Tichý pohyb",
+   "skupina": "skryvani",
+   "skill": "umeni_skryvani",
+   "zdroj": "H12",
+   "strana": 10,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění skrývání (OBR) vs. Postřeh (INT)",
+   "popis": "Kombinace chůze a instinktu, kam bezhlučně našlapovat.\nPři úspěchu (proti Postřehu protivníka) se pohybuje v naprosté tichosti plnou Pohyblivostí, bez postihu k plížení za Lehkou zbroj. Podmínkou je upevnit či obalit hlučné předměty (kov, křehké věci) – příprava asi 5 minut, platí do odstrojení. V těžké zbroji to nepomůže.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "odhad_lidi",
+   "n": "Odhad lidí",
+   "skupina": "sarm",
+   "skill": "umeni_sarmu",
+   "zdroj": "H12",
+   "strana": 11,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění šarmu (CHAR) vs. Vůle (CHAR)",
+   "popis": "Zloděj odhadne, zda dotyčný předstírá, je nervózní, lže, má strach – podvodník, lhář, blázen, nebo obyčejný člověk.\nPotřebuje aktivní hovor aspoň 10 kol (1 minuta); při úspěchu proti Vůli má představu o psychickém rozpoložení. S víc časem (aspoň 5 minut komunikace nebo pozorování hovoru) zjistí i základní charakterové rysy (čestný, žárlivý, dominantní, důvěřivý, prospěchář…).",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "odvedeni_pozornosti",
+   "n": "Odvedení pozornosti",
+   "skupina": "sarm",
+   "skill": "umeni_sarmu",
+   "zdroj": "H12",
+   "strana": 11,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění šarmu (CHAR) vs. Vůle (CHAR)",
+   "popis": "Zloděj je mistrem historek – upoutá pozornost okolí, nebo nenápadně odvede téma hovoru.\nHod proti Vůli protivníka (při víc protivnících obvykle na každého). Při úspěchu odvede pozornost jinam a protivníci mají Nevýhodu −5 ke každému hodu na Vůli. Trvá, dokud se zloděj snaží; boj či jiná vážná situace efekt ukončí. Odvedené téma je zapomenuto nejméně na 1k6 směn.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "ziskani_duvery",
+   "n": "Získání důvěry",
+   "skupina": "sarm",
+   "skill": "umeni_sarmu",
+   "zdroj": "H12",
+   "strana": 11,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění šarmu (CHAR) vs. Vůle (CHAR)",
+   "popis": "Empatie a zkušenost s lidmi otevřou cizí srdce i mysl.\nPotřebuje s osobou aspoň minutu (10 kol) hovořit. Při úspěchu proti Vůli mu cíl věří jako starému známému. Šanci zvýší připravená situace (fingovaná záchrana, věrohodné informace). Ani tak nemusí cíl prozradit tajemství, která by neřekl ani přátelům.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "odstraneni_pasti",
+   "n": "Odstranění pastí",
+   "skupina": "zelezny_klic",
+   "skill": "umeni_zelezneho_klice",
+   "zdroj": "H12",
+   "strana": 12,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění železného klíče (OBR) vs. X",
+   "popis": "Na každou past existuje řešení – zlodějské náčiní, obratnost a štěstí.\nOdstraní každou běžnou past: nejjednodušší během minuty, složitější během směny i déle. Obtížnost určí PJ podle typu pasti a zkušenosti toho, kdo ji nastražil. Na magické pasti nestačí (potřeba znalosti pokročilých).",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "otevirani_zamku",
+   "n": "Otevírání zámků",
+   "skupina": "zelezny_klic",
+   "skill": "umeni_zelezneho_klice",
+   "zdroj": "H12",
+   "strana": 12,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění železného klíče (OBR) vs. X",
+   "popis": "V Dlouhé akci odemkne či zamkne vybraný zámek – musí překonat jeho obtížnost (PJ).\nŠanci ovlivňuje zlodějské vybavení (planžety, háčky), se kterým umí zacházet jen zloděj; jiné profese nebo zloděj bez vybavení mají Nevýhodu −5. S primitivními pomůckami (sponka) jen nejjednodušší zámky s velkým štěstím a časem.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "padelani",
+   "n": "Padělání",
+   "skupina": "zelezny_klic",
+   "skill": "umeni_zelezneho_klice",
+   "zdroj": "H12",
+   "strana": 12,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění železného klíče (OBR) vs. X",
+   "popis": "Falšování rytin, pečetí a cizího písma.\nPři úspěchu (obtížnost PJ) vznikne dokonalý padělek (bez magických vlastností); jinak má pochybnou kvalitu a dá se odhalit (obvykle Postřehem). Čas i obtížnost určí PJ podle složitosti. Potřebuje padělatelské vybavení (bez něj dvojnásobná obtížnost); dokumenty jen se základy Vzdělání.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "manipulace",
+   "n": "Manipulace",
+   "skupina": "mistrovstvi_sily_osobnosti",
+   "skill": "presvedcovani",
+   "zdroj": "PPP05",
+   "strana": 248,
+   "cetnost": "jednorázově",
+   "pouziti": "kdykoliv",
+   "overeni": "Přesvědčování (CHAR) vs. Vůle (CHAR)",
+   "popis": "Psychický tlak na osobu, nad níž má Zloděj převahu – při rozhovoru navede cíl otázkami tak, že nedopatřením vyzradí informaci, kterou si dobře střeží. Musí překonat Vůli (CHAR).\nV krajním případě násilné přesvědčování: Výhoda +5, ale cíl musí mít strach a nemít kam utéct (zablokovaný v temné uličce) – vytáhne i nejtajnější informace.",
+   "boj": null,
+   "once": true
+  },
+  {
+   "id": "podstrceni_predmetu",
+   "n": "Podstrčení předmětu",
+   "skupina": "mistrovstvi_sily_osobnosti",
+   "skill": "hazardni_hry",
+   "zdroj": "PPP05",
+   "strana": 248,
+   "cetnost": "jednorázově",
+   "pouziti": "kdykoliv",
+   "overeni": "Hazardní hry (OBR) vs. Postřeh (INT)",
+   "popis": "Zloděj nezpozorován podstrčí postavě v dosahu cinknutou kostku do kapsy, eso do rukávu, kradený prsten či falešný dokument – pak už ji stačí obvinit. Jde i mimo herní stůl (v davu, při „nechtěném“ nárazu). Není-li přistižen, oběť se nad situací zamyslí příliš pozdě.",
+   "boj": null,
+   "once": true
+  },
+  {
+   "id": "handlovani",
+   "n": "Handlování",
+   "skupina": "mistrovstvi_zlatky",
+   "skill": "odhad_ceny",
+   "zdroj": "PPP05",
+   "strana": 248,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Odhad ceny (INT) vs. X",
+   "popis": "„Nakoupit levně a prodat za dvojnásobek.“ Při úspěchu přesně odhadne cenu i neznámých či magických předmětů, pozná, zda obchodník prodává pod cenou nebo předražuje, a často i zhruba odkud předmět pochází či kdo ho vyrobil.\nK handrkování o ceně má obecně Výhodu +5; při úspěchu obchodník prodá se slevou nebo odkoupí za spravedlivou cenu.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "ukryti_predmetu",
+   "n": "Ukrytí předmětu",
+   "skupina": "mistrovstvi_zlatky",
+   "skill": "vybirani_kapes",
+   "zdroj": "PPP05",
+   "strana": 249,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Vybírání kapes (OBR) vs. Postřeh (INT)",
+   "popis": "Zloděj ukryje předmět na svém těle nebo v něm – malý předmět (dýka, paklíč) propašuje i přes prohlídku stráží. Větší předmět: Nevýhoda −5; specifické zlodějské předměty (zbraně z cechu): Výhoda +5. Maximální velikost určí PJ.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "dokonala_muska",
+   "n": "Dokonalá muška",
+   "skupina": "mistrovstvi_rvacu",
+   "skill": "umeni_rvacu",
+   "zdroj": "PPP05",
+   "strana": 253,
+   "cetnost": "neomezeně",
+   "pouziti": "do Útoku",
+   "overeni": "Umění rváčů (OBR) vs. Reflex (OBR)",
+   "popis": "Intuitivní a rychlejší obdoba Oka střelce – jen v boji, součást běžného střeleckého Útoku. Překoná-li Assassin Reflex protivníka, získá ke svému Útoku (ÚČ) Výhodu +5.",
+   "boj": "utok",
+   "once": false,
+   "fx": {
+    "atk": 5,
+    "ranged": true,
+    "note": "střelecký útok s Výhodou +5"
+   }
+  },
+  {
+   "id": "otreseni",
+   "n": "Otřesení",
+   "skupina": "mistrovstvi_rvacu",
+   "skill": "umeni_rvacu",
+   "zdroj": "PPP05",
+   "strana": 253,
+   "cetnost": "jednorázově",
+   "pouziti": "do Útoku",
+   "overeni": "Umění rváčů (OBR) vs. Výdrž (ODO)",
+   "popis": "Rychlý přesný úder do hlavy i poté, co byl Assassin spatřen (na rozdíl od Omráčení). Útok tváří v tvář s Nevýhodou −5; zasáhne-li, protivníka zraní a hodí Umění rváčů vs. Výdrž – při úspěchu je cíl otřesen: celé 1 kolo se vzpamatovává a nemůže dělat nic jiného.",
+   "boj": "utok",
+   "once": true,
+   "fx": {
+    "atkPen": -5,
+    "note": "útok −5; zasáhne-li a uspěje, cíl je 1 kolo otřesen"
+   }
+  },
+  {
+   "id": "presny_zasah",
+   "n": "Přesný zásah",
+   "skupina": "mistrovstvi_rvacu",
+   "skill": "umeni_rvacu",
+   "zdroj": "PPP05",
+   "strana": 253,
+   "cetnost": "jednorázově",
+   "pouziti": "do Útoku",
+   "overeni": "Umění rváčů (OBR) vs. Reflex (OBR)",
+   "popis": "Assassin najde místo, kde kovář šetřil železem. Uspěje-li proti Reflexu, po falešném výpadu zasáhne v Útoku tváří v tvář nechráněné místo: cíl je chráněn jen opravou za OBR – Útok ignoruje obranu zbraně, štít, zbroj i hod cíle na obranu.",
+   "boj": "utok",
+   "once": true,
+   "fx": {
+    "note": "cíl chrání jen oprava OBR – ignoruje obranu zbraně, štít, zbroj i hod na obranu"
+   }
+  },
+  {
+   "id": "infiltrace",
+   "n": "Infiltrace",
+   "skupina": "mistrovstvi_skryvani",
+   "skill": "umeni_skryvani",
+   "zdroj": "PPP05",
+   "strana": 254,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění skrývání (OBR) vs. X",
+   "popis": "Při úspěchu Assassin vysleduje, kdo a kudy do objektu vchází, jak se obléká, kdy se mění stráže a další užitečné informace. Průzkum zabere aspoň 1 směnu, s každou další se obtížnost sníží o 1.\nPři hodech, kterým tyto informace pomohou (převlek, imitace hlasu velitele stráží, splynutí se služebnictvem), má Výhodu +5.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "pan_stinu",
+   "n": "Pán stínů",
+   "skupina": "mistrovstvi_skryvani",
+   "skill": "umeni_skryvani",
+   "zdroj": "PPP05",
+   "strana": 254,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění skrývání (OBR) vs. Postřeh (INT)",
+   "popis": "Během krátké akce v souboji se Assassin schová ve stínech – musí být aspoň z poloviny v krytu nebo mít kolem stín (i dým, kouřová clona, kouzla Mlha a Tma). Překoná-li Postřeh nepřítele, je pro něj téměř neviditelný (výhody jako proti neviditelnému, PPZ H 1.1 s. 178) a ve stínu se pohybuje nejvýše ¼ Pohyblivosti. Křik, Útok či jiné upozornění, nebo úspěšný Postřeh nepřítele v dalším kole ho opět zviditelní.",
+   "boj": "akce",
+   "once": false,
+   "fx": {
+    "note": "krátká akce – téměř neviditelný, pohyb ¼"
+   }
+  },
+  {
+   "id": "utajeny_utok",
+   "n": "Utajený útok",
+   "skupina": "mistrovstvi_skryvani",
+   "skill": "umeni_skryvani",
+   "zdroj": "PPP05",
+   "strana": 254,
+   "cetnost": "neomezeně",
+   "pouziti": "do Útoku",
+   "overeni": "Umění skrývání (OBR) vs. Postřeh (INT)",
+   "popis": "Jen pokud Assassin není viděn. Uspěje-li proti Postřehu protivníka, proběhne Útok v naprosté tichosti – nepřítel neurčí, odkud přišel, a Assassin zůstává skryt.",
+   "boj": "utok",
+   "once": false,
+   "fx": {
+    "note": "útok v tichosti, Assassin zůstává skryt"
+   }
+  },
+  {
+   "id": "hlavounova_finta",
+   "n": "Hlavounova finta",
+   "skupina": "umeni_prepadu",
+   "skill": "umeni_prepadu",
+   "zdroj": "PPP05",
+   "strana": 255,
+   "cetnost": "jednorázově",
+   "pouziti": "namísto Útoku",
+   "overeni": "Umění přepadů (OBR) vs. Reflex (OBR)",
+   "popis": "Místo Útoku. Překoná-li soupeřův Reflex, vyrazí mu dech – oběť má po dobu 1 kola Nevýhodu −5 ke všem svým akcím.",
+   "boj": "misto",
+   "once": true,
+   "fx": {
+    "note": "cíl má 1 kolo Nevýhodu −5 ke všem akcím"
+   }
+  },
+  {
+   "id": "kontrolovana_trajektorie",
+   "n": "Kontrolovaná trajektorie",
+   "skupina": "umeni_prepadu",
+   "skill": "umeni_prepadu",
+   "zdroj": "PPP05",
+   "strana": 255,
+   "cetnost": "neomezeně",
+   "pouziti": "do Útoku",
+   "overeni": "Umění přepadů (OBR) vs. Reflex (OBR)",
+   "popis": "Součást běžného střeleckého či vrhacího Útoku, nestojí žádný čas. Při úspěchu míří na nechráněnou část těla – neguje bonus do obrany za poloviční či tříčtvrteční kryt. Je-li nepřítel blokován spřátelenou postavou, nehrozí, že ji zasáhne.",
+   "boj": "utok",
+   "once": false,
+   "fx": {
+    "ranged": true,
+    "note": "neguje bonus za kryt"
+   }
+  },
+  {
+   "id": "prohozeni_pozic",
+   "n": "Prohození pozic",
+   "skupina": "umeni_prepadu",
+   "skill": "umeni_prepadu",
+   "zdroj": "PPP05",
+   "strana": 255,
+   "cetnost": "neomezeně",
+   "pouziti": "do Útoku",
+   "overeni": "Umění přepadů (OBR) vs. Reflex (OBR)",
+   "popis": "Součást běžného Útoku tváří v tvář, nestojí žádný čas. Při úspěchu výpadem zamění svou pozici s pozicí protivníka (výhodnější místo v obklíčení, průchod přes blokujícího nepřítele).",
+   "boj": "utok",
+   "once": false,
+   "fx": {
+    "note": "výpadem si vymění pozici s protivníkem"
+   }
+  },
+  {
+   "id": "flexibilita",
+   "n": "Flexibilita",
+   "skupina": "mistrovstvi_kociciho_pohybu",
+   "skill": "umeni_kociciho_pohybu",
+   "zdroj": "PPP05",
+   "strana": 262,
+   "cetnost": "neomezeně",
+   "pouziti": "do obrany",
+   "overeni": "Umění kočičího pohybu (OBR) vs. Reflex (OBR)",
+   "popis": "Přemety, kotouly a záklony v boji. Brání-li se Lupič aktivně, může použít trik: uspěje-li proti Reflexu útočníka, má k Obraně (OČ) Výhodu +5; neuspěje-li, má k ní Nevýhodu −5.",
+   "boj": "obrana",
+   "once": false,
+   "fx": {
+    "def": 5,
+    "defFail": -5,
+    "note": "obrana +5, při neúspěchu −5"
+   }
+  },
+  {
+   "id": "parkur",
+   "n": "Parkur",
+   "skupina": "mistrovstvi_kociciho_pohybu",
+   "skill": "umeni_kociciho_pohybu",
+   "zdroj": "PPP05",
+   "strana": 262,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění kočičího pohybu (OBR) vs. X",
+   "popis": "Kdykoli v rámci pohybové akce. Při úspěchu překoná náročný terén bez postihu na rychlost a při lezení se pohybuje stejně rychle jako po rovné zemi. Obtížnost určí PJ podle překážek.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "utok_z_vysky",
+   "n": "Útok z výšky",
+   "skupina": "mistrovstvi_kociciho_pohybu",
+   "skill": "umeni_kociciho_pohybu",
+   "zdroj": "PPP05",
+   "strana": 262,
+   "cetnost": "neomezeně",
+   "pouziti": "místo Útoku",
+   "overeni": "Umění kočičího pohybu (OBR) vs. Reflex (OBR)",
+   "popis": "Lupič musí být aspoň o 2 sáhy výše než oběť a ta nesmí být vodorovně dál než jeho Krátký pohyb (1/10 Pohyblivosti). Při úspěchu dopadne na cíl: ten utrží Zranění jako při pádu z dané výšky (Tabulka pádu z výšky, PPZ H 1.1 s. 39) a je povalen – všechny jeho akce v kole propadají (i Boj a Aktivní obrana), další Útoky v kole jdou do jeho ZO, dál se počítá jako ležící. Při neúspěchu je Lupič zraněn za polovinu určeného Zranění.",
+   "boj": "misto",
+   "once": false,
+   "fx": {
+    "note": "zranění jako pád z výšky + povalení; při neúspěchu Lupič ½ zranění"
+   }
+  },
+  {
+   "id": "nastrazeni_pasti",
+   "n": "Nastražení pasti",
+   "skupina": "mistrovstvi_zelezneho_klice",
+   "skill": "umeni_zelezneho_klice",
+   "zdroj": "PPP05",
+   "strana": 263,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění železného klíče (OBR) vs. X",
+   "popis": "Lupič umí pasti nejen deaktivovat, ale i líčit a vyrábět – pro výrobu musí uspět proti obtížnosti dané pasti. Pasti si lze všimnout před aktivací hodem Postřeh (INT) vs. Umění železného klíče Lupiče. Vyrobí: Kovoví ježci, Šipková past, Výbušná past.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "otevirani_magickych_zamku",
+   "n": "Otevírání magických zámků",
+   "skupina": "mistrovstvi_zelezneho_klice",
+   "skill": "umeni_zelezneho_klice",
+   "zdroj": "PPP05",
+   "strana": 264,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění železného klíče (OBR) vs. X",
+   "popis": "Lupič deaktivuje a otevírá zámky chráněné kouzly; obtížnost určí PJ podle zajištění. Používá speciální Magický klíč – bez něj má Nevýhodu −5. Klíč se získá při výcviku, koupí u cechovního alchymisty, někdy za drobný úkol pro bratrstvo.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "padelani_cennosti",
+   "n": "Padělání cenností",
+   "skupina": "mistrovstvi_zelezneho_klice",
+   "skill": "umeni_zelezneho_klice",
+   "zdroj": "PPP05",
+   "strana": 265,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění železného klíče (OBR) vs. Postřeh (INT)",
+   "popis": "Padělky uměleckých děl, zbraní, ozdob, mincí či drahokamů – zamění je za originál, nebo vydává za pravé. Výroba trvá celý den (případně ve speciální dílně, slévárně…). U mincí se jejich počet vyrobený za den rovná výsledku hodu na Umění železného klíče. Odhalení: Postřeh (INT) vs. Umění železného klíče; Lupič s tímto trikem má k identifikaci padělku Výhodu +5.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "podkopnuti",
+   "n": "Podkopnutí",
+   "skupina": "umeni_neferoveho_boje",
+   "skill": "umeni_neferoveho_boje",
+   "zdroj": "PPP05",
+   "strana": 265,
+   "cetnost": "jednorázově",
+   "pouziti": "místo Útoku",
+   "overeni": "Umění neférového boje (OBR) vs. Reflex (OBR)",
+   "popis": "Podkopne nohy bytosti u sebe (stejné nebo menší velikosti). Při úspěchu je povalena – všechny její akce v kole propadají (i Boj a Aktivní obrana), další Útoky v kole jdou do její ZO a dál se považuje za ležící.",
+   "boj": "misto",
+   "once": true,
+   "fx": {
+    "note": "cíl povalen – akce v kole propadají, další útoky do ZO"
+   }
+  },
+  {
+   "id": "souboj_na_zemi",
+   "n": "Souboj na zemi",
+   "skupina": "umeni_neferoveho_boje",
+   "skill": "umeni_neferoveho_boje",
+   "zdroj": "PPP05",
+   "strana": 266,
+   "cetnost": "neomezeně",
+   "pouziti": "místo Útoku",
+   "overeni": "Umění neférového boje (OBR) vs. Výdrž (ODO)",
+   "popis": "Chvaty a páky: při úspěchu začíná „souboj na zemi“ – ani jeden se nemůže standardně pohybovat, jen útočit a bránit se; protivník má Nevýhodu −5 k Útoku (ÚČ) i Obraně (OČ). Udržení nestojí Lupiče další akci. Protivník se může každé kolo pokusit vymanit opakováním hodu; při úspěchu leží, ale bez postihu a může vstát. Útok třetí osoby na kteréhokoli ze zápasících je Útok na bezbranného (PPZ H 1.1 s. 178).",
+   "boj": "misto",
+   "once": false,
+   "fx": {
+    "note": "souboj na zemi – protivník −5 k ÚČ i OČ, oba bez pohybu"
+   }
+  },
+  {
+   "id": "utok_do_slabin",
+   "n": "Útok do slabin",
+   "skupina": "umeni_neferoveho_boje",
+   "skill": "umeni_neferoveho_boje",
+   "zdroj": "PPP05",
+   "strana": 266,
+   "cetnost": "jednorázově",
+   "pouziti": "místo Útoku",
+   "overeni": "Umění neférového boje (OBR) vs. Výdrž (ODO)",
+   "popis": "„Míchaná vejce za běhu jsou oblíbeným pokrmem Lupičů.“ Při úspěchu zasáhne slabiny – velká bolest zpomalí nepřítele na 3 kola (Pohyblivost na polovinu).",
+   "boj": "misto",
+   "once": true,
+   "fx": {
+    "note": "cíl na 3 kola zpomalen (½ Pohyblivosti)"
+   }
+  },
+  {
+   "id": "hrani_mrtveho",
+   "n": "Hraní mrtvého",
+   "skupina": "mistrovstvi_promen",
+   "skill": "umeni_promen",
+   "zdroj": "PPP05",
+   "strana": 274,
+   "cetnost": "jednorázově",
+   "pouziti": "do Obrany",
+   "overeni": "Umění proměn (CHAR) vs. Postřeh (INT)",
+   "popis": "Po zásahu v boji (do něhož se umně vmanipuluje) padne „mrtvý“ k zemi, často s krví z úst. Uspěje-li proti Postřehu protivníka, inteligentní bytost ho přestane považovat za hrozbu; u zvěře a monster rozhodne PJ.",
+   "boj": "obrana",
+   "once": true,
+   "fx": {
+    "note": "inteligentní nepřítel ho přestane považovat za hrozbu"
+   }
+  },
+  {
+   "id": "makety",
+   "n": "Makety",
+   "skupina": "mistrovstvi_promen",
+   "skill": "umeni_promen",
+   "zdroj": "PPP05",
+   "strana": 274,
+   "cetnost": "jednorázově",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění proměn (CHAR) vs. Postřeh (INT)",
+   "popis": "Lehká vycpaná konstrukce postavy. Příprava 5 kol, spotřebuje deku (či podobnou látku) a jedny herecké rekvizity. Při úspěchu si cíl myslí, že ho z dálky pozoruje člověk (či jiný tvor). Vydá-li se k siluetě, hod se opakuje; naposledy v bezprostřední blízkosti (10 sáhů), kdy má oklamaný Výhodu +5. Neprohlédne-li ji ani tehdy, dá se s ní i konverzovat.",
+   "boj": null,
+   "once": true
+  },
+  {
+   "id": "falesne_tvare",
+   "n": "Falešné tváře",
+   "skupina": "mistrovstvi_promen",
+   "skill": "umeni_promen",
+   "zdroj": "PPP05",
+   "strana": 274,
+   "cetnost": "neomezeně",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění proměn (CHAR) vs. Postřeh (INT)",
+   "popis": "Z barev a vosku vytvoří kopii obličeje osoby, kterou už zblízka viděl; maska vydrží 1 hodinu. Při úspěchu ho cíl považuje za danou osobu, dokud mu nedá záminku pochybovat (netypické chování, špatný hod na Imitaci). U lidí, kteří mají k napodobené osobě kladný vztah, má k trikům na ně (Získání důvěry, Přesvědčování, Odvedení pozornosti…) Výhodu +5.",
+   "boj": null,
+   "once": false
+  },
+  {
+   "id": "odhad_nepritele",
+   "n": "Odhad nepřítele",
+   "skupina": "mistrovstvi_sarmu",
+   "skill": "umeni_sarmu",
+   "zdroj": "PPP05",
+   "strana": 275,
+   "cetnost": "jednorázově",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění šarmu (CHAR) vs. Vůle (CHAR)",
+   "popis": "Po aspoň 1 směně hovoru a úspěchu proti Vůli odhalí skryté motivy – po čem osoba prahne, její morální kodex, zda ji lze uplatit, přinutit ke zradě, a za jakou cenu. Nabídne-li jí odměnu, po níž touží, má Výhodu +5 k jejímu Přesvědčování.",
+   "boj": null,
+   "once": true
+  },
+  {
+   "id": "ostry_jazyk",
+   "n": "Ostrý jazyk",
+   "skupina": "mistrovstvi_sarmu",
+   "skill": "umeni_sarmu",
+   "zdroj": "PPP05",
+   "strana": 275,
+   "cetnost": "jednorázově",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění šarmu (CHAR) vs. Vůle (CHAR)",
+   "popis": "Slova, která tnou do živého. Při úspěchu vydráždí emoce cíle tak, že zaútočí – Sicco může strhnout pozornost na sebe nebo zlobu cíle zaměřit na někoho jiného; oběť musí svůj příští Útok zaměřit na cílovou bytost.",
+   "boj": null,
+   "once": true
+  },
+  {
+   "id": "sladka_slova",
+   "n": "Sladká slova",
+   "skupina": "mistrovstvi_sarmu",
+   "skill": "umeni_sarmu",
+   "zdroj": "PPP05",
+   "strana": 275,
+   "cetnost": "jednorázově",
+   "pouziti": "kdykoliv",
+   "overeni": "Umění šarmu (CHAR) vs. Vůle (CHAR)",
+   "popis": "Sicco vykřikne šokující (často lživé, ale věrohodné) prohlášení. Při úspěchu cíl „ztuhne“ a po dobu 1 kola přichází o možnost jakékoli akce.",
+   "boj": null,
+   "once": true
+  },
+  {
+   "id": "drzeni",
+   "n": "Držení",
+   "skupina": "umeni_boje_s_plastem",
+   "skill": "umeni_boje_s_plastem",
+   "zdroj": "PPP05",
+   "strana": 276,
+   "cetnost": "neomezeně",
+   "pouziti": "místo útoku",
+   "overeni": "Umění boje s pláštěm (OBR) vs. Atletika (SIL)",
+   "popis": "Plášť s háčky kontroluje pohyb nepřítele. Při úspěchu cíl nemůže provádět pohybové akce a má Nevýhodu −5 ke všem akcím vyžadujícím pohyb těla (boj, gesta při kouzlení…). Sicco se s ním pohne nejvýš o 1/10 Pohyblivosti, útočit může jen volnou rukou (jednoruční zbraní) a plášť nejde použít k jiným trikům. Cíl se může na začátku každého kola místo pohybové akce vymanit: Atletika (SIL) vs. Umění boje s pláštěm.",
+   "boj": "misto",
+   "once": false,
+   "fx": {
+    "note": "cíl bez pohybu, −5 k akcím s pohybem těla"
+   }
+  },
+  {
+   "id": "oslepeni_plastem",
+   "n": "Oslepení pláštěm",
+   "skupina": "umeni_boje_s_plastem",
+   "skill": "umeni_boje_s_plastem",
+   "zdroj": "PPP05",
+   "strana": 277,
+   "cetnost": "jednorázově",
+   "pouziti": "místo útoku",
+   "overeni": "Umění boje s pláštěm (OBR) vs. Reflex (OBR)",
+   "popis": "Sicco se vzdá Útoku a hodí plášť nepříteli přes hlavu. Při úspěchu má cíl Nevýhodu −5 k Útoku (ÚČ) i Obraně (OČ). Vymanit se může na začátku každého kola místo pohybové akce: Reflex (OBR) vs. Umění boje s pláštěm. Plášť mezitím nejde použít k jiným trikům; po vyproštění padá na zem – znovu ho získá akcí Přezbrojení (krátká akce).",
+   "boj": "misto",
+   "once": true,
+   "fx": {
+    "note": "cíl −5 k ÚČ i OČ, dokud se nevymaní"
+   }
+  },
+  {
+   "id": "svedeni_utoku",
+   "n": "Svedení útoku",
+   "skupina": "umeni_boje_s_plastem",
+   "skill": "umeni_boje_s_plastem",
+   "zdroj": "PPP05",
+   "strana": 278,
+   "cetnost": "jednorázově",
+   "pouziti": "do Obrany",
+   "overeni": "Umění boje s pláštěm (OBR) vs. Reflex (OBR)",
+   "popis": "Sicco ovine plášť kolem zbraně nepřítele a vychýlí ji. Při úspěchu je Útok zcela vychýlen a mine. Funguje i na přirozené zbraně (pěst, tlama, pařát).",
+   "boj": "obrana",
+   "once": true,
+   "fx": {
+    "note": "úspěch = útok zcela mine"
+   }
+  }
+ ],
+ "predmety": [
+  {
+   "typ": "bomba",
+   "id": "kourova_clona",
+   "nazev": "Kouřová clona",
+   "strana": 241,
+   "parametry": {
+    "suroviny": 15,
+    "zaklad": "skleněná kulička 5 coulů, zátka",
+    "trvani": "2 kola",
+    "pouziti": "vržení",
+    "obtiznost": 10,
+    "cena": [
+     35,
+     "zl"
+    ],
+    "w": 0.1
+   },
+   "popis": "Kulička na náhrdelníku nebo opasku – Zloděj ji strhne a hodí na zem okamžitě, bez akce. Kolem něj vznikne hustý dým o poloměru 3 sáhů: uvnitř je vidět nejvýš 1 sáh, zvenčí dovnitř vůbec. Pro překvapivý útok i útěk."
+  },
+  {
+   "typ": "bomba",
+   "id": "oslepujici_bomba",
+   "nazev": "Oslepující bomba",
+   "strana": 241,
+   "parametry": {
+    "suroviny": 35,
+    "zaklad": "kovová trubka 10 coulů, zápalná šňůra",
+    "trvani": "2 kola",
+    "pouziti": "vržení",
+    "obtiznost": 12,
+    "cena": [
+     70,
+     "zl"
+    ],
+    "w": 0.5
+   },
+   "popis": "Ohlušující výbuch a silný záblesk oslepí všechny v kouli o poloměru 5 sáhů – mají Nevýhodu −5 do Útoku a Obrany a nevidí dál než na 1 sáh. Zloděj může nepozorovaně utéct, pokud výbuch nepřiláká další nepřátele."
+  },
+  {
+   "typ": "bomba",
+   "id": "vsehoklic",
+   "nazev": "Všehoklíč",
+   "strana": 241,
+   "parametry": {
+    "suroviny": 40,
+    "zaklad": "kožený obal, drát",
+    "trvani": "ihned",
+    "pouziti": "vložení do kovového zámku",
+    "obtiznost": 15,
+    "cena": [
+     100,
+     "zl"
+    ],
+    "w": 0.1
+   },
+   "popis": "Drát obalený směsí prudce reagující s kovem roztaví téměř každý zámek či řetěz. U komplexních mechanismů může selhat – roztaví se jen zamykání a závora zůstane (pak jen hrubou silou). Na magické zámky neúčinkuje."
+  },
+  {
+   "typ": "udelatko",
+   "id": "padak",
+   "nazev": "Padák",
+   "strana": 259,
+   "parametry": {
+    "vyroba": "8 hodin",
+    "cena": [
+     100,
+     "zl"
+    ],
+    "w": 4
+   },
+   "popis": "Jemná tkanina zbrzdí pád. Z méně než 20 sáhů s padákem žádné zranění; z větší výšky hod na Umění kočičího pohybu (OBR) s Výhodou +5. Sbalení trvá 1 směnu, takže ho Lupiči většinou odříznou a utíkají."
+  },
+  {
+   "typ": "udelatko",
+   "id": "sada_univerzalnich_klicu",
+   "nazev": "Sada univerzálních klíčů",
+   "strana": 260,
+   "parametry": {
+    "vyroba": "1 den",
+    "cena": [
+     80,
+     "zl"
+    ],
+    "w": 1
+   },
+   "popis": "Klíče s pohyblivými zuby pro většinu standardních zámků (dveře, nábytek); na speciální či zakázkové nestačí. Při triku Otevírání zámků Výhoda +5 k Umění železného klíče. Lupič se při výrobě naučil i okopírovat klíč, který měl aspoň chvilku k dispozici."
+  },
+  {
+   "typ": "udelatko",
+   "id": "zvonici_koule",
+   "nazev": "Zvonící koule",
+   "strana": 260,
+   "parametry": {
+    "vyroba": "8 hodin",
+    "cena": [
+     50,
+     "zl"
+    ],
+    "w": 0.7
+   },
+   "popis": "Natažená koule se kutálí 20 sáhů jedním směrem (nepřekoná překážky ani těžký terén) a cinká. Kdo ji uslyší, hází Vůle (CHAR) vs. 12 – při neúspěchu má pokušení zdroj zvuku prozkoumat."
+  },
+  {
+   "typ": "klic",
+   "id": "magicky_klic",
+   "nazev": "Magický klíč",
+   "strana": 265,
+   "parametry": {
+    "mana": 150,
+    "suroviny": 50,
+    "zaklad": "železný klíč a křišťál",
+    "vyroba": "2 dny / v dílně",
+    "pouziti": "otevírání magických zámků",
+    "obtiznost": 16,
+    "vyzaduje": "Krystaly a energie",
+    "cena": null,
+    "w": 0.2
+   },
+   "popis": "Křišťál vysává manu z magického zámku a nechá ji neškodně vyzářit. Bez lupičského výcviku se může poškodit. Klíčem lze také zjistit, zda je zámek chráněn kouzlem. Vyrobí ho alchymista (cechovní alchymista) – Lupič s Otevíráním magických zámků ho jinak dostane při výcviku nebo za úkol pro bratrstvo."
+  },
+  {
+   "typ": "past",
+   "id": "kovovi_jezci",
+   "nazev": "Kovoví ježci",
+   "strana": 263,
+   "parametry": {
+    "obtiznost": 10,
+    "vyzaduje": "kovářské náčiní, pec, kovové tyče",
+    "vyroba": "2 hodiny (8 směn)",
+    "w": 2
+   },
+   "popis": "Oblast o poloměru 3 sáhů se stane těžkým terénem. Kdo do ní vstoupí, hází Postřeh (INT) vs. Nastražení pasti (OBR); při neúspěchu je na 3 kola zpomalen (poloviční Pohyblivost) a zraněn za 1k6 životů."
+  },
+  {
+   "typ": "past",
+   "id": "sipkova_past",
+   "nazev": "Šipková past",
+   "strana": 263,
+   "parametry": {
+    "obtiznost": 14,
+    "vyzaduje": "hodinářské náčiní, lanko, kovová trubice, šipka, dílna",
+    "vyroba": "4 hodiny (16 směn)",
+    "w": 0.5
+   },
+   "popis": "Malý mechanismus podobný kuši (pod víko truhly, za klíčovou dírku, do štěrbiny ve zdi, s lankem v podlaze); pojme 1 šipku, i otrávenou. Nevšimne-li si jí oběť (Postřeh vs. Umění železného klíče), spustí ji a musí uspět v Reflexu (OBR) vs. Umění železného klíče – jinak je na ni veden Útok za 3k6+10 do ZO."
+  },
+  {
+   "typ": "past",
+   "id": "vybusna_past",
+   "nazev": "Výbušná past",
+   "strana": 263,
+   "parametry": {
+    "obtiznost": 16,
+    "vyzaduje": "mechanické součástky, trhavina, dílna",
+    "vyroba": "5 hodin (20 směn)",
+    "w": 1
+   },
+   "popis": "Nestabilní látka s rozbuškou v lákavém předmětu, aktivuje se při pokusu o otevření. Všimnout si: Postřeh (INT) vs. Nastražení pasti; deaktivovat: Odstranění pastí vs. Nastražení pasti. Jinak exploze zraní všechny do 3 sáhů za 4k10 ohnivého zranění."
+  }
+ ],
+ "jedy": [
+  {
+   "id": "cerna_smrt",
+   "nazev": "Černá smrt",
+   "strana": 256,
+   "zaklad": "exotický had",
+   "trvani": "10 kol",
+   "vzhled": "bílá tekutina se silným zápachem",
+   "nebezpecnost": "ODO vs. 12",
+   "popis": "Velmi silný jed na čepel nebo hrot šípu. Je-li jím cíl zraněn, je v daném kole navíc otráven za 1k6 životů a stejné zranění utrží i v dalších kolech po dobu účinku."
+  },
+  {
+   "id": "divotvorne_serum",
+   "nazev": "Divotvorné sérum",
+   "strana": 256,
+   "zaklad": "exotická žába",
+   "trvani": "5 kol",
+   "vzhled": "hnědý hustý sliz",
+   "nebezpecnost": "Vůle (CHAR) vs. 14",
+   "popis": "„Výbuch“ vjemů a pocitů: neuspěje-li cíl v hodu proti pasti, ztrácí se v chaosu přebuzených smyslů – Nevýhoda −5 ke všem ověřovacím hodům na Inteligenci nebo Charisma."
+  },
+  {
+   "id": "mesicni_polibek",
+   "nazev": "Měsíční polibek",
+   "strana": 256,
+   "zaklad": "exotický pavouk",
+   "trvani": "1 hodinu",
+   "vzhled": "mírně nažloutlá viskózní tekutina",
+   "nebezpecnost": "ODO vs. 12",
+   "popis": "Silný uspávací jed: neuspěje-li cíl, okamžitě upadne do hlubokého spánku, z něhož ho probudí jen bolest ze Zranění."
+  }
+ ],
+ "zbrane": {
+  "assassin_dyka_obr": {
+   "druh": "assassin",
+   "vyroba": "1 den",
+   "popis": "Speciální dýka se zoubkovanými zářezy na hřbetu, kterými zachytí a uvězní zbraň protivníka."
+  },
+  "assassin_dyka_uto": {
+   "druh": "assassin",
+   "vyroba": "1 den",
+   "popis": "Ikonická úzká a krátká dýka, skryje se téměř kdekoli – Výhoda +5 k triku Ukrytí předmětu."
+  },
+  "zapestni_kuse": {
+   "druh": "assassin",
+   "vyroba": "1 den",
+   "popis": "Mechanismus na předloktí, běžnou prohlídkou neodhalitelný; vymrští šipku velkou silou na krátkou vzdálenost. Přebití trvá 2 kola. Výhoda +5 k Ukrytí předmětu."
+  },
+  "prsten_jed": {
+   "druh": "gentleman",
+   "vyroba": "8 hodin",
+   "popis": "Prsten se skrytou jehlou, která uvolní jed přímo do těla: jed působí dvojnásobné zranění nebo 2× rychleji. Bonusy pro Boj beze zbraně; při prohledání Výhoda +5 k Ukrytí předmětu. Zda se cíl může bránit, nebo ho chrání jen ZO, určí PJ. Na rozdíl od jiných zbraní jde použít v rámci Assassinace, i když cíl Assassina vidí, ale není ve střehu."
+  },
+  "bota_cepel": {
+   "druh": "gentleman",
+   "vyroba": "8 hodin",
+   "popis": "Obyčejná bota se skrytou čepelí – i na přeřezání pout. Výhoda +5 k Ukrytí předmětu; v boji bonusy pro Boj beze zbraně."
+  },
+  "hul_ostri": {
+   "druh": "gentleman",
+   "vyroba": "1 den",
+   "popis": "Zdobená vycházková hůl s tenkým ostřím (bez záštity). Výhoda +5 k Ukrytí předmětu; v boji bonusy za dýku."
+  },
+  "hak_lano": {
+   "druh": "improv",
+   "vyroba": "2 hodiny",
+   "popis": "Roztočené lano s hákem (dýkou, srpem; lano lze nahradit řetězem) – větší dosah. Výhoda +5 k triku Lezení."
+  },
+  "sochor": {
+   "druh": "improv",
+   "vyroba": "2 hodiny",
+   "popis": "Páčidlo – při otevírání dveří a truhlic Atletikou (SIL) Výhoda +5. (V tabulce „Páčidlo“.)"
+  },
+  "boxer_ppp": {
+   "druh": "improv",
+   "vyroba": "4 hodiny",
+   "popis": "Kovová zbraň s výstupky navlékaná na prsty – devastující zranění. Výhoda +5 k Ukrytí předmětu; nouzově z opasku s cvočky či řetězu kolem rukou."
+  },
+  "improv_jednorucni": {
+   "druh": "improv",
+   "vyroba": null,
+   "popis": "Kámen, klacek, noha od židle, sklenice, kartáč – menší předmět, čím víc ostrých hran, tím lépe. Obvykle statistiky dýky, úpravy dle PJ (PPP05 s. 258)."
+  },
+  "improv_obourucni": {
+   "druh": "improv",
+   "vyroba": null,
+   "popis": "Noha stolu, kůl, deštník – středně velký předmět. Obvykle statistiky dřevěné hole, úpravy dle PJ (PPP05 s. 258)."
+  }
+ },
+ "sit": {
+  "kumpani": [
+   {
+    "id": "kapsar",
+    "typ": "Kapsář",
+    "cena": 10,
+    "akce": [
+     "kapsarstvi",
+     "loupez"
+    ],
+    "popis": "Pouliční zlodějíček – menší krádeže, ve skupině i větší akce. Rváč to není, ale generuje zisky."
+   },
+   {
+    "id": "ksefar",
+    "typ": "Kšeftař",
+    "cena": 15,
+    "akce": [
+     "zprostredkovani",
+     "podplaceni"
+    ],
+    "popis": "Obchodník na volné noze – udá kradené zboží, zná kontakty, ví, koho podplatit."
+   },
+   {
+    "id": "ocko",
+    "typ": "Očko",
+    "cena": 20,
+    "akce": [
+     "ziskani_informaci",
+     "zahlazeni_stop"
+    ],
+    "popis": "Informátor (často žebrák či zkrachovalý zločinec) – ví, co se kde šustne, umí sledovat."
+   },
+   {
+    "id": "ranar",
+    "typ": "Ranař",
+    "cena": 15,
+    "akce": [
+     "hlidani",
+     "zastraseni"
+    ],
+    "popis": "Svaly organizace – výpalné, „domluvy“, nejvěrnější tvoří Siccovu osobní stráž."
+   },
+   {
+    "id": "vrah",
+    "typ": "Vrah",
+    "cena": 25,
+    "akce": [
+     "unos",
+     "vrazda"
+    ],
+    "popis": "Mistr assassinského umění pro speciální akce – definitivní zmizení nepohodlných osob."
+   }
+  ],
+  "akce": [
+   {
+    "id": "hlidani",
+    "nazev": "Hlídání",
+    "nebezpecnost": "Přestupek",
+    "kumpan": "ranar",
+    "cena": 2,
+    "popis": "Ranaři 1 den dělají tělesnou stráž nebo hlídají místo či předmět; při napadení brání (statistiky Ranaře má PJ v Bestiáři). Zkusí-li cizí síť akci proti Siccovi, může ji Hlídání znemožnit – ověření proti hodu nepřátelské sítě."
+   },
+   {
+    "id": "kapsarstvi",
+    "nazev": "Kapsářství",
+    "nebezpecnost": "Přestupek",
+    "kumpan": "kapsar",
+    "cena": 5,
+    "popis": "Kapsáři celý den vybírají kapsy, kradou na trhu, podvádějí v kostkách. Při úspěchu každý přinese Siccovi 7 zl. Cizí sítě si svá území hlídají."
+   },
+   {
+    "id": "loupez",
+    "nazev": "Loupež",
+    "nebezpecnost": "Zločin",
+    "kumpan": "kapsar",
+    "cena": 5,
+    "popis": "Větší akce na konkrétní věc – kapsáři musí vědět, kde přibližně je a jak vypadá. Obtížnost určí PJ."
+   },
+   {
+    "id": "podplaceni",
+    "nazev": "Podplacení",
+    "nebezpecnost": "Zločin",
+    "kumpan": "ksefar",
+    "cena": 5,
+    "popis": "Kšeftař vytipuje a podplatí strážného – následující zločinecká akce má Výhodu +5."
+   },
+   {
+    "id": "unos",
+    "nazev": "Únos",
+    "nebezpecnost": "Zločin",
+    "kumpan": "vrah",
+    "cena": 7,
+    "popis": "Vrah omráčí cíl a dovleče ho před Sicca. Bez znalosti, kde osoba je a jak vypadá, nelze uspět. Obtížnost podle stráží, přístupnosti a obranyschopnosti cíle."
+   },
+   {
+    "id": "vrazda",
+    "nazev": "Vražda",
+    "nebezpecnost": "Zločin",
+    "kumpan": "vrah",
+    "cena": 20,
+    "popis": "Šipka z kuše, jed, „náhodný“ pád z okna. Vrah musí vědět, kde oběť je a jak vypadá. U vlivných osob bývá nutný předem připravený plán (informace, podplacení, propaganda) nebo zapojení celé sítě či samotného Sicca."
+   },
+   {
+    "id": "zahlazeni_stop",
+    "nazev": "Zahlazení stop",
+    "nebezpecnost": "Zločin",
+    "kumpan": "ocko",
+    "cena": 4,
+    "popis": "Očko nastraží falešné informace, aby chycený člen bandy nedovedl vyšetřovatele k Siccovi."
+   },
+   {
+    "id": "zastraseni",
+    "nazev": "Zastrašení",
+    "nebezpecnost": "Zločin",
+    "kumpan": "ranar",
+    "cena": 4,
+    "popis": "Ranař „domluví“ vzpurnému obchodníkovi, aby platil měsíční taxu."
+   },
+   {
+    "id": "ziskani_informaci",
+    "nazev": "Získání informací",
+    "nebezpecnost": "Přestupek",
+    "kumpan": "ocko",
+    "cena": 3,
+    "popis": "Místní klepy i přísně tajné informace – náročnost určí PJ (tabulka náročnosti akcí)."
+   },
+   {
+    "id": "zprostredkovani",
+    "nazev": "Zprostředkování",
+    "nebezpecnost": "Přestupek",
+    "kumpan": "ksefar",
+    "cena": 2,
+    "popis": "Setkání s osobou na neutrální půdě. Má-li osoba proti Siccovi přímo něco, má Kšeftař Nevýhodu −5."
+   }
+  ],
+  "pravidla": {
+   "limit": "Sicco udrží v síti nejvýše tolik kumpánů, kolik je jeho úroveň.",
+   "nabor": "Cena kumpána = nábor i měsíční plat. Bez výplaty zběhne; kápo (první člen každého typu, má jméno) vydrží bez odměny až 3 po sobě jdoucí měsíce.",
+   "sidlo": "Síť má jméno, symbol (tetování kápů), sídlo nebo místo schůzek (krámek, krčma) a tajné schránky. Mimo město ji spravují kápové a vyplácejí členy automaticky.",
+   "overeni": "Ověření akce: 1k10 + 1 za každého zapojeného kumpána (zkušenější i víc – podle Vypravěče) vs. obtížnost PJ (oznámí předem). Kumpánům se platí sazba akce za každého zapojeného.",
+   "nebezpecnost": "Přestupek – nezdar nemá zásadní následky. Zločin – při nezdaru zátah gardy: polovina zapojeného týmu je pochytána, Sicco ji musí odepsat a doplnit síť.",
+   "ciziMesto": "V cizím městě (po ohlášení hlavě místní sítě) lze využít její akce za 10× cenu a nejvýš 3 členy na akci; místní šéf může akci zakázat. Totéž poskytuje Siccova síť jiným kmotrům.",
+   "druzina": "Týká-li se akce družiny (účastní se jí nebo je jejím cílem), neodehrává se hodem, ale herní scénou."
+  }
+ },
+ "duvernik": {
+  "zivoty": 50,
+  "velikost": "podle rasy",
+  "pohyblivost": 30,
+  "ZO": 4,
+  "OC": 7,
+  "UC": 9,
+  "dovednosti": "3 jakékoli obecné dovednosti a 2 zlodějská Umění na stupni 8",
+  "triky": "2 zlodějské triky ověřované Uměním, které ovládá; 2 jakékoli triky Válečníka z PPZ",
+  "prestup": "Při každém přestupu dosaženém spolu se Siccem +1k6 max. životů; každou 3. takovou úroveň +1 do ÚČ nebo ZO a +1 stupeň vybrané dovednosti. Bez zpětné opravy."
+ }
+}

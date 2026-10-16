@@ -1,0 +1,36 @@
+/* Design tokeny – docs/VISUAL_STYLE.md (tonální škála Grafického manuálu DH + vínový panel z mockupu).
+   Grafickou vrstvu (Fáze 9) jde vyměnit úpravou tokenů a komponent v src/ui, bez zásahu do logiky. */
+/* Jediný vzhled (papírový deník) – záměrně bez tmavého motivu, všechny barvy explicitně.
+   Tonální škála = Grafický manuál DH, kap. 4; vínový panel = vzorky z mockupu. */
+:root{
+  --paper:#F5F4F0;      /* Papír – vstupní pole */
+  --atmos:#D8D7D2;      /* Atmosféra – list pergamenu */
+  --mid:#8F9193;        /* Střední tón */
+  --structure:#55585C;  /* Struktura – popisky */
+  --ink:#24272B;        /* Inkoust – text, stuhy */
+  --sheet:#ebe5d8;      /* pergamen – Fáze 9 (dh-layout v2, ✔ U 8. 10. 2026; dřív #d3d0c9) */
+  --sheet-hi:#f1ece2;
+  --ground:#aaa59d;
+  --wine-top:#453635; --wine:#402829; --wine-foot:#211c1b; --wine-lit:#6b3a3b;
+  --blood:#7a2b2b; --pencil:#5b4a2e; --note-bg:#ece3c8;
+  --f-display:"Alegreya SC","Palatino Linotype",Palatino,Georgia,serif;
+  --f-body:"Alegreya Sans","Segoe UI",Roboto,system-ui,sans-serif;
+  --f-hand:"Alegreya",Georgia,serif;
+  /* Fáze 9 – doplňky z dh-layout (tokens.css) */
+  --edge:#918879; --line:#c6beb0; --quiet:#eee9df; --light-ink:#eee5d4; --wine-line:#997b6f;
+  --focus:#7a2b2b; --focus-light:#f1dcc0; --danger-bg:#efe0d8; --rule-line:#a69c8755;
+  --shade:#211c1b33; --shade-deep:#211c1b66;
+  --radius:3px; --radius-card:5px;
+  --shadow-sheet:0 3px 9px var(--shade-deep); --shadow-panel:0 8px 30px var(--shade-deep); --shadow-control:inset 0 1px 3px var(--shade);
+  --texture-paper:url('./img/paper.png'); --texture-ground:url('./img/ground.png'); --texture-leather:url('./img/leather.png');
+  --art-ribbon:url('./img/ribbon.svg'); --art-frame:url('./img/torn-edge.svg'); --art-dragon:url('./img/dragon-watermark.svg');
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.4 var(--f-body);}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--wine-lit);outline-offset:2px}
+.tn{font-variant-numeric:tabular-nums lining-nums}
+

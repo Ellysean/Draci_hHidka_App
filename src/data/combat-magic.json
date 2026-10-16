@@ -1,0 +1,753 @@
+{
+ "_source": "Výřez z H08, H09, H11, H13 převzatý z prototypu v8.5 (délka vyvolání, cena, obtížnost). Úplnost ověřit ve Fázi 7. · triky válečníka jsou od 7b v src/data/valecnik.json",
+ "_legend": {
+  "l": "O okamžitá / K krátká / D dlouhá / 2D, 3D = víc dlouhých akcí / Nk = N kol (dlouhá akce každé kolo) / M mimo boj",
+  "c": "cena v energii (text z pravidel)",
+  "o": "obtížnost ověření"
+ },
+ "spells": {
+  "kouzelnik": [
+   {
+    "n": "Kouzelnický trik",
+    "l": "D",
+    "c": "1",
+    "o": 0,
+    "x": "bez ověření"
+   },
+   {
+    "n": "Bertoldův zámek",
+    "l": "2D",
+    "c": "X",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Blesk",
+    "l": "K",
+    "c": "2 za blesk",
+    "o": 6,
+    "x": "+2 obtížnost za každý další"
+   },
+   {
+    "n": "Kukátko",
+    "l": "D",
+    "c": "2",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Levitace",
+    "l": "D",
+    "c": "4 + X",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Magická střela",
+    "l": "D",
+    "c": "8 za střelu",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Magický štít",
+    "l": "K",
+    "c": "2 za kolo",
+    "o": 6,
+    "x": "ZO +5"
+   },
+   {
+    "n": "Najdi předmět",
+    "l": "5k",
+    "c": "4",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Neviditelnost",
+    "l": "D",
+    "c": "6",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Očaruj zbraň",
+    "l": "D",
+    "c": "4",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Oheň",
+    "l": "D",
+    "c": "2 za oheň",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Rychlost",
+    "l": "D",
+    "c": "3 za kolo",
+    "o": 6,
+    "x": "cíl +1 krátká akce"
+   },
+   {
+    "n": "Světlo",
+    "l": "D",
+    "c": "1 za 2 sáhy",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Teleport",
+    "l": "D",
+    "c": "4",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Beranidlo",
+    "l": "D",
+    "c": "5 za velikost",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Mrazivá střela",
+    "l": "D",
+    "c": "6 za střelu",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Ohnivá čepel",
+    "l": "D",
+    "c": "1 za kolo",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Ohnivá koule",
+    "l": "D",
+    "c": "4 za kouli",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Plamenná ruka",
+    "l": "D",
+    "c": "3 za plamen",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Poryv větru",
+    "l": "K",
+    "c": "2 (6)",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Dlouhá ruka",
+    "l": "3D",
+    "c": "2",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Mlha",
+    "l": "2D",
+    "c": "1 za 10 sáhů",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Proměna",
+    "l": "2D",
+    "c": "6",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Protoplazma",
+    "l": "D",
+    "c": "3 za kolo",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Tajemné dveře",
+    "l": "D",
+    "c": "5",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Temnota",
+    "l": "D",
+    "c": "1 za 2 sáhy",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Břichomluvectví",
+    "l": "D",
+    "c": "2 za 10 sáhů",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Dvojník",
+    "l": "D",
+    "c": "3 za směnu",
+    "o": 8,
+    "x": "soustředění"
+   },
+   {
+    "n": "Noční můra",
+    "l": "5k",
+    "c": "4",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Ochromení",
+    "l": "D",
+    "c": "3× úroveň cíle",
+    "o": 9,
+    "x": "soustředění každé kolo"
+   },
+   {
+    "n": "Sugesce",
+    "l": "D",
+    "c": "1× úroveň cíle",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Vize",
+    "l": "2D",
+    "c": "9 za směnu",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Antimagická bariéra",
+    "l": "K",
+    "c": "X",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Magická zbroj",
+    "l": "K",
+    "c": "4 za zbroj",
+    "o": 8,
+    "x": "ZO +1 za 4 many"
+   },
+   {
+    "n": "Naruš pozornost",
+    "l": "K",
+    "c": "X",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Ochrana před střelami",
+    "l": "K",
+    "c": "3 za projektil",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Rozptyl kouzlo",
+    "l": "3D",
+    "c": "10",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Schránka",
+    "l": "D",
+    "c": "2 za hodinu",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Dotek upíra",
+    "l": "D",
+    "c": "2 za kolo",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Posílení smyslu",
+    "l": "D",
+    "c": "2",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Pouto života",
+    "l": "2D",
+    "c": "5",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Přivolej nemrtvé",
+    "l": "D",
+    "c": "4",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Vitální transfer",
+    "l": "D",
+    "c": "5",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Voodoo",
+    "l": "2D",
+    "c": "5 (10)",
+    "o": 10,
+    "x": "+5 minut příprava"
+   },
+   {
+    "n": "Cizí jazyk",
+    "l": "2D",
+    "c": "9",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Leť",
+    "l": "2D",
+    "c": "1 za 2 kola",
+    "o": 9,
+    "x": "soustředění"
+   },
+   {
+    "n": "Najdi kouzla",
+    "l": "3D",
+    "c": "3",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Oko zření",
+    "l": "2D",
+    "c": "5",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Psychokineze",
+    "l": "D",
+    "c": "1 za libru",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Ticho",
+    "l": "D",
+    "c": "2 za sáh",
+    "o": 8,
+    "x": ""
+   }
+  ],
+  "hranicar": [
+   {
+    "n": "Najdi úkryt",
+    "l": "D",
+    "c": "3",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Najdi vodu",
+    "l": "D",
+    "c": "3",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Rozdělej oheň",
+    "l": "10k",
+    "c": "2",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Znamení",
+    "l": "D",
+    "c": "1",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Bdělý spánek",
+    "l": "6k",
+    "c": "5",
+    "o": 10,
+    "x": ""
+   },
+   {
+    "n": "Ochrana před bouří",
+    "l": "3k",
+    "c": "3",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Rychlost chodce",
+    "l": "3k",
+    "c": "3",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Neutralizuj jed",
+    "l": "D",
+    "c": "3",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Úder varování",
+    "l": "K",
+    "c": "3 za úder",
+    "o": 8,
+    "x": "1k10 psychické"
+   },
+   {
+    "n": "Uzdrav lehká zranění",
+    "l": "K",
+    "c": "3 za uzdravení",
+    "o": 6,
+    "x": "1k6 životů"
+   },
+   {
+    "n": "Najdi zvíře",
+    "l": "2D",
+    "c": "3",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Přivolej zvíře",
+    "l": "4k",
+    "c": "3",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Zvířecí smysly",
+    "l": "2D",
+    "c": "3",
+    "o": 10,
+    "x": ""
+   }
+  ],
+  "klerik": [
+   {
+    "n": "Léčivé slovo",
+    "l": "D",
+    "c": "3 za slovo",
+    "o": 6,
+    "x": "1k6 životů"
+   },
+   {
+    "n": "Očištění",
+    "l": "2D",
+    "c": "3",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Štít víry",
+    "l": "K",
+    "c": "5 + X",
+    "o": 7,
+    "x": "ZO +3"
+   },
+   {
+    "n": "Úder moci",
+    "l": "K",
+    "c": "3 za úder",
+    "o": 6,
+    "x": "1k6+1 psychické"
+   },
+   {
+    "n": "Uzdrav otravu",
+    "l": "D",
+    "c": "4 (8)",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Hlas víry",
+    "l": "D",
+    "c": "2",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Klidný spánek",
+    "l": "D",
+    "c": "4",
+    "o": 6,
+    "x": ""
+   },
+   {
+    "n": "Kopí pravého světla",
+    "l": "D",
+    "c": "3 za kopí",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Ochrana před temnotou",
+    "l": "D",
+    "c": "6",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Požehnání zdaru",
+    "l": "K",
+    "c": "3",
+    "o": 6,
+    "x": "+5 k dalšímu hodu"
+   },
+   {
+    "n": "Vnuknutí",
+    "l": "O",
+    "c": "5 (0)",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Svatá zbroj",
+    "l": "O",
+    "c": "úroveň klerika",
+    "o": 9,
+    "x": "reakce na útok, i vícekrát za kolo"
+   },
+   {
+    "n": "Útok štěstěny",
+    "l": "O",
+    "c": "3",
+    "o": 8,
+    "x": "ohlásit před hodem na útok"
+   },
+   {
+    "n": "Vrácení úderu",
+    "l": "O",
+    "c": "úroveň klerika",
+    "o": 9,
+    "x": "reakce na zranění"
+   },
+   {
+    "n": "Zesil zranění",
+    "l": "O",
+    "c": "úroveň klerika",
+    "o": 9,
+    "x": "další útok 2× zranění"
+   },
+   {
+    "n": "Posel bojovník",
+    "l": "D",
+    "c": "3× úroveň klerika",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Posel rovnováhy",
+    "l": "D",
+    "c": "3× úroveň klerika",
+    "o": 11,
+    "x": ""
+   },
+   {
+    "n": "Posel stezky",
+    "l": "D",
+    "c": "úroveň klerika",
+    "o": 7,
+    "x": ""
+   },
+   {
+    "n": "Posel umlčení",
+    "l": "D",
+    "c": "2× úroveň klerika",
+    "o": 10,
+    "x": ""
+   },
+   {
+    "n": "Najdi temnotu",
+    "l": "2D",
+    "c": "4",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Odstraň kletbu",
+    "l": "2D",
+    "c": "13",
+    "o": 10,
+    "x": ""
+   },
+   {
+    "n": "Odvracení temnoty",
+    "l": "K",
+    "c": "3",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Ošálení temnoty",
+    "l": "D",
+    "c": "4",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Napravení těla",
+    "l": "K",
+    "c": "8",
+    "o": 10,
+    "x": "2k6 životů"
+   },
+   {
+    "n": "Odstraň paralýzu",
+    "l": "D",
+    "c": "8",
+    "o": 11,
+    "x": ""
+   },
+   {
+    "n": "Udržení života",
+    "l": "K",
+    "c": "3",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Uzdrav nemocného",
+    "l": "3k",
+    "c": "4",
+    "o": 10,
+    "x": ""
+   },
+   {
+    "n": "Doznání",
+    "l": "D",
+    "c": "3",
+    "o": 9,
+    "x": ""
+   },
+   {
+    "n": "Falešné přátelství",
+    "l": "2D",
+    "c": "3 + úroveň cíle",
+    "o": 10,
+    "x": ""
+   },
+   {
+    "n": "Vidění pravdy",
+    "l": "K",
+    "c": "3",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Zapomnění",
+    "l": "3k",
+    "c": "8",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Aura ocelové pěsti",
+    "l": "K",
+    "c": "2 za kolo",
+    "o": 8,
+    "x": "ÚČ +2"
+   },
+   {
+    "n": "Aura proti temnotě",
+    "l": "K",
+    "c": "3 za kolo",
+    "o": 8,
+    "x": ""
+   },
+   {
+    "n": "Aura svatého štítu",
+    "l": "K",
+    "c": "2 za kolo",
+    "o": 8,
+    "x": "ZO +2"
+   },
+   {
+    "n": "Léčivá aura",
+    "l": "K",
+    "c": "6 za kolo",
+    "o": 8,
+    "x": "1k6 každé kolo"
+   },
+   {
+    "n": "Svěcení",
+    "l": "M",
+    "c": "1",
+    "o": 0,
+    "x": "asi minuta, mimo boj"
+   }
+  ]
+ },
+ "clericDoctrines": {
+  "Bojovníci víry": [
+   "Svatá zbroj",
+   "Útok štěstěny",
+   "Vrácení úderu",
+   "Zesil zranění"
+  ],
+  "Boží patroni": [
+   "Posel bojovník",
+   "Posel rovnováhy",
+   "Posel stezky",
+   "Posel umlčení"
+  ],
+  "Démonologie": [
+   "Najdi temnotu",
+   "Odstraň kletbu",
+   "Odvracení temnoty",
+   "Ošálení temnoty"
+  ],
+  "Milosrdenství": [
+   "Napravení těla",
+   "Odstraň paralýzu",
+   "Udržení života",
+   "Uzdrav nemocného"
+  ],
+  "Svatá pravda": [
+   "Doznání",
+   "Falešné přátelství",
+   "Vidění pravdy",
+   "Zapomnění"
+  ],
+  "Žehnání aurami": [
+   "Aura ocelové pěsti",
+   "Aura proti temnotě",
+   "Aura svatého štítu",
+   "Léčivá aura"
+  ]
+ },
+ "clericExtra": [
+  "Svěcení"
+ ],
+ "wizardFree": [
+  "Kouzelnický trik"
+ ]
+}

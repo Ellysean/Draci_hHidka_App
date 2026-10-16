@@ -1,0 +1,660 @@
+{
+ "_source": "H11 (PPZ 1.2.5) + PPP04 s. 191–212 – generuje tools/build-kouzelnik.py",
+ "pravidla": {
+  "energie": "Mana – max. z Tabulky kouzelníkovy many (INT × úroveň; energie.json → kouzelnik_mana z PPP04).",
+  "meditace": "1× denně, musí být Svěží; 1 směna; doplní manu do maxima. Vyrušení (leknutí, bolest, útok) → ztratí novou manu, může zkusit znovu (opět Svěží).",
+  "nasati": "Max. tolikrát denně, kolik je úroveň; 1 minuta, volné ruce, soustředění; +1k6 many (do maxima).",
+  "triky": "Kouzelnický trik: 1 mana, Dlouhá akce, bez ověření, bez formulí i gest; dosah 5 sáhů +1 za každou další úroveň; trvání obvykle ≤ 1 minuta. Jen drobné iluze – nezraní, nezapálí.",
+  "overeni": "Sesílání kouzel (INT) vs. Obtížnost kouzla – musí být VYŠŠÍ než obtížnost.",
+  "vyruseni": "Vyrušení (napaden, zraněn) při sesílání → obtížnost +5.",
+  "postihy": {
+   "bezReci": -5,
+   "bezGest": -5,
+   "bezReciAGest": -10,
+   "zbroj": "střední či těžká zbroj při gestech → postih = Kvalita zbroje"
+  },
+  "gesta": "Ke gestikulaci stačí jedna ruka; v druhé lze držet libovolný předmět. Kouzlit lze i skrze drženou hůl (i dotyková kouzla).",
+  "limit": "V jednom tahu nejvýše jedno kouzlo.",
+  "proti_vuli": "Kouzlo na nesouhlasící cíl se automaticky nezdaří (kromě útočných a těch, kde je to uvedeno).",
+  "mana_pod_nulu": "Aktuální mana nesmí klesnout pod nulu; při podhodnocené ceně se kouzlo nezdaří a mana se vyzáří.",
+  "trvani": "Trvání v kolech a déle se počítá od kola po seslání; kouzelník může kouzlo přerušit myšlenkou.",
+  "prvni_uroven": "3 kouzla obecné magie dle výběru (cena ≤ max. many). Sesílání kouzel (INT) na 3. stupni. Kouzelnické triky.",
+  "prestup": "Každá úroveň: nová zvláštní schopnost nebo obor; +2 kouzla (obecná nebo z ovládaných oborů). Dovednostní body 4× úroveň na každé 2. úrovni; charakterové body 2 na každé 3. úrovni.",
+  "obor": "✔ U 1. 10. 2026: obor jen rozšíří nabídku kouzel, kouzlo navíc NEDÁVÁ (H11 s. 14 píše o +1 kouzlu z oboru – nepoužívá se, platí CLASSES.md).",
+  "specializace": "Od 6. úrovně; podmínky podle H11 (dva obory, PPP třetí se nepoužívá ✔ U 22. 9. 2026)."
+ },
+ "oborBranch": {
+  "obor_divoka": "divoka_magie",
+  "obor_promen": "magie_promen",
+  "obor_mentalni": "mentalni_magie",
+  "obor_ochranna": "ochranna_magie",
+  "obor_vitalni": "vitalni_magie",
+  "obor_vysoka": "vysoka_magie"
+ },
+ "oborKey": {
+  "divoka": "divoka_magie",
+  "promen": "magie_promen",
+  "mentalni": "mentalni_magie",
+  "ochranna": "ochranna_magie",
+  "vitalni": "vitalni_magie",
+  "vysoka": "vysoka_magie"
+ },
+ "schopnosti": {
+  "koncentrace_many": {
+   "name": "Koncentrace many",
+   "text": "Za každou dosaženou úroveň +2 many k maximu (zpětná oprava).",
+   "full": "Za každou dosaženou úroveň +2 many k maximu (zpětná oprava).",
+   "source": "H11",
+   "page": 12,
+   "spec": null,
+   "minLevel": null,
+   "efekty": [
+    {
+     "target": "manaMax",
+     "op": "add",
+     "value": 2,
+     "per": "level"
+    }
+   ]
+  },
+  "kouzleni_z_knih": {
+   "name": "Kouzlení z knih",
+   "text": "S knihou s detailním popisem může seslat i kouzlo, které neovládá: 2× delší vyvolání; obtížnost +3 u oboru, který neovládá, +5 navíc u kouzla jiné specializace. Nelze kombinovat s Rychlým kouzlením. Zápis kouzla do knihy: tolik dní (8 h), kolik je obtížnost; Vzdělání (INT) vs. obtížnost kouzla.",
+   "full": "S knihou s detailním popisem může seslat i kouzlo, které neovládá: 2× delší vyvolání; obtížnost +3 u oboru, který neovládá, +5 navíc u kouzla jiné specializace. Nelze kombinovat s Rychlým kouzlením. Zápis kouzla do knihy: tolik dní (8 h), kolik je obtížnost; Vzdělání (INT) vs. obtížnost kouzla.",
+   "source": "H11",
+   "page": 12,
+   "spec": null,
+   "minLevel": null,
+   "sesilani": {
+    "castMult": 2,
+    "dcForeignBranch": 3,
+    "dcForeignSpec": 5,
+    "excludes": [
+     "rychle_kouzleni",
+     "precizni_kouzleni"
+    ]
+   }
+  },
+  "pamet_na_kouzla": {
+   "name": "Paměť na kouzla",
+   "text": "Za každou dosaženou úroveň +1 kouzlo navíc (zpětná oprava).",
+   "full": "Za každou dosaženou úroveň +1 kouzlo navíc (zpětná oprava).",
+   "source": "H11",
+   "page": 12,
+   "spec": null,
+   "minLevel": null
+  },
+  "ritual_krve": {
+   "name": "Rituál krve",
+   "text": "Během 1 kola promění vlastní životy na manu 2 : 1 (max. do maxima many); vyžaduje soustředění, rána se na konci kola zatáhne.",
+   "full": "Během 1 kola promění vlastní životy na manu 2 : 1 (max. do maxima many); vyžaduje soustředění, rána se na konci kola zatáhne.",
+   "source": "H11",
+   "page": 12,
+   "spec": null,
+   "minLevel": null,
+   "akce": {
+    "hpPerMana": 2,
+    "len": "D",
+    "capAtMax": true
+   }
+  },
+  "rychle_kouzleni": {
+   "name": "Rychlé kouzlení",
+   "text": "Doba vyvolání ½ (nejméně Krátká akce), obtížnost +3. Hráč ohlásí před sesíláním.",
+   "full": "Doba vyvolání ½ (nejméně Krátká akce), obtížnost +3. Hráč ohlásí před sesíláním.",
+   "source": "H11",
+   "page": 13,
+   "spec": null,
+   "minLevel": null,
+   "sesilani": {
+    "castMult": 0.5,
+    "minCast": "K",
+    "dc": 3,
+    "optIn": true,
+    "excludes": [
+     "precizni_kouzleni"
+    ]
+   }
+  },
+  "vyvolani_pritele": {
+   "name": "Vyvolání přítele",
+   "text": "Rituál ~1 hodina, klid, vyzáří se celé maximum many; Sesílání kouzel vs. obtížnost tvora (krysa 10, kočka 11, sova 12). Jen 1 přítel; vyrušení = neúspěch, znovu až po meditaci.",
+   "full": "Rituál ~1 hodina, klid, vyzáří se celé maximum many; Sesílání kouzel vs. obtížnost tvora (krysa 10, kočka 11, sova 12). Jen 1 přítel; vyrušení = neúspěch, znovu až po meditaci.",
+   "source": "H11",
+   "page": 13,
+   "spec": null,
+   "minLevel": null
+  },
+  "citlivost_na_vichry_many": {
+   "name": "Citlivost na vichry many",
+   "text": "Dokáže nasát více many, než je obvyklé.",
+   "full": "Někteří kouzelníci časem získají vysokou citlivost na přítomnost Vichrů many. Dokáží tak přesně vycítit jejich sílu a směr proudění a nemají problém využít to v praxi.\nKouzelník je schopen se rychle napojit na nejsilnější poryv many a ten ihned využít. Díky tomu nasaje maximální množství many, tedy 6 bodů.",
+   "source": "PPP04",
+   "page": 196,
+   "spec": null,
+   "minLevel": 6,
+   "nasati": {
+    "fixed": 6
+   }
+  },
+  "magistr_magickeho_oboru": {
+   "name": "Magistr magického oboru",
+   "text": "Zvýší šanci seslat kouzlo daného oboru magie a naučí se navíc 3 další.",
+   "full": "Léta praxe a tvrdého studia dokáží Kouzelníka dostat mezi špičky v daném oboru. Pro Kouzelníky, kteří se stanou magistry magických oborů, se kouzla v nich stávají rutinou a navíc jich dokáží zvládnout mnohem více než ostatní.\nMagisterský diplom dává Kouzelníkovi bonus +5 k dovednosti Sesílání kouzel. Ten se aplikuje na všechna kouzla v daném oboru magie, pro který Kouzelník svou odbornost získal. Zároveň se může magistr naučit 3 další kouzla, která do tohoto oboru náleží (a to i nad rámec běžného počtu kouzel, které by jinak mohl umět).\nMagisterské hodnosti lze dosáhnout i ve více různých oborech magie. Je proto možné volit si tuto schopnost při přestupu na vyšší úroveň opakovaně (nikdy však pro stejný obor magie).",
+   "source": "PPP04",
+   "page": 196,
+   "spec": null,
+   "minLevel": 6,
+   "sesilani": {
+    "bonusObor": 5
+   }
+  },
+  "posilovani_kouzel": {
+   "name": "Posilování kouzel",
+   "text": "Umožňuje posílit efekt kouzla změnou dosahu nebo délky jeho trvání.",
+   "full": "Mnoha experimenty získal Kouzelník unikátní znalosti, jak různá kouzla dále posílit. Tato schopnost je navíc natolik univerzální, že jde použít prakticky na všechna z nich a to velmi jednoduchým způsobem.\nPomocí této schopnosti dokáže Kouzelník zvýšit dosah všech kouzel, kromě těch, která se sesílají dotykem. Za dodatečnou čtvrtinu ceny původního kouzla (vždy však nejméně 1 bod many), se zvýší dosah kouzla na dvojnásobek základní vzdálenosti. Zároveň však takovéto posílení zvýší obtížnost jeho seslání o 1.\nStejným způsobem dokáže Kouzelník upravovat i dobu trvání kouzel, mimo ta, která mají okamžitý efekt (trvání ihned).\nJe samozřejmě jen na Kouzelníkovi, zda se rozhodne seslat kouzlo obvyklým způsobem, nebo využít tuto schopnost a vylepšit ho.",
+   "source": "PPP04",
+   "page": 196,
+   "spec": null,
+   "minLevel": 6,
+   "sesilani": {
+    "costQuarter": true,
+    "dc": 1
+   }
+  },
+  "precizni_kouzleni": {
+   "name": "Precizní kouzlení",
+   "text": "Sesílání kouzla trvá 2× déle, ale získá Výhodu (bonus +5) na seslání daného kouzla.",
+   "full": "Dlouhodobým praktikováním magie může Kouzelník posunout své dovednosti Sesílání kouzel na samu hranici. Dokáže je provádět mnohem pečlivěji a precizněji, čímž se zvýší jeho šance na úspěch. Vyžaduje to však důkladné soustředění a více času, než je obvyklé.\nPoužitím této schopnosti získá Kouzelník Výhodu (bonus +5) k hodu na Sesílání kouzel. Doba potřebná k vyvolání kouzla se tím však automaticky zdvojnásobí.\nJe jen na Kouzelníkovi, zda se při sesílání rozhodne tuto schopnost použít nebo ne.\nPrecizní kouzlení není možné kombinovat s Rychlým kouzlením.",
+   "source": "PPP04",
+   "page": 197,
+   "spec": null,
+   "minLevel": 6,
+   "sesilani": {
+    "castMult": 2,
+    "bonus": 5,
+    "optIn": true,
+    "excludes": [
+     "rychle_kouzleni"
+    ]
+   }
+  },
+  "pyrokineze": {
+   "name": "Pyrokineze",
+   "text": "Silou myšlenky dokáže zažehnout libovolný hořlavý předmět.",
+   "full": "Mysl zkušených Kouzelníků se může stát mocnou a nebezpečnou zbraní. Někteří z nich totiž dokáží myšlenkami formovat vichry many tak, aby způsobily vznícení.\nTato schopnost je specifická v tom, že k ní Kouzelník nepotřebuje mít žádnou manu. Svou myslí totiž zformuje samotné poryvy vichrů tak, že jimi zapálí libovolný hořlavý předmět v dosahu. Hořlavým předmětem je myšlena látka, která by se vzňala a hořela i při přiložení běžné pochodně. V opačném případě by se efekt Pyrokineze projevil pouze ožehnutím předmětu a oheň by ihned poté pohasl. Vzdálenost, na kterou toto dokáže, odpovídá deseti sáhům za každou dosaženou úroveň Kouzelníka. Kouzelník na deváté úrovni tak zvládne zapálit předmět až na vzdálenost 90 sáhů. Plocha, která je Pyrokinezí zasažena, není nikdy větší než 30 coulů.\nProvedení Pyrokineze je bráno jako dlouhá akce. Během jednoho kola pak vybraný předmět vzplane a bude hořet tak dlouho, dokud neshoří nebo nebude uhašen.\nPyrokineze je poměrně náročná mentální technika, která vyžaduje soustředění. Pokud by při ní byl Kouzelník vyrušen, její efekt se přeruší nebo vůbec neprojeví. Každé její použití Kouzelníka vyčerpá za 1 bod únavy.",
+   "source": "PPP04",
+   "page": 197,
+   "spec": null,
+   "minLevel": 6,
+   "technika": {
+    "len": "D",
+    "fatigue": 1,
+    "range": "10 sáhů × úroveň"
+   }
+  },
+  "ritualni_kouzleni": {
+   "name": "Rituální kouzlení",
+   "text": "Umožňuje využít manu více Kouzelníků pro sesílání náročných kouzel.",
+   "full": "Rituální kouzlení patří k jednomu z nejmocnějších a nejtajemnějších vědění Kouzelníků. Ti díky němu dokáží koncentrovat ohromné množství many a skrze společné vědomí uspět i v sesílání těch nejtěžších kouzel.\nTato schopnost dává Kouzelníkovi možnost využít sdílenou manu dalších Kouzelníků. Aby k tomu mohlo dojít, musí všichni zúčastnění s rituálem duševně souhlasit.\nZahájení rituálu trvá 5 kol a jeho účastníci musí být nejvýše dvacet sáhů od Kouzelníka. Obvykle jde o působivou podívanou, při které tryská Kouzelníkům z rukou zářivá mana a propojuje se s ostatními. Od té chvíle vládne Kouzelník veškerou jejich manou a může ji dle vlastního uvážení použít.\nDíky rituálu navíc získává bonus +5 k Sesílání kouzel za každého Kouzelníka, který se rituálu účastní.",
+   "source": "PPP04",
+   "page": 197,
+   "spec": null,
+   "minLevel": 6,
+   "sesilani": {
+    "bonusPerWizard": 5
+   }
+  },
+  "rychly_odpocinek": {
+   "name": "Rychlý odpočinek",
+   "text": "Stačí mu jen poloviční doba odpočinku, aby mohl provést meditaci.",
+   "full": "Důkladné zvládnutí meditací umožňuje Kouzelníkovi rychlejší regeneraci mysli. Je tak mnohem dříve důkladně odpočatý a dokáže znovu načerpat magickou energii.\nDíky této schopnosti nemusí Kouzelník spát dlouhých osm hodin, aby mohl meditovat. Nově mu k tomu stačí pouze 4 hodiny spánku nebo odpočinku. Navíc při tom dokáže zvládnout i jistou míru nepohodlí, která by jinak znamenala, že nebude dostatečně odpočatý. Toto se vztahuje i na pravidlo o únavě, odečte si tolik bodů únavy jako za 8 hodinový spánek (2 body za hodinu spánku).",
+   "source": "PPP04",
+   "page": 197,
+   "spec": null,
+   "minLevel": 6
+  },
+  "telekineze": {
+   "name": "Telekineze",
+   "text": "Silou myšlenky dokáže pohybovat s předměty ve svém dosahu.",
+   "full": "Trénovaný Kouzelník může provádět neuvěřitelné věci i bez pomoci magie. Silou vůle tak dokáže spoutat vichry many a následně jimi zvládne pohybovat předměty.\nTato schopnost nevyžaduje od Kouzelníka žádnou manu. Jde o speciální duševní techniku, díky které umí působit na předměty ve svém okolí. V praxi se to projevuje tak, jako by se jich sám dotýkal. Může s nimi proto na dálku manipulovat podle svého uvážení. Dokáže je posunout, přitáhnout, nechat se vznášet, shodit je a podobně. Jejich maximální rychlost je 30 sáhů za kolo. Vzdálenost, na kterou toto dokáže, odpovídá deseti sáhům za každou dosaženou úroveň Kouzelníka. Kouzelník na deváté úrovni tak zvládne pohybovat předmětem až na vzdálenost 90 sáhů.\nPohybovat daným předmětem je možné jen tehdy, pokud by to Kouzelník zvládl i fyzicky. Kdyby se předmět pohyboval (padající kámen, kutálející se sud), musel by si Kouzelník ověřit svou šanci na úspěch hodem na Vůli (CHAR) proti pohybujícímu se předmětu (určí Vypravěč), případně proti Atletice (SIL) postavy, která předmětem manipuluje.\nTelekineze je brána jako dlouhá akce. Lze ji provádět jen tak dlouho, dokud se na ni Kouzelník dokáže soustředit. Pokud by byl při jejím praktikování vyrušen, její efekt se přeruší nebo vůbec neprojeví. Každé použití Telekineze Kouzelníka vyčerpá za 1 bod únavy.",
+   "source": "PPP04",
+   "page": 198,
+   "spec": null,
+   "minLevel": 6,
+   "technika": {
+    "len": "D",
+    "fatigue": 1,
+    "range": "10 sáhů × úroveň"
+   }
+  },
+  "telepatie": {
+   "name": "Telepatie",
+   "text": "Silou myšlenky dokáže komunikovat s myslí jiných tvorů.",
+   "full": "Vichry many nemusí být jen divoké poryvy energie. Trénovaný Kouzelník je dokáže použít i jako médium pro přenos myšlenek. Právě to je základem jeho schopnosti Telepatie.\nTato schopnost nevyžaduje od Kouzelníka žádnou manu. Prostou silou myšlenek totiž dokáže do vichrů many vtisknout „myšlenkový vzorec“. Jde o éterické „pouzdro“, ve kterém je uzavřena nějaká jeho myšlenka či vzkaz. To je upraveno tak, aby ho byl schopen zachytit jiný vybraný tvor v dosahu. Vzdálenost, na niž toto dokáže, odpovídá deseti sáhům za každou dosaženou úroveň Kouzelníka. Určený tvor pak „uslyší“ daný vzkaz znít ve své hlavě. Stejným způsobem dokáže Kouzelník upravit vichry many tak, aby zachytily silnou myšlenku vybrané osoby a přinesly ji do mysli Kouzelníka.\nK provedení myšlenkového přenosu je nutné, aby cíl s přijetím či vysláním zprávy vědomě či podvědomě souhlasil. V opačném případě je Telepatie vždy neúspěšná. Pokud by měl jiný tvor s Kouzelníkem mentálně komunikovat, musí se na svou myšlenku soustředit (nemůže vykonávat jinou činnost).\nTelepatie je brána jako dlouhá akce. Lze ji provádět jen tak dlouho, dokud se na ni Kouzelník dokáže soustředit. Pokud by byl při jejím praktikování vyrušen, její efekt se přeruší nebo vůbec neprojeví.\nTelepatie je velmi náročná mentální technika. Kouzelník proto získává 1 bod únavy za navázání kontaktu s cílem, se kterým poté dokáže hovořit 1 směnu, pokud není vyrušen. Pak získá 1 bod únavy za každou další směnu.",
+   "source": "PPP04",
+   "page": 199,
+   "spec": null,
+   "minLevel": 6,
+   "technika": {
+    "len": "D",
+    "fatigue": 1,
+    "range": "10 sáhů × úroveň"
+   }
+  },
+  "transfer_many": {
+   "name": "Transfer many",
+   "text": "Dokáže dát či vysát manu jinému Kouzelníkovi nebo tvorovi.",
+   "full": "Čas od času se stává, že se Kouzelník utká s jiným Kouzelníkem nebo s tvorem, který disponuje manou. Právě v takové situaci se kdysi zrodilo umění Transferu many. Schopnost umožňuje protivníkovi jeho manu vysát nebo ji v nouzi někomu jinému předat.\nSchopnost umožňuje vysát manu jiného Kouzelníka či tvora disponujícího aktivní manou i proti jeho vůli. Je to odzkoušený způsob, který jim znemožní použití dalších kouzel. Pokud je cíl v bezvědomí, je odčerpání automaticky úspěšné. Pokud se cíl brání, je nutné překonat hod na Vůle (CHAR) vs. Vůle (CHAR) cíle.\nTouto schopností lze vysát 1/10 maximální many cíle za kolo. Transfer many je dlouhá akce (celé kolo) na kterou je potřeba soustředění. Pokud bude Kouzelník vyrušen, je přenos v daném kole přerušen. Vzdálenost, na niž je Kouzelník schopen tuto techniku použít, je 10 sáhů.\nKouzelník takto dokáže uvolnit manu i ze svitků, pečetí a pastí, které obsahují volnou kouzelnickou manu. Tuto manu však nedokáže nasát, proto se rozpustí volně do prostoru. Toto uvolnění se nevztahuje na vázanou manu Alchymisty.\nKromě toho lze Transfer many použít i opačným způsobem, tedy k předání many jinému Kouzelníkovi. Dotyčný s tím ovšem musí souhlasit. Kouzelník se sám rozhodne, kolik many do Transferu dá a cíl ji pak získá.",
+   "source": "PPP04",
+   "page": 199,
+   "spec": null,
+   "minLevel": 6,
+   "technika": {
+    "len": "D",
+    "range": "10 sáhů"
+   }
+  },
+  "utajene_kouzleni": {
+   "name": "Utajené kouzlení",
+   "text": "Snižuje postihy při kouzlení bez gest a slov.",
+   "full": "Ne každá doba a každé místo vždy Kouzelníkům přály. Vzpomínky na hořící hranice jsou pro lidi z oboru stále živé. Mnoho dobrých Kouzelníků a Čarodějek zemřelo jen proto, že se stali oběťmi strachu pověrčivého davu. Stačilo sucho, neúroda nebo epidemie a hon mohl začít. Není divu, že si někteří nadaní našli cestu, jak se chránit. Jak kouzlit, aniž by to bylo znát.\nKouzlení bez použití gest či pronášení zaklínadel zvládne každý Kouzelník. Tato schopnost však výrazně snižuje postih, který při sesílání tímto způsobem nastává. Místo obvyklého postihu -5 se jedná jen o postih -2. Pokud tedy Kouzelník s touto schopností kouzlí zároveň bez gest i slov, je jeho postih k Sesílání kouzel jen -4.\nPři použití této schopnosti už navíc nedostává obvyklý další postih za nošení zbroje, protože nepotřebuje provádět gesta, ve kterých by jej omezovala.",
+   "source": "PPP04",
+   "page": 199,
+   "spec": null,
+   "minLevel": 6,
+   "sesilani": {
+    "bezReci": -2,
+    "bezGest": -2,
+    "noArmor": true
+   }
+  },
+  "zamena_kouzel": {
+   "name": "Záměna kouzel",
+   "text": "Dokáže svá, již jednou naučená kouzla, nahradit za jiná.",
+   "full": "Učení se kouzlům je velmi náročná a zdlouhavá disciplína. Vyžaduje mnoho trpělivosti, opakování a memorování. S každým je navíc spojeno mnoho vzpomínek, proto se stávají natrvalo součástí Kouzelníkovy mysli. Není divu, že je mysl smrtelníků schopna absorbovat jen omezené množství takovýchto znalostí. Existuje však speciální mentální technika, která dokáže některé vzpomínky vymazat a otevřít tak prostor pro nové.\nDíky této schopnosti dokáže Kouzelník v rámci jedné úrovně nahradit vybrané kouzlo, které už ovládá, jiným dle vlastního výběru. Maximální počet kouzel, která lze takto mezi dvěma přestupy zaměnit, odpovídá právě dosažené úrovni Kouzelníka. Záměna kouzel se projeví až během další meditace.\nPŘÍKLAD: Kouzelník Meredil dosáhl šesté úrovně a zvolil si novou schopnost Záměna kouzel. Ihned se ji rozhodne použít a dvě ze svých kouzel (Světlo a Beranidlo) tak nahradí za dvě jiná (nová) kouzla. Pokud by však chtěl, mohl by jich v daném okamžiku zaměnit až šest (jeho právě dosažená úroveň).",
+   "source": "PPP04",
+   "page": 200,
+   "spec": null,
+   "minLevel": 6,
+   "zamena": {
+    "perLevel": "level"
+   }
+  },
+  "bitevni_trenink": {
+   "name": "Bitevní trénink",
+   "text": "Získá trvalý bonus +1 do Útoku (ÚČ) i Obrany (OČ) a zvládne nasát manu během jednoho kola.",
+   "full": "Bojový mág už prošel tolika šarvátkami, že ho jen tak něco nepřekvapí. Získal tím neocenitelné zkušenosti a schopnost vypořádat se s nebezpečnou situací lépe než ostatní.\nDíky Bitevnímu tréninku získává Bojový mág automaticky bonus +1 k Útoku (ÚČ) i ke své Základní obraně (ZO).\nMimo to dokáže provést Nasátí many jen za 1 kolo (dlouhá akce), místo obvyklých deseti.",
+   "source": "PPP04",
+   "page": 202,
+   "spec": "bojovy_mag",
+   "minLevel": null,
+   "efekty": [
+    {
+     "target": "defenseBase",
+     "op": "add",
+     "value": 1
+    }
+   ],
+   "atk": 1,
+   "nasati": {
+    "len": "D"
+   }
+  },
+  "bojove_sesilani": {
+   "name": "Bojové sesílání",
+   "text": "V rámci půlkolových kouzel může použít akci Útok i Obrana. Pokud sesílá kouzlo o trvání jednoho kola, může se i bránit. Neutrží žádný postih za vyrušení při sesílání.",
+   "full": "V boji rozhoduje o přežití každá vteřina. Sesílání kouzel je v takové situaci velmi obtížné a někdy naprosto nemožné. Bojoví mágové si však dokázali vypěstovat schopnost, díky níž zvládnou vyvolávat kouzla i v obtížné situaci a navíc se věnovat i dalším věcem.\nDíky této schopnosti dokáže Bojový mág při sesílání půlkolových kouzel použít i svou akci Útok a Obrana (tj. například lze seslat blesk, zaútočit a ještě se bránit). U kouzel, která zaberou svým vyvoláním celé kolo, se dokáže pouze aktivně bránit.\nPokud je při Vyvolávání kouzla vyrušen, neutrží žádný postih na jeho Seslání.",
+   "source": "PPP04",
+   "page": 202,
+   "spec": "bojovy_mag",
+   "minLevel": null,
+   "sesilani": {
+    "noInterrupt": true,
+    "shortFree": true
+   }
+  },
+  "energeticka_zbran": {
+   "name": "Energetická zbraň",
+   "text": "Dokáže si vyvolat magickou zbraň a štít.",
+   "full": "K boji může dojít prakticky kdykoliv. Ne vždy je na to člověk připraven, ale Bojový mág si dokáže poradit. Jeho věrným společníkem je proto cosi, čemu se říká Energetická zbraň.\nBojový mág dokáže jednoduchými gesty vytvořit magickou zbraň spletenou z vláken many. Jedná se obvykle o meč a štít, které srší energií, ale mágovi v rukou neublíží. Vytvoření věcné podstaty této zbraně trvá půl kola. Udržení její formy a podoby stojí 1 bod many za 10 kol (1 minutu).\nV nouzi se občas podaří tuto zbraň vyvolat i tehdy, nemá-li Bojový mág už žádnou manu. V takovém případě musí v daném kole hodit 1k6. Pokud mu padne 6, podaří se mu propojit s Vichry many a zbraň se mu zjeví v rukou. V našem světě pak vydrží dalších 10 kol (1 minutu).\nSvými parametry odpovídá širokému meči (5/+1/ +2) a štít má kvalitu +2. Zbraň je magická, a proto působí i proti tvorům, kteří jsou zranitelní pouze magií.",
+   "source": "PPP04",
+   "page": 203,
+   "spec": "bojovy_mag",
+   "minLevel": null,
+   "zbran": {
+    "weapon": "široký meč 5/+1/+2",
+    "shield": 2,
+    "len": "K",
+    "upkeep": "1 mana / 10 kol"
+   }
+  },
+  "lamani_kouzel": {
+   "name": "Lámání kouzel",
+   "text": "Dokáže okamžitě rozpoznat kouzlo sesílané dalšími Kouzelníky a zrušit jeho sesílání.",
+   "full": "Síla magie je nevyzpytatelná, a proto Bojoví mágové hledali různé možnosti jak se jí bránit. Nakonec zjistili, že nejlepší obranou proti kouzlu soupeře je zabránit tomu, aby bylo vůbec sesláno.\nTato schopnost umožňuje Bojovému mágovi okamžitě rozpoznat kouzlo protivníka a dává mu šanci zabránit jeho seslání. Umožňuje mu tak sesílat kouzla k rušení jiných kouzel s rychlostí vyvolání ihned v tahu protivníka (když přijde protivníkův tah v rámci Iniciativy) a to i v případě, že čaruje kouzlo s vyvoláním půl kola. Příkladem kouzel rušících magii mohou být Naruš pozornost, Zlom kouzlo, Odraž kouzlo a podobně.\nLámání kouzel je okamžitá akce (respektive reakce na jednání protivníka) a lze ji tak libovolně kombinovat s ostatními akcemi dle pravidel. Platí však obecná podmínka, že nelze seslat více kouzel v jednom kole. Jestliže tedy Bojový mág v daném kole kouzlil, nemůže lámat soupeřovo kouzlo. Lámací kouzla se musí mág naučit standardním způsobem, tato schopnost je v sobě nezahrnuje.",
+   "source": "PPP04",
+   "page": 204,
+   "spec": "bojovy_mag",
+   "minLevel": null
+  },
+  "magicka_dominance": {
+   "name": "Magická dominance",
+   "text": "Za určité množství many dokáže zvýšit počet kostek, kterými hází na Útok či Obranu.",
+   "full": "Divokou magií, kterou do svých žil nechá Bojový mág proudit, dokáže změnit svou situaci v boji. Stává se tak dočasně nelítostně silným, tvrdým a odolným protivníkem.\nMagická dominance je prastará technika, při níž může Bojový mág nechat manu proudit přímo svým tělem. Za každé 3 body many si pak k Útoku (ÚČ) či Obraně (OČ) při boji tváří v tvář může přičíst další hod k6. Pokud padne 6, nehází se znovu.\nToto proudění many není kouzlo, ale schopnost, která nevyžaduje soustředění a lze ji provést kdykoliv v nulovém čase (množství many je nutné oznámit před hodem). Schopnost lze použít nejvýše jednou za kolo.",
+   "source": "PPP04",
+   "page": 204,
+   "spec": "bojovy_mag",
+   "minLevel": null,
+   "dominance": {
+    "manaPerDie": 3
+   }
+  },
+  "magicka_zranitelnost": {
+   "name": "Magická zranitelnost",
+   "text": "Dává mu šanci prorážet svými kouzly rezistence a imunity nepřátel.",
+   "full": "Na světě existují tvorové, kteří dokáží odolávat nebo zcela vzdorovat působení magie. Zvládnutí techniky Magické zranitelnosti si však s něčím takovým dokáže poradit. Každé kouzlo Bojového mága tak získává zvláštní vibrace a kolísá mocnou energií, čímž napodobuje účinky jiných látek a zbraní.\nDíky této schopnosti dokáže Bojový mág zraňovat svými kouzly a holí (Kouzelníkova hůl) všechny tvory, kteří jsou jinak imunní nebo rezistentní. Rezistentní tvorové jsou díky tomu zranitelní zcela běžně (plnou silou kouzla). Imunní tvorové jsou pak zraňování za polovinu běžné síly efektu kouzla.",
+   "source": "PPP04",
+   "page": 204,
+   "spec": "bojovy_mag",
+   "minLevel": null
+  },
+  "posilena_ochrana": {
+   "name": "Posílená ochrana",
+   "text": "Ochranná kouzla jsou o 3 body many levnější (nejméně 1 bod many). Zvyšuje se jeho Základní obrana (ZO) o 2.",
+   "full": "Když se bojuje, je důležitá jen jedna věc, přežití. Bojoví mágové o tom něco vědí, a tak se u nich časem vyvinula schopnost vybičovat sílu svých ochranných kouzel nad hranici možného.\nOchranná kouzla stojí Bojového mága vždy o 3 body many méně, než je obvyklé (vždy však nejméně 1 bod many).\nZároveň se zvyšuje jeho Základní obrana (ZO) o 2.",
+   "source": "PPP04",
+   "page": 204,
+   "spec": "bojovy_mag",
+   "minLevel": null,
+   "efekty": [
+    {
+     "target": "defenseBase",
+     "op": "add",
+     "value": 2
+    }
+   ],
+   "sesilani": {
+    "costObor": {
+     "ochranna_magie": -3
+    }
+   }
+  },
+  "zivlomag": {
+   "name": "Živlomág",
+   "text": "S touto schopností může změnit podstatu živlu kouzla Divoké magie.",
+   "full": "Živlomág se specializuje na živly a práci s nimi. Je tedy schopen u kouzel Divoké magie měnit síly elementů dle své libosti a tím dosáhnout zajímavých výsledků.\nS touto schopností může Bojový mág změnit podstatu živlu daného kouzla Divoké magie. Způsobuje stejné Zranění, mění však efekt elementu (element ohně zapaluje, kamenný omračuje, atd.).",
+   "source": "PPP04",
+   "page": 204,
+   "spec": "bojovy_mag",
+   "minLevel": null
+  },
+  "aura_moci": {
+   "name": "Aura moci",
+   "text": "Získá Výhodu (Bonus +5) ke všem svým hodům na Charisma.",
+   "full": "Zkušení Čarodějové ze sebe mnohdy vyzařují jistou auru moci. U obyčejných smrtelníků pak budí respekt a někdy i strach. Někteří tyto Čaroděje vnímají jako vyšší či silně zářící.\nDíky této schopnosti má Čaroděj Výhodu (Bonus +5) ke všem svým hodům na Charisma.",
+   "source": "PPP04",
+   "page": 206,
+   "spec": "carodej",
+   "minLevel": null
+  },
+  "hromadne_sesilani": {
+   "name": "Hromadné sesílání",
+   "text": "Dokáže seslat jedno kouzlo na více cílů najednou.",
+   "full": "Mocní Čarodějové dokáží neuvěřitelné věci. Mezi ně patří jejich schopnost seslat stejné kouzlo na několik cílů najednou.\nTato schopnost umožňuje Čaroději seslat ve stejném okamžiku kouzlo vícekrát na několik různých cílů. Důležité je, že se tím nijak nemění původní doba vyvolání daného kouzla.\nČaroděj může zaměřit kouzlo maximálně na tolik cílů, jako je jeho úroveň. Za každý, který je oproti původnímu kouzlu navíc, se zvyšuje obtížnost seslání kouzla o 2. Množství many potřebné k seslání kouzla se určuje prostým násobkem, tedy cena kouzla * počet cílů.\nPŘÍKLAD: Seslání neviditelnosti na 3 členy družiny bude mít obtížnost 10 a bude stát 18 bodů many.",
+   "source": "PPP04",
+   "page": 206,
+   "spec": "carodej",
+   "minLevel": null,
+   "sesilani": {
+    "targets": true,
+    "dcPerTarget": 2
+   }
+  },
+  "magicke_obrazce": {
+   "name": "Magické obrazce",
+   "text": "Umí nakreslit obrazce, do kterých uzamkne kouzlo. To se následně aktivuje narušením.",
+   "full": "Čarodějové ovládli umění poutat kouzla do runových obrazců. Stačí jim k tomu křída nebo cokoliv jiného, čím mohou kreslit, a trocha času. Lapené kouzlo pak jen čeká na okamžik, kdy obrazec něco nebo někdo naruší.\nTato schopnost umožňuje Čarodějovi vytvořit magický obrazec, do kterého sešle kouzlo a uzamkne ho v něm. Pokud je obrazec narušen, aktivuje se a dojde k uvolnění kouzla na toho, kdo jej narušil. Narušením je míněno překročení obvodu runového obrazce.\nObrazec lze vytvořit na libovolném pevném povrchu, tedy i na svislých jako například dveře nebo klidně i strop. Velikost průměru obrazce je libovolná v rozmezí cca 30 coulů až dva sáhy a aktivační zóna tvoří dvousáhovou kupoli nad obrazcem. Čaroděj neumí zajistit, aby obrazec působil jen na někoho.\nTvorba obrazce trvá 10 kol (1 minutu) a následně do něj musí Čaroděj úspěšně seslat ono kouzlo. Navíc je potřeba do obrazce vložit další manu, jejíž množství odpovídá polovině ceny kouzla, jež ho uzamkne. Pro uzamknuté kouzlo platí běžná pravidla a v případě potřeby se použijí atributy, které odpovídají tomu, kdo obrazec připravil.\nObrazec zůstává funkční po dobu jednoho dne za každou úroveň Čaroděje. Poté se mana v něm nějakým způsobem projeví. Buďto se neškodně vyzáří do okolí, nebo se kouzlo samo aktivuje. Samotný obrazec se tím navíc smaže, případně po něm zůstanou jen nezřetelné stopy.\nPokud si to Čaroděj přeje, dokáže svůj magický obrazec jednoduše deaktivovat. Drobnou úpravou okraje run nechá manu volně vyzářit do okolí. Stejným způsobem se může pokusit deaktivovat i cizí obrazec, což je však podstatně náročnější. V takovém případě musí obětovat jednu směnu opatrnému studiu a úpravě run. Musí při tom uspět v ověřovacím hodu na Sesílání kouzel (INT) vs. Sesílání kouzel (INT) autora obrazce. V opačném případě se kouzlo aktivuje a zasáhne právě Čaroděje.",
+   "source": "PPP04",
+   "page": 206,
+   "spec": "carodej",
+   "minLevel": null
+  },
+  "mentalni_souboj": {
+   "name": "Mentální souboj",
+   "text": "Dokáže prostřednictvím své mysli napadnout i zabít někoho jiného.",
+   "full": "Jestli je něco doménou Čarodějů, pak je to jejich nepřekonatelná vůle. Ta jim umožňuje pronikat do myšlenek ostatních a dokonce je i myšlenkami napadat.\nMentální souboj je specifickým druhem souboje, který se odehrává v mysli Čaroděje a jeho protivníka. Aby k němu mohlo dojít, musí být splněny následující podmínky:\n• Cíl musí mít nějakou formu Inteligence (vyšší než 0)\n• Čaroděj musí svou oběť vidět • Na Mentální souboj je nutné se soustředit (dlouhá akce)\n• Cena použití je 2 body many za každé kolo Průběh Mentálního souboje je klasickým ověřovacím hodem Vůle (CHAR) vs. Vůle (CHAR) oběti. Pokud je hod Čaroděje vyšší než hod oběti, dochází k proniknutí do mysli protivníka. Protivník si odečte tolik životů, kolik je rozdíl mezi hody. Má pak ke všem typům akcí (včetně boje a kouzlení) Nevýhodu (postih -5) po dobu jednoho kola. Tato nevýhoda se nevztahuje k ověřovacímu hodu na Vůli (CHAR).\nNapadený si je okamžitě vědom, že se s ním něco děje a pokud se s Mentálním soubojem setkal, rozpozná ho. Pokud však nemá o souboji vůlí ponětí, může snadno propadnout panice a dát se na úprk. Cítí totiž velmi intenzivní a nepříjemný pocit, který doprovází strach a třeštění hlavy.\nPokud je hod protivníka vyšší nebo roven hodu Čaroděje, pak se Mentálnímu útoku ubránil. Čaroděj však může opět zaútočit v dalším kole. Opětovat mentální útok dokáže jen jiný Čaroděj s touto schopností.",
+   "source": "PPP04",
+   "page": 207,
+   "spec": "carodej",
+   "minLevel": null,
+   "duel": {
+    "manaPerRound": 2,
+    "len": "D"
+   }
+  },
+  "michani_kouzel": {
+   "name": "Míchání kouzel",
+   "text": "Dokáže seslat dvě kouzla najednou dle vlastního výběru.",
+   "full": "Míchání kouzel je velice zábavnou, avšak velice nevyzpytatelnou disciplínou Čarodějů.\nTato schopnost umožňuje Čaroději seslat dvě kouzla najednou a zkombinovat tak jejich účinek. Platí, že Čaroděj musí obě kouzla znát (nelze využít Kouzlení z knih).\nNásledující parametry kouzla: Mana, Vyvolání a Obtížnost obou kouzel se sčítají. Dosah, Rozsah a Trvání se určují podle toho, které kouzlo má nižší hodnotu.\nV praxi to funguje tak, že hráč popíše Pánovi Jeskyně, jaký má být výsledný efekt seslání takového kouzla.",
+   "source": "PPP04",
+   "page": 208,
+   "spec": "carodej",
+   "minLevel": null
+  },
+  "podrobovani": {
+   "name": "Podrobování",
+   "text": "Dokáže si podrobit tělo tvora poraženého v Mentálním souboji a ovládat ho.",
+   "full": "Mentální mistrovství je specifický druh umění, který činí z Čarodějů obávané protivníky. Podle legend totiž dokáží ovládnout mysl jiných lidi a zotročit si je. Stávají se z nich pak vládci držící skutečnou moc skrze své loutky.\nPokud Čaroděj někoho pošle do bezvědomí Mentálním útokem, může se pokusit podrobit si jeho tělo.\nMnožství many, které je k Podrobení třeba, odpovídá trojnásobku úrovně oběti. Je pouze na Čaroději, aby odhadl, kolik bodů many chce do Podrobení vložit. Pokud jí nebude dostatek, spojení se automaticky nezdaří.\nPodrobené tělo ovládá Čaroděj svými rozkazy prostřednictvím speciálního duševního spojení. Veškeré původní vzpomínky a znalosti oběti jsou potlačeny v hlubokém nevědomí. Podrobení lze zrušit zabitím nebo omráčením podrobujícího Čaroděje. Stejně tak lze vyzvat ovládajícího Čaroděje na Mentální souboj skrze mysl podrobeného. Počet podrobených nesmí být vyšší než úroveň Čaroděje.\nFyzické atributy a rodové zvláštní schopnosti jsou stále spojeny s ovládnutým tělem, avšak psychické jsou kopií Čaroděje. Nedokáže však používat jeho zvláštní schopnosti povolání.\nPodrobeného Čaroděj ovládá mentálně. V okamžiku, kdy se na něj soustředí, může jeho tělo ovládat jako svoje vlastní. Bez soustředění se podrobený chová jako tvor s Inteligencí 1 a je schopen poslouchat primitivní příkazy svého pána.",
+   "source": "PPP04",
+   "page": 208,
+   "spec": "carodej",
+   "minLevel": null
+  },
+  "predkouzleni": {
+   "name": "Předkouzlení",
+   "text": "Získá schopnost připravit kouzlo a držet ho v hlavě pro pozdější finální seslání.",
+   "full": "Znalosti Vysoké magie udělaly z Čarodějů opravdové mistry. Díky tomu ovládli i zvláštní schopnost seslat kouzla v předstihu a podržet je ve své mysli k pozdějšímu použití.\nAby mohl Čaroděj tuto schopnost využít, musí provést úspěšné seslání vybraného kouzla. Oproti běžnému Sesílání ho však v posledním okamžiku zachytí a upoutá ve skrytu své mysli. Od té chvíle cítí v hlavě jemné mravenčení, které není nijak příjemné, ale ani ho výrazně neomezuje.\nUdržení kouzla stojí 2 many za každou směnu. Po celou dobu, kdy je kouzlo takto zachyceno, nemůže Čaroděj sesílat jiná kouzla. Kdykoliv se však může rozhodnout seslat udržované kouzlo. V takovém případě se jedná vždy o okamžitou akci.\nPokud Čaroděj přestane kouzlo cíleně „udržovat“, dojde k jeho zrušení a mana z něj se neškodně vyzáří do okolí. Jestliže by k tomu došlo nekontrolovaně (bezvědomí a jiné situace, kdy nad sebou a kouzlem nemá Čaroděj kontrolu), sešle se kouzlo s náhodným účinkem a výběrem cíle.",
+   "source": "PPP04",
+   "page": 208,
+   "spec": "carodej",
+   "minLevel": null
+  },
+  "vladce_many": {
+   "name": "Vládce many",
+   "text": "Je schopen nakoncentrovat o polovinu svého vlastního maxima many více.",
+   "full": "Čarodějové jsou mistry v soustředění a ovládání mysli. Nikdo jiný než oni proto nezvládne toto složité umění, na jehož konci je dar koncentrovat mnohem více many, než je obvyklé.\nZvládnutím této schopnosti se zvyšuje maximum many, kterou je Čaroděj schopen udržet, o polovinu svého maxima. Počet čerpané many je však stále roven jeho původnímu maximu.\nPŘÍKLAD: Čaroděj Meredil na 12. úrovni s Inteligencí 20, má maximum many 65. Díky schopnosti Vládce many je schopen nakoncentrovat až 98 bodů many. Množství, které mu přibude po každé meditaci, je však 65. Pokud tedy má 10 bodů many před meditací, zvýší se hodnota o 65 na 75 bodů.",
+   "source": "PPP04",
+   "page": 208,
+   "spec": "carodej",
+   "minLevel": null,
+   "manaCap": 1.5
+  },
+  "dar_noci": {
+   "name": "Dar noci",
+   "text": "V noci získává Výhodu (bonus +5) k sesílání kouzel Vitální magie, Magie proměn a kouzel Nekromanta.",
+   "full": "Tma je Nekromantovým spojencem. Brána mezi životem a smrtí je v tom čase nejslabší a magické pouto nejsilnější.\nBěhem noci má Nekromant k sesílání všech kouzel z oboru Vitální magie, Magie proměn a Nekromantských kouzel Výhodu (bonus +5).",
+   "source": "PPP04",
+   "page": 210,
+   "spec": "nekromant",
+   "minLevel": null,
+   "sesilani": {
+    "night": 5,
+    "obory": [
+     "vitalni_magie",
+     "magie_promen"
+    ],
+    "spec": "nekromant"
+   }
+  },
+  "nemrtvy_druh": {
+   "name": "Nemrtvý druh",
+   "text": "Nemrtví jej vnímají jako dalšího nemrtvého, kterého nenapadají.",
+   "full": "Nekromanti pronikli v chápání smrti a jejích procesů tak daleko, že je dokáží sami napodobit. Díky tomu dokáží působit podobně, jako revenanti.\nNekromant dokáže získat vlastnosti nemrtvých. Stává se tak studenokrevným (jeho tělo má teplotu okolí), stačí mu poloviční dávka jídla a pití. Aktivita jej vyčerpává pouze poloviční rychlostí. Pro odstranění únavy potřebuje odpočinek o odpovídající délce. Působí sám jako vyšší nemrtvý. Ti ho proto vnímají jako součást svého druhu a přirozeně ho respektují. Zároveň získá Výhodu (bonus +5) na veškeré ověřovací hody proti nemrtvým.\nStejně tak Nekromant spolehlivě vycítí, je-li v okolí nějaký jiný nemrtvý. Vzdálenost, na kterou toto dokáže, odpovídá deseti sáhům za každou dosaženou úroveň Nekromanta.",
+   "source": "PPP04",
+   "page": 210,
+   "spec": "nekromant",
+   "minLevel": null
+  },
+  "nemrtve_spojeni": {
+   "name": "Nemrtvé spojení",
+   "text": "Dokáže vidět, mluvit (pokud je toho „služebník“ schopen) a dokonce sesílat kouzla skrze svého nemrtvého „služebníka“.",
+   "full": "Dlouhá studia okultních umění dala Nekromantům vzácný dar Nemrtvého spojení. Díky němu dokáží využívat oživlé revenanty jako prodloužení vlastního já.\nPomocí této schopnosti dokáže Nekromant ovládat jemu podřízeného nemrtvého tak, jako by byl sám v jeho těle. Dokáže skrze něj vidět, slyšet a případně i cítit stejně jako promlouvat, pokud to dotyčné tělo nemrtvého fyzicky umožňuje.\nV neposlední řadě umí prostřednictvím nemrtvého sesílat i svá kouzla. Vzdálenost, na kterou toto dokáže, odpovídá deseti sáhům za každou dosaženou úroveň Nekromanta. Na spojení je nutné se soustředit a lze ho navázat vždy jen s jedním nemrtvým v daný okamžik.",
+   "source": "PPP04",
+   "page": 211,
+   "spec": "nekromant",
+   "minLevel": null
+  },
+  "pouto_smrti": {
+   "name": "Pouto smrti",
+   "text": "Dokáže vysát životy z ovládaných nemrtvých.",
+   "full": "Rituály a kouzla oživení nemrtvých vytvořily mezi Nekromantem a jeho služebníky silné magické i mentální pouto. Toto spojení života a neživota dokáže Nekromant v nouzi využít a zachránit se na úkor svých obětí.\nNekromant dokáže z jím ovládaných nemrtvých vysát za jedno kolo až tolik životů, kolik je jeho úroveň. Na tuto schopnost se nemusí soustředit, jedná se okamžitou akci. Nemrtví nesmí být vzdáleni více jak 10 sáhů od něj.",
+   "source": "PPP04",
+   "page": 211,
+   "spec": "nekromant",
+   "minLevel": null
+  },
+  "ritualni_obetovani": {
+   "name": "Rituální obětování",
+   "text": "Obětováním tvora získá tolik životů, kolik měla oběť.",
+   "full": "Každý Nekromant ví, že velká moc vyžaduje oběti. Díky rituálnímu usmrcení oběti dýkou získá životní energii oběti.\nNekromant provede 1 kolo trvající rituál, který zakončí obětováním jedné bytosti nebo jednoho tvora o minimální velikosti A. Energii, která opustí umírající tělo, pak přesměruje do svého těla, a tím získá tolik životů, kolik jich měla oběť před provedením rituálu.\nTělo oběti je znehodnoceno a nedá se dál použít k jakýmkoliv jiným účelům.",
+   "source": "PPP04",
+   "page": 211,
+   "spec": "nekromant",
+   "minLevel": null
+  },
+  "sberatel_dusi": {
+   "name": "Sběratel duší",
+   "text": "Dokáže do své dýky nasát duše mrtvých a oživit je ve formě mocných nehmotných a vyšších nemrtvých. Zároveň se naučí kouzlo Pokročilá reanimace.",
+   "full": "Každý živý inteligentní tvor má v sobě skrytou duši. Pokud dotyčný zemře, duše ho opustí a její pouť pokračuje za hranice známého. Občas se však celá věc trochu zkomplikuje. To když do hry vstoupí Nekromant, duši uvězní a použije ji ke stvoření tvorů tak děsivých, že se vymykají jeho moci.\nS touto schopností dokáže Nekromant použít svou magickou dýku k vysátí duše z mrtvého těla. Ta pak zůstane zachycena uvnitř, čekajíc na další použití. Zároveň ovládne i kouzlo Pokročilá reanimace (viz PPP H, strana 226), které se naučí automaticky (nad rámec běžného počtu svých kouzel).\nDíky tomuto kouzlu může Nekromant duše z dýky znovu povolat na svět. Tentokrát však v podobě nehmotných či vyšších nemrtvých (ti jsou částečně popsáni už v PPZ). Tito nemrtví jsou specifičtí tím, že mají svou vlastní vůli a nepodléhají Nekromantově vůli. Jednají s ním jako rovný s rovným, a pokud nechtějí, nemusí ho vůbec poslouchat. Když jim však udělá zajímavou nabídku, může je získat na svou stranu. Stejně tak jejich prostřednictvím dokáže rozpoutat v kraji učiněné peklo.",
+   "source": "PPP04",
+   "page": 211,
+   "spec": "nekromant",
+   "minLevel": null,
+   "grantsItems": [
+    "Pokročilá reanimace"
+   ]
+  },
+  "srazlivost_krve": {
+   "name": "Srážlivost krve",
+   "text": "Jeho tělo je odolnější proti krvácivým, bodným a sečným zraněním a rychleji se z nich léčí.",
+   "full": "Rituály krve a práce s ní propůjčily tělu Nekromanta schopnost rychlé regenerace. Díky ní se mu krvácivá zranění hojí až nadpřirozeně efektivně.\nTato schopnost Nekromantovi dává rezistenci na bodná a sečná zranění (mimo samotný Rituál krve).\nDruhotný efekt Krvácivého zranění se navíc sám eliminuje (zastaví se po jednom kole krvácení).\nPřirozené léčení Zranění způsobených krvácením (i z Rituálu krve) se pak hojí třikrát lépe. Spánkem se tedy Nekromantovi vrátí 6 životů, místo běžných 2.",
+   "source": "PPP04",
+   "page": 212,
+   "spec": "nekromant",
+   "minLevel": null
+  },
+  "vitalni_drahy": {
+   "name": "Vitální dráhy",
+   "text": "Dokáže rozpoznat sílu toků energie v těle a to, jak moc je zdravé či zraněné.",
+   "full": "Nekromant má vzácný dar vidět vitální dráhy živých tvorů. Tenké předivo energetických cest, které prostupují každou bytostí podobně jako žíly a tepny. Dokáže tak rozpoznat, jak na tom dotyčný je a dokonce i nemoci, které ho trápí.\nS touto schopností dokáže Nekromant rozpoznat, jak jsou na tom zdravotně jiní tvorové. Jejich životní dráhy napůl vidí a napůl cítí, takže je dokáže rozpoznat v omezené míře i přes oblečení nebo zbroj. V praxi se to projevuje tím, že dokáže určit, kolik životů tvor má. Neví sice přesné číslo, ale dokáže určit, že je třeba na polovině nebo desetině svého maxima. Stejně tak dokáže rozeznat nemrtvé, u nichž jsou vitální dráhy nahrazeny manou, i hibernované (tedy jen zdánlivě mrtvé) tvory.\nPřidanou hodnotou této schopnosti je, že umožní Nekromantovi vidět neviditelné bytosti, jelikož je prozradí jejich aura. Má také Výhodu (bonus +5) k hodu na Postřeh pokud se snaží najít jakékoliv bytosti.",
+   "source": "PPP04",
+   "page": 212,
+   "spec": "nekromant",
+   "minLevel": null
+  }
+ },
+ "specializace": {
+  "bojovy_mag": {
+   "name": "Bojový mág",
+   "page": 201,
+   "intro": "Bojoví mágové propadli vzrušení života na hraně rizika a smrti. Mnozí z nich dříve zažili šikanu a teprve zoufalá snaha přežít jim dala sílu ovládnout divokou magii. Tehdy pronikli do tajemství bojových a ochranných kouzel. Tato zaklínadla umí navíc sesílat tak rychle, že dokáží přerušit vyvolávání ostatních.\nAč mohou jejich kouzla vypadat primitivně, jsou neuvěřitelně efektivní. Ohnivé koule, kamenný déšť či magické tornádo dokáží srovnat se zemí i celé vesnice. Bojoví mágové nikdy nezískají hluboké vědění Čarodějů. Zato však nikdy nepanikaří v boji a zvládnou se soustředit na kouzla. Když je to potřeba, dokáží si vykouzlit i magickou zbraň.\nK tomu, aby se mohl Kouzelník stát Bojovým mágem, musí nejprve ovládnout následující:\n• znalost oboru Divoká magie • znalost oboru Ochranná magie • schopnost Rychlé kouzlení",
+   "auto": "Zbraň Bojového mága",
+   "requires": [
+    "divoka_magie",
+    "ochranna_magie"
+   ],
+   "pppAbility": "rychle_kouzleni"
+  },
+  "carodej": {
+   "name": "Čaroděj",
+   "page": 205,
+   "intro": "Čarodějové vědí, že moc se skrývá ve vědění. Pronikli do nejzazších tajů magie a dokázali ji naprosto ovládnout. Říká se, že jejich mysl je nezlomitelná a z pohledu na ně se běžným smrtelníkům ježí chlupy po celém těle. Ať již je to fascinací či strachem, těmto lidem není radno odporovat.\nČaroděj je schopen sesílat ta nejmocnější kouzla. Dokáže si je navíc předpřipravit a různě je upravovat. Kromě toho dokáže svou myslí napadnout někoho jiného. Tím už je pouhý krok od toho, aby si dotyčného naprosto podrobil a využil ho jako loutku ve svých hrách.\nK tomu, aby se mohl Kouzelník stát Čarodějem, musí nejprve ovládnout následující:\n• znalost oboru Vysoká magie • znalost oboru Mentální magie • schopnost Kouzlení z knih",
+   "auto": "Čarodějova hůl",
+   "requires": [
+    "mentalni_magie",
+    "vysoka_magie"
+   ],
+   "pppAbility": "kouzleni_z_knih"
+  },
+  "nekromant": {
+   "name": "Nekromant",
+   "page": 209,
+   "intro": "Cílem cesty Nekromanta je věčný život pro sebe a pro ty, které miluje. K dosažení tohoto mistrovství je potřeba zahodit veškeré koncepty morálky a běžného myšlení. Za toto může být mnohými opovrhován. Nekromant však ví, že pokud chce opravdu proniknout do tajů tohoto temného umění, jsou věci, které bude muset obětovat.\nVládci nad životem a smrtí nejsou jen pouhými vyvolávači mrtvol. Dokáží svou mysl přenést do jiného těla, či využít vitální sílu druhých k posílení svých kouzel. Mají naprostou kontrolu nad toky energií ve svém těle. Mnozí učenci také tvrdí, že pokořili smrt.\nK tomu, aby se mohl Kouzelník stát Nekromantem, musí nejprve ovládnout následující:\n• znalost oboru Vitální magie • znalost oboru Magie proměn • schopnost Rituál krve",
+   "auto": "Nekromantova dýka",
+   "requires": [
+    "vitalni_magie",
+    "magie_promen"
+   ],
+   "pppAbility": "ritual_krve"
+  }
+ },
+ "pokrocily": {
+  "level": 6,
+  "intro": "Jakmile Kouzelník dosáhne šesté úrovně, stává se z něj pokročilý dobrodruh. Ovládne tak automaticky dvě nové schopnosti. Pomocí jedné dokáže rozeznat používání magie kolem sebe a druhá mu umožňuje vyrobit speciální magickou hůl. Tyto schopnosti jsou společné všem pokročilým Kouzelníkům, bez ohledu na jejich případnou specializaci (viz Specializace Kouzelníka, strana 195).\n• Kouzelníkova hůl • Zaslechnutí kouzla Kromě toho dokáže Kouzelník nově přivolat i několik dalších druhů svých přátel.",
+  "zaslechnuti": "Každé kouzlo rozvíří vichry many a jeho stopa se v jejich poryvech šíří podobně, jako kola v rybníce po dopadu kamene. Citlivější kouzelníci jsou schopni tyto vlnky zachytit a rozpoznat, co je způsobilo nebo dokonce, kdo původní kouzlo vyvolal. Každé kouzlo i každý Kouzelník mají ve vichrech svůj vlastní odraz.\nTouto schopností může Kouzelník vycítit, zda bylo v jeho blízkosti nedávno sesláno nějaké kouzlo, či zda v oblasti kde se pohybuje, stále nějaké kouzlo působí. Aby si toho všiml, musí se krátkou akcí soustředit a překonat ověřovací hod na Sesílání kouzel (INT) Kouzelníka vs. Sesílání kouzel (INT) zdroje. Při úspěchu dokáže odhadnout směr, vzdálenost i dobu, před jakou bylo kouzlo sesláno. Pokud kouzlo ovládá, dokáže jej navíc bez problému identifikovat.\nSilná kouzla může kouzelník vycítit i mimoděk (na rozhodnutí Pána Jeskyně).",
+  "pratele": "Od šesté úrovně je Kouzelník schopen přivolat i jiné druhy magických přátel, než jsou ti uvedení v PPZ H. Těmito tvory jsou had, netopýr a havran."
+ },
+ "hul": {
+  "page": 192,
+  "ritual": "Kouzelník musí nejprve najít či získat hůl, která se mu líbí. Obvykle jde o kus zdravého tisového či jasanového dřeva, ale není to podmínkou. Jde spíše o tradici a jen někteří Kouzelníci tvrdí, že jiné dřevo vydrží proudění magie lépe. Opět je na Kouzelníkovi, jakou variantu si zvolí.\nRůzné podobory magie mají navíc své vlastní formy „holí“. Ty se mohou lišit svým základem, a proto se ve finále ani o hole v pravém slova smyslu jednat nemusí (například Nekromantská dýka). I k jejich výrobě je však potřeba zvládnout tuto primární schopnost. Detaily specifických holí dle specializací jsou pak popsány přímo u nich.\nJakmile si Kouzelník zajistí základ pro výrobu hole, přichází čas na samotný rituál. Tomu předchází den půstu a hluboké meditace v naprostém klidu a samotě. Samotný rituál pak začíná obvykle po západu slunce. Kouzelník při něm vyčerpá všechnu svou manu a vpraví ji do hole ve formě neviditelných run. Hůl se tímto rituálem stane magickou a jde o jedinečný nástroj svázaný s jeho duší. S příchodem svítání je pak rituál kompletní.\nPokud je Kouzelník při rituálu hole vyrušen, výroba se nezdaří a základní předmět obvykle praskne nebo se jinak znehodnotí. Chce-li se proto Kouzelník o výrobu pokusit znovu, musí si sehnat nový základní předmět a dopřát si aspoň den vydatného odpočinku.\nParametry hole jako zbraně odpovídají její běžné variantě. Stejné je to i u jiných variant hole dle Kouzelnických specializací.\nŽádnou variantu Kouzelnické hole už není možné dále vylepšovat pomocí alchymie. Přítomnost cizí many by hůl zničila.",
+  "schopnosti": "Hůl přináší Kouzelníkovi následující schopnosti (pochopitelně, pokud ji má v ruce):\n• Zlepšené sesílání - Kouzelník si zvolí 1 obor magie a získá tak trvalý bonus +1 k sesílání všech kouzel k tomuto oboru náležících.\n• Dosah dotekem hole - Kouzla, která mají dosah dotek, lze seslat dotknutím hole - toto pravidlo platí obecně pro každý vhodný předmět, který Kouzelník drží v ruce, zde ho pouze připomínáme.\n• Ukládání a čerpání many - Hůl samotná je schopna pojmout 2 body many za každou úroveň Kouzelníka. Kouzelník je schopen vložit svou manu do hole během jednoho kola. Uloženou manu může kdykoliv použít k sesílání kouzel.\n• Vysoká odolnost - Takto vyrobená hůl (předmět) získává rituálem extrémní odolnost. Není možné ji běžnými zbraněmi poškodit.\n• Přivolání hole - Kouzelník dokáže svou hůl „přivolat“ do ruky. Jde o jednoduchý Kouzelnický trik za 1 bod many. Přivolání hole je okamžitou akcí a není potřeba se na ni extrémně soustředit. Dosah, na který lze hůl přivolat, odpovídá tolika sáhům, jaká je úroveň Kouzelníka. Hůl navíc nesmí být někde napevno přichycena nebo zapadlá za nepřekonatelnou překážkou.\nRůzné další varianty Kouzelnických holí (dle specializace Kouzelníka) si zachovávají všechny výše uvedené základní schopnosti hole + obsahují nějaké další.",
+  "manaPerLevel": 2,
+  "oborBonus": 1,
+  "recall": {
+   "mana": 1,
+   "len": "O",
+   "range": "sáhů = úroveň"
+  },
+  "varianty": {
+   "hul": {
+    "name": "Kouzelníkova hůl",
+    "spec": null,
+    "manaPerLevel": 2,
+    "castBonus": 0,
+    "extra": []
+   },
+   "zbran": {
+    "name": "Zbraň Bojového mága",
+    "spec": "bojovy_mag",
+    "manaPerLevel": 2,
+    "castBonus": 0,
+    "extra": [
+     "Ochrana před střelami – zbraní se lze bránit i střeleckým útokům.",
+     "Magické zranění – zasáhne-li, každý bod many z hole (ohlásit před hodem) = Zranění +1."
+    ],
+    "full": "Bojoví mágové dokáží vyrobit a používat i klasickou Kouzelnickou hůl. Mnoho z nich však už ze své podstaty volí raději její jinou formu. Mágové totiž dokáží vyrobit obdobu hole i z jakékoliv jiné běžné zbraně. Ta má pak stejné parametry jako původně použitá zbraň. Platí však omezení, že k výrobě Zbraně bojového mága není možné použít takovou, která už obsahuje magii. Stejně tak ji později nelze dále vylepšit alchymistickou magií a podobně.\nVýroba Zbraně Bojového mága se provádí obdobným rituálem jako výroba Kouzelnické hole. Vztahují se na ní proto stejné podmínky s ohledem na dobu potřebnou k její výrobě, ztrátu této zbraně a podobně.\nSchopnosti Zbraně Bojového mága jsou stejné jako ty u běžné Kouzelnické hole (viz Schopnosti hole, strana 192). Navíc však disponuje ještě několika dalšími:\n• Ochrana před střelami - Umožňuje bránit se pomocí zbraně i střeleckým útokům.\n• Magické zranění - Pokud zbraň protivníka zraní, lze toto Zranění posílit použitím bodů many z hole. Za každý odsátý bod many se zvýší Zranění o jeden život (množství many je nutné oznámit před hodem)."
+   },
+   "carodej": {
+    "name": "Čarodějova hůl",
+    "spec": "carodej",
+    "manaPerLevel": 3,
+    "castBonus": 2,
+    "extra": [
+     "Snadnější kouzlení – s holí +2 k Sesílání kouzel.",
+     "Ukládání many – 3 many za úroveň.",
+     "Zvýšený dosah – kouzla s dosahem dotek až na 5 sáhů."
+    ],
+    "full": "Čarodějové dokáží vyrobit a používat i klasickou Kouzelnickou hůl. Mnoho z nich však dává přednost něčemu honosnějšímu a mocnějšímu - holi Čaroděje. Ta má v sobě vzácný krystal (obvykle drahokam), který má zvláštní dar poutat manu. Propůjčuje tak holi další nevídané možnosti.\nVýroba Čarodějovy hole se provádí obdobným rituálem, jako výroba Kouzelnické hole. Vztahují se na ni proto stejné podmínky s ohledem na dobu potřebnou k její výrobě, ztrátu této zbraně a podobně.\nSchopnosti Čarodějovy hole jsou stejné, jako ty u běžné Kouzelnické hole (viz Schopnosti hole, strana 192). Navíc však disponuje ještě několika dalšími:\n• Snadnější kouzlení - Čaroděj při používání hole získává bonus +2 k Sesílání kouzel.\n• Ukládání a čerpání many - Díky krystalu dokáže hůl koncentrovat 3 body many za každou úroveň Čaroděje. Pro práci s ní platí stejná pravidla jako u běžné Kouzelnické hole.\n• Zvýšený dosah - Kouzla s dosahem dotek lze díky holi sesílat až na vzdálenost pěti sáhů bez nutnosti fyzického kontaktu s cílem kouzla."
+   },
+   "dyka": {
+    "name": "Nekromantova dýka",
+    "spec": "nekromant",
+    "manaPerLevel": 2,
+    "castBonus": 0,
+    "weapon": "2/+2/+1",
+    "lifePerLevel": 2,
+    "extra": [
+     "Uchování života – rituál 1 směna: za každé 2 obětované životy 1 uložený (nejvýš 2× úroveň); na Hranici smrti je dýka vrátí, aby Nekromant nezemřel, pak 1 život za 10 kol do probrání.",
+     "Krev v manu – s dýkou promění Rituál krve v jednom kole až 3 životy za 3 many."
+    ],
+    "full": "Nekromanti dokáží vyrobit a používat i klasickou Kouzelnickou hůl. Mnoho z nich však po zvládnutí této schopnosti sáhne po něčem jiném. Tím je Nekromantova dýka, která je jeho vlastní obdobou „hole“.\nVýroba dýky se pak provádí obdobným rituálem jako výroba Kouzelnické hole. Vztahují se na ni stejné podmínky s ohledem na dobu potřebnou k její výrobě, ztrátu této zbraně a podobně.\nNekromantova dýka je ostrý obřadní nástroj. Díky tomu má několik unikátních schopností popsaných níže. Kromě toho může být použita i jako běžná zbraň, ale s vylepšenými parametry (2 /+2 /+1).\nSchopnosti Nekromantovy dýky jsou stejné jako u běžné Kouzelnické hole (viz Schopnosti hole, strana 192). Navíc však disponuje ještě několika dalšími:\nUchování života - specifickou schopností dýky je Uchování života. Nekromant může prolít svou krev a uchovat její sílu v dýce. Pokud by dosáhl Hranici smrti, dýka mu životy do ní vložené vrátí tak, aby ho udržela mezi živými.\nDokud hrozí nebezpečí, dodává dýka právě tolik životů, aby Nekromant nezemřel (nepřešel Hranici smrti). Pokud nebezpečí pomine, dýka přidává životy rychlostí 1 za 10 kol (1 minutu) až do okamžiku, kdy se Nekromant probere z bezvědomí.\nPočet životů uložených v dýce nesmí překročit hodnotu rovnou dvojnásobku úrovně Nekromanta.\nRituál přenesení energie, kterým Nekromant vitalitu do dýky přenese, trvá 1 směnu. Za každé dva životy, které při něm obětuje, se v dýce jeden život „uloží“.\nDýka je schopna přenášet energii na vzdálenost tolika sáhů, jaká je úroveň Nekromanta.\nKrev v manu - Tato schopnost obřadní dýky dokáže posilovat Rituál krve. Díky němu dokáže Nekromant proměnit v jednom kole až 3 životy za 3 body many."
+   }
+  }
+ },
+ "trik": {
+  "mana": 1,
+  "len": "D",
+  "text": "Kouzelnický trik: 1 mana, Dlouhá akce, bez ověření, bez formulí i gest; dosah 5 sáhů +1 za každou další úroveň; trvání obvykle ≤ 1 minuta. Jen drobné iluze – nezraní, nezapálí."
+ }
+}

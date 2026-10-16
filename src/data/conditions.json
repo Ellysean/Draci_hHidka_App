@@ -1,0 +1,67 @@
+[
+ {
+  "id": "krvaceni",
+  "name": "Krvácení",
+  "short": "k6 za kolo"
+ },
+ {
+  "id": "otrava",
+  "name": "Otrava",
+  "short": "dle jedu"
+ },
+ {
+  "id": "paralyza",
+  "name": "Paralýza",
+  "short": "nemůže jednat"
+ },
+ {
+  "id": "vystraseni",
+  "name": "Vystrašení",
+  "short": "viz H16"
+ },
+ {
+  "id": "zapaleni",
+  "name": "Zapálení",
+  "short": "zranění ohněm"
+ },
+ {
+  "id": "otreseni",
+  "name": "Otřesení",
+  "short": "viz H16"
+ },
+ {
+  "id": "povaleni",
+  "name": "Povalení",
+  "short": "na zemi"
+ },
+ {
+  "id": "omameni",
+  "name": "Omámení",
+  "short": "−5 boj, iniciativa"
+ },
+ {
+  "id": "oslabeni",
+  "name": "Oslabení",
+  "short": "−5 ÚČ/OČ/ZO"
+ },
+ {
+  "id": "oslepeni",
+  "name": "Oslepení",
+  "short": "−5 vše"
+ },
+ {
+  "id": "zmrz_noha",
+  "name": "Zmrzačená noha",
+  "short": "−5, pohyblivost ÷2"
+ },
+ {
+  "id": "zmrz_ruka",
+  "name": "Zmrzačená ruka",
+  "short": "−5"
+ },
+ {
+  "id": "zpomaleni",
+  "name": "Zpomalení",
+  "short": "pohyblivost ÷2, −5 OBR"
+ }
+]

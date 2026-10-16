@@ -1,0 +1,199 @@
+/* ==========================================================================
+   Grafická vrstva Fáze 9 – balíček dh-layout v2 (varianta C, ChatGPT, ✔ U 10. 10. 2026).
+   Přebíjí jen VZHLED stávajících tříd appky (sheet.css, app.css, boj.css …);
+   rozvržení a logika zůstávají. Originál balíčku: dh-layout/ v kořeni repa.
+   ========================================================================== */
+
+/* ---------- základ ---------- */
+body{background:var(--ground) var(--texture-ground) repeat;font-size:16px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.icon{display:inline-block;flex:none;vertical-align:middle}
+a{color:var(--wine-lit);text-underline-offset:3px}
+
+/* ---------- boční panel ---------- */
+.side{background:var(--wine) var(--texture-leather) repeat;color:var(--light-ink);border-right:3px double var(--wine-line);box-shadow:3px 0 10px var(--shade);padding:10px 8px;overflow-y:auto}
+.side::before{background:none;opacity:1;inset:7px;border:1px solid var(--wine-line);opacity:.45;mix-blend-mode:normal}
+.logo{display:block;padding:6px 6px 10px;border-bottom:0;text-decoration:none;color:inherit}
+.logo img{display:block;width:100%;height:auto;max-height:178px;object-fit:contain;margin:0 auto}
+.nav{margin:4px 0 0}
+.nav .nav-btn{margin:2px 4px;width:calc(100% - 8px);min-height:46px;padding:8px 12px;gap:12px;color:var(--light-ink);font:400 18px/1.1 var(--f-display);letter-spacing:.02em;border:1px solid transparent;border-radius:var(--radius);text-transform:none}
+.nav .nav-btn .bl.long{text-transform:lowercase}
+.nav .nav-btn .bl.long::first-letter{text-transform:uppercase}
+.nav .nav-btn svg{width:25px;height:25px;opacity:1}
+.nav .nav-btn:hover{background:transparent;border-color:var(--wine-line)}
+.nav .nav-btn[aria-current="page"]{background:var(--wine-lit);border-color:var(--wine-line);box-shadow:inset 3px 0 var(--light-ink);color:var(--light-ink)}
+.nav .nav-btn[aria-current="page"]::after{display:none}
+.nav .nav-btn:focus-visible{outline:3px solid var(--focus-light);outline-offset:1px}
+.nav .sep{justify-content:center;margin:10px 12px 2px;padding:6px 0;font:400 13px/1 var(--f-display);letter-spacing:.2em;color:var(--light-ink)}
+.nav .sep::before,.nav .sep::after{content:"";flex:1;border-top:1px solid var(--wine-line)}
+.motto{position:relative;min-height:160px;display:grid;align-items:end;padding:120px 6px 14px;font:italic 19px/1.2 var(--f-hand);color:var(--light-ink)}
+.motto::before{content:"";position:absolute;inset:0 10px 46px;background:var(--light-ink);-webkit-mask:var(--art-dragon) center/contain no-repeat;mask:var(--art-dragon) center/contain no-repeat;opacity:.13;pointer-events:none}
+
+/* ---------- lišta nad deníkem ---------- */
+.proto.denik-bar{background:var(--sheet) var(--texture-paper);border:1px solid var(--edge);border-radius:var(--radius);box-shadow:var(--shadow-sheet);padding:8px 12px;font-size:14px}
+.proto.denik-bar.warn{border-color:var(--blood)}
+.save-state{font-size:13px}
+
+/* ---------- list pergamenu s ornamentálním rámem ---------- */
+.sheet{background:var(--sheet) var(--texture-paper) repeat;filter:none;box-shadow:var(--shadow-sheet);border:1px solid var(--edge);padding:28px 28px 26px;isolation:isolate}
+.sheet.torn{clip-path:polygon(0 .6%,8% .2%,15% .6%,22% 0,37% .3%,43% 0,62% .6%,73% 0,91% .4%,99.8% .2%,100% 12%,99.7% 23%,100% 39%,99.6% 49%,100% 64%,99.7% 78%,100% 95%,99.6% 99.7%,89% 100%,70% 99.6%,57% 100%,37% 99.7%,23% 100%,9% 99.6%,.3% 100%,0 86%,.3% 71%,0 57%,.3% 38%,0 25%,.2% 12%)}
+.sheet::before{content:"";position:absolute;z-index:-1;inset:0;border:1px solid transparent;border-image:var(--art-frame) 105 103 / 56px / 0 stretch;pointer-events:none}
+.cols > .stack > .sheet:last-child::after,.cols > .sheet:last-child::after{content:"";position:absolute;width:80px;height:96px;right:10px;bottom:10px;background:var(--ink);-webkit-mask:var(--art-dragon) center/contain no-repeat;mask:var(--art-dragon) center/contain no-repeat;opacity:.05;z-index:-1;pointer-events:none}
+.stack{gap:18px}
+.cols{gap:18px}
+
+/* ---------- stuha nadpisu (celý text uvnitř tmavého pásu) ---------- */
+.ribbon{display:flex;align-items:center;gap:8px;width:max-content;min-width:min(230px,100%);max-width:min(380px,100%);min-height:46px;margin:0 0 10px -4px;padding:6px 34px 6px 5px;background:var(--art-ribbon) center/100% 100% no-repeat;color:var(--light-ink);clip-path:none;font:700 18px/1.15 var(--f-display);letter-spacing:.03em;text-transform:none;container-type:normal}
+.ribbon > svg,.ribbon > .icon{width:34px;height:34px;flex:0 0 34px;padding:6px;border-radius:50%;border:1px solid var(--light-ink);background:var(--ink);box-shadow:0 0 0 2px var(--ink),2px 2px 3px var(--shade);color:var(--light-ink)}
+.ribbon__title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;text-transform:lowercase;font-size:clamp(14px,4.6vw,18px)}
+.ribbon__title::first-letter{text-transform:uppercase}
+.ribbon-row{align-items:center;margin-bottom:0}
+.ribbon-row .ribbon{margin-bottom:10px}
+* + .ribbon,* + .ribbon-row{margin-top:22px}
+.ribbon-row > .ribbon{margin-top:0}
+
+/* ---------- popisky a pole ---------- */
+.lbl{font:700 12px/1.15 var(--f-display);letter-spacing:.06em;color:var(--structure);text-transform:none}
+.field{background:var(--paper);border:1px solid var(--edge);border-radius:var(--radius);box-shadow:var(--shadow-control)}
+.field:focus{outline:3px solid var(--focus);outline-offset:0;border-color:var(--ink)}
+.num,button.field.calc.num{font:500 19px/1.1 var(--f-body)}
+.calc{background:var(--atmos);border-color:var(--edge);box-shadow:none}
+.calc:hover{border-color:var(--wine-lit)}
+.calc::after{right:4px;top:2px;font:italic 13px/1 var(--f-hand);color:var(--structure)}
+.calc.ovr{background:var(--note-bg);border-color:var(--pencil);color:var(--pencil)}
+.calc.warn,button.field.calc.warn{background:var(--danger-bg);border:2px solid var(--blood);color:var(--blood)}
+.field.warn-in{background:var(--danger-bg);border:2px solid var(--blood)}
+select.field{box-shadow:none}
+.name-row .field{font:700 26px/1 var(--f-display);height:48px;letter-spacing:.02em;padding-left:12px}
+
+/* štít povolání a rasy */
+.crest .mid{background:var(--quiet);color:var(--ink);clip-path:none;border:4px double var(--edge);border-radius:15% 15% 45% 45%/8% 8% 22% 22%;padding:12px 16px 30px;position:relative}
+.crest .mid::before,.crest .mid::after{content:"❧";position:absolute;top:38%;font:38px/1 var(--f-hand);color:var(--edge);pointer-events:none}
+.crest .mid::before{left:-12px;transform:rotate(-80deg)}
+.crest .mid::after{right:-12px;transform:rotate(80deg)}
+.crest .mid .lbl{color:var(--structure)}
+.crest .mid .field{background:transparent;border:0;border-bottom:1px solid var(--line);box-shadow:none;border-radius:0;font:700 19px/1 var(--f-display);color:var(--ink)}
+
+/* atributy – štítek se zkratkou */
+.attr-row .shield{background:var(--quiet);color:var(--ink);clip-path:none;border:3px double var(--edge);border-radius:3px 3px 45% 45%;padding-bottom:4px;font:700 11px/1 var(--f-display);height:40px}
+.attr-row .nm{font:700 16px/1 var(--f-display);letter-spacing:.02em}
+.attr-row .mod{display:grid;place-items:center;min-height:34px;border:1px solid var(--edge);border-radius:var(--radius);background:var(--atmos);font:500 20px/1 var(--f-body)}
+.help .ics i,.lv-attr .shield-s{background:var(--quiet);color:var(--ink);clip-path:none;border:3px double var(--edge);border-radius:3px 3px 45% 45%}
+
+/* tabulky */
+table.grid th{font:700 12px/1.15 var(--f-display);letter-spacing:.03em;border-bottom:2px solid var(--edge);text-transform:none}
+table.grid td{border-bottom:1px solid var(--line)}
+table.grid tr.w-active td{background:var(--quiet)}
+
+/* linkované poznámky */
+.lined{background:repeating-linear-gradient(transparent 0 28px,var(--rule-line) 28px 29px),var(--paper);border:1px solid var(--line);border-radius:var(--radius);line-height:29px;font:italic 18px/29px var(--f-hand);padding:0 12px}
+.ab-list li{border-bottom-color:var(--line)}
+.help{border-color:var(--edge);background:var(--quiet);border-radius:var(--radius)}
+
+/* ---------- tlačítka, čipy, štítky ---------- */
+.btn{border:1px solid var(--edge);border-radius:var(--radius);background:var(--paper);color:var(--ink);min-height:34px;padding:6px 12px;font:700 14px/1.15 var(--f-display);letter-spacing:.02em;box-shadow:0 1px 2px var(--shade);transition:background .14s,border-color .14s}
+.btn:hover:not(:disabled){background:var(--quiet);border-color:var(--ink)}
+.btn.dark,a.btn.dark{background:var(--wine);border-color:var(--wine);color:var(--light-ink)}
+.btn.dark:hover:not(:disabled){background:var(--wine-lit);border-color:var(--wine-lit)}
+.btn.wine{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
+.btn:disabled{opacity:1;background:var(--atmos);color:var(--structure);border-style:dashed;border-color:var(--mid);box-shadow:none}
+.btn svg{width:17px;height:17px}
+.addrow{font:700 13px/1 var(--f-display);letter-spacing:.03em}
+.chip{border:1px solid var(--edge);border-radius:var(--radius);background:var(--paper);font:700 13px/1.1 var(--f-display);padding:5px 10px}
+.chip[aria-pressed="true"]{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
+.pill{border:1px solid var(--edge);border-radius:var(--radius);background:var(--quiet);color:var(--structure);font:700 11px/1.1 var(--f-display);letter-spacing:.03em;padding:3px 6px}
+.pill.bad{background:var(--danger-bg);border-color:var(--blood);color:var(--blood)}
+.pill.ok{background:var(--atmos);border:3px double var(--ink);color:var(--ink)}
+.rollbtn{border:1px solid var(--edge);border-radius:var(--radius);background:var(--quiet);min-height:30px;padding:3px 8px;font:700 15px/1 var(--f-body)}
+.rollbtn:hover{background:var(--paper);border-color:var(--ink);border-style:solid}
+.rollbtn::before{content:"";display:inline-block;width:16px;height:16px;margin-right:4px;vertical-align:-3px;background:var(--ink);-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='round'><path d='M12 2l9 5v10l-9 5-9-5V7z'/><path d='M3 7l9 5 9-5M12 12v10'/></g></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='round'><path d='M12 2l9 5v10l-9 5-9-5V7z'/><path d='M3 7l9 5 9-5M12 12v10'/></g></svg>") center/contain no-repeat}
+.info-btn{border:1px solid var(--edge);background:var(--paper)}
+.info-btn:hover,.info-btn[aria-expanded="true"]{background:var(--wine-lit);color:var(--light-ink);border-color:var(--wine)}
+.xpbar{height:12px;background:var(--atmos);border:1px solid var(--edge)}
+.xpbar i{background:var(--wine-lit)}
+.banner{border-radius:var(--radius);background:var(--danger-bg)}
+
+/* ---------- dialogy, popovery, průvodci ---------- */
+dialog::backdrop{background:var(--shade-deep)}
+dialog .sheet{padding:28px}
+.pop,.fpop{background:var(--sheet) var(--texture-paper);border:3px double var(--edge);border-radius:var(--radius-card);box-shadow:var(--shadow-panel)}
+.fpop.mobile{border-width:3px 0 0;border-radius:16px 16px 0 0;padding-top:24px}
+.fpop.mobile::before{content:"";position:absolute;top:8px;left:calc(50% - 20px);width:40px;height:4px;border-radius:2px;background:var(--edge)}
+.fpop-scrim{background:var(--shade-deep)}
+.fpop-h{border-bottom-color:var(--line)}
+.fpop-h b{text-transform:none;letter-spacing:.03em;font-size:15px}
+.pop code{background:var(--paper);border:1px solid var(--line)}
+.fpop-note,.note{background:var(--note-bg)}
+.wiz-steps span{border:1px solid var(--edge);border-radius:var(--radius);background:var(--atmos);color:var(--structure);font:700 12px/1 var(--f-display);letter-spacing:.03em;padding:6px 9px}
+.wiz-steps span.on{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
+.opt{border:1px solid var(--edge);border-radius:var(--radius);background:var(--paper)}
+.opt strong{font:700 16px/1.1 var(--f-display)}
+.opt[aria-pressed="true"]{outline:3px solid var(--wine-lit);outline-offset:0;background:var(--quiet)}
+.toast{background:var(--wine);color:var(--light-ink);border:1px solid var(--wine-line);border-radius:var(--radius)}
+h1.pg,h2.pg{font:700 28px/1.1 var(--f-display);letter-spacing:.02em}
+
+/* ---------- stránky: rámečky z inkoustu → linka okraje ---------- */
+.al-res,.pr-hp,.zl-msg,.cart,.die,.slot.on{border-color:var(--edge);border-radius:var(--radius)}
+.al-list,.kat-list{border-top-color:var(--edge)}
+.seg{border-color:var(--edge)}
+.vy-qty,.steps.vy-qty{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:4px}
+.vy-qty .btn{min-height:28px;padding:2px 8px}
+
+/* ---------- boj a stavy ---------- */
+.track .bar{border-color:var(--edge);border-radius:var(--radius)}
+.track .fill{background:var(--wine-lit)}
+.seg{border-color:var(--edge);border-radius:var(--radius);overflow:hidden}
+.seg button{border-left-color:var(--edge)}
+.seg button[aria-pressed="true"],.cond button[aria-pressed="true"]{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
+.cond button{border-color:var(--edge);border-radius:var(--radius);background:var(--paper)}
+.cond button[aria-pressed="true"] small{color:var(--light-ink)}
+.slot2{border:3px double var(--edge);border-radius:var(--radius);background:var(--paper)}
+.slot2.used{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
+.slot2.used small{color:var(--light-ink)}
+.tah-turn{border-color:var(--edge);background:var(--quiet);border-radius:var(--radius)}
+.btn.len-D{background:var(--wine);border-color:var(--wine);color:var(--light-ink)}
+.roll-out{border-color:var(--edge);border-radius:var(--radius)}
+.face{border-color:var(--edge);border-radius:var(--radius)}
+.face.hi{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
+
+/* ---------- kostky ---------- */
+.dice-fab{width:60px;height:60px;border:4px double var(--wine-line);background:var(--wine) var(--texture-leather);color:var(--light-ink);box-shadow:var(--shadow-sheet)}
+.dice-fab svg{width:30px;height:30px}
+
+/* ---------- mobil ---------- */
+@media (max-width:820px){
+  .side{background:var(--wine) var(--texture-leather);border-right:0;border-bottom:3px double var(--wine-line);padding:4px 8px;overflow:visible}
+  .side::before,.motto{display:none}
+  .logo{padding:0;width:118px;flex:none}
+  .logo img{max-height:52px}
+  .nav{background:var(--wine) var(--texture-leather);border-top:3px double var(--wine-line)}
+  .nav .nav-btn{margin:0;width:100%;min-height:62px;border-radius:0;font:400 11px/1.05 var(--f-display);letter-spacing:0;padding:6px 1px;gap:3px}
+  .nav .nav-btn svg{width:24px;height:24px}
+  .nav .nav-btn[aria-current="page"]{box-shadow:inset 0 3px var(--light-ink)}
+  .nav .bl.short{text-transform:lowercase}
+  .nav .bl.short::first-letter{text-transform:uppercase}
+  /* prostor pod plovoucí kostkou a spodní lištou, ať jde poslední obsah odsunout nad tlačítko */
+  .main{padding:12px 10px 168px}
+  .sheet{padding:24px 20px 22px}
+  .sheet::before{border-image-width:44px}
+  .ribbon{min-height:50px}
+  .ribbon__title{font-size:clamp(15px,5vw,20px)}
+  .field,input.field,select.field{min-height:44px}
+  input.field,select.field{height:44px}
+  .btn{min-height:44px}
+  .rollbtn{min-height:40px}
+  .dice-fab{width:56px;height:56px}
+}
+
+/* ---------- tisk: bílý papír bez textur ---------- */
+@media print{
+  body{background:#fff}
+  .sheet{background:#fff;box-shadow:none;clip-path:none;border:1px solid var(--edge)}
+  .sheet::before,.sheet::after{display:none}
+  .ribbon{background:#fff;color:var(--ink);border-bottom:2px solid var(--ink)}
+  .ribbon > svg{background:#fff;color:var(--ink);border-color:var(--ink);box-shadow:none}
+  .field,.calc,.lined{background:#fff;box-shadow:none}
+}
+
+/* hlavička průvodců a stránky Záloha: stuha se nesmí zkracovat */
+.wiz-head > div{flex:1 1 auto;min-width:0}

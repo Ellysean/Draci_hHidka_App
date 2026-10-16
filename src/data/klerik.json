@@ -1,0 +1,3305 @@
+{
+ "_source": "tools/build-klerik.py ← docs/h13_klerik.json (H13) + docs/ppp06_klerik.json (PPP06 s. 279–310)",
+ "pravidla": {
+  "prizen": "Klerici nemají vlastní magickou moc – čerpají z boží Přízně. Maximum určuje Charisma a úroveň (Tabulka přízně). V deníku se zapisuje do políčka Mana.",
+  "modlitby": "Pravidelné modlitby 3× denně (svítání, poledne, západ slunce – ověř u PJ), každá asi 1 směnu v klidu. Po modlitbě se aktuální Přízeň zvýší o ⅓ maxima (zaokrouhleno nahoru), nikdy nad maximum. Vynechaná modlitba: nejdřív varování (modlitba nevrátí nic), opakovaně ztráta náklonnosti boha.",
+  "zvlastni_prizen": "Za mimořádný skutek může PJ přidělit jednorázovou Přízeň – ta smí přesáhnout maximum.",
+  "uceni": "Na začátku hry zná klerik 5 základních proseb, na 2. úrovni získá 6 obecných proseb vyšší úrovně. Každá ovládnutá teologická nauka dá automaticky všechny své 4 prosby.",
+  "provadeni": "Ohlásit PJ, odepsat Přízeň (nikdy pod 0) a hodit Prosby (CHAR) + k10 – výsledek musí být VYŠŠÍ než Obtížnost. V každém kole nejvýš 1 prosba.",
+  "odrikani": "Prosby se odříkávají. Kdo nemůže (roubík, ztráta hlasu) nebo nechce, má Nevýhodu −5.",
+  "souverci": "Prosba na tvora stejné víry stojí o 1 Přízeň méně (vždy aspoň 1); u větších rozsahů se sleva počítá jen jednou.",
+  "temna": "U části proseb existuje temná alternativa. Prosba je vyslyšena ve variantě, o kterou klerik žádal; během trvání ji nelze přepnout.",
+  "x_prizen": "Je-li v ceně X nebo cena za posílení či prodloužení, klerik určí, kolik Přízně vloží – při vzývání, později už ne. Nestačí-li, prosba se nezdaří a Přízeň propadne.",
+  "dosah": "Sesilatel = jen na sebe; dotek = klerik se cíle dotkne (i posvátným symbolem).",
+  "trvani": "Ihned = jednorázový efekt; trvání v kolech se počítá od kola po úspěšném vzývání. Klerik může prosbu kdykoli ukončit myšlenkou.",
+  "vzyvani": "Okamžité prosby jdou v rámci jiné akce, krátká a dlouhá akce nabudou efekt po skončení akce, delší se uvádí v kolech, směnách či hodinách (dlouhé akce). Vyrušení (zranění) při vzývání = Nevýhoda −5. Okamžité prosby a Zvolání se ohlašují vždy před ověřovacími hody.",
+  "zvolani": "V nejvyšší nouzi (posoudí PJ) může klerik zvolat k bohu: prosba je vyslyšena okamžitě, kdykoli během tahu i mimo něj, i bez Přízně. Nejvýš 1× za úroveň; když není vyslyšen, možnost na dané úrovni propadá; nevyužitá se nepřenáší.",
+  "overeni": "Některé prosby vyžadují ověření proti cíli (volitelné pravidlo). Bez něj se bere jako automatický úspěch klerika.",
+  "vyssi_moc": "Vyšší moc nadpozemských bytostí, nemrtvých a neviděných určuje obtížnost jejich vymítání a odvracení.",
+  "svaty_symbol_jine_viry": "Posvátný symbol jiného boha nasazený klerikovi: Nevýhoda −5 ke všem prosbám; u relikvií úplné umlčení (PPP06 s. 282).",
+  "posvatna_mista": "Na posvátném místě svého boha Výhoda +5 a prosby 2× silnější / delší; klerici jiných bohů −5. Na prokletých místech žádná prosba (PPP06 s. 281).",
+  "ppp_posvatna_mista": "Klerik boha místa: Výhoda +5 ke vzývání, každá vyslyšená prosba 2× silnější (nebo 2× delší). Klerici jiných bohů Nevýhoda −5. Nadpozemští vyslanci jiných bohů, démoni a nemrtví nevstoupí (nerozhodne-li bůh či klerik jinak).",
+  "ppp_prokleta_mista": "Žádná prosba není vyslyšena (umlčení); nadpozemské bytosti, které vstoupí, jsou zničeny.",
+  "ppp_tlumeni": "Posvátný symbol jiného boha nasazený klerikovi: Nevýhoda −5 ke všem prosbám, u relikvií a mocných symbolů úplné umlčení; nadpozemským bytostem působí bolest a popáleniny.",
+  "ppp_relikvie": "Ostatky svatých s božskou mocí; posvátné předměty a ikony – vzácné, bez pevných pravidel.",
+  "ppp_specializace": "Od 6. úrovně, volba je trvalá. Specializovaný klerik volí ze schopností své specializace i z obecných. Bez specializace smí na každé 6. úrovni vzít 1 schopnost libovolné specializace."
+ },
+ "sveceni": {
+  "nazev": "Svěcení",
+  "strana": 3,
+  "text": "Základní rituál: 1 Přízeň, bez ověřovacího hodu, asi 1 minuta. Posvětí litr tekutiny (5 flakónů svěcené vody) nebo jeden předmět. Posvěcená zbraň má proti běsům, ďáblům, démonům, nemrtvým, neviděným a temným bytostem dodatečné svěcené zranění 1k6 – do konce prvního souboje s nimi. Flakón svěcené vody jim způsobí popáleniny 2k6. Další efekty určuje PJ."
+ },
+ "darZivota": {
+  "id": "dar_zivota",
+  "nazev": "Dar života",
+  "strana": 280,
+  "uroven": 6,
+  "efekt": "Výsledný efekt všech léčivých proseb klerika je vždy o čtvrtinu vyšší, nejméně o 1 život. Automaticky každý klerik na 6. úrovni."
+ },
+ "zakladniDovednosti": [
+  {
+   "id": "mystika",
+   "rank": 3
+  },
+  {
+   "id": "prvni_pomoc",
+   "rank": 3
+  },
+  {
+   "id": "vule",
+   "rank": 3
+  }
+ ],
+ "nauky": [
+  {
+   "id": "bojovnici_viry",
+   "nazev": "Bojovníci víry",
+   "efekt": "+1 k Útočnému číslu.",
+   "popis": "Prosby vyslyšené okamžitě, bez zvláštního soustředění – určené k boji.",
+   "prosby": [
+    "Svatá zbroj",
+    "Útok štěstěny",
+    "Vrácení úderu",
+    "Zesil zranění"
+   ]
+  },
+  {
+   "id": "bozi_patroni",
+   "nazev": "Boží patroni",
+   "efekt": "Přivolání poslů (nadpozemských patronů).",
+   "popis": "Poslové jsou při vstupu na svět viditelní, ale nehmotní; procházejí zdmi, drží se v dosahu prosby a s klerikem komunikují mentálně. Proti jejich útokům nechrání nemagické ani neposvěcené vybavení (nezapočítává se do ZO ani OČ). Běžné zbraně je nezraní – jen magické zbraně a magie; jiný klerik je může odvrátit či vymítat. Vnímají živé i neživé, nejde je oslepit ani se před nimi skrýt neviditelností. Povolat lze jen jednoho posla, dalšího až po pravidelné modlitbě. V boji posla obvykle hraje klerik; PJ může převzít kontrolu, jedná-li posel proti doméně boha.",
+   "prosby": [
+    "Posel bojovník",
+    "Posel rovnováhy",
+    "Posel stezky",
+    "Posel umlčení"
+   ]
+  },
+  {
+   "id": "demonologie",
+   "nazev": "Démonologie",
+   "efekt": "+1 k Útočnému i Obrannému číslu proti běsům, ďáblům, démonům, nemrtvým, neviděným, přírodním, světlým a temným bytostem.",
+   "popis": "Znalosti o tvorech čerpajících sílu vyšších sfér – vidět je, mást je a odvracet.",
+   "prosby": [
+    "Najdi temnotu",
+    "Odstraň kletbu",
+    "Odvracení temnoty",
+    "Ošálení temnoty"
+   ]
+  },
+  {
+   "id": "milosrdenstvi",
+   "nazev": "Milosrdenství",
+   "efekt": "+1 k ověření dovednosti První pomoc.",
+   "popis": "Porozumění nemocem těla i duše – zbavit bližního nemocí, zranění a paralýzy.",
+   "prosby": [
+    "Napravení těla",
+    "Odstraň paralýzu",
+    "Udržení života",
+    "Uzdrav nemocného"
+   ]
+  },
+  {
+   "id": "svata_pravda",
+   "nazev": "Svatá pravda",
+   "efekt": "+1 k ověření dovednosti Vůle.",
+   "popis": "Prosby k odhalení, prohlédnutí a zlomení kacířů, jinověrců a čarodějnic.",
+   "prosby": [
+    "Doznání",
+    "Falešné přátelství",
+    "Vidění pravdy",
+    "Zapomnění"
+   ]
+  },
+  {
+   "id": "zehnani_aurami",
+   "nazev": "Žehnání aurami",
+   "efekt": "Čtení aur: na první pohled pozná, zda je bytost nemocná, prokletá či požehnaná.",
+   "popis": "Posilující a ochranné aury pro jednotlivce i skupiny. V jednu chvíli smí mít klerik vyprosenu jen jednu auru (další až po skončení předchozí). Stejné aury více kleriků se nesčítají, různé fungují bez omezení.",
+   "prosby": [
+    "Aura ocelové pěsti",
+    "Aura proti temnotě",
+    "Aura svatého štítu",
+    "Léčivá aura"
+   ]
+  }
+ ],
+ "skupiny": {
+  "zakladni": "Základní prosby",
+  "druha_uroven": "Obecné prosby vyšší úrovně (od 2. úr.)",
+  "bojovnici_viry": "Nauka Bojovníci víry",
+  "bozi_patroni": "Nauka Boží patroni",
+  "demonologie": "Nauka Démonologie",
+  "milosrdenstvi": "Nauka Milosrdenství",
+  "svata_pravda": "Nauka Svatá pravda",
+  "zehnani_aurami": "Nauka Žehnání aurami",
+  "strazce_mysteria": "Strážce mystéria",
+  "paladinsky_vycvik": "Paladinský výcvik",
+  "inkvizitorsky_vycvik": "Inkvizitorský výcvik",
+  "exorcismus": "Exorcismus",
+  "jazyk_prastarych": "Jazyk prastarých",
+  "zazehnuti_aury": "Zažehnutí aury",
+  "zazraky": "Zázraky",
+  "vycvik_lazaretnich_lecitelu": "Výcvik lazaretních léčitelů (léky)"
+ },
+ "schopnosti": {
+  "bozi_bojovnik": {
+   "name": "Boží bojovník",
+   "text": "+2 do ÚČ a OČ.",
+   "source": "H13",
+   "page": 8,
+   "spec": null,
+   "minLevel": null
+  },
+  "dar_slitovani": {
+   "name": "Dar slitování",
+   "text": "Ve smrtelném nebezpečí další (záchranný) hod 1k10 – použije se výhodnější. Jen při ověření proti pasti či ověřovacím hodu na dovednost, ne k útoku či obraně.",
+   "source": "H13",
+   "page": 8,
+   "spec": null,
+   "minLevel": null
+  },
+  "osviceni": {
+   "name": "Osvícení",
+   "text": "+2 Přízně za každou úroveň (zpětná oprava).",
+   "source": "H13",
+   "page": 9,
+   "spec": null,
+   "minLevel": null
+  },
+  "posvatny_symbol": {
+   "name": "Posvátný symbol",
+   "text": "Se symbolem v ruce +2 ke vzývání proseb, od 6. úrovně +3. Symbol musí držet v ruce – nejde zároveň obouruční či střelná zbraň (není-li symbolem zbraň sama).",
+   "source": "H13",
+   "page": 9,
+   "spec": null,
+   "minLevel": null
+  },
+  "pozehnane_zdravi": {
+   "name": "Požehnané zdraví",
+   "text": "+2 životy za každou úroveň (zpětná oprava) a imunita vůči nemocem (ne vůči stáří).",
+   "source": "H13",
+   "page": 10,
+   "spec": null,
+   "minLevel": null
+  },
+  "ritualy_a_obrady": {
+   "name": "Rituály a obřady",
+   "text": "Obřady a rituály (bez nových proseb): usmíření boha; je-li vztah dobrý, +3 k ověření Prosby (CHAR) na 1 den. Základní rituály: Křest (1 směna, zaslíbení či konverze souhlasícího) a Pohřební rituál (1 směna, tělo už nejde oživit ani zneužít nekromancií; temná alternativa uvězní duši).",
+   "source": "H13",
+   "page": 10,
+   "spec": null,
+   "minLevel": null
+  },
+  "asketismus": {
+   "name": "Asketismus",
+   "text": "Slib chudoby: klerik smí mít jen věci denní potřeby v hodnotě nejvýš 5 zl (posvátný symbol se nepočítá). Dokud slib dodržuje, má maximum Přízně dvojnásobné. Vědomé porušení = okamžitá ztráta veškeré dodatečné Přízně; obnoví se až s přestupem na další úroveň (pokud zase slib dodržuje).",
+   "source": "PPP06",
+   "page": 283,
+   "spec": null,
+   "minLevel": 6
+  },
+  "bohosluzby": {
+   "name": "Bohoslužby",
+   "text": "Obřad 1 hodina, nejvýš 1× denně. Všichni účastníci (i klerik) mají 24 hodin +3 ke všem ověřovacím hodům na Vůli. Klerik získá tolik bodů aktuální Přízně, kolik tvorů se zúčastnilo.",
+   "source": "PPP06",
+   "page": 283,
+   "spec": null,
+   "minLevel": 6
+  },
+  "bozska_domena": {
+   "name": "Božská doména",
+   "text": "Projevy domény boha ve třech stupních: 1. stupeň na úrovních 6–11, 2. na 12–17, 3. na 18–24. Konkrétní efekty určí PJ (příklad doména světla: svěcení luceren, zářící oči a vidění ve tmě, oslepující záblesk).",
+   "source": "PPP06",
+   "page": 284,
+   "spec": null,
+   "minLevel": 6
+  },
+  "flagelantstvi": {
+   "name": "Flagelantství",
+   "text": "Sebetrýznění 1 směna: životy klesnou na 1, na oplátku se obnoví možnost Zvolání. Nejvýš 1× týdně.",
+   "source": "PPP06",
+   "page": 284,
+   "spec": null,
+   "minLevel": 6
+  },
+  "nositel_slova": {
+   "name": "Nositel slova",
+   "text": "Prosby s dosahem dotek nebo s rozsahem na klerika může přenést na cíl vzdálený až 50 sáhů. Ověřovací hody platí dál; na objektu je efekt statický, na bytosti se pohybuje s ní.",
+   "source": "PPP06",
+   "page": 284,
+   "spec": null,
+   "minLevel": 6
+  },
+  "mnohoprosby": {
+   "name": "Mnohoprosby",
+   "text": "Více stejných proseb najednou v rámci jednoho vzývání (na více cílů nebo na jeden). Každá další prosba má obtížnost o +5 a cenu o +2 Přízně vyšší než předchozí.",
+   "source": "PPP06",
+   "page": 284,
+   "spec": null,
+   "minLevel": 6
+  },
+  "pozehnani": {
+   "name": "Požehnání",
+   "text": "Po ověřovacím či bojovém hodu si může vyžádat jeho opakování a vybrat výhodnější výsledek. Nejvýš 1× denně (jednou za tři pravidelné modlitby).",
+   "source": "PPP06",
+   "page": 285,
+   "spec": null,
+   "minLevel": 6
+  },
+  "radovy_slib": {
+   "name": "Řádový slib",
+   "text": "Vstup do řádu (noviciát proběhl během přestupu). Výhody: rozpoznání členů, sounáležitost, zázemí v budovách řádu, postup v hierarchii. Povinnost poslušnosti; nedodržení pravidel = psanec. Podrobnosti určí PJ.",
+   "source": "PPP06",
+   "page": 285,
+   "spec": null,
+   "minLevel": 6
+  },
+  "sakralni_predmety": {
+   "name": "Sakrální předměty",
+   "text": "Zasvěcení drobného předmětu 1 hodina: klerik vloží veškerou (maximální) Přízeň a předmět pak jednorázově sešle zvolenou prosbu – kdokoli, silou myšlenky, se stejnou dobou vzývání. Klerik udrží nejvýš tolik aktivních sakrálních předmětů, kolik je jeho úroveň.",
+   "source": "PPP06",
+   "page": 286,
+   "spec": null,
+   "minLevel": 6
+  },
+  "strazce_mysteria": {
+   "name": "Strážce mystéria",
+   "text": "Naučí se 4 mocné prosby: Beregondovo osvícení, Mezisvět, Vyhnání, Znamení života. Kteroukoli z nich může nahradit prosbou vytvořenou PJ (doména boha).",
+   "source": "PPP06",
+   "page": 286,
+   "spec": null,
+   "minLevel": 6,
+   "grantsItems": [
+    "Beregondovo osvícení",
+    "Mezisvět",
+    "Znamení života",
+    "Vyhnání"
+   ]
+  },
+  "sveceni_mist": {
+   "name": "Svěcení míst",
+   "text": "Rituál 1 směna, nejvýš 1× denně: posvátné místo o ploše 3× úroveň sáhů na tolik let, kolik je úroveň klerika. Více kleriků sčítá úrovně i Přízeň. Přesvěcení místa jiného boha: 10 směn a Prosby vs. Prosby původního klerika (PJ může dát ±5); za úspěch zvláštní Přízeň i nad maximum.",
+   "source": "PPP06",
+   "page": 286,
+   "spec": null,
+   "minLevel": 6
+  },
+  "vzkriseni": {
+   "name": "Vzkříšení",
+   "text": "Zemře-li klerik ve službě bohu nebo se obětuje: 1k10, na 10 (0) zůstává mrtev, jinak do 24 hodin vstane (zachované tělo se zahojí, jinak v jiném nedávno zemřelém těle). Zkušenosti klesnou na hranici přestupu na předchozí úroveň.",
+   "source": "PPP06",
+   "page": 287,
+   "spec": null,
+   "minLevel": 6
+  },
+  "bozi_zbroj": {
+   "name": "Boží zbroj",
+   "text": "Obřad 1 týden se zvolenou zbrojí: kvalita +1, proti magickým a nadpozemským bytostem +2, chrání i proti útokům procházejícím nemagickou zbrojí. Pro ostatní má zbroj běžné hodnoty.",
+   "source": "PPP06",
+   "page": 290,
+   "spec": "bojovy_mnich",
+   "minLevel": 6
+  },
+  "bozske_mantry": {
+   "name": "Božské mantry",
+   "text": "Během pronášení manter mají všechny bytosti v doslechu Výhodu +5 ke všem hodům na Vůli (CHAR). Mezitím mnich nemůže vzývat prosby ani dělat nic, co vyžaduje soustředění; v boji ho to neomezuje. V boji = okamžitá akce Mluvení.",
+   "source": "PPP06",
+   "page": 290,
+   "spec": "bojovy_mnich",
+   "minLevel": 6
+  },
+  "fanatismus": {
+   "name": "Fanatismus",
+   "text": "3 Útoky za dvě kola, od 12. úrovně 2 Útoky každé kolo.",
+   "source": "PPP06",
+   "page": 291,
+   "spec": "bojovy_mnich",
+   "minLevel": 6
+  },
+  "inkvizitorsky_vycvik": {
+   "name": "Inkvizitorský výcvik",
+   "text": "Neupadá do bezvědomí ani po překročení Meze vyřazení – jedná až do smrti. Získá 4 prosby: Falešná smrt, Zadrž protivníka, Zastavení dění, Zmatení mysli.",
+   "source": "PPP06",
+   "page": 291,
+   "spec": "bojovy_mnich",
+   "minLevel": 6,
+   "grantsItems": [
+    "Falešná smrt",
+    "Zadrž protivníka",
+    "Zastavení dění",
+    "Zmatení mysli"
+   ]
+  },
+  "lovec_carodejnic": {
+   "name": "Lovec čarodějnic",
+   "text": "1 kolo soustředění, cíl do 50 sáhů: Postřeh (INT) vs. X podle Tabulky vidění many → pozná, že má cíl manu, a přibližně kolik. Rezistence vůči kouzelnické magii: zranění z kouzel na polovinu.",
+   "source": "PPP06",
+   "page": 291,
+   "spec": "bojovy_mnich",
+   "minLevel": 6
+  },
+  "paladinsky_vycvik": {
+   "name": "Paladinský výcvik",
+   "text": "Základ Odolnosti +1. Získá 4 prosby: Andělská zbroj, Kladivo na čarodějnice, Podlom obranu, Požehnej vlastnostem.",
+   "source": "PPP06",
+   "page": 291,
+   "spec": "bojovy_mnich",
+   "minLevel": 6,
+   "grantsItems": [
+    "Andělská zbroj",
+    "Kladivo na čarodějnice",
+    "Podlom obranu",
+    "Požehnej vlastnostem"
+   ]
+  },
+  "posvatny_vliv": {
+   "name": "Posvátný vliv",
+   "text": "Následovníci mnicha, kteří ho vidí, mají +1 ke všem ověřovacím hodům (vždy jen za jednoho mnicha). Bez Přízně, neustále.",
+   "source": "PPP06",
+   "page": 292,
+   "spec": "bojovy_mnich",
+   "minLevel": 6
+  },
+  "posvatna_zbran": {
+   "name": "Posvátná zbraň",
+   "text": "Obřad 1 týden se zvolenou zbraní: +2 do Útočnosti i Zranění, způsobuje svěcené zranění.",
+   "source": "PPP06",
+   "page": 292,
+   "spec": "bojovy_mnich",
+   "minLevel": 6
+  },
+  "astralni_poutnik": {
+   "name": "Astrální poutník",
+   "text": "Za 5 kol soustředění vstoupí do astrální sféry (tělo zůstává v transu); vezme s sebou až tolik souhlasících tvorů, kolik je jeho úroveň (musí se ho dotýkat). Návrat myšlenkou, trvá 5 kol. Nadpozemskou bytost zabitou v astrálu zničí definitivně; jeho „smrt“ tam ho vrátí do těla.",
+   "source": "PPP06",
+   "page": 296,
+   "spec": "exorcista",
+   "minLevel": 6
+  },
+  "desobijec": {
+   "name": "Děsobijec",
+   "text": "Proti nemrtvým, neviděným, démonům a nadpozemským bytostem trvale +2 do Útoku (ÚČ), Základní obrany (ZO) i Zranění; na každé 6. úrovni se bonus zvyšuje (6.: +2, 12.: +4, 18.: +6, 24.: +8).",
+   "source": "PPP06",
+   "page": 297,
+   "spec": "exorcista",
+   "minLevel": 6
+  },
+  "exorcismus": {
+   "name": "Exorcismus",
+   "text": "1 kolo soustředění, cíl do 50 sáhů: Postřeh (INT) vs. Vyšší moc démona → pozná nadpozemskou či posedlou bytost. Získá 4 prosby: Chraň před posednutím, Odhal démona, Ukaž temnotu, Vyžeň démona.",
+   "source": "PPP06",
+   "page": 297,
+   "spec": "exorcista",
+   "minLevel": 6,
+   "grantsItems": [
+    "Chraň před posednutím",
+    "Odhal démona",
+    "Ukaž temnotu",
+    "Vyžeň démona"
+   ]
+  },
+  "jazyk_prastarych": {
+   "name": "Jazyk prastarých",
+   "text": "Rozumí jazyku nadpozemských bytostí a mluví jím. Každá prosba na vyvolání Posla stojí o 3 Přízně méně (vždy aspoň 1). Získá 4 posly: Posel bdělosti, Posel domény, Posel lovec, Posel pečeti.",
+   "source": "PPP06",
+   "page": 298,
+   "spec": "exorcista",
+   "minLevel": 6,
+   "grantsItems": [
+    "Posel bdělosti",
+    "Posel domény",
+    "Posel lovec",
+    "Posel pečeti"
+   ]
+  },
+  "kletby": {
+   "name": "Kletby",
+   "text": "Automaticky rozpozná prokleté místo, bytost či věc a vystopuje zdroj kletby (vidí nit k proklínajícímu). Při neúspěchu jde Odstraň kletbu zkusit znovu až další den; Exorcista má k ní Výhodu +5. Pozná kletby s podmínkou zrušení.",
+   "source": "PPP06",
+   "page": 298,
+   "spec": "exorcista",
+   "minLevel": 6
+  },
+  "mystika_exorcista": {
+   "name": "Mystika",
+   "text": "Odposlech komunikace klerika s bohem (1 kolo soustředění na známého klerika). Zásah do ní (½ kola, Vůle vs. Vůle): změnit či zmařit prosbu, rozkázat cizímu poslovi, vnuknout falešnou vizi. Neúspěch: může se prozradit, zranění 1k10 a 1k6 dní bez proseb. Proti Mystice cizích má Výhodu +5.",
+   "source": "PPP06",
+   "page": 300,
+   "spec": "exorcista",
+   "minLevel": 6
+  },
+  "nadprirozeny_boj": {
+   "name": "Nadpřirozený boj",
+   "text": "Všechny Útoky i Obrany jsou zároveň fyzické, magické i nadpozemské – zraní i tvory imunní či rezistentní vůči běžným útokům.",
+   "source": "PPP06",
+   "page": 300,
+   "spec": "exorcista",
+   "minLevel": 6
+  },
+  "svetlonos": {
+   "name": "Světlonoš",
+   "text": "Napadne-li ho nemrtvý, neviděný či nadpozemský tvor: oba hodí k10; vyhraje-li Exorcista nebo je remíza, celé Zranění se vrátí útočníkovi, jinak ho utrží sám. Útočník pak každé kolo Vůle (CHAR) klerika vs. Vůle (CHAR), jinak v panice ustoupí.",
+   "source": "PPP06",
+   "page": 300,
+   "spec": "exorcista",
+   "minLevel": 6
+  },
+  "avatar": {
+   "name": "Avatar",
+   "text": "Iniciační modlitba 1 kolo + 3 kola proměny: Kněz přijde o veškerou Přízeň a měsíc se mu nedoplňuje. Avatar trvá 10 kol × úroveň (lze ukončit dřív), zpětná proměna 3 kola; pak 1 život a vyčerpání do vydatného spánku. Příklad (doména světla): životy 50 + životy klerika, SIL +7, OBR +5, ODO +6, bič světla 12+6+0 na 15 sáhů, zbroj světla 10, Výhoda +5 v boji; slabina prosby a posvátné zbraně.",
+   "source": "PPP06",
+   "page": 304,
+   "spec": "knez",
+   "minLevel": 6
+  },
+  "bozi_ochrana": {
+   "name": "Boží ochrana",
+   "text": "Nevyžádané kouzlo či prosba na Kněze: útočník musí uspět v Sesílání kouzel (INT) / Prosby (CHAR) / Pouto s přírodou (INT) vs. Vůle (CHAR) Kněze, jinak se efekt neprojeví.",
+   "source": "PPP06",
+   "page": 305,
+   "spec": "knez",
+   "minLevel": 6
+  },
+  "ikony": {
+   "name": "Ikony",
+   "text": "Výroba ikony 1 den, Kněz natrvalo přijde o 10 bodů maximální Přízně. Ikona umožní komukoli (kromě nepřátel boha) bez Přízně seslat zvolenou prosbu, kterou Kněz ovládá – nejvýš 1× za 24 hodin, trvale (dokud ji někdo nezničí).",
+   "source": "PPP06",
+   "page": 305,
+   "spec": "knez",
+   "minLevel": 6
+  },
+  "jasnozrivost": {
+   "name": "Jasnozřivost",
+   "text": "Častější božské vize (minulost a současnost přesně, budoucnost pravděpodobně). Po vizi 1k6 kol Nevýhoda −5 ke všem akcím.",
+   "source": "PPP06",
+   "page": 306,
+   "spec": "knez",
+   "minLevel": 6
+  },
+  "obeti": {
+   "name": "Oběti",
+   "text": "Obřad 1 směna, Kněz obětuje něco opravdu cenného → obtížnost následující prosby −10. Hodnotu obětin posoudí PJ.",
+   "source": "PPP06",
+   "page": 306,
+   "spec": "knez",
+   "minLevel": 6
+  },
+  "vycvik_lazaretnich_lecitelu": {
+   "name": "Výcvik lazaretních léčitelů",
+   "text": "+1 k dovednostem První pomoc a Znalost přírody. Naučí se vyrábět 5 léků: Lék svatého Aurélia, Lék svatého Jana, Lék svatého Maura, Lék svatého Núbia, Mast svaté Meredith. Lék podaný dřív, než dovoluje četnost, působí opačně.",
+   "source": "PPP06",
+   "page": 306,
+   "spec": "knez",
+   "minLevel": 6,
+   "grantsItems": [
+    "Lék svatého Aurélia",
+    "Lék svatého Jana",
+    "Lék svatého Maura",
+    "Lék svatého Núbia",
+    "Mast svaté Meredith"
+   ]
+  },
+  "zazraky": {
+   "name": "Zázraky",
+   "text": "Jedna zázračná prosba podle domény boha (určí PJ). Každý zázrak stojí 1k6 životů, které vrací jen čas – 1 za každý den bez zázraků (ne odpočinek, spánek, magie ani prosby). Získá 4 prosby: Božská pomoc, Figiho zásah osudu, Vrať čas, Zachraň život.",
+   "source": "PPP06",
+   "page": 308,
+   "spec": "knez",
+   "minLevel": 6,
+   "grantsItems": [
+    "Božská pomoc",
+    "Figiho zásah osudu",
+    "Vrať čas",
+    "Zachraň život"
+   ]
+  },
+  "zazehnuti_aury": {
+   "name": "Zažehnutí aury",
+   "text": "Může mít více aur najednou a převádět jejich působení na jiné bytosti. Získá 4 aury: Aura bratrství, Aura pravého světla, Aura probuzení, Aura strachu.",
+   "source": "PPP06",
+   "page": 308,
+   "spec": "knez",
+   "minLevel": 6,
+   "grantsItems": [
+    "Aura bratrství",
+    "Aura pravého světla",
+    "Aura probuzení",
+    "Aura strachu"
+   ]
+  }
+ },
+ "specializace": {
+  "bojovy_mnich": {
+   "name": "Bojový mnich",
+   "page": 289,
+   "intro": "Ocelová pěst víry – rytířská elita, inkvizitoři a lovci čarodějnic.",
+   "popis": "Ocelová pěst víry: rozpozná kacíře, odpadlíky i čarodějnice, přiměje je mluvit a exceluje v boji.",
+   "requires": [
+    "bojovnici_viry",
+    "svata_pravda",
+    "bozi_bojovnik"
+   ],
+   "need": 2,
+   "auto": [
+    {
+     "id": "boj_zblizka",
+     "name": "Boj zblízka",
+     "text": "Při boji tváří v tvář automaticky +1 k Útoku i Obraně."
+    }
+   ]
+  },
+  "exorcista": {
+   "name": "Exorcista",
+   "page": 295,
+   "intro": "Osamělý bojovník světla – vidí, odvrací a vymítá nadpozemské bytosti, ruší kletby.",
+   "popis": "Bojovník na hranici vyšších sfér: vidí nepostřehnutelné bytosti, pozná je, odvrátí a vymítá; umí přivolávat božské bytosti.",
+   "requires": [
+    "bozi_patroni",
+    "demonologie",
+    "osviceni"
+   ],
+   "need": 2,
+   "auto": [
+    {
+     "id": "sebeovladani",
+     "name": "Sebeovládání",
+     "text": "Automaticky Výhoda +5 proti každému pokusu o ovlivnění mysli, zastrašení, ovládnutí, posednutí a podobně."
+    }
+   ]
+  },
+  "knez": {
+   "name": "Kněz",
+   "page": 303,
+   "intro": "Duchovní vyššího svěcení – léčí, chrání aurami, činí zázraky.",
+   "popis": "Duchovní vyššího svěcení: léčí a zachraňuje, vládne aurami, činí zázraky a snad i oživuje mrtvé.",
+   "requires": [
+    "milosrdenstvi",
+    "zehnani_aurami",
+    "pozehnane_zdravi"
+   ],
+   "need": 2,
+   "auto": [
+    {
+     "id": "milosrdenstvi_knez",
+     "name": "Milosrdenství (Kněz)",
+     "text": "Souvěrci Knězi zajistí jídlo, ubytování a podobně výměnou za modlitby (skromně, podle svých možností)."
+    }
+   ]
+  }
+ },
+ "prosby": [
+  {
+   "id": "lecive_slovo",
+   "nazev": "Léčivé slovo",
+   "zdroj": "H13",
+   "strana": 6,
+   "skupina": "zakladni",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 za slovo",
+    "base": 0,
+    "per": {
+     "cost": 3,
+     "unit": "slovo",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "6 (+2 za každé slovo navíc)",
+    "base": 6,
+    "step": 2
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "10 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "Klerik sepne ruce a začne pronášet modlitbu, kterou prosí boha o to, aby vyléčil cíl prosby. Léčba dokáže zacelit rány a zastavuje krvácení. Působení božích sil dokáže vyléčit 1k6 životů za každé léčivé slovo.\nKlerik může v jednom kole vzývat více léčivých slov, které pak spojí v léčivý (u temné zraňující) chorál.",
+   "learn": {
+    "requires": []
+   },
+   "temna": "Klerik dokáže každým zlým slovem způsobit nekrotické zranění za 1k6 životů. Musí však uspět v hodu na Prosby (CHAR) vs. Výdrž (ODO). Pokud neuspěje, tak je způsobené zranění jen poloviční.",
+   "fx": {
+    "heal": "1k6",
+    "perUnit": true
+   }
+  },
+  {
+   "id": "ocisteni",
+   "nazev": "Očištění",
+   "zdroj": "H13",
+   "strana": 7,
+   "skupina": "zakladni",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolani": {
+    "text": "dvě dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "dosah": "dotek",
+   "rozsah": "1 porce",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "Touto prosbou dokáže klerik „očistit“ jednu běžnou porci jídla či měch vody od jedů či zárodků nákazy (týden hnijící králík však nebude poživatelný ani po deseti Očištěních). Efekt prosby působí na všechny přírodní a magické jedy v nich obsažené. Prosba nemá žádný účinek na živé tvory. Pokud by klerik narazil na vzácný magický jed, očištění se nezdaří úplně. Průběh a účinky otravy po pozření by však byly pouze poloviční.",
+   "learn": {
+    "requires": []
+   },
+   "temna": "Touto prosbou klerik zamaskuje v jídle či pití již existující jed tak, že je složitější na odhalení. Každý, kdo by se o to pokusil, utrží Nevýhodu (postih −5) na veškeré hody na odhalení jedu."
+  },
+  {
+   "id": "stit_viry",
+   "nazev": "Štít víry",
+   "zdroj": "H13",
+   "strana": 7,
+   "skupina": "zakladni",
+   "typ": "prosba",
+   "cena": {
+    "text": "5 + X",
+    "base": 5,
+    "per": {
+     "cost": 1,
+     "unit": "životy bariéry (X)",
+     "min": 0
+    }
+   },
+   "obtiznost": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "20 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "5 kol",
+   "overeni": null,
+   "stitky": [
+    "nauka Bojovníků víry"
+   ],
+   "popis": "Tato prosba vytvoří kolem vybraného tvora ochrannou bariéru, která zvyšuje jeho Základní obranu (ZO) o 3.\nBariéra má své vlastní životy, které jsou rovné X a vybraného tvora chrání před veškerým zraněním (prve ubydou životy bariéře, až pak tvorovi).\nJakmile bariéře životy dojdou, prosba předčasně skončí.",
+   "learn": {
+    "requires": []
+   },
+   "fx": {
+    "active": {
+     "zo": 3,
+     "barrier": true
+    },
+    "rounds": 5
+   }
+  },
+  {
+   "id": "uder_moci",
+   "nazev": "Úder moci",
+   "zdroj": "H13",
+   "strana": 7,
+   "skupina": "zakladni",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 za každý úder",
+    "base": 0,
+    "per": {
+     "cost": 3,
+     "unit": "úder",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "6 (+2 za každý úder navíc)",
+    "base": 6,
+    "step": 2
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "20 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": "Prosby (CHAR) vs. Vůle (CHAR)",
+   "stitky": [
+    "nauka Svaté pravdy",
+    "magické",
+    "psychické"
+   ],
+   "popis": "Klerik může využít božské síly k úderu. Cíl, který je modlitbou zasažen, je zraněn psychickým zraněním za 1k6+1 životů (v případě neúspěšného ověření za polovinu). Zranění není fyzické, ale způsobí dotyčnému silný duševní otřes. Viditelný efekt je především překvapení a bázlivost zasaženého před boží mocí. Vzácně pak také krvácení z nosu a podobně (pokud bylo zranění vyšší).",
+   "learn": {
+    "requires": []
+   },
+   "fx": {
+    "damage": "1k6+1",
+    "perUnit": true,
+    "half": "neúspěšné ověření = polovina"
+   }
+  },
+  {
+   "id": "uzdrav_otravu",
+   "nazev": "Uzdrav otravu",
+   "zdroj": "H13",
+   "strana": 7,
+   "skupina": "zakladni",
+   "typ": "prosba",
+   "cena": {
+    "text": "4 (8)",
+    "alt": 8,
+    "base": 4
+   },
+   "obtiznost": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": "Prosby (CHAR) vs. Nebezpečnost jedu",
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "Touto prosbou dokáže klerik vyprosit zrušení jakéhokoliv druhu otravy (magické za 8 bodů přízně) jednoho tvora. Aby se mu to povedlo, musí uspět v ověřovacím hodu proti Nebezpečnosti jedu.\nPŘÍKLAD: Klerik Věrovít se bude snažit zachránit obchodníka Renárda, zasaženého otrávenou šipkou s magickým jedem (nebezpečnost 18). Hodí si na prosby, připočítá CHAR a v součtu má 14 – to k uzdravení Renárda stačit nebude.",
+   "learn": {
+    "requires": []
+   },
+   "temna": "Touto temnou prosbou klerik zhorší otravu jedem tak, že má 2× silnější efekt (zranění, negativní účinky a podobně). Aby se tak stalo, musí uspět v hodu na ověření proti Nebezpečnosti jedu."
+  },
+  {
+   "id": "hlas_viry",
+   "nazev": "Hlas víry",
+   "zdroj": "H13",
+   "strana": 13,
+   "skupina": "druha_uroven",
+   "typ": "prosba",
+   "cena": {
+    "text": "2",
+    "base": 2
+   },
+   "obtiznost": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "15 minut (1 směna)",
+   "overeni": null,
+   "stitky": [
+    "nauka Svaté pravdy"
+   ],
+   "popis": "Touto prosbou dokáže klerik zesílit svůj hlas. Zní pak 3× hlasitěji a mohutněji, než je obvyklé. Zvládne tak upoutat a přehlušit i hlučící dav. Když klerik vykřikne, jeho slova rezonují skleněnými okny a rozechvějí vodní hladinu. Pokud si potřebuje zjednat pozornost nebo někoho zastrašit, získá automaticky bonus +3 ke svému bonusu za Charisma (CHAR).\nEfekt hlasu nemusí trvat celou směnu. Je jen na klerikovi, jak dlouho jej chce využít.",
+   "learn": {
+    "requires": [],
+    "minLevel": 2
+   }
+  },
+  {
+   "id": "klidny_spanek",
+   "nazev": "Klidný spánek",
+   "zdroj": "H13",
+   "strana": 13,
+   "skupina": "druha_uroven",
+   "typ": "prosba",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznost": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "8 hodin",
+   "overeni": null,
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "Vzýváním této prosby dokáže klerik zajistit klidný spánek jednomu tvoru. Ochrání ho tak před zlými sny, nespavostí či nočními můrami. Dotyčný se navíc probudí naprosto odpočatý (stupeň únavy – svěží). Spánek mu uzdraví o 1k6+3 životů více, než je obvyklé.",
+   "learn": {
+    "requires": [],
+    "minLevel": 2
+   },
+   "temna": "Klerik způsobí, že cíl bude sužován noční můrou, a proto si musí hodit na ověření Vůle (CHAR) vs. Prosby (CHAR) klerika. Jestliže cíl neuspěje, probudí se unavený (stupeň únavy – unavený). Noční můra mu navíc přivodí psychické zranění za 1k6+3 životů.",
+   "fx": {
+    "heal": "1k6+3",
+    "sleep": true
+   }
+  },
+  {
+   "id": "kopi_praveho_svetla",
+   "nazev": "Kopí pravého světla",
+   "zdroj": "H13",
+   "strana": 13,
+   "skupina": "druha_uroven",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 za kopí",
+    "base": 0,
+    "per": {
+     "cost": 3,
+     "unit": "kopí",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "7 (+2 za každé kopí navíc)",
+    "base": 7,
+    "step": 2
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "50 sáhů",
+   "rozsah": "paprsek průměru kopí, který zasáhne vše v cestě",
+   "trvani": "ihned",
+   "overeni": "Prosby (CHAR) vs. Hbitost (OBR)",
+   "stitky": [
+    "nauka Démonologie",
+    "Svaté",
+    "Nesvaté"
+   ],
+   "popis": "Při provádění této prosby ukáže klerik vybraným směrem. Ve stejný okamžik protne vzduch paprsek jasného, oslnivého světla, který vypadá jako kopí a zasáhne každého, kdo mu stojí v cestě. Běsům, ďáblům, nemrtvým, neviděným a temným bytostem tak způsobí svěcené zranění, a to každým kopím za 1k6+2 životů (v případě neúspěšného ověření za polovinu). Na jiné bytosti tato prosba nefunguje (kopí jimi projde).",
+   "learn": {
+    "requires": [],
+    "minLevel": 2
+   },
+   "temna": "Provedením této prosby vyšle klerik kopí tvořené temnou energií. Andělům, přírodním a světlým bytostem tak způsobí nesvaté zranění, a to každým kopím za 1k6+2 životů (v případě neúspěšného ověření za polovinu).",
+   "fx": {
+    "damage": "1k6+2",
+    "perUnit": true,
+    "half": "neúspěšné ověření = polovina"
+   }
+  },
+  {
+   "id": "ochrana_pred_temnotou",
+   "nazev": "Ochrana před temnotou",
+   "zdroj": "H13",
+   "strana": 13,
+   "skupina": "druha_uroven",
+   "typ": "prosba",
+   "cena": {
+    "text": "6",
+    "base": 6
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "1 směna",
+   "overeni": null,
+   "stitky": [
+    "nauka Démonologie"
+   ],
+   "popis": "Tato prosba pomáhá chránit před temnými silami (běsové, ďáblové, nemrtví, nevidění a temné bytosti). Ty následně získávají Nevýhodu (postih −5) k útoku i ke všem akcím namířeným proti chráněné postavě.\nDále chrání cíl před kletbami, zmámením či posednutím. Pokud je už postava takto postižená, ochrana jí bohužel nepomůže. K tomu slouží jiné prosby a modlitby.",
+   "learn": {
+    "requires": [],
+    "minLevel": 2
+   },
+   "temna": "Klerik dokáže stejným způsobem chránit cíl před andělem, přírodní nebo světlou bytostí. Ty následně získají Nevýhodu (postih −5) k útoku i ke všem akcím namířeným proti chráněné postavě."
+  },
+  {
+   "id": "pozehnani_zdaru",
+   "nazev": "Požehnání zdaru",
+   "zdroj": "H13",
+   "strana": 14,
+   "skupina": "druha_uroven",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "1 akce",
+   "overeni": null,
+   "stitky": [
+    "nauka Žehnání aurami"
+   ],
+   "popis": "Klerik dokáže touto prosbou požehnat jednomu tvoru, který pak získá Výhodu (bonus +5) k následujícímu hodu. Tím je míněno provedení útoku, obrany nebo hod na ověření úspěchu akce.\nEfekt prosby se vztahuje na první hod, který postava po Požehnání provede. Pokud není potřeba provést žádný hod během 24 hodin od vzývání prosby, Požehnání pomine s tím, že se „projevilo samovolně“. Požehnání nelze kumulovat a další požehnání se tak na postavě neprojeví.",
+   "learn": {
+    "requires": [],
+    "minLevel": 2
+   },
+   "temna": "Klerik dokáže stejným způsobem proklít jeden cíl, který má pak k následujícímu hodu Nevýhodu (postih −5).",
+   "fx": {
+    "active": {
+     "next": 5
+    }
+   }
+  },
+  {
+   "id": "vnuknuti",
+   "nazev": "Vnuknutí",
+   "zdroj": "H13",
+   "strana": 14,
+   "skupina": "druha_uroven",
+   "typ": "prosba",
+   "cena": {
+    "text": "5 (0)",
+    "alt": 0,
+    "base": 5
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "okamžitá akce",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "kdekoliv",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": "Prosby (CHAR) vs. Vůle (CHAR)",
+   "stitky": [
+    "nauka Svaté pravdy"
+   ],
+   "popis": "Touto prosbou dokáže klerik vyslat krátké poselství. To není tvořeno slovy či větami, ale intenzivním pocitem doplněným o nějakou scenérii. Běžně tak může jít o vzkaz, kterým se klerik navždy loučí, říká, že selhal nebo že je v ohrožení. Pro úspěch této prosby je nezbytná dobrá znalost cílové osoby.\nVnuknutí se projeví v okamžiku provedení prosby. Cílová osoba pak v mysli „spatří“ přesný obraz poselství a spojí si ho s jeho autorem. V případě spánku jí bude zpráva zjevena ve snu. Po probuzení si ji bude dobře pamatovat.\nTato prosba se od ostatních trochu liší. Občas totiž bývá vyslyšena, i když už klerik nemá žádné body Přízně. Obvykle k tomu dochází tehdy, je-li klerik na konci svých sil a jde o jeho poslední myšlenku.",
+   "learn": {
+    "requires": [],
+    "minLevel": 2
+   },
+   "temna": "Klerik dokáže poslat někomu jinému falešný vzkaz. Musí však vědět, o koho se jedná, a překonat hod na ověření Prosby (CHAR) vs. Vůle (CHAR) cíle. Pokud by neuspěl, cíl rozpozná, že je vzkaz podivný a něco není v pořádku."
+  },
+  {
+   "id": "svata_zbroj",
+   "nazev": "Svatá zbroj",
+   "zdroj": "H13",
+   "strana": 15,
+   "skupina": "bojovnici_viry",
+   "typ": "prosba",
+   "cena": {
+    "text": "úroveň klerika",
+    "base": 0,
+    "perLevel": 1
+   },
+   "obtiznost": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolani": {
+    "text": "okamžitá akce",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Bojovníků víry"
+   ],
+   "popis": "Svatá zbroj dokáže pohltit veškerá zranění plynoucí z jednoho konkrétního fyzického útoku. Není přitom důležité, o jakou formu fyzického útoku se jedná (zda o zbraň tváří v tvář, střeleckou, či jinou).\nTuto prosbu může klerik použít v reakci na útok, který je na něj vedený (i vícekrát za kolo). Pokud je jich vedeno více, určí si sám, proti kterému bude chráněn.",
+   "learn": {
+    "requires": [
+     "bojovnici_viry"
+    ]
+   },
+   "fx": {
+    "note": "reakce: pohltí zranění jednoho fyzického útoku"
+   }
+  },
+  {
+   "id": "utok_stesteny",
+   "nazev": "Útok štěstěny",
+   "zdroj": "H13",
+   "strana": 15,
+   "skupina": "bojovnici_viry",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "okamžitá akce",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Bojovníků víry"
+   ],
+   "popis": "Úderem štěstěny může klerik učinit jeden svůj útok mnohem nebezpečnějším. Jakmile k němu dojde, hodí si na útok dvakrát a započte ten výsledek, který je pro něj lepší.",
+   "learn": {
+    "requires": [
+     "bojovnici_viry"
+    ]
+   },
+   "fx": {
+    "note": "útok 2× – lepší výsledek"
+   }
+  },
+  {
+   "id": "vraceni_uderu",
+   "nazev": "Vrácení úderu",
+   "zdroj": "H13",
+   "strana": 15,
+   "skupina": "bojovnici_viry",
+   "typ": "prosba",
+   "cena": {
+    "text": "úroveň klerika",
+    "base": 0,
+    "perLevel": 1
+   },
+   "obtiznost": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolani": {
+    "text": "okamžitá akce",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Bojovníků víry",
+    "Svaté"
+   ],
+   "popis": "Jestliže klerik utrpí zranění, může zareagovat tím, že použije tuto prosbu a vyšší moc ho pomstí. Útočník pak přijde o polovinu životů, které mu svým útokem vzal.\nZranění způsobené touto prosbou se považuje za svěcené.",
+   "learn": {
+    "requires": [
+     "bojovnici_viry"
+    ]
+   },
+   "fx": {
+    "note": "reakce: útočník ztratí ½ způsobeného zranění (svěcené)"
+   }
+  },
+  {
+   "id": "zesil_zraneni",
+   "nazev": "Zesil zranění",
+   "zdroj": "H13",
+   "strana": 16,
+   "skupina": "bojovnici_viry",
+   "typ": "prosba",
+   "cena": {
+    "text": "úroveň klerika",
+    "base": 0,
+    "perLevel": 1
+   },
+   "obtiznost": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolani": {
+    "text": "okamžitá akce",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Bojovníků víry"
+   ],
+   "popis": "Po seslání této prosby se stává klerik nebezpečným protivníkem. Jeho následující útok totiž způsobí dvojnásobné zranění.",
+   "learn": {
+    "requires": [
+     "bojovnici_viry"
+    ]
+   },
+   "fx": {
+    "note": "další útok 2× zranění"
+   }
+  },
+  {
+   "id": "posel_bojovnik",
+   "nazev": "Posel bojovník",
+   "zdroj": "H13",
+   "strana": 16,
+   "skupina": "bozi_patroni",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 × úroveň klerika",
+    "base": 0,
+    "perLevel": 3
+   },
+   "obtiznost": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "30 sáhů",
+   "rozsah": "–",
+   "trvani": "10 kol",
+   "overeni": null,
+   "stitky": [
+    "nauka Božích patronů"
+   ],
+   "popis": "Klerik si touto prosbou dokáže přivolat posla, který se ho zastane v boji. Čím zkušenější klerik je, tím mocnějšího ochránce mu bůh vyšle. Jednotlivé statistiky posla bojovníka nalezneš v Tabulce poslů.\nPŘÍKLAD: Klerik Věrovít je napaden přesilou. Rozhodne se proto přivolat Posla bojovníka, který ho bude po dobu 10 kol bránit. Věrovít je na 4. úrovni, a proto ho prosba bude stát celkem 12 přízně. Díky tomu si však povolá posla, který bude mít celkem 20 životů, Útočné a Obranné číslo vyšší o 2 a Základní obranu o 1. Celkem bude mít tedy Útočné číslo 10/+1 (meč), Obranné číslo 10 (nehmotný) a Základní obranu 9 (nehmotný).",
+   "learn": {
+    "requires": [
+     "bozi_patroni"
+    ]
+   },
+   "fx": {
+    "posel": "posel_bojovnik"
+   }
+  },
+  {
+   "id": "posel_rovnovahy",
+   "nazev": "Posel rovnováhy",
+   "zdroj": "H13",
+   "strana": 16,
+   "skupina": "bozi_patroni",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 × úroveň klerika",
+    "base": 0,
+    "perLevel": 3
+   },
+   "obtiznost": {
+    "text": "11",
+    "base": 11
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "30 sáhů",
+   "rozsah": "–",
+   "trvani": "10 kol",
+   "overeni": null,
+   "stitky": [
+    "nauka Božích patronů"
+   ],
+   "popis": "Tomuto poslovi se také říká „Kladivo na čarodějnice“. Po svém zjevení se totiž zaměřuje na kouzelníky, kterým se snaží uzmout jejich manu. Posel ji totiž vnímá jako součást boží existence, kterou by neměli disponovat žádní smrtelníci.\nPosel si nevšímá hraničářů ani kleriků (ti jsou pouhými prostředníky, kteří žádnou manou nedisponují), stejně jako nereaguje na manu obsaženou v různých předmětech.\nPokud posel rovnováhy úspěšně zasáhne svým útokem, kromě běžného zranění uzme cíli ještě manu – přesně tolik, jakou má posel úroveň.",
+   "learn": {
+    "requires": [
+     "bozi_patroni"
+    ]
+   },
+   "fx": {
+    "posel": "posel_rovnovahy"
+   }
+  },
+  {
+   "id": "posel_stezky",
+   "nazev": "Posel stezky",
+   "zdroj": "H13",
+   "strana": 16,
+   "skupina": "bozi_patroni",
+   "typ": "prosba",
+   "cena": {
+    "text": "úroveň klerika",
+    "base": 0,
+    "perLevel": 1
+   },
+   "obtiznost": {
+    "text": "7",
+    "base": 7
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "30 sáhů",
+   "rozsah": "–",
+   "trvani": "1 hodina (4 směny)",
+   "overeni": null,
+   "stitky": [
+    "nauka Božích patronů"
+   ],
+   "popis": "Pokud si klerik není jistý směrem cesty, může požádat boha o pomoc. Ten mu sešle jednoho ze svých nižších služebníků známého jako Posel stezky. Klerikovi stačí pomyslet na světovou stranu či místo, které hledá. Posel daným směrem ukáže a sám se jím vydá. Od klerika se však nikdy nevzdálí více než na 30 sáhů.\nČím je posel stezky na vyšší úrovni, tím více cest zná a je schopen klerika lépe navézt (má vyšší dovednost orientace).",
+   "learn": {
+    "requires": [
+     "bozi_patroni"
+    ]
+   },
+   "fx": {
+    "posel": "posel_stezky"
+   }
+  },
+  {
+   "id": "posel_umlceni",
+   "nazev": "Posel umlčení",
+   "zdroj": "H13",
+   "strana": 17,
+   "skupina": "bozi_patroni",
+   "typ": "prosba",
+   "cena": {
+    "text": "2 × úroveň klerika",
+    "base": 0,
+    "perLevel": 2
+   },
+   "obtiznost": {
+    "text": "10",
+    "base": 10
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "30 sáhů",
+   "rozsah": "–",
+   "trvani": "10 kol",
+   "overeni": null,
+   "stitky": [
+    "nauka Božích patronů"
+   ],
+   "popis": "Klerik dokáže přivolat posla, který bude narušovat prosby ostatních. Při jeho zjevení klerik určí, na koho upře svou pozornost. To může navíc dle potřeby ve svém tahu měnit.\nObtížnost vzývání cizích proseb se zvýší o hodnotu rovnou úrovni posla, jenž se zjevil. Tento postih se pak aplikuje na všechny prosby, které jím budou narušovány.\nPosel je však schopen narušovat jen prosby bytostí, které jsou v dosahu 30 sáhů od klerika.",
+   "learn": {
+    "requires": [
+     "bozi_patroni"
+    ]
+   },
+   "fx": {
+    "posel": "posel_umlceni"
+   }
+  },
+  {
+   "id": "najdi_temnotu",
+   "nazev": "Najdi temnotu",
+   "zdroj": "H13",
+   "strana": 18,
+   "skupina": "demonologie",
+   "typ": "prosba",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "dvě dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "dosah": "koule kolem klerika o poloměru 10 sáhů",
+   "rozsah": "všichni temní tvorové a předměty",
+   "trvani": "1 směna",
+   "overeni": null,
+   "stitky": [
+    "nauka Démonologie"
+   ],
+   "popis": "Po seslání této prosby vidí klerik bytosti kolem sebe v jiném světle. Nemrtví, nevidění a nadpozemští tvorové sloužící temným bohům vydávají temně modrou záři. Nadpozemské bytosti sloužící bohům světla vydávají zlatavou auru.\nStejně reagují i předměty, které jsou prokleté či jinak (trvale) zasažené vyšší mocí (posvátné symboly, zbraně atd.). Efekt prosby se nevztahuje na alchymistické předměty a vybavení.",
+   "learn": {
+    "requires": [
+     "demonologie"
+    ]
+   }
+  },
+  {
+   "id": "odstran_kletbu",
+   "nazev": "Odstraň kletbu",
+   "zdroj": "H13",
+   "strana": 18,
+   "skupina": "demonologie",
+   "typ": "prosba",
+   "cena": {
+    "text": "13",
+    "base": 13
+   },
+   "obtiznost": {
+    "text": "10",
+    "base": 10
+   },
+   "vyvolani": {
+    "text": "dvě dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "dosah": "dotek",
+   "rozsah": "předmět, místo či tvor",
+   "trvani": "ihned",
+   "overeni": "Vůle (CHAR) vs. X",
+   "stitky": [
+    "nauka Démonologie"
+   ],
+   "popis": "Touto prosbou lze sejmout prokletí z vybrané osoby, místa či předmětu. Jestliže klerik v ověřovacím hodu uspěje a překoná sílu kletby (X), kterou zná PJ, dojde k jejímu okamžitému odstranění.",
+   "learn": {
+    "requires": [
+     "demonologie"
+    ]
+   },
+   "temna": "Klerik prokleje jednu vybranou osobu a tu bude stíhat smůla. Aby se mu to povedlo, musí uspět v hodu na ověření Vůle (CHAR) vs. Vůle (CHAR) oběti. Smůla se projeví tím, že cíl utrží postih −2 ke všem ověřovacím hodům na dovednosti. Kletba trvá do doby, dokud ji někdo nesejme nebo ji klerik sám nezruší. Síla kletby je rovna výši hodu na Prosby (CHAR), který provedl klerik při vzývání prosby."
+  },
+  {
+   "id": "odvraceni_temnoty",
+   "nazev": "Odvracení temnoty",
+   "zdroj": "H13",
+   "strana": 18,
+   "skupina": "demonologie",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "30 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": "Vůle (CHAR) vs. Vyšší moc monstra",
+   "stitky": [
+    "nauka Démonologie"
+   ],
+   "popis": "Klerik touto prosbou dokáže odvracet běsy, ďábly, nemrtvé, neviděné a temné bytosti v jejich přirozené podobě. Jestliže klerik v ověřovacím hodu uspěje (překoná Vyšší moc monstra), odvracení se zdařilo.\nPokud jsou nadpozemské bytosti ukryty v cizím těle, odvracení na ně nepůsobí. K jejich vyhnání je potřeba znalost speciálních technik vymítání a exorcismu.\nBěhem odvracení provádí klerik gesta žehnání a pronáší slova modlitby k zahnání zla. Bytosti, které mu podlehnou, prchají v hrůze jinam a nemají vůli se vrátit (leda by byly samy napadeny). Efekt odvracení samovolně odezní po 3 kolech. Na tuto prosbu neplatí imunita na ovlivnění mysli.",
+   "learn": {
+    "requires": [
+     "demonologie"
+    ]
+   },
+   "temna": "Klerik touto prosbou může odvrátit anděly, přírodní a světlé bytosti. Musí uspět v ověřovacím hodu na Vůli (CHAR) vs. Vyšší moc bytosti. Jestliže se mu to povede, bytost je na 3 kola odvrácená (a nepomůže jí ani imunita na ovlivnění mysli)."
+  },
+  {
+   "id": "osaleni_temnoty",
+   "nazev": "Ošálení temnoty",
+   "zdroj": "H13",
+   "strana": 19,
+   "skupina": "demonologie",
+   "typ": "prosba",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "sesilatel",
+   "rozsah": "1 tvor",
+   "trvani": "15 minut (1 směna)",
+   "overeni": null,
+   "stitky": [
+    "nauka Démonologie"
+   ],
+   "popis": "S touto prosbou dokáže klerik ošálit všechny smysly běsů, nemrtvých, neviděných a temných bytostí. Stává se pro ně proto neviditelný, neslyšitelný a celkově nezjistitelný. Může se pohybovat kolem nich, aniž by ho vůbec dokázali postřehnout. Pro smrtelníky je však klerik normálně viditelný.\nBěhem doby trvání prosby musí být klerik opatrný. Ošálení smyslů se totiž může snadno narušit. Stačí k tomu zaútočit, vzývat prosbu, seslat kouzlo (a to i z předmětu) nebo provést nějakou komplexnější akci (jako třeba výroba předmětů a podobně).",
+   "learn": {
+    "requires": [
+     "demonologie"
+    ]
+   },
+   "temna": "S touto prosbou dovede klerik ošálit smysly andělů, přírodních a světlých bytostí. Stává se pro ně proto neviditelný, neslyšitelný a celkově nezjistitelný."
+  },
+  {
+   "id": "napraveni_tela",
+   "nazev": "Napravení těla",
+   "zdroj": "H13",
+   "strana": 19,
+   "skupina": "milosrdenstvi",
+   "typ": "prosba",
+   "cena": {
+    "text": "8",
+    "base": 8
+   },
+   "obtiznost": {
+    "text": "10",
+    "base": 10
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "Tato prosba dokáže vyléčit zlomeniny, poraněné svaly, šlachy či cévy. Stejně tak dokáže napravit třeba protržený ušní bubínek (stav zmrzačení nebo oslabení). Nelze jí však léčit vrozené vady či nevratná poškození těla (ztráta oka, amputovaný palec). Dokáže se také vypořádat s následky temné alternativy této prosby (viz níže). Zároveň postavě vyléčí 2k6 životů.",
+   "learn": {
+    "requires": [
+     "milosrdenstvi"
+    ]
+   },
+   "temna": "Klerik dokáže způsobit postižení končetin či smyslů (zrak, sluch atd.). Hodí si na Vůli (CHAR) vs. Vůle (CHAR) obránce. Jestliže uspěje, vybere si jeden smysl, který dotyčný ztratí, nebo jednu končetinu, kterou zmrzačí (o případných postizích rozhoduje PJ). Tento efekt má psychický základ a trvá po dobu 3 kol. Nechá však na cíli silný duševní otřes, který se projeví psychickým zraněním za 2k6 životů.",
+   "fx": {
+    "heal": "2k6"
+   }
+  },
+  {
+   "id": "odstran_paralyzu",
+   "nazev": "Odstraň paralýzu",
+   "zdroj": "H13",
+   "strana": 19,
+   "skupina": "milosrdenstvi",
+   "typ": "prosba",
+   "cena": {
+    "text": "8",
+    "base": 8
+   },
+   "obtiznost": {
+    "text": "11",
+    "base": 11
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": "Prosby (CHAR) vs. X",
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "Touto prosbou dokáže klerik zrušit všechny druhy ochromení, které nemají základ ve fyzickém poškození těla (ochrnutí). Prosba si tak dokáže poradit s paralýzou způsobenou strachem, kouzly, jedy či kletbami.\nJestliže zdroj paralýzy na postavu stále působí (např. předmět, kterého se dotýká), prosba ji nedokáže zlomit. Funguje ale třeba na kouzla, která byla jednou seslána a dál se o ně kouzelník nestará. Sílu (obtížnost) paralýzy, kterou musí klerik prosbou překonat, zná Pán jeskyně.",
+   "learn": {
+    "requires": [
+     "milosrdenstvi"
+    ]
+   },
+   "temna": "Klerik dokáže paralyzovat jednu bytost na 3 kola. Musí svým hodem na Vůli (CHAR) překonat Vůli (CHAR) cíle. Efekt paralýzy je psychického rázu a cíl se z něj může každé kolo pokusit probudit opakováním ověřovacího hodu."
+  },
+  {
+   "id": "udrzeni_zivota",
+   "nazev": "Udržení života",
+   "zdroj": "H13",
+   "strana": 20,
+   "skupina": "milosrdenstvi",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "20 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "10 kol (1 minuta)",
+   "overeni": null,
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "Tuto prosbu lze vzývat pouze na vážně zraněnou postavu, která je na mezi vyřazení nebo pod ní. Její efekt pak na 10 kol pozastaví všechny škodlivé procesy v těle. Jedy, krvácení ani kletby tak na ni nebudou mít dočasně žádný vliv. Prosba účinkuje pouze na živé tvory. Nemá tudíž žádný efekt na zemřelé, nemrtvé nebo neviděné.",
+   "learn": {
+    "requires": [
+     "milosrdenstvi"
+    ]
+   },
+   "temna": "Klerik dokáže vystavit duši umírající postavy (pod mezí vyřazení) ukrutnému utrpení. Pokud svým hodem na dovednost Prosby (CHAR) překoná Vůli (CHAR) cíle, způsobí jí tím definitivní smrt."
+  },
+  {
+   "id": "uzdrav_nemocneho",
+   "nazev": "Uzdrav nemocného",
+   "zdroj": "H13",
+   "strana": 20,
+   "skupina": "milosrdenstvi",
+   "typ": "prosba",
+   "cena": {
+    "text": "4",
+    "base": 4
+   },
+   "obtiznost": {
+    "text": "10",
+    "base": 10
+   },
+   "vyvolani": {
+    "text": "3 kola",
+    "kind": "kola",
+    "n": 3,
+    "rounds": 3
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [
+    "nauka Milosrdenství"
+   ],
+   "popis": "S pomocí této prosby dokáže klerik vyléčit běžné nemoci i s jejich příznaky. Zvládne tedy odstranit zimnici, horečku, bolest v krku a podobně. Efekt úlevy a odeznění nemoci se projeví během jedné směny. U těch méně obvyklých (jako je zápal plic, neštovice a podobně) pak odezní do druhého dne.\nVážné nemoci (jako je mor a podobně) a nemoci magického původu klerik vyléčit nedokáže. Může však jejich příznaky na 24 hodin zcela potlačit.",
+   "learn": {
+    "requires": [
+     "milosrdenstvi"
+    ]
+   },
+   "temna": "Klerik dokáže přivolat běžné i méně obvyklé nemoci (viz výše). Aby se mu to povedlo, musí hodem na Prosby (CHAR) překonat Výdrž (ODO) cíle."
+  },
+  {
+   "id": "doznani",
+   "nazev": "Doznání",
+   "zdroj": "H13",
+   "strana": 20,
+   "skupina": "svata_pravda",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "9",
+    "base": 9
+   },
+   "vyvolani": {
+    "text": "dlouhá akce",
+    "kind": "dlouha",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "15 minut (1 směna)",
+   "overeni": "Vůle (CHAR) vs. Výdrž (ODO)",
+   "stitky": [
+    "nauka Svaté pravdy"
+   ],
+   "popis": "Tato prosba dokáže intenzivní bolestí zlomit vůli protivníka. Jestliže klerik v ověřovacím hodu překoná Výdrž protivníka, sníží mu na dobu jedné směny opravu ODO i CHAR o 3. Ačkoliv se bude dotyčný cítit hrozně, neutrpí žádné skutečné zranění (i když to tak může vnímat). Změna opravy za atribut neovlivní hodnoty, které jsou s ním spojeny (tj. základ atributu, životy, množství Přízně a podobně), ale ovlivní už případné ověřovací hodnoty cíle.\nTakto „nalomená“ osoba bývá následně podrobena otázkám. Pokud neuspěje v hodu na ověření, rozmluví se.",
+   "learn": {
+    "requires": [
+     "svata_pravda"
+    ]
+   }
+  },
+  {
+   "id": "falesne_pratelstvi",
+   "nazev": "Falešné přátelství",
+   "zdroj": "H13",
+   "strana": 21,
+   "skupina": "svata_pravda",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 + úroveň cíle",
+    "base": 3,
+    "per": {
+     "cost": 1,
+     "unit": "úroveň cíle",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "10",
+    "base": 10
+   },
+   "vyvolani": {
+    "text": "dvě dlouhé akce",
+    "kind": "dlouha",
+    "n": 2,
+    "rounds": 2
+   },
+   "dosah": "10 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "1 hodina",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "stitky": [
+    "nauka Svaté pravdy"
+   ],
+   "popis": "Touto prosbou lze zmást duši jiného smrtelníka. Jestliže klerik v ověřovacím hodu překoná Vůli protivníka, bude ho dotyčný považovat za svého dobrého přítele. Bude mu věřit a bude ochoten mu pomoci. Nikdy však nevykoná nic, co by ho mohlo ohrozit na životě. Toto chování mu vydrží až do konce efektu prosby nebo do okamžiku, kdy mu klerik nebo zbytek družiny nějak ublíží či uškodí.\nPo skončení prosby se tvor vzpamatuje a bude zmatený. Bude si pamatovat vše, co provedl nebo řekl, ale nebude chápat, proč to udělal.",
+   "learn": {
+    "requires": [
+     "svata_pravda"
+    ]
+   }
+  },
+  {
+   "id": "videni_pravdy",
+   "nazev": "Vidění pravdy",
+   "zdroj": "H13",
+   "strana": 21,
+   "skupina": "svata_pravda",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "sesilatel",
+   "rozsah": "sesilatel",
+   "trvani": "3 kola",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "stitky": [
+    "nauka Svaté pravdy"
+   ],
+   "popis": "Díky této prosbě dokáže klerik vycítit, zda někdo mluví pravdu, nebo lže. Stačí pronést slova modlitby a zadívat se dotyčnému do očí. Jestliže klerik v ověřovacím hodu překoná Vůli protivníka, nedokáže dotyčný odolat a s pohledem upřeným do očí lhát. Může se o to sice pokusit, ale vždy při tom nevědomky uhne pohledem a prozradí se. Pokud hovoří pravdu, pohled klerika ustojí.",
+   "learn": {
+    "requires": [
+     "svata_pravda"
+    ]
+   }
+  },
+  {
+   "id": "zapomneni",
+   "nazev": "Zapomnění",
+   "zdroj": "H13",
+   "strana": 21,
+   "skupina": "svata_pravda",
+   "typ": "prosba",
+   "cena": {
+    "text": "8",
+    "base": 8
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "3 kola",
+    "kind": "kola",
+    "n": 3,
+    "rounds": 3
+   },
+   "dosah": "dotek",
+   "rozsah": "1 tvor",
+   "trvani": "ihned",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "stitky": [
+    "nauka Svaté pravdy"
+   ],
+   "popis": "Touto prosbou dokáže klerik způsobit protivníkovi trvalou ztrátu paměti. Dokáže tak zahladit různé „přešlapy“, kterých se on nebo družina dopustili. Je však potřeba jednat rychle.\nJestliže klerik v ověřovacím hodu překoná Vůli protivníka, vymažou se dotyčnému vzpomínky na vše, co se za poslední hodinu stalo.",
+   "learn": {
+    "requires": [
+     "svata_pravda"
+    ]
+   }
+  },
+  {
+   "id": "aura_ocelove_pesti",
+   "nazev": "Aura ocelové pěsti",
+   "zdroj": "H13",
+   "strana": 22,
+   "skupina": "zehnani_aurami",
+   "typ": "prosba",
+   "cena": {
+    "text": "2 za kolo",
+    "base": 0,
+    "per": {
+     "cost": 2,
+     "unit": "kolo",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "koule kolem klerika o poloměru 6 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "dle dodané přízně",
+   "overeni": null,
+   "stitky": [
+    "nauka Žehnání aurami"
+   ],
+   "popis": "Touto prosbou se všechny postavy v dosahu aury stávají nebezpečnějšími v boji. Každá dostává bonus +2 k Útočnému číslu po celou dobu účinku aury. Pokud si to klerik přeje, může být z účinku aury kdokoliv vyloučen.",
+   "learn": {
+    "requires": [
+     "zehnani_aurami"
+    ]
+   },
+   "temna": "Klerik dokáže oslabit (postih −2 k ÚČ) všechny tvory v dosahu aury, které si sám zvolí.",
+   "fx": {
+    "active": {
+     "atk": 2
+    },
+    "aura": true,
+    "roundsFromUnits": true
+   }
+  },
+  {
+   "id": "aura_proti_temnote",
+   "nazev": "Aura proti temnotě",
+   "zdroj": "H13",
+   "strana": 22,
+   "skupina": "zehnani_aurami",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 za kolo",
+    "base": 0,
+    "per": {
+     "cost": 3,
+     "unit": "kolo",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "koule kolem klerika o poloměru 6 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "dle dodané přízně",
+   "overeni": "Prosby (CHAR) vs. Vyšší moc",
+   "stitky": [
+    "nauka Žehnání aurami"
+   ],
+   "popis": "Klerik je schopen vyprosit si ochrannou auru, která se projeví jako slabě zářící zlatavý kruh kolem něj. Do něj nemohou vstoupit žádní prokletí či posedlí tvorové, stejně jako běsové, ďáblové, nemrtví, nevidění a temné bytosti. Nedokáží se do něj dostat ani kouzlem, ani s pomocí svých zvláštních schopností (leda by klerik neuspěl v hodu na ověření).\nAura chrání také před zastrašením či jinými schopnostmi, které by mohly výše uvedené bytosti využít. Tato bariéra však klerika nechrání před kouzly (blesky, ohnivými koulemi a podobně) ani proti střeleckým útokům. Při útocích tváří v tvář mohou být postavy uvnitř aury zraněny jen v případě, že jsou na dosah zbraně protivníka stojícího mimo auru.",
+   "learn": {
+    "requires": [
+     "zehnani_aurami"
+    ]
+   },
+   "temna": "Klerik dokáže stejným způsobem vytvořit auru, která nepustí dovnitř žádného anděla, přírodní či světlou bytost (pokud klerik uspěl v hodu na ověření).",
+   "fx": {
+    "active": {},
+    "aura": true,
+    "roundsFromUnits": true
+   }
+  },
+  {
+   "id": "aura_svateho_stitu",
+   "nazev": "Aura svatého štítu",
+   "zdroj": "H13",
+   "strana": 22,
+   "skupina": "zehnani_aurami",
+   "typ": "prosba",
+   "cena": {
+    "text": "2 za kolo",
+    "base": 0,
+    "per": {
+     "cost": 2,
+     "unit": "kolo",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "koule kolem klerika o poloměru 6 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "dle dodané přízně",
+   "overeni": null,
+   "stitky": [
+    "nauka Žehnání aurami"
+   ],
+   "popis": "Touto prosbou se všechny klerikem vybrané postavy v dosahu stávají cílem ochranné aury. Díky ní získávají po celou dobu jejího trvání +2 k Základní obraně. Pokud si to klerik přeje, může být kdokoliv z účinku aury vyloučen.",
+   "learn": {
+    "requires": [
+     "zehnani_aurami"
+    ]
+   },
+   "temna": "Klerik takto dokáže oslabit (postih −2 k ZO) všechny tvory v dosahu aury, které si sám zvolí.",
+   "fx": {
+    "active": {
+     "zo": 2
+    },
+    "aura": true,
+    "roundsFromUnits": true
+   }
+  },
+  {
+   "id": "leciva_aura",
+   "nazev": "Léčivá aura",
+   "zdroj": "H13",
+   "strana": 22,
+   "skupina": "zehnani_aurami",
+   "typ": "prosba",
+   "cena": {
+    "text": "6 za kolo",
+    "base": 0,
+    "per": {
+     "cost": 6,
+     "unit": "kolo",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "8",
+    "base": 8
+   },
+   "vyvolani": {
+    "text": "krátká akce",
+    "kind": "kratka",
+    "n": 1,
+    "rounds": 0.5
+   },
+   "dosah": "koule kolem klerika o poloměru 6 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "dle dodané přízně",
+   "overeni": null,
+   "stitky": [
+    "nauka Žehnání aurami"
+   ],
+   "popis": "Léčivá aura uzdraví každého klerikem zvoleného tvora za 1k6 životů, a to v každém kole svého trvání. Podmínkou je, aby byl tvor v dosahu aury, tedy nejvýše šest sáhů od klerika.\nEfekt aury se projeví ihned po vzývání a pak vždy na začátku tahu klerika.",
+   "learn": {
+    "requires": [
+     "zehnani_aurami"
+    ]
+   },
+   "temna": "Aura způsobí všem tvorům v jejím dosahu (kromě klerika) nekrotické zranění za 1k6 životů, a to v každém kole svého trvání. Klerik nedokáže z efektu prosby nikoho vyjmout a projeví se ihned po vzývání, v dalších kolech pak na začátku tahu klerika.",
+   "fx": {
+    "heal": "1k6",
+    "perRound": true,
+    "active": {
+     "note": "každé kolo 1k6 životů zvoleným v auře"
+    },
+    "aura": true,
+    "roundsFromUnits": true
+   }
+  },
+  {
+   "id": "beregondovo_osviceni",
+   "nazev": "Beregondovo osvícení",
+   "zdroj": "PPP06",
+   "strana": 288,
+   "skupina": "strazce_mysteria",
+   "typ": "prosba",
+   "cena": {
+    "text": "10",
+    "base": 10
+   },
+   "obtiznost": {
+    "text": "14",
+    "base": 14
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 bytost",
+   "trvani": "10 kol",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Prosba dokáže zabránit následkům Zranění způsobených nemrtvými a upíry. Jejich Útoky (pokousání, podrápání atd.) tak sice vedou ke ztrátě životů, avšak nedojde k nejhoršímu. Dotyčný je tedy chráněn před ztrátou úrovně, proměnou v zombii a podobně.",
+   "learn": {
+    "requires": [
+     "strazce_mysteria"
+    ]
+   }
+  },
+  {
+   "id": "mezisvet",
+   "nazev": "Mezisvět",
+   "zdroj": "PPP06",
+   "strana": 288,
+   "skupina": "strazce_mysteria",
+   "typ": "prosba",
+   "cena": {
+    "text": "30",
+    "base": 30
+   },
+   "obtiznost": {
+    "text": "18",
+    "base": 18
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 bytost",
+   "trvani": "20 kol",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Pomocí této prosby se fyzické tělo cíle přenese do meziprostoru naší reality a astrálních světů. V této podobě nemůže nijak zasahovat do žádné z realit. Nemůže tedy bojovat, kouzlit, pohybovat se ani nic podobného. Zároveň ho však není možné žádným způsobem zranit.\nJakmile uplyne doba trvání prosby, tvor se objeví zpět na místě, kde svůj fyzický svět opustil.\nProsbu lze seslat pouze na tvora, který s ní souhlasí.",
+   "learn": {
+    "requires": [
+     "strazce_mysteria"
+    ]
+   }
+  },
+  {
+   "id": "znameni_zivota",
+   "nazev": "Znamení života",
+   "zdroj": "PPP06",
+   "strana": 288,
+   "skupina": "strazce_mysteria",
+   "typ": "prosba",
+   "cena": {
+    "text": "20",
+    "base": 20
+   },
+   "obtiznost": {
+    "text": "20",
+    "base": 20
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 bytost",
+   "trvani": "1 den",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Klerik „poznamená“ čelo vybrané bytosti symbolem svého boha (obvykle prostřednictvím svěceného oleje či krve). Jakmile dotyčnému klesnou životy na Hranici smrti, znamení zmizí a dotyčný se probere zpět s 1 životem (tedy těsně nad mezí vyřazení).",
+   "learn": {
+    "requires": [
+     "strazce_mysteria"
+    ]
+   }
+  },
+  {
+   "id": "vyhnani",
+   "nazev": "Vyhnání",
+   "zdroj": "PPP06",
+   "strana": 288,
+   "skupina": "strazce_mysteria",
+   "typ": "prosba",
+   "cena": {
+    "text": "7 × X",
+    "base": 0,
+    "per": {
+     "cost": 7,
+     "unit": "kol (X)",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "18",
+    "base": 18
+   },
+   "vyvolani": {
+    "text": "2 kola",
+    "kind": "kola",
+    "n": 2,
+    "rounds": 2
+   },
+   "dosah": "10 sáhů",
+   "rozsah": "1 bytost",
+   "trvani": "X kol",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "stitky": [],
+   "popis": "Tato mocná prosba umožňuje Klerikovi „vyhnat“ vybraného tvora dočasně do meziprostoru sfér. Tvor v této podobě nemůže nijak zasahovat do žádné z realit. Nemůže tedy bojovat, kouzlit, pohybovat se ani nic podobného. Zároveň ho však není možné žádným způsobem zranit.\nAby k Vyhnání nedošlo, musí cíl uspět v ověřovacím hodu na Vůli (CHAR) vs. Vůle (CHAR) Klerika. Pokud se tak nestane, dojde k jeho okamžitému přesunu. V místě, kde zmizel, po něm zůstane éterická stopa – jeho průzračný, matně světélkující obraz, který je pro neznalé děsivý. Každý, kdo neví, o co se jedná, musí uspět v ověřovacím hodu na Vůli (CHAR) vs. 15, jinak prchá v panice pryč (minimálně 10 kol).\nPOZNÁMKA: Členové družiny, kterým klerik o svých schopnostech řekl, hod na paniku neprovádí, neurčí-li klerik jinak; kdo efekt už viděl, také ne.",
+   "learn": {
+    "requires": [
+     "strazce_mysteria"
+    ]
+   }
+  },
+  {
+   "id": "andelska_zbroj",
+   "nazev": "Andělská zbroj",
+   "zdroj": "PPP06",
+   "strana": 292,
+   "skupina": "paladinsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "5 + úroveň Klerika",
+    "base": 5,
+    "perLevel": 1
+   },
+   "obtiznost": {
+    "text": "12",
+    "base": 12
+   },
+   "vyvolani": {
+    "text": "ihned",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "-",
+   "rozsah": "Klerik",
+   "trvani": "1 kolo za úroveň Klerika",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Vytvoří sférickou zbroj, jejíž energie pohltí (zredukuje) veškerá utržená Zranění jakéhokoliv charakteru o 5 životů, a to v každém kole po celou dobu trvání prosby.",
+   "learn": {
+    "requires": [
+     "paladinsky_vycvik"
+    ]
+   },
+   "fx": {
+    "active": {
+     "dr": 5
+    },
+    "roundsPerLevel": 1
+   }
+  },
+  {
+   "id": "falesna_smrt",
+   "nazev": "Falešná smrt",
+   "zdroj": "PPP06",
+   "strana": 292,
+   "skupina": "inkvizitorsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "15 + úroveň cíle",
+    "base": 15,
+    "per": {
+     "cost": 1,
+     "unit": "úroveň cíle",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "21",
+    "base": 21
+   },
+   "vyvolani": {
+    "text": "3 kola",
+    "kind": "kola",
+    "n": 3,
+    "rounds": 3
+   },
+   "dosah": "15 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "1 hodina",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR) Klerika",
+   "stitky": [],
+   "popis": "Touto prosbou lze oklamat všechny přírodní zákony a dogmata. Tvor, který neuspěje v ověřovacím hodu na Vůli (CHAR) vs. Vůle (CHAR) Klerika, upadne do stavu podobného klinické smrti. Jeho srdce přestane bít a plíce přestanou dýchat. Prosba však tělo chrání, aby nezačalo odumírat. Po dobu trvání prosby se tak u něj přestane projevovat krvácení, efekty jedů a podobně.\nJe-li dotyčný v tomto stavu zraněn, efekt prosby se za 2 kola zruší. Do té doby není tvor schopen žádné akce.\nPo celou dobu je mysl dotyčné postavy ponořena do stavu podivného snu, v němž stojí na obrovském světelném mostě, který spojuje její minulost s oslnivou září na druhé straně.\nProsbu lze seslat pouze na tvora, který by s ní souhlasil.",
+   "learn": {
+    "requires": [
+     "inkvizitorsky_vycvik"
+    ]
+   }
+  },
+  {
+   "id": "kladivo_na_carodejnice",
+   "nazev": "Kladivo na čarodějnice",
+   "zdroj": "PPP06",
+   "strana": 293,
+   "skupina": "paladinsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "8 + úroveň Klerika",
+    "base": 8,
+    "perLevel": 1
+   },
+   "obtiznost": {
+    "text": "15",
+    "base": 15
+   },
+   "vyvolani": {
+    "text": "ihned",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "-",
+   "rozsah": "Klerik",
+   "trvani": "1 kolo za úroveň Klerika",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Touto prosbou je Klerikovi sesláno sférické kladivo (či jiná zbraň, dle domény daného boha). Jeho hodnoty jsou 8/+5/+3. Zbraň je složena z étericky čisté energie, která souvěrci prochází, aniž by jim cokoliv způsobila.\nProti jinověrcům a nevěřícím však působí jako klasická zbraň. Nemrtvé, neviděné, démony, magické a nadpozemské bytosti navíc zraňuje po úspěšném zásahu za dodatečných 1k6 životů.\nProsba funguje jako rychlé tasení. Kladivo si tak lze do ruky přivolat i pro použití v aktuální Útočné či Obranné akci.",
+   "learn": {
+    "requires": [
+     "paladinsky_vycvik"
+    ]
+   },
+   "fx": {
+    "active": {
+     "weapon": "8/+5/+3"
+    },
+    "roundsPerLevel": 1
+   }
+  },
+  {
+   "id": "podlom_obranu",
+   "nazev": "Podlom obranu",
+   "zdroj": "PPP06",
+   "strana": 293,
+   "skupina": "paladinsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "15",
+    "base": 15
+   },
+   "vyvolani": {
+    "text": "ihned",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "10 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "1 kolo",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Tvor, který se Bojovému mnichovi brání a na něhož prosba působí, si hází na Obranu 2×. Do jeho výsledného čísla se pak započítává nižší z obou hodů.",
+   "learn": {
+    "requires": [
+     "paladinsky_vycvik"
+    ]
+   },
+   "fx": {
+    "note": "cíl hází obranu 2×, platí horší"
+   }
+  },
+  {
+   "id": "pozehnej_vlastnostem",
+   "nazev": "Požehnej vlastnostem",
+   "zdroj": "PPP06",
+   "strana": 293,
+   "skupina": "paladinsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "3",
+    "base": 3
+   },
+   "obtiznost": {
+    "text": "6",
+    "base": 6
+   },
+   "vyvolani": {
+    "text": "ihned",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "-",
+   "rozsah": "Klerik",
+   "trvani": "10 kol",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Touto prosbou dokáže Klerik dočasně zlepšit opravu za některý ze svých atributů nejvýše o 1 bod (např. SIL, OBR atd.). Prosbu může provést kdykoliv, a to i v průběhu svého Útoku či Obrany.",
+   "learn": {
+    "requires": [
+     "paladinsky_vycvik"
+    ]
+   },
+   "fx": {
+    "active": {
+     "note": "oprava jednoho atributu +1"
+    },
+    "rounds": 10
+   }
+  },
+  {
+   "id": "zadrz_protivnika",
+   "nazev": "Zadrž protivníka",
+   "zdroj": "PPP06",
+   "strana": 293,
+   "skupina": "inkvizitorsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "10 + úroveň zadržovaného tvora",
+    "base": 10,
+    "per": {
+     "cost": 1,
+     "unit": "úroveň cíle",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "21",
+    "base": 21
+   },
+   "vyvolani": {
+    "text": "ihned, Klerik se musí po celou dobu trvání prosby soustředit",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "25 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "5 kol",
+   "overeni": "Vůle (CHAR) Klerika vs. Vůle (CHAR) cíle",
+   "stitky": [],
+   "popis": "Prosbou dokáže Klerik znehybnit inteligentního tvora do velikosti C. Pokud cíl neuspěje v ověřovacím hodu na Vůli (CHAR) vs. Vůle (CHAR) Klerika, je okamžitě ochromen. Nemůže se hýbat ani mluvit a Útok na něj je brán jako Útok na bezbranného protivníka.\nProti efektu prosby se může cíl pokusit mentálně vzepřít. V každém dalším kole po seslání tak může opakovat svůj ověřovací hod. Pokud uspěje, efekt na konci kola pomine.\nProsbou nelze zadržet nemrtvé, neviděné, magické ani nadpozemské bytosti. Lze ale zadržet bytosti posedlé démony.",
+   "learn": {
+    "requires": [
+     "inkvizitorsky_vycvik"
+    ]
+   }
+  },
+  {
+   "id": "zastaveni_deni",
+   "nazev": "Zastavení dění",
+   "zdroj": "PPP06",
+   "strana": 293,
+   "skupina": "inkvizitorsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "12",
+    "base": 12
+   },
+   "obtiznost": {
+    "text": "15",
+    "base": 15
+   },
+   "vyvolani": {
+    "text": "ihned",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "Klerik",
+   "rozsah": "kruh o poloměru (úroveň Klerika) sáhů",
+   "trvani": "1 kolo",
+   "overeni": "Vůle (CHAR) Klerika vs. Vůle (CHAR) cíle",
+   "stitky": [],
+   "popis": "Pokud se Bojový mnich stane svědkem nějaké události (nebo do ní vstoupí později) a potřebuje ji zastavit, může s pomocí této prosby získat okamžitě Iniciativu.\nBojový mnich v tu chvíli mocně vykřikne a jeho hlas získá nebývalou sílu. Všichni tvorové v dosahu jsou nuceni provést ověřovací hod na Vůli (CHAR) vs. Vůle (CHAR) Klerika, a pokud neuspějí, musí okamžitě (na začátku bojového kola) všeho nechat a obrátit svou pozornost k Bojovému mnichovi. Ten má čas do konce kola, aby něco učinil nebo řekl to, co chce.\nEfekt prosby je vždy totožný a působí na všechny, tedy i na přátele Bojového mnicha.\nTuto prosbu lze provést jednou za souboj.",
+   "learn": {
+    "requires": [
+     "inkvizitorsky_vycvik"
+    ]
+   },
+   "fx": {
+    "note": "okamžitě Iniciativa · 1× za souboj"
+   }
+  },
+  {
+   "id": "zmateni_mysli",
+   "nazev": "Zmatení mysli",
+   "zdroj": "PPP06",
+   "strana": 294,
+   "skupina": "inkvizitorsky_vycvik",
+   "typ": "prosba",
+   "cena": {
+    "text": "12",
+    "base": 12
+   },
+   "obtiznost": {
+    "text": "15",
+    "base": 15
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "5 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "3 kola",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR) Klerika",
+   "stitky": [],
+   "popis": "Touto prosbou dokáže Klerik zatemnit mysl oběti. Ta pak upadá do stavu zoufalství a psychické sklíčenosti. Prosba vyvolá náhodný efekt.\nNeuspěje-li cíl v ověřovacím hodu na Vůli (CHAR) vs. Vůle (CHAR) Klerika, projeví se u něj efekt určený hodem 1k6:\n1–2 – Cíl propadne zmatku a dá se na útěk.\n3–4 – Cíl zůstane zmateně stát a není schopen žádné akce.\n5–6 – Cíl napadne vší silou náhodnou osobu ve svém okolí v domnění, že to ona může za jeho zpackaný život.",
+   "learn": {
+    "requires": [
+     "inkvizitorsky_vycvik"
+    ]
+   }
+  },
+  {
+   "id": "chran_pred_posednutim",
+   "nazev": "Chraň před posednutím",
+   "zdroj": "PPP06",
+   "strana": 301,
+   "skupina": "exorcismus",
+   "typ": "prosba",
+   "cena": {
+    "text": "3 × X",
+    "base": 0,
+    "per": {
+     "cost": 3,
+     "unit": "tvorů (X)",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "12",
+    "base": 12
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "20 sáhů",
+   "rozsah": "X tvorů",
+   "trvani": "1 hodina",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Touto prosbou dokáže Exorcista „ukrýt“ sebe i ostatní před očima démonů. Nemohou tak být jimi posednuti ani ovládnuti. Prosba se používá obvykle před Vymítáním, aby se zabránilo „přeskočení“ démona do těla někoho dalšího. Stejně účinná je však i na posvátných územích temných bohů.",
+   "learn": {
+    "requires": [
+     "exorcismus"
+    ]
+   },
+   "temna": "Klerik takto dokáže „rozzářit“ bytosti ve svém okolí a označit je jako cíl pro nadpozemské bytosti. Ty, pokud mají možnost, volí primárně označené cíle."
+  },
+  {
+   "id": "odhal_demona",
+   "nazev": "Odhal démona",
+   "zdroj": "PPP06",
+   "strana": 301,
+   "skupina": "exorcismus",
+   "typ": "prosba",
+   "cena": {
+    "text": "10",
+    "base": 10
+   },
+   "obtiznost": {
+    "text": "Vyšší moc démona",
+    "base": null
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "6 sáhů",
+   "rozsah": "1 tvor",
+   "trvani": "1 hodina",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Jestliže sídlí v těle vybraného tvora nadpozemská bytost (démon, ďábel nebo anděl), prosba ho odhalí. Exorcista pak dokáže vidět její éterický vzhled nebo aspoň záři, která z ní vychází. Zároveň i přesně odhadne, jak mocná tato bytost je (tj. jaká je úroveň její Vyšší moci).",
+   "learn": {
+    "requires": [
+     "exorcismus"
+    ]
+   },
+   "temna": "Klerik dokáže zamaskovat přítomnost démona v něčím těle. Pokud by se někdo pokusil démona odhalit, přičetla by se úroveň Klerika k Vyšší moci démona při ověřovacím hodu. Je-li navíc démon chráněn touto prosbou, nepůsobí na něj obvykle ani svěcená voda."
+  },
+  {
+   "id": "ukaz_temnotu",
+   "nazev": "Ukaž temnotu",
+   "zdroj": "PPP06",
+   "strana": 302,
+   "skupina": "exorcismus",
+   "typ": "prosba",
+   "cena": {
+    "text": "5",
+    "base": 5
+   },
+   "obtiznost": {
+    "text": "12",
+    "base": 12
+   },
+   "vyvolani": {
+    "text": "2 kola",
+    "kind": "kola",
+    "n": 2,
+    "rounds": 2
+   },
+   "dosah": "koule okolo Klerika o poloměru 5 sáhů",
+   "rozsah": "všichni temní tvorové",
+   "trvani": "10 kol",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Touto prosbou dokáže Exorcista zviditelnit všechny neviděné, nemrtvé a nadpozemské bytosti v dosahu. Ty jsou pak viditelné nejen jemu, ale i všem ostatním.\nEfektem se podobá obdobné prosbě Najdi temnotu. Nevztahuje se na bytosti ukryté v cizím těle.",
+   "learn": {
+    "requires": [
+     "exorcismus"
+    ]
+   }
+  },
+  {
+   "id": "vyzen_demona",
+   "nazev": "Vyžeň démona",
+   "zdroj": "PPP06",
+   "strana": 302,
+   "skupina": "exorcismus",
+   "typ": "prosba",
+   "cena": {
+    "text": "5 + 3 × Vyšší moc",
+    "base": 5,
+    "per": {
+     "cost": 3,
+     "unit": "Vyšší moc démona",
+     "min": 1
+    }
+   },
+   "obtiznost": {
+    "text": "X (dle démona)",
+    "base": null
+   },
+   "vyvolani": {
+    "text": "počet minut odpovídající Vyšší moci démona",
+    "kind": "jine",
+    "n": null,
+    "rounds": null
+   },
+   "dosah": "dotek",
+   "rozsah": "posedlá bytost",
+   "trvani": "ihned",
+   "overeni": "Vůle (CHAR) vs. X (dle démona)",
+   "stitky": [],
+   "popis": "Vyhnání démona je jednou z nejdůležitějších proseb Exorcisty. Aby se o ni mohl vůbec pokusit, musí do ní vložit dostatek Přízně: základ 5 a navíc 3 body Přízně za každou úroveň Vyšší moci démona. Poté provede ověřovací hod na Vůli (CHAR) vs. X, a pokud uspěje, démon je vyhnán a zapuzen z naší sféry.\nPŘÍKLAD: Exorcista Tharacus ví z prosby Odhal démona, že Vyšší moc démona je 10. Do prosby proto vloží 5 + 3 × 10 = 35 bodů Přízně. Po deseti minutách se mu podaří démona zahnat do jiné sféry. Jestliže by do prosby nevložil dostatek Přízně nebo úroveň démona podcenil, obřad by se nezdařil.",
+   "learn": {
+    "requires": [
+     "exorcismus"
+    ]
+   },
+   "temna": "Exorcista umí stejným způsobem někoho i posednout. Do těla nešťastníka přitáhne jednoho ze služebníků (nadpozemskou bytost) svého boha. Ta pak může v našem světě přebývat až do smrti své fyzické schránky."
+  },
+  {
+   "id": "posel_bdelosti",
+   "nazev": "Posel bdělosti",
+   "zdroj": "PPP06",
+   "strana": 301,
+   "skupina": "jazyk_prastarych",
+   "typ": "prosba",
+   "cena": {
+    "text": "20",
+    "base": 20
+   },
+   "obtiznost": {
+    "text": "15",
+    "base": 15
+   },
+   "vyvolani": {
+    "text": "5 kol",
+    "kind": "kola",
+    "n": 5,
+    "rounds": 5
+   },
+   "dosah": "5 mil",
+   "rozsah": "-",
+   "trvani": "max. 1 měsíc za úroveň Exorcisty",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Exorcista dokáže na vybrané místo přivolat neviditelného nadpozemského strážce. Pokud na místo kdokoliv pronikne nebo se na něm bude cokoliv dít, Exorcista se o tom dozví – posel mu okamžitě předá mentální zprávu. Kromě toho je tento tvor připraven a schopen vetřelce napadnout nebo vykonat jinou jednoduchou akci dle instrukcí Exorcisty.",
+   "learn": {
+    "requires": [
+     "jazyk_prastarych"
+    ]
+   },
+   "fx": {
+    "posel": "posel_bdelosti"
+   }
+  },
+  {
+   "id": "posel_domeny",
+   "nazev": "Posel domény",
+   "zdroj": "PPP06",
+   "strana": 301,
+   "skupina": "jazyk_prastarych",
+   "typ": "prosba",
+   "cena": {
+    "text": "30",
+    "base": 30
+   },
+   "obtiznost": {
+    "text": "18",
+    "base": 18
+   },
+   "vyvolani": {
+    "text": "3 kola",
+    "kind": "kola",
+    "n": 3,
+    "rounds": 3
+   },
+   "dosah": "100 sáhů",
+   "rozsah": "kruh o poloměru 30 sáhů",
+   "trvani": "5 kol",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Touto prosbou dokáže Exorcista vzývat Posla, který se následně projeví jako efekt domény jeho boha. Zda půjde jen o demonstraci moci, nebo o úder proti nepříteli, rozhoduje Klerik.\nV prvním případě se Posel může jevit jako démonická bytost stejně jako atmosférický či elementární jev – polární záře, roj meteorů, rozestoupení vody a podobně.\nV druhém případě jde o obdobnou formu, avšak s fyzickým dopadem. Způsob Zranění se může lišit a může být ovlivněn rezistencí, imunitou či slabinou tvorů. V základu však působí v každém kole v celé oblasti Zranění za 1k6 životů / sáh.",
+   "learn": {
+    "requires": [
+     "jazyk_prastarych"
+    ]
+   },
+   "fx": {
+    "posel": "posel_domeny"
+   }
+  },
+  {
+   "id": "posel_lovec",
+   "nazev": "Posel lovec",
+   "zdroj": "PPP06",
+   "strana": 301,
+   "skupina": "jazyk_prastarych",
+   "typ": "prosba",
+   "cena": {
+    "text": "15",
+    "base": 15
+   },
+   "obtiznost": {
+    "text": "18",
+    "base": 18
+   },
+   "vyvolani": {
+    "text": "ihned",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "-",
+   "rozsah": "1 tvor",
+   "trvani": "1 hodina",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Tento Posel dokáže stopovat ztracené vzpomínky. Pokud nějaký tvor připravil někoho o vzpomínky (zkušenosti či úroveň), může lovec pomoci.\nPo seslání prosby se Posel zjeví a očekává, že mu Exorcista ukáže oběť. Pak začne pátrat po tenkém vlákně, které ji spojuje s její ukradenou minulostí, a dovede Exorcistu k bytosti, jež za to mohla.\nPokud si to Klerik přeje, může lovec vzpomínek napadnout zloděje sám. Je-li monstrum poraženo, vzpomínky (zkušenosti či úroveň) se oběti vrátí.",
+   "learn": {
+    "requires": [
+     "jazyk_prastarych"
+    ]
+   },
+   "fx": {
+    "posel": "posel_lovec"
+   }
+  },
+  {
+   "id": "posel_peceti",
+   "nazev": "Posel pečeti",
+   "zdroj": "PPP06",
+   "strana": 302,
+   "skupina": "jazyk_prastarych",
+   "typ": "prosba",
+   "cena": {
+    "text": "8 + 2 za každé další kolo",
+    "base": 8,
+    "per": {
+     "cost": 2,
+     "unit": "další kola",
+     "min": 0
+    }
+   },
+   "obtiznost": {
+    "text": "10",
+    "base": 10
+   },
+   "vyvolani": {
+    "text": "ihned",
+    "kind": "okamzita",
+    "n": 1,
+    "rounds": 0
+   },
+   "dosah": "30 sáhů",
+   "rozsah": "max. 1 sáh za úroveň Klerika",
+   "trvani": "max. 1 měsíc za úroveň Exorcisty",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR) Klerika",
+   "stitky": [],
+   "popis": "Tento Posel může být vyvolán, aby chránil určité místo. Nemá žádnou hmatatelnou podobu, avšak v myslích tvorů se projevuje jako zhmotnění oslňující světelné bariéry. Výjimkou je sesílající Exorcista a tvorové, které z efektu působení Posla vyjme.\nPokud chce někdo skrze Posla projít, musí uspět v ověřovacím hodu na Vůli (CHAR) vs. Vůle (CHAR) Exorcisty. V opačném případě má oběť panickou hrůzu z tohoto zjevení a není schopna do něj znovu vkročit nebo se jej dotknout.",
+   "learn": {
+    "requires": [
+     "jazyk_prastarych"
+    ]
+   },
+   "fx": {
+    "posel": "posel_peceti"
+   }
+  },
+  {
+   "id": "aura_bratrstvi",
+   "nazev": "Aura bratrství",
+   "zdroj": "PPP06",
+   "strana": 308,
+   "skupina": "zazehnuti_aury",
+   "typ": "prosba",
+   "cena": {
+    "text": "20",
+    "base": 20
+   },
+   "obtiznost": {
+    "text": "18",
+    "base": 18
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "koule okolo Kněze o poloměru 20 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "10 kol",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Po vyslyšení této prosby jsou životy všech tvorů v jejím rozsahu propojeny bratrským poutem. Všechny jejich životy se sečtou a následně podělí podle počtu tvorů. Tím je dána nová hodnota životů každého z nich.\nPokud je kterýkoliv z tvorů raněn, projeví se ztráta životů rovnoměrně na všech. Stejně pak funguje i případné léčení – je-li uzdraven jeden tvor, uzdraví se i všichni ostatní o poměrnou část.",
+   "learn": {
+    "requires": [
+     "zazehnuti_aury"
+    ]
+   },
+   "fx": {
+    "rounds": 10,
+    "aura": true
+   }
+  },
+  {
+   "id": "aura_praveho_svetla",
+   "nazev": "Aura pravého světla",
+   "zdroj": "PPP06",
+   "strana": 309,
+   "skupina": "zazehnuti_aury",
+   "typ": "prosba",
+   "cena": {
+    "text": "30",
+    "base": 30
+   },
+   "obtiznost": {
+    "text": "20",
+    "base": 20
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "koule okolo Kněze o poloměru 6 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "5 kol",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Je-li prosba vyslyšena, zalije celý kruh aury oslnivá záře přicházející z nebe a zároveň z jejího středu. Záře je viditelná i v noci a mlze, pochází totiž z jiné sféry existence.\nToto světlo zraňuje všechny nemrtvé, neviděné a nadpozemské bytosti uvnitř aury za 1k6+2 životů.\nSvětlo aury zároveň oslňuje všechny, kteří jsou mimo ni, včetně postav. Mají pak Nevýhodu (postih −5) k jakékoliv akci, která má mířit směrem dovnitř.\nVšechny postavy (netýká se monster) uvnitř mají naopak Výhodu (bonus +5) ke své Obraně i všem dalším akcím proti tvorům mimo auru.",
+   "learn": {
+    "requires": [
+     "zazehnuti_aury"
+    ]
+   },
+   "fx": {
+    "active": {
+     "def": 5
+    },
+    "rounds": 5,
+    "aura": true
+   }
+  },
+  {
+   "id": "aura_probuzeni",
+   "nazev": "Aura probuzení",
+   "zdroj": "PPP06",
+   "strana": 309,
+   "skupina": "zazehnuti_aury",
+   "typ": "prosba",
+   "cena": {
+    "text": "25",
+    "base": 25
+   },
+   "obtiznost": {
+    "text": "16",
+    "base": 16
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "koule kolem Kněze o poloměru 20 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Poté, co je prosba vyslyšena, jsou všechny živé postavy pod Mezí vyřazení znovu přivedeny k vědomí. Jejich nejhorší rány se zahojí a mají 1 život. Cítí se navíc neuvěřitelně odpočatě a svěže.",
+   "learn": {
+    "requires": [
+     "zazehnuti_aury"
+    ]
+   },
+   "fx": {
+    "aura": true
+   }
+  },
+  {
+   "id": "aura_strachu",
+   "nazev": "Aura strachu",
+   "zdroj": "PPP06",
+   "strana": 309,
+   "skupina": "zazehnuti_aury",
+   "typ": "prosba",
+   "cena": {
+    "text": "25",
+    "base": 25
+   },
+   "obtiznost": {
+    "text": "18",
+    "base": 18
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "koule okolo Kněze o poloměru 6 sáhů",
+   "rozsah": "všichni tvorové v dosahu",
+   "trvani": "ihned",
+   "overeni": "Vůle (CHAR) vs. Vůle (CHAR)",
+   "stitky": [],
+   "popis": "Tato aura dokáže vyvolat nekontrolovatelný strach. Všichni tvorové v rozsahu aury, kteří nedokáží ověřovacím hodem vzdorovat Vůli Kněze, prchají v panice a chaosu. Pryč je žene pocit nadpozemské hrůzy – ne strach z Kněze, ale z čehosi nedefinovatelného, co se blíží. Kněz nemusí být pro účely efektu prosby vůbec vidět.\nEfekt strachu u zasažených přetrvává nejméně 1k10 minut.",
+   "learn": {
+    "requires": [
+     "zazehnuti_aury"
+    ]
+   },
+   "fx": {
+    "aura": true
+   }
+  },
+  {
+   "id": "bozska_pomoc",
+   "nazev": "Božská pomoc",
+   "zdroj": "PPP06",
+   "strana": 309,
+   "skupina": "zazraky",
+   "typ": "prosba",
+   "cena": {
+    "text": "30",
+    "base": 30
+   },
+   "obtiznost": {
+    "text": "18",
+    "base": 18
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 bytost",
+   "trvani": "1 kolo × úroveň Kněze",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Ten, na koho je prosba seslána, získává po dobu jejího trvání Výhodu (bonus +5) k Útoku, Obraně a záchranným hodům. Jeho aktuální životy se navíc v okamžiku seslání prosby dočasně zvýší o 10 + úroveň Kněze. Aktuální počet životů může v tomto případě překonat maximální hodnotu. Po ukončení efektu prosby dotyčný o tyto dodatečné životy přijde.",
+   "learn": {
+    "requires": [
+     "zazraky"
+    ]
+   },
+   "fx": {
+    "active": {
+     "atk": 5,
+     "def": 5,
+     "tempHp": true
+    },
+    "roundsPerLevel": 1
+   }
+  },
+  {
+   "id": "figiho_zasah_osudu",
+   "nazev": "Figiho zásah osudu",
+   "zdroj": "PPP06",
+   "strana": 310,
+   "skupina": "zazraky",
+   "typ": "prosba",
+   "cena": {
+    "text": "36",
+    "base": 36
+   },
+   "obtiznost": {
+    "text": "20",
+    "base": 20
+   },
+   "vyvolani": {
+    "text": "4 kola",
+    "kind": "kola",
+    "n": 4,
+    "rounds": 4
+   },
+   "dosah": "dotek",
+   "rozsah": "Kněz",
+   "trvani": "1 směna",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Troufalý kněz Figi přišel na způsob, jak pomocí svého boha vychýlit běh událostí do alternativy, která mu vyhovuje.\nJakmile je po dobu trvání prosby proveden hod na ověření Dovednosti, Útoku či Obrany a kněz je s výsledkem nespokojený, může se rozhodnout, že ho změní (u Útoku či Obrany si vybere číslo od 1 do 6, u hodu na Dovednost číslo od 1 do 10). Učiní tak v okamžité reakci, a proto ho to nestojí žádný čas. Takto změnit však dokáže jen 3 události, potom prosba předčasně skončí.",
+   "learn": {
+    "requires": [
+     "zazraky"
+    ]
+   },
+   "fx": {
+    "active": {
+     "note": "3× změnit výsledek hodu"
+    }
+   }
+  },
+  {
+   "id": "vrat_cas",
+   "nazev": "Vrať čas",
+   "zdroj": "PPP06",
+   "strana": 310,
+   "skupina": "zazraky",
+   "typ": "prosba",
+   "cena": {
+    "text": "50",
+    "base": 50
+   },
+   "obtiznost": {
+    "text": "30",
+    "base": 30
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "100 sáhů",
+   "rozsah": "kruh o poloměru 100 sáhů",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Tento zázrak je až na samé hranici udržení božské neutrality. Kněz musí mít opravdu životně důležitý důvod, aby ho bůh vyslyšel.\nJakmile je prosba vyslyšena, vrátí se čas v daném místě obvykle o 6 kol zpět. Kněz i tvorové, kteří byli mimo dosah prosby, si pamatují vše, co se stalo. Všichni ostatní v dosahu však prožijí celou situaci znovu.\nPokud je prosba seslána v boji nebo těsně po něm, vrací se čas do okamžiku jeho zahájení. Počet kol se v tomto případě neřeší.",
+   "learn": {
+    "requires": [
+     "zazraky"
+    ]
+   }
+  },
+  {
+   "id": "zachran_zivot",
+   "nazev": "Zachraň život",
+   "zdroj": "PPP06",
+   "strana": 310,
+   "skupina": "zazraky",
+   "typ": "prosba",
+   "cena": {
+    "text": "40",
+    "base": 40
+   },
+   "obtiznost": {
+    "text": "22 (+1 za každých 10 minut od úmrtí)",
+    "base": 22
+   },
+   "vyvolani": {
+    "text": "1 kolo",
+    "kind": "kola",
+    "n": 1,
+    "rounds": 1
+   },
+   "dosah": "dotek",
+   "rozsah": "1 bytost",
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Zachraň život je jedna z nejmocnějších proseb nejvyšší nouze. Kněz díky ní dokáže u boha vyprosit oživení zemřelého.\nProsba by měla být provedena co nejdříve – za každých deset minut od úmrtí se zvyšuje obtížnost o 1 bod. Lze ji úspěšně provést jen tehdy, je-li zachováno tělo mrtvého. Duše se do něj vrátí a rány se zahojí; oživený má 1 život a zmatené obrazy podivného místa, které během dne odezní. Bylo-li tělo zničeno, oživení není možné.\nZa záchranu života Kněz zaplatí částí sebe sama, ale i mrtvého: zkušenosti každého z nich se sníží na hranici přestupu na jejich předchozí úroveň.",
+   "learn": {
+    "requires": [
+     "zazraky"
+    ]
+   }
+  },
+  {
+   "id": "lek_svateho_aurelia",
+   "nazev": "Lék svatého Aurélia",
+   "zdroj": "PPP06",
+   "strana": 307,
+   "skupina": "vycvik_lazaretnich_lecitelu",
+   "typ": "lek",
+   "cena": {
+    "text": "30",
+    "base": 30
+   },
+   "obtiznost": {
+    "text": "10 (Znalost přírody)",
+    "base": 10
+   },
+   "vyvolani": {
+    "text": "1 směna",
+    "kind": "smeny",
+    "n": 1,
+    "rounds": null
+   },
+   "dosah": null,
+   "rozsah": null,
+   "trvani": "1 hodina",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Lék svatého Aurélia patří k nejsilnějším zbraním proti sněti a nemagickým otravám krve. Do hodiny po pozření je dokáže zcela neutralizovat. Zároveň vyléčí 3k6 životů a srazí horečku.",
+   "learn": {
+    "requires": [
+     "vycvik_lazaretnich_lecitelu"
+    ]
+   },
+   "zaklad": "hrst léčivých bylin, pálenka",
+   "vyroba": "1 směna",
+   "pouziti": "pozření",
+   "cetnost": "1× týdně",
+   "fx": {
+    "heal": "3k6"
+   }
+  },
+  {
+   "id": "lek_svateho_jana",
+   "nazev": "Lék svatého Jana",
+   "zdroj": "PPP06",
+   "strana": 307,
+   "skupina": "vycvik_lazaretnich_lecitelu",
+   "typ": "lek",
+   "cena": {
+    "text": "60",
+    "base": 60
+   },
+   "obtiznost": {
+    "text": "15 (Znalost přírody)",
+    "base": 15
+   },
+   "vyvolani": {
+    "text": "4 směny",
+    "kind": "smeny",
+    "n": 4,
+    "rounds": null
+   },
+   "dosah": null,
+   "rozsah": null,
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Lék svatého Jana je zázračný životabudič. Po pozření vyléčí raněnému 5k6+6 životů a zahojí veškeré krvácení.",
+   "learn": {
+    "requires": [
+     "vycvik_lazaretnich_lecitelu"
+    ]
+   },
+   "zaklad": "hrst léčivých bylin, víno",
+   "vyroba": "4 směny",
+   "pouziti": "pozření",
+   "cetnost": "1× týdně",
+   "fx": {
+    "heal": "5k6+6"
+   }
+  },
+  {
+   "id": "lek_svateho_maura",
+   "nazev": "Lék svatého Maura",
+   "zdroj": "PPP06",
+   "strana": 307,
+   "skupina": "vycvik_lazaretnich_lecitelu",
+   "typ": "lek",
+   "cena": {
+    "text": "30",
+    "base": 30
+   },
+   "obtiznost": {
+    "text": "15 (Znalost přírody)",
+    "base": 15
+   },
+   "vyvolani": {
+    "text": "1 směna",
+    "kind": "smeny",
+    "n": 1,
+    "rounds": null
+   },
+   "dosah": null,
+   "rozsah": null,
+   "trvani": "3 hodiny",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Tento lék dokáže ihned zcela utlumit veškerou bolest a odstranit postihy z ní vyplývající. Nezpůsobuje přitom ospalost ani otupělost, která je u jiných tlumičů bolesti obvyklá.",
+   "learn": {
+    "requires": [
+     "vycvik_lazaretnich_lecitelu"
+    ]
+   },
+   "zaklad": "bezinky, voda",
+   "vyroba": "1 směna",
+   "pouziti": "pozření",
+   "cetnost": "1× denně"
+  },
+  {
+   "id": "lek_svateho_nubia",
+   "nazev": "Lék svatého Núbia",
+   "zdroj": "PPP06",
+   "strana": 307,
+   "skupina": "vycvik_lazaretnich_lecitelu",
+   "typ": "lek",
+   "cena": {
+    "text": "30",
+    "base": 30
+   },
+   "obtiznost": {
+    "text": "9 (Znalost přírody)",
+    "base": 9
+   },
+   "vyvolani": {
+    "text": "10 kol",
+    "kind": "kola",
+    "n": 10,
+    "rounds": 10
+   },
+   "dosah": null,
+   "rozsah": null,
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Pomocí tohoto léku je možné zcela zahojit popáleniny a poleptání kůže. Jedna dávka (flakón) stačí na zranění o velikosti lidské paže nebo hrudníku. Léčba se provádí poléváním a omýváním rány.\nLék vrátí raněnému tolik životů, kolik mu způsobilo dané Zranění, a kůže se do týdne zregeneruje. Je-li rána starší než den, lék už životy nevrací; u ran starších týdne zůstává trvalé poškození kůže.",
+   "learn": {
+    "requires": [
+     "vycvik_lazaretnich_lecitelu"
+    ]
+   },
+   "zaklad": "měsíček lékařský, voda",
+   "vyroba": "10 kol",
+   "pouziti": "polití",
+   "cetnost": "1× denně"
+  },
+  {
+   "id": "mast_svate_meredith",
+   "nazev": "Mast svaté Meredith",
+   "zdroj": "PPP06",
+   "strana": 307,
+   "skupina": "vycvik_lazaretnich_lecitelu",
+   "typ": "lek",
+   "cena": {
+    "text": "15",
+    "base": 15
+   },
+   "obtiznost": {
+    "text": "12 (Znalost přírody)",
+    "base": 12
+   },
+   "vyvolani": {
+    "text": "1 směna",
+    "kind": "smeny",
+    "n": 1,
+    "rounds": null
+   },
+   "dosah": null,
+   "rozsah": null,
+   "trvani": "ihned",
+   "overeni": null,
+   "stitky": [],
+   "popis": "Tato mast dokáže účinně eliminovat následky omrzlin (včetně odumření tkání). Jedna dávka vystačí na Zranění velikosti paže či hrudníku. Mast vrátí raněnému tolik životů, kolik ztratil daným Zraněním; kůže i podkoží do týdne zregenerují. Je-li omrzlina starší než 12 hodin a tkáň odumřela, mast už nepomůže.\nVedlejším efektem masti je schopnost hojit modřiny a podlitiny – zmizí do minuty po potření.",
+   "learn": {
+    "requires": [
+     "vycvik_lazaretnich_lecitelu"
+    ]
+   },
+   "zaklad": "dubová kůra, sádlo",
+   "vyroba": "1 směna",
+   "pouziti": "potření",
+   "cetnost": "1× denně",
+   "pocet": "5 dávek"
+  }
+ ],
+ "poslove": {
+  "h13": {
+   "_zdroj": "H13 s. 17 Tabulka poslů (obrázek, OCR částečně nečitelné) + příklad u Posla bojovníka",
+   "uroven": "úroveň klerika",
+   "vyssi_moc": "úroveň klerika + 10",
+   "spolecne": "Nehmotní, levitují; proti jejich útokům nechrání nemagické vybavení; zraní je jen magické zbraně a magie.",
+   "list": {
+    "posel_bojovnik": {
+     "n": "Posel bojovník",
+     "hpPerLevel": 5,
+     "mobility": "25 (levitace)",
+     "attack": "meč",
+     "uc": 8,
+     "dmg": 1,
+     "zo": 8,
+     "oc": 8,
+     "growth": "příklad 4. úr.: ÚČ 10/+1, OČ 10, ZO 9",
+     "ok": false
+    },
+    "posel_rovnovahy": {
+     "n": "Posel rovnováhy",
+     "hpPerLevel": 4,
+     "mobility": "50 (levitace)",
+     "attack": "obušek",
+     "uc": 6,
+     "dmg": 3,
+     "zo": 8,
+     "oc": 8,
+     "ok": false
+    },
+    "posel_stezky": {
+     "n": "Posel stezky",
+     "hpPerLevel": 2,
+     "mobility": "50 (levitace)",
+     "attack": null,
+     "zo": 7,
+     "oc": 7,
+     "ok": false
+    },
+    "posel_umlceni": {
+     "n": "Posel umlčení",
+     "hpPerLevel": 3,
+     "mobility": "50 (levitace)",
+     "attack": null,
+     "zo": 7,
+     "oc": 7,
+     "ok": false
+    }
+   }
+  },
+  "ppp06": {
+   "_zdroj": "PPP06 s. 298 Tabulka poslů (Jazyk prastarých)",
+   "list": {
+    "posel_bdelosti": {
+     "n": "Posel bdělosti",
+     "vyssi_moc": 21,
+     "hp": 50,
+     "attack": "meč",
+     "uc": 10,
+     "dmg": 3,
+     "zo": 6,
+     "oc": 7
+    },
+    "posel_domeny": {
+     "n": "Posel domény",
+     "vyssi_moc": 25,
+     "hp": 65,
+     "attack": null,
+     "zo": 4,
+     "oc": 4
+    },
+    "posel_lovec": {
+     "n": "Posel lovec",
+     "vyssi_moc": 17,
+     "hp": 35,
+     "attack": "dýky 2×",
+     "uc": 5,
+     "dmg": 3,
+     "zo": 7,
+     "oc": 8
+    },
+    "posel_peceti": {
+     "n": "Posel pečeti",
+     "vyssi_moc": 16,
+     "hp": 45,
+     "attack": null,
+     "zo": 4,
+     "oc": 4
+    }
+   },
+   "rezistence": "magické zbraně, kouzla",
+   "imunity": "nemagické zbraně, jed, krvácení, ovlivnění mysli"
+  }
+ },
+ "videniMany": [
+  {
+   "mana": "1 a více",
+   "obtiznost": "26+"
+  },
+  {
+   "mana": "20 a více",
+   "obtiznost": "22–25"
+  },
+  {
+   "mana": "40 a více",
+   "obtiznost": "18–21"
+  },
+  {
+   "mana": "60 a více",
+   "obtiznost": "14–17"
+  },
+  {
+   "mana": "80 a více",
+   "obtiznost": "10–13"
+  },
+  {
+   "mana": "100 a více",
+   "obtiznost": "9 a méně"
+  }
+ ]
+}

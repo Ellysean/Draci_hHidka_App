@@ -1,0 +1,341 @@
+{
+ "common": [
+  {
+   "itemId": "cestovni_saty",
+   "qty": 1
+  },
+  {
+   "itemId": "mesec",
+   "qty": 1
+  },
+  {
+   "itemId": "deka",
+   "qty": 1
+  },
+  {
+   "itemId": "kozena_torna",
+   "qty": 1
+  },
+  {
+   "itemId": "zelezna_zasoba",
+   "qty": 1
+  },
+  {
+   "itemId": "mech_na_vodu",
+   "qty": 1
+  },
+  {
+   "itemId": "obvazy",
+   "qty": 1
+  },
+  {
+   "itemId": "kresadlo",
+   "qty": 1
+  },
+  {
+   "itemId": "jehla_a_nit",
+   "qty": 1
+  },
+  {
+   "weaponId": "jednorucni_nuz",
+   "qty": 1
+  }
+ ],
+ "byClass": {
+  "valecnik": {
+   "items": [
+    {
+     "itemId": "lano",
+     "qty": 1
+    },
+    {
+     "itemId": "pochoden",
+     "qty": 3
+    }
+   ],
+   "fixed": [
+    {
+     "armorId": "zbroj_prosivana",
+     "qty": 1
+    }
+   ],
+   "choose": [
+    {
+     "label": "Tesák",
+     "items": [
+      {
+       "weaponId": "jednorucni_tesak",
+       "qty": 1
+      }
+     ]
+    },
+    {
+     "label": "Oštěp",
+     "items": [
+      {
+       "weaponId": "jednorucni_ostep",
+       "qty": 1
+      }
+     ]
+    },
+    {
+     "label": "Palice",
+     "items": [
+      {
+       "weaponId": "jednorucni_palice",
+       "qty": 1
+      }
+     ]
+    }
+   ],
+   "gold": 11
+  },
+  "hranicar": {
+   "items": [
+    {
+     "itemId": "lano",
+     "qty": 1
+    },
+    {
+     "itemId": "lucerna",
+     "qty": 1
+    },
+    {
+     "itemId": "lahev_oleje",
+     "qty": 1
+    },
+    {
+     "itemId": "stan",
+     "qty": 1
+    }
+   ],
+   "fixed": [],
+   "choose": [
+    {
+     "label": "Krátký luk + toulec s 20 šípy",
+     "items": [
+      {
+       "weaponId": "strelne_kratky_luk",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_toulec_na_sipy_ci_sipky",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_sip_obycejny",
+       "qty": 20
+      }
+     ]
+    },
+    {
+     "label": "Lehká kuše + toulec s 20 šipkami",
+     "items": [
+      {
+       "weaponId": "strelne_lehka_kuse",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_toulec_na_sipy_ci_sipky",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_sipka_obycejna",
+       "qty": 20
+      }
+     ]
+    }
+   ],
+   "gold": 16
+  },
+  "alchymista": {
+   "items": [
+    {
+     "itemId": "alchymisticka_truhla_zakladni",
+     "qty": 1
+    },
+    {
+     "special": "alchymista_startovni_zaklady",
+     "note": "19 startovních základů dle H10"
+    },
+    {
+     "itemId": "flakon",
+     "qty": 5
+    },
+    {
+     "itemId": "pergamen_papyrus",
+     "qty": 1
+    },
+    {
+     "itemId": "psaci_potreby",
+     "qty": 1
+    },
+    {
+     "itemId": "kotlicek",
+     "qty": 1
+    }
+   ],
+   "fixed": [],
+   "choose": [
+    {
+     "label": "Krátký luk + toulec s 20 šípy",
+     "items": [
+      {
+       "weaponId": "strelne_kratky_luk",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_toulec_na_sipy_ci_sipky",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_sip_obycejny",
+       "qty": 20
+      }
+     ]
+    },
+    {
+     "label": "Lehká kuše + toulec s 20 šipkami",
+     "items": [
+      {
+       "weaponId": "strelne_lehka_kuse",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_toulec_na_sipy_ci_sipky",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_sipka_obycejna",
+       "qty": 20
+      }
+     ]
+    }
+   ],
+   "gold": 6
+  },
+  "kouzelnik": {
+   "items": [
+    {
+     "itemId": "krida",
+     "qty": 1
+    },
+    {
+     "itemId": "svicka",
+     "qty": 3
+    },
+    {
+     "itemId": "pergamen_papyrus",
+     "qty": 1
+    },
+    {
+     "itemId": "psaci_potreby",
+     "qty": 1
+    }
+   ],
+   "fixed": [
+    {
+     "weaponId": "obourucni_okovana_hul",
+     "qty": 1
+    }
+   ],
+   "choose": [],
+   "gold": 27
+  },
+  "zlodej": {
+   "items": [
+    {
+     "itemId": "velky_vak",
+     "qty": 1
+    },
+    {
+     "itemId": "zlodejske_vybaveni",
+     "qty": 1
+    },
+    {
+     "itemId": "zrcatko",
+     "qty": 1
+    }
+   ],
+   "fixed": [],
+   "choose": [
+    {
+     "label": "Krátký luk + toulec s 20 šípy",
+     "items": [
+      {
+       "weaponId": "strelne_kratky_luk",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_toulec_na_sipy_ci_sipky",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_sip_obycejny",
+       "qty": 20
+      }
+     ]
+    },
+    {
+     "label": "Lehká kuše + toulec s 20 šipkami",
+     "items": [
+      {
+       "weaponId": "strelne_lehka_kuse",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_toulec_na_sipy_ci_sipky",
+       "qty": 1
+      },
+      {
+       "accessoryId": "doplnek_sipka_obycejna",
+       "qty": 20
+      }
+     ]
+    },
+    {
+     "label": "4 hvězdice",
+     "items": [
+      {
+       "weaponId": "vrhaci_hvezdice",
+       "qty": 4
+      }
+     ]
+    }
+   ],
+   "gold": 14
+  },
+  "klerik": {
+   "items": [
+    {
+     "itemId": "obvazy",
+     "qty": 1
+    },
+    {
+     "itemId": "svecena_voda",
+     "qty": 1
+    },
+    {
+     "itemId": "svicka",
+     "qty": 3
+    },
+    {
+     "itemId": "pergamen_papyrus",
+     "qty": 1
+    },
+    {
+     "itemId": "psaci_potreby",
+     "qty": 1
+    }
+   ],
+   "fixed": [
+    {
+     "weaponId": "obourucni_okovana_hul",
+     "qty": 1
+    }
+   ],
+   "choose": [],
+   "gold": 27
+  }
+ }
+}

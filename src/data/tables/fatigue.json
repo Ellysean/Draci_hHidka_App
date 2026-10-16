@@ -1,0 +1,27 @@
+[
+ {
+  "level": 0,
+  "name": "Svěží",
+  "penalty": 0
+ },
+ {
+  "level": 1,
+  "name": "Mírně unavená",
+  "penalty": -2
+ },
+ {
+  "level": 2,
+  "name": "Unavená",
+  "penalty": -4
+ },
+ {
+  "level": 3,
+  "name": "Vyčerpaná",
+  "penalty": -6
+ },
+ {
+  "level": 4,
+  "name": "Zcela vyčerpaná",
+  "penalty": null
+ }
+]

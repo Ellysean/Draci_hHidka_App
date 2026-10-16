@@ -1,0 +1,598 @@
+{
+ "_source": "H09 (PPZ 1.2.5) + PPP02 s. 61–110 – generuje tools/build-hranicar.py",
+ "pravidla": {
+  "energie": "Duševní síla – max. z Tabulky Duševní síly hraničáře (INT × úroveň, H09; dusevni_sila_H09.json jen úr. 1–6). Zapisuje se do pole Mana. Doplní se do maxima, když je hraničář Svěží.",
+  "overeni": "Pouto s přírodou (INT) vs. Obtížnost kouzla – musí být VYŠŠÍ než obtížnost.",
+  "bez_gest": "Kouzlení je intuitivní – žádná gesta ani zaklínadla (žádné postihy za řeč, gesta ani zbroj).",
+  "vyruseni": "Vyrušení během vyvolání (např. zranění) → Nevýhoda −5 k ověření.",
+  "akce": "Okamžitá – v rámci jiné akce (ohlásit před ověřovacími hody); Krátká/Dlouhá – efekt po skončení akce; delší než 2 dlouhé akce v kolech/směnách/hodinách, sesílá se dlouhými akcemi. Bojová akce Kouzlení.",
+  "energie_pod_nulu": "Aktuální Duševní síla nesmí klesnout pod nulu; při nedostatečném odhadu ceny se kouzlo nezdaří a Duševní síla propadne.",
+  "projevy": "Při sesílání je okolí patrné, že příroda reaguje (ševelení listí, chování zvířat, poryv větru).",
+  "trvani": "Trvání v kolech a déle se počítá od kola po seslání; hraničář může kouzlo přerušit myšlenkou.",
+  "prvni_uroven": "Hraničářské umění: Lov (OBR), Vnímání přírody (INT), Stopování (INT) na 3. stupni. Hraničářská magie: Pouto s přírodou (INT) na 3. stupni. 4 základní kouzla automaticky.",
+  "prestup": "Každá úroveň: nová zvláštní schopnost nebo směr magie; kouzla jen přes směry (každý směr = automaticky 3 kouzla). Dovednostní body 5× úroveň na každé 2. úrovni; charakterové body 2 na každé 3. úrovni.",
+  "specializace": "Od 6. úrovně; podmínky podle H09 (dvě pevné, PPP třetí se nepoužívá ✔ U 22. 9. 2026)."
+ },
+ "smery": [
+  {
+   "id": "magie_pocestnych",
+   "nazev": "Magie pocestných",
+   "strana": 11,
+   "efekt": "+10 k Pohyblivosti.",
+   "efekty": [
+    {
+     "target": "mobility",
+     "op": "add",
+     "value": 10
+    }
+   ],
+   "kouzla_auto": [
+    "bdely_spanek",
+    "ochrana_pred_bouri",
+    "rychlost_chodce"
+   ],
+   "popis": "Tento druh magie využívá hraničář při každodenním putování. Dokáže mu pomoci lépe zvládat útrapy cest, ale také odolávat rozmarům počasí nebo ho chránit před nepříjemným překvapením."
+  },
+  {
+   "id": "magie_prirody",
+   "nazev": "Magie přírody",
+   "strana": 11,
+   "efekt": "+1 k ověření dovednosti Znalost přírody (INT).",
+   "efekty": [
+    {
+     "target": "skill:znalost_prirody",
+     "op": "add",
+     "value": 1
+    }
+   ],
+   "kouzla_auto": [
+    "neutralizuj_jed",
+    "uder_varovani",
+    "uzdrav_lehka_zraneni"
+   ],
+   "popis": "Tento druh magie je úzce zaměřen na nejmocnější dar přírody, kterým je život. Hraničář skrze ni dokáže uzdravovat, ale také zraňovat."
+  },
+  {
+   "id": "magie_zvirat",
+   "nazev": "Magie zvířat",
+   "strana": 11,
+   "efekt": "+1 k ověření dovednosti Zvládnutí zvířat (OBR/CHAR).",
+   "efekty": [
+    {
+     "target": "skill:zvladnuti_zvirat",
+     "op": "add",
+     "value": 1
+    }
+   ],
+   "kouzla_auto": [
+    "najdi_zvire",
+    "privolej_zvire",
+    "zvireci_smysly"
+   ],
+   "popis": "Tento druh magie se zaměřuje na úzký kontakt hraničáře s dalšími „dětmi přírody“ – zvířaty. Hraničář je dokáže přivolávat a využívat jejich schopnosti."
+  }
+ ],
+ "schopnosti": {
+  "boj_se_zviraty": {
+   "name": "Boj se zvířaty",
+   "text": "Při boji se zvířaty, bestiemi či hmyzem +2 do ÚČ a OČ.",
+   "source": "H09",
+   "page": 7,
+   "spec": null,
+   "minLevel": null
+  },
+  "bojova_hul": {
+   "name": "Bojová hůl",
+   "text": "+2 do OČ při boji s holí, kopím a podobnými dřevcovými zbraněmi; v rámci akce Obrana jedna Aktivní obrana navíc.",
+   "source": "H09",
+   "page": 7,
+   "spec": null,
+   "minLevel": null
+  },
+  "lecitelstvi": {
+   "name": "Léčitelství",
+   "text": "Profesní dovednost Léčitelství (INT) na 3. stupni. 1 směna, 1 tvor, obvazy; ověření Léčitelství (INT) vs. chybějící životy → vyléčí stupeň + oprava INT (neúspěch polovinu). Jen 1× denně před Spánkem, projeví se po něm.",
+   "source": "H09",
+   "page": 7,
+   "spec": null,
+   "minLevel": null
+  },
+  "obratne_ostri": {
+   "name": "Obratné ostří",
+   "text": "Při útoku mečem (tesák, šavle, meč bastard apod.) může započíst opravu OBR místo SIL.",
+   "source": "H09",
+   "page": 8,
+   "spec": null,
+   "minLevel": null
+  },
+  "ochocovani_zvirat": {
+   "name": "Ochočování zvířat",
+   "text": "Profesní dovednost Ochočování zvířat (CHAR) na 3. stupni. Trvá 1k6 směn; ověření vs. obtížnost ochočení zvířete; neúspěch → znovu až další den. Najednou jen 1 ochočené zvíře (Zvířecí přítel).",
+   "source": "H09",
+   "page": 8,
+   "spec": null,
+   "minLevel": null
+  },
+  "pruzkumnictvi": {
+   "name": "Průzkumnictví",
+   "text": "Profesní dovednosti Kamufláž (OBR) a Líčení pastí (OBR) na 3. stupni.",
+   "source": "H09",
+   "page": 8,
+   "spec": null,
+   "minLevel": null
+  },
+  "presna_strelba": {
+   "name": "Přesná střelba",
+   "text": "1 kolo soustředění a míření (při více útocích za kolo vynechá jeden střelecký útok) → další útok +6. Neživý cíl do 20 sáhů obvykle zasáhne automaticky.",
+   "source": "H09",
+   "page": 10,
+   "spec": null,
+   "minLevel": null
+  },
+  "rychla_strelba": {
+   "name": "Rychlá střelba",
+   "text": "Jen luk: v rámci akce Útok více Útoků a v rámci akce Obrana více Obran – 3 za 2 kola (2, 1, 2, 1…). Od 6. úrovně 2 útoky i obrany každé kolo.",
+   "source": "H09",
+   "page": 10,
+   "spec": null,
+   "minLevel": null
+  },
+  "zoceleni": {
+   "name": "Zocelení",
+   "text": "Jednorázově +4 ke stupni Odolnosti (zpětná oprava životů).",
+   "source": "H09",
+   "page": 10,
+   "spec": null,
+   "minLevel": null
+  },
+  "bdely_spanek_schopnost": {
+   "name": "Bdělý spánek",
+   "text": "I ve spánku hod na Postřeh (při odpočinku Výhoda +5); při úspěchu se okamžitě probere a může se bránit. Nerušený spánek či odpočinek léčí 2× víc životů.",
+   "source": "PPP02",
+   "page": 64,
+   "spec": null,
+   "minLevel": 6
+  },
+  "hranicarsky_luk": {
+   "name": "Hraničářský luk",
+   "text": "Výroba 1k6 dnů. Pro tvůrce +1 Útočnost, Zranění i Obrana a dostřel ×1,5. Magie luku – kouzla lze kombinovat s útokem.",
+   "source": "PPP02",
+   "page": 64,
+   "spec": null,
+   "minLevel": 6
+  },
+  "hranicaruv_kun": {
+   "name": "Hraničářův kůň",
+   "text": "Duševní pouto s 1 jezdeckým zvířetem (navázání 1 hodina; nové až na další úrovni). Speciálních povelů tolik, kolik je bonus INT. Jízda na zvířeti +3 (nebo ji naučí na 3. stupni).",
+   "source": "PPP02",
+   "page": 65,
+   "spec": null,
+   "minLevel": 6
+  },
+  "lovcova_korist": {
+   "name": "Lovcova kořist",
+   "text": "Proti zvolenému typu tvorů (u humanoidů konkrétní rasa) +3 ÚČ i OČ a Výhoda +5 k hodům využívajícím znalost jejich slabin (stopování…). Každou 3. úroveň lze vzít další kategorii.",
+   "source": "PPP02",
+   "page": 66,
+   "spec": null,
+   "minLevel": 6
+  },
+  "mluveni_se_zviraty": {
+   "name": "Mluvení se zvířaty",
+   "text": "Telepatická komunikace s běžnými (nemagickými) zvířaty – 1 otázka a 1 odpověď za kolo.",
+   "source": "PPP02",
+   "page": 66,
+   "spec": null,
+   "minLevel": 6
+  },
+  "moudrost": {
+   "name": "Moudrost",
+   "text": "ZO může počítat z bonusu INT místo OBR; u všech dovedností může nahradit OBR za INT.",
+   "source": "PPP02",
+   "page": 67,
+   "spec": null,
+   "minLevel": 6
+  },
+  "ostrazitost": {
+   "name": "Ostražitost",
+   "text": "Trvale +3 k Postřehu, Reflexu a Iniciativě.",
+   "source": "PPP02",
+   "page": 67,
+   "spec": null,
+   "minLevel": 6
+  },
+  "spriznenost_se_zviraty": {
+   "name": "Spřízněnost se zvířaty",
+   "text": "Zvířata na něj neútočí, dokud se sám nezapojí do boje; Výhoda +5 k Ochočování, Uklidňování a Vyjednávání se zvířaty.",
+   "source": "PPP02",
+   "page": 67,
+   "spec": null,
+   "minLevel": 6
+  },
+  "strelba_na_kratkou_vzdalenost": {
+   "name": "Střelba na krátkou vzdálenost",
+   "text": "Střelba na méně než 2 sáhy bez postihu −5; v této situaci +2 ke Zranění lukem a +2 do Obrany lukem.",
+   "source": "PPP02",
+   "page": 67,
+   "spec": null,
+   "minLevel": 6
+  },
+  "svetobeznik": {
+   "name": "Světoběžník",
+   "text": "Dovednostní body 6× úroveň místo 5× úroveň (zpětná oprava).",
+   "source": "PPP02",
+   "page": 67,
+   "spec": null,
+   "minLevel": 6
+  },
+  "urputna_strelba": {
+   "name": "Urputná střelba",
+   "text": "Soustředěná palba na stejný cíl: za každý další šíp +1 ÚČ (max. +5); kombinuje se s Rychlou i Přesnou střelbou.",
+   "source": "PPP02",
+   "page": 68,
+   "spec": null,
+   "minLevel": 6
+  },
+  "totem": {
+   "name": "Totem",
+   "text": "Fetiš z ostatků zvířete (1 den o samotě). Propojení 1 kolo → na 1 směnu schopnost zvířete, pak se totem rozpadne. U sebe nejvýš 1 totem.",
+   "source": "PPP02",
+   "page": 68,
+   "spec": null,
+   "minLevel": 6
+  },
+  "chodcuv_mec": {
+   "name": "Chodcův meč",
+   "text": "Zasvěcení meče (výprava 1k6 týdnů, 1× za úroveň). Pro Chodce +1 Útočnost, Zranění i Obrana, magická zbraň; uloží 2 many za úroveň (přelití 1 kolo, 1 DS za 1 manu). Kouzla meče v nulovém čase.",
+   "source": "PPP02",
+   "page": 74,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "chodecka_magie": {
+   "name": "Chodecká magie",
+   "text": "Kouzla maskování stop a pachů, sledování a zastrašení.",
+   "source": "PPP02",
+   "page": 76,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "instinkt_lovce": {
+   "name": "Instinkt lovce",
+   "text": "1 kolo pozorování → pozná nejslabšího a nejsilnějšího protivníka; proti nim +3 ÚČ i OČ (vyprchá týden po posledním spatření).",
+   "source": "PPP02",
+   "page": 76,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "jista_ruka": {
+   "name": "Jistá ruka",
+   "text": "Padne-li v boji na k6 jednička, hází znovu; druhý hod platí.",
+   "source": "PPP02",
+   "page": 76,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "magicke_pasti": {
+   "name": "Magické pasti",
+   "text": "Umí líčit a bezpečně rozpoznat jednorázové magické pasti.",
+   "source": "PPP02",
+   "page": 76,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "magie_lovcu_monster": {
+   "name": "Magie lovců monster",
+   "text": "Bojová kouzla použitelná s jakoukoli zbraní.",
+   "source": "PPP02",
+   "page": 77,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "pozirac": {
+   "name": "Požírač",
+   "text": "1× denně pozře čerstvý orgán (do 2 h od smrti, tvor ≥ A1) za 1 směnu: vyléčí 1k6 a na 24 h přičte opravu atributu oběti (min. +1): srdce SIL, šlachy OBR, oči CHAR, mozek INT, játra ODO.",
+   "source": "PPP02",
+   "page": 78,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "soustredeni_dusevni_sily": {
+   "name": "Soustředění Duševní síly",
+   "text": "Kouzla posílení vlastního těla a mysli (Očištění, Přizpůsobení, Utužení, Uvolnění, Zacelení).",
+   "source": "PPP02",
+   "page": 78,
+   "spec": "chodec",
+   "minLevel": null
+  },
+  "dary_prirody": {
+   "name": "Dary přírody",
+   "text": "Léčivé masti a odvary (Znalost přírody).",
+   "source": "PPP02",
+   "page": 92,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "druidova_hul": {
+   "name": "Druidova hůl",
+   "text": "Rituál 1 týden (vrchol o úplňkové půlnoci); nová až na další úrovni. Hůl: Útočnost 5, Zranění 1, Obrana 3; +1 k jednomu z atributů hole za každou volitelnou druidskou schopnost. Lipová: +3 magie lesa a léčivé listy; jabloňová: +3 všem druidským kouzlům a jablka; dubová: +3 magie hvozdu a žaludy (+2 DS).",
+   "source": "PPP02",
+   "page": 90,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "druidske_ritualy": {
+   "name": "Druidské rituály",
+   "text": "Na posvátném místě Výhoda +5; více Druidů v kruhu: +5 za každého podporujícího (vloží veškerou Duševní sílu).",
+   "source": "PPP02",
+   "page": 93,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "magie_lesa": {
+   "name": "Magie lesa",
+   "text": "Kouzla lesa (Bludný kořen, Listová bouřka, Povolej víly, Změna počasí…).",
+   "source": "PPP02",
+   "page": 93,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "magie_hvozdu": {
+   "name": "Magie hvozdu",
+   "text": "Mocná kouzla hvozdu (Hněv hvozdu, Koroze, Trnová stěna, Zestromovatění…).",
+   "source": "PPP02",
+   "page": 93,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "prostoupeni": {
+   "name": "Prostoupení",
+   "text": "Za 3 kola vstoupí do stromu (≥ jeho velikosti) a ovládá ho max. 1 den, 1× za 24 h; zranění stromu napůl přechází na Druida.",
+   "source": "PPP02",
+   "page": 94,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "sila_prirody": {
+   "name": "Síla přírody",
+   "text": "1× denně meditace 1 směna v lese → aktuální Duševní síla až na 2× maximum; zmizí po usnutí.",
+   "source": "PPP02",
+   "page": 94,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "vladni_prirozenym_vecem": {
+   "name": "Vládni přirozeným věcem",
+   "text": "Jednorázový příkaz přírodnímu nemagickému předmětu (do velikosti Druida) na 10 sáhů × úroveň; krátká akce, 1 bod únavy.",
+   "source": "PPP02",
+   "page": 94,
+   "spec": "druid",
+   "minLevel": null
+  },
+  "bestie": {
+   "name": "Bestie",
+   "text": "Proměna za 1 kolo: OBR, ODO a SIL +3, INT a CHAR −5; nelze zbraně ani kouzla; drápy 8/+2/+2.",
+   "source": "PPP02",
+   "page": 105,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  },
+  "boj_ve_smecce": {
+   "name": "Boj ve smečce",
+   "text": "+1 ÚČ i OČ za každého člena smečky v boji (max. +5).",
+   "source": "PPP02",
+   "page": 105,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  },
+  "divoke_pokriky": {
+   "name": "Divoké pokřiky",
+   "text": "Řevy a pokřiky, kterými burcuje smečku a děsí nepřátele.",
+   "source": "PPP02",
+   "page": 105,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  },
+  "magie_smecky": {
+   "name": "Magie smečky",
+   "text": "Kouzla s dosahem dotek může sesílat přes kterékoli zvíře smečky.",
+   "source": "PPP02",
+   "page": 105,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  },
+  "pokrocila_magie_zvirat": {
+   "name": "Pokročilá Magie zvířat",
+   "text": "Kouzla pro práci se zvířaty (Mimikry, Nakrm zvíře, Oči zvířete, Pochvala, Poslouchej).",
+   "source": "PPP02",
+   "page": 106,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  },
+  "samanismus": {
+   "name": "Šamanismus",
+   "text": "Nápoj Argwe (hodina přípravy) → trans 4 směny, rozhovor s duchem zvířete, případně návrat duše do zachovalého těla; po transu obnoví ½ max. Duševní síly. 1× denně.",
+   "source": "PPP02",
+   "page": 106,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  },
+  "tvaromenic": {
+   "name": "Tvaroměnič",
+   "text": "Za 1 kolo převezme tělo zvířete ze smečky (vlastní tělo v transu); atributy zvířete, zůstává INT.",
+   "source": "PPP02",
+   "page": 106,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  },
+  "zvireci_sampion": {
+   "name": "Zvířecí šampion",
+   "text": "Jedno zvíře: +1 třída velikosti, +20 max. životů, +15 pohyblivost, +3 ÚČ i ZO; Pánovi zvířat trvale −2 max. Duševní síly.",
+   "source": "PPP02",
+   "page": 107,
+   "spec": "pan_zvirat",
+   "minLevel": null
+  }
+ },
+ "specializace": {
+  "chodec": {
+   "name": "Chodec",
+   "page": 73,
+   "auto": [
+    {
+     "name": "Vytrvalost",
+     "text": "Hranice únavy = 15 + oprava ODO (bez mechaniky únavy vydrží 2× víc než ostatní)."
+    },
+    {
+     "name": "Znalost místních poměrů",
+     "text": "Dovednost (INT) na 5. stupni: informace o místech, obtížnost podle hodnoty informace; po týdnu na místě Výhoda +5."
+    }
+   ],
+   "rules": [],
+   "requires": [
+    "pruzkumnictvi",
+    "magie_pocestnych"
+   ]
+  },
+  "druid": {
+   "name": "Druid",
+   "page": 83,
+   "auto": [
+    {
+     "name": "Druidova kouzla",
+     "text": "Od 6. úrovně automaticky všechna Druidova kouzla. Ve městech a civilizaci Nevýhoda −5 (lze obejít Základem – předmětem z místa, který se rozpadne)."
+    },
+    {
+     "name": "Druidské svěcení",
+     "text": "Ve hvozdu Výhoda +5 ke všem hodům na Pouto s přírodou, v běžné přírodě +3."
+    }
+   ],
+   "rules": [
+    "Nesmí nosit neušlechtilé kovy (zlato a stříbro výjimečně); za každý den s kovem týden meditace ve hvozdu, jinak ztráta druidských schopností.",
+    "Po zabití zvířete očistná meditace 1 směna, jinak nenačerpá Duševní sílu.",
+    "Na posvátných místech (Druidský kruh: kouzla za ½ Duševní síly, Srdce hvozdu) mají druidská kouzla 2× účinek."
+   ],
+   "requires": [
+    "lecitelstvi",
+    "magie_prirody"
+   ]
+  },
+  "pan_zvirat": {
+   "name": "Pán zvířat",
+   "page": 103,
+   "auto": [
+    {
+     "name": "Další zvířecí přátelé",
+     "text": "Ochočená zvířata získají schopnosti zvířecích přátel (např. vrána místo sokola, rys místo vlka); fyzické atributy podle druhu."
+    },
+    {
+     "name": "Smečka",
+     "text": "Více zvířecích společníků; součet jejich úrovní ≤ úroveň Pána zvířat. Při přestupu lze vycvičit jen jedno zvíře."
+    }
+   ],
+   "rules": [],
+   "requires": [
+    "ochocovani_zvirat",
+    "magie_zvirat"
+   ]
+  }
+ },
+ "pokrocily": {
+  "level": 6,
+  "skills": [
+   {
+    "id": "vyroba_sipu",
+    "name": "Výroba šípů",
+    "attr": "obr",
+    "rank": 5,
+    "text": "Výroba 1 šípu = 1 směna. Šíp na míru (obt. 10): +1 Útočnost i Zranění za každých 5 stupňů dovednosti, jen pro jednu zbraň. Hvízdavý šíp (obt. 7). Šíp se zpětnými háčky (obt. 10): vytažení = 1k6 zranění."
+   },
+   {
+    "id": "pohyb_v_terenu",
+    "name": "Pohyb v terénu",
+    "attr": "obr",
+    "rank": 5,
+    "text": "Úspěch = překoná překážku či těžký terén bez postihu k rychlosti a zcela tiše."
+   },
+   {
+    "id": "prirodni_prekazky",
+    "name": "Přírodní překážky",
+    "attr": "obr",
+    "rank": 5,
+    "text": "Za hodinu změní 100 čtv. sáhů na obtížný terén (poloviční rychlost pro neznalé). Za 1 směnu tolik polovičních krytů (+3 ZO proti střelbě), kolik je stupeň dovednosti."
+   }
+  ],
+  "spells": "Další hraničářská kouzla – ke každému známému směru 2 kouzla (Ochrana před smečkou, Odvracení zvířat · Ochrana před zimou, Sledování · Úder nenávisti, Uzdrav těžká zranění)."
+ },
+ "pasti": {
+  "_stav": "Tabulka pastí H09 s. 9–10 – přepis od uživatele 1. 10. 2026 (v PDF jen obrázek).",
+  "pravidlo": "Příprava: Líčení pastí (OBR) vs. obtížnost přípravy pasti. Účinek: cíl Postřeh (INT) vs. výsledek Líčení pastí hraničáře; neuspěje-li, nastane Popis z tabulky. Další druhy pastí určuje Vypravěč.",
+  "polozky": [
+   {
+    "id": "jama",
+    "nazev": "Jáma",
+    "vyroba": "2 směny",
+    "vyzaduje": "vhodný terén (jámu), dřevěné kůly",
+    "obtiznost": 10,
+    "ucinek": {
+     "damage": "1k10+6",
+     "damageType": "bodné",
+     "save": "Hbitost (OBR) vs. Líčení pastí (OBR)",
+     "onFail": {
+      "bleed": "1k6",
+      "until": "ošetření Krvácení"
+     }
+    },
+    "popis": "Hraničáři jámu nekopou, raději najdou vhodnou prohlubeň, kterou upraví. Jáma většinou není příliš hluboká. Na dno jámy umístí hraničář ostré dřevěné kůly a povrch zamaskují větvemi a listím. Po došlápnutí oběť spadne a zraní se (bodné zranění) za 1k10 +6 životů. Oběť navíc musí uspět v hodu na Hbitost (OBR) vs. Líčení pastí (OBR) hraničáře. Pokud neuspěje pak dopadla tak nešikovně, že krvácí za 1k6 životů za kolo. A to až do ošetření Krvácení."
+   },
+   {
+    "id": "celisti",
+    "nazev": "Čelisti",
+    "vyroba": "1 minuta (10 kol)",
+    "vyzaduje": "kovová past (čelisti)",
+    "obtiznost": 6,
+    "cena": "2 zl (kovář)",
+    "ucinek": {
+     "damage": "1k10+2",
+     "damageType": "sečné",
+     "trapped": true,
+     "escape": "Atletika (SIL) vs. 10",
+     "after": "Zpomalený do vyléčení zranění z pasti nebo První pomoci"
+    },
+    "popis": "Klasická past na vlky, kterou lze koupit u kováře (obvyklá cena je 2 zl). Zvíře je do ní přiláká maso, lidi pak čímkoli zajímavým (třeba kusem látky) umístěným za ní. Při došlápnutí způsobí sečné zranění za 1k10 +2 životů. Oběť navíc zůstává uvězněna. K uvolnění z pasti je potřeba překonat past na Atletika (SIL) vs. 10. Po uvolnění tvor zůstává Zpomalený dokud není vyléčen ze zranění způsobeného pastí nebo ošetřen První pomocí."
+   },
+   {
+    "id": "beranidlo",
+    "nazev": "Beranidlo",
+    "vyroba": "2 směny",
+    "vyzaduje": "lano, kláda, vhodný terén (strom k zavěšení)",
+    "obtiznost": 12,
+    "ucinek": {
+     "damage": "2k10+4",
+     "damageType": "drtivé",
+     "knockback": "1k6 sáhů",
+     "save": "Výdrž (ODO) vs. Líčení pastí (OBR)",
+     "onFail": {
+      "condition": "otřesení",
+      "rounds": 1
+     }
+    },
+    "popis": "Hraničář dokáže nastražit lano spouštějící past. Jakmile o něj někdo zakopne, spustí se z větví stromů zavěšená kláda, která smete vše v cestě. Past způsobuje drtivé zranění za 2k10 +4 životů a odhození oběti o 1k6 sáhů. Oběť si navíc hodí na Výdrž (ODO) vs. Líčení pastí (OBR) hraničáře. Pokud v hodu neuspěje, je navíc na 1 kolo otřesena a ztrácí své akce."
+   },
+   {
+    "id": "oko",
+    "nazev": "Oko",
+    "vyroba": "1 směna",
+    "vyzaduje": "lano, vhodný terén (strom k zavěšení)",
+    "obtiznost": 8,
+    "ucinek": {
+     "maxSize": "B",
+     "trapped": true,
+     "penalty": -5,
+     "escape": "Atletika (SIL) vs. Líčení pastí (OBR) nebo odřezání lana"
+    },
+    "popis": "Hraničář nalíčí na zem lapačské oko, které má šanci, že polapí tvora, který přes něj přejde. Pokud tvor velikosti B a menší přejde přes místo, kde je nastražené oko, spustí past. Smyčka se stáhne kolem jeho končetiny, a lano jej vymrští vzhůru. Chycený tvor visí hlavou dolů, takže má Nevýhodu (postih -5) ke všem akcím, dokud se neosvobodí. Z pasti se může osvobodit hodem na Atletiku (SIL) vs. Líčení pastí (OBR) hraničáře a nebo odřezáním lana."
+   }
+  ]
+ }
+}

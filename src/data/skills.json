@@ -1,0 +1,558 @@
+[
+ {
+  "id": "atletika",
+  "name": "Atletika",
+  "attributes": [
+   "sil"
+  ],
+  "defaultAttribute": "sil",
+  "kind": "basic"
+ },
+ {
+  "id": "etiketa",
+  "name": "Etiketa",
+  "attributes": [
+   "int",
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "basic"
+ },
+ {
+  "id": "hbitost",
+  "name": "Hbitost",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "basic"
+ },
+ {
+  "id": "mechanika",
+  "name": "Mechanika",
+  "attributes": [
+   "obr",
+   "int"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "basic"
+ },
+ {
+  "id": "mystika",
+  "name": "Mystika",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "basic"
+ },
+ {
+  "id": "postreh",
+  "name": "Postřeh",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "basic"
+ },
+ {
+  "id": "prvni_pomoc",
+  "name": "První pomoc",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "basic"
+ },
+ {
+  "id": "preziti_v_prirode",
+  "name": "Přežití v přírodě",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "basic"
+ },
+ {
+  "id": "remesla",
+  "name": "Řemesla",
+  "attributes": [
+   "sil",
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "basic"
+ },
+ {
+  "id": "umeni",
+  "name": "Umění",
+  "attributes": [
+   "obr",
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "basic"
+ },
+ {
+  "id": "vule",
+  "name": "Vůle",
+  "attributes": [
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "basic"
+ },
+ {
+  "id": "vzdelani",
+  "name": "Vzdělání",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "basic"
+ },
+ {
+  "id": "vydrz",
+  "name": "Výdrž",
+  "attributes": [
+   "odo"
+  ],
+  "defaultAttribute": "odo",
+  "kind": "basic"
+ },
+ {
+  "id": "znalost_prirody",
+  "name": "Znalost přírody",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "basic"
+ },
+ {
+  "id": "zvladnuti_zvirat",
+  "name": "Zvládnutí zvířat",
+  "attributes": [
+   "obr",
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "basic"
+ },
+ {
+  "id": "akrobacie",
+  "name": "Akrobacie",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "extended"
+ },
+ {
+  "id": "reflex",
+  "name": "Reflex",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "extended"
+ },
+ {
+  "id": "jizda_na_zvireti",
+  "name": "Jízda na zvířeti",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "extended"
+ },
+ {
+  "id": "cizi_jazyky",
+  "name": "Cizí jazyky",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "extended"
+ },
+ {
+  "id": "cteni_a_psani",
+  "name": "Čtení a psaní",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "extended"
+ },
+ {
+  "id": "historie",
+  "name": "Historie",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "extended"
+ },
+ {
+  "id": "pouto_s_prirodou",
+  "name": "Pouto s přírodou",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "hranicar"
+ },
+ {
+  "id": "lov",
+  "name": "Lov",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "hranicar"
+ },
+ {
+  "id": "vnimani_prirody",
+  "name": "Vnímání přírody",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "hranicar"
+ },
+ {
+  "id": "stopovani",
+  "name": "Stopování",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "hranicar"
+ },
+ {
+  "id": "prace_s_manou",
+  "name": "Práce s manou",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "alchymista"
+ },
+ {
+  "id": "lucba",
+  "name": "Lučba",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "alchymista"
+ },
+ {
+  "id": "sesilani_kouzel",
+  "name": "Sesílání kouzel",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "kouzelnik"
+ },
+ {
+  "id": "hazardni_hry",
+  "name": "Hazardní hry",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej"
+ },
+ {
+  "id": "odhad_ceny",
+  "name": "Odhad ceny",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "zlodej"
+ },
+ {
+  "id": "presvedcovani",
+  "name": "Přesvědčování",
+  "attributes": [
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "profession",
+  "classId": "zlodej"
+ },
+ {
+  "id": "vybirani_kapes",
+  "name": "Vybírání kapes",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej"
+ },
+ {
+  "id": "prosby",
+  "name": "Prosby",
+  "attributes": [
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "profession",
+  "classId": "klerik"
+ },
+ {
+  "id": "lecitelstvi",
+  "name": "Léčitelství",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "ochocovani_zvirat",
+  "name": "Ochočování zvířat",
+  "attributes": [
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "kamuflaz",
+  "name": "Kamufláž",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "liceni_pasti",
+  "name": "Líčení pastí",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "pokrocila_identifikace",
+  "name": "Pokročilá identifikace",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "alchymista",
+  "grantedOnly": true
+ },
+ {
+  "id": "vyroba_svitku",
+  "name": "Výroba svitků",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "alchymista",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_kociciho_pohybu",
+  "name": "Umění kočičího pohybu",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_promen",
+  "name": "Umění proměn",
+  "attributes": [
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_rvacu",
+  "name": "Umění rváčů",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_skryvani",
+  "name": "Umění skrývání",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_sarmu",
+  "name": "Umění šarmu",
+  "attributes": [
+   "char"
+  ],
+  "defaultAttribute": "char",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_zelezneho_klice",
+  "name": "Umění železného klíče",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "chirurgie",
+  "name": "Chirurgie",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "alchymista",
+  "grantedOnly": true
+ },
+ {
+  "id": "pyromancie",
+  "name": "Pyromancie",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "alchymista",
+  "grantedOnly": true
+ },
+ {
+  "id": "theurgie",
+  "name": "Theurgie",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "alchymista",
+  "grantedOnly": true
+ },
+ {
+  "id": "vyroba_sipu",
+  "name": "Výroba šípů",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "pohyb_v_terenu",
+  "name": "Pohyb v terénu",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "prirodni_prekazky",
+  "name": "Přírodní překážky",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "znalost_mistnich_pomeru",
+  "name": "Znalost místních poměrů",
+  "attributes": [
+   "int"
+  ],
+  "defaultAttribute": "int",
+  "kind": "profession",
+  "classId": "hranicar",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_prepadu",
+  "name": "Umění přepadů",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_neferoveho_boje",
+  "name": "Umění neférového boje",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ },
+ {
+  "id": "umeni_boje_s_plastem",
+  "name": "Umění boje s pláštěm",
+  "attributes": [
+   "obr"
+  ],
+  "defaultAttribute": "obr",
+  "kind": "profession",
+  "classId": "zlodej",
+  "grantedOnly": true
+ }
+]

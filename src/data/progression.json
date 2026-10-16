@@ -1,0 +1,3389 @@
+{
+ "_source": "H08–H13 + PPP01–06 (schopnosti, větve, specializace) – převzato z prototypu v9.1 (PROG); id = slug názvu",
+ "alchymista": {
+  "branchLabel": "Obor",
+  "branchGrant": "4 recepty automaticky",
+  "grantMode": "grantAll",
+  "itemWord": "recepty",
+  "energyGrows": false,
+  "branches": [
+   {
+    "id": "alchymisticka_anatomie",
+    "name": "Alchymistická anatomie",
+    "items": [
+     "Čočky nočního vidění",
+     "Kobří návlek",
+     "Naslouchátko",
+     "Respirátor"
+    ]
+   },
+   {
+    "id": "hvezdne_sestavy",
+    "name": "Hvězdné sestavy",
+    "items": [
+     "Čelenka porozumění",
+     "Létající koště",
+     "Meč Požírač duší",
+     "Vak beztíže"
+    ]
+   },
+   {
+    "id": "krystaly_a_energie",
+    "name": "Krystaly a energie",
+    "items": [
+     "Amulet many",
+     "Kvantogen",
+     "Prsten blesku",
+     "Světloprach"
+    ]
+   },
+   {
+    "id": "lektvary_a_elixiry",
+    "name": "Lektvary a elixíry",
+    "items": [
+     "Elixír Metamorfózy",
+     "Elixír Zapomnění",
+     "Lektvar Sedmibýlí",
+     "Sibériovy posilující elixíry"
+    ]
+   },
+   {
+    "id": "magicke_predmety",
+    "name": "Magické předměty",
+    "items": [
+     "Caldorova maska",
+     "Gaistova lampa",
+     "Nekrozor",
+     "Plášť Chameleon"
+    ]
+   },
+   {
+    "id": "nestabilni_substance",
+    "name": "Nestabilní substance",
+    "items": [
+     "Bomba",
+     "Černé světlo",
+     "Kovožrout",
+     "Plamenná čepel"
+    ]
+   }
+  ],
+  "abilities": [
+   {
+    "id": "efektivni_vyroba",
+    "name": "Efektivní výroba",
+    "text": "−¼ many a surovin, +¼ času (volba při výrobě)",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "odolnost_vuci_jedum",
+    "name": "Odolnost vůči jedům",
+    "text": "2 elixíry + 2 lektvary aktivní, ignoruje četnost",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "pokrocila_identifikace",
+    "name": "Pokročilá identifikace",
+    "text": "profesní dovednost Pokročilá identifikace (INT) na 3. stupni",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "grantsSkills": [
+     {
+      "id": "pokrocila_identifikace",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "precizni_vyroba",
+    "name": "Precizní výroba",
+    "text": "+5 k hodu, dvojnásobný čas",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "substituce",
+    "name": "Substituce",
+    "text": "náhrada základu, rozhoduje PJ",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "vyroba_svitku",
+    "name": "Výroba svitků",
+    "text": "profesní dovednost Výroba svitků (OBR) na 3. stupni, vyžaduje kouzelníka",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "grantsSkills": [
+     {
+      "id": "vyroba_svitku",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "artefakty",
+    "name": "Artefakty",
+    "text": "jeden unikátní, nezničitelný předmět se jménem tvůrce – pro každý další artefakt zvol schopnost znovu (PJ)",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03",
+    "repeatable": true
+   },
+   {
+    "id": "bojova_konzumace",
+    "name": "Bojová konzumace",
+    "text": "v boji vyrobí a rovnou vypije lektvar/elixír (dlouhá akce 1 kolo, −5 k hodu, +25 % many a surovin, při neúspěchu vedlejší účinek 1k10)",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "cestovni_alchymie",
+    "name": "Cestovní alchymie",
+    "text": "+2 k Lučbě při výrobě mimo dílnu; recepty Ječák, Kotlík samovar, Magický kompas, Neúnavné boty, Plátěný palác",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "forenzika",
+    "name": "Forenzika",
+    "text": "+2 ke všem ověřením Postřehu; recepty Akustický kalich, Prášek Deletorium, Krevní lampa, Protijedová esence, Zornítko",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "herbalista",
+    "name": "Herbalista",
+    "text": "pěstuje rostliny bohaté na manu a suroviny (Znalost přírody vs. X); recepty Hydroponický nálev, Houbovrah, Likvidátor, Manamutace, Rychlorůst",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "hromadna_vyroba",
+    "name": "Hromadná výroba",
+    "text": "víc dávek lektvaru, elixíru, jedu či výbušniny za čas jedné (mana a suroviny × dávky, obtížnost +1 za každou další dávku)",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "koncentrovane_substance",
+    "name": "Koncentrované substance",
+    "text": "za +½ many a surovin posílí lektvar, elixír, jed nebo Nestabilní substanci (dvojnásobné trvání / past +5 / zranění či léčení +½ / jiná hodnota ±1)",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "laboratorni_specialista",
+    "name": "Laboratorní specialista",
+    "text": "dovednostní body 5× úroveň místo 4× (zpětně); recepty Kukátko zření many, Křišťálová mísa, Pokročilá destilační aparatura, Postříbřený flakón",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "magicke_hulky",
+    "name": "Magické hůlky",
+    "text": "recepty Ebonitová hůlka, Hůlka vzduchu, Hůlka země, Ohnivá hůlka, Vodní hůlka; s Výrobou svitků i hůlky s kouzly",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "recyklator",
+    "name": "Recyklátor",
+    "text": "opraví poškozený alchymistický výrobek (tolik směn, jaká byla obtížnost), nebo ho rozebere: vrátí se základ a polovina zbylé many a surovin",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "saboter",
+    "name": "Sabotér",
+    "text": "upraví výrobek, aby za zvolených podmínek selhal nebo se choval jinak (Lučba vs. obtížnost výroby, trvá tolik kol, jaká je obtížnost)",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "travicstvi",
+    "name": "Travičství",
+    "text": "při hodu proti jedu se bonus Odolnosti počítá dvakrát; recepty Antisérum, Arzaharův jed, Bolehlav, Post Scriptum, Temnota",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP03"
+   },
+   {
+    "id": "biologicka_augmentace",
+    "name": "Biologická augmentace",
+    "text": "biologická vylepšení těla; předměty Druhý mozek, Druhé srdce, Vílí křídla, Žábra (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "bojova_anatomie",
+    "name": "Bojová anatomie",
+    "text": "ohledání mrtvých a určení příčiny smrti; v boji zraní dle uvážení nebo ochromí (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "infuze_a_inhalace",
+    "name": "Infuze a inhalace",
+    "text": "lektvary a jedy injekcí (opakovaně) nebo jako aerosol; Elixír lásky, Lektvar Berserker, Lektvar Purpurových řek, Lektvar Změny osobnosti, Sérum pravdy, Umělá krev (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "mechanicka_augmentace",
+    "name": "Mechanická augmentace",
+    "text": "mechanické strojky v těle; Exoskelet, Mechanické oko, Umělá noha, Umělá paže (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "plasticka_chirurgie",
+    "name": "Plastická chirurgie",
+    "text": "šití bez jizev, sběr kůže a obličejů jako masek (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "resuscitace",
+    "name": "Resuscitace",
+    "text": "šance obnovit životní funkce čerstvě zemřelého; jinak orgány jako zdroj many a surovin (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "sesivanci",
+    "name": "Sešívanci",
+    "text": "sešívá těla a orgány v monstra, která ho poslouchají (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "tetovani",
+    "name": "Tetování",
+    "text": "tetování posilující orgány a tělo; 6 inkoustů (doplňování many, průběžné léčby, protekce dračímu dechu / fyzických zranění / mrazu / ohni) (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "medicus",
+    "source": "PPP03"
+   },
+   {
+    "id": "kapsulacni_gemy",
+    "name": "Kapsulační gemy",
+    "text": "mana uzamčená v runových kamenech jako baterie (konstrukty, posílení předmětů, kouzla) (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "konstrukty",
+    "name": "Konstrukty",
+    "text": "mechaničtí pomocníci do boje i na cesty (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "mistr_nestabilnich_substanci",
+    "name": "Mistr nestabilních substancí",
+    "text": "CHAR −5, Rezistence proti ohni, mrazu a kyselině; Chrlič, Dusivý, Leptavý, Mrazivý a Slzný plyn (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "palne_zbrane",
+    "name": "Palné zbraně",
+    "text": "Hákovnice, Pistole, Polní dělo, Ručnice, Turét a jejich munice (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "prace_s_energii",
+    "name": "Práce s energií",
+    "text": "dobíjení magických předmětů; Hrací skříňka, Kostka štěstí, Paralyzér, Plášť proměn, Replikátor (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "sapersky_vycvik",
+    "name": "Sapérský výcvik",
+    "text": "+5 k nalezení, zneškodnění i nastražení pasti; Bomba s krystalem, Detektor pohybu, Detektor výbušnin, Detonátor, Nášlapná past (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "strely_a_rachejtle",
+    "name": "Střely a rachejtle",
+    "text": "Lehká rachejtle, Ohňostroj, Řízená střela, Střela naváděná na terč, Světlice, Těžká rachejtle (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "transmutace_kovu",
+    "name": "Transmutace kovu",
+    "text": "změna struktury kovu a přeměna jednoho kovu na jiný (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "pyromant",
+    "source": "PPP03"
+   },
+   {
+    "id": "astralni_sfery",
+    "name": "Astrální sféry",
+    "text": "přivolává démony s vlastnostmi podle potřeby → vlastní unikátní předměty (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   },
+   {
+    "id": "ovladnuti_zivlu",
+    "name": "Ovládnutí živlů",
+    "text": "zemětřesení, přílivová vlna, požár nebo hurikán v síle, kterou určí (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   },
+   {
+    "id": "ozivle_pomucky",
+    "name": "Oživlé pomůcky",
+    "text": "Chodící truhla, Létající lucerna, Mluvící hlava, Oživlý obušek (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   },
+   {
+    "id": "portaly_a_zrcadla",
+    "name": "Portály a zrcadla",
+    "text": "Mimoprostorové zrcadlo, Portál, Vidoucí kameny, Zrcadlo duší (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   },
+   {
+    "id": "poslove_zivlu",
+    "name": "Poslové živlů",
+    "text": "přivolá elementála – Igni (oheň), Undina (voda), Terra (země) nebo Sylfa (vzduch) (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   },
+   {
+    "id": "prace_s_esencemi",
+    "name": "Práce s esencemi",
+    "text": "esence z many na jednoduché změny hmoty a energie (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   },
+   {
+    "id": "prace_s_vichry_many",
+    "name": "Práce s vichry many",
+    "text": "Detektor vichrů many, Manafiltr, Managenerátor, Manatransformátor (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   },
+   {
+    "id": "talismany",
+    "name": "Talismany",
+    "text": "aktivuje skrytou sílu drahých kamenů → talismany se zvláštními schopnostmi (PPP03)",
+    "minLevel": 6,
+    "requiresSpecialization": "theurg",
+    "source": "PPP03"
+   }
+  ],
+  "specializations": [
+   {
+    "id": "medicus",
+    "name": "Medicus",
+    "need": 2,
+    "requires": [
+     "lektvary_a_elixiry",
+     "alchymisticka_anatomie"
+    ],
+    "grants": [
+     "Alchymistická dílna – Laboratoř (vybavení 100 zl; bonus dílny i k Chirurgii)",
+     "dovednost Chirurgie (OBR) na 5. stupni – ošetření zastaví krvácení a vyléčí tolik životů, jaký je stupeň",
+     "tinktury Chirurgie: Konzervační lák, Paralyzující, Proti bolesti, Uspávací"
+    ],
+    "grantsSkills": [
+     {
+      "id": "chirurgie",
+      "rank": 5
+     }
+    ],
+    "unlocksLabel": "volitelné schopnosti specializace od 6. úrovně"
+   },
+   {
+    "id": "pyromant",
+    "name": "Pyromant",
+    "need": 2,
+    "requires": [
+     "nestabilni_substance",
+     "magicke_predmety"
+    ],
+    "grants": [
+     "Alchymistická dílna – Výheň (vybavení 100 zl; bonus dílny i k Pyromancii a Mechanice)",
+     "dovednost Pyromancie (OBR) na 5. stupni",
+     "Výhoda +5 k Lučbě při výrobě z oboru Nestabilní substance"
+    ],
+    "grantsSkills": [
+     {
+      "id": "pyromancie",
+      "rank": 5
+     }
+    ],
+    "unlocksLabel": "volitelné schopnosti specializace od 6. úrovně"
+   },
+   {
+    "id": "theurg",
+    "name": "Theurg",
+    "need": 2,
+    "requires": [
+     "hvezdne_sestavy",
+     "krystaly_a_energie"
+    ],
+    "grants": [
+     "Alchymistická dílna – Astrolab (vybavení 100 zl; bonus dílny i k Theurgii)",
+     "dovednost Theurgie (INT) na 5. stupni",
+     "Výhoda +5 k Lučbě při výrobě z oboru Hvězdné sestavy",
+     "Theurgova hůl (útočnost 7, zranění 1, obrana 1; výroba s Astronem – list THEURG na záložce Alchymie)"
+    ],
+    "grantsSkills": [
+     {
+      "id": "theurgie",
+      "rank": 5
+     }
+    ],
+    "unlocksLabel": "volitelné schopnosti specializace od 6. úrovně"
+   }
+  ],
+  "choose": null,
+  "autoAtLevel2": [
+   "Boty Vodoměrky",
+   "Čarovný štít",
+   "Elixír Proti lykantropii",
+   "Chodecký plášť",
+   "Jed Dorfův spánek",
+   "Jed Vosí žihadlo",
+   "Kouzelný luk",
+   "Krvavé ostří",
+   "Lektvar Améba",
+   "Lektvar Mrazužár",
+   "Lektvar Životabudič",
+   "Prsten varování",
+   "Sliz",
+   "Výbušný šíp",
+   "Zápalný šíp"
+  ]
+ },
+ "kouzelnik": {
+  "branchLabel": "Obor magie",
+  "branchGrant": "přístup k 6 kouzlům oboru",
+  "grantMode": "access",
+  "itemWord": "kouzla",
+  "energyGrows": true,
+  "branches": [
+   {
+    "id": "divoka_magie",
+    "name": "Divoká magie",
+    "items": [
+     "Beranidlo",
+     "Mrazivá střela",
+     "Ohnivá čepel",
+     "Ohnivá koule",
+     "Plamenná ruka",
+     "Poryv větru"
+    ],
+    "effect": "Formování surové energie – energetické výboje, záblesky, kouzla čerpající sílu z elementů."
+   },
+   {
+    "id": "magie_promen",
+    "name": "Magie proměn",
+    "items": [
+     "Dlouhá ruka",
+     "Mlha",
+     "Proměna",
+     "Protoplazma",
+     "Tajemné dveře",
+     "Temnota"
+    ],
+    "effect": "Proměna struktury a podstaty hmoty – vzhled, forma i vlastnosti."
+   },
+   {
+    "id": "mentalni_magie",
+    "name": "Mentální magie",
+    "items": [
+     "Břichomluvectví",
+     "Dvojník",
+     "Noční můra",
+     "Ochromení",
+     "Sugesce",
+     "Vize"
+    ],
+    "effect": "Šálení mysli výjevy, falešnými pocity a dojmy. Působí jen na tvory s INT > 0; nestvůry bez CHAR si k ověření počítají jen hod k10."
+   },
+   {
+    "id": "ochranna_magie",
+    "name": "Ochranná magie",
+    "items": [
+     "Antimagická bariéra",
+     "Magická zbroj",
+     "Naruš pozornost",
+     "Ochrana před střelami",
+     "Rozptyl kouzlo",
+     "Schránka"
+    ],
+    "effect": "Ochranné bariéry; narušování, poškozování a znemožňování kouzlení ostatních."
+   },
+   {
+    "id": "vitalni_magie",
+    "name": "Vitální magie",
+    "items": [
+     "Dotek upíra",
+     "Posílení smyslu",
+     "Pouto života",
+     "Přivolej nemrtvé",
+     "Vitální transfer",
+     "Voodoo"
+    ],
+    "effect": "Práce s životní silou – posilování, předávání, vysávání."
+   },
+   {
+    "id": "vysoka_magie",
+    "name": "Vysoká magie",
+    "items": [
+     "Cizí jazyk",
+     "Leť",
+     "Najdi kouzla",
+     "Oko zření",
+     "Psychokineze",
+     "Ticho"
+    ],
+    "effect": "Kouzla ovládající prostor, čas a vědění."
+   }
+  ],
+  "abilities": [
+   {
+    "id": "koncentrace_many",
+    "name": "Koncentrace many",
+    "text": "Za každou dosaženou úroveň +2 many k maximu (zpětná oprava).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H11",
+    "page": 12
+   },
+   {
+    "id": "kouzleni_z_knih",
+    "name": "Kouzlení z knih",
+    "text": "S knihou s detailním popisem může seslat i kouzlo, které neovládá: 2× delší vyvolání; obtížnost +3 u oboru, který neovládá, +5 navíc u kouzla jiné specializace. Nelze kombinovat s Rychlým kouzlením. Zápis kouzla do knihy: tolik dní (8 h), kolik je obtížnost; Vzdělání (INT) vs. obtížnost kouzla.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H11",
+    "page": 12
+   },
+   {
+    "id": "pamet_na_kouzla",
+    "name": "Paměť na kouzla",
+    "text": "Za každou dosaženou úroveň +1 kouzlo navíc (zpětná oprava).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H11",
+    "page": 12,
+    "extraItemsPerLevel": 1
+   },
+   {
+    "id": "ritual_krve",
+    "name": "Rituál krve",
+    "text": "Během 1 kola promění vlastní životy na manu 2 : 1 (max. do maxima many); vyžaduje soustředění, rána se na konci kola zatáhne.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H11",
+    "page": 12
+   },
+   {
+    "id": "rychle_kouzleni",
+    "name": "Rychlé kouzlení",
+    "text": "Doba vyvolání ½ (nejméně Krátká akce), obtížnost +3. Hráč ohlásí před sesíláním.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H11",
+    "page": 13
+   },
+   {
+    "id": "vyvolani_pritele",
+    "name": "Vyvolání přítele",
+    "text": "Rituál ~1 hodina, klid, vyzáří se celé maximum many; Sesílání kouzel vs. obtížnost tvora (krysa 10, kočka 11, sova 12). Jen 1 přítel; vyrušení = neúspěch, znovu až po meditaci.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H11",
+    "page": 13
+   },
+   {
+    "id": "citlivost_na_vichry_many",
+    "name": "Citlivost na vichry many",
+    "text": "Dokáže nasát více many, než je obvyklé.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 196
+   },
+   {
+    "id": "magistr_magickeho_oboru",
+    "name": "Magistr magického oboru",
+    "text": "Zvýší šanci seslat kouzlo daného oboru magie a naučí se navíc 3 další.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 196,
+    "repeatable": true,
+    "param": {
+     "key": "obor",
+     "label": "Obor magie",
+     "options": [
+      {
+       "id": "divoka_magie",
+       "name": "Divoká magie"
+      },
+      {
+       "id": "magie_promen",
+       "name": "Magie proměn"
+      },
+      {
+       "id": "mentalni_magie",
+       "name": "Mentální magie"
+      },
+      {
+       "id": "ochranna_magie",
+       "name": "Ochranná magie"
+      },
+      {
+       "id": "vitalni_magie",
+       "name": "Vitální magie"
+      },
+      {
+       "id": "vysoka_magie",
+       "name": "Vysoká magie"
+      }
+     ]
+    },
+    "extraItems": 3
+   },
+   {
+    "id": "posilovani_kouzel",
+    "name": "Posilování kouzel",
+    "text": "Umožňuje posílit efekt kouzla změnou dosahu nebo délky jeho trvání.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 196
+   },
+   {
+    "id": "precizni_kouzleni",
+    "name": "Precizní kouzlení",
+    "text": "Sesílání kouzla trvá 2× déle, ale získá Výhodu (bonus +5) na seslání daného kouzla.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 197
+   },
+   {
+    "id": "pyrokineze",
+    "name": "Pyrokineze",
+    "text": "Silou myšlenky dokáže zažehnout libovolný hořlavý předmět.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 197
+   },
+   {
+    "id": "ritualni_kouzleni",
+    "name": "Rituální kouzlení",
+    "text": "Umožňuje využít manu více Kouzelníků pro sesílání náročných kouzel.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 197
+   },
+   {
+    "id": "rychly_odpocinek",
+    "name": "Rychlý odpočinek",
+    "text": "Stačí mu jen poloviční doba odpočinku, aby mohl provést meditaci.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 197
+   },
+   {
+    "id": "telekineze",
+    "name": "Telekineze",
+    "text": "Silou myšlenky dokáže pohybovat s předměty ve svém dosahu.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 198
+   },
+   {
+    "id": "telepatie",
+    "name": "Telepatie",
+    "text": "Silou myšlenky dokáže komunikovat s myslí jiných tvorů.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 199
+   },
+   {
+    "id": "transfer_many",
+    "name": "Transfer many",
+    "text": "Dokáže dát či vysát manu jinému Kouzelníkovi nebo tvorovi.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 199
+   },
+   {
+    "id": "utajene_kouzleni",
+    "name": "Utajené kouzlení",
+    "text": "Snižuje postihy při kouzlení bez gest a slov.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 199
+   },
+   {
+    "id": "zamena_kouzel",
+    "name": "Záměna kouzel",
+    "text": "Dokáže svá, již jednou naučená kouzla, nahradit za jiná.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP04",
+    "page": 200
+   },
+   {
+    "id": "bitevni_trenink",
+    "name": "Bitevní trénink",
+    "text": "Získá trvalý bonus +1 do Útoku (ÚČ) i Obrany (OČ) a zvládne nasát manu během jednoho kola.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 202
+   },
+   {
+    "id": "bojove_sesilani",
+    "name": "Bojové sesílání",
+    "text": "V rámci půlkolových kouzel může použít akci Útok i Obrana. Pokud sesílá kouzlo o trvání jednoho kola, může se i bránit. Neutrží žádný postih za vyrušení při sesílání.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 202
+   },
+   {
+    "id": "energeticka_zbran",
+    "name": "Energetická zbraň",
+    "text": "Dokáže si vyvolat magickou zbraň a štít.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 203
+   },
+   {
+    "id": "lamani_kouzel",
+    "name": "Lámání kouzel",
+    "text": "Dokáže okamžitě rozpoznat kouzlo sesílané dalšími Kouzelníky a zrušit jeho sesílání.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 204
+   },
+   {
+    "id": "magicka_dominance",
+    "name": "Magická dominance",
+    "text": "Za určité množství many dokáže zvýšit počet kostek, kterými hází na Útok či Obranu.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 204
+   },
+   {
+    "id": "magicka_zranitelnost",
+    "name": "Magická zranitelnost",
+    "text": "Dává mu šanci prorážet svými kouzly rezistence a imunity nepřátel.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 204
+   },
+   {
+    "id": "posilena_ochrana",
+    "name": "Posílená ochrana",
+    "text": "Ochranná kouzla jsou o 3 body many levnější (nejméně 1 bod many). Zvyšuje se jeho Základní obrana (ZO) o 2.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 204
+   },
+   {
+    "id": "zivlomag",
+    "name": "Živlomág",
+    "text": "S touto schopností může změnit podstatu živlu kouzla Divoké magie.",
+    "minLevel": null,
+    "requiresSpecialization": "bojovy_mag",
+    "source": "PPP04",
+    "page": 204
+   },
+   {
+    "id": "aura_moci",
+    "name": "Aura moci",
+    "text": "Získá Výhodu (Bonus +5) ke všem svým hodům na Charisma.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 206
+   },
+   {
+    "id": "hromadne_sesilani",
+    "name": "Hromadné sesílání",
+    "text": "Dokáže seslat jedno kouzlo na více cílů najednou.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 206
+   },
+   {
+    "id": "magicke_obrazce",
+    "name": "Magické obrazce",
+    "text": "Umí nakreslit obrazce, do kterých uzamkne kouzlo. To se následně aktivuje narušením.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 206
+   },
+   {
+    "id": "mentalni_souboj",
+    "name": "Mentální souboj",
+    "text": "Dokáže prostřednictvím své mysli napadnout i zabít někoho jiného.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 207
+   },
+   {
+    "id": "michani_kouzel",
+    "name": "Míchání kouzel",
+    "text": "Dokáže seslat dvě kouzla najednou dle vlastního výběru.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 208
+   },
+   {
+    "id": "podrobovani",
+    "name": "Podrobování",
+    "text": "Dokáže si podrobit tělo tvora poraženého v Mentálním souboji a ovládat ho.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 208
+   },
+   {
+    "id": "predkouzleni",
+    "name": "Předkouzlení",
+    "text": "Získá schopnost připravit kouzlo a držet ho v hlavě pro pozdější finální seslání.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 208
+   },
+   {
+    "id": "vladce_many",
+    "name": "Vládce many",
+    "text": "Je schopen nakoncentrovat o polovinu svého vlastního maxima many více.",
+    "minLevel": null,
+    "requiresSpecialization": "carodej",
+    "source": "PPP04",
+    "page": 208
+   },
+   {
+    "id": "dar_noci",
+    "name": "Dar noci",
+    "text": "V noci získává Výhodu (bonus +5) k sesílání kouzel Vitální magie, Magie proměn a kouzel Nekromanta.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 210
+   },
+   {
+    "id": "nemrtvy_druh",
+    "name": "Nemrtvý druh",
+    "text": "Nemrtví jej vnímají jako dalšího nemrtvého, kterého nenapadají.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 210
+   },
+   {
+    "id": "nemrtve_spojeni",
+    "name": "Nemrtvé spojení",
+    "text": "Dokáže vidět, mluvit (pokud je toho „služebník“ schopen) a dokonce sesílat kouzla skrze svého nemrtvého „služebníka“.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 211
+   },
+   {
+    "id": "pouto_smrti",
+    "name": "Pouto smrti",
+    "text": "Dokáže vysát životy z ovládaných nemrtvých.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 211
+   },
+   {
+    "id": "ritualni_obetovani",
+    "name": "Rituální obětování",
+    "text": "Obětováním tvora získá tolik životů, kolik měla oběť.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 211
+   },
+   {
+    "id": "sberatel_dusi",
+    "name": "Sběratel duší",
+    "text": "Dokáže do své dýky nasát duše mrtvých a oživit je ve formě mocných nehmotných a vyšších nemrtvých. Zároveň se naučí kouzlo Pokročilá reanimace.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 211,
+    "grantsItems": [
+     "Pokročilá reanimace"
+    ]
+   },
+   {
+    "id": "srazlivost_krve",
+    "name": "Srážlivost krve",
+    "text": "Jeho tělo je odolnější proti krvácivým, bodným a sečným zraněním a rychleji se z nich léčí.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 212
+   },
+   {
+    "id": "vitalni_drahy",
+    "name": "Vitální dráhy",
+    "text": "Dokáže rozpoznat sílu toků energie v těle a to, jak moc je zdravé či zraněné.",
+    "minLevel": null,
+    "requiresSpecialization": "nekromant",
+    "source": "PPP04",
+    "page": 212
+   }
+  ],
+  "specializations": [
+   {
+    "id": "bojovy_mag",
+    "name": "Bojový mág",
+    "need": 2,
+    "requires": [
+     "divoka_magie",
+     "ochranna_magie"
+    ],
+    "grants": [
+     "Zbraň Bojového mága: obdoba Kouzelníkovy hole se schopnostmi navíc (PPP04 s. 202)"
+    ]
+   },
+   {
+    "id": "carodej",
+    "name": "Čaroděj",
+    "need": 2,
+    "requires": [
+     "mentalni_magie",
+     "vysoka_magie"
+    ],
+    "grants": [
+     "Čarodějova hůl: obdoba Kouzelníkovy hole se schopnostmi navíc (PPP04 s. 206)"
+    ]
+   },
+   {
+    "id": "nekromant",
+    "name": "Nekromant",
+    "need": 2,
+    "requires": [
+     "vitalni_magie",
+     "magie_promen"
+    ],
+    "grants": [
+     "Nekromantova dýka: obdoba Kouzelníkovy hole se schopnostmi navíc (PPP04 s. 210)"
+    ]
+   }
+  ],
+  "choose": {
+   "n": 2,
+   "nFrom6": null,
+   "word": "kouzla",
+   "poolLabel": "obecná magie",
+   "pool": [
+    "Bertoldův zámek",
+    "Blesk",
+    "Kukátko",
+    "Levitace",
+    "Magická střela",
+    "Magický štít",
+    "Najdi předmět",
+    "Neviditelnost",
+    "Očaruj zbraň",
+    "Oheň",
+    "Rychlost",
+    "Světlo",
+    "Teleport"
+   ],
+   "perBranch": null
+  },
+  "autoAtLevel2": null,
+  "levelGrants": [
+   {
+    "level": 6,
+    "text": "Pokročilý kouzelník: Kouzelníkova hůl (rituál), Zaslechnutí kouzla; další přátelé – had, havran, netopýr (PPP04 s. 191–195)"
+   },
+   {
+    "level": 6,
+    "text": "Kouzla pro pokročilé (PPP04) – od teď v nabídce oborů, které ovládáš"
+   }
+  ]
+ },
+ "valecnik": {
+  "branchLabel": "Bojová škola",
+  "branchGrant": "přístup ke 3 trikům + stálý bonus",
+  "grantMode": "access",
+  "itemWord": "bojové triky",
+  "energyGrows": false,
+  "branches": [
+   {
+    "id": "skola_drticu_kosti",
+    "name": "Škola drtičů kostí",
+    "items": [
+     "Nordický klíč",
+     "Stržení na zem",
+     "Trpasličí polibek"
+    ],
+    "effect": "Při boji beze zbraně +3 k ÚČ a OČ."
+   },
+   {
+    "id": "skola_boje_s_bodnou_zbrani",
+    "name": "Škola boje s bodnou zbraní",
+    "items": [
+     "Obranné manévrování",
+     "Útok z obrany",
+     "Výpad"
+    ],
+    "effect": "Při boji +2 k Iniciativě (platí vždy, s jakoukoli zbraní)."
+   },
+   {
+    "id": "skola_boje_s_jednorucni_zbrani",
+    "name": "Škola boje s jednoruční zbraní",
+    "items": [
+     "Tvrdý kryt",
+     "Úder hlavicí",
+     "Úhyb a sek"
+    ],
+    "effect": "Při boji +1 k OČ (platí vždy, s jakoukoli zbraní)."
+   },
+   {
+    "id": "skola_boje_s_obourucni_zbrani",
+    "name": "Škola boje s obouruční zbraní",
+    "items": [
+     "Bezhlavý útok",
+     "Drtivý útok",
+     "Kružný sek"
+    ],
+    "effect": "Při boji +2 ke Zranění (platí vždy, s jakoukoli zbraní)."
+   },
+   {
+    "id": "skola_boje_se_dvema_zbranemi",
+    "name": "Škola boje se dvěma zbraněmi",
+    "items": [
+     "Dvojitá obrana",
+     "Útok a vrh",
+     "Vířivý útok"
+    ],
+    "effect": "Boj dvěma jednoručními zbraněmi (jedna z nich lehká krátká – nůž, dýka): Útočnost, Zranění i Obrana obou zbraní se sčítají."
+   },
+   {
+    "id": "skola_boje_se_stitem",
+    "name": "Škola boje se štítem",
+    "items": [
+     "Sražení štítem",
+     "Útok zpoza štítu",
+     "Zámek"
+    ],
+    "effect": "Do obrany se započítá Obrana štítu i Obrana zbraně najednou."
+   }
+  ],
+  "abilities": [
+   {
+    "id": "mistrovstvi_ve_zbrani",
+    "name": "Mistrovství ve zbrani",
+    "text": "+2 ÚČ/OČ se skupinou zbraní (drtivé, bodné, sečné, vrhací, střelné, beze zbraně); lze volit opakovaně pro další skupinu (H08)",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "repeatable": true,
+    "param": {
+     "key": "group",
+     "label": "Skupina zbraní",
+     "options": [
+      {
+       "id": "drtive",
+       "name": "drtivé"
+      },
+      {
+       "id": "bodne",
+       "name": "bodné"
+      },
+      {
+       "id": "secne",
+       "name": "sečné"
+      },
+      {
+       "id": "vrhaci",
+       "name": "vrhací"
+      },
+      {
+       "id": "strelne",
+       "name": "střelné"
+      },
+      {
+       "id": "beze_zbrane",
+       "name": "boj beze zbraně"
+      }
+     ]
+    }
+   },
+   {
+    "id": "rozvaznost",
+    "name": "Rozvážnost",
+    "text": "styl boje: útočný +3 ÚČ / −1 OČ, nebo obranný +3 OČ / −1 ÚČ, volí se každé kolo (H08)",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "skvela_kondice",
+    "name": "Skvělá kondice",
+    "text": "+3 životy za každou úroveň, i zpětně (H08)",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "urputnost",
+    "name": "Urputnost",
+    "text": "Hranice smrti −úroveň; při 0 a méně životech bojuje dál (H08)",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "veleni",
+    "name": "Velení",
+    "text": "rozkaz družině: +1 ÚČ, nebo +1 OČ (od 6. úrovně +2) (H08)",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "vicenasobny_utok",
+    "name": "Vícenásobný útok",
+    "text": "tváří v tvář 3 útoky i obrany za 2 kola, od 6. úrovně 2 za kolo (H08)",
+    "minLevel": null,
+    "requiresSpecialization": null
+   },
+   {
+    "id": "bijec",
+    "name": "Bijec",
+    "text": "V boji beze zbraně +5 k ÚČ i OČ a jeden Útok navíc každé kolo.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "drtivy_dopad",
+    "name": "Drtivý dopad",
+    "text": "Při útoku střední či těžkou vrhací zbraní použije SIL místo OBR.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "drsnak",
+    "name": "Drsňák",
+    "text": "Každé fyzické Zranění −2 (ne jed, magie, krvácení); +3 k hodům na Výdrž.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "klidna_ruka",
+    "name": "Klidná ruka",
+    "text": "+3 k Útoku střelnými zbraněmi.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "naval_adrenalinu",
+    "name": "Nával Adrenalinu",
+    "text": "Adrenalin se tvoří už na začátku kola místo na konci.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "odhad_protivnika",
+    "name": "Odhad protivníka",
+    "text": "Pozorováním (1 směna mimo boj / hned v boji) zjistí, zda má protivník silnější Útok/Obranu, vyšší/nižší úroveň a životaschopnost, slabiny, rezistence a imunity; odhadne i KZ zbroje a ÚČ/Zranění/OZ zbraně (ne magická vylepšení).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "otloukanek",
+    "name": "Otloukánek",
+    "text": "Proti pasti s hodem na Reflex může házet na Výdrž (ODO).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "prace_s_tezistem",
+    "name": "Práce s těžištěm",
+    "text": "Za každou třídu velikosti, o kterou je větší než protivník: +1 ÚČ (max 2); za každou, o kterou je menší: +1 OČ (max 3).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "promenlivy_uchop",
+    "name": "Proměnlivý úchop",
+    "text": "Každé kolo volí jeden bonus: +1 k Obraně zbraně (OZ), nebo +2 k ÚČ, nebo +3 ke Zranění.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "skola_boje_na_koni",
+    "name": "Škola boje na koni",
+    "text": "+1 k Útoku i Obraně na jezdeckém zvířeti; Jízdu na zvířeti lze ověřovat Atletikou; zpřístupní triky Školy boje na koni.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "zastraseni",
+    "name": "Zastrašení",
+    "text": "Mimo boj, do 30 sáhů: Atletika (SIL) vs. Vůle (CHAR) – zastrašený nelže, neútočí, plní pokyny; +2 za každého spojence Válečníka, +2 k obtížnosti za každého pomocníka protivníka. Končí vyřazením Válečníka nebo 1 minutu po zmizení ze zorného pole. Postavy orientované na Sílu a nestvůry mohou vzdorovat Atletikou.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "zrucnost_se_zbrani",
+    "name": "Zručnost se zbraní",
+    "text": "Přezbrojení a tasení okamžité; dlouhá dřevcová zbraň bez postihu i na 1,5 sáhu; postih za boj na zemi −2 menší.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP01"
+   },
+   {
+    "id": "cesta_mece",
+    "name": "Cesta meče",
+    "minLevel": 6,
+    "levelStep": 3,
+    "repeatable": true,
+    "maxRank": 4,
+    "requiresSpecialization": null,
+    "source": "PPP01",
+    "text": "Cesta válečníka (meče, šavle, kordy) – stupně: 1. Hbitý kryt, 2. Adept Cesty meče, 3. Rychlá čepel, 4. Krvavá čepel; Mistr odemkne trik Mordýřský úder",
+    "ranks": [
+     "Hbitý kryt – +2 k Obraně zbraně (OZ)",
+     "Adept Cesty meče – +2 k Útoku",
+     "Rychlá čepel – 1 útok navíc každé druhé kolo",
+     "Krvavá čepel – +3 ke Zranění",
+     "Mistr – +1 do Útoku a Obrany zbraně (OZ); trik Mordýřský úder"
+    ]
+   },
+   {
+    "id": "cesta_sekery",
+    "name": "Cesta sekery",
+    "minLevel": 6,
+    "levelStep": 3,
+    "repeatable": true,
+    "maxRank": 4,
+    "requiresSpecialization": null,
+    "source": "PPP01",
+    "text": "Cesta válečníka (sekery všech druhů (i vrhací, kratší sudlice, halapartny)) – stupně: 1. Drtivé ostří, 2. Adept Cesty sekery, 3. Vířivé ostří, 4. Průrazné ostří; Mistr odemkne trik Hákování",
+    "ranks": [
+     "Drtivé ostří – +2 ke Zranění",
+     "Adept Cesty sekery – +2 k Útoku při boji tváří v tvář",
+     "Vířivé ostří – +3 k Útoku při vrhání sekerou",
+     "Průrazné ostří – +3 k Útoku, má-li soupeř nekovovou nebo žádnou zbroj",
+     "Mistr – +1 ke Zranění zbraně i do Útoku; trik Hákování"
+    ]
+   },
+   {
+    "id": "cesta_hole_a_kopi",
+    "name": "Cesta hole a kopí",
+    "minLevel": 6,
+    "levelStep": 3,
+    "repeatable": true,
+    "maxRank": 4,
+    "requiresSpecialization": null,
+    "source": "PPP01",
+    "text": "Cesta válečníka (hole, oštěpy, kopí, píky, dřevcové zbraně) – stupně: 1. Výhoda dosahu, 2. Adept Cesty hole a kopí, 3. Odstup, 4. Přehmátnutí; Mistr odemkne trik Úchop za konec",
+    "ranks": [
+     "Výhoda dosahu – +2 k Iniciativě",
+     "Adept Cesty hole a kopí – +2 k Útoku tváří v tvář",
+     "Odstup – +3 k Obraně při boji tváří v tvář",
+     "Přehmátnutí – 1 Útok navíc každé druhé kolo (tváří v tvář)",
+     "Mistr – +1 k Iniciativě i k Útoku; trik Úchop za konec"
+    ]
+   },
+   {
+    "id": "cesta_kladiva",
+    "name": "Cesta kladiva",
+    "minLevel": 6,
+    "levelStep": 3,
+    "repeatable": true,
+    "maxRank": 4,
+    "requiresSpecialization": null,
+    "source": "PPP01",
+    "text": "Cesta válečníka (kladiva, palcáty, řemdihy, cepy, kyje, obušky) – stupně: 1. Zadunění, 2. Adept Cesty kladiva, 3. Rozdrcení, 4. Otřesení; Mistr odemkne trik Odhození",
+    "ranks": [
+     "Zadunění – +3 k Útoku tváří v tvář proti soupeři v kroužkové či silnější zbroji",
+     "Adept Cesty kladiva – +2 k Útoku tváří v tvář",
+     "Rozdrcení – +3 ke Zranění tváří v tvář",
+     "Otřesení – Úspěšný útok kladivem dá soupeři postih −3 k následující akci (nesčítá se).",
+     "Mistr – +1 k Útoku, proti kroužkové či těžší zbroji další +1; trik Odhození"
+    ]
+   },
+   {
+    "id": "cesta_strategie",
+    "name": "Cesta strategie",
+    "minLevel": 6,
+    "levelStep": 3,
+    "repeatable": true,
+    "maxRank": 4,
+    "requiresSpecialization": null,
+    "source": "PPP01",
+    "text": "Cesta válečníka (strategie družiny) – stupně: 1. Útočná strategie, 2. Obranná strategie, 3. Strategie na skupinu, 4. Strategie na místo; Mistr odemkne trik Přeskupení",
+    "ranks": [
+     "Útočná strategie – Válečník i družina +1 k Útoku a Iniciativě, +1 za každý další dosažený stupeň Cesty.",
+     "Obranná strategie – Válečník i družina +2 do Obrany a k hodům na Reflex (+1 za každý vyšší stupeň). Lze připravit předem (1 směna) jako pohotovost na 1 den – při přepadení se spustí sama.",
+     "Strategie na skupinu – Příprava 1 směna; bonusy 1. nebo 2. stupně lze rozdat individuálně každému členovi. Celková výše k rozdělení = stupeň Cesty. Pohotovost 1 den.",
+     "Strategie na místo – Jen na určitém místě, příprava 1 hodina (4 směny); útočné/obranné bonusy jako u Strategie na skupinu trvají celý boj. Když Válečník padne/odejde, bonusy vyprchají po 3 kolech.",
+     "Mistr – Efekt všech strategií o 2 kola delší (5 místo 3), ruší se limit počtu členů (i regiment/armáda), +2 ke schopnosti Velení (má-li ji).; trik Přeskupení"
+    ]
+   },
+   {
+    "id": "brutalita",
+    "name": "Brutalita",
+    "text": "Zranění z bojových triků + bonus za ODO (min. +1); protivník vzdoruje trikům Atletikou místo Reflexu.",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "cesta_krve",
+    "name": "Cesta krve",
+    "text": "Nabuzení (1 kolo, jen na začátku boje či chvíli před ním): Zranění 1k6 sobě → +1 Adrenalin za každý ztracený život. Vzdá-li se Obrany: za každých načatých 10 bodů utrženého Zranění +1k6 Adrenalinu (i při přepadení).",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "mrstnost",
+    "name": "Mrštnost",
+    "text": "+2 ke všem ověřením Obratnosti (OBR), do ZO a k Pohyblivosti; +4 k dosahu pohybových triků; jen s nejvýše lehkou zbrojí.",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "pohled_zabijaka",
+    "name": "Pohled zabijáka",
+    "text": "Proti psychickému nátlaku/přesvědčování vzdoruje Výdrží (ODO) místo Vůle; při fyzickém Zastrašování (i když mu čelí) Výhoda +5.",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "smysly_bestie",
+    "name": "Smysly bestie",
+    "text": "Trvale +3 k Postřehu a Reflexu.",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "tuhy_korinek",
+    "name": "Tuhý kořínek",
+    "text": "+1 život za každou úroveň (i zpětně); každý spánek i odpočinek léčí o +4 životy víc.",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "vrazedna_zurivost",
+    "name": "Vražedná zuřivost",
+    "text": "1× za boj, přerod 1 kolo: +2 Adrenalinu/kolo, +1 Útok/kolo, Hranice smrti = −max. životů. Na konci kola past Vůle (CHAR) vs. 2 (+1 každé kolo) – neúspěch = šílenství (útočí na nejbližšího). Po skončení pod Hranicí smrti: 1 Adrenalin = odklad smrti o 1 kolo.",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "zjizvena_kuze",
+    "name": "Zjizvená kůže",
+    "text": "ZO +2 (sčítá se se zbrojí i rodovou schopností obra).",
+    "minLevel": 6,
+    "requiresSpecialization": "berserkr",
+    "source": "PPP01"
+   },
+   {
+    "id": "bojove_rozkazy",
+    "name": "Bojové rozkazy",
+    "text": "1 rozkaz za kolo jedné inteligentní bytosti: Udeř! (Útok navíc), Kryj se! (Obrana navíc), Přesun! (Krátký pohyb navíc), Zbraně! (přezbrojení jako okamžitá akce), K zemi! (+5 proti střelbě), Vztyk! (okamžitě na nohy). Nelze kombinovat s triky typu Výkřik.",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "boj_stitem",
+    "name": "Boj štítem",
+    "text": "Štít jako primární zbraň (Útočnost i OZ = kvalita štítu, Zranění 0); s jinou hlavní zbraní Dodatečný útok štítem každé 2. kolo; aktivní Obranou může krýt sousední postavu (v dosahu Krátkého pohybu) s celým svým OČ.",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "krupobiti",
+    "name": "Krupobití",
+    "text": "V těžké zbroji rezistence proti střeleckým a vrhacím útokům (Zranění na polovinu).",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "majestat",
+    "name": "Majestát",
+    "text": "K hodům na Vyjednávání, Přesvědčování, Zastrašování (i při vzdorování) přičte bonus za Kvalitu zbroje (KZ).",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "mistr_zbroje",
+    "name": "Mistr zbroje",
+    "text": "+3 ke Kvalitě nošené zbroje (KZ) – projeví se v ZO i Majestátu.",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "sebeobetovani",
+    "name": "Sebeobětování",
+    "text": "Nemá-li Adrenalin, zaplatí trik dvojnásobkem životů; znovu až po tolika kolech, kolik Adrenalinu takto získal.",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "zakryti",
+    "name": "Zakrytí",
+    "text": "Kvalita štítu se vždy počítá do ZO (kromě bezvědomí); s pukléřem lze používat i obouruční zbraň (nebo v ruce s pukléřem lehkou jednoruční); proti jedinému protivníkovi neomezený počet aktivních Obran štítem.",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "zelezny_muz",
+    "name": "Železný muž",
+    "text": "Trvale +5 k Výdrži; váha zbroje se nepočítá do Naložení.",
+    "minLevel": 6,
+    "requiresSpecialization": "rytir",
+    "source": "PPP01"
+   },
+   {
+    "id": "boj_s_presilou",
+    "name": "Boj s přesilou",
+    "text": "Žádné postihy za boj proti více nepřátelům; po 3 kolech boje se stejnou skupinou +3 k Útoku do konce boje.",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   },
+   {
+    "id": "cteni_vzdalenosti",
+    "name": "Čtení vzdálenosti",
+    "text": "+2 k ZO při boji tváří v tvář.",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   },
+   {
+    "id": "mistr_boje_dvema_zbranemi",
+    "name": "Mistr boje dvěma zbraněmi",
+    "text": "Může bojovat těžkou + lehkou jednoruční, nebo libovolnou kombinací středních/lehkých zbraní současně; parametry se sčítají.",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   },
+   {
+    "id": "rutina",
+    "name": "Rutina",
+    "text": "Všechny válečnické triky o 1 Adrenalin levnější (1 → 0).",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   },
+   {
+    "id": "rychly_hrot",
+    "name": "Rychlý hrot",
+    "text": "S bodnou zbraní +1 Útok za kolo.",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   },
+   {
+    "id": "rytmus_boje",
+    "name": "Rytmus boje",
+    "text": "Proti stejnému protivníkovi tváří v tvář každé další kolo +1 ÚČ i OČ (max +10); bez výměny ztrácí −1/kolo.",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   },
+   {
+    "id": "sermirska_obratnost",
+    "name": "Šermířská obratnost",
+    "text": "Trvale +3 k Atletice, Akrobacii a Iniciativě.",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   },
+   {
+    "id": "zamena",
+    "name": "Záměna",
+    "text": "Pro Útok/Obranu si volí SIL nebo OBR (ne u ověřování triků a dovedností).",
+    "minLevel": 6,
+    "requiresSpecialization": "sermir",
+    "source": "PPP01"
+   }
+  ],
+  "specializations": [
+   {
+    "id": "berserkr",
+    "name": "Berserkr",
+    "need": 2,
+    "requires": [
+     "skola_boje_s_obourucni_zbrani",
+     "urputnost"
+    ],
+    "grants": [
+     "Životní zkušenost Berserkra: +3 k dovednostem První pomoc, Přežití v přírodě, Řemesla; s opravou SIL ≥ +4 může triky Školy obouručních zbraní provádět i se dvěma těžkými jednoručními zbraněmi.",
+     "volitelné schopnosti a pokročilé triky specializace"
+    ],
+    "unlocksLabel": "volitelné schopnosti specializace od 6. úrovně"
+   },
+   {
+    "id": "rytir",
+    "name": "Rytíř",
+    "need": 2,
+    "requires": [
+     "skola_boje_se_stitem",
+     "veleni"
+    ],
+    "grants": [
+     "Životní zkušenost Rytíře: +3 k dovednostem Cizí jazyky, Čtení a psaní, Historie.",
+     "volitelné schopnosti a pokročilé triky specializace"
+    ],
+    "unlocksLabel": "volitelné schopnosti specializace od 6. úrovně"
+   },
+   {
+    "id": "sermir",
+    "name": "Šermíř",
+    "need": 2,
+    "requires": [
+     "skola_boje_s_bodnou_zbrani",
+     "rozvaznost"
+    ],
+    "grants": [
+     "Životní zkušenost Šermíře: +3 k dovednostem Akrobacie, Řemesla, Umění.",
+     "volitelné schopnosti a pokročilé triky specializace"
+    ],
+    "unlocksLabel": "volitelné schopnosti specializace od 6. úrovně"
+   }
+  ],
+  "choose": {
+   "n": 1,
+   "nFrom6": 2,
+   "word": "bojové triky",
+   "poolLabel": "základní triky",
+   "pool": [
+    "Bojová připravenost",
+    "Odražení projektilu",
+    "Rychlý přesun",
+    "Rychlý úder",
+    "Zuřivý útok"
+   ],
+   "perBranch": 1
+  },
+  "autoAtLevel2": null,
+  "tovarys": "Od 6. úrovně (včetně) se Válečník automaticky naučí 2 triky za úroveň. Neplatí pravidlo zpětné opravy."
+ },
+ "hranicar": {
+  "branchLabel": "Směr magie",
+  "branchGrant": "3 kouzla automaticky + bonus",
+  "grantMode": "grantAll",
+  "itemWord": "kouzla",
+  "energyGrows": true,
+  "branches": [
+   {
+    "id": "magie_pocestnych",
+    "name": "Magie pocestných",
+    "effect": "+10 k Pohyblivosti.",
+    "items": [
+     "Bdělý spánek",
+     "Ochrana před bouří",
+     "Rychlost chodce"
+    ]
+   },
+   {
+    "id": "magie_prirody",
+    "name": "Magie přírody",
+    "effect": "+1 k ověření dovednosti Znalost přírody (INT).",
+    "items": [
+     "Neutralizuj jed",
+     "Uzdrav lehká zranění",
+     "Úder varování"
+    ]
+   },
+   {
+    "id": "magie_zvirat",
+    "name": "Magie zvířat",
+    "effect": "+1 k ověření dovednosti Zvládnutí zvířat (OBR/CHAR).",
+    "items": [
+     "Najdi zvíře",
+     "Přivolej zvíře",
+     "Zvířecí smysly"
+    ]
+   }
+  ],
+  "abilities": [
+   {
+    "id": "boj_se_zviraty",
+    "name": "Boj se zvířaty",
+    "text": "Při boji se zvířaty, bestiemi či hmyzem +2 do ÚČ a OČ.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 7
+   },
+   {
+    "id": "bojova_hul",
+    "name": "Bojová hůl",
+    "text": "+2 do OČ při boji s holí, kopím a podobnými dřevcovými zbraněmi; v rámci akce Obrana jedna Aktivní obrana navíc.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 7
+   },
+   {
+    "id": "lecitelstvi",
+    "name": "Léčitelství",
+    "text": "Profesní dovednost Léčitelství (INT) na 3. stupni. 1 směna, 1 tvor, obvazy; ověření Léčitelství (INT) vs. chybějící životy → vyléčí stupeň + oprava INT (neúspěch polovinu). Jen 1× denně před Spánkem, projeví se po něm.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 7,
+    "grantsSkills": [
+     {
+      "id": "lecitelstvi",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "obratne_ostri",
+    "name": "Obratné ostří",
+    "text": "Při útoku mečem (tesák, šavle, meč bastard apod.) může započíst opravu OBR místo SIL.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 8
+   },
+   {
+    "id": "ochocovani_zvirat",
+    "name": "Ochočování zvířat",
+    "text": "Profesní dovednost Ochočování zvířat (CHAR) na 3. stupni. Trvá 1k6 směn; ověření vs. obtížnost ochočení zvířete; neúspěch → znovu až další den. Najednou jen 1 ochočené zvíře (Zvířecí přítel).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 8,
+    "grantsSkills": [
+     {
+      "id": "ochocovani_zvirat",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "pruzkumnictvi",
+    "name": "Průzkumnictví",
+    "text": "Profesní dovednosti Kamufláž (OBR) a Líčení pastí (OBR) na 3. stupni.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 8,
+    "grantsSkills": [
+     {
+      "id": "kamuflaz",
+      "rank": 3
+     },
+     {
+      "id": "liceni_pasti",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "presna_strelba",
+    "name": "Přesná střelba",
+    "text": "1 kolo soustředění a míření (při více útocích za kolo vynechá jeden střelecký útok) → další útok +6. Neživý cíl do 20 sáhů obvykle zasáhne automaticky.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 10
+   },
+   {
+    "id": "rychla_strelba",
+    "name": "Rychlá střelba",
+    "text": "Jen luk: v rámci akce Útok více Útoků a v rámci akce Obrana více Obran – 3 za 2 kola (2, 1, 2, 1…). Od 6. úrovně 2 útoky i obrany každé kolo.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 10
+   },
+   {
+    "id": "zoceleni",
+    "name": "Zocelení",
+    "text": "Jednorázově +4 ke stupni Odolnosti (zpětná oprava životů).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H09",
+    "page": 10
+   },
+   {
+    "id": "bdely_spanek_schopnost",
+    "name": "Bdělý spánek",
+    "text": "I ve spánku hod na Postřeh (při odpočinku Výhoda +5); při úspěchu se okamžitě probere a může se bránit. Nerušený spánek či odpočinek léčí 2× víc životů.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 64
+   },
+   {
+    "id": "hranicarsky_luk",
+    "name": "Hraničářský luk",
+    "text": "Výroba 1k6 dnů. Pro tvůrce +1 Útočnost, Zranění i Obrana a dostřel ×1,5. Magie luku – kouzla lze kombinovat s útokem.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 64,
+    "grantsItems": [
+     "Déšť šípů",
+     "Jasná střela",
+     "Ochromující šíp",
+     "Plamenný šíp",
+     "Trefa do černého"
+    ]
+   },
+   {
+    "id": "hranicaruv_kun",
+    "name": "Hraničářův kůň",
+    "text": "Duševní pouto s 1 jezdeckým zvířetem (navázání 1 hodina; nové až na další úrovni). Speciálních povelů tolik, kolik je bonus INT. Jízda na zvířeti +3 (nebo ji naučí na 3. stupni).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 65,
+    "grantsItems": [
+     "Nezdolnost",
+     "Přivolej koně",
+     "S větrem o závod",
+     "Uklidni zvíře",
+     "Zvířecí posel"
+    ]
+   },
+   {
+    "id": "lovcova_korist",
+    "name": "Lovcova kořist",
+    "text": "Proti zvolenému typu tvorů (u humanoidů konkrétní rasa) +3 ÚČ i OČ a Výhoda +5 k hodům využívajícím znalost jejich slabin (stopování…). Každou 3. úroveň lze vzít další kategorii.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 66,
+    "repeatable": true,
+    "levelStep": 3
+   },
+   {
+    "id": "mluveni_se_zviraty",
+    "name": "Mluvení se zvířaty",
+    "text": "Telepatická komunikace s běžnými (nemagickými) zvířaty – 1 otázka a 1 odpověď za kolo.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 66
+   },
+   {
+    "id": "moudrost",
+    "name": "Moudrost",
+    "text": "ZO může počítat z bonusu INT místo OBR; u všech dovedností může nahradit OBR za INT.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 67
+   },
+   {
+    "id": "ostrazitost",
+    "name": "Ostražitost",
+    "text": "Trvale +3 k Postřehu, Reflexu a Iniciativě.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 67
+   },
+   {
+    "id": "spriznenost_se_zviraty",
+    "name": "Spřízněnost se zvířaty",
+    "text": "Zvířata na něj neútočí, dokud se sám nezapojí do boje; Výhoda +5 k Ochočování, Uklidňování a Vyjednávání se zvířaty.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 67
+   },
+   {
+    "id": "strelba_na_kratkou_vzdalenost",
+    "name": "Střelba na krátkou vzdálenost",
+    "text": "Střelba na méně než 2 sáhy bez postihu −5; v této situaci +2 ke Zranění lukem a +2 do Obrany lukem.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 67
+   },
+   {
+    "id": "svetobeznik",
+    "name": "Světoběžník",
+    "text": "Dovednostní body 6× úroveň místo 5× úroveň (zpětná oprava).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 67
+   },
+   {
+    "id": "urputna_strelba",
+    "name": "Urputná střelba",
+    "text": "Soustředěná palba na stejný cíl: za každý další šíp +1 ÚČ (max. +5); kombinuje se s Rychlou i Přesnou střelbou.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 68
+   },
+   {
+    "id": "totem",
+    "name": "Totem",
+    "text": "Fetiš z ostatků zvířete (1 den o samotě). Propojení 1 kolo → na 1 směnu schopnost zvířete, pak se totem rozpadne. U sebe nejvýš 1 totem.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP02",
+    "page": 68
+   },
+   {
+    "id": "chodcuv_mec",
+    "name": "Chodcův meč",
+    "text": "Zasvěcení meče (výprava 1k6 týdnů, 1× za úroveň). Pro Chodce +1 Útočnost, Zranění i Obrana, magická zbraň; uloží 2 many za úroveň (přelití 1 kolo, 1 DS za 1 manu). Kouzla meče v nulovém čase.",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 74,
+    "grantsItems": [
+     "Odražení kouzla",
+     "Posílení zbraně",
+     "Transmutace zbraně",
+     "Záblesk",
+     "Živelné ostří"
+    ]
+   },
+   {
+    "id": "chodecka_magie",
+    "name": "Chodecká magie",
+    "text": "Kouzla maskování stop a pachů, sledování a zastrašení.",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 76,
+    "grantsItems": [
+     "Falešná stopa",
+     "Matení pachů",
+     "Matení stop",
+     "Oči přírody",
+     "Uhrančivý pohled"
+    ]
+   },
+   {
+    "id": "instinkt_lovce",
+    "name": "Instinkt lovce",
+    "text": "1 kolo pozorování → pozná nejslabšího a nejsilnějšího protivníka; proti nim +3 ÚČ i OČ (vyprchá týden po posledním spatření).",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 76
+   },
+   {
+    "id": "jista_ruka",
+    "name": "Jistá ruka",
+    "text": "Padne-li v boji na k6 jednička, hází znovu; druhý hod platí.",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 76
+   },
+   {
+    "id": "magicke_pasti",
+    "name": "Magické pasti",
+    "text": "Umí líčit a bezpečně rozpoznat jednorázové magické pasti.",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 76,
+    "grantsItems": [
+     "Jedová past",
+     "Svazující past",
+     "Varovná past",
+     "Vřeštík",
+     "Výbušná past",
+     "Vyskakující kolíky"
+    ]
+   },
+   {
+    "id": "magie_lovcu_monster",
+    "name": "Magie lovců monster",
+    "text": "Bojová kouzla použitelná s jakoukoli zbraní.",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 77,
+    "grantsItems": [
+     "Bleskový výpad",
+     "Dvojitý švih",
+     "Sražení projektilu",
+     "Poškození zbraně",
+     "Vířivé ostří"
+    ]
+   },
+   {
+    "id": "pozirac",
+    "name": "Požírač",
+    "text": "1× denně pozře čerstvý orgán (do 2 h od smrti, tvor ≥ A1) za 1 směnu: vyléčí 1k6 a na 24 h přičte opravu atributu oběti (min. +1): srdce SIL, šlachy OBR, oči CHAR, mozek INT, játra ODO.",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 78
+   },
+   {
+    "id": "soustredeni_dusevni_sily",
+    "name": "Soustředění Duševní síly",
+    "text": "Kouzla posílení vlastního těla a mysli (Očištění, Přizpůsobení, Utužení, Uvolnění, Zacelení).",
+    "minLevel": null,
+    "requiresSpecialization": "chodec",
+    "source": "PPP02",
+    "page": 78,
+    "grantsItems": [
+     "Očištění",
+     "Přizpůsobení",
+     "Utužení",
+     "Uvolnění",
+     "Zacelení"
+    ]
+   },
+   {
+    "id": "dary_prirody",
+    "name": "Dary přírody",
+    "text": "Léčivé masti a odvary (Znalost přírody).",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 92,
+    "grantsItems": [
+     "Léčivá mast",
+     "Odvar z bezoáru",
+     "Odvar jarní doušek",
+     "Odvar letní žár",
+     "Odvar podzimní pomocník",
+     "Odvar zimní spáč"
+    ]
+   },
+   {
+    "id": "druidova_hul",
+    "name": "Druidova hůl",
+    "text": "Rituál 1 týden (vrchol o úplňkové půlnoci); nová až na další úrovni. Hůl: Útočnost 5, Zranění 1, Obrana 3; +1 k jednomu z atributů hole za každou volitelnou druidskou schopnost. Lipová: +3 magie lesa a léčivé listy; jabloňová: +3 všem druidským kouzlům a jablka; dubová: +3 magie hvozdu a žaludy (+2 DS).",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 90
+   },
+   {
+    "id": "druidske_ritualy",
+    "name": "Druidské rituály",
+    "text": "Na posvátném místě Výhoda +5; více Druidů v kruhu: +5 za každého podporujícího (vloží veškerou Duševní sílu).",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 93,
+    "grantsItems": [
+     "Dar života",
+     "Láska hvozdu",
+     "Nenávist hvozdu",
+     "Uzdrav lykantropii",
+     "Uzdrav zmrzačení",
+     "Zruš zkamenění"
+    ]
+   },
+   {
+    "id": "magie_lesa",
+    "name": "Magie lesa",
+    "text": "Kouzla lesa (Bludný kořen, Listová bouřka, Povolej víly, Změna počasí…).",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 93,
+    "grantsItems": [
+     "Bludný kořen",
+     "Listová bouřka",
+     "Otevřená náruč lesa",
+     "Povolej víly",
+     "Procházení stromy",
+     "Přivolej bludičky",
+     "Snový mrak",
+     "Změna počasí"
+    ]
+   },
+   {
+    "id": "magie_hvozdu",
+    "name": "Magie hvozdu",
+    "text": "Mocná kouzla hvozdu (Hněv hvozdu, Koroze, Trnová stěna, Zestromovatění…).",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 93,
+    "grantsItems": [
+     "Hněv hvozdu",
+     "Koroze",
+     "Najdi bytost",
+     "Probuzení Pastýře lesa",
+     "Probuzení stromu",
+     "Trnová stěna",
+     "Zapletení",
+     "Zestromovatění"
+    ]
+   },
+   {
+    "id": "prostoupeni",
+    "name": "Prostoupení",
+    "text": "Za 3 kola vstoupí do stromu (≥ jeho velikosti) a ovládá ho max. 1 den, 1× za 24 h; zranění stromu napůl přechází na Druida.",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 94
+   },
+   {
+    "id": "sila_prirody",
+    "name": "Síla přírody",
+    "text": "1× denně meditace 1 směna v lese → aktuální Duševní síla až na 2× maximum; zmizí po usnutí.",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 94
+   },
+   {
+    "id": "vladni_prirozenym_vecem",
+    "name": "Vládni přirozeným věcem",
+    "text": "Jednorázový příkaz přírodnímu nemagickému předmětu (do velikosti Druida) na 10 sáhů × úroveň; krátká akce, 1 bod únavy.",
+    "minLevel": null,
+    "requiresSpecialization": "druid",
+    "source": "PPP02",
+    "page": 94
+   },
+   {
+    "id": "bestie",
+    "name": "Bestie",
+    "text": "Proměna za 1 kolo: OBR, ODO a SIL +3, INT a CHAR −5; nelze zbraně ani kouzla; drápy 8/+2/+2.",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 105
+   },
+   {
+    "id": "boj_ve_smecce",
+    "name": "Boj ve smečce",
+    "text": "+1 ÚČ i OČ za každého člena smečky v boji (max. +5).",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 105
+   },
+   {
+    "id": "divoke_pokriky",
+    "name": "Divoké pokřiky",
+    "text": "Řevy a pokřiky, kterými burcuje smečku a děsí nepřátele.",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 105,
+    "grantsItems": [
+     "Bojovný řev",
+     "Děsivý řev",
+     "Pokřik lovu",
+     "Varovný výkřik",
+     "Vábivý křik"
+    ]
+   },
+   {
+    "id": "magie_smecky",
+    "name": "Magie smečky",
+    "text": "Kouzla s dosahem dotek může sesílat přes kterékoli zvíře smečky.",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 105,
+    "grantsItems": [
+     "Chraň",
+     "Štvi",
+     "Trhej",
+     "Zadrž",
+     "Zachraň"
+    ]
+   },
+   {
+    "id": "pokrocila_magie_zvirat",
+    "name": "Pokročilá Magie zvířat",
+    "text": "Kouzla pro práci se zvířaty (Mimikry, Nakrm zvíře, Oči zvířete, Pochvala, Poslouchej).",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 106,
+    "grantsItems": [
+     "Mimikry",
+     "Nakrm zvíře",
+     "Oči zvířete",
+     "Pochvala",
+     "Poslouchej"
+    ]
+   },
+   {
+    "id": "samanismus",
+    "name": "Šamanismus",
+    "text": "Nápoj Argwe (hodina přípravy) → trans 4 směny, rozhovor s duchem zvířete, případně návrat duše do zachovalého těla; po transu obnoví ½ max. Duševní síly. 1× denně.",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 106
+   },
+   {
+    "id": "tvaromenic",
+    "name": "Tvaroměnič",
+    "text": "Za 1 kolo převezme tělo zvířete ze smečky (vlastní tělo v transu); atributy zvířete, zůstává INT.",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 106
+   },
+   {
+    "id": "zvireci_sampion",
+    "name": "Zvířecí šampion",
+    "text": "Jedno zvíře: +1 třída velikosti, +20 max. životů, +15 pohyblivost, +3 ÚČ i ZO; Pánovi zvířat trvale −2 max. Duševní síly.",
+    "minLevel": null,
+    "requiresSpecialization": "pan_zvirat",
+    "source": "PPP02",
+    "page": 107
+   }
+  ],
+  "specializations": [
+   {
+    "id": "chodec",
+    "name": "Chodec",
+    "need": 2,
+    "requires": [
+     "pruzkumnictvi",
+     "magie_pocestnych"
+    ],
+    "grants": [
+     "Vytrvalost: Hranice únavy = 15 + oprava ODO (bez mechaniky únavy vydrží 2× víc než ostatní).",
+     "Znalost místních poměrů: Dovednost (INT) na 5. stupni: informace o místech, obtížnost podle hodnoty informace; po týdnu na místě Výhoda +5."
+    ],
+    "grantsSkills": [
+     {
+      "id": "znalost_mistnich_pomeru",
+      "rank": 5
+     }
+    ]
+   },
+   {
+    "id": "druid",
+    "name": "Druid",
+    "need": 2,
+    "requires": [
+     "lecitelstvi",
+     "magie_prirody"
+    ],
+    "grants": [
+     "Druidova kouzla: Od 6. úrovně automaticky všechna Druidova kouzla. Ve městech a civilizaci Nevýhoda −5 (lze obejít Základem – předmětem z místa, který se rozpadne).",
+     "Druidské svěcení: Ve hvozdu Výhoda +5 ke všem hodům na Pouto s přírodou, v běžné přírodě +3.",
+     "Druidova kouzla: Obří růst, Poskytni příbytek, Požehnání přírody, Probuzení hvozdu, Přilnavost břečťanu, Přivolej druida, Splynutí, Trnový štít, Uklidnění hvozdu, Uvadni"
+    ]
+   },
+   {
+    "id": "pan_zvirat",
+    "name": "Pán zvířat",
+    "need": 2,
+    "requires": [
+     "ochocovani_zvirat",
+     "magie_zvirat"
+    ],
+    "grants": [
+     "Další zvířecí přátelé: Ochočená zvířata získají schopnosti zvířecích přátel (např. vrána místo sokola, rys místo vlka); fyzické atributy podle druhu.",
+     "Smečka: Více zvířecích společníků; součet jejich úrovní ≤ úroveň Pána zvířat. Při přestupu lze vycvičit jen jedno zvíře."
+    ]
+   }
+  ],
+  "choose": null,
+  "autoAtLevel2": null,
+  "levelGrants": [
+   {
+    "level": 6,
+    "text": "Pokročilý hraničář: Výroba šípů, Pohyb v terénu, Přírodní překážky na 5. stupni",
+    "grantsSkills": [
+     {
+      "id": "vyroba_sipu",
+      "rank": 5
+     },
+     {
+      "id": "pohyb_v_terenu",
+      "rank": 5
+     },
+     {
+      "id": "prirodni_prekazky",
+      "rank": 5
+     }
+    ]
+   },
+   {
+    "level": 6,
+    "text": "Další hraničářská kouzla – ke každému známému směru 2 kouzla (Ochrana před smečkou, Odvracení zvířat · Ochrana před zimou, Sledování · Úder nenávisti, Uzdrav těžká zranění)."
+   }
+  ]
+ },
+ "zlodej": {
+  "branchLabel": "Zlodějské umění",
+  "branchGrant": "dovednost na stupni 3 + 3 triky automaticky",
+  "grantMode": "grantAll",
+  "itemWord": "triky",
+  "energyGrows": false,
+  "branches": [
+   {
+    "id": "kocici_pohyb",
+    "name": "Umění kočičího pohybu",
+    "effect": "Umění kočičího pohybu (OBR) na 3. stupni",
+    "items": [
+     "Lezení",
+     "Ohebnost",
+     "Pád z výšky"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_kociciho_pohybu",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "promeny",
+    "name": "Umění proměn",
+    "effect": "Umění proměn (CHAR) na 3. stupni",
+    "items": [
+     "Imitace",
+     "Mimika",
+     "Převleky"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_promen",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "rvaci",
+    "name": "Umění rváčů",
+    "effect": "Umění rváčů (OBR) na 3. stupni",
+    "items": [
+     "Falešný útok",
+     "Oko střelce",
+     "Omráčení"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_rvacu",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "skryvani",
+    "name": "Umění skrývání",
+    "effect": "Umění skrývání (OBR) na 3. stupni",
+    "items": [
+     "Schování se ve stínu",
+     "Splynutí s davem",
+     "Tichý pohyb"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_skryvani",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "sarm",
+    "name": "Umění šarmu",
+    "effect": "Umění šarmu (CHAR) na 3. stupni",
+    "items": [
+     "Odhad lidí",
+     "Odvedení pozornosti",
+     "Získání důvěry"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_sarmu",
+      "rank": 3
+     }
+    ]
+   },
+   {
+    "id": "zelezny_klic",
+    "name": "Umění železného klíče",
+    "effect": "Umění železného klíče (OBR) na 3. stupni",
+    "items": [
+     "Odstranění pastí",
+     "Otevírání zámků",
+     "Padělání"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_zelezneho_klice",
+      "rank": 3
+     }
+    ]
+   }
+  ],
+  "abilities": [
+   {
+    "id": "boj_beze_zbrane",
+    "name": "Boj beze zbraně",
+    "text": "Bojuje-li zloděj beze zbraně, má při boji tváří v tvář +3 do ÚČ a OČ. Nelze přitom držet štít, jednoruční zbraň a podobně.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H12"
+   },
+   {
+    "id": "improvizace",
+    "name": "Improvizace",
+    "text": "Neuspěje-li zloděj v hodu na profesní dovednost a je odhalen (někdo si všiml jeho akce), získá ještě před reakcí protivníka 1 herní tah navíc a sám rozhodne, jaké akce v něm provede. Nelze v souboji, ale těsně před ním ano (před hodem na iniciativu).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H12"
+   },
+   {
+    "id": "odezirani_ze_rtu",
+    "name": "Odezírání ze rtů",
+    "text": "S dobrým výhledem na rty a nejdál 20 sáhů zachytí zloděj artikulaci – musí znát jazyk. Nepochytí všechna slova, ale porozumí celkovému kontextu.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H12"
+   },
+   {
+    "id": "vrazedne_ostri",
+    "name": "Vražedné ostří",
+    "text": "Při boji s lehkou krátkou či lehkou bodnou zbraní (vrhací i tváří v tvář) +2 do ÚČ a OČ.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H12"
+   },
+   {
+    "id": "vrhani_dyk",
+    "name": "Vrhání dýk",
+    "text": "Zbraně vrhá i vícekrát za kolo: v rámci akce Útok tři vrhy za dvě kola (v prvním kole dva, v dalším jeden, a tak dokola); stejně tak v rámci akce Obrana tři obrany za dvě kola. Od 6. úrovně útočí v každém kole dvakrát. Platí i pro všechny ostatní lehké vrhací zbraně.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H12"
+   },
+   {
+    "id": "zakerna_kuse",
+    "name": "Zákeřná kuše",
+    "text": "+2 do Útočného čísla a Zranění ke střeleckému útoku kuší nebo improvizovaným mechanismem (foukačky, hole střílející jehlice, zápěstní kuše…).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H12"
+   },
+   {
+    "id": "boj_se_dvema_zbranemi",
+    "name": "Boj se dvěma zbraněmi",
+    "text": "K boji beze zbraně nebo lehké jednoruční zbrani ve druhé ruce lehká krátká zbraň – statistiky se sčítají.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "cileny_utok",
+    "name": "Cílený útok",
+    "text": "Útok −5 na hlavu, ruku nebo nohu; po zásahu Reflex vs. Reflex – krvácení a −1 CHAR / −5 Útok a gesta / poloviční Pohyblivost.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "citliva_mista",
+    "name": "Citlivá místa",
+    "text": "+3 ke Zranění střelnými, vrhacími a lehkými zbraněmi (i pěstmi).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "expertiza",
+    "name": "Expertiza",
+    "text": "Při přestupu jedna dovednost až o 2 stupně (max. úroveň + 2); +1 dovednostní bod za úroveň (zpětně).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "mistrovstvi_sily_osobnosti",
+    "name": "Mistrovství síly osobnosti",
+    "text": "+1 k Hazardním hrám a Přesvědčování; triky Manipulace a Podstrčení předmětu.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05",
+    "grantsItems": [
+     "Manipulace",
+     "Podstrčení předmětu"
+    ]
+   },
+   {
+    "id": "mistrovstvi_zlatky",
+    "name": "Mistrovství zlatky",
+    "text": "+1 k Odhadu ceny a Vybírání kapes; triky Handlování a Ukrytí předmětu.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05",
+    "grantsItems": [
+     "Handlování",
+     "Ukrytí předmětu"
+    ]
+   },
+   {
+    "id": "nocni_zivel",
+    "name": "Noční živel",
+    "text": "V bezprostřední blízkosti všechny běžné akce i v naprosté tmě bez Nevýhody.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "obratny_bojovnik",
+    "name": "Obratný bojovník",
+    "text": "Beze zbraně nebo s lehkými zbraněmi do Útoku OBR místo SIL.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "rychle_taseni",
+    "name": "Rychlé tasení",
+    "text": "1× za kolo okamžitou akcí přezbrojit, vypít lektvar nebo aplikovat jed.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "svizne_ostri",
+    "name": "Svižné ostří",
+    "text": "Tváří v tvář beze zbraně či s lehkými zbraněmi 3 útoky za 2 kola, od 12. úrovně 2 za kolo.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "sesty_smysl",
+    "name": "Šestý smysl",
+    "text": "Výhoda +5 k náhlým hodům na Postřeh a Reflex, trvale +3 k Iniciativě.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "technika_nabijeni",
+    "name": "Technika nabíjení",
+    "text": "Kuše nemají nárok na SIL, ale na OBR.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP05"
+   },
+   {
+    "id": "assassinace",
+    "name": "Assassinace",
+    "text": "Zásah tvora, který ho nevidí nebo se nemůže bránit = dvojnásobná Zranění.",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05"
+   },
+   {
+    "id": "mistrovstvi_rvacu",
+    "name": "Mistrovství rváčů",
+    "text": "+1 k Umění rváčů; triky Dokonalá muška, Otřesení, Přesný zásah.",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05",
+    "grantsItems": [
+     "Dokonalá muška",
+     "Otřesení",
+     "Přesný zásah"
+    ]
+   },
+   {
+    "id": "mistrovstvi_skryvani",
+    "name": "Mistrovství skrývání",
+    "text": "+1 k Umění skrývání; triky Infiltrace, Pán stínů, Utajený útok.",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05",
+    "grantsItems": [
+     "Infiltrace",
+     "Pán stínů",
+     "Utajený útok"
+    ]
+   },
+   {
+    "id": "riskantni_utok",
+    "name": "Riskantní útok",
+    "text": "1× za kolo vymění jednu Obranu za Útok navíc.",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05"
+   },
+   {
+    "id": "umeni_prepadu",
+    "name": "Umění přepadů",
+    "text": "Nová dovednost (OBR) na 5. stupni; triky Hlavounova finta, Kontrolovaná trajektorie, Prohození pozic.",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05",
+    "grantsItems": [
+     "Hlavounova finta",
+     "Kontrolovaná trajektorie",
+     "Prohození pozic"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_prepadu",
+      "rank": 5
+     }
+    ]
+   },
+   {
+    "id": "vejir_dyk",
+    "name": "Vějíř dýk",
+    "text": "Vrhne 2 projektily najednou (i na různé cíle), každý s Nevýhodou −5.",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05"
+   },
+   {
+    "id": "vyhodna_pozice",
+    "name": "Výhodná pozice",
+    "text": "První Útok v souboji: místo k6 rovnou 6 + další hod; znovu za cenu jednoho Útoku.",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05"
+   },
+   {
+    "id": "vyroba_jedu",
+    "name": "Výroba jedů",
+    "text": "Chová exotická zvířata – denně 1 dávka jedu (Černá smrt, Divotvorné sérum, Měsíční polibek).",
+    "minLevel": 6,
+    "requiresSpecialization": "assassin",
+    "source": "PPP05"
+   },
+   {
+    "id": "bojova_kreativita",
+    "name": "Bojová kreativita",
+    "text": "První kolo s novou improvizovanou zbraní Výhoda +5 do ÚČ i OČ.",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05"
+   },
+   {
+    "id": "druha_sance",
+    "name": "Druhá šance",
+    "text": "1× denně okamžitě zopakuje neúspěšný hod na profesní dovednost.",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05"
+   },
+   {
+    "id": "lupicska_udelatka",
+    "name": "Lupičská udělátka",
+    "text": "Vyrábí zbraně Zlodějského cechu a udělátka Padák, Sada univerzálních klíčů, Zvonící koule.",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05"
+   },
+   {
+    "id": "lupicuv_partak",
+    "name": "Lupičův parťák",
+    "text": "Vycvičené zvíře – potkan, papoušek, kočka nebo opice (záložka Přátelé).",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05"
+   },
+   {
+    "id": "mistr_uteku",
+    "name": "Mistr útěku",
+    "text": "Pohyblivost +10; při Přesunu/Sprintu se může bránit svým OČ.",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05"
+   },
+   {
+    "id": "mistrovstvi_kociciho_pohybu",
+    "name": "Mistrovství kočičího pohybu",
+    "text": "+1 k Umění kočičího pohybu; triky Flexibilita, Parkur, Útok z výšky.",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05",
+    "grantsItems": [
+     "Flexibilita",
+     "Parkur",
+     "Útok z výšky"
+    ]
+   },
+   {
+    "id": "mistrovstvi_zelezneho_klice",
+    "name": "Mistrovství železného klíče",
+    "text": "+1 k Umění železného klíče; triky Nastražení pasti, Otevírání magických zámků, Padělání cenností.",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05",
+    "grantsItems": [
+     "Nastražení pasti",
+     "Otevírání magických zámků",
+     "Padělání cenností"
+    ]
+   },
+   {
+    "id": "umeni_neferoveho_boje",
+    "name": "Umění neférového boje",
+    "text": "Nová dovednost (OBR) na 5. stupni; triky Podkopnutí, Souboj na zemi, Útok do slabin.",
+    "minLevel": 6,
+    "requiresSpecialization": "lupic",
+    "source": "PPP05",
+    "grantsItems": [
+     "Podkopnutí",
+     "Souboj na zemi",
+     "Útok do slabin"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_neferoveho_boje",
+      "rank": 5
+     }
+    ]
+   },
+   {
+    "id": "alter_ego",
+    "name": "Alter ego",
+    "text": "Falešná identita – Výhoda +5 ke všem zlodějským dovednostem s CHAR.",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05"
+   },
+   {
+    "id": "duvernik",
+    "name": "Důvěrník",
+    "text": "Loajální rádce a bodyguard bez žoldu; v boji ho ovládá hráč (záložka Přátelé).",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05"
+   },
+   {
+    "id": "mistrovstvi_promen",
+    "name": "Mistrovství proměn",
+    "text": "+1 k Umění proměn; triky Hraní mrtvého, Makety, Falešné tváře.",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05",
+    "grantsItems": [
+     "Hraní mrtvého",
+     "Makety",
+     "Falešné tváře"
+    ]
+   },
+   {
+    "id": "mistrovstvi_sarmu",
+    "name": "Mistrovství šarmu",
+    "text": "+1 k Umění šarmu; triky Odhad nepřítele, Ostrý jazyk, Sladká slova.",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05",
+    "grantsItems": [
+     "Odhad nepřítele",
+     "Ostrý jazyk",
+     "Sladká slova"
+    ]
+   },
+   {
+    "id": "povesti_a_drby",
+    "name": "Pověsti a drby",
+    "text": "Za ≥ 1 den šíření dá osobě Výhodu +5 nebo Nevýhodu −5 k sociálním interakcím tam, kde se o ní ví.",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05"
+   },
+   {
+    "id": "sifrovani",
+    "name": "Šifrování",
+    "text": "Šifra = hod Čtení a psaní +5; dešifrování s Výhodou +5; zpráva nebo naučení klíče 1 směna.",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05"
+   },
+   {
+    "id": "umeni_boje_s_plastem",
+    "name": "Umění boje s pláštěm",
+    "text": "Nová dovednost (OBR) na 5. stupni; triky Držení, Oslepení pláštěm, Svedení útoku.",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05",
+    "grantsItems": [
+     "Držení",
+     "Oslepení pláštěm",
+     "Svedení útoku"
+    ],
+    "grantsSkills": [
+     {
+      "id": "umeni_boje_s_plastem",
+      "rank": 5
+     }
+    ]
+   },
+   {
+    "id": "zrcadleni",
+    "name": "Zrcadlení",
+    "text": "1× denně okamžitě (nejpozději další kolo) napodobí fyzickou akci či trik viděného humanoida se svými atributy.",
+    "minLevel": 6,
+    "requiresSpecialization": "sicco",
+    "source": "PPP05"
+   }
+  ],
+  "specializations": [
+   {
+    "id": "assassin",
+    "name": "Assassin",
+    "need": 2,
+    "requires": [
+     "skryvani",
+     "vrhani_dyk"
+    ],
+    "grants": [
+     "Bratrstvo Assassinů: Uzavřený spolek (znak had, tetování podle klanu). Ve Zlodějském cechu tajné informace o vraždách a únosech v oblasti, vypsaných odměnách a zakázkách. Klan, jeho cíle a znamení si dohodni s PJ.",
+     "Vražedné zbraně: Se zbraněmi označenými jako Assassinské +3 do Útoku (ÚČ) a Obrany (OČ)."
+    ]
+   },
+   {
+    "id": "lupic",
+    "name": "Lupič",
+    "need": 2,
+    "requires": [
+     "kocici_pohyb",
+     "boj_beze_zbrane"
+    ],
+    "grants": [
+     "Bratrstvo lupičů: Uzavřený spolek (znak klíč). Ve Zlodějském cechu tajné informace k vytipování cílů loupeže – vzácné zboží ve městě či na cestě, majitel, cena, místo, zabezpečení; vypsané odměny a zakázky. Klan si dohodni s PJ.",
+     "Improvizované zbraně: S improvizovanými zbraněmi (střep, svícen, kůl i zbraně cechu označené jako improvizované) +3 do Útoku (ÚČ) i Obrany (OČ). Sebrání předmětu = akce Přezbrojení; PJ určí, zda jde o obdobu krátké lehké (2/1/1, dostřel 6/15) nebo lehké obouruční zbraně (5/0/1)."
+    ]
+   },
+   {
+    "id": "sicco",
+    "name": "Sicco",
+    "need": 2,
+    "requires": [
+     "sarm",
+     "odezirani_ze_rtu"
+    ],
+    "grants": [
+     "Siccova síť: Vlastní zločinecká organizace – nejvýše tolik kumpánů, kolik je úroveň Sicca; první člen každého typu je kápo týmu. Akce sítě: 1k10 + 1 za každého zapojeného kumpána vs. obtížnost PJ.",
+     "Zbraně gentlemana: Se všemi gentlemanskými zbraněmi (Zlodějský cech) +3 do Útoku (ÚČ) i Obrany (OČ)."
+    ]
+   }
+  ],
+  "choose": null,
+  "autoAtLevel2": null,
+  "levelGrants": [
+   {
+    "level": 6,
+    "text": "Pokročilý zloděj – Speciální předměty Zloděje (černý trh: bomby, zbraně cechu) a Zlodějský cech (PPP05)"
+   }
+  ]
+ },
+ "klerik": {
+  "branchLabel": "Teologická nauka",
+  "branchGrant": "4 prosby automaticky + bonus",
+  "grantMode": "grantAll",
+  "itemWord": "prosby",
+  "energyGrows": true,
+  "branches": [
+   {
+    "id": "bojovnici_viry",
+    "name": "Bojovníci víry",
+    "effect": "+1 k Útočnému číslu.",
+    "items": [
+     "Svatá zbroj",
+     "Útok štěstěny",
+     "Vrácení úderu",
+     "Zesil zranění"
+    ]
+   },
+   {
+    "id": "bozi_patroni",
+    "name": "Boží patroni",
+    "effect": "Přivolání poslů (nadpozemských patronů).",
+    "items": [
+     "Posel bojovník",
+     "Posel rovnováhy",
+     "Posel stezky",
+     "Posel umlčení"
+    ]
+   },
+   {
+    "id": "demonologie",
+    "name": "Démonologie",
+    "effect": "+1 k Útočnému i Obrannému číslu proti běsům, ďáblům, démonům, nemrtvým, neviděným, přírodním, světlým a temným bytostem.",
+    "items": [
+     "Najdi temnotu",
+     "Odstraň kletbu",
+     "Odvracení temnoty",
+     "Ošálení temnoty"
+    ]
+   },
+   {
+    "id": "milosrdenstvi",
+    "name": "Milosrdenství",
+    "effect": "+1 k ověření dovednosti První pomoc.",
+    "items": [
+     "Napravení těla",
+     "Odstraň paralýzu",
+     "Udržení života",
+     "Uzdrav nemocného"
+    ]
+   },
+   {
+    "id": "svata_pravda",
+    "name": "Svatá pravda",
+    "effect": "+1 k ověření dovednosti Vůle.",
+    "items": [
+     "Doznání",
+     "Falešné přátelství",
+     "Vidění pravdy",
+     "Zapomnění"
+    ]
+   },
+   {
+    "id": "zehnani_aurami",
+    "name": "Žehnání aurami",
+    "effect": "Čtení aur: na první pohled pozná, zda je bytost nemocná, prokletá či požehnaná.",
+    "items": [
+     "Aura ocelové pěsti",
+     "Aura proti temnotě",
+     "Aura svatého štítu",
+     "Léčivá aura"
+    ]
+   }
+  ],
+  "abilities": [
+   {
+    "id": "bozi_bojovnik",
+    "name": "Boží bojovník",
+    "text": "+2 do ÚČ a OČ.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H13"
+   },
+   {
+    "id": "dar_slitovani",
+    "name": "Dar slitování",
+    "text": "Ve smrtelném nebezpečí další (záchranný) hod 1k10 – použije se výhodnější. Jen při ověření proti pasti či ověřovacím hodu na dovednost, ne k útoku či obraně.",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H13"
+   },
+   {
+    "id": "osviceni",
+    "name": "Osvícení",
+    "text": "+2 Přízně za každou úroveň (zpětná oprava).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H13"
+   },
+   {
+    "id": "posvatny_symbol",
+    "name": "Posvátný symbol",
+    "text": "Se symbolem v ruce +2 ke vzývání proseb, od 6. úrovně +3. Symbol musí držet v ruce – nejde zároveň obouruční či střelná zbraň (není-li symbolem zbraň sama).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H13"
+   },
+   {
+    "id": "pozehnane_zdravi",
+    "name": "Požehnané zdraví",
+    "text": "+2 životy za každou úroveň (zpětná oprava) a imunita vůči nemocem (ne vůči stáří).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H13"
+   },
+   {
+    "id": "ritualy_a_obrady",
+    "name": "Rituály a obřady",
+    "text": "Obřady a rituály (bez nových proseb): usmíření boha; je-li vztah dobrý, +3 k ověření Prosby (CHAR) na 1 den. Základní rituály: Křest (1 směna, zaslíbení či konverze souhlasícího) a Pohřební rituál (1 směna, tělo už nejde oživit ani zneužít nekromancií; temná alternativa uvězní duši).",
+    "minLevel": null,
+    "requiresSpecialization": null,
+    "source": "H13"
+   },
+   {
+    "id": "asketismus",
+    "name": "Asketismus",
+    "text": "Slib chudoby: klerik smí mít jen věci denní potřeby v hodnotě nejvýš 5 zl (posvátný symbol se nepočítá). Dokud slib dodržuje, má maximum Přízně dvojnásobné. Vědomé porušení = okamžitá ztráta veškeré dodatečné Přízně; obnoví se až s přestupem na další úroveň (pokud zase slib dodržuje).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "bohosluzby",
+    "name": "Bohoslužby",
+    "text": "Obřad 1 hodina, nejvýš 1× denně. Všichni účastníci (i klerik) mají 24 hodin +3 ke všem ověřovacím hodům na Vůli. Klerik získá tolik bodů aktuální Přízně, kolik tvorů se zúčastnilo.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "bozska_domena",
+    "name": "Božská doména",
+    "text": "Projevy domény boha ve třech stupních: 1. stupeň na úrovních 6–11, 2. na 12–17, 3. na 18–24. Konkrétní efekty určí PJ (příklad doména světla: svěcení luceren, zářící oči a vidění ve tmě, oslepující záblesk).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "flagelantstvi",
+    "name": "Flagelantství",
+    "text": "Sebetrýznění 1 směna: životy klesnou na 1, na oplátku se obnoví možnost Zvolání. Nejvýš 1× týdně.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "nositel_slova",
+    "name": "Nositel slova",
+    "text": "Prosby s dosahem dotek nebo s rozsahem na klerika může přenést na cíl vzdálený až 50 sáhů. Ověřovací hody platí dál; na objektu je efekt statický, na bytosti se pohybuje s ní.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "mnohoprosby",
+    "name": "Mnohoprosby",
+    "text": "Více stejných proseb najednou v rámci jednoho vzývání (na více cílů nebo na jeden). Každá další prosba má obtížnost o +5 a cenu o +2 Přízně vyšší než předchozí.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "pozehnani",
+    "name": "Požehnání",
+    "text": "Po ověřovacím či bojovém hodu si může vyžádat jeho opakování a vybrat výhodnější výsledek. Nejvýš 1× denně (jednou za tři pravidelné modlitby).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "radovy_slib",
+    "name": "Řádový slib",
+    "text": "Vstup do řádu (noviciát proběhl během přestupu). Výhody: rozpoznání členů, sounáležitost, zázemí v budovách řádu, postup v hierarchii. Povinnost poslušnosti; nedodržení pravidel = psanec. Podrobnosti určí PJ.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "sakralni_predmety",
+    "name": "Sakrální předměty",
+    "text": "Zasvěcení drobného předmětu 1 hodina: klerik vloží veškerou (maximální) Přízeň a předmět pak jednorázově sešle zvolenou prosbu – kdokoli, silou myšlenky, se stejnou dobou vzývání. Klerik udrží nejvýš tolik aktivních sakrálních předmětů, kolik je jeho úroveň.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "strazce_mysteria",
+    "name": "Strážce mystéria",
+    "text": "Naučí se 4 mocné prosby: Beregondovo osvícení, Mezisvět, Vyhnání, Znamení života. Kteroukoli z nich může nahradit prosbou vytvořenou PJ (doména boha).",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06",
+    "grantsItems": [
+     "Beregondovo osvícení",
+     "Mezisvět",
+     "Znamení života",
+     "Vyhnání"
+    ]
+   },
+   {
+    "id": "sveceni_mist",
+    "name": "Svěcení míst",
+    "text": "Rituál 1 směna, nejvýš 1× denně: posvátné místo o ploše 3× úroveň sáhů na tolik let, kolik je úroveň klerika. Více kleriků sčítá úrovně i Přízeň. Přesvěcení místa jiného boha: 10 směn a Prosby vs. Prosby původního klerika (PJ může dát ±5); za úspěch zvláštní Přízeň i nad maximum.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "vzkriseni",
+    "name": "Vzkříšení",
+    "text": "Zemře-li klerik ve službě bohu nebo se obětuje: 1k10, na 10 (0) zůstává mrtev, jinak do 24 hodin vstane (zachované tělo se zahojí, jinak v jiném nedávno zemřelém těle). Zkušenosti klesnou na hranici přestupu na předchozí úroveň.",
+    "minLevel": 6,
+    "requiresSpecialization": null,
+    "source": "PPP06"
+   },
+   {
+    "id": "bozi_zbroj",
+    "name": "Boží zbroj",
+    "text": "Obřad 1 týden se zvolenou zbrojí: kvalita +1, proti magickým a nadpozemským bytostem +2, chrání i proti útokům procházejícím nemagickou zbrojí. Pro ostatní má zbroj běžné hodnoty.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06"
+   },
+   {
+    "id": "bozske_mantry",
+    "name": "Božské mantry",
+    "text": "Během pronášení manter mají všechny bytosti v doslechu Výhodu +5 ke všem hodům na Vůli (CHAR). Mezitím mnich nemůže vzývat prosby ani dělat nic, co vyžaduje soustředění; v boji ho to neomezuje. V boji = okamžitá akce Mluvení.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06"
+   },
+   {
+    "id": "fanatismus",
+    "name": "Fanatismus",
+    "text": "3 Útoky za dvě kola, od 12. úrovně 2 Útoky každé kolo.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06"
+   },
+   {
+    "id": "inkvizitorsky_vycvik",
+    "name": "Inkvizitorský výcvik",
+    "text": "Neupadá do bezvědomí ani po překročení Meze vyřazení – jedná až do smrti. Získá 4 prosby: Falešná smrt, Zadrž protivníka, Zastavení dění, Zmatení mysli.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06",
+    "grantsItems": [
+     "Falešná smrt",
+     "Zadrž protivníka",
+     "Zastavení dění",
+     "Zmatení mysli"
+    ]
+   },
+   {
+    "id": "lovec_carodejnic",
+    "name": "Lovec čarodějnic",
+    "text": "1 kolo soustředění, cíl do 50 sáhů: Postřeh (INT) vs. X podle Tabulky vidění many → pozná, že má cíl manu, a přibližně kolik. Rezistence vůči kouzelnické magii: zranění z kouzel na polovinu.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06"
+   },
+   {
+    "id": "paladinsky_vycvik",
+    "name": "Paladinský výcvik",
+    "text": "Základ Odolnosti +1. Získá 4 prosby: Andělská zbroj, Kladivo na čarodějnice, Podlom obranu, Požehnej vlastnostem.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06",
+    "grantsItems": [
+     "Andělská zbroj",
+     "Kladivo na čarodějnice",
+     "Podlom obranu",
+     "Požehnej vlastnostem"
+    ]
+   },
+   {
+    "id": "posvatny_vliv",
+    "name": "Posvátný vliv",
+    "text": "Následovníci mnicha, kteří ho vidí, mají +1 ke všem ověřovacím hodům (vždy jen za jednoho mnicha). Bez Přízně, neustále.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06"
+   },
+   {
+    "id": "posvatna_zbran",
+    "name": "Posvátná zbraň",
+    "text": "Obřad 1 týden se zvolenou zbraní: +2 do Útočnosti i Zranění, způsobuje svěcené zranění.",
+    "minLevel": 6,
+    "requiresSpecialization": "bojovy_mnich",
+    "source": "PPP06"
+   },
+   {
+    "id": "astralni_poutnik",
+    "name": "Astrální poutník",
+    "text": "Za 5 kol soustředění vstoupí do astrální sféry (tělo zůstává v transu); vezme s sebou až tolik souhlasících tvorů, kolik je jeho úroveň (musí se ho dotýkat). Návrat myšlenkou, trvá 5 kol. Nadpozemskou bytost zabitou v astrálu zničí definitivně; jeho „smrt“ tam ho vrátí do těla.",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06"
+   },
+   {
+    "id": "desobijec",
+    "name": "Děsobijec",
+    "text": "Proti nemrtvým, neviděným, démonům a nadpozemským bytostem trvale +2 do Útoku (ÚČ), Základní obrany (ZO) i Zranění; na každé 6. úrovni se bonus zvyšuje (6.: +2, 12.: +4, 18.: +6, 24.: +8).",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06"
+   },
+   {
+    "id": "exorcismus",
+    "name": "Exorcismus",
+    "text": "1 kolo soustředění, cíl do 50 sáhů: Postřeh (INT) vs. Vyšší moc démona → pozná nadpozemskou či posedlou bytost. Získá 4 prosby: Chraň před posednutím, Odhal démona, Ukaž temnotu, Vyžeň démona.",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06",
+    "grantsItems": [
+     "Chraň před posednutím",
+     "Odhal démona",
+     "Ukaž temnotu",
+     "Vyžeň démona"
+    ]
+   },
+   {
+    "id": "jazyk_prastarych",
+    "name": "Jazyk prastarých",
+    "text": "Rozumí jazyku nadpozemských bytostí a mluví jím. Každá prosba na vyvolání Posla stojí o 3 Přízně méně (vždy aspoň 1). Získá 4 posly: Posel bdělosti, Posel domény, Posel lovec, Posel pečeti.",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06",
+    "grantsItems": [
+     "Posel bdělosti",
+     "Posel domény",
+     "Posel lovec",
+     "Posel pečeti"
+    ]
+   },
+   {
+    "id": "kletby",
+    "name": "Kletby",
+    "text": "Automaticky rozpozná prokleté místo, bytost či věc a vystopuje zdroj kletby (vidí nit k proklínajícímu). Při neúspěchu jde Odstraň kletbu zkusit znovu až další den; Exorcista má k ní Výhodu +5. Pozná kletby s podmínkou zrušení.",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06"
+   },
+   {
+    "id": "mystika_exorcista",
+    "name": "Mystika",
+    "text": "Odposlech komunikace klerika s bohem (1 kolo soustředění na známého klerika). Zásah do ní (½ kola, Vůle vs. Vůle): změnit či zmařit prosbu, rozkázat cizímu poslovi, vnuknout falešnou vizi. Neúspěch: může se prozradit, zranění 1k10 a 1k6 dní bez proseb. Proti Mystice cizích má Výhodu +5.",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06"
+   },
+   {
+    "id": "nadprirozeny_boj",
+    "name": "Nadpřirozený boj",
+    "text": "Všechny Útoky i Obrany jsou zároveň fyzické, magické i nadpozemské – zraní i tvory imunní či rezistentní vůči běžným útokům.",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06"
+   },
+   {
+    "id": "svetlonos",
+    "name": "Světlonoš",
+    "text": "Napadne-li ho nemrtvý, neviděný či nadpozemský tvor: oba hodí k10; vyhraje-li Exorcista nebo je remíza, celé Zranění se vrátí útočníkovi, jinak ho utrží sám. Útočník pak každé kolo Vůle (CHAR) klerika vs. Vůle (CHAR), jinak v panice ustoupí.",
+    "minLevel": 6,
+    "requiresSpecialization": "exorcista",
+    "source": "PPP06"
+   },
+   {
+    "id": "avatar",
+    "name": "Avatar",
+    "text": "Iniciační modlitba 1 kolo + 3 kola proměny: Kněz přijde o veškerou Přízeň a měsíc se mu nedoplňuje. Avatar trvá 10 kol × úroveň (lze ukončit dřív), zpětná proměna 3 kola; pak 1 život a vyčerpání do vydatného spánku. Příklad (doména světla): životy 50 + životy klerika, SIL +7, OBR +5, ODO +6, bič světla 12+6+0 na 15 sáhů, zbroj světla 10, Výhoda +5 v boji; slabina prosby a posvátné zbraně.",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06"
+   },
+   {
+    "id": "bozi_ochrana",
+    "name": "Boží ochrana",
+    "text": "Nevyžádané kouzlo či prosba na Kněze: útočník musí uspět v Sesílání kouzel (INT) / Prosby (CHAR) / Pouto s přírodou (INT) vs. Vůle (CHAR) Kněze, jinak se efekt neprojeví.",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06"
+   },
+   {
+    "id": "ikony",
+    "name": "Ikony",
+    "text": "Výroba ikony 1 den, Kněz natrvalo přijde o 10 bodů maximální Přízně. Ikona umožní komukoli (kromě nepřátel boha) bez Přízně seslat zvolenou prosbu, kterou Kněz ovládá – nejvýš 1× za 24 hodin, trvale (dokud ji někdo nezničí).",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06"
+   },
+   {
+    "id": "jasnozrivost",
+    "name": "Jasnozřivost",
+    "text": "Častější božské vize (minulost a současnost přesně, budoucnost pravděpodobně). Po vizi 1k6 kol Nevýhoda −5 ke všem akcím.",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06"
+   },
+   {
+    "id": "obeti",
+    "name": "Oběti",
+    "text": "Obřad 1 směna, Kněz obětuje něco opravdu cenného → obtížnost následující prosby −10. Hodnotu obětin posoudí PJ.",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06"
+   },
+   {
+    "id": "vycvik_lazaretnich_lecitelu",
+    "name": "Výcvik lazaretních léčitelů",
+    "text": "+1 k dovednostem První pomoc a Znalost přírody. Naučí se vyrábět 5 léků: Lék svatého Aurélia, Lék svatého Jana, Lék svatého Maura, Lék svatého Núbia, Mast svaté Meredith. Lék podaný dřív, než dovoluje četnost, působí opačně.",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06",
+    "grantsItems": [
+     "Lék svatého Aurélia",
+     "Lék svatého Jana",
+     "Lék svatého Maura",
+     "Lék svatého Núbia",
+     "Mast svaté Meredith"
+    ]
+   },
+   {
+    "id": "zazraky",
+    "name": "Zázraky",
+    "text": "Jedna zázračná prosba podle domény boha (určí PJ). Každý zázrak stojí 1k6 životů, které vrací jen čas – 1 za každý den bez zázraků (ne odpočinek, spánek, magie ani prosby). Získá 4 prosby: Božská pomoc, Figiho zásah osudu, Vrať čas, Zachraň život.",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06",
+    "grantsItems": [
+     "Božská pomoc",
+     "Figiho zásah osudu",
+     "Vrať čas",
+     "Zachraň život"
+    ]
+   },
+   {
+    "id": "zazehnuti_aury",
+    "name": "Zažehnutí aury",
+    "text": "Může mít více aur najednou a převádět jejich působení na jiné bytosti. Získá 4 aury: Aura bratrství, Aura pravého světla, Aura probuzení, Aura strachu.",
+    "minLevel": 6,
+    "requiresSpecialization": "knez",
+    "source": "PPP06",
+    "grantsItems": [
+     "Aura bratrství",
+     "Aura pravého světla",
+     "Aura probuzení",
+     "Aura strachu"
+    ]
+   }
+  ],
+  "specializations": [
+   {
+    "id": "bojovy_mnich",
+    "name": "Bojový mnich",
+    "need": 2,
+    "requires": [
+     "bojovnici_viry",
+     "svata_pravda",
+     "bozi_bojovnik"
+    ],
+    "grants": [
+     "Boj zblízka: Při boji tváří v tvář automaticky +1 k Útoku i Obraně."
+    ]
+   },
+   {
+    "id": "exorcista",
+    "name": "Exorcista",
+    "need": 2,
+    "requires": [
+     "bozi_patroni",
+     "demonologie",
+     "osviceni"
+    ],
+    "grants": [
+     "Sebeovládání: Automaticky Výhoda +5 proti každému pokusu o ovlivnění mysli, zastrašení, ovládnutí, posednutí a podobně."
+    ]
+   },
+   {
+    "id": "knez",
+    "name": "Kněz",
+    "need": 2,
+    "requires": [
+     "milosrdenstvi",
+     "zehnani_aurami",
+     "pozehnane_zdravi"
+    ],
+    "grants": [
+     "Milosrdenství (Kněz): Souvěrci Knězi zajistí jídlo, ubytování a podobně výměnou za modlitby (skromně, podle svých možností)."
+    ]
+   }
+  ],
+  "choose": null,
+  "autoAtLevel2": [
+   "Hlas víry",
+   "Klidný spánek",
+   "Kopí pravého světla",
+   "Ochrana před temnotou",
+   "Požehnání zdaru",
+   "Vnuknutí"
+  ],
+  "levelGrants": [
+   {
+    "level": 6,
+    "text": "Pokročilý klerik – Dar života: léčivé prosby o ¼ silnější (nejméně +1 život)"
+   }
+  ]
+ }
+}

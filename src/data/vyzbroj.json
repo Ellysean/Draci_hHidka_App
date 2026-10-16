@@ -1,0 +1,1907 @@
+{
+ "_source": "Dračí hlídka, Výzbroj a výstroj (Beta PPZ 1.2), str. 5-13 – tabulky dodané uživatelem (xlsx, 16. 9. 2026)",
+ "weapons": [
+  {
+   "id": "jednorucni_pesti",
+   "n": "Pěsti",
+   "grp": "jednorucni",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 0,
+   "dmg": 0,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": null,
+   "price": null,
+   "reach": "1 sáh",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_boxer",
+   "n": "Boxer",
+   "grp": "jednorucni",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 1,
+   "dmg": 2,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.1,
+   "price": {
+    "v": 7,
+    "cur": "st"
+   },
+   "reach": "1 sáh",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_okovane_rukavice",
+   "n": "Okované rukavice",
+   "grp": "jednorucni",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 1,
+   "dmg": 2,
+   "def": 2,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.3,
+   "price": {
+    "v": 1,
+    "cur": "zl"
+   },
+   "reach": "1 sáh",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_nuz",
+   "n": "Nůž",
+   "grp": "jednorucni",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 2,
+   "dmg": 2,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.4,
+   "price": {
+    "v": 5,
+    "cur": "st"
+   },
+   "reach": "1 sáh",
+   "alsoThrown": true,
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_dyka",
+   "n": "Dýka",
+   "grp": "jednorucni",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 3,
+   "dmg": 1,
+   "def": 1,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.5,
+   "price": {
+    "v": 1,
+    "cur": "zl"
+   },
+   "reach": "1 sáh",
+   "alsoThrown": true,
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_levourucni_dyka",
+   "n": "Levouruční dýka",
+   "grp": "jednorucni",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 3,
+   "dmg": 0,
+   "def": 3,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.6,
+   "price": {
+    "v": 3,
+    "cur": "zl"
+   },
+   "reach": "1 sáh",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_tesak",
+   "n": "Tesák",
+   "grp": "jednorucni",
+   "cat": "Lehké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 3,
+   "dmg": 2,
+   "def": 1,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.8,
+   "price": {
+    "v": 2,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_kratky_mec",
+   "n": "Krátký meč",
+   "grp": "jednorucni",
+   "cat": "Lehké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 4,
+   "dmg": 1,
+   "def": 2,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.9,
+   "price": {
+    "v": 12,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_kord",
+   "n": "Kord",
+   "grp": "jednorucni",
+   "cat": "Lehké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 4,
+   "dmg": 0,
+   "def": 3,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.8,
+   "price": {
+    "v": 24,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_obusek",
+   "n": "Obušek",
+   "grp": "jednorucni",
+   "cat": "Lehké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 3,
+   "dmg": 3,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.9,
+   "price": {
+    "v": 1,
+    "cur": "st"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_pochoden",
+   "n": "Pochodeň",
+   "grp": "jednorucni",
+   "cat": "Lehké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 2,
+   "dmg": 2,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.5,
+   "price": {
+    "v": 7,
+    "cur": "md"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_savle",
+   "n": "Šavle",
+   "grp": "jednorucni",
+   "cat": "Střední",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 4,
+   "dmg": 2,
+   "def": 2,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.1,
+   "price": {
+    "v": 30,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_siroky_mec",
+   "n": "Široký meč",
+   "grp": "jednorucni",
+   "cat": "Střední",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 4,
+   "dmg": 3,
+   "def": 1,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.2,
+   "price": {
+    "v": 20,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_sekera",
+   "n": "Sekera",
+   "grp": "jednorucni",
+   "cat": "Střední",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 4,
+   "dmg": 3,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.3,
+   "price": {
+    "v": 5,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_rapir",
+   "n": "Rapír",
+   "grp": "jednorucni",
+   "cat": "Střední",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 5,
+   "dmg": 0,
+   "def": 3,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.3,
+   "price": {
+    "v": 35,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_ostep",
+   "n": "Oštěp",
+   "grp": "jednorucni",
+   "cat": "Střední",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 6,
+   "dmg": 1,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.1,
+   "price": {
+    "v": 8,
+    "cur": "st"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_palice",
+   "n": "Palice",
+   "grp": "jednorucni",
+   "cat": "Střední",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 2,
+   "dmg": 5,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.4,
+   "price": {
+    "v": 2,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_mec_bastard",
+   "n": "Meč bastard",
+   "grp": "jednorucni",
+   "cat": "Těžké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 6,
+   "dmg": 1,
+   "def": 2,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 1.5,
+   "price": {
+    "v": 30,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_valecne_kladivo_palcat",
+   "n": "Válečné kladivo / palcát",
+   "grp": "jednorucni",
+   "cat": "Těžké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 5,
+   "dmg": 4,
+   "def": 1,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 1.6,
+   "price": {
+    "v": 15,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_valecna_sekera",
+   "n": "Válečná sekera",
+   "grp": "jednorucni",
+   "cat": "Těžké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 6,
+   "dmg": 3,
+   "def": 1,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 1.5,
+   "price": {
+    "v": 20,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_kyj",
+   "n": "Kyj",
+   "grp": "jednorucni",
+   "cat": "Těžké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 4,
+   "dmg": 5,
+   "def": 0,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 1.7,
+   "price": {
+    "v": 3,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_remdih",
+   "n": "Řemdih",
+   "grp": "jednorucni",
+   "cat": "Těžké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 4,
+   "dmg": 6,
+   "def": 0,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 1.5,
+   "price": {
+    "v": 8,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "jednorucni_kratke_kopi",
+   "n": "Krátké kopí",
+   "grp": "jednorucni",
+   "cat": "Těžké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 7,
+   "dmg": 1,
+   "def": 1,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 1.5,
+   "price": {
+    "v": 6,
+    "cur": "zl"
+   },
+   "reach": "2 sáhy",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_drevena_hul",
+   "n": "Dřevěná hůl",
+   "grp": "obourucni",
+   "cat": "Lehké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 4,
+   "dmg": 1,
+   "def": 3,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 1,
+   "price": {
+    "v": 2,
+    "cur": "st"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_okovana_hul",
+   "n": "Okovaná hůl",
+   "grp": "obourucni",
+   "cat": "Lehké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 5,
+   "dmg": 2,
+   "def": 3,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 1.3,
+   "price": {
+    "v": 5,
+    "cur": "st"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_kosa",
+   "n": "Kosa",
+   "grp": "obourucni",
+   "cat": "Lehké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 3,
+   "dmg": 5,
+   "def": 2,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 1.2,
+   "price": {
+    "v": 1,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_vidle",
+   "n": "Vidle",
+   "grp": "obourucni",
+   "cat": "Lehké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 4,
+   "dmg": 3,
+   "def": 3,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 1.4,
+   "price": {
+    "v": 1,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_kopi",
+   "n": "Kopí",
+   "grp": "obourucni",
+   "cat": "Střední",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 7,
+   "dmg": 2,
+   "def": 3,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.8,
+   "price": {
+    "v": 3,
+    "cur": "zl"
+   },
+   "reach": "1,5 až 3 sáhy",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_sudlice",
+   "n": "Sudlice",
+   "grp": "obourucni",
+   "cat": "Střední",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 6,
+   "dmg": 4,
+   "def": 3,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 2.1,
+   "price": {
+    "v": 5,
+    "cur": "zl"
+   },
+   "reach": "1,5 až 3 sáhy",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_dlouhy_mec",
+   "n": "Dlouhý meč",
+   "grp": "obourucni",
+   "cat": "Střední",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 7,
+   "dmg": 2,
+   "def": 4,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.6,
+   "price": {
+    "v": 40,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_katana",
+   "n": "Katana",
+   "grp": "obourucni",
+   "cat": "Střední",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 7,
+   "dmg": 3,
+   "def": 3,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.4,
+   "price": {
+    "v": 70,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_okovany_cep",
+   "n": "Okovaný cep",
+   "grp": "obourucni",
+   "cat": "Střední",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 4,
+   "dmg": 5,
+   "def": 2,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 2.3,
+   "price": {
+    "v": 2,
+    "cur": "zl"
+   },
+   "reach": "1,5 až 3 sáhy",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_halapartna",
+   "n": "Halapartna",
+   "grp": "obourucni",
+   "cat": "Těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 8,
+   "dmg": 4,
+   "def": 3,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 2.4,
+   "price": {
+    "v": 12,
+    "cur": "zl"
+   },
+   "reach": "1,5 až 3 sáhy",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_obourucni_kladivo",
+   "n": "Obouruční kladivo",
+   "grp": "obourucni",
+   "cat": "Těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 7,
+   "dmg": 7,
+   "def": 2,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 4,
+   "price": {
+    "v": 20,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_obourucni_sekera",
+   "n": "Obouruční sekera",
+   "grp": "obourucni",
+   "cat": "Těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "sečná",
+    "drtivá"
+   ],
+   "att": 8,
+   "dmg": 6,
+   "def": 2,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 3,
+   "price": {
+    "v": 25,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_obourucni_mec",
+   "n": "Obouruční meč",
+   "grp": "obourucni",
+   "cat": "Těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 8,
+   "dmg": 3,
+   "def": 4,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 2.3,
+   "price": {
+    "v": 60,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_tezky_kyj",
+   "n": "Těžký kyj",
+   "grp": "obourucni",
+   "cat": "Těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 6,
+   "dmg": 7,
+   "def": 1,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 4.5,
+   "price": {
+    "v": 5,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_trojzubec",
+   "n": "Trojzubec",
+   "grp": "obourucni",
+   "cat": "Těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 6,
+   "dmg": 4,
+   "def": 3,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 2.3,
+   "price": {
+    "v": 10,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_obourucni_remdih",
+   "n": "Obouruční řemdih",
+   "grp": "obourucni",
+   "cat": "Velmi těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 5,
+   "dmg": 12,
+   "def": 0,
+   "req": 4,
+   "reqText": "SIL větší než +4",
+   "w": 5,
+   "price": {
+    "v": 15,
+    "cur": "zl"
+   },
+   "reach": "1,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "obourucni_pika",
+   "n": "Píka",
+   "grp": "obourucni",
+   "cat": "Velmi těžké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 8,
+   "dmg": 6,
+   "def": 3,
+   "req": 4,
+   "reqText": "SIL větší než +4",
+   "w": 6,
+   "price": {
+    "v": 9,
+    "cur": "zl"
+   },
+   "reach": "3 až 4,5 sáhu",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "strelne_kratky_luk",
+   "n": "Krátký luk",
+   "grp": "strelne",
+   "cat": "Lehké střelné",
+   "grip": "obouruční",
+   "kind": "ranged",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 5,
+   "dmg": 1,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.5,
+   "price": {
+    "v": 3,
+    "cur": "zl"
+   },
+   "range": "30/90/180",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "strelne_lehka_kuse",
+   "n": "Lehká kuše",
+   "grp": "strelne",
+   "cat": "Lehké střelné",
+   "grip": "obouruční",
+   "kind": "ranged",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 6,
+   "dmg": 3,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 3.5,
+   "price": {
+    "v": 7,
+    "cur": "zl"
+   },
+   "range": "15/50/80",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "strelne_lovecky_luk",
+   "n": "Lovecký luk",
+   "grp": "strelne",
+   "cat": "Střední střelné",
+   "grip": "obouruční",
+   "kind": "ranged",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 6,
+   "dmg": 2,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 0.7,
+   "price": {
+    "v": 7,
+    "cur": "zl"
+   },
+   "range": "50/130/210",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "strelne_lovecka_kuse",
+   "n": "Lovecká kuše",
+   "grp": "strelne",
+   "cat": "Střední střelné",
+   "grip": "obouruční",
+   "kind": "ranged",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 7,
+   "dmg": 5,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 4,
+   "price": {
+    "v": 10,
+    "cur": "zl"
+   },
+   "range": "30/60/100",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "strelne_dlouhy_luk",
+   "n": "Dlouhý luk",
+   "grp": "strelne",
+   "cat": "Těžké střelné",
+   "grip": "obouruční",
+   "kind": "ranged",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 7,
+   "dmg": 4,
+   "def": 0,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 1,
+   "price": {
+    "v": 10,
+    "cur": "zl"
+   },
+   "range": "70/180/350",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "strelne_tezka_kuse",
+   "n": "Těžká kuše",
+   "grp": "strelne",
+   "cat": "Těžké střelné",
+   "grip": "obouruční",
+   "kind": "ranged",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 8,
+   "dmg": 10,
+   "def": 0,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 5.5,
+   "price": {
+    "v": 30,
+    "cur": "zl"
+   },
+   "range": "50/100/200",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_hvezdice",
+   "n": "Hvězdice",
+   "grp": "vrhaci",
+   "cat": "Lehké vrhací krátké",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "bodná",
+    "sečná"
+   ],
+   "att": 4,
+   "dmg": 1,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.1,
+   "price": {
+    "v": 2,
+    "cur": "zl"
+   },
+   "range": "6/15/30",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_nuz",
+   "n": "Nůž",
+   "grp": "vrhaci",
+   "cat": "Lehké vrhací krátké",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 2,
+   "dmg": 2,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.4,
+   "price": {
+    "v": 5,
+    "cur": "st"
+   },
+   "range": "6/15/30",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_dyka",
+   "n": "Dýka",
+   "grp": "vrhaci",
+   "cat": "Lehké vrhací krátké",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 3,
+   "dmg": 1,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.5,
+   "price": {
+    "v": 1,
+    "cur": "zl"
+   },
+   "range": "6/15/30",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_flakon",
+   "n": "Flakón",
+   "grp": "vrhaci",
+   "cat": "Lehké vrhací krátké",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 2,
+   "dmg": 0,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.2,
+   "price": {
+    "v": 1,
+    "cur": "st"
+   },
+   "range": "6/15/30",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_kamen",
+   "n": "Kámen",
+   "grp": "vrhaci",
+   "cat": "Lehké vrhací krátké",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 2,
+   "dmg": 1,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.2,
+   "price": null,
+   "range": "6/15/30",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_prak",
+   "n": "Prak",
+   "grp": "vrhaci",
+   "cat": "Lehké vrhací",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 3,
+   "dmg": 3,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.2,
+   "price": {
+    "v": 1,
+    "cur": "st"
+   },
+   "range": "15/30/60",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_vrhaci_sekera",
+   "n": "Vrhací sekera",
+   "grp": "vrhaci",
+   "cat": "Lehké vrhací",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 4,
+   "dmg": 2,
+   "def": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 0.8,
+   "price": {
+    "v": 2,
+    "cur": "zl"
+   },
+   "range": "6/15/30",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_stredni_prak",
+   "n": "Střední prak",
+   "grp": "vrhaci",
+   "cat": "Střední vrhací",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 5,
+   "dmg": 4,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 0.4,
+   "price": {
+    "v": 6,
+    "cur": "st"
+   },
+   "range": "20/40/80",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_sekera",
+   "n": "Sekera",
+   "grp": "vrhaci",
+   "cat": "Střední vrhací",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "sečná"
+   ],
+   "att": 4,
+   "dmg": 3,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.3,
+   "price": {
+    "v": 5,
+    "cur": "zl"
+   },
+   "range": "6/12/20",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_ostep",
+   "n": "Oštěp",
+   "grp": "vrhaci",
+   "cat": "Střední vrhací",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 6,
+   "dmg": 1,
+   "def": 0,
+   "req": 0,
+   "reqText": "SIL větší než +0",
+   "w": 1.1,
+   "price": {
+    "v": 8,
+    "cur": "st"
+   },
+   "range": "10/20/40",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "vrhaci_zelezna_koule_nebo_velky_kamen",
+   "n": "Železná koule nebo velký kámen",
+   "grp": "vrhaci",
+   "cat": "Těžké vrhací",
+   "grip": "jednoruční",
+   "kind": "thrown",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 3,
+   "dmg": 6,
+   "def": 0,
+   "req": 2,
+   "reqText": "SIL větší než +2",
+   "w": 2.1,
+   "price": null,
+   "range": "4/8/12",
+   "src": "H15 Výzbroj a výstroj"
+  },
+  {
+   "id": "assassin_dyka_obr",
+   "n": "Assassinská dýka – obranná (Degenbrecher)",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 1,
+   "dmg": 0,
+   "def": 3,
+   "reach": "1,5 sáhu",
+   "range": "6/15",
+   "w": 0.5,
+   "price": {
+    "v": 15,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 242",
+   "grp": "zlodej",
+   "zl": "assassin",
+   "desc": "Speciální dýka se zoubkovanými zářezy na hřbetu, kterými zachytí a uvězní zbraň protivníka.",
+   "vyroba": "1 den"
+  },
+  {
+   "id": "assassin_dyka_uto",
+   "n": "Assassinská dýka – útočná (Stiletto)",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 2,
+   "dmg": 3,
+   "def": 0,
+   "reach": "1,5 sáhu",
+   "range": "6/15",
+   "w": 0.4,
+   "price": {
+    "v": 10,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 242",
+   "grp": "zlodej",
+   "zl": "assassin",
+   "desc": "Ikonická úzká a krátká dýka, skryje se téměř kdekoli – Výhoda +5 k triku Ukrytí předmětu.",
+   "vyroba": "1 den"
+  },
+  {
+   "id": "prsten_jed",
+   "n": "Prsten s jedem",
+   "cat": "Boj beze zbraně",
+   "grip": "—",
+   "kind": "melee",
+   "dmgTypes": [],
+   "att": 1,
+   "dmg": 0,
+   "def": 0,
+   "reach": "1,5 sáhu",
+   "w": 0.1,
+   "price": {
+    "v": 30,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 244",
+   "grp": "zlodej",
+   "zl": "gentleman",
+   "desc": "Prsten se skrytou jehlou, která uvolní jed přímo do těla: jed působí dvojnásobné zranění nebo 2× rychleji. Bonusy pro Boj beze zbraně; při prohledání Výhoda +5 k Ukrytí předmětu. Zda se cíl může bránit, nebo ho chrání jen ZO, určí PJ. Na rozdíl od jiných zbraní jde použít v rámci Assassinace, i když cíl Assassina vidí, ale není ve střehu.",
+   "vyroba": "8 hodin"
+  },
+  {
+   "id": "bota_cepel",
+   "n": "Bota se skrytou čepelí",
+   "cat": "Boj beze zbraně",
+   "grip": "—",
+   "kind": "melee",
+   "dmgTypes": [],
+   "att": 2,
+   "dmg": 1,
+   "def": 0,
+   "reach": "1,5 sáhu",
+   "w": 0.6,
+   "price": {
+    "v": 20,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 243",
+   "grp": "zlodej",
+   "zl": "gentleman",
+   "desc": "Obyčejná bota se skrytou čepelí – i na přeřezání pout. Výhoda +5 k Ukrytí předmětu; v boji bonusy pro Boj beze zbraně.",
+   "vyroba": "8 hodin"
+  },
+  {
+   "id": "hul_ostri",
+   "n": "Vycházková hůl se skrytým ostřím",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 3,
+   "dmg": 0,
+   "def": 1,
+   "reach": "1,5 sáhu",
+   "w": 0.7,
+   "price": {
+    "v": 35,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 244",
+   "grp": "zlodej",
+   "zl": "gentleman",
+   "desc": "Zdobená vycházková hůl s tenkým ostřím (bez záštity). Výhoda +5 k Ukrytí předmětu; v boji bonusy za dýku.",
+   "vyroba": "1 den"
+  },
+  {
+   "id": "hak_lano",
+   "n": "Hák na laně",
+   "cat": "Lehké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [],
+   "att": 4,
+   "dmg": 2,
+   "def": 2,
+   "reach": "3 sáhy",
+   "w": 0.5,
+   "price": {
+    "v": 15,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 243",
+   "grp": "zlodej",
+   "zl": "improv",
+   "desc": "Roztočené lano s hákem (dýkou, srpem; lano lze nahradit řetězem) – větší dosah. Výhoda +5 k triku Lezení.",
+   "vyroba": "2 hodiny"
+  },
+  {
+   "id": "sochor",
+   "n": "Sochor (páčidlo)",
+   "cat": "Lehké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [],
+   "att": 2,
+   "dmg": 0,
+   "def": 1,
+   "reach": "1,5 sáhu",
+   "w": 0.7,
+   "price": {
+    "v": 25,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 244",
+   "grp": "zlodej",
+   "zl": "improv",
+   "desc": "Páčidlo – při otevírání dveří a truhlic Atletikou (SIL) Výhoda +5. (V tabulce „Páčidlo“.)",
+   "vyroba": "2 hodiny"
+  },
+  {
+   "id": "boxer_ppp",
+   "n": "Boxer (zlodějský)",
+   "cat": "Boj beze zbraně",
+   "grip": "—",
+   "kind": "melee",
+   "dmgTypes": [
+    "drtivá"
+   ],
+   "att": 1,
+   "dmg": 2,
+   "def": 0,
+   "reach": "1,5 sáhu",
+   "w": 0.3,
+   "price": {
+    "v": 30,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 243",
+   "grp": "zlodej",
+   "zl": "improv",
+   "desc": "Kovová zbraň s výstupky navlékaná na prsty – devastující zranění. Výhoda +5 k Ukrytí předmětu; nouzově z opasku s cvočky či řetězu kolem rukou.",
+   "vyroba": "4 hodiny"
+  },
+  {
+   "id": "zapestni_kuse",
+   "n": "Zápěstní kuše",
+   "cat": "Lehké střelné",
+   "grip": "—",
+   "kind": "ranged",
+   "dmgTypes": [
+    "bodná"
+   ],
+   "att": 3,
+   "dmg": 2,
+   "def": 0,
+   "range": "10/30",
+   "w": 2.5,
+   "price": {
+    "v": 40,
+    "cur": "zl"
+   },
+   "req": null,
+   "src": "PPP Zloděj s. 244",
+   "note": "přebití 2 kola",
+   "grp": "zlodej",
+   "zl": "assassin",
+   "desc": "Mechanismus na předloktí, běžnou prohlídkou neodhalitelný; vymrští šipku velkou silou na krátkou vzdálenost. Přebití trvá 2 kola. Výhoda +5 k Ukrytí předmětu.",
+   "vyroba": "1 den"
+  },
+  {
+   "id": "improv_jednorucni",
+   "n": "Improvizovaná zbraň jednoruční",
+   "cat": "Lehké krátké",
+   "grip": "jednoruční",
+   "kind": "melee",
+   "dmgTypes": [],
+   "att": 2,
+   "dmg": 1,
+   "def": 1,
+   "reach": "1,5 sáhu",
+   "range": "6/15",
+   "w": null,
+   "price": null,
+   "req": null,
+   "src": "PPP Zloděj s. 258",
+   "grp": "zlodej",
+   "zl": "improv",
+   "desc": "Kámen, klacek, noha od židle, sklenice, kartáč – menší předmět, čím víc ostrých hran, tím lépe. Obvykle statistiky dýky, úpravy dle PJ (PPP05 s. 258)."
+  },
+  {
+   "id": "improv_obourucni",
+   "n": "Improvizovaná zbraň obouruční",
+   "cat": "Lehké",
+   "grip": "obouruční",
+   "kind": "melee",
+   "dmgTypes": [],
+   "att": 5,
+   "dmg": 0,
+   "def": 1,
+   "reach": "1,5 sáhu",
+   "w": null,
+   "price": null,
+   "req": null,
+   "src": "PPP Zloděj s. 258",
+   "grp": "zlodej",
+   "zl": "improv",
+   "desc": "Noha stolu, kůl, deštník – středně velký předmět. Obvykle statistiky dřevěné hole, úpravy dle PJ (PPP05 s. 258)."
+  }
+ ],
+ "armor": [
+  {
+   "id": "zbroj_zadna_saty",
+   "n": "Žádná (šaty)",
+   "cat": "Lehké",
+   "q": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "stealth": null,
+   "w": null,
+   "price": null
+  },
+  {
+   "id": "zbroj_vycpavana",
+   "n": "Vycpávaná",
+   "cat": "Lehké",
+   "q": 1,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "stealth": null,
+   "w": 0.7,
+   "price": {
+    "v": 5,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "zbroj_prosivana",
+   "n": "Prošívaná",
+   "cat": "Lehké",
+   "q": 2,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "stealth": null,
+   "w": 1.8,
+   "price": {
+    "v": 15,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "zbroj_kozena",
+   "n": "Kožená",
+   "cat": "Lehké",
+   "q": 3,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "stealth": null,
+   "w": 3.5,
+   "price": {
+    "v": 40,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "zbroj_krouzkova",
+   "n": "Kroužková",
+   "cat": "Střední",
+   "q": 4,
+   "req": 0,
+   "reqText": "SIL +0 a vyšší",
+   "stealth": -4,
+   "w": 15,
+   "price": {
+    "v": 80,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "zbroj_supinova",
+   "n": "Šupinová",
+   "cat": "Střední",
+   "q": 5,
+   "req": 0,
+   "reqText": "SIL +0 a vyšší",
+   "stealth": -5,
+   "w": 17,
+   "price": {
+    "v": 150,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "zbroj_platova",
+   "n": "Plátová",
+   "cat": "Těžké",
+   "q": 6,
+   "req": 2,
+   "reqText": "SIL +2 a vyšší",
+   "stealth": -6,
+   "w": 20,
+   "price": {
+    "v": 225,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "zbroj_rytirska",
+   "n": "Rytířská",
+   "cat": "Těžké",
+   "q": 7,
+   "req": 2,
+   "reqText": "SIL +2 a vyšší",
+   "stealth": -7,
+   "w": 30,
+   "price": {
+    "v": 350,
+    "cur": "zl"
+   }
+  }
+ ],
+ "robes": [
+  {
+   "id": "roba_kutna",
+   "n": "Kutna",
+   "cat": "róba (lehké)",
+   "q": 0,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "magicBonus": 1,
+   "w": 0.4,
+   "price": {
+    "v": 15,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "roba_habit",
+   "n": "Hábit",
+   "cat": "róba (lehké)",
+   "q": 1,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "magicBonus": 1,
+   "w": 0.6,
+   "price": {
+    "v": 30,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "roba_roucho",
+   "n": "Roucho",
+   "cat": "róba (lehké)",
+   "q": 1,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "magicBonus": 2,
+   "w": 0.8,
+   "price": {
+    "v": 60,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "roba_talar",
+   "n": "Talár",
+   "cat": "róba (lehké)",
+   "q": 2,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "magicBonus": 2,
+   "w": 1,
+   "price": {
+    "v": 120,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "roba_roba",
+   "n": "Róba",
+   "cat": "róba (lehké)",
+   "q": 2,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "magicBonus": 3,
+   "w": 1.2,
+   "price": {
+    "v": 240,
+    "cur": "zl"
+   }
+  }
+ ],
+ "shields": [
+  {
+   "id": "stit_puklir",
+   "n": "Puklíř",
+   "cat": "Lehké",
+   "q": 3,
+   "req": null,
+   "reqText": "bez omezení SIL",
+   "w": 1,
+   "price": {
+    "v": 5,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "stit_dreveny_stit",
+   "n": "Dřevěný štít",
+   "cat": "Střední",
+   "q": 4,
+   "req": 0,
+   "reqText": "SIL +0 a vyšší",
+   "w": 3,
+   "price": {
+    "v": 10,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "stit_zelezny_stit",
+   "n": "Železný štít",
+   "cat": "Těžké",
+   "q": 5,
+   "req": 2,
+   "reqText": "SIL +2 a vyšší",
+   "w": 5,
+   "price": {
+    "v": 15,
+    "cur": "zl"
+   }
+  },
+  {
+   "id": "stit_paveza",
+   "n": "Pavéza",
+   "cat": "Velmi těžké",
+   "q": 6,
+   "req": 4,
+   "reqText": "SIL +4 a vyšší",
+   "w": 15,
+   "price": {
+    "v": 30,
+    "cur": "zl"
+   }
+  }
+ ],
+ "accessories": [
+  {
+   "id": "doplnek_pochva_na_mec",
+   "n": "Pochva na meč",
+   "w": 0.25,
+   "price": {
+    "v": 1,
+    "cur": "zl"
+   },
+   "desc": "Kožené pouzdro pro uložení meče; obvykle se připíná k opasku."
+  },
+  {
+   "id": "doplnek_pouzdro_na_nuz_ci_dyku",
+   "n": "Pouzdro na nůž či dýku",
+   "w": 0.1,
+   "price": {
+    "v": 3,
+    "cur": "st"
+   },
+   "desc": "Pouzdro na dýku pro krátké bodné zbraně."
+  },
+  {
+   "id": "doplnek_toulec_na_sipy_ci_sipky",
+   "n": "Toulec na šípy či šipky",
+   "w": 0.25,
+   "price": {
+    "v": 1,
+    "cur": "zl"
+   },
+   "desc": "Kožená brašna na 20 šípů nebo šipek."
+  },
+  {
+   "id": "doplnek_sip_obycejny",
+   "n": "Šíp (obyčejný)",
+   "w": 0.03,
+   "price": {
+    "v": 1,
+    "cur": "st"
+   },
+   "desc": "Munice pro luk."
+  },
+  {
+   "id": "doplnek_sip_zapalny",
+   "n": "Šíp (zápalný)",
+   "w": 0.04,
+   "price": {
+    "v": 3,
+    "cur": "st"
+   },
+   "desc": "Zápalný šíp s jiným hrotem."
+  },
+  {
+   "id": "doplnek_sip_stribrny",
+   "n": "Šíp (stříbrný)",
+   "w": 0.03,
+   "price": {
+    "v": 5,
+    "cur": "st"
+   },
+   "desc": "Šíp s kovovým hrotem pokrytým vrstvou stříbra."
+  },
+  {
+   "id": "doplnek_sipka_obycejna",
+   "n": "Šipka (obyčejná)",
+   "w": 0.03,
+   "price": {
+    "v": 1,
+    "cur": "st"
+   },
+   "desc": "Menší munice do kuše."
+  },
+  {
+   "id": "doplnek_sipka_zapalna",
+   "n": "Šipka (zápalná)",
+   "w": 0.04,
+   "price": {
+    "v": 3,
+    "cur": "st"
+   },
+   "desc": "Zápalná šipka obdobná zápalnému šípu."
+  },
+  {
+   "id": "doplnek_sipka_stribrna",
+   "n": "Šipka (stříbrná)",
+   "w": 0.03,
+   "price": {
+    "v": 5,
+    "cur": "st"
+   },
+   "desc": "Šipka s vydatně postříbřeným hrotem."
+  }
+ ]
+}

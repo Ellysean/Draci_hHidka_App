@@ -1,0 +1,503 @@
+[
+ {
+  "id": "alchymisticka_truhla_zakladni",
+  "n": "Alchymistická truhla (základní)",
+  "w": 3,
+  "price": {
+   "v": 10,
+   "cur": "zl"
+  },
+  "md": 1000,
+  "desc": "Základní truhla 30 × 20 × 20 coulů pro bezpečný transport všemožných ingrediencí a many. Vejde se do ní až 200 many a 800 surovin."
+ },
+ {
+  "id": "cestovni_saty",
+  "n": "Cestovní šaty",
+  "w": 2,
+  "price": {
+   "v": 2,
+   "cur": "zl"
+  },
+  "md": 200,
+  "desc": "Obyčejné plátěné kalhoty, kožený opasek a tunika. Součástí je i plášť chránící před chladem a větrem. Většinou k tomu patří i ošoupané nízké boty."
+ },
+ {
+  "id": "dalekohled",
+  "n": "Dalekohled",
+  "w": 0.5,
+  "price": {
+   "v": 5,
+   "cur": "zl"
+  },
+  "md": 500,
+  "desc": "Kovová trubička se soupravou sklíček. Pozorovaný objekt skrz dalekohled se zdá 2× až 3× větší."
+ },
+ {
+  "id": "deka",
+  "n": "Deka",
+  "w": 1,
+  "price": {
+   "v": 1,
+   "cur": "st"
+  },
+  "md": 10,
+  "desc": "Hrubá deka, která se nosí stočená a svázaná na zádech. Chrání před chladem při spánku."
+ },
+ {
+  "id": "flakon",
+  "n": "Flakón",
+  "w": 0.2,
+  "price": {
+   "v": 1,
+   "cur": "st"
+  },
+  "md": 10,
+  "desc": "Malá skleněná lahvička s obsahem 0,2 l tekutiny. Alchymisté do něj mohou uložit až 40 many."
+ },
+ {
+  "id": "herecke_rekvizity",
+  "n": "Herecké rekvizity",
+  "w": 2,
+  "price": {
+   "v": 2,
+   "cur": "zl"
+  },
+  "md": 200,
+  "desc": "Různá líčidla, šminky a dva jednoduché kostýmy, například kněžská kutna a řeznická zástěra."
+ },
+ {
+  "id": "hudebni_nastroj",
+  "n": "Hudební nástroj",
+  "w": 1,
+  "price": {
+   "v": 4,
+   "cur": "zl"
+  },
+  "md": 400,
+  "desc": "Může se jednat o loutnu, bubínek, housle a podobně."
+ },
+ {
+  "id": "jehla_a_nit",
+  "n": "Jehla a nit",
+  "w": 0,
+  "price": {
+   "v": 2,
+   "cur": "md"
+  },
+  "md": 2,
+  "desc": "Kostěná nebo kovová jehla a dva sáhy režné niti."
+ },
+ {
+  "id": "kotlicek",
+  "n": "Kotlíček",
+  "w": 2,
+  "price": {
+   "v": 1,
+   "cur": "zl"
+  },
+  "md": 100,
+  "desc": "Měděný kotlík, který lze použít na přípravu jídla nebo alchymistických lektvarů."
+ },
+ {
+  "id": "kotvicka",
+  "n": "Kotvička",
+  "w": 1,
+  "price": {
+   "v": 7,
+   "cur": "st"
+  },
+  "md": 70,
+  "desc": "Malá železná kotva s okem, ke kterému lze přichytit lano. Lze ji hodem či výstřelem přichytit za pevnou terénní nerovnost."
+ },
+ {
+  "id": "kostky_karty",
+  "n": "Kostky, karty",
+  "w": 0.1,
+  "price": {
+   "v": 6,
+   "cur": "md"
+  },
+  "md": 6,
+  "desc": "Herní sada poctivých karet nebo kostek."
+ },
+ {
+  "id": "kozena_torna",
+  "n": "Kožená torna",
+  "w": 0.5,
+  "price": {
+   "v": 7,
+   "cur": "st"
+  },
+  "md": 70,
+  "desc": "Kožená brašna přes rameno, velká většinou cca 40 × 30 coulů, která unese až pět liber vybavení."
+ },
+ {
+  "id": "kresadlo",
+  "n": "Křesadlo",
+  "w": 0.2,
+  "price": {
+   "v": 1,
+   "cur": "st"
+  },
+  "md": 10,
+  "desc": "Kámen s ocílkou potřebný k rozdělání ohně."
+ },
+ {
+  "id": "krida",
+  "n": "Křída",
+  "w": 0,
+  "price": {
+   "v": 1,
+   "cur": "md"
+  },
+  "md": 1,
+  "desc": "Bílá, vodou omyvatelná křída, kterou lze dělat značky."
+ },
+ {
+  "id": "lahev_oleje",
+  "n": "Láhev oleje",
+  "w": 1,
+  "price": {
+   "v": 5,
+   "cur": "st"
+  },
+  "md": 50,
+  "desc": "Půllitrová skleněná láhev oleje."
+ },
+ {
+  "id": "lano",
+  "n": "Lano",
+  "w": 3,
+  "price": {
+   "v": 2,
+   "cur": "zl"
+  },
+  "md": 200,
+  "desc": "Deset sáhů dlouhý a asi coul široký konopný provaz. V dobrém stavu unese několik postav."
+ },
+ {
+  "id": "lucerna",
+  "n": "Lucerna",
+  "w": 0.7,
+  "price": {
+   "v": 6,
+   "cur": "st"
+  },
+  "md": 60,
+  "desc": "Jednoduchá lucerna s držadlem a skleněnými okenicemi. Ke svícení se používá olej, jedna láhev vydrží 4 hodiny."
+ },
+ {
+  "id": "mech_na_vodu",
+  "n": "Měch na vodu",
+  "w": 0.5,
+  "price": {
+   "v": 5,
+   "cur": "st"
+  },
+  "md": 50,
+  "desc": "Kožený měch, který pojme zhruba litr a půl tekutiny. Hmotnost platí pro prázdnou variantu."
+ },
+ {
+  "id": "mesec",
+  "n": "Měšec",
+  "w": 0.1,
+  "price": {
+   "v": 2,
+   "cur": "st"
+  },
+  "md": 20,
+  "desc": "Kožený váček se šňůrkou k přechovávání mincí. Dá se připnout k opasku."
+ },
+ {
+  "id": "obvazy",
+  "n": "Obvazy",
+  "w": 0,
+  "price": {
+   "v": 7,
+   "cur": "md"
+  },
+  "md": 7,
+  "desc": "Zhruba dva sáhy dlouhé a 15 coulů široké pruhy plátna."
+ },
+ {
+  "id": "pacidlo",
+  "n": "Páčidlo",
+  "w": 1,
+  "price": {
+   "v": 7,
+   "cur": "st"
+  },
+  "md": 70,
+  "desc": "Čtyřicet coulů dlouhý železný sochor k páčení. Poskytuje výhodu (bonus +5) k hodu na Atletiku (SIL) při vypáčení dveří a zámků."
+ },
+ {
+  "id": "padelatelske_vybaveni",
+  "n": "Padělatelské vybavení",
+  "w": 0.5,
+  "price": {
+   "v": 3,
+   "cur": "zl"
+  },
+  "md": 300,
+  "desc": "Pergameny, inkoust, rysí jehla, zlatnické kladívko, vosk a další pomůcky."
+ },
+ {
+  "id": "pergamen_papyrus",
+  "n": "Pergamen, papyrus",
+  "w": 0,
+  "price": {
+   "v": 4,
+   "cur": "st"
+  },
+  "md": 40,
+  "desc": "Kus pergamenu nebo papyru, na který je možné psát."
+ },
+ {
+  "id": "pochoden",
+  "n": "Pochodeň",
+  "w": 0.5,
+  "price": {
+   "v": 7,
+   "cur": "md"
+  },
+  "md": 7,
+  "desc": "Půl sáhu dlouhý klacek ukončený hadry namočenými ve smole. Hoří půl hodiny a svítí do vzdálenosti 10 sáhů."
+ },
+ {
+  "id": "psaci_potreby",
+  "n": "Psací potřeby",
+  "w": 0.3,
+  "price": {
+   "v": 2,
+   "cur": "zl"
+  },
+  "md": 200,
+  "desc": "Husí brk a malý flakón s inkoustem."
+ },
+ {
+  "id": "remeslnicke_naradi",
+  "n": "Řemeslnické nářadí",
+  "w": 6,
+  "price": {
+   "v": 5,
+   "cur": "zl"
+  },
+  "md": 500,
+  "desc": "Sada vybavení obsahující kladívko, dláto, brousek, hřebíky, malou pilu, sekeru, mazlík a další nástroje."
+ },
+ {
+  "id": "sit",
+  "n": "Síť",
+  "w": 2,
+  "price": {
+   "v": 3,
+   "cur": "st"
+  },
+  "md": 30,
+  "desc": "Síť z lana o velikosti 3 × 3 sáhy, která slouží k polapení tvorů velikosti B a menší."
+ },
+ {
+  "id": "stan",
+  "n": "Stan",
+  "w": 6,
+  "price": {
+   "v": 1,
+   "cur": "zl"
+  },
+  "md": 100,
+  "desc": "Jednoduchý plátěný stan, který lze snadno sbalit a přenést. Pohodlně se v něm vyspí dvě postavy."
+ },
+ {
+  "id": "svecena_voda",
+  "n": "Svěcená voda",
+  "w": 0.4,
+  "price": {
+   "v": 2,
+   "cur": "st"
+  },
+  "md": 20,
+  "desc": "Flakón svěcené vody (0,2 l), která dokáže zranit nemrtvé, neviděné a některé nadpozemské bytosti."
+ },
+ {
+  "id": "svicka",
+  "n": "Svíčka",
+  "w": 0.1,
+  "price": {
+   "v": 1,
+   "cur": "md"
+  },
+  "md": 1,
+  "desc": "Svíčka z vosku s knotem z látky nebo stonku rostliny. Hoří až 3 hodiny a svítí do vzdálenosti 2 sáhů."
+ },
+ {
+  "id": "velky_vak",
+  "n": "Velký vak",
+  "w": 0.2,
+  "price": {
+   "v": 4,
+   "cur": "st"
+  },
+  "md": 40,
+  "desc": "Plátěný vak nošený přes záda. Unese až 20 liber vybavení a je vhodný pro objemnější předměty."
+ },
+ {
+  "id": "vlci_mor",
+  "n": "Vlčí mor",
+  "w": 0,
+  "price": {
+   "v": 1,
+   "cur": "md"
+  },
+  "md": 1,
+  "desc": "Rostlina s převislými zlatými či modrými zvonky, která chrání před útoky vlků a lykantropů (vlkodlaků)."
+ },
+ {
+  "id": "zlodejske_vybaveni",
+  "n": "Zlodějské vybavení",
+  "w": 5,
+  "price": {
+   "v": 5,
+   "cur": "zl"
+  },
+  "md": 500,
+  "desc": "Sada vybavení obsahující malou kotvu, lano (10 sáhů), několik šperháků, paklíčů, malý vrták a sáh dlouhý kovový drátek."
+ },
+ {
+  "id": "zrcatko",
+  "n": "Zrcátko",
+  "w": 0,
+  "price": {
+   "v": 2,
+   "cur": "st"
+  },
+  "md": 20,
+  "desc": "Malé zrcátko velikosti dlaně."
+ },
+ {
+  "id": "zelezna_zasoba",
+  "n": "Železná zásoba",
+  "w": 3,
+  "price": {
+   "v": 1,
+   "cur": "zl"
+  },
+  "md": 100,
+  "desc": "Zásoba sušeného soleného masa na sedm dní. Nekazí se, dodá energii, ale chuťově není nic moc."
+ },
+ {
+  "id": "flakon_kristalovy",
+  "n": "Křišťálový flakón",
+  "w": 0.2,
+  "price": {
+   "v": 1,
+   "cur": "zl"
+  },
+  "md": 100,
+  "desc": "Nádoba na manu – pojme 100 many (H10)."
+ },
+ {
+  "id": "vacek_many",
+  "n": "Váček many",
+  "w": 0.2,
+  "price": {
+   "v": 5,
+   "cur": "zl"
+  },
+  "md": 500,
+  "desc": "Nádoba na manu – pojme 150 many (H10)."
+ },
+ {
+  "id": "alchymisticka_truhla_vetsi",
+  "n": "Alchymistická truhla (větší)",
+  "w": 6,
+  "price": {
+   "v": 30,
+   "cur": "zl"
+  },
+  "md": 3000,
+  "desc": "Truhla 30 × 35 × 35 coulů – pojme 400 many a 1 600 surovin (H10)."
+ },
+ {
+  "id": "alchymisticka_truhla_cestovni",
+  "n": "Alchymistická truhla (cestovní)",
+  "w": 12,
+  "price": {
+   "v": 50,
+   "cur": "zl"
+  },
+  "md": 5000,
+  "desc": "Truhla 40 × 60 × 60 coulů – pojme 600 many a 4 000 surovin (H10)."
+ },
+ {
+  "id": "zl_kourova_clona",
+  "n": "Kouřová clona",
+  "w": 0.1,
+  "price": {
+   "v": 35,
+   "cur": "zl"
+  },
+  "md": 3500,
+  "desc": "Bomba – černý trh Zlodějského cechu (PPP05 s. 241). Kulička na náhrdelníku nebo opasku – Zloděj ji strhne a hodí na zem okamžitě, bez akce. Kolem něj vznikne hustý dým o poloměru 3 sáhů: uvnitř je vidět nejvýš 1 sáh, zvenčí dovnitř vůbec. Pro překvapivý útok i útěk.",
+  "grp": "zlodej"
+ },
+ {
+  "id": "zl_oslepujici_bomba",
+  "n": "Oslepující bomba",
+  "w": 0.5,
+  "price": {
+   "v": 70,
+   "cur": "zl"
+  },
+  "md": 7000,
+  "desc": "Bomba – černý trh Zlodějského cechu (PPP05 s. 241). Ohlušující výbuch a silný záblesk oslepí všechny v kouli o poloměru 5 sáhů – mají Nevýhodu −5 do Útoku a Obrany a nevidí dál než na 1 sáh. Zloděj může nepozorovaně utéct, pokud výbuch nepřiláká další nepřátele.",
+  "grp": "zlodej"
+ },
+ {
+  "id": "zl_vsehoklic",
+  "n": "Všehoklíč",
+  "w": 0.1,
+  "price": {
+   "v": 100,
+   "cur": "zl"
+  },
+  "md": 10000,
+  "desc": "Bomba – černý trh Zlodějského cechu (PPP05 s. 241). Drát obalený směsí prudce reagující s kovem roztaví téměř každý zámek či řetěz. U komplexních mechanismů může selhat – roztaví se jen zamykání a závora zůstane (pak jen hrubou silou). Na magické zámky neúčinkuje.",
+  "grp": "zlodej"
+ },
+ {
+  "id": "zl_padak",
+  "n": "Padák",
+  "w": 4,
+  "price": {
+   "v": 100,
+   "cur": "zl"
+  },
+  "md": 10000,
+  "desc": "Lupičské udělátko – černý trh Zlodějského cechu (PPP05 s. 259). Jemná tkanina zbrzdí pád. Z méně než 20 sáhů s padákem žádné zranění; z větší výšky hod na Umění kočičího pohybu (OBR) s Výhodou +5. Sbalení trvá 1 směnu, takže ho Lupiči většinou odříznou a utíkají.",
+  "grp": "zlodej"
+ },
+ {
+  "id": "zl_sada_univerzalnich_klicu",
+  "n": "Sada univerzálních klíčů",
+  "w": 1,
+  "price": {
+   "v": 80,
+   "cur": "zl"
+  },
+  "md": 8000,
+  "desc": "Lupičské udělátko – černý trh Zlodějského cechu (PPP05 s. 260). Klíče s pohyblivými zuby pro většinu standardních zámků (dveře, nábytek); na speciální či zakázkové nestačí. Při triku Otevírání zámků Výhoda +5 k Umění železného klíče. Lupič se při výrobě naučil i okopírovat klíč, který měl aspoň chvilku k dispozici.",
+  "grp": "zlodej"
+ },
+ {
+  "id": "zl_zvonici_koule",
+  "n": "Zvonící koule",
+  "w": 0.7,
+  "price": {
+   "v": 50,
+   "cur": "zl"
+  },
+  "md": 5000,
+  "desc": "Lupičské udělátko – černý trh Zlodějského cechu (PPP05 s. 260). Natažená koule se kutálí 20 sáhů jedním směrem (nepřekoná překážky ani těžký terén) a cinká. Kdo ji uslyší, hází Vůle (CHAR) vs. 12 – při neúspěchu má pokušení zdroj zvuku prozkoumat.",
+  "grp": "zlodej"
+ }
+]

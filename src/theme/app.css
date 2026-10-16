@@ -1,0 +1,157 @@
+/* Doplňky kostry appky (Fáze 2) nad rámec prototypu. */
+.placeholder{display:grid;gap:10px;max-width:70ch}
+.placeholder ul{margin:0;padding-left:18px}
+.phase{justify-self:start;display:inline-block;font:700 11px/1 var(--f-display);letter-spacing:.12em;color:var(--pencil);background:var(--note-bg);border:1px dashed var(--pencil);padding:4px 7px}
+.banner{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--note-bg);border:1px solid var(--blood);color:var(--blood);padding:8px 12px;margin-bottom:14px;font-size:14px}
+.save-state{font-size:12px;color:var(--structure)}
+.calc[title]{cursor:help}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.i14{width:14px;height:14px}
+.nav .short{display:none}
+@media (max-width:820px){
+  .nav .long{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .nav .short{display:block;text-overflow:ellipsis;overflow:hidden;max-width:100%}
+}
+a.btn{text-decoration:none;color:inherit}
+a.btn.dark{color:var(--paper)}
+.cta{margin-bottom:16px}
+.cta .lead{margin:0 0 12px}
+h1.pg{font:800 26px/1.1 var(--f-display);letter-spacing:.06em;margin:0 0 4px}
+.lead{margin-top:0}
+.lv-attr{grid-template-columns:40px 1fr auto;align-items:center;gap:10px}
+.lv-attr .shield-s{width:36px;height:40px;font-size:10px}
+
+/* ---------- Fáze 3: popover vzorce a ruční přepis ---------- */
+button.field.calc{display:grid;place-items:center;text-align:center;font:inherit;color:inherit;cursor:pointer}
+button.field.calc.warn{color:var(--blood);font-weight:700}
+.fpop{position:fixed;z-index:80;background:var(--paper);border:1.5px solid var(--ink);box-shadow:0 6px 18px rgba(36,39,43,.28);padding:10px 12px 12px;display:grid;gap:8px;text-align:left;font-size:14px}
+.fpop.mobile{left:0;right:0;bottom:0;max-height:75vh;overflow:auto;padding:14px 16px calc(16px + env(safe-area-inset-bottom,0px));border-width:1.5px 0 0}
+.fpop-scrim{position:fixed;inset:0;z-index:79;background:rgba(36,39,43,.35)}
+.fpop-h{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid var(--mid);padding-bottom:6px}
+.fpop-h b{font:700 13px/1.1 var(--f-display);letter-spacing:.12em;text-transform:uppercase}
+.fpop-x{all:unset;cursor:pointer;font:700 20px/1 var(--f-body);padding:0 4px;color:var(--structure)}
+.fpop-x:focus-visible{outline:2px solid var(--wine-lit)}
+.fpop-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.fpop-v{font:700 20px/1 var(--f-body)}
+.fpop-f{margin:0;font:italic 15px/1.35 var(--f-hand);color:var(--ink)}
+.fpop-note{margin:0;background:var(--note-bg);border-left:3px solid var(--pencil);padding:4px 8px;font-size:13px}
+.fpop-ovr{display:grid;gap:5px;border-top:1px dashed var(--mid);padding-top:8px}
+.fpop-ovr-row{display:grid;grid-template-columns:1fr auto;gap:6px}
+.fpop-ovr-row select{grid-column:1/-1}
+.fpop table.grid{font-size:13px}
+.fpop table.grid td,.fpop table.grid th{padding:2px 6px}
+.fpop tr.cur td{background:var(--atmos);font-weight:700}
+.xpbar{height:6px;background:var(--atmos);border:1px solid var(--structure);margin-top:4px}
+.xpbar i{display:block;height:100%;background:var(--wine-lit)}
+.chg-warn{margin:10px 0 0}
+.deity{margin-top:8px;text-align:left}
+.field.warn-in{color:var(--blood);font-weight:700;border-color:var(--blood)}
+.bad-t{color:var(--blood);font-weight:700}
+.xp-table tr.cur td{background:var(--atmos);font-weight:700}
+.xp-table tr.ready td{color:var(--wine-lit);font-weight:700}
+.xp-row{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center}
+.info-btn{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);font:italic 700 16px/1 var(--f-hand);color:var(--ink);display:grid;place-items:center;padding:0}
+.info-btn:hover,.info-btn[aria-expanded="true"]{background:var(--ink);color:var(--paper)}
+.xp-info{display:grid;gap:8px}
+
+/* Štít s povoláním a rasou: špička začíná až pod polem Rasa, aby nebyly useknuté rohy (✔ U). */
+.crest .mid{clip-path:polygon(0 0,100% 0,100% calc(100% - 34px),50% 100%,0 calc(100% - 34px));padding-bottom:48px}
+@media (max-width:820px){
+  .crest .mid{clip-path:polygon(0 0,100% 0,100% calc(100% - 28px),50% 100%,0 calc(100% - 28px));padding-bottom:40px}
+}
+
+/* Zbraň v ruce (ÚČ/OČ v boxech vedle tabulky jsou z ní). */
+table.grid tr.w-active td{background:rgba(216,215,210,.7);font-weight:700}
+table.grid td input[type="radio"]{width:auto;accent-color:var(--wine-lit);cursor:pointer}
+.w-hand{display:block;text-align:center;line-height:1.15}
+@media (max-width:820px){.w-hand{grid-column:1/-1}}
+
+/* Dovednosti (Fáze 4) */
+.steps{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.sk-tools{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 4px}
+.sk-tools input{accent-color:var(--wine-lit)}
+.sk-table td{white-space:nowrap}
+.sk-table td:first-child{white-space:normal}
+.sk-table .btn{padding:5px 8px}
+.sk-attr{font:inherit;background:transparent;border:1px solid rgba(36,39,43,.35);padding:2px 4px}
+.sk-rank{width:54px!important;text-align:center;border-bottom:1px dotted var(--ink)!important}
+.sk-res{font-size:14px;line-height:1.2;margin-top:3px}
+.sk-res.critical{color:var(--wine-lit)}
+.sk-res.fumble{color:var(--blood)}
+.sk-sum .box{text-align:center}
+.sk-sum b{font:700 22px/1.2 var(--f-display)}
+.sk-link{font-size:13px;color:var(--structure)}
+.sk-page{grid-template-columns:minmax(0,1fr)}
+@media (max-width:820px){
+  .sk-opt,.sk-table thead{display:none}
+  .sk-table tr{display:grid;grid-template-columns:auto auto auto 1fr;grid-template-areas:"n n n n" "a s t h" "z z z z";gap:4px 12px;align-items:center;padding:6px 0;border-bottom:1px solid rgba(36,39,43,.25)}
+  table.grid.sk-table td{border:0;padding:0;white-space:normal}
+  .sk-n{grid-area:n}.sk-a{grid-area:a}.sk-s{grid-area:s}.sk-t{grid-area:t}.sk-h{grid-area:h;text-align:right!important}.sk-z{grid-area:z}
+  .sk-s::before{content:"st. ";font-size:12px;color:var(--structure)}
+  .sk-t::before{content:"celkem ";font-size:12px;color:var(--structure)}
+  .sk-z:has(.steps:empty){display:none}
+}
+
+/* Výbava a peníze (Fáze 5) */
+.vy-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.vy-head h1{flex:1;margin:0;min-width:0;font-size:clamp(19px,5vw,26px)}
+.vy-page .cols > *{min-width:0}
+.vy-page .stack{grid-template-columns:minmax(0,1fr)}
+@media (max-width:1000px){.vy-page .cols{grid-template-columns:minmax(0,1fr)}}
+.vy-table td{vertical-align:middle}
+.vy-table td.acts{white-space:nowrap;width:1%}
+.vy-table .btn{padding:4px 8px;font-size:11px}
+.vy-table input[type="checkbox"]{accent-color:var(--wine-lit);width:auto}
+.icon-x{all:unset;cursor:pointer;font:700 20px/1 var(--f-body);padding:0 6px;color:var(--structure)}
+.icon-x:hover{color:var(--blood)}
+.icon-x:focus-visible,.linkbtn:focus-visible{outline:2px solid var(--wine-lit)}
+.linkbtn{all:unset;cursor:pointer;font-size:13px;color:var(--structure);text-decoration:underline;margin-right:10px}
+.linkbtn:hover{color:var(--ink)}
+.vy-add{display:flex;flex-wrap:wrap;gap:4px 16px}
+.vy-sum{display:flex;gap:10px;align-items:flex-end;margin-top:10px}
+.vy-sum .box{text-align:center;width:72px;flex:none}
+.vy-sum > .small{align-self:center;flex:1;min-width:0}
+.vy-off td{opacity:.55}
+.vy-name{font:inherit;background:transparent;border:0;border-bottom:1px dotted rgba(36,39,43,.4);width:100%;min-width:120px;padding:2px 0}
+.vy-w{font:inherit;width:52px;text-align:center;background:transparent;border:0;border-bottom:1px dotted rgba(36,39,43,.4)}
+.vy-qty{flex-wrap:nowrap;justify-content:center}
+.vy-qty .btn{padding:2px 7px}
+.vy-equip{margin-top:4px}
+.vy-money{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+.vy-money > input{flex:1;min-width:150px;height:34px}
+.money-in{display:inline-flex;gap:4px;align-items:center}
+.money-in label{display:inline-flex;align-items:center;gap:2px}
+.money-in .field{width:58px;height:32px;font-size:16px}
+.sale{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+.kat-list{max-height:52vh;overflow:auto;border-top:1.5px solid var(--ink);margin-top:8px}
+.kat-own{display:block;margin-top:2px}
+.kat-form{display:grid;gap:10px;border:1px dashed var(--structure);padding:10px;margin-top:10px;background:rgba(216,215,210,.35)}
+.kf-grid{display:flex;flex-wrap:wrap;gap:8px 12px}
+.kf{display:grid;gap:3px}
+.kf .field{height:32px;min-width:90px}
+@media (max-width:820px){
+  .vy-sum{flex-wrap:wrap}
+  .vy-sum > .small{flex-basis:100%}
+  .kat-table thead{display:none}
+  .kat-table tr{display:grid;grid-template-columns:auto auto 1fr;grid-template-areas:"n n n" "w p q" "b b b";gap:4px 12px;padding:6px 0;border-bottom:1px solid rgba(36,39,43,.25)}
+  table.grid.kat-table td{border:0;padding:0}
+  .kat-n{grid-area:n}.kat-w{grid-area:w}.kat-p{grid-area:p}.kat-q{grid-area:q}.kat-b{grid-area:b;text-align:left!important}
+  .kat-w::after{content:" lb"}
+}
+
+/* Sloupce se nesmí roztáhnout obsahem (tabulky se posouvají uvnitř) – platí pro všechny stránky. */
+.stack{grid-template-columns:minmax(0,1fr)}
+@media (max-width:1000px){.cols{grid-template-columns:minmax(0,1fr)}}
+
+/* Stejně široká pole v řadách (Peníze, Životy…): sloupce se nesmí řídit délkou popisku. */
+.trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.trio .lbl{letter-spacing:.04em;white-space:nowrap}
+/* Číselná pole bez šipek – šipky zužovaly aktivní pole a na dotyk jsou k ničemu. */
+input.field.num::-webkit-outer-spin-button,input.field.num::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input.field.num[type="number"]{-moz-appearance:textfield;appearance:textfield}
+.pair.money-pair{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px}
+@media (max-width:600px){.pair.money-pair{grid-template-columns:minmax(0,1fr)}}
+.info-btn.info-sm{width:20px;height:20px;font-size:12px;display:inline-grid;vertical-align:middle;margin-left:4px;border-width:1px}
+.pill.save{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ab-list li .ab-r{display:inline-flex;align-items:center;gap:4px;color:inherit;font-size:inherit;white-space:normal}

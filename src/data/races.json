@@ -1,0 +1,134 @@
+[
+ {
+  "id": "barbar",
+  "name": "Barbar",
+  "size": "B",
+  "mobilityBase": 30,
+  "ability": {
+   "name": "Houževnatost",
+   "text": "+2 životy při každém léčení",
+   "effects": []
+  },
+  "baseAttributes": {
+   "sil": 7,
+   "obr": 6,
+   "odo": 7,
+   "int": 6,
+   "char": 4
+  }
+ },
+ {
+  "id": "clovek",
+  "name": "Člověk",
+  "size": "B",
+  "mobilityBase": 30,
+  "ability": {
+   "name": "Všestrannost",
+   "text": "+1 dovednostní bod na 1. úrovni, další na sudých úrovních",
+   "effects": []
+  },
+  "baseAttributes": {
+   "sil": 6,
+   "obr": 6,
+   "odo": 6,
+   "int": 6,
+   "char": 6
+  }
+ },
+ {
+  "id": "elf",
+  "name": "Elf",
+  "size": "B",
+  "mobilityBase": 30,
+  "ability": {
+   "name": "Orlí zrak",
+   "text": "+2 k hodům na ostrý zrak",
+   "effects": []
+  },
+  "baseAttributes": {
+   "sil": 5,
+   "obr": 8,
+   "odo": 4,
+   "int": 7,
+   "char": 6
+  }
+ },
+ {
+  "id": "gnom",
+  "name": "Gnóm",
+  "size": "A",
+  "mobilityBase": 20,
+  "ability": {
+   "name": "Zručnost",
+   "text": "+2 k jemné práci rukou (Lučba, Mechanika…)",
+   "effects": []
+  },
+  "baseAttributes": {
+   "sil": 4,
+   "obr": 6,
+   "odo": 5,
+   "int": 8,
+   "char": 7
+  }
+ },
+ {
+  "id": "obr",
+  "name": "Obr",
+  "size": "C",
+  "mobilityBase": 40,
+  "ability": {
+   "name": "Hroší kůže",
+   "text": "+2 k ZO",
+   "effects": [
+    {
+     "target": "defenseBase",
+     "op": "add",
+     "value": 2
+    }
+   ]
+  },
+  "baseAttributes": {
+   "sil": 8,
+   "obr": 5,
+   "odo": 7,
+   "int": 4,
+   "char": 6
+  }
+ },
+ {
+  "id": "pulcik",
+  "name": "Půlčík",
+  "size": "A",
+  "mobilityBase": 20,
+  "ability": {
+   "name": "Tichošlápek",
+   "text": "+2 k plížení bez bot",
+   "effects": []
+  },
+  "baseAttributes": {
+   "sil": 5,
+   "obr": 7,
+   "odo": 5,
+   "int": 5,
+   "char": 8
+  }
+ },
+ {
+  "id": "trpaslik",
+  "name": "Trpaslík",
+  "size": "A",
+  "mobilityBase": 20,
+  "ability": {
+   "name": "Vidění ve tmě",
+   "text": "vidí ve tmě na 30 sáhů",
+   "effects": []
+  },
+  "baseAttributes": {
+   "sil": 7,
+   "obr": 4,
+   "odo": 8,
+   "int": 6,
+   "char": 5
+  }
+ }
+]

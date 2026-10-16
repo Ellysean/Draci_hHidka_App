@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 350" role="img" aria-labelledby="title"><title id="title">Dračí hlídka — Osobní deník</title><g style="color:#eee5d4" transform="translate(138 0) scale(.85)"><circle cx="120" cy="128" r="119" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="128" r="113" fill="none" stroke="currentColor" stroke-width=".7"/><g fill="currentColor"><path d="M175 34c-27-10-44 3-56 19l-20 9 19 2-13 18 29-6c8 9 20 14 31 11l-8 10 19-3c-4 15-15 23-26 29-35 18-69 39-63 74 5 27 35 41 60 26 24-14 15-39-2-38-11 0-15 11-8 16-19-4-20-20-9-29 17-14 48-16 65-38 18-24 10-51-8-69l-4-20-8 15-13-25-4 19z"/>
+<path d="M126 94C86 58 42 51 27 68c20 1 39 9 51 22-27-7-49-4-60 8 24-2 48 5 62 17-25 0-42 10-43 23 20-11 41-9 61-4l21-18z"/>
+<path d="M162 128c34 7 56 32 54 54-6-13-18-24-33-30 15 17 19 37 12 49-2-15-10-29-24-38z"/>
+<path d="M104 183c-30 10-45 30-37 49 12 23 49 22 67 9-25 3-42-3-44-16-2-10 5-24 14-42z"/>
+<path d="M149 170l-13-21-15 5 6 12 13 6-10 15 19-9 16-1 5-9-13-6z"/>
+<path d="M122 61l-3-26 13 13 4-33 9 25 10-13 4 15z"/>
+<path d="M184 204l14 11-3 9-20-8-9-15 9-6z"/>
+<path d="M205 82l-22-8 6 12 26 5z"/>
+<path d="M150 38l20 13 3 16-10-7-17 2 10-10z" fill="none" stroke="currentColor" stroke-width="2"/>
+</g><defs><pattern id="engraved" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)"><path d="M0 0v5" stroke="currentColor" stroke-width=".45"/></pattern><clipPath id="dragon-cut"><path d="M175 34c-27-10-44 3-56 19l-20 9 19 2-13 18 29-6c8 9 20 14 31 11l-8 10 19-3c-4 15-15 23-26 29-35 18-69 39-63 74 5 27 35 41 60 26 24-14 15-39-2-38-11 0-15 11-8 16-19-4-20-20-9-29 17-14 48-16 65-38 18-24 10-51-8-69l-4-20-8 15-13-25-4 19z"/>
+<path d="M126 94C86 58 42 51 27 68c20 1 39 9 51 22-27-7-49-4-60 8 24-2 48 5 62 17-25 0-42 10-43 23 20-11 41-9 61-4l21-18z"/>
+<path d="M162 128c34 7 56 32 54 54-6-13-18-24-33-30 15 17 19 37 12 49-2-15-10-29-24-38z"/>
+<path d="M104 183c-30 10-45 30-37 49 12 23 49 22 67 9-25 3-42-3-44-16-2-10 5-24 14-42z"/>
+<path d="M149 170l-13-21-15 5 6 12 13 6-10 15 19-9 16-1 5-9-13-6z"/>
+<path d="M122 61l-3-26 13 13 4-33 9 25 10-13 4 15z"/>
+<path d="M184 204l14 11-3 9-20-8-9-15 9-6z"/>
+<path d="M205 82l-22-8 6 12 26 5z"/>
+<path d="M150 38l20 13 3 16-10-7-17 2 10-10z" fill="none" stroke="currentColor" stroke-width="2"/>
+</clipPath></defs><g clip-path="url(#dragon-cut)" style="color:#402829"><rect x="0" y="0" width="240" height="260" fill="url(#engraved)"/></g><g style="color:#402829"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M35 74l61 42M40 99l60 21M51 129l50-6M126 110c6 9 19 12 30 5M113 127c7 11 18 15 30 12M101 145c10 12 15 14 29 13M96 165c5 9 13 15 23 19M114 202c5 11 19 15 29 10M168 129l22 30M167 139l18 33M134 73l17-5M140 80l11-4M143 88l11-3M177 99l7 4M172 109l7 4M164 119l8 5M154 127l7 7"/></g></g></g><g fill="#eee5d4" text-anchor="middle" font-family="Georgia,serif"><text x="240" y="279" font-size="40" letter-spacing="2">DRAČÍ HLÍDKA</text><text x="240" y="314" font-size="17" letter-spacing="5">OSOBNÍ DENÍK</text></g><g stroke="#b9a99b" fill="none"><path d="M55 293h370M18 293l8-3 8 3-8 3zM446 293l8-3 8 3-8 3z"/></g></svg>
