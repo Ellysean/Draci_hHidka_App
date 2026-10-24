@@ -111,6 +111,24 @@ export function customRow(x: CustomCatalogItem): CatalogRow {
   };
 }
 
+/** Šípy, šipky a toulce (H15 doplňky). */
+export const isAmmo = (id: string) => /^doplnek_(sip|toulec)/.test(id);
+
+export type SortKey = 'default' | 'name' | 'priceAsc' | 'priceDesc';
+export const SORT_OPTIONS: [SortKey, string][] = [
+  ['default', 'Výchozí pořadí'], ['name', 'Název A–Z'], ['priceAsc', 'Cena vzestupně'], ['priceDesc', 'Cena sestupně'],
+];
+/** Seřadí řádky katalogu; položky bez ceny jdou při řazení podle ceny vždy na konec. */
+export function sortRows<T extends CatalogRow>(rows: T[], key: SortKey): T[] {
+  if (key === 'default') return rows;
+  const byName = (a: T, b: T) => a.name.localeCompare(b.name, 'cs');
+  return [...rows].sort((a, b) => {
+    if (key === 'name') return byName(a, b);
+    if (!a.price !== !b.price) return a.price ? -1 : 1;
+    return (key === 'priceAsc' ? a.md - b.md : b.md - a.md) || byName(a, b);
+  });
+}
+
 export function catalogRows(tab: CatalogKind, custom: CustomCatalogItem[] = [], { priced = true } = {}): CatalogRow[] {
   const has = (p: Price | null) => !priced || !!p;
   const armorRow = (k: CatalogKind, a: ArmorDef): CatalogRow => ({
@@ -120,10 +138,16 @@ export function catalogRows(tab: CatalogKind, custom: CustomCatalogItem[] = [], 
   switch (tab) {
     case 'gear': return GEAR.filter((g) => has(g.price)).map((g) => ({ kind: 'gear', id: g.id, name: g.n, md: priceMd(g.price), price: g.price, w: g.w, desc: g.desc ?? '', req: null, multi: true }));
     case 'acc': return ACCESSORIES.filter((g) => has(g.price)).map((g) => ({ kind: 'acc', id: g.id, name: g.n, md: priceMd(g.price), price: g.price, w: g.w, desc: g.desc ?? '', req: null, multi: true }));
-    case 'weapon': return WEAPONS.filter((w) => has(w.price)).map((w) => ({
-      kind: 'weapon', id: w.id, name: w.n, md: priceMd(w.price), price: w.price, w: w.w, req: w.req, multi: w.kind === 'thrown', weapon: w,
-      desc: `Ú/Z/O ${w.att}/${w.dmg}/${w.def} · ${w.cat} · ${WEAPON_KIND[w.kind]}${w.grp === 'zlodej' ? ' · PPP' : ''}`,
-    }));
+    case 'weapon': return [
+      ...WEAPONS.filter((w) => has(w.price)).map((w): CatalogRow => ({
+        kind: 'weapon', id: w.id, name: w.n, md: priceMd(w.price), price: w.price, w: w.w, req: w.req, multi: w.kind === 'thrown', weapon: w,
+        desc: `Ú/Z/O ${w.att}/${w.dmg}/${w.def} · ${w.cat} · ${WEAPON_KIND[w.kind]}${w.grp === 'zlodej' ? ' · PPP' : ''}`,
+      })),
+      // Střelivo a toulce (v datech mezi doplňky) – ukázat i u zbraní, ať je hráč najde u luků a kuší.
+      ...ACCESSORIES.filter((g) => isAmmo(g.id) && has(g.price)).map((g): CatalogRow => ({
+        kind: 'acc', id: g.id, name: g.n, md: priceMd(g.price), price: g.price, w: g.w, desc: `střelivo · ${g.desc ?? ''}`, req: null, multi: true,
+      })),
+    ];
     case 'armor': return ARMORS.filter((a) => has(a.price) && !ROBES.includes(a)).map((a) => armorRow('armor', a));
     case 'robe': return ROBES.filter((a) => has(a.price)).map((a) => armorRow('robe', a));
     case 'shield': return SHIELDS.filter((a) => has(a.price)).map((a) => armorRow('shield', a));

@@ -2,7 +2,7 @@
 // (H10, PPP03) nebo vlastní položky, „Přidat“ bez placení (přepis z papíru, nález) nebo „Koupit“ s odečtením z měšce.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { AlchemyProductKind, Character, CustomCatalogItem, CustomItemType, ItemPrice, WeaponKind } from '../model/types';
-import { DIARY_TABS, WEAPON_KIND, catalogRows, type CatalogKind, type CatalogRow } from '../rules/catalog';
+import { DIARY_TABS, SORT_OPTIONS, WEAPON_KIND, catalogRows, sortRows, type CatalogKind, type CatalogRow, type SortKey } from '../rules/catalog';
 import { derive, sgn } from '../rules/derive';
 import { acquire, deleteCustom, saveCustom, slotEmpty, pieceName } from '../rules/equipment';
 import { formatMd, formatPrice, moneyToMd, priceMd } from '../rules/money';
@@ -48,6 +48,7 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
   const [qty, setQty] = useState<Record<string, number>>({});
   const [toast, setToast] = useState('');
   const [editing, setEditing] = useState<CustomCatalogItem | 'new' | null>(null);
+  const [sort, setSort] = useState<SortKey>('default');
   const [alchKind, setAlchKind] = useState<AlchemyProductKind | 'all'>('all');
   const [alchPrice, setAlchPrice] = useState<Record<string, PriceInput>>({});
 
@@ -59,15 +60,15 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
   const purse = moneyToMd(c.equipment.money);
   const list = useMemo(() => {
     const needle = q.trim().toLowerCase();
-    return catalogRows(tab, c.equipment.customCatalog, { priced: false })
+    return sortRows(catalogRows(tab, c.equipment.customCatalog, { priced: false })
       .filter((x) => !x.alch || alchKind === 'all' || x.alch.kind === alchKind)
       .filter((x) => x.name.toLowerCase().includes(needle) || (x.alch?.latinName ?? '').toLowerCase().includes(needle))
       .map((x) => {
         if (!x.alch) return x;
         const price = parsePrice(alchPrice[x.id]);
         return { ...x, price, md: priceMd(price) };
-      });
-  }, [tab, q, c.equipment.customCatalog, alchKind, alchPrice]);
+      }), sort);
+  }, [tab, q, c.equipment.customCatalog, alchKind, alchPrice, sort]);
 
   const warnings = (x: CatalogRow): [string, string][] => {
     const w: [string, string][] = [];
@@ -106,6 +107,9 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginTop: 12 }}>
           <div className="chips">{TABS.map(([k, l]) => <button key={k} type="button" className="chip" aria-pressed={tab === k} onClick={() => { setTab(k); setEditing(null); }}>{l}{k === 'custom' && c.equipment.customCatalog.length ? ` (${c.equipment.customCatalog.length})` : ''}</button>)}</div>
           <input className="field" placeholder="Hledat…" value={q} onChange={(e) => setQ(e.target.value)} style={{ flex: 1, minWidth: 140, height: 32 }} aria-label="Hledat v katalogu" />
+          <select className="field" value={sort} onChange={(e) => setSort(e.target.value as SortKey)} style={{ height: 32 }} aria-label="Řazení">
+            {SORT_OPTIONS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}
+          </select>
         </div>
 
         {tab === 'alch' && (
@@ -148,7 +152,7 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
                   const short = x.md * n - purse;
                   const pv = preview(c, x);
                   return (
-                    <tr key={x.id}>
+                    <tr key={`${x.kind}-${x.id}`}>
                       <td className="kat-n">
                         <b>{x.name}</b>
                         {x.alch?.latinName && <span className="small muted"> <i>{x.alch.latinName}</i></span>}

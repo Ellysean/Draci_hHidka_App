@@ -2,7 +2,7 @@
 // během tvorby jde vrátit za plnou cenu. Ve Fázi 5 se stejné okno použije v deníku.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { buildCharacter, buildEquipment, lineName, type CartKind, type Draft } from '../creation/draft';
-import { catalogRows, SHOP_TABS, type CatalogRow } from '../rules/catalog';
+import { catalogRows, SHOP_TABS, SORT_OPTIONS, sortRows, type CatalogRow, type SortKey } from '../rules/catalog';
 import { derive } from '../rules/derive';
 import { formatMd, formatPrice } from '../rules/money';
 import { Ribbon } from '../ui/Ribbon';
@@ -16,6 +16,7 @@ export function Shop({ d, update, onClose }: { d: Draft; update: (f: (d: Draft) 
   const ref = useRef<HTMLDialogElement>(null);
   const [tab, setTab] = useState<CartKind>('gear');
   const [q, setQ] = useState('');
+  const [sort, setSort] = useState<SortKey>('default');
   const [qty, setQty] = useState<Record<string, number>>({});
   const [toast, setToast] = useState('');
 
@@ -28,7 +29,7 @@ export function Shop({ d, update, onClose }: { d: Draft; update: (f: (d: Draft) 
   const der = useMemo(() => derive(buildCharacter(d)), [d]);
   const purse = eq.purseMd;
   const spent = d.cart.reduce((a, c) => a + c.md * c.qty, 0);
-  const list = rows(tab).filter((x) => x.name.toLowerCase().includes(q.toLowerCase()));
+  const list = sortRows(rows(tab).filter((x) => x.name.toLowerCase().includes(q.toLowerCase())), sort);
 
   const warnings = (x: ShopRow): [string, string][] => {
     const w: [string, string][] = [];
@@ -68,6 +69,9 @@ export function Shop({ d, update, onClose }: { d: Draft; update: (f: (d: Draft) 
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
               <div className="chips">{TABS.map(([k, l]) => <button key={k} type="button" className="chip" aria-pressed={tab === k} onClick={() => setTab(k)}>{l}</button>)}</div>
               <input className="field" id="shop-q" placeholder="Hledat…" value={q} onChange={(e) => setQ(e.target.value)} style={{ flex: 1, minWidth: 140, height: 32 }} aria-label="Hledat v obchodě" />
+              <select className="field" value={sort} onChange={(e) => setSort(e.target.value as SortKey)} style={{ height: 32 }} aria-label="Řazení">
+                {SORT_OPTIONS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}
+              </select>
             </div>
             <div className="scroll-x" style={{ maxHeight: '52vh', overflow: 'auto', borderTop: '1.5px solid var(--ink)', marginTop: 8 }}>
               {list.length ? (
@@ -78,7 +82,7 @@ export function Shop({ d, update, onClose }: { d: Draft; update: (f: (d: Draft) 
                       const n = x.multi ? Math.max(1, qty[x.id] ?? 1) : 1;
                       const short = x.md * n - purse;
                       return (
-                        <tr key={x.id}>
+                        <tr key={`${x.kind}-${x.id}`}>
                           <td>
                             <b>{x.name}</b>
                             <div className="small muted">{x.desc}</div>
