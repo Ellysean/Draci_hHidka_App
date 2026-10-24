@@ -497,6 +497,12 @@ projektu čitelný i při navázání v jiné session. (Tenhle soubor je zrcadlo
 
 ## Aktuální stav
 
+**24. 10. 2026 – v0.15.6 (feedback z testování, nasazeno na GitHub Pages).** Obchod (tvorba postavy) i katalog
+v deníku: **šípy, šipky (obyčejné / zápalné / stříbrné) a toulec** se ukazují i v kartě **Zbraně** pod luky a kušemi
+(štítek „střelivo“, nákup po kusech; v datech zůstávají v doplňcích H15, karta Doplňky je má dál). Nová volba
+**řazení**: výchozí / název A–Z (česká abeceda) / cena vzestupně / sestupně; položky bez ceny jdou na konec.
+Kód: `isAmmo`, `sortRows`, `SORT_OPTIONS` v `src/rules/catalog.ts`; použito v `Shop.tsx` a `Katalog.tsx`.
+
 **16. 10. 2026 – v0.15.1 až v0.15.5 (nasazeno na GitHub Pages).** v0.15.5: První pomoc OBR / INT (✔ U). v0.15.4: dovednosti se dvěma atributy mají bonus a hod pro každý atribut (volba podle situace, ✔ U); vlastní dovednosti dál jeden atribut. Doporučené dovednosti pro začátečníky v průvodci tvorbou (H05 s. 7),
 róba platí i pro prosby a kouzla hraničáře. Tabulka pastí H09 už v appce je (ověřeno proti obrázku v PDF – shoda). Duševní síla
 hraničáře nad 6. úrovní (v0.15.2): H09 má tabulku jen pro úrovně 1–6 (potvrzeno přepisem U), **✔ U 16. 10. 2026 úrovně 7–24 =
