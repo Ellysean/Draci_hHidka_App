@@ -6,6 +6,7 @@ import { catalogRows, SHOP_TABS, SORT_OPTIONS, sortRows, type CatalogRow, type S
 import { derive } from '../rules/derive';
 import { formatMd, formatPrice } from '../rules/money';
 import { Ribbon } from '../ui/Ribbon';
+import { QtyInput } from '../ui/QtyInput';
 
 type ShopRow = CatalogRow & { kind: CartKind };
 
@@ -92,8 +93,8 @@ export function Shop({ d, update, onClose }: { d: Draft; update: (f: (d: Draft) 
                           <td className="c" style={{ whiteSpace: 'nowrap' }}>{formatPrice(x.price)}</td>
                           <td style={{ width: 70 }}>
                             {x.multi && (
-                              <input className="field num tn" type="number" min={1} id={`sq-${x.id}`} aria-label="Počet kusů" value={n} style={{ height: 30, fontSize: 15 }}
-                                onChange={(e) => setQty((s) => ({ ...s, [x.id]: Math.max(1, Math.trunc(Number(e.target.value)) || 1) }))} />
+                              <QtyInput id={`sq-${x.id}`} label="Počet kusů" value={n} style={{ height: 30, fontSize: 15 }}
+                                onChange={(v) => setQty((s) => ({ ...s, [x.id]: v }))} />
                             )}
                           </td>
                           <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>

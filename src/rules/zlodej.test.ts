@@ -131,6 +131,9 @@ describe('bonusy ke zbraním', () => {
     // Krátký meč je lehká bodná zbraň (Vražedné ostří platí), Sochor lehká nebodná (jen Citlivá místa).
     expect(row(c, arm(c, 'jednorucni_kratky_mec', false)).bonusParts).toContain('Vražedné ostří +2 ÚČ/OČ');
     expect(row(c, arm(c, 'sochor', false)).bonusParts).toEqual(['Citlivá místa +3 Zranění']);
+    // Střelné zbraně (lehká a lovecká kuše, krátký luk) Vražedné ostří nemají – jen vrhací a tváří v tvář (H12).
+    for (const id of ['strelne_lehka_kuse', 'strelne_lovecka_kuse', 'strelne_kratky_luk'])
+      expect(row(c, arm(c, id, false)).bonusParts).not.toContain('Vražedné ostří +2 ÚČ/OČ');
   });
   it('Zákeřná kuše +2 ÚČ a Zranění; Technika nabíjení – požadavek kuše na OBR', () => {
     const c = thief();

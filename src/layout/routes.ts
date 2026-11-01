@@ -16,6 +16,8 @@ export interface RouteDef {
 /** 5. záložka (povolání) dostává popisek a ikonu podle povolání postavy – viz Shell. */
 export const ROUTES: RouteDef[] = [
   { id: 'postava', label: 'POSTAVA', icon: 'person', group: 'denik' },
+  // Výbava a peníze (Fáze 5) – vlastní položka v navigaci (feedback testerů 29. 10. 2026).
+  { id: 'vybava', label: 'VÝBAVA A PENÍZE', short: 'VÝBAVA', icon: 'bag', group: 'denik' },
   { id: 'dovednosti', label: 'DOVEDNOSTI', short: 'DOVED.', icon: 'swords', group: 'denik' },
   { id: 'poznamky', label: 'POZNÁMKY', short: 'POZN.', icon: 'quill', group: 'denik' },
   { id: 'listy', label: 'LISTY', icon: 'book', group: 'denik' },
@@ -25,8 +27,6 @@ export const ROUTES: RouteDef[] = [
   // Průvodce tvorbou postavy – bez položky v navigaci, otevírá se tlačítkem Nová postava.
   { id: 'tvorba', label: 'NOVÁ POSTAVA', icon: 'plus', group: 'skryte' },
   { id: 'prestup', label: 'PŘESTUP', icon: 'up', group: 'skryte' },
-  // Výbava a peníze (Fáze 5) – otevírá se ze záložky Postava.
-  { id: 'vybava', label: 'VÝBAVA', icon: 'bag', group: 'skryte' },
   // Fáze 8 – záloha, import a tisk; otevírá se z lišty nad deníkem.
   { id: 'zaloha', label: 'ZÁLOHA', icon: 'chest', group: 'skryte' },
   { id: 'tisk', label: 'TISK', icon: 'print', group: 'skryte' },

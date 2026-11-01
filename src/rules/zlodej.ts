@@ -148,7 +148,7 @@ export function thiefWeaponBonus(c: Character, w: WeaponInfo | null, x: { sil: n
   const bare = unarmed(w);
   const melee = !w || w.kind === 'melee';
   if (bare && melee && !x.shieldOn && has('boj_beze_zbrane')) { b.atk += 3; b.def += 3; b.parts.push('Boj beze zbraně +3 ÚČ/OČ'); }
-  const stab = !!w && !bare && /^lehk/i.test(w.category) && (/krátk/i.test(w.category) || w.dmgTypes.some((t) => /bodn/i.test(t)));
+  const stab = !!w && !bare && w.kind !== 'ranged' && /^lehk/i.test(w.category) && (/krátk/i.test(w.category) || w.dmgTypes.some((t) => /bodn/i.test(t)));
   if (stab && has('vrazedne_ostri')) { b.atk += 2; b.def += 2; b.parts.push('Vražedné ostří +2 ÚČ/OČ'); }
   if (isCrossbow(w) && has('zakerna_kuse')) { b.atk += 2; b.dmg += 2; b.parts.push('Zákeřná kuše +2 ÚČ a Zranění'); }
   if ((w?.kind === 'ranged' || w?.kind === 'thrown' || isLight(w)) && has('citliva_mista')) { b.dmg += 3; b.parts.push('Citlivá místa +3 Zranění'); }

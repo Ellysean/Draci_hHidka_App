@@ -1,3 +1,4 @@
+import { skillAttrLabel } from './skills';
 import { describe, expect, it } from 'vitest';
 import { sampleKloi } from '../model/sample';
 import { derive } from './derive';
@@ -89,6 +90,13 @@ describe('dovednosti mimo průvodce (Fáze 4)', () => {
     expect(m.skills[1].rank).toBe(1);
     expect(setSkillRankManual(c, 'vzdelani', 6.4).skills[1].rank).toBe(6);
     expect(m.skillLog).toEqual(c.skillLog);
+  });
+});
+
+describe('popisek atributu dovednosti', () => {
+  it('dovednost z pravidel ukazuje všechny atributy, vlastní ten zvolený', () => {
+    expect(skillAttrLabel({ id: 'etiketa', attribute: 'char' })).toBe('INT/CHAR');
+    expect(skillAttrLabel({ id: 'custom:x', customName: 'X', attribute: 'obr' })).toBe('OBR');
   });
 });
 

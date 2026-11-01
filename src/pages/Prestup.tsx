@@ -11,6 +11,7 @@ import {
 import { rollDie } from '../rules/dice';
 import { KIND_LABEL, companionView, describeGrowth, growableSkills, growingCompanions, isPackMaster, spellsToPick, thirdGrowth, type GrowthPick } from '../rules/pratele';
 import { ATTR_LABELS, SKILLS, getClass, getSkill } from '../rules/data';
+import { skillAttrLabel } from '../rules/skills';
 import { attributeMod, derive, sgn } from '../rules/derive';
 import { saveBeforeLevelUp } from '../storage/localStore';
 import { useStore } from '../state/store';
@@ -231,7 +232,7 @@ export function Prestup() {
     const learn = () => {
       const add = skillId === '__own'
         ? { id: `custom:${ownName.trim().toLowerCase()}`, customName: ownName.trim(), attribute: attr }
-        : { id: skillId, customName: null, attribute: attr };
+        : { id: skillId, customName: null, attribute: getSkill(skillId)?.defaultAttribute ?? attr };
       setSt((s) => ({ ...s, added: [...s.added, add] }));
       setNewOpen(false); setSkillId(''); setOwnName('');
     };
@@ -250,7 +251,7 @@ export function Prestup() {
                 const cost = raiseCost(c, st, s.id);
                 return (
                   <tr key={s.id}>
-                    <td><b>{s.customName ?? getSkill(s.id)?.name ?? s.id}</b> <span className="muted small">{ATTR_LABELS[s.attribute].short}</span></td>
+                    <td><b>{s.customName ?? getSkill(s.id)?.name ?? s.id}</b> <span className="muted small">{skillAttrLabel(s)}</span></td>
                     <td className="c">{s.rank}{n > 0 && <> → <b>{s.rank + n}</b></>}</td>
                     <td style={{ textAlign: 'right' }}>
                       <div className="steps" style={{ justifyContent: 'flex-end' }}>
@@ -265,7 +266,7 @@ export function Prestup() {
               })}
               {st.added.map((a, i) => (
                 <tr key={a.id}>
-                  <td><b>{a.customName ?? getSkill(a.id)?.name}</b> <span className="muted small">{ATTR_LABELS[a.attribute].short}</span> <span className="pill ok">NOVÁ{a.customName ? ' · VLASTNÍ' : ''}</span></td>
+                  <td><b>{a.customName ?? getSkill(a.id)?.name}</b> <span className="muted small">{skillAttrLabel(a)}</span> <span className="pill ok">NOVÁ{a.customName ? ' · VLASTNÍ' : ''}</span></td>
                   <td className="c">1</td>
                   <td style={{ textAlign: 'right' }}><button className="btn" type="button" onClick={() => setSt((x) => ({ ...x, added: x.added.filter((_, j) => j !== i) }))}>Zrušit (+1 b.)</button></td>
                 </tr>
@@ -292,12 +293,14 @@ export function Prestup() {
                   <input className="field" id="lv-own" value={ownName} onChange={(e) => setOwnName(e.target.value)} />
                 </div>
               )}
-              <div className="box" style={{ textAlign: 'left' }}>
-                <label className="lbl" htmlFor="lv-attr">Atribut</label>
-                <select className="field" id="lv-attr" value={attr} onChange={(e) => setAttr(e.target.value as AttrKey)}>
-                  {ATTR_KEYS.map((k) => <option key={k} value={k}>{ATTR_LABELS[k].short}</option>)}
-                </select>
-              </div>
+              {skillId === '__own' && (
+                <div className="box" style={{ textAlign: 'left' }}>
+                  <label className="lbl" htmlFor="lv-attr">Atribut</label>
+                  <select className="field" id="lv-attr" value={attr} onChange={(e) => setAttr(e.target.value as AttrKey)}>
+                    {ATTR_KEYS.map((k) => <option key={k} value={k}>{ATTR_LABELS[k].short}</option>)}
+                  </select>
+                </div>
+              )}
             </div>
             <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
               <button className="btn" type="button" onClick={() => setNewOpen(false)}>Zrušit</button>

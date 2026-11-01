@@ -3,7 +3,7 @@
 // Zlepšení provedené mimo průvodce přestupem se počítá k aktuální úrovni (skillLog.level).
 import type { AttrKey, Character, CharacterSkill, SkillSource } from '../model/types';
 import { ATTR_KEYS } from '../model/types';
-import { SKILLS, getSkill, type SkillDef } from './data';
+import { ATTR_LABELS, SKILLS, getSkill, type SkillDef } from './data';
 import { derive } from './derive';
 
 export const SOURCE_LABEL: Record<SkillSource, string> = {
@@ -17,6 +17,12 @@ export const SOURCE_LABEL: Record<SkillSource, string> = {
 export const hasExpertise = (c: Character) => c.progression.learnedAbilities.some((a) => a.id === 'expertiza');
 
 /** Atributy, ze kterých si hráč může vybrat (vlastní dovednost = kterýkoli). */
+/** Popisek atributu: u dovednosti z pravidel všechny její atributy (INT/CHAR), u vlastní ten zvolený. */
+export function skillAttrLabel(s: { id: string; customName?: string | null; attribute: AttrKey }): string {
+  const def = s.customName ? undefined : getSkill(s.id);
+  return def ? def.attributes.map((a) => ATTR_LABELS[a].short).join('/') : ATTR_LABELS[s.attribute].short;
+}
+
 export function skillAttributes(s: CharacterSkill): AttrKey[] {
   const def = getSkill(s.id);
   return def ? def.attributes : [...ATTR_KEYS];

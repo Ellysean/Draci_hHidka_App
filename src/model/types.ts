@@ -117,6 +117,8 @@ export interface GearItem {
   container: string | null;
   /** Sundaná zbroj / štít ve výbavě (u vlastních kusů nese i parametry) – jde znovu nasadit. */
   piece?: { slot: 'armor' | 'shield'; custom: ArmorPiece['custom'] };
+  /** Zbraň odložená do výbavy (nese, ale nemá ji mezi zbraněmi) – jde vrátit mezi zbraně. */
+  weapon?: Omit<WeaponEntry, 'uid' | 'qty'>;
   /** Alchymistický výrobek (lektvar, elixír, jed, předmět…) přidaný z katalogu – odkaz na recept (H10, PPP03). */
   alch?: GearAlchemy;
 }

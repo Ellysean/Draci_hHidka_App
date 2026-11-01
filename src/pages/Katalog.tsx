@@ -8,6 +8,7 @@ import { acquire, deleteCustom, saveCustom, slotEmpty, pieceName } from '../rule
 import { formatMd, formatPrice, moneyToMd, priceMd } from '../rules/money';
 import { useStore } from '../state/store';
 import { Ribbon } from '../ui/Ribbon';
+import { QtyInput } from '../ui/QtyInput';
 
 const TABS: [CatalogKind, string][] = [...DIARY_TABS, ['custom', 'Vlastní']];
 
@@ -187,8 +188,8 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
                       </td>
                       <td className="kat-q" style={{ width: 70 }}>
                         {x.multi && (
-                          <input className="field num tn" type="number" min={1} aria-label={`Počet kusů – ${x.name}`} value={n} style={{ height: 30, fontSize: 15 }}
-                            onChange={(e) => setQty((s) => ({ ...s, [x.id]: Math.max(1, Math.trunc(Number(e.target.value)) || 1) }))} />
+                          <QtyInput label={`Počet kusů – ${x.name}`} value={n} style={{ height: 30, fontSize: 15 }}
+                            onChange={(v) => setQty((s) => ({ ...s, [x.id]: v }))} />
                         )}
                       </td>
                       <td className="kat-b" style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>

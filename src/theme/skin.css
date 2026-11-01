@@ -98,7 +98,10 @@ table.grid tr.w-active td{background:var(--quiet)}
 .btn.wine{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
 .btn:disabled{opacity:1;background:var(--atmos);color:var(--structure);border-style:dashed;border-color:var(--mid);box-shadow:none}
 .btn svg{width:17px;height:17px}
-.addrow{font:700 13px/1 var(--f-display);letter-spacing:.03em}
+.addrow{font:700 13px/1 var(--f-display);letter-spacing:.03em;color:var(--wine);border:1.5px dashed var(--wine-line,currentColor);border-radius:var(--radius);padding:9px 12px;margin-top:8px;align-items:center;background:rgba(255,255,255,.25)}
+.addrow:hover{color:var(--light-ink,#fff);background:var(--wine);border-style:solid}
+.addrow:focus-visible{outline:3px solid var(--focus,#c79a3a);outline-offset:2px}
+.addrow:disabled{opacity:.45;cursor:not-allowed;background:none;color:var(--structure)}
 .chip{border:1px solid var(--edge);border-radius:var(--radius);background:var(--paper);font:700 13px/1.1 var(--f-display);padding:5px 10px}
 .chip[aria-pressed="true"]{background:var(--wine-lit);border-color:var(--wine);color:var(--light-ink)}
 .pill{border:1px solid var(--edge);border-radius:var(--radius);background:var(--quiet);color:var(--structure);font:700 11px/1.1 var(--f-display);letter-spacing:.03em;padding:3px 6px}

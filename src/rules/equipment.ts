@@ -123,7 +123,7 @@ function putOn(eq: Equipment, slot: 'armor' | 'shield', piece: ArmorPiece): Equi
 }
 
 function addGear(items: GearItem[], item: Omit<GearItem, 'uid'>): GearItem[] {
-  const ex = items.find((i) => !i.piece && i.itemId === item.itemId && i.name === item.name && i.weightLb === item.weightLb
+  const ex = items.find((i) => !i.piece && !i.weapon && i.itemId === item.itemId && i.name === item.name && i.weightLb === item.weightLb
     && (i.alch?.danger ?? null) === (item.alch?.danger ?? null));
   if (ex) return items.map((i) => (i === ex ? { ...i, qty: i.qty + item.qty } : i));
   return [...items, { ...item, uid: uid() }];
@@ -240,6 +240,31 @@ export function unequipPiece(c: Character, slot: 'armor' | 'shield', now = new D
   if (slotEmpty(p)) return c;
   const eq = { ...c.equipment, [slot]: EMPTY_PIECE(slot), items: [...c.equipment.items, pieceToItem(slot, p)] };
   return commit(c, eq, `Sundáno do výbavy: ${pieceName(slot, p)}`, null, now);
+}
+
+/** Odloží zbraň do výbavy (všechny kusy) – nese ji, ale není mezi zbraněmi; jde ji vrátit. */
+export function stowWeapon(c: Character, weaponUid: string, now = new Date().toISOString()): Character {
+  const w = c.equipment.weapons.find((x) => x.uid === weaponUid);
+  if (!w) return c;
+  const def = getWeapon(w.itemId);
+  const name = def?.n ?? w.custom?.name ?? 'zbraň';
+  const { uid: _u, qty, ...rest } = w;
+  const item: GearItem = {
+    uid: uid(), name, itemId: w.itemId, qty: qty ?? 1, weightLb: w.weightLb ?? def?.w ?? 0,
+    carried: true, container: null, weapon: { ...rest, equipped: false },
+  };
+  const weapons = c.equipment.weapons.filter((x) => x.uid !== weaponUid);
+  const activeWeaponUid = c.equipment.activeWeaponUid === weaponUid ? null : c.equipment.activeWeaponUid;
+  return commit(c, { ...c.equipment, weapons, activeWeaponUid, items: [...c.equipment.items, item] }, `Odloženo do výbavy: ${name}`, null, now);
+}
+
+/** Vrátí zbraň z výbavy mezi zbraně (vrhací se sečtou se stejným druhem). */
+export function drawWeapon(c: Character, itemUid: string, now = new Date().toISOString()): Character {
+  const it = c.equipment.items.find((x) => x.uid === itemUid);
+  if (!it?.weapon) return c;
+  const items = c.equipment.items.filter((x) => x !== it);
+  const eq = addWeapon({ ...c.equipment, items }, { ...it.weapon, equipped: true, qty: it.qty });
+  return commit(c, eq, `Vráceno mezi zbraně: ${it.name}`, null, now);
 }
 
 /** Nasadí zbroj/štít z výbavy (dosavadní kus jde do výbavy). */

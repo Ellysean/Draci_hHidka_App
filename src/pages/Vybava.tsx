@@ -8,11 +8,12 @@ import { craftedInGear, craftedValueMd, recipeById, removeCrafted, setCraftedCar
 import { ALCH_KIND, WEAPON_KIND, alchemyRowByRecipe, productWeightLb } from '../rules/catalog';
 import { sgn } from '../rules/derive';
 import {
-  equipFromItems, expense, income, itemSlot, salePriceMd, normalizeMoney, removeItem, removePiece, removeWeapon, undoLast, unequipPiece, unitPriceMd, consumeItem,
+  equipFromItems, drawWeapon, stowWeapon, expense, income, itemSlot, salePriceMd, normalizeMoney, removeItem, removePiece, removeWeapon, undoLast, unequipPiece, unitPriceMd, consumeItem,
 } from '../rules/equipment';
 import { formatMd, moneyToMd } from '../rules/money';
 import { useStore } from '../state/store';
 import { CalcField, Labeled, NumberField } from '../ui/Field';
+import { QtyInput } from '../ui/QtyInput';
 import { Icon } from '../ui/Icon';
 import { Ribbon } from '../ui/Ribbon';
 import { Sheet } from '../ui/Sheet';
@@ -92,8 +93,8 @@ export function Vybava() {
         <span style={{ flex: '1 1 100%' }}>
           Odebrat <b>{removing.name}</b>
           {removing.max > 1 && (
-            <> – kusů <input className="field num tn" type="number" min={1} max={removing.max} value={removing.qty} aria-label="Kolik kusů odebrat" style={{ width: 64, height: 28, display: 'inline-block' }}
-              onChange={(e) => askRemove({ ...removing, qty: Math.max(1, Math.min(removing.max, Math.trunc(Number(e.target.value)) || 1)) } as Removing)} /> z {removing.max}</>
+            <> – kusů <QtyInput max={removing.max} value={removing.qty} label="Kolik kusů odebrat" style={{ width: 64, height: 28, display: 'inline-block' }}
+              onChange={(v) => askRemove({ ...removing, qty: v } as Removing)} /> z {removing.max}</>
           )}
           ? {removing.what === 'crafted'
             ? 'Předvyplněná je polovina hodnoty many a surovin v kusu (H10) – výrobky nemají pevnou cenu, určí ji PJ.'
@@ -179,7 +180,7 @@ export function Vybava() {
                         <td className="c">{w.strReq != null ? <span className={w.overloaded ? 'bad-t' : ''} title={w.overloaded ? `Přetížení −5 (máš SIL ${sgn(d.mods.sil)})` : undefined}>min. {sgn(w.strReq)}</span> : '—'}</td>
                         <td className="c">{w.attackNumber}/{w.defenseNumber}{w.overloaded && <> <span className="pill bad">−5</span></>}</td>
                         <td className="c">{w.weightLb}</td>
-                        <td className="c acts"><button className="icon-x" type="button" aria-label={`Odebrat ${w.name}`} onClick={() => askRemove({ what: 'weapon', uid: w.uid, name: w.name, qty: entry.qty ?? 1, max: entry.qty ?? 1, unitMd: unitPriceMd(c, entry) })}>×</button></td>
+                        <td className="c acts"><button className="btn" type="button" title="Odložit do výbavy (nese ji, ale nemá ji mezi zbraněmi)" onClick={() => upd((x) => stowWeapon(x, w.uid))}>Do výbavy</button><button className="icon-x" type="button" aria-label={`Odebrat ${w.name}`} onClick={() => askRemove({ what: 'weapon', uid: w.uid, name: w.name, qty: entry.qty ?? 1, max: entry.qty ?? 1, unitMd: unitPriceMd(c, entry) })}>×</button></td>
                       </tr>
                     );
                   })}
@@ -266,6 +267,7 @@ export function Vybava() {
                         <td>
                           <input className="vy-name" value={it.name} aria-label="Název předmětu" onChange={(e) => set(['equipment', 'items', i, 'name'], e.target.value)} />
                           {slot && <button className="btn vy-equip" type="button" onClick={() => upd((x) => equipFromItems(x, it.uid))}>Nasadit {slot === 'armor' ? 'zbroj' : 'štít'}</button>}
+                          {it.weapon && <button className="btn vy-equip" type="button" onClick={() => upd((x) => drawWeapon(x, it.uid))}>Vrátit mezi zbraně</button>}
                           {it.alch && <AlchInfo index={i} />}
                         </td>
                         <td className="c">

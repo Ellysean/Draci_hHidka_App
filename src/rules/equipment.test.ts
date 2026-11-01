@@ -4,7 +4,7 @@ import { newCharacter } from '../model/defaults';
 import { catalogRows, customRow } from './catalog';
 import { derive } from './derive';
 import {
-  salePriceMd, acquire, equipFromItems, expense, income, payMoney, removeItem, removePiece, removeWeapon, saveCustom, undoLast, unequipPiece,
+  salePriceMd, acquire, equipFromItems, expense, income, payMoney, removeItem, removePiece, removeWeapon, saveCustom, stowWeapon, drawWeapon, undoLast, unequipPiece,
 } from './equipment';
 import { moneyToMd } from './money';
 
@@ -86,6 +86,22 @@ describe('nákup a výzbroj', () => {
     c = removeItem(c, it.uid, { saleMd: 150 });
     expect(moneyToMd(c.equipment.money)).toBe(money + 150);
     expect(c.equipment.ledger[0]).toMatchObject({ deltaMd: 150 });
+  });
+  it('zbraň do výbavy a zpět: naložení se nemění, zbraň v ruce se uvolní', () => {
+    let c = sampleKloi();
+    const w = c.equipment.weapons[0];
+    const load = derive(c).load.value;
+    c = { ...c, equipment: { ...c.equipment, activeWeaponUid: w.uid } };
+    c = stowWeapon(c, w.uid);
+    expect(c.equipment.weapons.some((x) => x.uid === w.uid)).toBe(false);
+    expect(c.equipment.activeWeaponUid).toBe(null);
+    const it = c.equipment.items.find((i) => i.weapon)!;
+    expect(it.qty).toBe(w.qty ?? 1);
+    expect(derive(c).load.value).toBe(load);
+    c = drawWeapon(c, it.uid);
+    expect(c.equipment.items.some((i) => i.weapon)).toBe(false);
+    expect(c.equipment.weapons.find((x) => x.itemId === w.itemId && x.custom?.name === w.custom?.name)).toBeTruthy();
+    expect(derive(c).load.value).toBe(load);
   });
   it('štít nad síly: −5 k OČ; štít váží, i když není v ruce', () => {
     let c = sampleKloi(); // SIL 9 → −1

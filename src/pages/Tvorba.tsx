@@ -8,6 +8,7 @@ import {
 import { useDraft } from '../creation/useDraft';
 import { ATTR_KEYS, type AttrKey, type ClassId, type RaceId } from '../model/types';
 import { ATTR_LABELS, CLASSES, CONCEPTS, LEVEL1, RACES, RECOMMENDED, SKILLS, getClass, getRace, getSkill, getWeapon, type EquipLine } from '../rules/data';
+import { skillAttrLabel } from '../rules/skills';
 import { attributeMod, derive, sgn } from '../rules/derive';
 import { rollDie } from '../rules/dice';
 import { formatMd } from '../rules/money';
@@ -280,7 +281,7 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
       if (!ownName.trim()) return;
       update((x) => ({ ...x, added: [...x.added, { id: `custom:${ownName.trim().toLowerCase()}`, customName: ownName.trim(), attribute: attr }] }));
     } else if (skillId) {
-      update((x) => ({ ...x, added: [...x.added, { id: skillId, customName: null, attribute: attr }] }));
+      update((x) => ({ ...x, added: [...x.added, { id: skillId, customName: null, attribute: getSkill(skillId)?.defaultAttribute ?? attr }] }));
     }
     setOpen(false); setSkillId(''); setOwnName('');
   };
@@ -299,7 +300,7 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
             return (
               <tr key={s.id}>
                 <td><b>{s.customName ?? getSkill(s.id)?.name ?? s.id}</b>{SAVE_SKILLS.has(s.id) && <> <span className="pill save" title="Používá se k záchranným hodům (ověření proti pasti, jedu, pádu… – vyzve PJ)">ZÁCHRANNÝ HOD</span></>}</td>
-                <td className="c">{ATTR_LABELS[s.attribute].short}</td>
+                <td className="c">{skillAttrLabel(s)}</td>
                 <td className="c">{s.rank}</td>
                 <td><span className={`pill ${ai >= 0 ? 'ok' : ''}`}>{ai >= 0 ? (s.customName ? 'VLASTNÍ' : 'NOVÁ · 1 B.') : classOwn.has(s.id) && s.source === 'class-profession' ? 'PROFESNÍ' : 'ZÁKLADNÍ'}</span></td>
                 <td style={{ textAlign: 'right' }}>
@@ -369,14 +370,16 @@ function StepDovednosti({ d, update }: { d: Draft; update: Update }) {
                 <input className="field" id="wz-own" value={ownName} onChange={(e) => setOwnName(e.target.value)} placeholder="např. Lodní plavba" />
               </div>
             )}
-            <div className="box" style={{ textAlign: 'left' }}>
-              <label className="lbl" htmlFor="wz-attr">Atribut</label>
-              <select className="field" id="wz-attr" value={attr} onChange={(e) => setAttr(e.target.value as AttrKey)}>
-                {ATTR_KEYS.map((k) => <option key={k} value={k}>{ATTR_LABELS[k].short}</option>)}
-              </select>
-            </div>
+            {skillId === '__own' && (
+              <div className="box" style={{ textAlign: 'left' }}>
+                <label className="lbl" htmlFor="wz-attr">Atribut</label>
+                <select className="field" id="wz-attr" value={attr} onChange={(e) => setAttr(e.target.value as AttrKey)}>
+                  {ATTR_KEYS.map((k) => <option key={k} value={k}>{ATTR_LABELS[k].short}</option>)}
+                </select>
+              </div>
+            )}
           </div>
-          <p className="small muted" style={{ margin: 0 }}>Atribut je předvyplněný podle pravidel, u dvouatributových dovedností rozhoduje PJ. Vlastní dovednost schvaluje PJ.</p>
+          <p className="small muted" style={{ margin: 0 }}>Atribut dovednosti je daný pravidly (u dvouatributových se hází na ten, který odpovídá situaci); u vlastní ho vybereš. Vlastní dovednost schvaluje PJ.</p>
           <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
             <button className="btn" type="button" onClick={() => setOpen(false)}>Zrušit</button>
             <button className="btn dark" type="button" disabled={!skillId || (skillId === '__own' && !ownName.trim())} onClick={learn}>Naučit · 1 b.</button>

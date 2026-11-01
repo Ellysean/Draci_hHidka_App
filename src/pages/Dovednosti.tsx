@@ -234,18 +234,22 @@ function NewSkill() {
             <input className="field" id="sk-own" value={ownName} onChange={(e) => setOwnName(e.target.value)} />
           </div>
         )}
-        <div className="box" style={{ textAlign: 'left' }}>
-          <label className="lbl" htmlFor="sk-attr">Atribut</label>
-          <select className="field" id="sk-attr" value={attrs.includes(attr) ? attr : attrs[0]} onChange={(e) => setAttr(e.target.value as AttrKey)}>
-            {attrs.map((a) => <option key={a} value={a}>{ATTR_LABELS[a].name}</option>)}
-          </select>
-        </div>
+        {own ? (
+          <div className="box" style={{ textAlign: 'left' }}>
+            <label className="lbl" htmlFor="sk-attr">Atribut</label>
+            <select className="field" id="sk-attr" value={attrs.includes(attr) ? attr : attrs[0]} onChange={(e) => setAttr(e.target.value as AttrKey)}>
+              {attrs.map((a) => <option key={a} value={a}>{ATTR_LABELS[a].name}</option>)}
+            </select>
+          </div>
+        ) : def && (
+          <p className="small muted" style={{ margin: 0 }}>Atribut: <b>{def.attributes.map((a) => ATTR_LABELS[a].short).join(' / ')}</b>{def.attributes.length > 1 ? ' – hází se na ten, který odpovídá situaci' : ''}</p>
+        )}
       </div>
       {own && <p className="small muted" style={{ margin: 0 }}>Dovednost mimo seznam schvaluje PJ.</p>}
       {skillId && block && <p className="small bad-t" style={{ margin: 0 }}>{block}</p>}
       <div className="steps">
         <button className="btn dark" type="button" disabled={!!block} onClick={() => {
-          const a = attrs.includes(attr) ? attr : attrs[0];
+          const a = own ? (attrs.includes(attr) ? attr : attrs[0]) : def?.defaultAttribute ?? attrs[0];
           dispatch({ type: 'update', fn: (x) => addSkill(x, { ...req, attribute: a }) });
           setOpen(false); setSkillId(''); setOwnName('');
         }}>Naučit se (−1 b.)</button>
