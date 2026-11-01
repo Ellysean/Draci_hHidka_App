@@ -238,7 +238,7 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
               };
               const alt = w.away ? null : altAttack(e, w, d.mods);
               const au = alt ? alt.attackNumber + M.atk : 0;
-              const onAttack = usesAmmo(e) ? () => act(shoot(c, w.uid)) : isThrownKind(e) ? () => act(throwWeapon(c, w.uid)) : undefined;
+              const onAttack = usesAmmo(e) ? () => act(shoot(c, w.uid)) : isThrownKind(e) ? () => act(throwWeapon(c, w.uid, d.activeWeaponUid)) : undefined;
               return [
                 <tr key={w.uid} className={w.uid === d.activeWeaponUid ? 'w-active' : ''}>
                   <td className="c">
@@ -260,7 +260,7 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
                     {alt && (
                       <div style={{ marginTop: 4 }}>
                         <RollButton type="k6x" mod={au} label={`${alt.mode === 'throw' ? 'Vrh' : 'Útok na blízko'} – ${w.name}`}
-                          onBefore={alt.mode === 'throw' ? () => act(throwWeapon(c, w.uid)) : undefined}
+                          onBefore={alt.mode === 'throw' ? () => act(throwWeapon(c, w.uid, d.activeWeaponUid)) : undefined}
                           title={alt.mode === 'throw'
                             ? `Vrh${alt.improvised ? ' – improvizovaný (útočnost zbraně, postih určí PJ)' : ' – útočnost vrhací varianty (H15)'}, OBR; zbraň pak leží na bojišti · zranění +${alt.damageTotal}`
                             : `Bodnutí / útok na blízko – SIL, útočnost varianty na blízko (H15) · zranění +${alt.damageTotal}`}>

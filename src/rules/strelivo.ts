@@ -53,14 +53,16 @@ export function shoot(c: Character, weaponUid: string): R {
 }
 
 /** Vrhnutí: 1 kus zbraně leží na bojišti; poslední vržený kus znamená, že zbraň nemáš v ruce (ani na obranu). */
-export function throwWeapon(c: Character, weaponUid: string): R {
+export function throwWeapon(c: Character, weaponUid: string, inHandUid?: string | null): R {
   const w = c.equipment.weapons.find((x) => x.uid === weaponUid);
   if (!w || !canThrow(w)) return { character: c };
   const left = availOf(w);
   if (left < 1) return { character: c, error: `${weaponName(w)}: nic k vrhnutí – všechno už leží na bojišti` };
   const weapons = c.equipment.weapons.map((x) => (x === w ? { ...x, thrownOut: (x.thrownOut ?? 0) + 1 } : x));
   const text = `Vrženo – ${weaponName(w)}${left - 1 > 0 ? ` (zbývá ${left - 1})` : ' – zbraň už v ruce nemáš'}`;
-  return { character: record(c, text, (y) => ({ ...y, equipment: { ...y.equipment, weapons } })), text };
+  // Vrhl zbraň, kterou držel (i výchozí, nevybranou) – zůstane v ruce „prázdno“, další zbraň se sama nevezme.
+  const activeWeaponUid = inHandUid === weaponUid ? weaponUid : c.equipment.activeWeaponUid;
+  return { character: record(c, text, (y) => ({ ...y, equipment: { ...y.equipment, weapons, activeWeaponUid } })), text };
 }
 
 /** Co leží na bojišti: vystřelené střelivo a vržené zbraně. */

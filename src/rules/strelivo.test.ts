@@ -62,6 +62,12 @@ describe('vrhání (v0.18.0)', () => {
     expect(lost.equipment.weapons.some((w) => w.uid === 'w1')).toBe(false);
     expect(lost.equipment.activeWeaponUid).toBeNull();
   });
+  it('vržená výchozí zbraň (nevybraná kolečkem): v ruce nic, další zbraň se sama nevezme', () => {
+    const c = sampleKloi(); // activeWeaponUid nezadané → v ruce dýka
+    expect(derive(c).activeWeaponUid).toBe('w1');
+    const t = throwWeapon(c, 'w1', 'w1').character;
+    expect(derive(t).activeWeaponUid).toBeNull();
+  });
 });
 
 describe('dýka: bodnout nebo vrhnout', () => {
