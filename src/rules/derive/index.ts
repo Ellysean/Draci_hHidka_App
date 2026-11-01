@@ -2,6 +2,7 @@
 // Vzorce a zdroje: docs/RULES_FORMULAS.md. Všechno se počítá z aktuálního stavu,
 // takže automaticky platí Pravidlo zpětné opravy (H06).
 import { productWeightLb } from '../catalog';
+import { ammoBonus, ammoOf, usesAmmo } from '../ammo';
 import { activeAugmentations, augmentationEffects } from '../augmentations';
 import { rangerWeaponBonus } from '../hranicar';
 import { clericManaAdjust, clericWeaponBonus, clericZo, divineArmorBonus } from '../klerik';
@@ -401,7 +402,10 @@ export function derive(c: Character): Derived {
     const weaponDef = kind === 'melee' ? defense : 0;
     // Škola boje se štítem (H08): štít i obrana zbraně najednou; se Zakrytím je štít už v ZO.
     const parry = (shieldOn && !shieldInZo ? shieldQ : 0) + (!shieldOn || shieldInZo || both ? weaponDef : 0);
-    const wb = wBonus(info, w.uid);
+    let wb = wBonus(info, w.uid);
+    // Vlastní střelivo s bonusem (např. šíp +1 ÚČ) – jen u střelných zbraní a praku.
+    const ab = usesAmmo(w) ? ammoBonus(c, ammoOf(c, w)) : null;
+    if (ab) wb = { ...wb, atk: wb.atk + ab.atk, dmg: wb.dmg + ab.dmg, parts: [...wb.parts, `${ab.name}${ab.atk ? ` ${sgn(ab.atk)} ÚČ` : ''}${ab.dmg ? ` ${sgn(ab.dmg)} zranění` : ''}`] };
     return {
       uid: w.uid, name, kind, category: def?.cat ?? w.custom?.category ?? '', attack, damage, defense, strReq, equipped: w.equipped, overloaded,
       weightLb: (w.weightLb ?? def?.w ?? 0) * (w.qty ?? 1),

@@ -88,3 +88,29 @@ describe('dýka: bodnout nebo vrhnout', () => {
     expect(altAttack(c.equipment.weapons[1], d.weapons[1], d.mods)).toBeNull();
   });
 });
+
+describe('sebrání a bonus střeliva', () => {
+  it('3 vystřelené: 2 sebrány, 1 ztracen jedním krokem', async () => {
+    const { resolveField } = await import('./strelivo');
+    let c = withBolts(5);
+    for (let i = 0; i < 3; i++) c = shoot(c, 'w2').character;
+    c = resolveField(c, 'item', 'b', 2);
+    const b = c.equipment.items.find((i) => i.uid === 'b')!;
+    expect(b.qty).toBe(4);
+    expect(b.spent).toBe(0);
+    expect(c.play.log[0].text).toMatch(/sebráno 2, ztraceno 1/);
+    expect(undoPlay(c).equipment.items.find((i) => i.uid === 'b')!.spent).toBe(3);
+  });
+  it('vlastní šíp +1 ÚČ / +1 zranění se přičte, když ho kuše používá', () => {
+    let c = withBolts(2);
+    const base = derive(c).weapons.find((w) => w.uid === 'w2')!;
+    c = { ...c, equipment: { ...c.equipment,
+      customCatalog: [{ id: 'custom:s', type: 'gear', name: 'Šipka mistra *', weightLb: 0.03, price: null, desc: '', ammo: { atk: 1, dmg: 1 } }],
+      items: [...c.equipment.items, { uid: 'm', name: 'Šipka mistra *', itemId: 'custom:s', qty: 3, weightLb: 0.03, carried: true, container: null }] } };
+    c = { ...c, equipment: { ...c.equipment, weapons: c.equipment.weapons.map((w) => (w.uid === 'w2' ? { ...w, ammoItemUid: 'm' } : w)) } };
+    const r = derive(c).weapons.find((w) => w.uid === 'w2')!;
+    expect(r.attackNumber).toBe(base.attackNumber + 1);
+    expect(r.damageTotal).toBe(base.damageTotal + 1);
+    expect(r.bonusParts.join()).toMatch(/Šipka mistra/);
+  });
+});

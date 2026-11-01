@@ -2,15 +2,12 @@
 // Vystřelené šípy i vržené zbraně jde po boji sebrat zpět, nebo odepsat jako ztracené.
 import type { Character, GearItem, WeaponEntry } from '../model/types';
 import { getWeapon } from './data';
+import { ammoOf, kindOf, usesAmmo, weaponName } from './ammo';
 import { record } from './combat';
 import { isAmmo } from './catalog';
 
-const wDef = (w: WeaponEntry) => getWeapon(w.itemId);
-export const weaponName = (w: WeaponEntry) => wDef(w)?.n ?? w.custom?.name ?? 'zbraň';
-const kindOf = (w: WeaponEntry) => wDef(w)?.kind ?? w.custom?.kind ?? 'melee';
+export { weaponName, usesAmmo, ammoOf } from './ammo';
 
-/** Střílí se ze zbraně střelivem (luky, kuše, prak). */
-export const usesAmmo = (w: WeaponEntry) => kindOf(w) === 'ranged' || /prak/i.test(weaponName(w));
 /** Zbraň jde vrhnout (vrhací zbraně; zbraně tváří v tvář jako improvizovaný hod – postih určí PJ). Střelné a prak ne. */
 export const canThrow = (w: WeaponEntry) => !usesAmmo(w);
 export const isThrownKind = (w: WeaponEntry) => kindOf(w) === 'thrown' && !usesAmmo(w);
@@ -21,17 +18,6 @@ export function ammoChoices(c: Character): { ammo: GearItem[]; other: GearItem[]
   const ok = c.equipment.items.filter((i) => !i.piece && !i.weapon && !i.alch && !/^doplnek_toulec/.test(i.itemId ?? ''));
   const rule = (i: GearItem) => (!!i.itemId && isAmmo(i.itemId)) || /šíp|šipk|kamen|kulk|náboj/i.test(i.name);
   return { ammo: ok.filter(rule), other: ok.filter((i) => !rule(i)) };
-}
-
-/** Střelivo zvolené u zbraně (když zvolené už není, nabídne se první šíp / šipka ve výbavě). */
-export function ammoOf(c: Character, w: WeaponEntry): GearItem | null {
-  const items = c.equipment.items;
-  const chosen = w.ammoItemUid ? items.find((i) => i.uid === w.ammoItemUid) : undefined;
-  if (chosen) return chosen;
-  if (w.ammoItemUid) return null;
-  const name = weaponName(w).toLowerCase();
-  const want = /kuš/.test(name) ? /šipk|sipka/i : /luk/.test(name) ? /šíp(?!k)|_sip_/i : /kamen|kulk/i;
-  return items.find((i) => want.test(`${i.name} ${i.itemId ?? ''}`) && !i.weapon && !i.piece) ?? null;
 }
 
 export function setAmmo(c: Character, weaponUid: string, itemUid: string | null): Character {
@@ -71,6 +57,29 @@ export function onField(c: Character): { what: 'item' | 'weapon'; uid: string; n
     ...c.equipment.weapons.filter((w) => (w.thrownOut ?? 0) > 0).map((w) => ({ what: 'weapon' as const, uid: w.uid, name: weaponName(w), n: w.thrownOut! })),
     ...c.equipment.items.filter((i) => (i.spent ?? 0) > 0).map((i) => ({ what: 'item' as const, uid: i.uid, name: i.name, n: i.spent! })),
   ];
+}
+
+/** Po boji: z `n` kusů na bojišti `found` sebráno (vrátí se), zbytek ztracen – jedním krokem. */
+export function resolveField(c: Character, what: 'item' | 'weapon', uid: string, found: number): Character {
+  const x = onField(c).find((f) => f.uid === uid && f.what === what);
+  if (!x) return c;
+  const k = Math.max(0, Math.min(x.n, Math.trunc(found)));
+  const lostN = x.n - k;
+  const eq = c.equipment;
+  let equipment = eq;
+  if (what === 'item') {
+    const items = eq.items
+      .map((i) => (i.uid === uid ? { ...i, spent: 0, qty: i.qty + k } : i))
+      .filter((i) => i.uid !== uid || i.qty > 0);
+    equipment = { ...eq, items };
+  } else {
+    const w = eq.weapons.find((y) => y.uid === uid)!;
+    const qty = (w.qty ?? 1) - lostN;
+    const weapons = qty > 0 ? eq.weapons.map((y) => (y === w ? { ...y, thrownOut: 0, qty } : y)) : eq.weapons.filter((y) => y !== w);
+    equipment = { ...eq, weapons, activeWeaponUid: qty > 0 || eq.activeWeaponUid !== uid ? eq.activeWeaponUid : null };
+  }
+  const text = `${x.name}: sebráno ${k}${lostN ? `, ztraceno ${lostN}` : ''}`;
+  return record(c, text, (y) => ({ ...y, equipment: { ...y.equipment, items: equipment.items, weapons: equipment.weapons, activeWeaponUid: equipment.activeWeaponUid } }));
 }
 
 /** Sebrat (`lost` = false) nebo odepsat jako ztracené (`lost` = true) n kusů z bojiště. */

@@ -164,6 +164,8 @@ export interface CustomCatalogItem {
   desc: string;
   weapon?: CustomWeapon & { grip: 'one-handed' | 'two-handed' };
   armor?: { quality: number; strReq: number | null; category: string; stealth: number | null };
+  /** Střelivo (vybavení): bonus k ÚČ a zranění, když ho střelná zbraň používá. */
+  ammo?: { atk: number; dmg: number };
   /** Upravená kopie předmětu z pravidel / výbavy – název původního kusu (feedback testerů, B1). */
   copyOf?: string;
 }

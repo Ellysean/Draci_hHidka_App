@@ -116,6 +116,7 @@ export function customRow(x: CustomCatalogItem): CatalogRow {
     CUSTOM_TYPE[x.type],
     x.copyOf && `upravený kus: ${x.copyOf}`,
     w && `Ú/Z/O ${w.attack}/${w.damage}/${w.defense} · ${WEAPON_KIND[w.kind]}`,
+    x.ammo && `střelivo${x.ammo.atk ? ` ${x.ammo.atk > 0 ? '+' : ''}${x.ammo.atk} ÚČ` : ''}${x.ammo.dmg ? ` ${x.ammo.dmg > 0 ? '+' : ''}${x.ammo.dmg} zranění` : ''}`,
     a && `kvalita ${a.quality}${a.stealth ? ` · plížení ${a.stealth}` : ''}`,
     x.desc,
   ].filter(Boolean).join(' · ');

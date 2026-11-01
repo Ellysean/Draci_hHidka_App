@@ -250,6 +250,8 @@ function CustomForm({ initial, onSave, onCancel, replaceLabel }: { initial: Cust
   const [stealth, setStealth] = useState(a0?.stealth != null ? String(a0.stealth) : '');
   const [category, setCategory] = useState(a0?.category ?? w0?.category ?? 'Lehké');
   const [req, setReq] = useState(String(w0?.strReq ?? a0?.strReq ?? ''));
+  const [ammoAtk, setAmmoAtk] = useState(initial?.ammo?.atk ? String(initial.ammo.atk) : '');
+  const [ammoDmg, setAmmoDmg] = useState(initial?.ammo?.dmg ? String(initial.ammo.dmg) : '');
 
   const int = (s: string) => Math.trunc(Number(s)) || 0;
   const num = (s: string) => Math.max(0, Number(String(s).replace(',', '.')) || 0);
@@ -262,6 +264,7 @@ function CustomForm({ initial, onSave, onCancel, replaceLabel }: { initial: Cust
     type, name, weightLb: num(weight), desc,
     price: price.trim() === '' ? null : { v: num(price), cur },
     ...(type === 'weapon' ? { weapon: { name, attack: int(att), damage: int(dmg), defense: int(def), strReq: optInt(req), kind, category, damageTypes: initial?.weapon?.damageTypes ?? [], grip } } : {}),
+    ...(type === 'gear' && (int(ammoAtk) || int(ammoDmg)) ? { ammo: { atk: int(ammoAtk), dmg: int(ammoDmg) } } : {}),
     ...(type === 'armor' || type === 'shield' ? { armor: { quality: int(quality), strReq: optInt(req), category, stealth: type === 'armor' ? optInt(stealth) : null } } : {}),
   });
 
@@ -301,6 +304,10 @@ function CustomForm({ initial, onSave, onCancel, replaceLabel }: { initial: Cust
         {(type === 'armor' || type === 'shield') && <>
           {f('Kvalita', quality, setQuality, { inputMode: 'numeric' })}
           {type === 'armor' && f('Plížení (postih)', stealth, setStealth, { inputMode: 'numeric', placeholder: 'bez postihu' })}
+        </>}
+        {type === 'gear' && <>
+          {f('Střelivo: bonus ÚČ', ammoAtk, setAmmoAtk, { inputMode: 'numeric', placeholder: 'např. 1', title: 'Jen pro šípy, šipky, kameny… – přičte se, když střelivo vybereš u luku / kuše / praku' })}
+          {f('Střelivo: bonus zranění', ammoDmg, setAmmoDmg, { inputMode: 'numeric', placeholder: '0' })}
         </>}
         {type !== 'gear' && <>
           {f('SIL min. (oprava)', req, setReq, { inputMode: 'numeric', placeholder: 'bez omezení' })}

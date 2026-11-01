@@ -18,7 +18,7 @@ import { ZlodejBoj } from './ZlodejBoj';
 import { PrateleBoj } from './Pratele';
 import { CONDITIONS, FATIGUE, getClass } from '../rules/data';
 import { isTwoHanded, shieldInHand, slotEmpty, pieceName } from '../rules/equipment';
-import { altAttack, ammoChoices, ammoOf, availOf, isThrownKind, onField, pickUp, setAmmo, shoot, throwWeapon, usesAmmo } from '../rules/strelivo';
+import { altAttack, ammoChoices, ammoOf, availOf, isThrownKind, onField, resolveField, setAmmo, shoot, throwWeapon, usesAmmo } from '../rules/strelivo';
 import { QtyInput } from '../ui/QtyInput';
 import { adrenalinAtStart, adrenalinGain, trickPrice } from '../rules/valecnik';
 import { sgn, type Derived } from '../rules/derive';
@@ -319,30 +319,31 @@ function NaBojisti({ c, replace, say }: { c: Character; replace: (c: Character) 
   const [n, setN] = useState<Record<string, number>>({});
   const list = onField(c);
   if (!list.length) return null;
-  const go = (x: (typeof list)[number], k: number, lost: boolean) => {
-    replace(pickUp(c, x.what, x.uid, k, lost));
-    say(`${lost ? 'Ztraceno' : 'Sebráno'}: ${x.name} ×${Math.min(k, x.n)}`);
-    setN((s) => { const { [x.uid]: _d, ...r } = s; return r; });
-  };
   return (
     <div className="help" style={{ gridTemplateColumns: '1fr', marginTop: 10 }}>
-      <b className="lbl">Na bojišti – po boji sebrat, nebo ztraceno</b>
+      <b className="lbl">Na bojišti – po boji: kolik jsi sebral, zbytek je ztracený</b>
       <table className="grid tn small"><tbody>
         {list.map((x) => {
           const k = Math.min(x.n, n[x.uid] ?? x.n);
           return (
             <tr key={x.uid}>
               <td><b>{x.name}</b> <span className="muted">×{x.n} {x.what === 'weapon' ? 'vrženo' : 'vystřeleno'}</span></td>
-              <td style={{ width: 64 }}><QtyInput label={`Kolik – ${x.name}`} value={k} max={x.n} style={{ height: 28, width: 56 }} onChange={(v) => setN((s) => ({ ...s, [x.uid]: v }))} /></td>
-              <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
-                <button className="btn" type="button" onClick={() => go(x, k, false)}>Sebrat</button>{' '}
-                <button className="btn" type="button" onClick={() => go(x, k, true)}>Ztraceno</button>
+              <td style={{ whiteSpace: 'nowrap' }}>
+                sebráno <QtyInput label={`Sebráno – ${x.name}`} value={k} min={0} max={x.n} style={{ height: 28, width: 48, display: 'inline-block' }} onChange={(v) => setN((s) => ({ ...s, [x.uid]: v }))} />
+                {' '}<span className={x.n - k ? 'bad-t' : 'muted'}>ztraceno {x.n - k}</span>
+              </td>
+              <td style={{ textAlign: 'right' }}>
+                <button className="btn dark" type="button" onClick={() => {
+                  replace(resolveField(c, x.what, x.uid, k));
+                  say(`${x.name}: sebráno ${k}${x.n - k ? `, ztraceno ${x.n - k}` : ''}`);
+                  setN((s) => { const { [x.uid]: _d, ...r } = s; return r; });
+                }}>Potvrdit</button>
               </td>
             </tr>
           );
         })}
       </tbody></table>
-      <span className="small muted">Kolik kusů se dá najít a použít znovu, určí PJ. Sebrané se vrátí do výbavy / do ruky, ztracené zmizí.</span>
+      <span className="small muted">Zadej, kolik kusů jsi našel (kolik se dá najít, určí PJ) – zbytek se odepíše jako ztracený. Sebrané se vrátí do výbavy / do ruky. Jde vrátit v záznamu.</span>
     </div>
   );
 }
