@@ -173,6 +173,10 @@ export interface WeaponRow {
   /** Skupiny zbraně (drtivé, bodné… – H08) a Cesta válečníka, ke které patří (7b.2). */
   groups: string[];
   path: string | null;
+  /** Kusů v ruce / k dispozici (vrhací zbraně bez vržených). */
+  avail?: number;
+  /** Všechny kusy vržené – zbraň teď nemáš (nejde s ní útočit ani se bránit). */
+  away?: boolean;
 }
 
 /** Nasazená zbroj / štít s parametry pro deník. */
@@ -408,11 +412,14 @@ export function derive(c: Character): Derived {
       init: wb.init,
       groups: weaponGroups(info),
       path: weaponPath(info),
+      avail: Math.max(0, (w.qty ?? 1) - (w.thrownOut ?? 0)),
+      away: (w.thrownOut ?? 0) >= (w.qty ?? 1),
       info,
     };
   });
   // Zbraň v ruce: zvolená hráčem, jinak první vybavená.
-  const first = weapons.find((w) => w.uid === c.equipment.activeWeaponUid) ?? weapons.find((w) => w.equipped);
+  // Vržená zbraň (všechny kusy na bojišti) v ruce není – bere se další, jinak beze zbraně.
+  const first = weapons.find((w) => w.uid === c.equipment.activeWeaponUid && !w.away) ?? (c.equipment.activeWeaponUid && weapons.some((w) => w.uid === c.equipment.activeWeaponUid) ? undefined : weapons.find((w) => w.equipped && !w.away));
   // Boj dvěma zbraněmi (H08 Škola, PPP01 Mistr): Útočnost, Zranění i Obrana obou zbraní se sčítají; bonusy Cest jen za jednu.
   let dual: Derived['dual'] = null;
   const offUid = c.classState.valecnik?.offhand ?? c.classState.zlodej?.offhand ?? null;

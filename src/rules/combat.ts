@@ -32,7 +32,7 @@ export function record(c: Character, text: string, fn: (c: Character) => Charact
     play: {
       ...next.play,
       log: [{ uid: logUid, at: now, text }, ...c.play.log].slice(0, LOG_MAX),
-      undo: [{ logUid, vitals: c.vitals, combat: c.play.combat, hand: { aw: c.equipment.activeWeaponUid ?? null, sh: c.equipment.shield.equipped }, ...(c.classState.kouzelnik ? { wiz: c.classState.kouzelnik } : {}), ...(c.classState.klerik ? { cle: c.classState.klerik } : {}), ...(c.companions.length || next.companions.length ? { comp: c.companions } : {}) }, ...c.play.undo].slice(0, UNDO_MAX),
+      undo: [{ logUid, vitals: c.vitals, combat: c.play.combat, hand: { aw: c.equipment.activeWeaponUid ?? null, sh: c.equipment.shield.equipped }, ...(next.equipment.weapons !== c.equipment.weapons || next.equipment.items !== c.equipment.items ? { gear: { weapons: c.equipment.weapons, items: c.equipment.items } } : {}), ...(c.classState.kouzelnik ? { wiz: c.classState.kouzelnik } : {}), ...(c.classState.klerik ? { cle: c.classState.klerik } : {}), ...(c.companions.length || next.companions.length ? { comp: c.companions } : {}) }, ...c.play.undo].slice(0, UNDO_MAX),
     },
   };
 }
@@ -49,7 +49,7 @@ export function undoPlay(c: Character): Character {
     // Přátelé (7c+): životy, mana, získání a ztráta přítele se vracejí s ostatním.
     ...(u.comp ? { companions: u.comp } : {}),
     // Zbraň a štít v ruce (B2 – přezbrojení v boji).
-    ...(u.hand ? { equipment: { ...c.equipment, activeWeaponUid: u.hand.aw, shield: { ...c.equipment.shield, equipped: u.hand.sh } } } : {}),
+    ...(u.hand || u.gear ? { equipment: { ...c.equipment, ...(u.hand ? { activeWeaponUid: u.hand.aw, shield: { ...c.equipment.shield, equipped: u.hand.sh } } : {}), ...(u.gear ?? {}) } } : {}),
   };
 }
 

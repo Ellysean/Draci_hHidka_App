@@ -177,6 +177,7 @@ export function Vybava() {
                           {(entry.qty ?? 1) > 1 && <b>{entry.qty}× </b>}{w.name}
                           {' '}<span className="pill">{WEAPON_KIND[w.kind].toUpperCase()}</span>
                           {entry.custom && <> <span className="pill">VLASTNÍ</span></>}
+                          {(entry.thrownOut ?? 0) > 0 && <> <span className="pill bad" title="Vržené kusy – sebrat nebo odepsat na záložce Boj a stavy">VRŽENO {entry.thrownOut}</span></>}
                           {entry.grip === 'two-handed' && <> <span className="pill">OBOURUČNÍ</span></>}
                         </td>
                         <td className="c">{w.attack}/{w.damage}/{w.defense}</td>
@@ -270,6 +271,7 @@ export function Vybava() {
                         <td>
                           <input className="vy-name" value={it.name} aria-label="Název předmětu" onChange={(e) => set(['equipment', 'items', i, 'name'], e.target.value)} />
                           {slot && <button className="btn vy-equip" type="button" onClick={() => upd((x) => equipFromItems(x, it.uid))}>Nasadit {slot === 'armor' ? 'zbroj' : 'štít'}</button>}
+                          {(it.spent ?? 0) > 0 && <span className="pill" title="Vystřelené kusy – sebrat nebo odepsat na záložce Boj a stavy">NA BOJIŠTI {it.spent}</span>}
                           {it.weapon && <button className="btn vy-equip" type="button" onClick={() => upd((x) => drawWeapon(x, it.uid))}>Vrátit mezi zbraně</button>}
                           {it.alch && <AlchInfo index={i} />}
                         </td>

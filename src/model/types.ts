@@ -98,6 +98,10 @@ export interface WeaponEntry {
   weightLb: number | null;
   /** Počet kusů (vrhací zbraně, např. 4 hvězdice). Chybí = 1. */
   qty?: number;
+  /** Kolik kusů je vržených (leží na bojišti) – jde sebrat, nebo odepsat jako ztracené. */
+  thrownOut?: number;
+  /** Střelivo střelné zbraně / praku – uid položky ve výbavě (šípy, šipky, kameny…). */
+  ammoItemUid?: string | null;
 }
 
 export interface ArmorPiece {
@@ -117,6 +121,8 @@ export interface GearItem {
   container: string | null;
   /** Sundaná zbroj / štít ve výbavě (u vlastních kusů nese i parametry) – jde znovu nasadit. */
   piece?: { slot: 'armor' | 'shield'; custom: ArmorPiece['custom'] };
+  /** Vystřelené kusy (šípy, šipky…) na bojišti – jde je sebrat, nebo odepsat jako ztracené. */
+  spent?: number;
   /** Zbraň odložená do výbavy (nese, ale nemá ji mezi zbraněmi) – jde vrátit mezi zbraně. */
   weapon?: Omit<WeaponEntry, 'uid' | 'qty'>;
   /** Alchymistický výrobek (lektvar, elixír, jed, předmět…) přidaný z katalogu – odkaz na recept (H10, PPP03). */
@@ -741,7 +747,7 @@ export interface PlayState {
   /** Nejnovější první, max. 50. */
   log: PlayLogEntry[];
   /** Stav životů/energie/stavů a boje před poslední úpravou (nejnovější první, max. 20). */
-  undo: { logUid: string; vitals: Vitals; combat: CombatState | null; hand?: { aw: string | null; sh: boolean }; wiz?: WizardState | null; cle?: ClericState | null; comp?: Companion[] }[];
+  undo: { logUid: string; vitals: Vitals; combat: CombatState | null; hand?: { aw: string | null; sh: boolean }; gear?: { weapons: WeaponEntry[]; items: GearItem[] }; wiz?: WizardState | null; cle?: ClericState | null; comp?: Companion[] }[];
 }
 
 export interface Character {

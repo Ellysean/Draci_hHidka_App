@@ -18,6 +18,8 @@ import { ZlodejBoj } from './ZlodejBoj';
 import { PrateleBoj } from './Pratele';
 import { CONDITIONS, FATIGUE, getClass } from '../rules/data';
 import { isTwoHanded, shieldInHand, slotEmpty, pieceName } from '../rules/equipment';
+import { ammoChoices, ammoOf, availOf, canThrow, isThrownKind, onField, pickUp, setAmmo, shoot, throwWeapon, usesAmmo } from '../rules/strelivo';
+import { QtyInput } from '../ui/QtyInput';
 import { adrenalinAtStart, adrenalinGain, trickPrice } from '../rules/valecnik';
 import { sgn, type Derived } from '../rules/derive';
 import { useStore } from '../state/store';
@@ -227,7 +229,15 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
             {d.weapons.map((w) => {
               const u = w.attackNumber + M.atk;
               const o = w.kind === 'melee' ? w.defenseNumber + M.def : ocr;
-              return (
+              const e = c.equipment.weapons.find((x) => x.uid === w.uid)!;
+              const ammo = usesAmmo(e) ? ammoOf(c, e) : null;
+              const act = (r: { character: Character; error?: string; text?: string }) => {
+                if (r.error) { say(r.error); return false; }
+                replace(r.character); if (r.text) say(r.text);
+                return true;
+              };
+              const onAttack = usesAmmo(e) ? () => act(shoot(c, w.uid)) : isThrownKind(e) ? () => act(throwWeapon(c, w.uid)) : undefined;
+              return [
                 <tr key={w.uid} className={w.uid === d.activeWeaponUid ? 'w-active' : ''}>
                   <td className="c">
                     <input type="radio" name="boj-active" checked={w.uid === d.activeWeaponUid} aria-label={`${w.name} do ruky`}
@@ -239,16 +249,38 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
                         say(`V ruce: ${w.name}${r.len ? ` (přezbrojení – ${LEN_NAME[r.len]} akce)` : ''}${r.shieldDown ? ' · obouruční zbraň – štít odložen z ruky' : ''}`);
                       }} />
                   </td>
-                  <td><b>{w.name}</b>{isTwoHanded(c, w.uid) && <> <span className="pill">OBOUR.</span></>}{w.overloaded && <> <span className="pill bad">PŘETÍŽENÍ −5</span></>}{w.kind !== 'melee' && <> <span className="pill">{w.kind === 'ranged' ? 'STŘ.' : 'VRH.'}</span></>}</td>
-                  <td className="c"><RollButton type="k6x" mod={u} label={`Útok – ${w.name}`}>{`ÚČ ${u}`}</RollButton></td>
-                  <td className="c"><RollButton type="k6x" mod={o} label={`Obrana – ${w.name}`} onBefore={defend(`Obrana – ${w.name}`)}>{`OČ ${o}`}</RollButton></td>
+                  <td><b>{w.name}</b>{(e.qty ?? 1) > 1 && <span className="muted"> ×{availOf(e)}{e.thrownOut ? `/${e.qty}` : ''}</span>}
+                    {w.away && <> <span className="pill bad" title="Všechny kusy jsou vržené – leží na bojišti">VRŽENO</span></>}
+                    {isTwoHanded(c, w.uid) && <> <span className="pill">OBOUR.</span></>}{w.overloaded && <> <span className="pill bad">PŘETÍŽENÍ −5</span></>}{w.kind !== 'melee' && <> <span className="pill">{w.kind === 'ranged' ? 'STŘ.' : 'VRH.'}</span></>}</td>
+                  <td className="c">
+                    <RollButton type="k6x" mod={u} label={`Útok – ${w.name}`} disabled={w.away} onBefore={onAttack}
+                      title={usesAmmo(e) ? `Výstřel – ubere 1 kus střeliva${ammo ? ` (${ammo.name}: ${ammo.qty})` : ''}` : isThrownKind(e) ? 'Vrh – zbraň pak leží na bojišti' : undefined}>{`ÚČ ${u}`}</RollButton>
+                  </td>
+                  <td className="c">{w.away ? <span className="muted small">vrženo</span> : <RollButton type="k6x" mod={o} label={`Obrana – ${w.name}`} onBefore={defend(`Obrana – ${w.name}`)}>{`OČ ${o}`}</RollButton>}</td>
                   <td className="c">+{w.damageTotal}</td>
                 </tr>
-              );
+              , usesAmmo(e) ? (
+                <tr key={`${w.uid}-ammo`} className="small"><td /><td colSpan={4}>
+                  <label style={{ display: 'inline-flex', gap: 6, alignItems: 'center' }}>Střelivo:
+                    <select className="field" style={{ height: 28, padding: '0 4px', maxWidth: 220 }} value={ammo?.uid ?? ''} aria-label={`Střelivo – ${w.name}`}
+                      onChange={(ev) => replace(setAmmo(c, w.uid, ev.target.value || null))}>
+                      <option value="">— žádné —</option>
+                      {(() => { const ch = ammoChoices(c); const o = (i: (typeof ch.ammo)[number]) => <option key={i.uid} value={i.uid}>{i.name} ({i.qty})</option>; return <>{ch.ammo.map(o)}{ch.other.length > 0 && <optgroup label="Ostatní z výbavy">{ch.other.map(o)}</optgroup>}</>; })()}
+                    </select>
+                  </label>
+                  {ammo ? <span className={ammo.qty < 1 ? 'bad-t' : 'muted'}> {ammo.qty < 1 ? 'došlo!' : `zbývá ${ammo.qty}`}</span> : <span className="muted"> kup šípy / šipky ve Výbavě</span>}
+                </td></tr>
+              ) : canThrow(e) && !isThrownKind(e) && !w.away ? (
+                <tr key={`${w.uid}-throw`} className="small"><td /><td colSpan={4}>
+                  <button className="btn" type="button" style={{ padding: '2px 8px' }} title="Improvizovaný hod zbraní tváří v tvář – hod a postih určí PJ; zbraň pak leží na bojišti"
+                    onClick={() => act(throwWeapon(c, w.uid))}>Vrhnout</button>
+                </td></tr>
+              ) : null];
             })}
           </tbody>
         </table>
       </div>
+      <NaBojisti c={c} replace={replace} say={say} />
       {!slotEmpty(c.equipment.shield) && (() => {
         const on = c.equipment.shield.equipped;
         const blocked = !on && isTwoHanded(c, d.activeWeaponUid);
@@ -271,6 +303,39 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
         {inCombat && ' V boji hod na obranu zabere krátkou akci (1× za kolo).'}
       </p>
     </Sheet>
+  );
+}
+
+/** Vystřelené střelivo a vržené zbraně na bojišti – sebrat zpět, nebo odepsat jako ztracené. */
+function NaBojisti({ c, replace, say }: { c: Character; replace: (c: Character) => void; say: (s: string) => void }) {
+  const [n, setN] = useState<Record<string, number>>({});
+  const list = onField(c);
+  if (!list.length) return null;
+  const go = (x: (typeof list)[number], k: number, lost: boolean) => {
+    replace(pickUp(c, x.what, x.uid, k, lost));
+    say(`${lost ? 'Ztraceno' : 'Sebráno'}: ${x.name} ×${Math.min(k, x.n)}`);
+    setN((s) => { const { [x.uid]: _d, ...r } = s; return r; });
+  };
+  return (
+    <div className="help" style={{ gridTemplateColumns: '1fr', marginTop: 10 }}>
+      <b className="lbl">Na bojišti – po boji sebrat, nebo ztraceno</b>
+      <table className="grid tn small"><tbody>
+        {list.map((x) => {
+          const k = Math.min(x.n, n[x.uid] ?? x.n);
+          return (
+            <tr key={x.uid}>
+              <td><b>{x.name}</b> <span className="muted">×{x.n} {x.what === 'weapon' ? 'vrženo' : 'vystřeleno'}</span></td>
+              <td style={{ width: 64 }}><QtyInput label={`Kolik – ${x.name}`} value={k} max={x.n} style={{ height: 28, width: 56 }} onChange={(v) => setN((s) => ({ ...s, [x.uid]: v }))} /></td>
+              <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
+                <button className="btn" type="button" onClick={() => go(x, k, false)}>Sebrat</button>{' '}
+                <button className="btn" type="button" onClick={() => go(x, k, true)}>Ztraceno</button>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody></table>
+      <span className="small muted">Kolik kusů se dá najít a použít znovu, určí PJ. Sebrané se vrátí do výbavy / do ruky, ztracené zmizí.</span>
+    </div>
   );
 }
 
