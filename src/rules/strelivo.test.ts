@@ -63,3 +63,22 @@ describe('vrhání (v0.18.0)', () => {
     expect(lost.equipment.activeWeaponUid).toBeNull();
   });
 });
+
+describe('dýka: bodnout nebo vrhnout', () => {
+  it('jednoruční dýka nabízí vrh s hodnotami vrhací dýky (OBR), vrhací dýka bodnutí (SIL)', async () => {
+    const { altAttack } = await import('./strelivo');
+    const c = sampleKloi();
+    const d = derive(c);
+    const row = d.weapons.find((w) => w.uid === 'w1')!;
+    const a = altAttack(c.equipment.weapons[0], row, d.mods)!;
+    expect(a.mode).toBe('throw');
+    expect(a.improvised).toBe(false);
+    expect(a.attackNumber).toBe(row.attackNumber - d.mods.sil + d.mods.obr); // útočnost 3 = 3
+    const k = withKnives(c, 1);
+    const kr = derive(k).weapons.find((w) => w.uid === 'k')!;
+    const m = altAttack(k.equipment.weapons.find((w) => w.uid === 'k')!, kr, d.mods)!;
+    expect(m.mode).toBe('melee');
+    // kuše ani hvězdice druhý způsob nemají
+    expect(altAttack(c.equipment.weapons[1], d.weapons[1], d.mods)).toBeNull();
+  });
+});

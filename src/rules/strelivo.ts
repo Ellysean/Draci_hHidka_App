@@ -93,3 +93,41 @@ export function pickUp(c: Character, what: 'item' | 'weapon', uid: string, n: nu
   const activeWeaponUid = qty > 0 ? eq.activeWeaponUid : eq.activeWeaponUid === uid ? null : eq.activeWeaponUid;
   return record(c, `${lost ? 'Ztraceno' : 'Sebráno'}: ${weaponName(w)} ×${k}`, (y) => ({ ...y, equipment: { ...y.equipment, weapons, activeWeaponUid } }));
 }
+
+// ---------------------------------------------------------------- dvojí použití (bodnout / vrhnout)
+
+/** Párová varianta zbraně v H15 (jednoruční dýka ↔ vrhací dýka, nůž, sekera, oštěp). */
+function pairOf(w: WeaponEntry) {
+  const id = w.itemId ?? '';
+  const m = /^(jednorucni|vrhaci)_(.+)$/.exec(id);
+  if (!m) return undefined;
+  return getWeapon(`${m[1] === 'jednorucni' ? 'vrhaci' : 'jednorucni'}_${m[2]}`);
+}
+
+/** Zbraně, které se nedají použít na blízko (hvězdice, kámen, koule, flakón). */
+const throwOnly = (w: WeaponEntry) => /hvězdic|kámen|koule|flakón/i.test(weaponName(w));
+
+export interface AltAttack {
+  mode: 'throw' | 'melee';
+  attackNumber: number;
+  damageTotal: number;
+  /** Bez páru v pravidlech – improvizovaný hod, postih určí PJ. */
+  improvised: boolean;
+}
+
+/**
+ * Druhý způsob útoku stejnou zbraní: dýka na blízko → vrh (OBR + útočnost vrhací dýky), vrhací dýka → bodnutí
+ * (SIL + útočnost dýky). Zbraň tváří v tvář bez páru jde vrhnout improvizovaně (stejná útočnost, postih PJ).
+ */
+export function altAttack(w: WeaponEntry, row: { kind: string; attack: number; damage: number; attackNumber: number; damageTotal: number }, mods: { sil: number; obr: number }): AltAttack | null {
+  if (usesAmmo(w)) return null;
+  const melee = row.kind === 'melee';
+  if (!melee && throwOnly(w)) return null;
+  const p = pairOf(w);
+  if (!melee && !p) return null; // vrhací zbraň bez varianty na blízko (vrhací sekera…)
+  const mode = melee ? 'throw' : 'melee';
+  const att = p?.att ?? row.attack;
+  const dmg = p?.dmg ?? row.damage;
+  const base = melee ? mods.obr - mods.sil : mods.sil - mods.obr;
+  return { mode, attackNumber: row.attackNumber + base - row.attack + att, damageTotal: row.damageTotal - row.damage + dmg, improvised: !p };
+}

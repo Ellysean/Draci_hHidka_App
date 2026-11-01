@@ -235,7 +235,7 @@ export const HELP: HelpSection[] = [
         list: [
           'ÚČ, OČ, ZO a iniciativa s tlačítky hodu ⚄ útoku a obrany u každé zbraně; obrana proti střelbě (jen se štítem).',
           'Zbraň do ruky kolečkem vlevo; v boji to je akce Přezbrojení (výměna dlouhá, vytasení krátká, lehká krátká okamžitá – H16). Obouruční zbraň odloží štít, štít do ruky zaškrtávátkem.',
-          'Střelivo: u luku, kuše a praku vyber šípy / šipky z výbavy – každý hod ÚČ = výstřel a ubere kus. Vrhací zbraně se hodem ÚČ vrhnou, zbraň tváří v tvář jde vrhnout tlačítkem Vrhnout. Vržená zbraň (poslední kus) není v ruce – nejde s ní útočit ani bránit.',
+          'Střelivo: u luku, kuše a praku vyber šípy / šipky z výbavy – každý hod ÚČ = výstřel a ubere kus. Vrhací zbraně se hodem ÚČ vrhnou, dýka, nůž, sekera a oštěp mají dvě tlačítka – na blízko (SIL) a vrh (OBR) s hodnotami obou variant z H15; jiné zbraně na blízko jdou vrhnout improvizovaně (označeno *, postih určí PJ). Vržená zbraň (poslední kus) není v ruce – nejde s ní útočit ani bránit.',
           'Na bojišti: vystřelené šípy a vržené zbraně po boji sebereš (vrátí se), nebo odepíšeš jako ztracené – kolik se dá najít, určí PJ. Vrátit v záznamu vrací i výstřel a hod.',
           '**Záznam** posledních 50 úprav a **Vrátit** až 20 kroků zpět – přežije i obnovení stránky.',
         ],

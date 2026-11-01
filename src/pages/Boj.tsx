@@ -18,7 +18,7 @@ import { ZlodejBoj } from './ZlodejBoj';
 import { PrateleBoj } from './Pratele';
 import { CONDITIONS, FATIGUE, getClass } from '../rules/data';
 import { isTwoHanded, shieldInHand, slotEmpty, pieceName } from '../rules/equipment';
-import { ammoChoices, ammoOf, availOf, canThrow, isThrownKind, onField, pickUp, setAmmo, shoot, throwWeapon, usesAmmo } from '../rules/strelivo';
+import { altAttack, ammoChoices, ammoOf, availOf, isThrownKind, onField, pickUp, setAmmo, shoot, throwWeapon, usesAmmo } from '../rules/strelivo';
 import { QtyInput } from '../ui/QtyInput';
 import { adrenalinAtStart, adrenalinGain, trickPrice } from '../rules/valecnik';
 import { sgn, type Derived } from '../rules/derive';
@@ -236,6 +236,8 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
                 replace(r.character); if (r.text) say(r.text);
                 return true;
               };
+              const alt = w.away ? null : altAttack(e, w, d.mods);
+              const au = alt ? alt.attackNumber + M.atk : 0;
               const onAttack = usesAmmo(e) ? () => act(shoot(c, w.uid)) : isThrownKind(e) ? () => act(throwWeapon(c, w.uid)) : undefined;
               return [
                 <tr key={w.uid} className={w.uid === d.activeWeaponUid ? 'w-active' : ''}>
@@ -254,10 +256,21 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
                     {isTwoHanded(c, w.uid) && <> <span className="pill">OBOUR.</span></>}{w.overloaded && <> <span className="pill bad">PŘETÍŽENÍ −5</span></>}{w.kind !== 'melee' && <> <span className="pill">{w.kind === 'ranged' ? 'STŘ.' : 'VRH.'}</span></>}</td>
                   <td className="c">
                     <RollButton type="k6x" mod={u} label={`Útok – ${w.name}`} disabled={w.away} onBefore={onAttack}
-                      title={usesAmmo(e) ? `Výstřel – ubere 1 kus střeliva${ammo ? ` (${ammo.name}: ${ammo.qty})` : ''}` : isThrownKind(e) ? 'Vrh – zbraň pak leží na bojišti' : undefined}>{`ÚČ ${u}`}</RollButton>
+                      title={usesAmmo(e) ? `Výstřel – ubere 1 kus střeliva${ammo ? ` (${ammo.name}: ${ammo.qty})` : ''}` : isThrownKind(e) ? 'Vrh – zbraň pak leží na bojišti' : 'Útok na blízko'}>{`${isThrownKind(e) && alt ? 'vrh ' : alt ? 'blízko ' : ''}ÚČ ${u}`}</RollButton>
+                    {alt && (
+                      <div style={{ marginTop: 4 }}>
+                        <RollButton type="k6x" mod={au} label={`${alt.mode === 'throw' ? 'Vrh' : 'Útok na blízko'} – ${w.name}`}
+                          onBefore={alt.mode === 'throw' ? () => act(throwWeapon(c, w.uid)) : undefined}
+                          title={alt.mode === 'throw'
+                            ? `Vrh${alt.improvised ? ' – improvizovaný (útočnost zbraně, postih určí PJ)' : ' – útočnost vrhací varianty (H15)'}, OBR; zbraň pak leží na bojišti · zranění +${alt.damageTotal}`
+                            : `Bodnutí / útok na blízko – SIL, útočnost varianty na blízko (H15) · zranění +${alt.damageTotal}`}>
+                          {`${alt.mode === 'throw' ? 'vrh' : 'blízko'} ÚČ ${au}${alt.improvised ? '*' : ''}`}
+                        </RollButton>
+                      </div>
+                    )}
                   </td>
                   <td className="c">{w.away ? <span className="muted small">vrženo</span> : <RollButton type="k6x" mod={o} label={`Obrana – ${w.name}`} onBefore={defend(`Obrana – ${w.name}`)}>{`OČ ${o}`}</RollButton>}</td>
-                  <td className="c">+{w.damageTotal}</td>
+                  <td className="c">+{w.damageTotal}{alt && alt.damageTotal !== w.damageTotal && <div className="small muted">{alt.mode === 'throw' ? 'vrh' : 'blízko'} +{alt.damageTotal}</div>}</td>
                 </tr>
               , usesAmmo(e) ? (
                 <tr key={`${w.uid}-ammo`} className="small"><td /><td colSpan={4}>
@@ -269,11 +282,6 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
                     </select>
                   </label>
                   {ammo ? <span className={ammo.qty < 1 ? 'bad-t' : 'muted'}> {ammo.qty < 1 ? 'došlo!' : `zbývá ${ammo.qty}`}</span> : <span className="muted"> kup šípy / šipky ve Výbavě</span>}
-                </td></tr>
-              ) : canThrow(e) && !isThrownKind(e) && !w.away ? (
-                <tr key={`${w.uid}-throw`} className="small"><td /><td colSpan={4}>
-                  <button className="btn" type="button" style={{ padding: '2px 8px' }} title="Improvizovaný hod zbraní tváří v tvář – hod a postih určí PJ; zbraň pak leží na bojišti"
-                    onClick={() => act(throwWeapon(c, w.uid))}>Vrhnout</button>
                 </td></tr>
               ) : null];
             })}
@@ -299,7 +307,7 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
         <RollButton type="k6x" mod={ocr} label="Obrana – proti střelbě" onBefore={defend('Obrana proti střelbě')}>{`Proti střelbě OČ ${ocr}`}</RollButton>
       </div>
       <p className="small muted" style={{ margin: '6px 0 0' }}>
-        Zranění = (Útok − Obrana) + zranění zbraně. Šestky se přehazují a sčítají; 2 a více = kritický útok / obrana. Proti střelbě se nepočítá obrana zbraně, jen štít. Zbraň do ruky vezmeš kolečkem vlevo{inCombat ? ' – v boji to je akce Přezbrojení (výměna zbraně dlouhá, vytasení krátká, lehká krátká okamžitá; H16)' : ''}.
+        Zranění = (Útok − Obrana) + zranění zbraně. Šestky se přehazují a sčítají; 2 a více = kritický útok / obrana. Proti střelbě se nepočítá obrana zbraně, jen štít. Dýku, nůž, sekeru či oštěp jde použít na blízko i vrhnout (druhé tlačítko, hodnoty podle H15; * = improvizovaný hod, postih určí PJ). Zbraň do ruky vezmeš kolečkem vlevo{inCombat ? ' – v boji to je akce Přezbrojení (výměna zbraně dlouhá, vytasení krátká, lehká krátká okamžitá; H16)' : ''}.
         {inCombat && ' V boji hod na obranu zabere krátkou akci (1× za kolo).'}
       </p>
     </Sheet>
