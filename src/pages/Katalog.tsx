@@ -2,9 +2,9 @@
 // (H10, PPP03) nebo vlastní položky, „Přidat“ bez placení (přepis z papíru, nález) nebo „Koupit“ s odečtením z měšce.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { AlchemyProductKind, Character, CustomCatalogItem, CustomItemType, ItemPrice, WeaponKind } from '../model/types';
-import { DIARY_TABS, SORT_OPTIONS, WEAPON_KIND, catalogRows, sortRows, type CatalogKind, type CatalogRow, type SortKey } from '../rules/catalog';
+import { DIARY_TABS, SORT_OPTIONS, WEAPON_KIND, catalogRows, draftFromRow, sortRows, type CatalogKind, type CatalogRow, type CustomDraft, type SortKey } from '../rules/catalog';
 import { derive, sgn } from '../rules/derive';
-import { acquire, deleteCustom, saveCustom, slotEmpty, pieceName } from '../rules/equipment';
+import { acquire, deleteCustom, replaceOwned, saveCustom, slotEmpty, pieceName, type OwnedRef } from '../rules/equipment';
 import { formatMd, formatPrice, moneyToMd, priceMd } from '../rules/money';
 import { useStore } from '../state/store';
 import { Ribbon } from '../ui/Ribbon';
@@ -41,14 +41,16 @@ function preview(c: Character, row: CatalogRow): string {
   return '';
 }
 
-export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: CatalogKind; onClose: () => void }) {
+/** `copy` = rovnou otevřít formulář upravené kopie (B1); s `replace` jde upravený kus postavě rovnou vyměnit. */
+export function Katalog({ initialTab = 'gear', onClose, copy }: { initialTab?: CatalogKind; onClose: () => void; copy?: { draft: CustomDraft; replace?: OwnedRef } }) {
   const { character: c, derived: d, dispatch } = useStore();
   const ref = useRef<HTMLDialogElement>(null);
-  const [tab, setTab] = useState<CatalogKind>(initialTab);
+  const [tab, setTab] = useState<CatalogKind>(copy ? 'custom' : initialTab);
   const [q, setQ] = useState('');
   const [qty, setQty] = useState<Record<string, number>>({});
   const [toast, setToast] = useState('');
-  const [editing, setEditing] = useState<CustomCatalogItem | 'new' | null>(null);
+  const [editing, setEditing] = useState<CustomDraft | 'new' | null>(copy?.draft ?? null);
+  const [replace, setReplace] = useState<OwnedRef | undefined>(copy?.replace);
   const [sort, setSort] = useState<SortKey>('default');
   const [alchKind, setAlchKind] = useState<AlchemyProductKind | 'all'>('all');
   const [alchPrice, setAlchPrice] = useState<Record<string, PriceInput>>({});
@@ -106,7 +108,7 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
           <span className="small" style={{ color: 'var(--atmos)' }}>Přidat = bez placení (nález, přepis z papíru) · Koupit = odečte cenu a rozmění mince</span>
         </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginTop: 12 }}>
-          <div className="chips">{TABS.map(([k, l]) => <button key={k} type="button" className="chip" aria-pressed={tab === k} onClick={() => { setTab(k); setEditing(null); }}>{l}{k === 'custom' && c.equipment.customCatalog.length ? ` (${c.equipment.customCatalog.length})` : ''}</button>)}</div>
+          <div className="chips">{TABS.map(([k, l]) => <button key={k} type="button" className="chip" aria-pressed={tab === k} onClick={() => { setTab(k); setEditing(null); setReplace(undefined); }}>{l}{k === 'custom' && c.equipment.customCatalog.length ? ` (${c.equipment.customCatalog.length})` : ''}</button>)}</div>
           <input className="field" placeholder="Hledat…" value={q} onChange={(e) => setQ(e.target.value)} style={{ flex: 1, minWidth: 140, height: 32 }} aria-label="Hledat v katalogu" />
           <select className="field" value={sort} onChange={(e) => setSort(e.target.value as SortKey)} style={{ height: 32 }} aria-label="Řazení">
             {SORT_OPTIONS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}
@@ -123,12 +125,17 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
           editing ? (
             <CustomForm
               initial={editing === 'new' ? null : editing}
-              onCancel={() => setEditing(null)}
-              onSave={(item, andAdd) => {
+              replaceLabel={replace ? `Uložit a vyměnit u postavy` : undefined}
+              onCancel={() => { setEditing(null); setReplace(undefined); }}
+              onSave={(item, mode) => {
                 const saved = saveCustom(c, item);
                 let next = saved.character;
                 let msg = `Uloženo do vlastního katalogu: ${saved.item.name}`;
-                if (andAdd) {
+                if (mode === 'replace' && replace) {
+                  next = replaceOwned(next, replace, saved.item);
+                  msg += ' a vyměněno u postavy';
+                  setReplace(undefined);
+                } else if (mode === 'add') {
                   const r = acquire(next, catalogRows('custom', next.equipment.customCatalog).find((x) => x.id === saved.item.id)!);
                   if (r.character) { next = r.character; msg += ' a přidáno'; }
                 }
@@ -166,9 +173,16 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
                         )}
                         {pv && <span className="pill ok">{pv}</span>}
                         {warnings(x).map(([cl, t]) => <span key={t}> <span className={`pill ${cl}`}>{t}</span></span>)}
+                        {!x.custom && !x.alch && (
+                          <span className="kat-own">
+                            <button className="linkbtn" type="button" title="Vlastní položka s předvyplněnými hodnotami (např. štít vylepšený alchymistou)"
+                              onClick={() => { setTab('custom'); setEditing(draftFromRow(x)); setReplace(undefined); }}>upravená kopie</button>
+                          </span>
+                        )}
                         {x.custom && (
                           <span className="kat-own">
                             <button className="linkbtn" type="button" onClick={() => setEditing(x.custom!)}>upravit</button>
+                            <button className="linkbtn" type="button" onClick={() => { setEditing(draftFromRow(x)); setReplace(undefined); }}>kopie</button>
                             <button className="linkbtn" type="button" onClick={() => { dispatch({ type: 'update', fn: (cc) => deleteCustom(cc, x.id) }); setToast(`Smazáno z katalogu: ${x.name} (postavě zůstává)`); }}>smazat z katalogu</button>
                           </span>
                         )}
@@ -217,7 +231,8 @@ export function Katalog({ initialTab = 'gear', onClose }: { initialTab?: Catalog
 
 const TYPE_LABEL: Record<CustomItemType, string> = { weapon: 'Zbraň', armor: 'Zbroj', shield: 'Štít', gear: 'Vybavení' };
 
-function CustomForm({ initial, onSave, onCancel }: { initial: CustomCatalogItem | null; onSave: (x: Omit<CustomCatalogItem, 'id'> & { id?: string }, andAdd: boolean) => void; onCancel: () => void }) {
+function CustomForm({ initial, onSave, onCancel, replaceLabel }: { initial: CustomDraft | null; onSave: (x: CustomDraft, mode: 'save' | 'add' | 'replace') => void; onCancel: () => void; replaceLabel?: string }) {
+  const isNew = !initial?.id;
   const [type, setType] = useState<CustomItemType>(initial?.type ?? 'weapon');
   const [name, setName] = useState(initial?.name ?? '');
   const [weight, setWeight] = useState(String(initial?.weightLb ?? ''));
@@ -242,10 +257,11 @@ function CustomForm({ initial, onSave, onCancel }: { initial: CustomCatalogItem 
   const valid = name.trim().length > 0;
 
   const build = (): Omit<CustomCatalogItem, 'id'> & { id?: string } => ({
-    ...(initial ? { id: initial.id } : {}),
+    ...(initial?.id ? { id: initial.id } : {}),
+    ...(initial?.copyOf ? { copyOf: initial.copyOf } : {}),
     type, name, weightLb: num(weight), desc,
     price: price.trim() === '' ? null : { v: num(price), cur },
-    ...(type === 'weapon' ? { weapon: { name, attack: int(att), damage: int(dmg), defense: int(def), strReq: optInt(req), kind, category, damageTypes: [], grip } } : {}),
+    ...(type === 'weapon' ? { weapon: { name, attack: int(att), damage: int(dmg), defense: int(def), strReq: optInt(req), kind, category, damageTypes: initial?.weapon?.damageTypes ?? [], grip } } : {}),
     ...(type === 'armor' || type === 'shield' ? { armor: { quality: int(quality), strReq: optInt(req), category, stealth: type === 'armor' ? optInt(stealth) : null } } : {}),
   });
 
@@ -254,7 +270,7 @@ function CustomForm({ initial, onSave, onCancel }: { initial: CustomCatalogItem 
   );
 
   return (
-    <form className="kat-form" onSubmit={(e) => { e.preventDefault(); if (valid) onSave(build(), false); }}>
+    <form className="kat-form" onSubmit={(e) => { e.preventDefault(); if (valid) onSave(build(), replaceLabel ? 'replace' : 'save'); }}>
       <div className="chips" role="group" aria-label="Druh položky">
         {(Object.keys(TYPE_LABEL) as CustomItemType[]).map((t) => <button key={t} type="button" className="chip" aria-pressed={type === t} onClick={() => setType(t)}>{TYPE_LABEL[t]}</button>)}
       </div>
@@ -293,8 +309,10 @@ function CustomForm({ initial, onSave, onCancel }: { initial: CustomCatalogItem 
       </div>
       {f('Popis / poznámka', desc, setDesc)}
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-        <button className="btn dark" type="submit" disabled={!valid}>Uložit do katalogu</button>
-        {!initial && <button className="btn" type="button" disabled={!valid} onClick={() => onSave(build(), true)}>Uložit a přidat postavě</button>}
+        {initial?.copyOf && <p className="small" style={{ margin: 0, flexBasis: '100%' }}>Upravená kopie: <b>{initial.copyOf}</b> – změň, co je jinak (např. kvalita +1 od alchymisty). Hvězdička v názvu ukazuje, že kus je upravený.</p>}
+        {replaceLabel && <button className="btn dark" type="submit" disabled={!valid}>{replaceLabel}</button>}
+        <button className={`btn${replaceLabel ? '' : ' dark'}`} type={replaceLabel ? 'button' : 'submit'} disabled={!valid} onClick={replaceLabel ? () => onSave(build(), 'save') : undefined}>Uložit do katalogu</button>
+        {isNew && <button className="btn" type="button" disabled={!valid} onClick={() => onSave(build(), 'add')}>Uložit a přidat postavě</button>}
         <button className="btn" type="button" onClick={onCancel}>Zpět</button>
       </div>
       <p className="small muted" style={{ margin: 0 }}>Vlastní položky nejsou v pravidlech – parametry schvaluje PJ. Úprava v katalogu nemění kusy, které už postava má.</p>

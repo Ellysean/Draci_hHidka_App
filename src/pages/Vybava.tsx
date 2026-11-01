@@ -3,12 +3,12 @@
 // Otevírá se ze záložky Postava (sekce Zbraně, Zbroj a štít, Peníze, Výbava).
 import { useState } from 'react';
 import type { Character, Money } from '../model/types';
-import type { CatalogKind } from '../rules/catalog';
+import type { CatalogKind, CustomDraft } from '../rules/catalog';
 import { craftedInGear, craftedValueMd, recipeById, removeCrafted, setCraftedCarried, undoAlchemy, useCrafted } from '../rules/alchemy';
 import { ALCH_KIND, WEAPON_KIND, alchemyRowByRecipe, productWeightLb } from '../rules/catalog';
 import { sgn } from '../rules/derive';
 import {
-  equipFromItems, drawWeapon, stowWeapon, expense, income, itemSlot, salePriceMd, normalizeMoney, removeItem, removePiece, removeWeapon, undoLast, unequipPiece, unitPriceMd, consumeItem,
+  equipFromItems, drawWeapon, stowWeapon, draftFromOwned, type OwnedRef, expense, income, itemSlot, salePriceMd, normalizeMoney, removeItem, removePiece, removeWeapon, undoLast, unequipPiece, unitPriceMd, consumeItem,
 } from '../rules/equipment';
 import { formatMd, moneyToMd } from '../rules/money';
 import { useStore } from '../state/store';
@@ -41,6 +41,8 @@ function MoneyInputs({ value, onChange, idPrefix }: { value: Money; onChange: (m
 export function Vybava() {
   const { character: c, derived: d, set, dispatch } = useStore();
   const [kat, setKat] = useState<CatalogKind | null>(null);
+  const [copy, setCopy] = useState<{ draft: CustomDraft; replace: OwnedRef } | null>(null);
+  const edit = (ref: OwnedRef) => { const draft = draftFromOwned(c, ref); if (draft) setCopy({ draft, replace: ref }); };
   const [amount, setAmount] = useState<Money>(ZERO);
   const [note, setNote] = useState('');
   const [msg, setMsg] = useState('');
@@ -134,6 +136,7 @@ export function Vybava() {
         </td>
         <td className="c acts">
           {p && !empty && <>
+            <button className="btn" type="button" title="Upravená kopie (např. vylepšení od alchymisty) – vymění se za tento kus" onClick={() => edit({ what: slot })}>Upravit</button>
             <button className="btn" type="button" title="Sundat do výbavy" onClick={() => upd((x) => unequipPiece(x, slot))}>Do výbavy</button>
             <button className="icon-x" type="button" aria-label={`Odebrat ${p.name}`} onClick={() => askRemove({ what: slot, name: p.name, unitMd: unitPriceMd(c, piece), qty: 1, max: 1 })}>×</button>
           </>}
@@ -180,7 +183,7 @@ export function Vybava() {
                         <td className="c">{w.strReq != null ? <span className={w.overloaded ? 'bad-t' : ''} title={w.overloaded ? `Přetížení −5 (máš SIL ${sgn(d.mods.sil)})` : undefined}>min. {sgn(w.strReq)}</span> : '—'}</td>
                         <td className="c">{w.attackNumber}/{w.defenseNumber}{w.overloaded && <> <span className="pill bad">−5</span></>}</td>
                         <td className="c">{w.weightLb}</td>
-                        <td className="c acts"><button className="btn" type="button" title="Odložit do výbavy (nese ji, ale nemá ji mezi zbraněmi)" onClick={() => upd((x) => stowWeapon(x, w.uid))}>Do výbavy</button><button className="icon-x" type="button" aria-label={`Odebrat ${w.name}`} onClick={() => askRemove({ what: 'weapon', uid: w.uid, name: w.name, qty: entry.qty ?? 1, max: entry.qty ?? 1, unitMd: unitPriceMd(c, entry) })}>×</button></td>
+                        <td className="c acts"><button className="btn" type="button" title="Upravená kopie (např. vylepšení od alchymisty) – vymění se za tuto zbraň" onClick={() => edit({ what: 'weapon', uid: w.uid })}>Upravit</button><button className="btn" type="button" title="Odložit do výbavy (nese ji, ale nemá ji mezi zbraněmi)" onClick={() => upd((x) => stowWeapon(x, w.uid))}>Do výbavy</button><button className="icon-x" type="button" aria-label={`Odebrat ${w.name}`} onClick={() => askRemove({ what: 'weapon', uid: w.uid, name: w.name, qty: entry.qty ?? 1, max: entry.qty ?? 1, unitMd: unitPriceMd(c, entry) })}>×</button></td>
                       </tr>
                     );
                   })}
@@ -353,6 +356,7 @@ export function Vybava() {
       </div>
 
       {kat && <Katalog initialTab={kat} onClose={() => setKat(null)} />}
+      {copy && <Katalog copy={copy} onClose={() => setCopy(null)} />}
     </div>
   );
 }

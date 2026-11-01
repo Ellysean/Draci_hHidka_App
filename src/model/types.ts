@@ -158,6 +158,8 @@ export interface CustomCatalogItem {
   desc: string;
   weapon?: CustomWeapon & { grip: 'one-handed' | 'two-handed' };
   armor?: { quality: number; strReq: number | null; category: string; stealth: number | null };
+  /** Upravená kopie předmětu z pravidel / výbavy – název původního kusu (feedback testerů, B1). */
+  copyOf?: string;
 }
 
 /** Pohyb peněz (příjem, výdaj, nákup, prodej). */
@@ -739,7 +741,7 @@ export interface PlayState {
   /** Nejnovější první, max. 50. */
   log: PlayLogEntry[];
   /** Stav životů/energie/stavů a boje před poslední úpravou (nejnovější první, max. 20). */
-  undo: { logUid: string; vitals: Vitals; combat: CombatState | null; wiz?: WizardState | null; cle?: ClericState | null; comp?: Companion[] }[];
+  undo: { logUid: string; vitals: Vitals; combat: CombatState | null; hand?: { aw: string | null; sh: boolean }; wiz?: WizardState | null; cle?: ClericState | null; comp?: Companion[] }[];
 }
 
 export interface Character {

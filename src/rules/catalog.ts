@@ -96,11 +96,25 @@ export const WEAPON_KIND = { melee: 'tváří v tvář', ranged: 'střelná', th
 
 const CUSTOM_TYPE = { weapon: 'zbraň', armor: 'zbroj', shield: 'štít', gear: 'vybavení' } as const;
 
+/** Návrh vlastní položky jako upravené kopie řádku katalogu (B1) – název s hvězdičkou, parametry předvyplněné. */
+export type CustomDraft = Omit<CustomCatalogItem, 'id'> & { id?: string };
+export function draftFromRow(row: CatalogRow): CustomDraft | null {
+  if (row.alch) return null;
+  if (row.custom) { const { id: _id, ...rest } = row.custom; return { ...rest, name: `${row.name} *`, copyOf: row.custom.copyOf ?? row.name }; }
+  const base = { name: `${row.name} *`, weightLb: row.w ?? 0, price: row.price, desc: '', copyOf: row.name };
+  const w = row.weapon;
+  if (w) return { ...base, type: 'weapon', weapon: { name: base.name, attack: w.att, damage: w.dmg, defense: w.def, strReq: w.req, kind: w.kind, category: w.cat, damageTypes: w.dmgTypes, grip: w.grip === 'obouruční' ? 'two-handed' : 'one-handed' } };
+  const a = row.armor;
+  if (a) return { ...base, type: row.kind === 'shield' ? 'shield' : 'armor', armor: { quality: a.q, strReq: a.req, category: a.cat, stealth: row.kind === 'shield' ? null : a.stealth ?? null } };
+  return { ...base, type: 'gear', desc: row.desc };
+}
+
 export function customRow(x: CustomCatalogItem): CatalogRow {
   const w = x.weapon;
   const a = x.armor;
   const desc = [
     CUSTOM_TYPE[x.type],
+    x.copyOf && `upravený kus: ${x.copyOf}`,
     w && `Ú/Z/O ${w.attack}/${w.damage}/${w.defense} · ${WEAPON_KIND[w.kind]}`,
     a && `kvalita ${a.quality}${a.stealth ? ` · plížení ${a.stealth}` : ''}`,
     x.desc,

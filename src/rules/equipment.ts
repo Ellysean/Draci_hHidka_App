@@ -2,7 +2,7 @@
 // Čisté funkce nad postavou: vrací novou postavu, nebo { error } s hláškou pro hráče.
 import { uid } from '../model/defaults';
 import type { ArmorPiece, Character, CustomCatalogItem, Equipment, GearAlchemy, GearItem, Money, WeaponEntry } from '../model/types';
-import type { CatalogRow } from './catalog';
+import { catalogRows, draftFromRow, type CatalogRow, type CustomDraft } from './catalog';
 import { getArmor, getGear, getShield, getWeapon } from './data';
 import { formatMd, moneyToMd } from './money';
 
@@ -317,4 +317,76 @@ export function robeBonus(c: Character): { value: number; name: string } {
   const a = c.equipment.armor;
   const def = a.equipped ? getArmor(a.itemId) : undefined;
   return { value: def?.magicBonus ?? 0, name: def?.n ?? '' };
+}
+
+// ---------------------------------------------------------------- upravená kopie kusu (B1)
+
+/** Kus, který postava má: zbraň (uid) nebo zbroj / štít ve slotu. */
+export type OwnedRef = { what: 'weapon'; uid: string } | { what: 'armor' | 'shield' };
+
+/** Návrh upravené kopie kusu, který postava má (předvyplněné parametry, název s hvězdičkou). */
+export function draftFromOwned(c: Character, ref: OwnedRef): CustomDraft | null {
+  const eq = c.equipment;
+  if (ref.what === 'weapon') {
+    const w = eq.weapons.find((x) => x.uid === ref.uid);
+    if (!w) return null;
+    if (w.itemId) {
+      const own = eq.customCatalog.find((x) => x.id === w.itemId);
+      const row = own ? catalogRows('custom', [own])[0] : catalogRows('weapon').find((r) => r.id === w.itemId);
+      return row ? draftFromRow(row) : null;
+    }
+    if (!w.custom) return null;
+    const name = `${w.custom.name} *`;
+    return { type: 'weapon', name, weightLb: w.weightLb ?? 0, price: null, desc: '', copyOf: w.custom.name, weapon: { ...w.custom, name, grip: w.grip } };
+  }
+  const p = eq[ref.what];
+  if (slotEmpty(p)) return null;
+  if (p.itemId) {
+    const row = [...catalogRows('armor'), ...catalogRows('robe'), ...catalogRows('shield')].find((r) => r.id === p.itemId && (ref.what === 'shield') === (r.kind === 'shield'));
+    return row ? draftFromRow(row) : null;
+  }
+  const x = p.custom!;
+  return {
+    type: ref.what, name: `${x.name} *`, weightLb: p.weightLb ?? 0, price: null, desc: '', copyOf: x.name,
+    armor: { quality: x.quality, strReq: x.strReq, category: x.category, stealth: ref.what === 'armor' ? x.stealth ?? null : null },
+  };
+}
+
+/** Nahradí kus postavy upravenou verzí z vlastního katalogu (zbraň si drží počet kusů a „v ruce“, zbroj / štít nasazení). */
+export function replaceOwned(c: Character, ref: OwnedRef, item: CustomCatalogItem, now = new Date().toISOString()): Character {
+  const eq = c.equipment;
+  if (ref.what === 'weapon') {
+    if (!item.weapon) return c;
+    const { grip, ...custom } = item.weapon;
+    const weapons = eq.weapons.map((w) => (w.uid === ref.uid ? { ...w, itemId: null, custom: { ...custom, name: item.name }, grip, weightLb: item.weightLb } : w));
+    return commit(c, { ...eq, weapons }, `Upraveno: ${item.name}`, null, now);
+  }
+  if (!item.armor || item.type !== ref.what) return c;
+  const a = item.armor;
+  const piece: ArmorPiece = { itemId: null, custom: { name: item.name, quality: a.quality, strReq: a.strReq, category: a.category, stealth: a.stealth }, equipped: eq[ref.what].equipped, weightLb: item.weightLb };
+  return commit(c, { ...eq, [ref.what]: piece }, `Upraveno: ${item.name}`, null, now);
+}
+
+// ---------------------------------------------------------------- zbraň a štít v ruce (B2)
+
+export const isTwoHanded = (c: Character, weaponUid: string | null | undefined) =>
+  !!weaponUid && c.equipment.weapons.find((w) => w.uid === weaponUid)?.grip === 'two-handed';
+
+/** Vezme zbraň do ruky; obouruční zbraň odloží štít z ruky (zůstává u postavy). */
+export function takeWeapon(c: Character, weaponUid: string): { character: Character; shieldDown: boolean } {
+  const eq = c.equipment;
+  if (!eq.weapons.some((w) => w.uid === weaponUid)) return { character: c, shieldDown: false };
+  const shieldDown = isTwoHanded(c, weaponUid) && eq.shield.equipped && !slotEmpty(eq.shield);
+  return {
+    character: { ...c, equipment: { ...eq, activeWeaponUid: weaponUid, shield: shieldDown ? { ...eq.shield, equipped: false } : eq.shield } },
+    shieldDown,
+  };
+}
+
+/** Štít do ruky / z ruky. S obouruční zbraní v ruce štít vzít nejde (vrací null). */
+export function shieldInHand(c: Character, on: boolean, activeUid: string | null): Character | null {
+  const eq = c.equipment;
+  if (slotEmpty(eq.shield)) return null;
+  if (on && isTwoHanded(c, activeUid)) return null;
+  return { ...c, equipment: { ...eq, shield: { ...eq.shield, equipped: on } } };
 }

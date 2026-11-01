@@ -11,7 +11,7 @@ import { CONDITIONS, FATIGUE, getSkill } from './data';
 import type { Derived } from './derive';
 import { sgn } from './derive';
 import { rollDie } from './dice';
-import { robeBonus } from './equipment';
+import { robeBonus, takeWeapon } from './equipment';
 import { isThief, thiefCombatMods, thiefRound } from './zlodej';
 import {
   TRICK_KIND_LABEL, adrenalinAtStart, adrenalinGain, attacksPerRound, commandBonus, defensesPerRound, furyOn, hasAbility, isWarrior,
@@ -32,7 +32,7 @@ export function record(c: Character, text: string, fn: (c: Character) => Charact
     play: {
       ...next.play,
       log: [{ uid: logUid, at: now, text }, ...c.play.log].slice(0, LOG_MAX),
-      undo: [{ logUid, vitals: c.vitals, combat: c.play.combat, ...(c.classState.kouzelnik ? { wiz: c.classState.kouzelnik } : {}), ...(c.classState.klerik ? { cle: c.classState.klerik } : {}), ...(c.companions.length || next.companions.length ? { comp: c.companions } : {}) }, ...c.play.undo].slice(0, UNDO_MAX),
+      undo: [{ logUid, vitals: c.vitals, combat: c.play.combat, hand: { aw: c.equipment.activeWeaponUid ?? null, sh: c.equipment.shield.equipped }, ...(c.classState.kouzelnik ? { wiz: c.classState.kouzelnik } : {}), ...(c.classState.klerik ? { cle: c.classState.klerik } : {}), ...(c.companions.length || next.companions.length ? { comp: c.companions } : {}) }, ...c.play.undo].slice(0, UNDO_MAX),
     },
   };
 }
@@ -48,6 +48,8 @@ export function undoPlay(c: Character): Character {
     ...(u.cle && c.classState.klerik ? { classState: { ...c.classState, klerik: u.cle } } : {}),
     // Přátelé (7c+): životy, mana, získání a ztráta přítele se vracejí s ostatním.
     ...(u.comp ? { companions: u.comp } : {}),
+    // Zbraň a štít v ruce (B2 – přezbrojení v boji).
+    ...(u.hand ? { equipment: { ...c.equipment, activeWeaponUid: u.hand.aw, shield: { ...c.equipment.shield, equipped: u.hand.sh } } } : {}),
   };
 }
 
@@ -982,4 +984,35 @@ export function bloodWound(c: Character, dmg: number, die = rollDie): { characte
     ...y, vitals: { ...y.vitals, hpCurrent: y.vitals.hpCurrent - n, manaCurrent: y.vitals.manaCurrent + gain },
   }));
   return { character, gain, faces };
+}
+
+// ---------------------------------------------------------------- přezbrojení (B2, H16)
+
+/**
+ * Délka akce Přezbrojení (H16): vytasení lehké krátké zbraně okamžitá, jiné zbraně krátká;
+ * výměna zbraně za jinou (jednu schovat, druhou vytasit) dlouhá.
+ */
+export function swapLen(d: Derived, weaponUid: string): ActionLength {
+  const w = d.weapons.find((x) => x.uid === weaponUid);
+  if (d.activeWeaponUid && d.activeWeaponUid !== weaponUid) return 'D';
+  return w && /^lehk/i.test(w.category) && /krátk/i.test(w.category) ? 'O' : 'K';
+}
+
+/**
+ * Vezme zbraň do ruky. V boji to stojí akci Přezbrojení (zapíše se do tahu, jde vrátit); mimo boj zdarma.
+ * Obouruční zbraň odloží štít z ruky.
+ */
+export function switchWeapon(c: Character, d: Derived, weaponUid: string): { character: Character; error?: string; shieldDown?: boolean; len?: ActionLength } {
+  if (weaponUid === d.activeWeaponUid) return { character: c };
+  if (!c.play.combat) {
+    const r = takeWeapon(c, weaponUid);
+    return { character: r.character, shieldDown: r.shieldDown };
+  }
+  const len = swapLen(d, weaponUid);
+  const x = turnCtx(c, d);
+  const a = turnActions(c, d, x).find((q) => q.k === 'tasit')!;
+  const why = whyNot(c, a, len, x);
+  if (why) return { character: c, error: `Přezbrojení (${LEN_NAME[len]}): ${why}`, len };
+  const r = takeWeapon(doAction(c, d, 'tasit', len), weaponUid);
+  return { character: r.character, shieldDown: r.shieldDown, len };
 }

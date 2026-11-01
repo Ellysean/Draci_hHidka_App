@@ -9,7 +9,7 @@ import {
   knownSpells, knownTricks, lenRounds, lenText, myTurn, newRound, recover, rest, rollInitiative, setBleed, setCombat,
   setFatigue, sleep, spellCheck, spellCost, spellWhy, startCombat, stopChannel, toggleCondition, trickWhy, turnActions, turnCtx,
   turnEffects, undoAction, undoPlay, takeDefense, applyTrick, whyNot, type ActionDef, type SpellDef,
-  attack, attackWhy, roundInfo, sacrificeFor, shieldBash, shieldBashAttack, payDeathDelay,
+  attack, attackWhy, roundInfo, switchWeapon, swapLen, sacrificeFor, shieldBash, shieldBashAttack, payDeathDelay,
 } from '../rules/combat';
 import { ValecnikBoj } from './ValecnikBoj';
 import { KouzelnikBoj } from './KouzelnikBoj';
@@ -17,6 +17,7 @@ import { KlerikBoj } from './KlerikBoj';
 import { ZlodejBoj } from './ZlodejBoj';
 import { PrateleBoj } from './Pratele';
 import { CONDITIONS, FATIGUE, getClass } from '../rules/data';
+import { isTwoHanded, shieldInHand, slotEmpty, pieceName } from '../rules/equipment';
 import { adrenalinAtStart, adrenalinGain, trickPrice } from '../rules/valecnik';
 import { sgn, type Derived } from '../rules/derive';
 import { useStore } from '../state/store';
@@ -220,15 +221,25 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
       </div>
       <div className="scroll-x">
         <table className="grid tn" style={{ marginTop: 12 }}>
-          <thead><tr><th>Zbraň</th><th className="c">Útok</th><th className="c">Obrana</th><th className="c">Zran.</th></tr></thead>
+          <thead><tr><th style={{ width: 30 }}><span className="visually-hidden">V ruce</span></th><th>Zbraň</th><th className="c">Útok</th><th className="c">Obrana</th><th className="c">Zran.</th></tr></thead>
           <tbody>
-            {d.weapons.length === 0 && <tr><td colSpan={4} className="muted small">Beze zbraně – útočnost i obrana 0.</td></tr>}
+            {d.weapons.length === 0 && <tr><td colSpan={5} className="muted small">Beze zbraně – útočnost i obrana 0.</td></tr>}
             {d.weapons.map((w) => {
               const u = w.attackNumber + M.atk;
               const o = w.kind === 'melee' ? w.defenseNumber + M.def : ocr;
               return (
                 <tr key={w.uid} className={w.uid === d.activeWeaponUid ? 'w-active' : ''}>
-                  <td><b>{w.name}</b>{w.overloaded && <> <span className="pill bad">PŘETÍŽENÍ −5</span></>}{w.kind !== 'melee' && <> <span className="pill">{w.kind === 'ranged' ? 'STŘ.' : 'VRH.'}</span></>}</td>
+                  <td className="c">
+                    <input type="radio" name="boj-active" checked={w.uid === d.activeWeaponUid} aria-label={`${w.name} do ruky`}
+                      title={w.uid === d.activeWeaponUid ? 'V ruce' : inCombat ? `Vzít do ruky – Přezbrojení (${LEN_NAME[swapLen(d, w.uid)]} akce, H16)` : 'Vzít do ruky'}
+                      onChange={() => {
+                        const r = switchWeapon(c, d, w.uid);
+                        if (r.error) { say(r.error); return; }
+                        replace(r.character);
+                        say(`V ruce: ${w.name}${r.len ? ` (přezbrojení – ${LEN_NAME[r.len]} akce)` : ''}${r.shieldDown ? ' · obouruční zbraň – štít odložen z ruky' : ''}`);
+                      }} />
+                  </td>
+                  <td><b>{w.name}</b>{isTwoHanded(c, w.uid) && <> <span className="pill">OBOUR.</span></>}{w.overloaded && <> <span className="pill bad">PŘETÍŽENÍ −5</span></>}{w.kind !== 'melee' && <> <span className="pill">{w.kind === 'ranged' ? 'STŘ.' : 'VRH.'}</span></>}</td>
                   <td className="c"><RollButton type="k6x" mod={u} label={`Útok – ${w.name}`}>{`ÚČ ${u}`}</RollButton></td>
                   <td className="c"><RollButton type="k6x" mod={o} label={`Obrana – ${w.name}`} onBefore={defend(`Obrana – ${w.name}`)}>{`OČ ${o}`}</RollButton></td>
                   <td className="c">+{w.damageTotal}</td>
@@ -238,12 +249,25 @@ function BojoveHodnoty({ c, d, replace, say }: P) {
           </tbody>
         </table>
       </div>
+      {!slotEmpty(c.equipment.shield) && (() => {
+        const on = c.equipment.shield.equipped;
+        const blocked = !on && isTwoHanded(c, d.activeWeaponUid);
+        return (
+          <label className="small" style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 8 }} title={blocked ? 'S obouruční zbraní v ruce štít držet nejde' : undefined}>
+            <input type="checkbox" checked={on} disabled={blocked} onChange={(e) => {
+              const next = shieldInHand(c, e.target.checked, d.activeWeaponUid);
+              if (next) { replace(next); say(e.target.checked ? `Štít v ruce: ${pieceName('shield', c.equipment.shield)}` : 'Štít odložen z ruky (pořád ho neseš)'); }
+            }} />
+            Štít v ruce – {pieceName('shield', c.equipment.shield)}{blocked && <span className="muted"> (obouruční zbraň)</span>}
+          </label>
+        );
+      })()}
       <div className="steps" style={{ marginTop: 8 }}>
         <RollButton type="k6" mod={d.initiativeBonus.value + M.init} label="Iniciativa">{`Iniciativa k6 ${sgn(d.initiativeBonus.value + M.init)}`}</RollButton>
         <RollButton type="k6x" mod={ocr} label="Obrana – proti střelbě" onBefore={defend('Obrana proti střelbě')}>{`Proti střelbě OČ ${ocr}`}</RollButton>
       </div>
       <p className="small muted" style={{ margin: '6px 0 0' }}>
-        Zranění = (Útok − Obrana) + zranění zbraně. Šestky se přehazují a sčítají; 2 a více = kritický útok / obrana. Proti střelbě se nepočítá obrana zbraně, jen štít.
+        Zranění = (Útok − Obrana) + zranění zbraně. Šestky se přehazují a sčítají; 2 a více = kritický útok / obrana. Proti střelbě se nepočítá obrana zbraně, jen štít. Zbraň do ruky vezmeš kolečkem vlevo{inCombat ? ' – v boji to je akce Přezbrojení (výměna zbraně dlouhá, vytasení krátká, lehká krátká okamžitá; H16)' : ''}.
         {inCombat && ' V boji hod na obranu zabere krátkou akci (1× za kolo).'}
       </p>
     </Sheet>
